@@ -1,0 +1,323 @@
+﻿/*===============Start: Card Properties ========================*/
+.card {
+    min-height: 330px;
+    overflow: hidden;
+    border-radius: 8px;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 4px solid gold;
+}
+
+.card-body {
+    background: #ebe6e6;
+}
+
+.card-text:last-child {
+    color: #676767;
+}
+
+.btn-seeMore {
+    cursor: pointer;
+    text-decoration: none;
+    color: #d8a408;
+    font-weight: bold;
+}
+/*===============Start: Hover Content Properties ========================*/
+.hideContent {
+    position: absolute;
+    width: 100%;
+    min-height: 350px;
+    top: 100%;
+    transition: all .3s ease-out;
+    background: #428bca;
+    background-image: none;
+    cursor: pointer;
+    background-image: url('./img/GPAGames/GPA-image-pattern.svg'),linear-gradient(180deg,#4f1a38 63%,#311219f5 63%);
+}
+
+.card:hover > .hideContent {
+    top: 0;
+}
+
+.hideContent img {
+    width: 120px;
+    margin-left: 10px;
+    margin-top: -6px;
+}
+
+.bubble {
+    width: 130px;
+    height: 50px;
+    position: relative;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 44px;
+    background: #65646400;
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid #ffe8a3;
+}
+
+.bubble-bottom-left:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 14px solid #ffe8a3;
+    border-right: 49px solid transparent;
+    border-top: 2px solid #ffe8a3;
+    border-bottom: 18px solid transparent;
+    border-bottom-width: 18px;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    left: 11px;
+    bottom: -21px;
+}
+
+.bubble > a {
+    text-decoration: none;
+    color: #ffe8a3;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.bubble:hover, .bubble:hover > a {
+    animation: changeBorder .5s infinite;
+}
+
+@keyframes changeBorder {
+    50% {
+        border-color: gold;
+        color: gold;
+    }
+}
+
+.bubble-bottom-left:hover:before {
+    animation: changeBorder2 .5s infinite;
+}
+
+@keyframes changeBorder2 {
+    50% {
+        border-left: 14px solid gold;
+        border-right: 49px solid transparent;
+        border-top: 2px solid gold;
+        border-bottom: 18px solid transparent;
+    }
+}
+
+.hideContent button:hover {
+    outline: 2px solid transparent;
+}
+
+.hideContent button:hover {
+    animation: buttonEffect 1s infinite;
+    outline: 2px solid #e0350d;
+}
+
+@keyframes buttonEffect {
+    50% {
+        box-shadow: 0 0 14px -1px #e01e0a;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    div.mb-show {
+        display: none;
+    }
+}
+/*================ Start: Button PLay Animation ==================*/
+button.play-btn {
+    position: relative;
+    width: 115px;
+}
+
+button.play-btn > span {
+    margin-left: -10px;
+}
+
+.arrow {
+    position: absolute;
+    top: 42%;
+    left: 65%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    cursor: pointer;
+}
+
+.arrow span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+/*================ End: Button PLay Animation ==================*/
+
+@media screen and (max-width: 414px) {
+    /*============== GPA Games Overflow-Horizontal Properties for Mobile =====================*/
+    #gamesContainer.mb-overflow {
+        max-height: 160px;
+        white-space: nowrap;
+        overflow-y: auto;
+        display: inherit;
+        flex-wrap: unset;
+    }
+
+    #gamesContainer.mb-overflow > div {
+        width: 13rem !important;
+        display: inline-block;
+    }
+
+    .card {
+        min-height: 140px;
+    }
+
+    .card-body {
+        max-height: 215px;
+    }
+
+    div.mb-hide {
+        display: none;
+    }
+
+    div.mb-show {
+        padding-top: 10px;
+    }
+    /*============== GPA Games HideContent Properties for Mobile =====================*/
+    .hideContent {
+        min-height: 160px;
+    }
+
+    .hideContent > div.mb-content {
+        margin-bottom: 0px !important;
+        padding-top: 2px !important;
+    }
+
+    .hideContent h1, .hideContent h3 {
+        margin: 0 !important;
+        font-size: 16px !important;
+        padding: 0 !important;
+    }
+
+    .hideContent > div.btn-img-container {
+        padding-top: 0 !important;
+    }
+
+    .hideContent > div.btn-img-container img {
+        width: 120px;
+        margin-left: 1px;
+        margin-top: -25px;
+    }
+
+    .hideContent > div.btn-img-container .bubble {
+        width: 120px;
+        height: 36px;
+        line-height: 30px;
+    }
+
+    div.mb-show a:active + .hideContent, div.mb-show a:focus + .hideContent {
+        top: 0;
+    }
+
+    .showContent {
+        top: 0 !important;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    /*============== GPA Games Overflow-Horizontal Properties for Mobile =====================*/
+    #gamesContainer.mb-overflow {
+        max-height: 160px;
+        white-space: nowrap;
+        overflow-y: auto;
+        display: inherit;
+        flex-wrap: unset;
+    }
+
+    #gamesContainer.mb-overflow > div {
+        width: 13rem !important;
+        display: inline-block;
+    }
+
+    .card {
+        min-height: 140px;
+    }
+
+    .card-body {
+        max-height: 215px;
+    }
+
+    div.mb-hide {
+        display: none;
+    }
+
+    div.mb-show {
+        padding-top: 10px;
+    }
+    /*============== GPA Games HideContent Properties for Mobile =====================*/
+    .hideContent {
+        min-height: 160px;
+    }
+
+    .hideContent > div.mb-content{
+        margin-bottom: 0px !important;
+        padding-top: 2px !important;
+    }
+
+    .hideContent h1, .hideContent h3 {
+        margin: 0 !important;
+        font-size: 16px !important;
+        padding: 0 !important;
+    }
+
+    .hideContent > div.btn-img-container {
+        padding-top: 0 !important;
+    }
+
+    .hideContent > div.btn-img-container img {
+        width: 120px;
+        margin-left: 1px;
+        margin-top: -25px;
+    }
+
+    .hideContent > div.btn-img-container .bubble {
+        width: 120px;
+        height: 36px;
+        line-height: 30px;
+    }
+
+    div.mb-show a:active + .hideContent, div.mb-show a:focus + .hideContent {
+        top: 0;
+    }
+
+    .showContent {
+        top: 0 !important;
+    }
+}

@@ -1,0 +1,66 @@
+﻿@using GoPlayAsiaWebApp.Layout.Components.Modal
+@inject IModalService ModalService
+<div class="card m-3 p-0 border-dark game-tile" style="background-color: inherit; border-color: none;">
+    <div class="container-fluid p-0 bg-img">
+        <img src="@_imgStr" class="card-img-top featGames-bg basketBall" @onclick="ToggleActive" alt="@_titleStr">
+    </div>
+    <div class="info @(isActive ? "active" : "")">
+        <div class="content">
+            <div class="subtitle"><h4 class="text-white fw-bold">@_titleStr</h4></div>
+            <div class="button button-playNow">
+                <a class="btn btn-warning m-1" href="@_gameInfoHrefStr">
+                    <span>Play Now</span>
+                    <div class="arrow">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+            <div class="button button-gameInfo">
+                <button id="@_idStr" class="btn btn-dark m-1" href="@_gameInfoHrefStr" @onclick="() => ShowModal(_idStr)">Game Info</button>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    public GPATile()
+    {
+        _idStr = "";
+        _imgStr = "";
+        _titleStr = "";
+        _gameInfoHrefStr = "";
+        _tryoutsHrefStr = "";
+    }
+
+    [Parameter] public string _idStr { get; set; }
+    [Parameter] public string _imgStr { get; set; }
+    [Parameter] public string _titleStr { get; set; }
+    [Parameter] public string _gameInfoHrefStr { get; set; }
+    [Parameter] public string _tryoutsHrefStr { get; set; }
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    public void ShowModal(string _idStr)
+    {
+        ModalService.Show<GameInfoModal>(new ModalParameters { { "GameId", _idStr } });
+    }
+
+
+    private bool isActive = false;
+
+    private void ToggleActive()
+    {
+        isActive = !isActive;
+        if (isActive)
+        {
+            // Start a timer to remove the active class after 20 seconds
+            TimerCallback timerCallback = state =>
+            {
+                isActive = false;
+                StateHasChanged(); // Notify Blazor that the state has changed
+            };
+            var timer = new Timer(timerCallback, null, 4000, Timeout.Infinite);
+        }
+    }
+}

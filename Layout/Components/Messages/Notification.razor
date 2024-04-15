@@ -1,0 +1,151 @@
+﻿@page "/notification"
+<PageTitle>GoPlayAsia: Notification</PageTitle>
+
+<div class="container-fluid marketing pt-5">
+    <div class="container p-3">
+        <div class="row pt-4 bg-white mt-4 rounded-3">
+            <div class="container">
+                <div class="d-flex delAndCancel">
+                    <div class="col text-left">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label" for="SelectAllChecked">Mark All</label>
+                        </div>
+                    </div>
+                    <div class="col text-center"><b class="sel-label">@selectedCount Selected</b></div>
+                    <div class="col text-center">
+                        <button id="delete" class="bg-white border-0">
+                            <i class="fa-solid fa-trash-can"></i>
+                            Delete
+                        </button>
+                    </div>
+                    <div id="cancel" class="col text-center">
+                        <button class="bg-white border-0">Cancel</button>
+                    </div>
+                </div>
+                <div class="input-group py-2">
+                    <input id="searchMsg" type="search" value="" placeholder="Search Message" class="form-control border-end-0 border rounded-pill">
+                    <span class="input-group-append">
+                        <button class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <ul class="messages-list mb-0 p-2">
+                <li class="@(Item1Unread ? "unread" : "")" @onclick="() => { Item1Unread = false; }">
+                    <a href="javascript:;" class="message-link" >
+                        <div class="header">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="checkbox_1" @onclick="() => UpdateSelectedCount(Item1Unread)">
+                                <label class="form-check-label" for="checkbox_1">Lukasz Holeczek</label>
+                                <span class="date"><span class="fa fa-paper-clip"></span> Today, 3:47 PM</span>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <span class="action"><i class="fa-solid fa-list-ul"></i></span>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </div>
+                    </a>
+                </li>
+                <li class="@(Item2Unread ? "unread" : "")" @onclick="() => { Item2Unread = false; }">
+                    <a href="javascript:;" class="message-link" >
+                        <div class="header">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="checkbox_2" @onclick="() => UpdateSelectedCount(Item2Unread)">
+                                <label class="form-check-label" for="checkbox_2">Lukasz Holeczek</label>
+                                <span class="date"><span class="fa fa-paper-clip"></span> Today, 3:47 PM</span>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <span class="action"><i class="fa-solid fa-list-ul"></i></span>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </div>
+                    </a>
+                </li>
+                <li class="@(Item3Unread ? "unread" : "")" @onclick="() => { Item3Unread = false; }">
+                    <a href="javascript:;" class="message-link" >
+                        <div class="header">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="checkbox_3" @onclick="() => UpdateSelectedCount(Item3Unread)">
+                                <label class="form-check-label" for="checkbox_3">Lukasz Holeczek</label>
+                                <span class="date"><span class="fa fa-paper-clip"></span> Today, 3:47 PM</span>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <span class="action"><i class="fa-solid fa-list-ul"></i></span>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </div>
+                    </a>
+                </li>
+                <li class="@(Item4Unread ? "unread" : "")" @onclick="() => { Item4Unread = false; }">
+                    <a href="javascript:;" class="message-link" >
+                        <div class="header">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="checkbox_4" @onclick="() => UpdateSelectedCount(Item4Unread)">
+                                <label class="form-check-label" for="checkbox_4">Lukasz Holeczek</label>
+                                <span class="date"><span class="fa fa-paper-clip"></span> Today, 3:47 PM</span>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <span class="action"><i class="fa-solid fa-list-ul"></i></span>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </div>
+                    </a>
+                </li>
+                <li class="@(Item5Unread ? "unread" : "")" @onclick="() => { Item5Unread = false; }">
+                    <a href="javascript:;" class="message-link" >
+                        <div class="header">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="checkbox_5" @onclick="() => UpdateSelectedCount(Item5Unread)">
+                                <label class="form-check-label" for="checkbox_5">Lukasz Holeczek</label>
+                                <span class="date"><span class="fa fa-paper-clip"></span> Today, 3:47 PM</span>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <span class="action"><i class="fa-solid fa-list-ul"></i></span>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@code {
+    bool Item1Unread = true;
+    bool Item2Unread = true;
+    bool Item3Unread = true;
+    bool Item4Unread = true;
+    bool Item5Unread = true;
+
+    int selectedCount = 0;
+
+    void UpdateSelectedCount(bool value)
+    {
+        if (value)
+        {
+            selectedCount++;
+        }
+        else
+        {
+            selectedCount--;
+        }
+    }
+}

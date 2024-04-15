@@ -1,0 +1,125 @@
+﻿@page "/arcadeGames"
+@using GoPlayAsiaWebApp.Layout.Components.LinkHeader
+@using GoPlayAsiaWebApp.Layout.Games.Arcade
+@using GoPlayAsiaWebApp.Layout.Games.Cards
+@using GoPlayAsiaWebApp.Layout.Games.GPAGames
+<PageTitle>GoPlayAsia: Arcade Games </PageTitle>
+
+<div id="cardGames" class="container-fluid p-0 marketing">
+    <div class="container pt-5">
+        <div class="row justify-content-center py-4 pt-5">
+            <GameLinkHeader _gameHrefStr="GoPlayAsiaGames"
+                            _imgGameStr="./img/GPAGames/liveGames.png"
+                            _typeGameStr="Live" />
+
+            <GameLinkHeader _gameHrefStr="arcadeGames"
+                            _activeClassStr="active"
+                            _imgGameStr="./img/Arcade/GoRush_2.png"
+                            _typeGameStr="Arcade" />
+
+            <GameLinkHeader _gameHrefStr="slotGames"
+                            _imgGameStr="./img/SlotGames/SuperAce_2.png"
+                            _typeGameStr="Slots" />
+
+            <GameLinkHeader _gameHrefStr="cardGames"
+                            _imgGameStr="./img/CardGames/baccarat_2.png"
+                            _typeGameStr="Cards" />
+
+            <GameLinkHeader _gameHrefStr="fishingAndArcadeGames"
+                            _imgGameStr="./img/fishing/HappyFishing_2.png"
+                            _typeGameStr="Fishing" />
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="text-white fw-bold">Enjoyable and Dynamic games!</h2>
+        <h5 class="text-muted">Begin rotating for your chance to win big!</h5>
+        <div class="pb-4 gameOverflow-x">
+            <div class="row justify-content-center">
+                <ArcadeTile _imgStr="./img/Arcade/Mines.png"
+                            _titleStr="Mines" />
+
+                <ArcadeTile _imgStr="./img/Arcade/GoRush.png"
+                            _titleStr="Go Rush" />
+
+                <ArcadeTile _imgStr="./img/Arcade/Limbo.png"
+                            _titleStr="Limbo" />
+
+                <ArcadeTile _imgStr="./img/Arcade/Tower.png"
+                            _titleStr="Tower" />
+
+                <ArcadeTile _imgStr="./img/Arcade/CrazyPusher.png"
+                            _titleStr="Crazy Pusher" />
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="text-white fw-bold mt-5">Exciting Table Games!</h2>
+        <h5 class="text-muted">Bet now while the table's hot!</h5>
+        <div class="pb-4 gameOverflow-x">
+            <div class="row justify-content-center">
+                <CardTile _imgStr="./img/CardGames/BlackJack.png"
+                          _titleStr="Black Jack" />
+
+                <CardTile _imgStr="./img/CardGames/callBreak.png"
+                          _titleStr="Callbreak Quick" />
+
+                <CardTile _imgStr="./img/CardGames/MiniFlush.png"
+                          _titleStr="Mini Flush" />
+
+                <CardTile _imgStr="./img/CardGames/baccarat.png"
+                          _titleStr="Baccarat" />
+
+                <CardTile _imgStr="./img/CardGames/SicBo.png"
+                          _titleStr="Sic Bo" />
+
+                <CardTile _imgStr="./img/CardGames/NumberKing.png"
+                          _titleStr="Number King" />
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2 class="text-white fw-bold mt-5">Live and Exciting Games!</h2>
+        <h5 class="text-muted">Real-Time Fun: Dive into Live Gaming Today!</h5>
+        <div class="pb-4 gameOverflow-x">
+            <div class="row justify-content-center">
+                <GPATile _imgStr="./img/GPAGames/BW.png"
+                         _idStr="bigWin"
+                         _titleStr="Big Win" />
+
+                <GPATile _imgStr="./img/GPAGames/G12.png"
+                         _idStr="go12"
+                         _titleStr="Go 12" />
+
+                <GPATile _imgStr="./img/GPAGames/new-dice.png"
+                         _idStr="diceGame"
+                         _titleStr="Dice" />
+
+                <GPATile _imgStr="./img/GPAGames/hooray.png"
+                         _idStr="hooray"
+                         _titleStr="Hooray!" />
+
+                <GPATile _imgStr="./img/GPAGames/L9.png"
+                         _idStr="lucky9"
+                         _titleStr="Lucky 9" />
+
+                <GPATile _imgStr="./img/GPAGames/L4.png"
+                         _idStr="lucky4"
+                         _titleStr="Lucky 4" />
+
+                <GPATile _imgStr="./img/GPAGames/F3.png"
+                         _idStr="first3"
+                         _titleStr="First 3" />
+
+                <GPATile _imgStr="./img/GPAGames/HT.png"
+                         _idStr="headsAndTails"
+                         _titleStr="Heads and Tails" />
+
+            </div>
+        </div>
+    </div>
+
+</div>

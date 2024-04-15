@@ -1,0 +1,33 @@
+﻿<div class="col-md-5 text-white">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <img src="@_imgStr" alt="" class="img-fluid img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-5 text-center text-white mt-3">
+    <h2 class="fw-bold"><span>@_titleStr</span></h2>
+    <div class="container-fluid p-0">
+        <p>@_contentStr</p>
+        <p class="h5 mb-4">@_content2Str</p>
+        <a href="@_hreTutorialBtnStr" class="btn btn-secondary">Watch Tutorial</a>
+        <a href="@_hrefPlayBtnStr" class="btn btn-warning">Play Now</a>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string _imgStr { get; set; }
+    [Parameter]
+    public string _titleStr { get; set; }
+    [Parameter]
+    public string _contentStr { get; set; }
+    [Parameter]
+    public string _content2Str { get; set; }
+    [Parameter]
+    public string _hreTutorialBtnStr { get; set; }
+    [Parameter]
+    public string _hrefPlayBtnStr { get; set; }
+}

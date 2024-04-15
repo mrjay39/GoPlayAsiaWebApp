@@ -1,0 +1,6 @@
+﻿#gameOverviewModal div.modal-body > div.hide {
+    display: none;
+}
+#gameOverviewModal div.modal-body > div.show{
+    display: inline-flex;
+}

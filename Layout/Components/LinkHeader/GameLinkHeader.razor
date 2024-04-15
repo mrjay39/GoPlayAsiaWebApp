@@ -1,0 +1,19 @@
+﻿<div id="linkHeader" class="col p-0">
+    <a href="@_gameHrefStr" class="text-black" style="width: 12rem;">
+        <div class="bg-warning text-center p-1 m-1 rounded-3 @_activeClassStr">
+            <img src="@_imgGameStr" class="img-fluid w-100 mb-1" alt="GoPlayAsia">
+            <h6 class="text-uppercase fw-bold">@_typeGameStr</h6>
+        </div>
+    </a>
+</div>
+
+@code {
+    [Parameter]
+    public string _gameHrefStr { get; set; }
+    [Parameter]
+    public string _imgGameStr { get; set; }
+    [Parameter]
+    public string _typeGameStr { get; set; }
+    [Parameter]
+    public string _activeClassStr { get; set; }
+}

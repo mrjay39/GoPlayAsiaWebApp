@@ -1,0 +1,29 @@
+﻿.text-gray {
+    color: #4f4f4f;
+}
+#gameOverviewModal div.modal-body > div {
+    display: none !important;
+}
+
+
+
+@media screen and (max-width: 460px) {
+    .animate-bottom {
+        max-height: 300px;
+        top: 60%;
+        margin-bottom: 25px;
+        animation: animatebottom 0.4s;
+    }
+
+    @keyframes animatebottom {
+        from {
+            bottom: -300px;
+            opacity: 0;
+        }
+
+        to {
+            bottom: 0;
+            opacity: 1;
+        }
+    }
+}

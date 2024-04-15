@@ -1,0 +1,141 @@
+﻿div.text-ellipsis {
+    width: 95%;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.game-tile {
+    width: 17rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border-width: 10px;
+}
+
+    .game-tile .bg-img > img {
+        border-radius: 0;
+    }
+
+.info {
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.card:hover > .info, .card > .info.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media screen and (max-width: 460px) {
+    .game-tile {
+        width: 9rem;
+    }
+    .game-tile h3 {
+        font-size: 15px;
+    }
+    .arrow {
+        top: 48% !important;
+    }
+}
+@media screen and (max-width: 414px) {
+    .game-tile {
+        width: 9rem;
+    }
+    .game-tile h3 {
+        font-size: 15px;
+    }
+    .arrow {
+        top: 48% !important;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .game-tile {
+        width: 8rem;
+        margin: 8px !important;
+    }
+    .game-tile .btn {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .game-tile h3 {
+        font-size: 15px;
+    }
+    .arrow {
+        top: 48% !important;
+    }
+}
+
+/*================ Start: Button PLay Animation ==================*/
+a.play-btn {
+    position: relative;
+    width: 115px;
+}
+
+a.play-btn > span {
+    margin-left: -10px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    cursor: pointer;
+}
+
+    .arrow span {
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-bottom: 5px solid white;
+        border-right: 5px solid white;
+        transform: rotate(45deg);
+        margin: -10px;
+        animation: animate 2s infinite;
+    }
+
+    .arrow span:nth-child(2) {
+        animation-delay: -0.2s;
+    }
+
+    .arrow span:nth-child(3) {
+        animation-delay: -0.4s;
+    }
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+/*================ End: Button PLay Animation ==================*/

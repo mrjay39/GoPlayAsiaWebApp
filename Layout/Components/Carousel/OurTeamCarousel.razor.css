@@ -1,0 +1,84 @@
+﻿@media only screen and (min-width: 600px) {
+    #goPlayAsia-carousel .img-fluid {
+        width: 390px;
+    }
+
+    #goPlayAsia-carousel .carousel-indicators {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .header-text {
+        font-size: 55px;
+    }
+
+    #goPlayAsia-carousel, #goPlayAsia-carousel .carousel-item {
+        min-height: 310px;
+        padding-bottom: 60px;
+    }
+
+    #goPlayAsia-carousel .img-mobile {
+        width: 210px;
+        top: 70px;
+        position: relative;
+    }
+
+    #goPlayAsia-carousel .content-mobile {
+        width: 200px;
+        top: -16px;
+        font-size: 14px;
+        margin-left: -20px;
+    }
+
+    #goPlayAsia-carousel h1 {
+        font-size: 19px;
+        font-weight: bold;
+    }
+
+    #goPlayAsia-carousel .carousel-indicators {
+        display: none;
+    }
+
+    #goPlayAsia-carousel .btn-mobile {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header-text {
+        font-size: 55px;
+    }
+
+    #goPlayAsia-carousel, #goPlayAsia-carousel .carousel-item {
+        min-height: 310px;
+        padding-bottom: 60px;
+    }
+
+    #goPlayAsia-carousel .img-mobile {
+        width: 210px;
+        top: 70px;
+        position: relative;
+        z-index: 999;
+    }
+
+    #goPlayAsia-carousel .content-mobile {
+        width: 200px;
+        top: -16px;
+        font-size: 14px;
+        margin-left: -20px;
+    }
+
+    #goPlayAsia-carousel h1 {
+        font-size: 19px;
+        font-weight: bold;
+    }
+
+    #goPlayAsia-carousel .carousel-indicators {
+        display: none;
+    }
+
+    #goPlayAsia-carousel .btn-mobile {
+        font-size: 16px;
+    }
+}

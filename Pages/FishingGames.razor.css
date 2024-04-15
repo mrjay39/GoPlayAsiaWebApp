@@ -1,0 +1,42 @@
+﻿.marketing {
+    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#000 100%) !important;
+    background-repeat: repeat;
+}
+
+.footer {
+    background: #101019;
+}
+@media screen and (max-width: 460px) {
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
+}
+@media screen and (max-width: 414px) {
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
+}

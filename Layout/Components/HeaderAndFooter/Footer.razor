@@ -1,0 +1,108 @@
+﻿<div class="container pt-3 footer">
+    <GameRegulation />
+    <footer class="py-2">
+        <div class="row justify-content-center">
+            <div id="GPAFooter" class="card px-2 bg-transparent">
+                <h5>GoPlayAsia Games</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Lucky 9</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Lucky 4</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Heads & Tails </a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Go12</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Big Win</a></li>
+                </ul>
+            </div>
+
+            <div id="featuredGamesFooter" class="card px-2 bg-transparent">
+                <h5>Featured Games</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Poker</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sabong</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Slots</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sports</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Baccarat</a></li>
+                </ul>
+            </div>
+            
+            <div id="exploreFooter" class="card px-2 bg-transparent">
+                <h5>Explore</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a onclick="scrollToTop(event)" href="home" class="nav-link p-0 text-muted">Home</a></li>
+                    <li class="nav-item mb-2"><a onclick="scrollToTop(event)" href="aboutUs" class="nav-link p-0 text-muted">Who We Are</a></li>
+                    <li class="nav-item mb-2"><a onclick="scrollToTop(event)" href="ourTeam" class="nav-link p-0 text-muted">Our Team</a></li>
+                    <li class="nav-item mb-2"><a onclick="scrollToTop(event)" href="FAQ's" class="nav-link p-0 text-muted">FAQ's & Downloads</a></li>
+                    <li class="nav-item mb-2"><a onclick="scrollToTop(event)" href="contactUs" class="nav-link p-0 text-muted">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div id="legalFooter" class="card px-2 bg-transparent">
+                <h5>Legal</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a onclick="scrollToTop()" href="PrivacyPolicy" class="nav-link p-0 text-muted">Privacy Policy</a></li>
+                    <li class="nav-item mb-2"><a href="https://goplayasia.com/wp-content/uploads/2022/11/Terms-and-Condition-1.5.pdf" class="nav-link p-0 text-muted">Terms and Conditions</a></li>
+                </ul>
+                <img src="./img/pagcor-logo.png" class="img-fluid img-fluid w-25" />
+            </div>
+            @* <div class="card px-2 bg-transparent" style="width: 13.5rem;">
+                <h5>Help</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact Us</a></li>
+                    <li class="nav-item mb-2"><a href="FAQ's" class="nav-link p-0 text-muted">FAQs & Downloads</a></li>
+                </ul>
+            </div> *@
+            
+            <div id="socialMediaFooter" class="card px-2 bg-transparent">
+                <h5>Social Media</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2 d-flex">
+                        <a href="https://www.facebook.com/GoPlayAsiaOFFICIAL" class="nav-link p-0 fw-bold w-25 h3 mb-0 text-primary" title="Follow Us on Facebook"><i class="fa-brands fa-square-facebook"></i> &nbsp;</a>
+                        <a href="https://www.youtube.com/goplayasiaofficial1292" class="nav-link p-0 fw-bold w-25 h3 mb-0 text-danger" title="Follow Us on Youtube"><i class="fa-brands fa-youtube"></i> &nbsp;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center py-4 my-4 border-top allRightReserved">
+            <p> © 2023 All rights reserved. Official Website of GoPlayAsia</p>
+        </div>
+    </footer>
+</div>
+
+<!-- Chat Icon -->
+<div class="chat-icon" onclick="toggleChat()">
+    <img src="./img/chat-icon-2.gif" class="img-fluid w-100" alt="Chat Icon">
+</div>
+
+<!-- Chat Form -->
+<div class="chat-popup" id="chatPopup">
+    <div class="chat-header">
+        <span class="chat-close" onclick="toggleChat()">&times;</span>
+        <h2>Chat Support</h2>
+    </div>
+    <div class="chat-content">
+        <!-- Your chat form content goes here -->
+        <p>Welcome to our chat support! How can we assist you today?</p>
+    </div>
+</div>
+<script>
+    function scrollToTop(event) {
+        event.preventDefault();
+        var href = event.target.getAttribute('href');
+        if (href) {
+            window.location.href = href;
+            var scrollStep = -window.scrollY / (1000 / 15),
+                scrollInterval = setInterval(function () {
+                    if (window.scrollY != 0) {
+                        window.scrollBy(0, scrollStep);
+                    } else {
+                        clearInterval(scrollInterval);
+                    }
+                }, 15);
+        }
+    }
+
+    function toggleChat() {
+        var chatPopup = document.getElementById('chatPopup');
+        chatPopup.style.display = (chatPopup.style.display === 'none' || chatPopup.style.display === '') ? 'block' : 'none';
+    }
+</script>

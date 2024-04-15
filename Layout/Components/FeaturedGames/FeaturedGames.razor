@@ -1,0 +1,30 @@
+﻿<div class="card m-2 p-0 mb-5" style="width: 18rem;">
+    <a class="text-decoration-none" href="@_hrefStr">
+        <div class="container-fluid p-0 bg-GPA">
+            <img src="@_imgStr" class="card-img-top featGames-bg @_imgClassName">
+        </div>
+        <div class="card-body pt-0 bg-black">
+            <div class="content text-center">
+                <h5 class="card-title text-start fw-bold text-warning">@_titleStr</h5>
+                <p class="card-text text-start">@_contentStr</p>
+                <a onclick="scrollToTop(event)" href="@_hrefStr" class="btn btn-warning">@_hrefContentStr</a>
+            </div>
+    </div>
+    </a>
+</div>
+
+@code{
+    [Parameter]
+    public string _imgStr {get; set;}
+    [Parameter]
+    public string _imgClassName { get; set; }
+    [Parameter]
+    public string _titleStr { get; set; }
+    [Parameter]
+    public string _contentStr { get; set; }
+    [Parameter]
+    public string _hrefStr { get; set; }
+    [Parameter]
+    public string _hrefContentStr { get; set; }
+    
+}

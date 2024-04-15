@@ -1,0 +1,89 @@
+﻿footer {
+    color: #b2b2b2;
+}
+ul.nav > li.nav-item a.text-muted:hover {
+    color: goldenrod !important;
+}
+.allRightReserved {
+    margin-bottom: 50px !important;
+}
+
+#GPAFooter, #socialMediaFooter, #legalFooter, #exploreFooter, #featuredGamesFooter {
+    width: 13.5rem;
+}
+
+/*================== Start: Chat Support Icon Properties ======================*/
+.chat-icon {
+    position: fixed;
+    bottom: 125px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 999;
+    border-radius: 15%;
+    background: transparent;
+    width: 8%;
+}
+
+.chat-icon img {
+    width: 50px;
+}
+
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    max-width: 300px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.chat-header {
+    padding: 10px;
+    background-color: #ffca2c;
+    color: white;
+    text-align: center;
+}
+
+.chat-close {
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.chat-content {
+    padding: 10px;
+}
+@media only screen and (min-width: 600px) {
+
+}
+@media screen and (max-width: 460px) {
+    #GPAFooter, #socialMediaFooter, #legalFooter, #exploreFooter, #featuredGamesFooter {
+        width: 12.5rem;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .chat-icon {
+        right: 0px;
+        background: transparent;
+        width: 22%;
+    }
+    #GPAFooter, #socialMediaFooter, #legalFooter, #exploreFooter, #featuredGamesFooter {
+        width: 12rem;
+    }
+}
+@media screen and (max-width: 320px) {
+    .chat-icon {
+        right: 0px;
+        background: transparent;
+        width: 25%;
+    }
+    #GPAFooter, #socialMediaFooter, #legalFooter, #exploreFooter, #featuredGamesFooter {
+        width: 9.2rem;
+    }
+}

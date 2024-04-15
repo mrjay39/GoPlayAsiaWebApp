@@ -1,0 +1,41 @@
+﻿<div class="carousel-item @_classNameStr">
+    <div class="text-end carousel-fade"><img src="@_imgStr" class="img-fluid img-mobile" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" /></div>
+    <div class="container">
+        <div class="carousel-caption carousel-fade text-start content-mobile">
+            <h1>@_gameNameStr</h1>
+            <p>
+                <span style="color: #ffff00;" class="fw-bold">@_headerStr</span><br>
+                <span>@_contentStr1</span><br>
+                <span>@_contentStr2</span><br>
+                <span>@_contentStr3</span>
+            </p>
+            <p>
+                @* <a class="btn btn-lg btn-warning btn-mobile" href="#">Play Now</a> *@
+                <button class="btn btn-warning play-btn">
+                    <span class="fw-bold">Play Now</span>
+                    <div class="arrow">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </p>
+        </div>
+    </div>
+</div>
+@code{
+    [Parameter]
+    public string _imgStr {get; set;}
+    [Parameter]
+    public string _classNameStr {get; set;}
+    [Parameter]
+    public string _gameNameStr {get; set;}
+    [Parameter]
+    public string _headerStr {get; set;}
+    [Parameter]
+    public string _contentStr1 {get; set;}
+    [Parameter]
+    public string _contentStr2 {get; set;}
+    [Parameter]
+    public string _contentStr3 {get; set;}
+}

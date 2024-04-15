@@ -1,0 +1,76 @@
+﻿body {
+    font-family: Open Sans,Oswald,Arial,sans-serif !important;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7em;
+    font-weight: 500;
+}
+
+.marketing {
+    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#101019 100%) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+ul.messages-list > li {
+    list-style: none;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+ul.messages-list > li.unread{
+    font-weight: bold;
+}
+ul.messages-list > li a{
+    color: #5b5b5b;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:focus .description {
+    display: block;
+    opacity: 1;
+    margin: 10px 0;
+}
+a .description {
+    display: none;
+    color: #1d1d1d;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+.from{
+    margin-left: 10px;
+}
+.date {
+    text-align: right !important;
+    float: right;
+}
+.title {
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ==================== Search ========================= */
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: -40px !important;
+    z-index: 10;
+}
+
+@media screen and (max-width: 320px) {
+    .delAndCancel{
+        font-size: 13px;
+    }
+}

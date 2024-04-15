@@ -1,0 +1,60 @@
+﻿@page "/contactUs"
+<PageTitle>GoPlayAsia: Contact Us </PageTitle>
+
+<div class="container-fluid p-0 justify-content-center text-center align-items-center">
+    <div class="header-img">
+        <div class="wave"></div>
+        <h1 class="px-4 text-white fw-bolder text-center header-text">Contact Us</h1>
+    </div>
+</div>
+<div id="contactUs" class="container-fluid p-0 marketing">
+    <div class="container py-5 justify-content-center">
+        <div class="row py-5 justify-content-center">
+            <div class="col-md-5 text-white">
+                <div class="row">
+                    <div class="container">
+                        <h4 class="mb-3">
+                            <span class="text-warning">Message us!</span>
+                            We’d love to hear from You!
+                        </h4>
+                        <form class="row g-3 needs-validation" validate>
+                            <div class="col mb-2">
+                                <input id="firstName" type="text" class="form-control" value="" required placeholder="Full Name" aria-label="Full Name">
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                            <div class="col mb-2">
+                                <input id="email" type="email" class="form-control" placeholder="Email Address" required aria-label="Email Address">
+                            </div>
+                            <div class="mb-3">
+                                <textarea id="GPATextArea" class="form-control" rows="3" placeholder="Message" required></textarea>
+                            </div>
+                            <div class="col-12 text-end">
+                                <button class="btn btn-warning send-btn" type="submit">
+                                    <span class="text-uppercase fw-bold">Submit</span>
+                                    <div class="arrow">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </button>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 text-center text-white">
+                <img src="./img/chat-icon.png" class="img-fluid w-25" alt="contactUs">
+                <h2 class="fw-bold"><span>For Questions or Inquiries</span></h2>
+                <div class="container-fluid p-0">
+                    <h4>Customer Service Hotlines:</h4>
+                    <h5 class="fw-bold text-warning">+63 917 837 5377</h5>
+                    <h5 class="fw-bold text-warning">+63 985 458 4882</h5>
+                    <h5 class="fw-bold text-warning">+63 956 663 2609</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
