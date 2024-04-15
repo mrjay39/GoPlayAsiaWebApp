@@ -14,7 +14,7 @@
     width: 17rem;
     cursor: pointer;
     border-radius: 10px;
-    border-width: 10px;
+    border-width: 5px;
 }
 
     .game-tile .bg-img > img {

@@ -2,7 +2,9 @@
 @page "/home"
 @using GoPlayAsiaWebApp.Layout.Components.Carousel
 @using GoPlayAsiaWebApp.Layout.Components.FeaturedGames
+@using GoPlayAsiaWebApp.Layout.Components.LinkHeader
 @using GoPlayAsiaWebApp.Layout.Components.MostPlayedGames
+@using GoPlayAsiaWebApp.Layout.Games.GPAGames
 @using GoPlayAsiaWebApp.Layout.Components.WelcomGPA
 
 <PageTitle>GoPlayAsia: Home</PageTitle>
@@ -10,7 +12,30 @@
 <Carousel />
 
 <div class="container-fluid marketing">
+    
     <div class="container">
+        <div class="row justify-content-center py-4 pt-5">
+            <GameLinkHeader _gameHrefStr="GoPlayAsiaGames"
+                            _activeClassStr="active"
+                            _imgGameStr="./img/GPAGames/liveGames.png"
+                            _typeGameStr="Live" />
+
+            <GameLinkHeader _gameHrefStr="arcadeGames"
+                            _imgGameStr="./img/Arcade/GoRush_2.png"
+                            _typeGameStr="Arcade" />
+
+            <GameLinkHeader _gameHrefStr="slotGames"
+                            _imgGameStr="./img/SlotGames/SuperAce_2.png"
+                            _typeGameStr="Slots" />
+
+            <GameLinkHeader _gameHrefStr="cardGames"
+                            _imgGameStr="./img/CardGames/baccarat_2.png"
+                            _typeGameStr="Cards" />
+
+            <GameLinkHeader _gameHrefStr="fishingAndArcadeGames"
+                            _imgGameStr="./img/fishing/HappyFishing_2.png"
+                            _typeGameStr="Fishing" />
+        </div>
         <MostPlayedGames />
 
         <h4 class="text-white fw-bold pt-4">Featured Games</h4>
