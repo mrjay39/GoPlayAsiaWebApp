@@ -36,27 +36,27 @@
 }
 
 .casino {
-    top: -51px;
-    left: 23px;
-    width: 225px;
+    top: -9px;
+    left: 16px;
+    width: 200px;
 }
 
 .lottery {
-    top: -44px;
-    left: -23px;
-    width: 310px;
+    top: 3px;
+    left: -17px;
+    width: 256px;
 }
 
 .arcade {
-    top: -35px;
-    left: -14px;
-    width: 295px;
+    top: -1px;
+    left: -21px;
+    width: 264px;
 }
 
 .GPA {
-    top: -50px;
-    left: 14px;
-    width: 255px;
+    top: -14px;
+    left: 6px;
+    width: 225px;
 }
 .card-text {
     color: #676767;

@@ -66,6 +66,7 @@
 @media only screen and (min-width: 992px) {
     .gameOverflow-x {
         overflow-x: auto;
+        padding-bottom: 0!important;
     }
 
     .gameOverflow-x > div {
