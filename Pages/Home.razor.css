@@ -63,6 +63,17 @@
     padding: 10px;
 }
 /*================== Start: Thumbnail change into one line ==============*/
+@media only screen and (min-width: 992px) {
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
+}
 @media screen and (max-width: 460px) {
     .gameOverflow-x {
         overflow-x: auto;

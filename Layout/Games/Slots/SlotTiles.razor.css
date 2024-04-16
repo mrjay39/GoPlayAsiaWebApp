@@ -11,7 +11,7 @@
 }
 
 .game-tile {
-    width: 17rem;
+    width: 12rem;
     cursor: pointer;
     border-radius: 10px;
     border-width: 5px;
