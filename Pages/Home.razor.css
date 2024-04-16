@@ -62,3 +62,39 @@
 .chat-content {
     padding: 10px;
 }
+/*================== Start: Thumbnail change into one line ==============*/
+@media screen and (max-width: 460px) {
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
+}
