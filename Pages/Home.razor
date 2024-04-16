@@ -19,7 +19,52 @@
     <div class="container">
         <MostPlayedGames />
 
+        <div class="container">
+            <h2 class="text-white fw-bold mt-5">Featured Games</h2>
+            <h5 class="text-muted">Spotlight on Gaming's Finest Selections</h5>
+            <div class="pb-4 gameOverflow-x">
+                <div class="row justify-content-center">
+                    <FeaturedGames _imgStr="./img/featuredGames/GPA.png"
+                                   _imgClassName="GPA"
+                                   _titleStr="GOPLAYASIA"
+                                   _contentStr="Dive into fun and winning with our culturally significant remote games."
+                                   _hrefStr="GoPlayAsiaGames"
+                                   _hrefContentStr="Join the fun!" />
+
+                    @* <FeaturedGames _imgStr="./img/featuredGames/LJ-2.png"
+                    _imgClassName="basketBall"
+                    _titleStr="ESPORTS"
+                    _contentStr="Unleash your passion at the ultimate gaming hub."
+                    _hrefStr=""
+                    _hrefContentStr="Enter the game!" /> *@
+
+                    <FeaturedGames _imgStr="./img/featuredGames/arcade-2.png"
+                                   _imgClassName="arcade"
+                                   _titleStr="Fishing / Arcade"
+                                   _contentStr="Impressive visuals, captivating gameplay, and unbeatable fun."
+                                   _hrefStr="fishingAndArcadeGames"
+                                   _hrefContentStr="Enter the game!" />
+
+                    <FeaturedGames _imgStr="./img/featuredGames/dealer.png"
+                                   _imgClassName="casino"
+                                   _titleStr="Table and Cards"
+                                   _contentStr="Discover exclusive gaming thrills with our premium selection."
+                                   _hrefStr="cardGames"
+                                   _hrefContentStr="Take your turn!" />
+
+                    <FeaturedGames _imgStr="./img/featuredGames/winner.png"
+                                   _imgClassName="lottery"
+                                   _titleStr="SLOTS"
+                                   _contentStr="Seize the moment and let your lottery dreams unfold."
+                                   _hrefStr="slotGames"
+                                   _hrefContentStr="Get your ticket now!" />
+                </div>
+            </div>
+        </div>
+
         <div class="row justify-content-center p-0">
+            <h2 class="text-white fw-bold mt-5">Game Categories</h2>
+            <h5 class="text-muted"> Navigating the World of Gaming Genres</h5>
             <GameLinkHeader _gameHrefStr="GoPlayAsiaGames"
                             _activeClassStr="active"
                             _imgGameStr="./img/GPAGames/liveGames.png"
@@ -299,44 +344,6 @@
                                _titleStr="Bubble Beauty" />
                 </div>
             </div>
-        </div>
-
-        <h4 class="text-white fw-bold pt-4">Featured Games</h4>
-        <div class="row pb-5 pt-5 justify-content-center">
-            <FeaturedGames _imgStr="./img/featuredGames/GPA.png"
-                            _imgClassName="GPA"
-                            _titleStr="GOPLAYASIA"
-                            _contentStr="Dive into fun and winning with our culturally significant remote games."
-                            _hrefStr="GoPlayAsiaGames"
-                            _hrefContentStr="Join the fun!" />
-
-            @* <FeaturedGames _imgStr="./img/featuredGames/LJ-2.png"
-            _imgClassName="basketBall"
-            _titleStr="ESPORTS"
-            _contentStr="Unleash your passion at the ultimate gaming hub."
-            _hrefStr=""
-            _hrefContentStr="Enter the game!" /> *@
-
-            <FeaturedGames _imgStr="./img/featuredGames/arcade-2.png"
-                            _imgClassName="arcade"
-                            _titleStr="Fishing / Arcade"
-                            _contentStr="Impressive visuals, captivating gameplay, and unbeatable fun."
-                            _hrefStr="fishingAndArcadeGames"
-                            _hrefContentStr="Enter the game!" />
-
-            <FeaturedGames _imgStr="./img/featuredGames/dealer.png"
-                            _imgClassName="casino"
-                            _titleStr="Table and Cards"
-                            _contentStr="Discover exclusive gaming thrills with our premium selection."
-                            _hrefStr="cardGames"
-                            _hrefContentStr="Take your turn!" />
-
-            <FeaturedGames _imgStr="./img/featuredGames/winner.png"
-                            _imgClassName="lottery"
-                            _titleStr="SLOTS"
-                            _contentStr="Seize the moment and let your lottery dreams unfold."
-                            _hrefStr="slotGames"
-                            _hrefContentStr="Get your ticket now!" />
         </div>
 
         <WelcomeGPA />
