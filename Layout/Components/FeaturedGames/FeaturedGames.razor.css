@@ -94,3 +94,17 @@
         transform: scale(1, 1);
     }
 }
+
+@media only screen and (min-width: 992px) {
+    .gameOverflow-x {
+        overflow-x: inherit;
+        padding-bottom: 0 !important;
+        scrollbar-width: thin;
+    }
+
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
+}
