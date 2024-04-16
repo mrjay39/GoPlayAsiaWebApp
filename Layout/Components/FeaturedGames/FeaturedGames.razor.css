@@ -94,18 +94,3 @@
         transform: scale(1, 1);
     }
 }
-
-/*.card .btn {
-    width: auto;
-    margin: 20px;
-    float: left;
-    border: 0px;
-    box-shadow: 0 0 1px #ccc;
-    -webkit-transform-origin: 50% 50%;
-    -webkit-transition-duration: 0.5s;
-    -webkit-transition-timing-function: ease-out;
-    -webkit-box-shadow: 50px 0px 0 0 lightseagreen inset, -50px 0px 0 lightseagreen inset;
-}
-.card .btn:hover {
-    -webkit-box-shadow: 0px 0px 0 0 lightseagreen inset, 0px 0px 0 lightseagreen inset;
-}*/

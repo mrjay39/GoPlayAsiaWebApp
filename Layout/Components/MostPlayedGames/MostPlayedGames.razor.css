@@ -180,8 +180,22 @@ button.play-btn > span {
 }
 /*================ End: Button PLay Animation ==================*/
 
+/*============== GPA Games Overflow-Horizontal Properties for Mobile =====================*/
+
+@media screen and (max-width: 460px) {
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+        .gameOverflow-x > div {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            justify-content: inherit !important;
+        }
+}
+
 @media screen and (max-width: 414px) {
-    /*============== GPA Games Overflow-Horizontal Properties for Mobile =====================*/
+    
     #gamesContainer.mb-overflow {
         max-height: 160px;
         white-space: nowrap;
@@ -193,6 +207,17 @@ button.play-btn > span {
     #gamesContainer.mb-overflow > div {
         width: 13rem !important;
         display: inline-block;
+    }
+
+
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
     }
 
     .card {
@@ -252,7 +277,6 @@ button.play-btn > span {
 }
 
 @media screen and (max-width: 320px) {
-    /*============== GPA Games Overflow-Horizontal Properties for Mobile =====================*/
     #gamesContainer.mb-overflow {
         max-height: 160px;
         white-space: nowrap;
@@ -264,6 +288,16 @@ button.play-btn > span {
     #gamesContainer.mb-overflow > div {
         width: 13rem !important;
         display: inline-block;
+    }
+
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
     }
 
     .card {
@@ -281,7 +315,6 @@ button.play-btn > span {
     div.mb-show {
         padding-top: 10px;
     }
-    /*============== GPA Games HideContent Properties for Mobile =====================*/
     .hideContent {
         min-height: 160px;
     }
@@ -321,3 +354,4 @@ button.play-btn > span {
         top: 0 !important;
     }
 }
+/*============== End: GPA Games Overflow-Horizontal Properties for Mobile =====================*/
