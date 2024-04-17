@@ -6,6 +6,13 @@
 .footer {
     background: #101019;
 }
+
+
+@media only screen and (min-width: 992px) {
+    #link-header.gameOverflow-x {
+        overflow-x: inherit !important;
+    }
+}
 @media screen and (max-width: 460px) {
     .gameOverflow-x {
         overflow-x: auto;

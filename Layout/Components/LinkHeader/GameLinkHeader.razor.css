@@ -3,11 +3,21 @@
     width: 10rem;
     margin: 10px;
 }
+
 .active {
     border-bottom: 6px solid white;
 }
 
+@media only screen and (min-width: 992px) {
+    .link-header {
+        width: 13rem;
+    }
+}
+
 @media screen and (max-width: 460px) {
+    .link-header {
+        width: 9rem;
+    }
     h6{
         font-size: 11px;
     }
@@ -17,6 +27,9 @@
     }
 }
 @media screen and (max-width: 414px) {
+    .link-header {
+        width: 9rem;
+    }
     h6{
         font-size: 11px;
     }
@@ -27,6 +40,9 @@
 }
 
 @media screen and (max-width: 320px) {
+    .link-header {
+        width: 9rem;
+    }
     h6 {
         font-size: 11px;
     }
