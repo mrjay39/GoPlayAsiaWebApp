@@ -3,6 +3,7 @@
 @using GoPlayAsiaWebApp.Layout.Games.Arcade
 @using GoPlayAsiaWebApp.Layout.Games.Cards
 @using GoPlayAsiaWebApp.Layout.Games.GPAGames
+@using GoPlayAsiaWebApp.Layout.Games.LiveCasino
 <PageTitle>GoPlayAsia: Arcade Games </PageTitle>
 
 <div id="cardGames" class="container-fluid p-0 marketing">
@@ -59,6 +60,47 @@
     </div>
 
     <div class="container">
+        <h2 class="text-white fw-bold mt-5">Live and Exciting Games!</h2>
+        <h5 class="text-muted">Real-Time Fun: Dive into Live Gaming Today!</h5>
+        <div class="pb-4 gameOverflow-x">
+            <div class="row justify-content-center">
+                <GPATile _imgStr="./img/GPAGames/BW.png"
+                         _idStr="bigWin"
+                         _titleStr="Big Win" />
+
+                <GPATile _imgStr="./img/GPAGames/G12.png"
+                         _idStr="go12"
+                         _titleStr="Go 12" />
+
+                @* <GPATile _imgStr="./img/GPAGames/new-dice.png"
+                _idStr="diceGame"
+                _titleStr="Dice" /> *@
+
+                @* <GPATile _imgStr="./img/GPAGames/hooray.png"
+                _idStr="hooray"
+                _titleStr="Hooray!" /> *@
+
+                <GPATile _imgStr="./img/GPAGames/L9.png"
+                         _idStr="lucky9"
+                         _titleStr="Lucky 9" />
+
+                <GPATile _imgStr="./img/GPAGames/L4.png"
+                         _idStr="lucky4"
+                         _titleStr="Lucky 4" />
+
+                <GPATile _imgStr="./img/GPAGames/F3.png"
+                         _idStr="first3"
+                         _titleStr="First 3" />
+
+                <GPATile _imgStr="./img/GPAGames/HT.png"
+                         _idStr="headsAndTails"
+                         _titleStr="Heads and Tails" />
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
         <h2 class="text-white fw-bold mt-5">Exciting Table Games!</h2>
         <h5 class="text-muted">Bet now while the table's hot!</h5>
         <div class="pb-4 gameOverflow-x">
@@ -84,46 +126,51 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container">
-        <h2 class="text-white fw-bold mt-5">Live and Exciting Games!</h2>
-        <h5 class="text-muted">Real-Time Fun: Dive into Live Gaming Today!</h5>
-        <div class="pb-4 gameOverflow-x">
-            <div class="row justify-content-center">
-                <GPATile _imgStr="./img/GPAGames/BW.png"
-                         _idStr="bigWin"
-                         _titleStr="Big Win" />
+            <h2 class="text-white fw-bold mt-5">Live Casino</h2>
+            <h5 class="text-muted">Your Seat Awaits: Dive into Live Casino Bliss</h5>
+            <div class="pb-4 gameOverflow-x">
+                <div class="row justify-content-center p-2">
+                    <LiveCasinoTile _imgStr="./img/LiveGames/baccarat_a.png"
+                              _titleStr="Baccarat A" />
+                              
+                    <LiveCasinoTile _imgStr="./img/LiveGames/teenPatti.png"
+                              _titleStr="Teen Patti" />
+                              
+                    <LiveCasinoTile _imgStr="./img/LiveGames/blackJack.png"
+                              _titleStr="Black Jack" />
+                              
+                    <LiveCasinoTile _imgStr="./img/LiveGames/BlackjackdaSorte.png"
+                                    _titleStr="Blackjack da Sorte" />
+                              
+                    <LiveCasinoTile _imgStr="./img/LiveGames/32Cards.png"
+                              _titleStr="32 Cards" />
+                              
+                    <LiveCasinoTile _imgStr="./img/LiveGames/casinoHoldEm.png"
+                                    _titleStr="Casino Hold'em" />
+                              
+                    <LiveCasinoTile _imgStr="./img/LiveGames/speedRoulette.png"
+                                _titleStr="Speed Roulette" />
+                                
+                    <LiveCasinoTile _imgStr="./img/LiveGames/cricketRoulette.png"
+                                    _titleStr="Cricket Roulette" />
+                                
+                    <LiveCasinoTile _imgStr="./img/LiveGames/threeCardPoker.png"
+                                    _titleStr="Three Card Poker" />
+                                    
+                    <LiveCasinoTile _imgStr="./img/LiveGames/andarBahar.png"
+                                    _titleStr="Andar Bahar" />
+                                    
+                    <LiveCasinoTile _imgStr="./img/LiveGames/betOnNumbers.png"
+                                    _titleStr="Bet on Numbers" />
 
-                <GPATile _imgStr="./img/GPAGames/G12.png"
-                         _idStr="go12"
-                         _titleStr="Go 12" />
-
-                @* <GPATile _imgStr="./img/GPAGames/new-dice.png"
-                         _idStr="diceGame"
-                         _titleStr="Dice" /> *@
-
-                @* <GPATile _imgStr="./img/GPAGames/hooray.png"
-                         _idStr="hooray"
-                         _titleStr="Hooray!" /> *@
-
-                <GPATile _imgStr="./img/GPAGames/L9.png"
-                         _idStr="lucky9"
-                         _titleStr="Lucky 9" />
-
-                <GPATile _imgStr="./img/GPAGames/L4.png"
-                         _idStr="lucky4"
-                         _titleStr="Lucky 4" />
-
-                <GPATile _imgStr="./img/GPAGames/F3.png"
-                         _idStr="first3"
-                         _titleStr="First 3" />
-
-                <GPATile _imgStr="./img/GPAGames/HT.png"
-                         _idStr="headsAndTails"
-                         _titleStr="Heads and Tails" />
-
+                    <LiveCasinoTile _imgStr="./img/LiveGames/baccarat_b.png"
+                                    _titleStr="Baccarat B" />
+                                    
+                    <LiveCasinoTile _imgStr="./img/LiveGames/sicbo.png"
+                                    _titleStr="Sic Bo" />
+                </div>
             </div>
         </div>
-    </div>
-
 </div>

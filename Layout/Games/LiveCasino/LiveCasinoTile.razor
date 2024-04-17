@@ -1,0 +1,46 @@
+﻿<div class="card m-1 p-0 border-dark game-tile">
+    <div class="container-fluid p-0 bg-img">
+        <img src="@_imgStr" class="card-img-top" @onclick="ToggleActive">
+    </div>
+    <div class="info @(isActive ? "active" : "")">
+        <div class="content">
+            <div class="subtitle"><h3 class="text-white fw-bold">@_titleStr</h3></div>
+            <div class="button button-playNow">
+                <a class="btn btn-warning m-1" href="@_tryoutsHrefStr">
+                    <span>Play Now</span>
+                    <div class="arrow">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+            <div class="button button-gameInfo">
+                <a class="btn btn-dark m-1" href="@_gameInfoHrefStr">Game Info</a>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter] public string? _imgStr { get; set; }
+    [Parameter] public string? _titleStr { get; set; }
+    [Parameter] public string? _gameInfoHrefStr { get; set; }
+    [Parameter] public string? _tryoutsHrefStr { get; set; }
+
+    private bool isActive = false;
+
+    private void ToggleActive()
+    {
+        isActive = !isActive;
+        if (isActive)
+        {
+            // Start a timer to remove the active class after 20 seconds
+            TimerCallback timerCallback = state =>
+            {
+                isActive = false;
+                StateHasChanged(); // Notify Blazor that the state has changed
+            };
+            var timer = new Timer(timerCallback, null, 4000, Timeout.Infinite);
+        }
+    }
+}
