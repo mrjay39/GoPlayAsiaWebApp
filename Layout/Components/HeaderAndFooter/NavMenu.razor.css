@@ -175,9 +175,9 @@
 /*============== End: Sticky NavBar Bottom ==========*/
 
 
-@media only screen and (max-device-width:1024px) {
+@media only screen and (max-width:1024px) {
     .loginAndSignUp, .userDropdown {
-        margin: auto;
+        margin: auto !important;
     }
 }
 @media only screen and (min-width: 768px) {
