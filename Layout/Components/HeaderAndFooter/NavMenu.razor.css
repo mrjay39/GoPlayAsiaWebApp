@@ -174,16 +174,10 @@
 }
 /*============== End: Sticky NavBar Bottom ==========*/
 
-@media (min-width: 641px) {
-    
-    .navbar-toggler {
-        display: none;
-    }
 
-    .nav-scrollable {
-        display: block;
-        height: calc(100vh - 3.5rem);
-        overflow-y: auto;
+@media only screen and (max-device-width:1024px) {
+    .loginAndSignUp, .userDropdown {
+        margin: auto;
     }
 }
 @media only screen and (min-width: 768px) {
@@ -193,6 +187,18 @@
     }
     .align-items {
         align-items: center;
+    }
+}
+@media (min-width: 641px) {
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    .nav-scrollable {
+        display: block;
+        height: calc(100vh - 3.5rem);
+        overflow-y: auto;
     }
 }
 @media only screen and (max-width: 600px) {
