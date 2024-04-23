@@ -11,3 +11,60 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.nav-link:hover,.nav-link:focus{
+    border: none;
+}
+
+.nav-link.active {
+    border-width: 0px 0px 4px 0px;
+    border-color: #6e182c;
+    border-style: solid;
+}
+@media only screen and (min-width: 992px) {
+    .wallet-cardContainer{
+        width: 15rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .wallet-cardContainer {
+        width: 6.5rem;
+    }
+    .wallet-sub {
+        font-size: 13px;
+    }
+    .payment-select-wrapper{
+         font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .wallet-cardContainer {
+        width: 6.5rem;
+    }
+    .wallet-sub {
+        font-size: 13px;
+    }
+    .payment-select-wrapper {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .wallet-cardContainer {
+        width: 5.5rem;
+    }
+
+    .wallet-sub {
+        font-size: 13px;
+    }
+
+    .payment-select-wrapper {
+        font-size: 12px;
+    }
+
+    .card-title {
+        font-size: .95rem;
+    }
+}

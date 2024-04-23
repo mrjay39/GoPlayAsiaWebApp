@@ -1,8 +1,70 @@
-﻿@page "/TransactionHistory"
-<PageTitle>GoPlayAsia: Transactions History</PageTitle>
+﻿<h6 class="mb-3 header">Transaction History</h6>
+<table id="wallet-transactions" class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Time</th>
+            <th scope="col">Transcation</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        <tr>
+            <td>
+                <span class="fw-bold">Apr 23, 2024</span><br />
+                <span class="text-muted">06:30AM</span>
+            </td>
+            <td>Cash-in</td>
+            <td>5,000</td>
+            <td>
+                <button @onclick="@(() => Modal.Show<ViewTransactionDetails>("Transaction Details"))" class="btn viewDetails">
+                    <i class="fa-regular fa-eye"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fw-bold">Apr 23, 2024</span><br />
+                <span class="text-muted">06:30AM</span>
+            </td>
+            <td>Cash-Out</td>
+            <td>5,000</td>
+            <td>
+                <button @onclick="@(() => Modal.Show<ViewTransactionDetails>("Transaction Details"))" class="btn viewDetails">
+                    <i class="fa-regular fa-eye"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fw-bold">Apr 23, 2024</span><br />
+                <span class="text-muted">06:30AM</span>
+            </td>
+            <td class="fw-bold">Cash-in</td>
+            <td>5,000</td>
+            <td>
+                <button @onclick="@(() => Modal.Show<ViewTransactionDetails>("Transaction Details"))" class="btn viewDetails">
+                    <i class="fa-regular fa-eye"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="fw-bold">Apr 23, 2024</span><br />
+                <span class="text-muted">06:30AM</span>
+            </td>
+            <td>Cash-Out</td>
+            <td>5,000</td>
+            <td>
+                <button @onclick="@(() => Modal.Show<ViewTransactionDetails>("Transaction Details"))" class="btn viewDetails">
+                    <i class="fa-regular fa-eye"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
+@code {
+    [CascadingParameter] public IModalService Modal { get; set; } = default!;
 
-<div class="container-fluid marketing pt-5">
-    <div class="container p-3">
-    </div>
-</div>
+}

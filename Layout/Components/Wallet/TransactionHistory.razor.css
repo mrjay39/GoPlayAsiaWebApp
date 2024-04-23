@@ -1,13 +1,13 @@
-﻿body {
-    font-family: Open Sans,Oswald,Arial,sans-serif !important;
-    font-size: 14px;
-    color: #666;
-    line-height: 1.7em;
-    font-weight: 500;
+﻿#wallet-transactions{
+    font-size: 12px;
 }
-
-.marketing {
-    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#101019 100%) !important;
-    background-size: cover;
-    background-repeat: no-repeat;
+.header {
+    color: #6e182c;
+}
+tr{
+    vertical-align: middle;
+}
+th, td > button {
+    color: #6e182c;
+    font-weight: bold;
 }

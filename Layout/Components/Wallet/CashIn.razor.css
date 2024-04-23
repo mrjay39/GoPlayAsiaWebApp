@@ -1,13 +1,92 @@
-﻿body {
-    font-family: Open Sans,Oswald,Arial,sans-serif !important;
-    font-size: 14px;
-    color: #666;
-    line-height: 1.7em;
-    font-weight: 500;
+﻿.card-title {
+    font-size: .9rem;
 }
 
-.marketing {
-    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#101019 100%) !important;
-    background-size: cover;
-    background-repeat: no-repeat;
+.methodItem {
+    margin-bottom: 1rem;
+    padding: .2rem;
+    cursor: pointer;
+    border-radius: 6px;
+    position: relative;
+}
+
+img.logo {
+    width: 4rem;
+    margin-right: 10px;
+}
+.header {
+    color: #6e182c;
+}
+
+.payment-select-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
+
+.btnWrapper {
+    margin-right: 10px;
+}
+
+.methodItem .payment-select-wrapper .payment-selection {
+    width: 100%;
+    margin-right: 15px;
+}
+
+.btn-gpa-outline {
+    width: 5.5rem;
+    border: 2px solid #6e182c;
+    color: #6e182c;
+}
+
+.btn-gpa {
+    background: #6e182c;
+    font-weight: bold;
+    color: #fff;
+}
+
+.input-gpa {
+    border: 2px solid #6e182c;
+    border-radius: 5px;
+}
+
+input{
+    font-weight: bold;
+}
+input::placeholder {
+    font-weight: bold;
+}
+
+.otherAmount {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.hide{
+    display:none;
+}
+
+.arrow-right {
+    transition: transform 0.3s ease;
+}
+
+.arrow-down {
+    transform: rotate(90deg);
+}
+
+
+@media screen and (max-width: 320px) {
+    .otherAmount, button.btn-gpa {
+        font-size: .94rem;
+    }
+    .wallet-subMenu{
+        font-size:.65rem;
+        white-space: nowrap;
+    }
+    .payment-selection{
+        margin-right: 5px !important;
+    }
 }

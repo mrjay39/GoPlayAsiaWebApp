@@ -1,0 +1,39 @@
+﻿<div class="container p-0">
+    <div class="row modal-size">
+        <div class="col-12 p-0 trans-details">
+            <p>
+                <span>Transaction type</span>
+                <span>: Cash-In</span>
+            </p>
+            <p>
+                <span>Transfer from</span>
+                <span>: GCash</span>
+            </p>
+            <p>
+                <span>Transfer to</span>
+                <span>: GoPlayAsia</span>
+            </p>
+            <p>
+                <span>Date</span>
+                <span>: April 23, 2024</span>
+            </p>
+            <p>
+                <span>Time</span>
+                <span>: 06:30 AM</span>
+            </p>
+            <p>
+                <span>Amount</span>
+                <span>: Php 5,000.00</span>
+            </p>
+            <p>
+                <span>Reference No.</span>
+                <span>: <b class="text-primary">9876543210</b> <button class="btn p-0"> <i class="fa-regular fa-copy"></i></button></span>
+            </p>
+           <button @onclick="Close" class="btn btn-gpa col-12">Okay</button>
+        </div>
+    </div>
+</div>
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    private async Task Close() => await BlazoredModal.CloseAsync();
+}

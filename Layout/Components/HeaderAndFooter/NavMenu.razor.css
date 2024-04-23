@@ -90,6 +90,12 @@
 .navbar-toggler:checked {
     background-color: rgba(255, 255, 255, 0.5);
 }
+.navbar-toggler.gpa-toggler{
+    left: 1rem;
+}
+.navbar-brand.gpa-navbar-brand{
+    margin-left: 6rem;
+}
 
 .top-row {
     height: 3.5rem;
@@ -182,7 +188,7 @@
 }
 @media only screen and (min-width: 768px) {
     .loginAndSignUp, .userDropdown {
-        margin-left: 356px;
+        margin-left: 8rem;
         margin-top: 10px;
     }
     .align-items {
