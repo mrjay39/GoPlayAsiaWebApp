@@ -7,7 +7,7 @@
 tr{
     vertical-align: middle;
 }
-th, td > button {
+th, .gpa-btn-delete{
     color: #6e182c;
     font-weight: bold;
 }

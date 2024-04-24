@@ -167,7 +167,7 @@
                 <span class="text-uppercase small">Notification</span>
             </div>
         </a>
-        <a href="arcadeGames" class="navbar-brand text-center text-muted">
+        <a class="navbar-brand text-center text-muted" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <div class="icon">
                 <i class="fa-solid setting-btm-icon"></i>
             </div>
@@ -176,6 +176,91 @@
             </div>
         </a>
     </div>
+
+
+    <div class="offcanvas offcanvas-end text-bg-dark @("offcanvas-end " + (isOffcanvasVisible ? "show" : ""))" tabindex="-1" id="settingOffCanvas" aria-labelledby="settingOffCanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-white" id="settingOffCanvasLabel">Settings</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" aria-current="page" href="#">
+                        <span><i class="fa-solid fa-user"></i></span>
+                        <span class="ms-3"> Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">
+                        <span><i class="fa-solid fa-wallet"></i></span>
+                        <span class="ms-3"> Account Balance</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">
+                        <span><i class="fa-solid fa-medal"></i></span>
+                        <span class="ms-3"> VIP Level</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">
+                        <span><i class="fa-solid fa-credit-card"></i></span>
+                        <span class="ms-3"> Widthdraw</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="wallet" @onclick="CloseOffcanvas">
+                        <span><i class="fa-solid fa-money-bill-transfer"></i></span>
+                        <span class="ms-3"> Cash-In / Deposit</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                        <span class="ms-3"> Inbox</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">
+                        <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span class="ms-3"> Logout</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
 </nav>
 
 <LoginAndSignUp />
+
+@code {
+    bool isOffcanvasVisible = false;
+    void ToggleOffcanvas()
+    {
+        isOffcanvasVisible = !isOffcanvasVisible;
+    }
+
+    void CloseOffcanvas()
+    {
+        isOffcanvasVisible = true;
+    }
+}

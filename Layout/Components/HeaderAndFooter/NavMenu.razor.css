@@ -180,6 +180,13 @@
 }
 /*============== End: Sticky NavBar Bottom ==========*/
 
+/*============== Start: OffCanvas==========*/
+#settingOffCanvas {
+    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#101019 100%) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*============== End: OffCanvas ==========*/
 
 @media only screen and (max-width:1024px) {
     .loginAndSignUp, .userDropdown {
