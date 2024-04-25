@@ -177,7 +177,7 @@
         </a>
     </div>
 
-
+    @*========================= OffCanvas Navbar ===========================*@
     <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="settingOffCanvas" aria-labelledby="settingOffCanvasLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title text-white" id="settingOffCanvasLabel">Settings</h5>
@@ -187,11 +187,12 @@
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item dropdown">
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-bold" aria-current="page" href="#">
+                <li class="nav-item position-relative" data-bs-dismiss="offcanvas">
+                    <a class="nav-link fw-bold" aria-current="page" href="/User'sProfile">
                         <span><i class="fa-solid fa-user"></i></span>
                         <span class="ms-3"> Profile</span>
                     </a>
+                    <a href="" class="position-absolute top-0 start-30 badge bg-danger p-2 text-decoration-none">Verify Now!</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fw-bold" href="#">

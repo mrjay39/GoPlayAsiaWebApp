@@ -1,0 +1,70 @@
+﻿body {
+    font-family: Open Sans,Oswald,Arial,sans-serif !important;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7em;
+    font-weight: 500;
+}
+
+.marketing {
+    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#101019 100%) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn-gpa {
+    background: #6e182c;
+    font-weight: bold;
+    color: #fff;
+}
+.start-30{
+    left: 30%;
+}
+
+
+@media only screen and (min-width: 992px) {
+    .profile-form {
+        width: 35rem;
+    }
+    .prof-grid-container div.col:first-child {
+        width: 30%;
+        max-width: 30%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .profile-form {
+        width: 23rem;
+    }
+    .prof-grid-container {
+        font-size: 15px;
+    }
+    .prof-grid-container div.col:first-child {
+        width: 30%;
+        max-width: 30%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .profile-form {
+        width: 19rem;
+    }
+    .prof-grid-container {
+        font-size: 12px;
+    }
+    .prof-grid-container div.col:first-child {
+        width: 35%;
+        max-width: 35%;
+    }
+}
+@media screen and (max-width: 340px) {
+    .profile-form {
+        width: 18rem;
+    }
+    .prof-grid-container {
+        font-size: 13px;
+    }
+    .prof-grid-container div.col:first-child {
+        width: 30%;
+        max-width: 30%;
+    }
+}

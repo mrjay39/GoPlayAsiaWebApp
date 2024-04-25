@@ -186,6 +186,9 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+.start-30 {
+    left: 30%;
+}
 /*============== End: OffCanvas ==========*/
 
 @media (min-width: 992px) {
