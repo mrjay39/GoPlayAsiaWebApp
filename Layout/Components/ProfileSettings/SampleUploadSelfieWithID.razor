@@ -1,0 +1,24 @@
+﻿<div class="container">
+    <p class="font-12">Please take a selfie while holding a valid ID.</p>
+    <img src="/img/selfie-valid-id.png" class="img-fluid img">
+    <div class="row">
+        <p class="font-12 mt-2">
+            <span><i class="fa-solid fa-circle-check text-success"></i> Keep ID readable and clear</span><br>
+            <span><i class="fa-solid fa-circle-check text-success"></i> Face the camera</span><br>
+            <span><i class="fa-solid fa-circle-check text-success"></i> Have good lighting</span><br>
+        </p>
+        <hr>
+        <p class="font-12">
+            <span><i class="fa-solid fa-circle-xmark text-danger"></i> Don't wear hats and glasses</span><br>
+            <span><i class="fa-solid fa-circle-xmark text-danger"></i> Don't wear facemask</span><br>
+            <span><i class="fa-solid fa-circle-xmark text-danger"></i> Don't use filters</span><br>
+            <span><i class="fa-solid fa-circle-xmark text-danger"></i> Don't crop the photo too tightly</span><br>
+        </p>
+        <div class="col-12 text-center"><button @onclick="Close" class="btn btn-primary col" style="background: #6e182c; border: none;">Got it</button></div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    private async Task Close() => await BlazoredModal.CloseAsync();
+}

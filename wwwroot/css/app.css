@@ -60,6 +60,15 @@ a, .btn-link {
     padding: 1rem 1rem 1rem 3.7rem;
     color: white;
 }
+.blazored-modal {
+    padding: 1rem !important;
+}
+.bm-container {
+    z-index: 1046 !important;
+}
+.bm-header{
+    padding-bottom: 1rem !important;
+}
 
 .blazor-error-boundary::after {
     content: "An error has occurred."
@@ -89,19 +98,19 @@ a, .btn-link {
     width: 250px;
 }
 
-    .loading-progress circle {
-        fill: none;
-        stroke: #e0e0e0;
-        stroke-width: 0.6rem;
-        transform-origin: 50% 50%;
-        transform: rotate(-90deg);
-    }
+.loading-progress circle {
+    fill: none;
+    stroke: #e0e0e0;
+    stroke-width: 0.6rem;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+}
 
-        .loading-progress circle:last-child {
-            stroke: #1b6ec2;
-            stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
-            transition: stroke-dasharray 0.05s ease-in-out;
-        }
+    .loading-progress circle:last-child {
+        stroke: #1b6ec2;
+        stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
+        transition: stroke-dasharray 0.05s ease-in-out;
+    }
 
 .loading-progress-text {
     position: absolute;

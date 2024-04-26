@@ -1,0 +1,22 @@
+﻿<div class="container">
+    <p class="font-12">Account verification is a simple process!</p>
+    <img src="/img/upload-valid-id.png" class="img-fluid img">
+    <div class="row">
+        <p class="font-12 mt-2">
+            <span><i class="fa-solid fa-circle-check text-success"></i> Keep ID readable and clear</span><br>
+            <span><i class="fa-solid fa-circle-check text-success"></i> ID must be inside the captured area</span><br>
+            <span><i class="fa-solid fa-circle-check text-success"></i> Have good lighting</span><br>
+        </p>
+        <hr>
+        <p class="font-12">
+            <span><i class="fa-solid fa-circle-xmark text-danger"></i> Original ID only, no photocopies</span><br>
+            <span><i class="fa-solid fa-circle-xmark text-danger"></i> The information provided must match the details on your ID</span><br>
+        </p>
+        <div class="col-12 text-center"><button @onclick="Close" class="btn btn-primary col" style="background: #6e182c; border: none;">Got it</button></div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    private async Task Close() => await BlazoredModal.CloseAsync();
+}

@@ -20,6 +20,38 @@
 .start-30{
     left: 30%;
 }
+.start-58 {
+    left: 58%;
+}
+.start-20 {
+    left: 20%;
+}
+.top-30{
+    top: 30%;
+}
+.top-15{
+    top: 15%;
+}
+.font-12{
+    font-size: 12px;
+}
+.gpa-text {
+    color: #6e182c;
+}
+input[type="file"] {
+    display: none;
+}
+.change-img > span {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #fff;
+    background: #a4a4a4;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+}
 
 
 @media only screen and (min-width: 992px) {

@@ -7,13 +7,36 @@
     <div class="container p-3">
         <div class="row pt-4 pb-5 bg-white mt-4 rounded-3 justify-content-center">
             <div class="d-flex justify-content-center p-0" style="width: 50rem;">
-                <form class="row profile-form border rounded-3">
+                <div class="row profile-form border rounded-3">
 
-                    <div class="text-center mt-2">
-                        <img src="img/user-profile.png" class="card-img-top img-fluid rounded-circle w-25  position-relative">
-                        <p class="text-muted fw-bold h5">
-                            <span class="position-relative">Player Username </span>
-                        </p>
+                    <div class="container p-0">
+                        <div class="row align-items-center py-2">
+                            <div class="d-flex align-items-center">
+                                <div class="col position-relative text-center">
+                                    <img src="img/user-profile.png" class="card-img-top img-fluid rounded-circle w-50 position-relative">
+                                   @*  <label for="newImage" class="position-absolute change-img top-30 start-58 badge">
+                                    <span class="rounded-circle">
+                                    <i class="fa-solid fa-camera"></i>
+                                    </span>
+                                    </label>
+                                    <input id="newImage" type="file" accept="image/*" /> *@
+                                </div>
+                                <div class="col">
+                                    <p class="text-muted  mb-0">
+                                        <span class="fw-bold gpa-text">Juan Dela Cruz </span> <br>
+                                        <span class="font-12"><i class="fa-solid fa-mobile-screen-button"></i> +63987 654 3210</span> <br>
+                                        <span class="font-12"><i class="fa-regular fa-circle-check text-success"></i> Fully Verified</span>
+                                    </p>
+                                </div>
+                                <div class="col-1 text-muted btn p-0" data-bs-target="#edit-profile" aria-controls="edit-profile">
+                                    <span data-bs-toggle="offcanvas" data-bs-target="#edit-profile" aria-controls="edit-profile" class="btn p-0"><i class="fa-solid fa-angle-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        @* ================= Edit Information Off Canvass ============================= *@
+                        <EditProfileOffCanvas />
+                        
                     </div>
 
                     <div class="card-body">
@@ -35,19 +58,6 @@
                                 <div class="row p-0 justify-content-center">
                                     <div class="col">
                                         <p class="">
-                                            <i class="fa-solid fa-mobile-screen-button"></i>
-                                            <span>Mobile No. </span>
-                                        </p>
-                                    </div>
-                                    <div class="col">
-                                        <p class="fw-bold">
-                                            <span class="">: +63987 654 3210</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row p-0 justify-content-center">
-                                    <div class="col">
-                                        <p class="">
                                             <i class="fa-regular fa-envelope"></i>
                                             <span>E-mail</span>
                                         </p>
@@ -58,20 +68,11 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="row my-3">
-                                    <div class="col-12">
-                                        <button href="#" class="btn col-12 btn-gpa">Update</button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-@code {
-
-}
