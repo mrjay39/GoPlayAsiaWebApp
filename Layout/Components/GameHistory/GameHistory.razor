@@ -1,0 +1,134 @@
+﻿@page "/GameHistory"
+
+<PageTitle>GoPlayAsia: Game History</PageTitle>
+<div class="container-fluid marketing pt-5">
+    <div class="row pt-3 pb-3">
+        <div class="container-fluid pt-4 pb-5 bg-white mt-4 rounded-3 justify-content-center" style="width: 50rem;">
+
+            @*============== Start: Game and Statistic Tab Icon ===========*@
+            <div id="wallet-headerIcon" class="container-fluid p-0 mb-5">
+                <ul class="nav nav-tabs border-0 justify-content-center" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link p-0 active" id="gameHistory-tab" data-bs-toggle="tab" data-bs-target="#gameHistory-tab-pane" type="button" role="tab" aria-controls="gameHistory-tab-pane" aria-selected="true">
+                            <div class="card border-0 text-center p-0 m-2 gameHistory-cardContainer">
+                                <div class="icon-link icon-link-hover text-decoration-none">
+                                    <img class="img-fluid img" src="/img/game-history-icon.png" style="width: 3rem;" />
+                                    <div class="card-body p-0">
+                                        <h6 class="card-title text-black mb-0">Game History</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link p-0" id="statistic-tab" data-bs-toggle="tab" data-bs-target="#statistic-tab-pane" type="button" role="tab" aria-controls="statistic-tab-pane" aria-selected="false">
+                            <div class="card border-0 text-center p-0 m-2 wallet-cardContainer">
+                                <div class="icon-link icon-link-hover text-decoration-none">
+                                    <img class="img-fluid img" src="/img/statistic-icon.png" style="width: 3rem;" />
+                                    <div class="card-body p-0">
+                                        <h6 class="card-title text-black mb-0">Statistic</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            @*============== End: Game and Statistic Tab Icon ===========*@
+
+            @*============== Start: Delete or Cancel ===========*@
+            <div class="d-flex delAndCancel mb-3">
+                <div class="col text-left">
+                    <div class="form-check">
+                        <input class="form-check-input" id="SelectAllChecked" type="checkbox">
+                        <label class="form-check-label" for="SelectAllChecked">Mark All</label>
+                    </div>
+                </div>
+                <div class="col text-center"><b class="sel-label">Selected</b></div>
+                <div class="col text-center">
+                    <button id="delete" class="bg-white border-0">
+                        <i class="fa-solid fa-trash-can"></i>
+                        Delete
+                    </button>
+                </div>
+                <div id="cancel" class="col text-center">
+                    <button class="bg-white border-0">Cancel</button>
+                </div>
+            </div>
+            @*============== End: Delete or Cancel ===========*@
+
+            @*============== Start: Tab Game History ===========*@
+            <div class="tab-content" id="gameHistoryTab">
+                <div class="tab-pane fade show active" id="gameHistory-tab-pane" role="tabpanel" aria-labelledby="gameHistory-tab" tabindex="0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Bet Amount</th>
+                                <th scope="col">Result</th>
+                                <th scope="col">Win/Loss</th>
+                                <th scope="col" class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr for="flexCheckDefault">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <span class="ms-1">10,000.00</span>
+                                </td>
+                                <td>ABCD</td>
+                                <td>Win</td>
+                                <td class="text-center">
+                                    <button @onclick="@(() => Modal.Show<ViewGameHistoryDetails>("Game Details"))" class="btn viewDetails p-0 m-1">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button class="btn p-0 gpa-btn-delete m-1 delete gpa-btn-delete"> <i class="fa-regular fa-circle-xmark"></i></button>
+                                </td>
+                            </tr>
+                            <tr for="flexCheckDefault">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <span class="ms-1">10,000.00</span>
+                                </td>
+                                <td>ABCD</td>
+                                <td>Win</td>
+                                <td class="text-center">
+                                    <button @onclick="@(() => Modal.Show<ViewGameHistoryDetails>("Game Details"))" class="btn viewDetails p-0 m-1">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button class="btn p-0 gpa-btn-delete m-1 delete"> <i class="fa-regular fa-circle-xmark"></i></button>
+                                </td>
+                            </tr>
+                            <tr for="flexCheckDefault">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <span class="ms-1">10,000.00</span>
+                                </td>
+                                <td>ABCD</td>
+                                <td>Win</td>
+                                <td class="text-center">
+                                    <button @onclick="@(() => Modal.Show<ViewGameHistoryDetails>("Game Details"))" class="btn viewDetails p-0 m-1">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button class="btn p-0 gpa-btn-delete m-1 delete"> <i class="fa-regular fa-circle-xmark"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                @*============== End: Tab Game History ===========*@
+
+                @*============== Start: Game Statistic ===========*@
+                <div class="tab-pane fade" id="statistic-tab-pane" role="tabpanel" aria-labelledby="statistic-tab" tabindex="0">
+                    <div class="tab-pane fade show active" id="gameHistory-tab-pane" role="tabpanel" aria-labelledby="gameHistory-tab" tabindex="0">
+                        <GameStatistic />
+                    </div>
+                </div>
+                @*============== End: Game Statistic ===========*@
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    [CascadingParameter] public IModalService Modal { get; set; } = default!;
+
+}

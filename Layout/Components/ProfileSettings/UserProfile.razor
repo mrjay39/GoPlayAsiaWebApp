@@ -5,23 +5,23 @@
 
 <div class="container-fluid marketing pt-5">
     <div class="container p-3">
-        <div class="row pt-4 pb-5 bg-white mt-4 rounded-3 justify-content-center">
+        <div class="row pt-4 pb-5 bg-transparent mt-4 rounded-3 justify-content-center">
             <div class="d-flex justify-content-center p-0" style="width: 50rem;">
-                <div class="row profile-form border rounded-3">
+                <div class="row profile-form border rounded-3 bg-white">
 
                     <div class="container p-0">
                         <div class="row align-items-center py-2">
                             <div class="d-flex align-items-center">
                                 <div class="col position-relative text-center">
                                     <img src="img/user-profile.png" class="card-img-top img-fluid rounded-circle w-50 position-relative">
-                                   @*  <label for="newImage" class="position-absolute change-img top-30 start-58 badge">
+                                    @*  <label for="newImage" class="position-absolute change-img top-30 start-58 badge">
                                     <span class="rounded-circle">
                                     <i class="fa-solid fa-camera"></i>
                                     </span>
                                     </label>
                                     <input id="newImage" type="file" accept="image/*" /> *@
                                 </div>
-                                <div class="col">
+                                <div class="col text-start btn p-0" data-bs-toggle="offcanvas" data-bs-target="#edit-profile" aria-controls="edit-profile">
                                     <p class="text-muted  mb-0">
                                         <span class="fw-bold gpa-text">Juan Dela Cruz </span> <br>
                                         <span class="font-12"><i class="fa-solid fa-mobile-screen-button"></i> +63987 654 3210</span> <br>
@@ -36,17 +36,35 @@
 
                         @* ================= Edit Information Off Canvass ============================= *@
                         <EditProfileOffCanvas />
-                        
+
                     </div>
 
                     <div class="card-body">
                         <div class="container-fluid p-0">
                             <div class="container p-0 prof-grid-container">
+                                <div class="row p-0 justify-content-center align-items-center">
+                                    <div class="col-1 ms-2">
+                                        <p class="mb-0">
+                                            <i class="fa-solid gpa-icon icon-wallet"></i>
+                                        </p>
+                                    </div>
+                                    <a class="col btn d-flex p-0 align-items-center" href="wallet">
+                                        <div class="col-11 text-start btn">
+                                            <p class="fw-bold mb-0">
+                                                <span class="gpa-text">
+                                                    <b>Php 10,000.00</b>
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class="col-1 text-muted">
+                                            <span class="p-0 btn"><i class="fa-solid fa-angle-right"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
                                 <div class="row p-0 justify-content-center">
-                                    <div class="col">
-                                        <p class="">
+                                    <div class="col-1 ms-2">
+                                        <p>
                                             <i class="fa-regular fa-user"></i>
-                                            <span>User ID </span>
                                         </p>
                                     </div>
                                     <div class="col">
@@ -56,15 +74,38 @@
                                     </div>
                                 </div>
                                 <div class="row p-0 justify-content-center">
-                                    <div class="col">
-                                        <p class="">
+                                    <div class="col-1 ms-2">
+                                        <p>
                                             <i class="fa-regular fa-envelope"></i>
-                                            <span>E-mail</span>
                                         </p>
                                     </div>
                                     <div class="col">
                                         <p class="fw-bold">
                                             <span>: player1@goplayasia.com</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row p-0 justify-content-center">
+                                    <div class="col-1 ms-2">
+                                        <p>
+                                            <i class="fa-regular fa-flag"></i>
+                                        </p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="fw-bold">
+                                            <span>: Filipino</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row p-0 justify-content-center">
+                                    <div class="col-1 ms-2">
+                                        <p class="">
+                                            <i class="fa-solid gpa-icon icon-location"></i>
+                                        </p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="fw-bold">
+                                            <span>: Block 1, Lot 2, Hinahanap Street, Dimakita City</span>
                                         </p>
                                     </div>
                                 </div>

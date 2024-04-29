@@ -1,0 +1,35 @@
+﻿<div class="container p-0">
+    <div class="row modal-size">
+        <div class="col-12 p-0 trans-details">
+            <p>
+                <span>Date</span>
+                <span>: April 21, 2024</span>
+            </p>
+            <p>
+                <span>Game Played</span>
+                <span>: Lucky 7</span>
+            </p>
+            <p>
+                <span>Game Result</span>
+                <span>: ABCD1</span>
+            </p>
+            <p>
+                <span>Bet Amount</span>
+                <span>: 10,000.00</span>
+            </p>
+            <p>
+                <span>Win Amount</span>
+                <span>: 25,000.00</span>
+            </p>
+            <p>
+                <span>Win/Loss</span>
+                <span>: <b>Win</b></span>
+            </p>
+            <button @onclick="Close" class="btn btn-gpa col-12">Okay</button>
+        </div>
+    </div>
+</div>
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    private async Task Close() => await BlazoredModal.CloseAsync();
+}

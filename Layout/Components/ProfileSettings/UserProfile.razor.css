@@ -38,6 +38,18 @@
 .gpa-text {
     color: #6e182c;
 }
+.gpa-icon {
+    background-size: 100% 100% !important;
+    top: 0;
+    margin-right: 4px;
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    position: relative;
+}
+.icon-wallet{background: url('img/wallet-icon.svg') center center no-repeat;}
+.icon-location{background: url('img/location-icon.svg') center center no-repeat;}
+
 input[type="file"] {
     display: none;
 }

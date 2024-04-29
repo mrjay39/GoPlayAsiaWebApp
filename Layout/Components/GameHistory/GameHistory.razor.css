@@ -12,7 +12,8 @@
     background-repeat: no-repeat;
 }
 
-.nav-link:hover,.nav-link:focus{
+
+.nav-link:hover, .nav-link:focus {
     border: none;
 }
 
@@ -21,52 +22,46 @@
     border-color: #6e182c;
     border-style: solid;
 }
-#transaction-tab-pane {
+.gpa-btn-delete {
+    color: #6e182c;
+    font-weight: bold;
+}
+
+#gameHistoryTab {
     min-height: 20vh;
     max-height: 50vh;
     overflow-y: auto;
 }
+
+table {
+    font-size: 13px;
+}
+table tr{
+    vertical-align: middle;
+}
+
 @media only screen and (min-width: 992px) {
-    .wallet-cardContainer{
-        width: 15rem;
+    .gameHistory-cardContainer {
+        width: 8rem;
     }
 }
 
 @media screen and (max-width: 460px) {
-    .wallet-cardContainer {
-        width: 6.5rem;
-    }
-    .wallet-sub {
-        font-size: 13px;
-    }
-    .payment-select-wrapper{
-         font-size: 12px;
+    .gameHistory-cardContainer {
+        width: 8rem;
     }
 }
 
 @media screen and (max-width: 414px) {
-    .wallet-cardContainer {
-        width: 6.5rem;
+    .gameHistory-cardContainer {
+        width: 8rem;
     }
-    .wallet-sub {
-        font-size: 13px;
-    }
-    .payment-select-wrapper {
-        font-size: 12px;
-    }
+
 }
 
 @media screen and (max-width: 320px) {
-    .wallet-cardContainer {
-        width: 5.5rem;
-    }
-
-    .wallet-sub {
-        font-size: 13px;
-    }
-
-    .payment-select-wrapper {
-        font-size: 12px;
+    .gameHistory-cardContainer {
+        width: 7rem;
     }
 
     .card-title {
