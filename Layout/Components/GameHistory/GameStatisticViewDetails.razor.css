@@ -1,0 +1,18 @@
+﻿table {
+    font-size: 13px;
+}
+
+table tr {
+    vertical-align: middle;
+}
+.gpa-btn {
+    background: #6e182c;
+    font-weight: bold;
+    color: white;
+}
+
+#gameHistoryTab {
+    min-height: 20vh;
+    max-height: 50vh;
+    overflow-y: auto;
+}

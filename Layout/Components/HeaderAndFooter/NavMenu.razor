@@ -1,4 +1,5 @@
 ﻿@using GoPlayAsiaWebApp.Layout.Components.LogInModal
+@using GoPlayAsiaWebApp.Layout.Components.ProfileSettings
 <header class="container-fluid bg-black">
     <div class="container">
         <nav class="navbar top-navbar navbar-expand-lg fixed-top navbar-dark bg-black">
@@ -194,20 +195,14 @@
                     </a>
                     <span data-bs-toggle="offcanvas" data-bs-target="#edit-profile" aria-controls="edit-profile" class="position-absolute top-0 start-30 badge bg-danger p-2 text-decoration-none">Verify Now!</span>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-bold" href="#">
-                        <span><i class="fa-solid fa-wallet"></i></span>
-                        <span class="ms-3"> Account Balance</span>
-                    </a>
-                </li>
-                <li class="nav-item">
+                @* <li class="nav-item">
                     <a class="nav-link fw-bold" href="#">
                         <span><i class="fa-solid fa-medal"></i></span>
                         <span class="ms-3"> VIP Level</span>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-bold" href="#">
+                </li> *@
+                <li class="nav-item" data-bs-dismiss="offcanvas">
+                    <a class="nav-link fw-bold" href="wallet">
                         <span><i class="fa-solid fa-credit-card"></i></span>
                         <span class="ms-3"> Widthdraw</span>
                     </a>
@@ -250,6 +245,8 @@
             </form>
         </div>
     </div>
-
 </nav>
+
+<EditProfileOffCanvas />
+
 <LoginAndSignUp />
