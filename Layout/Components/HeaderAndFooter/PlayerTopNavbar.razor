@@ -1,0 +1,85 @@
+﻿<nav class="navbar top-navbar navbar-expand-lg fixed-top navbar-dark bg-black">
+    <div class="container">
+        <button class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="home" class="navbar-brand gpa-navbar-brand d-flex align-items-center col-md-2 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img src="./img/gpa-logo.png" class="img-fluid logo" alt="GoPlayAsia">
+        </a>
+        @* <a class="text-center btn" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
+        <img class="img-fluid img w-25 px-2 me-2" src="./img/user-icon.png" />
+        <span class="text-white fw-bold">100,000.00</span>
+        </a> *@
+        @* <button class="navbar-toggler gpa-toggler nav-item dropdown userDropdown" type="button" data-bs-toggle="collapse">
+        <a class="nav-link px-2 link-dark bg-black dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img class="img-fluid img w-25 px-2 me-2" src="./img/user-icon.png" /> Juan Dela Cruz
+        </a>
+        <span></span>
+        <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
+        <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-regular fa-image"></i> Identification</a></li>
+        <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-solid fa-lock"></i> Password</a></li>
+        <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+        </ul>
+        </button> *@
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items w-100">
+                <li class="nav-item">
+                    <a href="home" class="nav-link px-2 link-dark">
+                        <i class="fa-solid home-icon"></i> HOME
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link px-2 link-dark bg-black dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid explore-icon"></i> EXPLORE
+                    </a>
+                    <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item link-light bg-black" href="AboutUs">Who We Are</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="ourTeam">Our Team</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="contactUs">Contact Us</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="FAQ's">FAQ's</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="PrivacyPolicy">Privacy Policy</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link px-2 link-dark bg-black dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid gpa-icon"></i> GOPLAYASIA
+                    </a>
+                    <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item link-light bg-black" href="#">Lucky 9</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="#">Lucky 4</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="#">First 3</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="#">Heads & Tails</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="#">Big Win</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="#">Go 12</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="#">Dice</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link px-2 link-dark bg-black dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid featured-icon"></i> FEATURED GAMES
+                    </a>
+                    <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item link-light bg-black" href="arcadeGames">Arcade</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="cardGames">Cards</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="fishingAndArcadeGames">Fishing</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="slotGames">Slots</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown userDropdown">
+                    <a class="nav-link px-2 link-dark bg-black dropdown-toggle" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
+                        <img class="img-fluid img w-25 px-2 me-2" src="./img/user-icon.png" />
+                        <span class="text-white fw-bold">100,000.00</span>
+                    </a>
+
+                    @* <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
+                    <li><a href="/User'sProfile" class="dropdown-item link-light bg-black"><i class="fa-solid fa-user"></i> Profile</a></li>
+                    <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-regular fa-image"></i> Identification</a></li>
+                    <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-solid fa-lock"></i> Password</a></li>
+                    <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                    </ul> *@
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,4 +1,4 @@
-.logo {
+﻿.logo {
     min-height: 20px;
     max-height: 40px;
     width: auto;
@@ -11,12 +11,31 @@
     display: inline-block;
     position: relative;
 }
-.poker-card {background: url('./img/poker-cards.svg') center center no-repeat;}
-.gpa-icon {background: url('./img/gpa-icon.svg') center center no-repeat;}
-.home-icon {background: url('./img/home.svg') center center no-repeat;}
-.explore-icon {background: url('./img/explore.svg') center center no-repeat;}
-.featured-icon {background: url('./img/featured.svg') center center no-repeat;}
-.lottery {background: url('./img/lottery.svg') center center no-repeat;}
+
+.poker-card {
+    background: url('./img/poker-cards.svg') center center no-repeat;
+}
+
+.gpa-icon {
+    background: url('./img/gpa-icon.svg') center center no-repeat;
+}
+
+.home-icon {
+    background: url('./img/home.svg') center center no-repeat;
+}
+
+.explore-icon {
+    background: url('./img/explore.svg') center center no-repeat;
+}
+
+.featured-icon {
+    background: url('./img/featured.svg') center center no-repeat;
+}
+
+.lottery {
+    background: url('./img/lottery.svg') center center no-repeat;
+}
+
 .poker-card, .gpa-icon, .explore-icon, .featured-icon, .lottery, .home-icon {
     background-size: 100% 100% !important;
     top: 0;
@@ -30,46 +49,83 @@
     display: inline-block;
     position: relative;
 }
-.gpa-btm-icon{background: url('./img/GPA-btm-icon.svg') center center no-repeat;}
-.slot-btm-icon{background: url('./img/slot-btm-icon.svg') center center no-repeat;}
-.card-btm-icon{background: url('./img/card-btm-icon.svg') center center no-repeat;}
-.fishing-btm-icon{background: url('./img/fishing-btm-icon.svg') center center no-repeat;}
-.arcade-btm-icon{background: url('./img/arcade-btm-icon.svg') center center no-repeat;}
-.history-btm-icon{background: url('./img/history-btm-icon.svg') center center no-repeat;}
-.wallet-btm-icon{background: url('./img/wallet-btm-icon.svg') center center no-repeat;}
-.inbox-btm-icon{background: url('./img/inbox-btm-icon.svg') center center no-repeat;}
-.setting-btm-icon{background: url('./img/setting-btm-icon.svg') center center no-repeat;}
+
+.gpa-btm-icon {
+    background: url('./img/GPA-btm-icon.svg') center center no-repeat;
+}
+
+.slot-btm-icon {
+    background: url('./img/slot-btm-icon.svg') center center no-repeat;
+}
+
+.card-btm-icon {
+    background: url('./img/card-btm-icon.svg') center center no-repeat;
+}
+
+.fishing-btm-icon {
+    background: url('./img/fishing-btm-icon.svg') center center no-repeat;
+}
+
+.arcade-btm-icon {
+    background: url('./img/arcade-btm-icon.svg') center center no-repeat;
+}
+
+.history-btm-icon {
+    background: url('./img/history-btm-icon.svg') center center no-repeat;
+}
+
+.wallet-btm-icon {
+    background: url('./img/wallet-btm-icon.svg') center center no-repeat;
+}
+
+.inbox-btm-icon {
+    background: url('./img/inbox-btm-icon.svg') center center no-repeat;
+}
+
+.setting-btm-icon {
+    background: url('./img/setting-btm-icon.svg') center center no-repeat;
+}
+
 .gpa-btm-icon, .slot-btm-icon, .card-btm-icon, .fishing-btm-icon, .arcade-btm-icon, .history-btm-icon, .wallet-btm-icon, .inbox-btm-icon, .setting-btm-icon {
     background-size: 100% 100% !important;
     top: 0;
 }
 /*================= End: Bottom NavBar icon ======================*/
 
-.nav-item ::deep .nav-link:hover .gpa-icon{
+.nav-item ::deep .nav-link:hover .gpa-icon {
     background: url('./img/GPA-icon-hover.svg') center center no-repeat;
     background-size: 100% 100%;
 }
-.nav-item ::deep .nav-link:hover .home-icon{
+
+.nav-item ::deep .nav-link:hover .home-icon {
     background: url('./img/home-hover.svg') center center no-repeat;
     background-size: 100% 100%;
 }
-.nav-item ::deep .nav-link:hover .explore-icon{
+
+.nav-item ::deep .nav-link:hover .explore-icon {
     background: url('./img/explore-hover.svg') center center no-repeat;
     background-size: 100% 100%;
 }
-.nav-item ::deep .nav-link:hover .featured-icon{
+
+.nav-item ::deep .nav-link:hover .featured-icon {
     background: url('./img/featured-hover.svg') center center no-repeat;
     background-size: 100% 100%;
 }
-.nav-item ::deep .nav-link:hover .lottery{
+
+.nav-item ::deep .nav-link:hover .lottery {
     background: url('./img/lottery-hover.svg') center center no-repeat;
     background-size: 100% 100%;
 }
+
 .nav-item ::deep .nav-link:hover .poker-card {
     background: url('./img/poker-cards-hover.svg') center center no-repeat;
     background-size: 100% 100%;
 }
-.nav-item{cursor:pointer;}
+
+.nav-item {
+    cursor: pointer;
+}
+
 .navbar-toggler {
     appearance: none;
     cursor: pointer;
@@ -82,18 +138,21 @@
     border: none;
     background: black;
 }
-.navbar-toggler:focus{
-    outline: none;
-    box-shadow:none;
-}
 
-.navbar-toggler:checked {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-.navbar-toggler.gpa-toggler{
-    left: 1rem;
-}
-.navbar-brand.gpa-navbar-brand{
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .navbar-toggler:checked {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .navbar-toggler.gpa-toggler {
+        left: 1rem;
+    }
+
+.navbar-brand.gpa-navbar-brand {
     margin-left: 6rem;
 }
 
@@ -133,31 +192,31 @@
     padding-bottom: 0.5rem;
 }
 
-.nav-item:last-of-type {
-    padding-bottom: 1rem;
-}
+    .nav-item:last-of-type {
+        padding-bottom: 1rem;
+    }
 
-.nav-item ::deep .nav-link {
-    color: #d7d7d7;
-    background: none;
-    border: none;
-    border-radius: 4px;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    line-height: 3rem;
-    width: 100%;
-}
+    .nav-item ::deep .nav-link {
+        color: #d7d7d7;
+        background: none;
+        border: none;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+        width: 100%;
+    }
 
-.nav-item ::deep a.active {
-    background-color: rgba(255,255,255,0.37);
-    color: gold;
-}
+    .nav-item ::deep a.active {
+        background-color: rgba(255,255,255,0.37);
+        color: gold;
+    }
 
-.nav-item ::deep .nav-link:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: gold;
-}
+    .nav-item ::deep .nav-link:hover {
+        background-color: rgba(255,255,255,0.1);
+        color: gold;
+    }
 
 .nav-scrollable {
     display: none;
@@ -186,6 +245,7 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .start-30 {
     left: 30%;
 }
@@ -195,10 +255,11 @@
     .navbar-expand-lg #settingOffCanvas.offcanvas {
         visibility: hidden !important;
     }
-    .navbar-expand-lg #settingOffCanvas.offcanvas.show {
-        visibility: visible !important;
-        z-index:1045;
-    }
+
+        .navbar-expand-lg #settingOffCanvas.offcanvas.show {
+            visibility: visible !important;
+            z-index: 1045;
+        }
 
     .navbar-expand-lg #settingOffCanvas .offcanvas-body {
         flex-grow: 1;
@@ -206,6 +267,7 @@
         overflow-y: auto;
         display: inline-block;
     }
+
     .navbar-expand-lg #settingOffCanvas .navbar-nav {
         flex-direction: column;
         width: 100%;
@@ -225,30 +287,34 @@
         width: 100%;
     }
 
-    .navbar-expand-lg #settingOffCanvas .nav-item .nav-link:hover {
-        background-color: rgba(255,255,255,0.1);
-        color: gold;
-    }
+        .navbar-expand-lg #settingOffCanvas .nav-item .nav-link:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: gold;
+        }
+
     .navbar-expand-lg #settingOffCanvas .nav-item:last-of-type {
         padding-bottom: 0rem;
     }
 }
+
 @media only screen and (max-width:1024px) {
-    
+
     .loginAndSignUp, .userDropdown {
         margin: 10px auto 10px !important;
     }
-
 }
+
 @media only screen and (min-width: 768px) {
     .loginAndSignUp, .userDropdown {
         margin-left: 8rem;
         margin-top: 10px;
     }
+
     .align-items {
         align-items: center;
     }
 }
+
 @media (min-width: 641px) {
 
     .navbar-toggler {
@@ -261,59 +327,72 @@
         overflow-y: auto;
     }
 }
+
 @media only screen and (max-width: 600px) {
     .loginAndSignUp, .userDropdown {
         margin-left: 356px;
         margin-top: 10px;
     }
+
     .align-items {
         align-items: center;
     }
 }
+
 @media screen and (max-width: 460px) {
     .loginAndSignUp, .userDropdown {
         margin-left: 0px;
     }
+
     #navbarSupportedContent li.nav-item {
         font-size: 20px;
         font-weight: bold;
     }
+
     #navbarSupportedContent .fa-house {
         width: 20px;
         height: 20px;
         top: -2px;
         margin-right: 15px;
     }
+
     #navbarSupportedContent .gpa-icon, #navbarSupportedContent .explore-icon, #navbarSupportedContent .home-icon {
         width: 25px;
         height: 25px;
         margin-right: 15px;
     }
+
     #navbarSupportedContent .featured-icon {
         width: 30px;
         height: 30px;
         margin-right: 12px;
     }
+
     #navbarSupportedContent .dropdown-menu.show li > a {
         margin-left: 35px;
         font-weight: bold;
         color: gold;
     }
+
     .loginAndSignUp {
         text-align: center;
     }
+
     .userDropdown {
         text-align: center;
         margin-top: 25px;
     }
+
     #navbarSupportedContent .userDropdown ul.dropdown-menu.show > li > a {
         margin-left: 93px;
     }
+
     #navBarBottom a.navbar-brand {
         margin: 0;
         font-size: 14px;
         font-weight: bold;
     }
+
     .align-items {
         align-items: normal;
     }
@@ -323,16 +402,19 @@
     .loginAndSignUp, .userDropdown {
         margin-left: 0px;
     }
-    #navbarSupportedContent li.nav-item{
+
+    #navbarSupportedContent li.nav-item {
         font-size: 15px;
         font-weight: bold;
     }
+
     #navbarSupportedContent .fa-house {
         width: 20px;
         height: 20px;
         top: -2px;
         margin-right: 15px;
     }
+
     #navbarSupportedContent .gpa-icon, #navbarSupportedContent .explore-icon {
         width: 25px;
         height: 25px;
@@ -344,22 +426,27 @@
         height: 30px;
         margin-right: 12px;
     }
+
     #navbarSupportedContent .dropdown-menu.show li > a {
         margin-left: 35px;
         font-weight: bold;
         color: gold;
     }
+
     .loginAndSignUp {
         text-align: center;
     }
+
     #navbarSupportedContent .userDropdown ul.dropdown-menu.show > li > a {
         margin-left: 70px;
     }
+
     #navBarBottom a.navbar-brand {
         margin: 0;
         font-size: 14px;
         font-weight: bold;
     }
+
     .align-items {
         align-items: normal;
     }
