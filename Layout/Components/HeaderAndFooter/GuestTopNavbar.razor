@@ -65,3 +65,17 @@
         </div>
     </div>
 </nav>
+<script>
+    document.addEventListener('click', function (event) {
+        var navbarCollapse = document.querySelector('.navbar-collapse');
+        var navbarToggler = document.querySelector('.navbar-toggler');
+
+        // Check if the click is inside the navbar or its children
+        var isClickInsideNavbar = document.querySelector('.navbar').contains(event.target);
+
+        // If the click is outside the navbar or its children and the navbar is open, close it
+        if (!isClickInsideNavbar && navbarCollapse.classList.contains('show')) {
+            navbarToggler.click();
+        }
+    });
+</script>
