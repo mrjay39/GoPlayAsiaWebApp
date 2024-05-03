@@ -39,7 +39,11 @@
                 </p>
                 <p>
                     <label class="text-muted" for="nationality"><i class="fa-regular fa-flag"></i> Nationality</label><br>
-                    <input type="text" value="" id="nationality" placeholder="Type your nationality (e.g. Filipino)" class="form-check border border-1 rounded-3 w-100" required>
+                    <select id="nationality" class="form-select bg-dark text-white" aria-label="Select Nationality">
+                        <option selected>Select Nationality</option>
+                        <option value="Filipino">Filipino</option>
+                    </select>
+                   @*  <input type="text" value="" id="nationality" placeholder="Type your nationality (e.g. Filipino)" class="form-check border border-1 rounded-3 w-100" required> *@
                 </p>
                 <p>
                     <label class="text-muted" for="eMailAddress"><i class="fa-regular fa-envelope"></i> Email Address</label><br>
