@@ -42,56 +42,6 @@
     margin-right: 4px;
 }
 
-/*================= Start: Bottom NavBar icon ======================*/
-#navBarBottom .fa-solid {
-    width: 25px;
-    height: 25px;
-    display: inline-block;
-    position: relative;
-}
-
-.gpa-btm-icon {
-    background: url('./img/GPA-btm-icon.svg') center center no-repeat;
-}
-
-.slot-btm-icon {
-    background: url('./img/slot-btm-icon.svg') center center no-repeat;
-}
-
-.card-btm-icon {
-    background: url('./img/card-btm-icon.svg') center center no-repeat;
-}
-
-.fishing-btm-icon {
-    background: url('./img/fishing-btm-icon.svg') center center no-repeat;
-}
-
-.arcade-btm-icon {
-    background: url('./img/arcade-btm-icon.svg') center center no-repeat;
-}
-
-.history-btm-icon {
-    background: url('./img/history-btm-icon.svg') center center no-repeat;
-}
-
-.wallet-btm-icon {
-    background: url('./img/wallet-btm-icon.svg') center center no-repeat;
-}
-
-.inbox-btm-icon {
-    background: url('./img/inbox-btm-icon.svg') center center no-repeat;
-}
-
-.setting-btm-icon {
-    background: url('./img/setting-btm-icon.svg') center center no-repeat;
-}
-
-.gpa-btm-icon, .slot-btm-icon, .card-btm-icon, .fishing-btm-icon, .arcade-btm-icon, .history-btm-icon, .wallet-btm-icon, .inbox-btm-icon, .setting-btm-icon {
-    background-size: 100% 100% !important;
-    top: 0;
-}
-/*================= End: Bottom NavBar icon ======================*/
-
 .nav-item ::deep .nav-link:hover .gpa-icon {
     background: url('./img/GPA-icon-hover.svg') center center no-repeat;
     background-size: 100% 100%;
@@ -153,7 +103,7 @@
     }
 
 .navbar-brand.gpa-navbar-brand {
-    margin-left: 6rem;
+    margin-left: 5.5rem;
 }
 
 .top-row {
@@ -230,36 +180,15 @@
     top: inherit;
 }
 
-/*============== Start: Sticky NavBar Bottom ==========*/
-.sticky-bottom-navbar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1030;
-}
-/*============== End: Sticky NavBar Bottom ==========*/
-
-/*============== Start: OffCanvas==========*/
-#settingOffCanvas {
-    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#101019 100%) !important;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.start-30 {
-    left: 30%;
-}
-/*============== End: OffCanvas ==========*/
-
 @media (min-width: 992px) {
     .navbar-expand-lg #settingOffCanvas.offcanvas {
         visibility: hidden !important;
     }
 
-        .navbar-expand-lg #settingOffCanvas.offcanvas.show {
-            visibility: visible !important;
-            z-index: 1045;
-        }
+    .navbar-expand-lg #settingOffCanvas.offcanvas.show {
+        visibility: visible !important;
+        z-index: 1045;
+    }
 
     .navbar-expand-lg #settingOffCanvas .offcanvas-body {
         flex-grow: 1;

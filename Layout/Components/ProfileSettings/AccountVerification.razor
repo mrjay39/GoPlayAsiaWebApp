@@ -1,10 +1,10 @@
-﻿<div class="offcanvas offcanvas-end text-white" tabindex="-1" id="edit-profile" aria-labelledby="edit-profileLabel">
+﻿<div class="offcanvas offcanvas-end text-white" tabindex="-1" id="account-verification" aria-labelledby="account-verificationLabel">
     <form action="" data-bs-scroll="true" tabindex="-1" class="overflow-auto">
         <div class="offcanvas-header">
             <div class="container p-2">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h5 class="offcanvas-title text-center">Update Profile</h5>
+                        <h5 class="offcanvas-title text-center">Account Verification</h5>
                     </div>
                     <div class="col-2">
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -12,7 +12,7 @@
                 </div>
                 <div class="row">
                     <div class="col position-relative">
-                        <div class="offcanvas-title" id="edit-profileLabel position-relative">
+                        <div class="offcanvas-title" id="account-verificationLabel position-relative">
                             <img src="img/user-profile.png" class="card-img-top img-fluid rounded-circle w-25">
                             <label for="change-profile" class="position-absolute change-img top-15 start-20 badge">
                                 <span class="rounded-circle">
@@ -25,9 +25,6 @@
                         <p>
                             <span class="h5 fw-bold">Juan Dela Cruz </span><br>
                             <span class="h5 fw-bold font-12">+63 987 654 3210</span><br>
-                            <span class="text-muted font-12">Status :</span>
-                            @* <span class="font-12"><i class="fa-regular fa-face-sad-tear text-warning"></i> Not Verified</span> *@
-                            <span class="font-12"><i class="fa-regular fa-circle-check text-success"></i>&nbsp; Fully Verified</span>
                         </p>
                     </div>
                 </div>
@@ -37,23 +34,20 @@
         <div class="offcanvas-body p-0">
             <div class="container p-3">
                 <p>
-                    <span class="text-muted"><i class="fa-regular fa-calendar-days"></i> Birth Date</span><br>
-                    <input id="birthdate" type="date" />
-                    <label class="btn border-0" for="birthdate"><span><i class="fa-solid fa-pen-to-square text-primary"></i></span></label>
+                    <label class="text-muted" for="birthDate"><i class="fa-regular fa-calendar-days"></i> Birth Date</label><br>
+                    <input id="birthDate" type="date" placeholder="Month / Day / Year" class="form-check border border-1 rounded-3 w-100" />
                 </p>
                 <p>
-                    <span class="text-muted"><i class="fa-regular fa-flag"></i> Nationality</span><br>
-                    <span>Filipino</span>
+                    <label class="text-muted" for="nationality"><i class="fa-regular fa-flag"></i> Nationality</label><br>
+                    <input type="text" value="" id="nationality" placeholder="Type your nationality (e.g. Filipino)" class="form-check border border-1 rounded-3 w-100" required>
                 </p>
                 <p>
-                    <span class="text-muted"><i class="fa-regular fa-envelope"></i> Email Address</span><br>
-                    <input type="text" value="juandelacruz@goplayasia.com" id="email" required readonly>
-                    <label class="btn border-0" for="email"><span><i class="fa-solid fa-pen-to-square text-primary"></i></span></label>
+                    <label class="text-muted" for="eMailAddress"><i class="fa-regular fa-envelope"></i> Email Address</label><br>
+                    <input type="email" value="" id="eMailAddress" placeholder="juandelacruz@gmail.com" class="form-check border border-1 rounded-3 w-100" required>
                 </p>
                 <p>
-                    <span class="text-muted"><i class="fa-solid fa-location-dot"></i> Address</span><br>
-                    <input type="text" value="Block 1 Lot 2, Hinanap Street, Dimakita City" id="address" required readonly>
-                    <label class="btn border-0" for="address"><span><i class="fa-solid fa-pen-to-square text-primary"></i></span></label>
+                    <label class="text-muted" for="homeAddress"><i class="fa-solid fa-location-dot"></i> Address</label><br>
+                    <input type="text" value="" id="homeAddress" placeholder="Lot, Block, Street, Barangay, District, City" class="form-check border border-1 rounded-3 w-100" required>
                 </p>
                 <div class="container p-0">
                     <div class="row">
@@ -91,7 +85,7 @@
             </div>
             <div class="container">
                 <div class="col-12">
-                    <button href="#" class="btn col-12 btn-gpa">Update Information</button>
+                    <button href="#" class="btn col-12 btn-gpa">Submit Verification</button>
                 </div>
             </div>
         </div>
