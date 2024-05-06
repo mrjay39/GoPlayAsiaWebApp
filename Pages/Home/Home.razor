@@ -1,0 +1,44 @@
+﻿@page "/"
+@page "/home"
+@using GoPlayAsiaWebApp.Controls.FeaturedGames
+@using GoPlayAsiaWebApp.Controls.GameLinkHeader
+@using GoPlayAsiaWebApp.Controls.MostPlayedGames
+@using GoPlayAsiaWebApp.Controls.Carousel
+@using GoPlayAsiaWebApp.Controls.FeaturedGames
+@using GoPlayAsiaWebApp.Controls.GameLinkHeader
+@using GoPlayAsiaWebApp.Controls.MostPlayedGames
+@using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
+@using GoPlayAsiaWebApp.Pages.EGames.CardGames
+@using GoPlayAsiaWebApp.Pages.EGames.FishingGames
+@using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
+@using GoPlayAsiaWebApp.Pages.EGames.SlotGames
+@using GoPlayAsiaWebApp.Pages.GPAGames.WelcomGPA
+
+<PageTitle>GoPlayAsia: Home</PageTitle>
+        
+<Carousel />
+
+<div class="container-fluid marketing">
+
+    <div class="container">
+
+        <MostPlayedGames />
+
+        <FeaturedGames/>
+
+        <GameLinkHeader />
+        
+        <LiveCasino />
+
+        <CardGames />
+
+        <ArcadeGames />
+
+        <FishingGames />
+
+        <SlotsGames />
+
+        <WelcomeGPA />
+
+    </div>
+</div>

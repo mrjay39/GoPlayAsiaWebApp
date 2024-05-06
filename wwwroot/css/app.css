@@ -147,3 +147,58 @@ code {
     background-color:#ccc;
     -webkit-box-shadow: inset 0 0 6px rgba(90,90,90,0.7);
 }
+
+/*================== Start: Thumbnail change into one line ==============*/
+@media only screen and (min-width: 992px) {
+    #feat-games.gameOverflow-x, #link-header.gameOverflow-x, #arcade.gameOverflow-x {
+        overflow-x: inherit !important;
+    }
+
+    .gameOverflow-x {
+        overflow-x: auto;
+        padding-bottom: 0 !important;
+        scrollbar-width: thin;
+    }
+
+        .gameOverflow-x > div {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            justify-content: inherit !important;
+        }
+}
+
+@media screen and (max-width: 460px) {
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+        .gameOverflow-x > div {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            justify-content: inherit !important;
+        }
+}
+
+@media screen and (max-width: 414px) {
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+        .gameOverflow-x > div {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            justify-content: inherit !important;
+        }
+}
+
+@media screen and (max-width: 320px) {
+    .gameOverflow-x {
+        overflow-x: auto;
+    }
+
+        .gameOverflow-x > div {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            justify-content: inherit !important;
+        }
+}
