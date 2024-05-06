@@ -1,0 +1,93 @@
+﻿@page "/login"
+
+@using GoplayasiaBlazor.Core.Helpers
+@using GoPlayAsiaWebApp.Shared.Popup  
+@using System.ComponentModel
+@inject ReCaptchaClass reCaptchaClass
+@inject IConfiguration config;
+@attribute [AllowAnonymous]
+
+@*@attribute [Authorize(Roles = "1")]*@
+<div class="maincontainer">
+    <div class="innerCon row justify-content-center w-100 m-0">
+        <div class="cardWidth">
+            <div class="imgContainer d-flex justify-content-center">
+                <img class=" img-fluid" src="/img/header-img.png" />
+                <div class="breath-light1"></div>
+                <div class="breath-light2"></div>
+                <div class="breath-light3"></div>
+                <div class="breath-light4"></div>
+                <div class="breath-light5"></div>
+                <div class="breath-light6"></div>
+                <div class="breath-light7"></div>
+                <div class="breath-light8"></div>
+                <div class="breath-light9"></div>
+            </div>
+           
+            <div class="border-0">
+    
+                <form class="card-body cardbody-color p-2 mb-4">
+                    <EditForm Model="@loginDTO" OnValidSubmit="@Authenticate" autocomplete="stopdoingthat" >
+                        <DataAnnotationsValidator />
+                        <div class="logInField mb-4 mt-3 eyeContainer inner-addon right-addon">
+                            <span class="eye bi bi-person-fill"></span>
+                            <input type="text" class="form-control font-weight-bolder" id="Username" 
+                                   placeholder="Username" @bind-value="loginDTO.Username" required >
+                        </div>
+                        <div class="eyeContainer mb-3 inner-addon right-addon">
+                            <span class="eye @showpassicon" @onclick="ShowPassword"></span>
+                            <input type="@showpass" class="form-control font-weight-bolder" id="password" placeholder="Password" @bind-value="loginDTO.Password" required >
+                        </div>
+                        <!-- TERMS & CONDITIONS  -->
+                        <div class="form-check pl-0 text-center" >
+                            <div class="agree text-light" style="font-size: 11px; margin-bottom: 3px;">
+                                <input class="font-weight-bolder" type="checkbox"  >
+                                <span>I agree to the </span>
+                                <a style="color:white; font-weight: 600;" target="_blank" >
+                                    <span class="text-warning">Terms of use </span>
+                                    <span class="text-white"> & </span>
+                                </a>
+                                <a style="color:white; font-weight: 600" target="_blank" href="">
+                                    <span class="text-warning"> Privacy Policy</span>
+                                </a>
+                                <p> <span>and I am over <b class="h6 text-warning">21</b> years of age.</span></p>
+                            </div>
+                        </div>
+                        <ValidationSummary />
+                        <div class="text-center pt-2"><button class="btn btn-color px-5 mb-3 w-100 font-weight-bolder">LOGIN</button></div>
+                        
+                    </EditForm>
+                    <div class="fle justify-content-xl-center align-items-center text-light text-center">
+                        <a href="/loginviaotp" class="text-light">
+                            <span class="text-warning fw-bold"><i class="bi bi-chat-left-dots"></i> &nbsp;Login with Verification Code</span>
+                        </a>
+                    </div>
+                    <div id="textBottom emailHelp" class="form-text text-center mb-2 mt-2 text-light">
+                        Don't have an account? <a href="/signup" class="text-light fw-bold font-weight-bold"> REGISTER NOW!</a>
+                    </div>
+                    <div id="emailHelp" class="form-text text-center mb-1 text-light">
+                        <a href="/ForgotPassword" class="text-light fw-bold text-left pr-4">
+                            <span class="text-warning"><i class="fa-solid fa-unlock"></i> Forgot Password?</span>
+                        </a>
+                        <a href="https://goplayasia.com/contact-us/" class="text-right">
+                            <span class="text-warning"><i class="fa-solid fa-envelope"></i> Contact Us</span>
+                        </a>
+                    </div>
+    @*                 <div id="textBottom " class="form-text text-center mb-3 text-light">
+                        Build @Buildnumber
+                    </div> *@
+                    
+                   @*  <div id="textBottom text-light" class="form-text text-center mb-1 text-light">
+                        
+                    </div> *@
+                
+                </form>
+                 <div class="d-flex justify-content-center">
+                    <img class="logo-pagcor" src="/img/FOOTER.png" alt="footer">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

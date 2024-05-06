@@ -1,0 +1,209 @@
+﻿.mainContainer {
+    background: url('https://img.freepik.com/premium-vector/abstract-dark-background-with-wavy-glowing-lines-futuristic-vector-wavy-illustration_604214-505.jpg?size=626&ext=jpg&ga=GA1.1.1960319522.1697177765&semt=ais');
+    /*background: url('https://img.freepik.com/premium-vector/blue-black-background-with-blue-gradient-line-art-wave-futuristic-graphics-with-sound-wave-technology-concept-digital-design-with-monochrome-cover-modern-templates_619781-59.jpg?size=626&ext=jpg&ga=GA1.2.1960319522.1697177765&semt=ais');*/
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-size: auto;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#luckySlotsCloseBet button {
+    background: gray !important;
+    border: white !important;
+    box-shadow: none !important;
+    pointer-events: none;
+    border: none;
+    outline: none !important;
+    color: white !important;
+}
+
+/*=================== Start: Slot Machine Properties ===================*/
+.container {
+    padding-top: 4px;
+    padding-bottom: 5px;
+}
+.slotMachine {
+    width: 100%;
+    height: 70px;
+    margin: 2px 0;
+    background: url('./img/slot_machine.png') center center no-repeat;
+    background-size: 100% 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.slot-machine > div {
+    position: relative;
+    right: 9px;
+}
+.slot-machine {
+    width: 50px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+.reel {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.spin {
+    animation: spin .9s linear;
+}
+.symbol {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img {
+    height: 30px;
+    width: 30px;
+    margin: 5px 0;
+    position: relative;
+    top: -26px;
+}
+.slot-machine > div {
+    position: relative;
+    right: 9px;
+}
+@keyframes spin {
+    0% {
+        transform: translateY(-80%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+.br-3 {
+    border-right: 3px solid #aa1919;
+}
+
+@media screen and (min-width: 600px) {
+    .slot-machine {
+        width: 85px;
+    }
+
+    img {
+        height: 45px;
+        width: 45px;
+        margin: 0;
+    }
+}
+/*=================== End: Slot Machine Properties ===================*/
+
+
+
+/*=================== Start: Quick Button Properties ===================*/
+.slot-btn {
+    height: 35px;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+.quick-btn span {
+    display: block;
+    height: 16px;
+    position: relative;
+    top: -2px;
+}
+/*=================== End: Quick Button Properties ===================*/
+
+
+
+/*=================== Start: Bet Button Properties ===================*/
+#bet-btn.active {
+    border-radius: 5px;
+    cursor:pointer;
+    animation: activeBet 1s infinite;
+    outline: 2px solid #0d770a;
+}
+@keyframes activeBet {from {background-color: yellow;outline: 2px solid #0d770a;} to {background-color: rgb(69, 219, 18);outline: 2px solid #bdff07;box-sizing: border-box;}}
+#bet-btn:disabled {
+    background: #357c0d;
+}
+/*=================== End: Bet Button Properties ===================*/
+
+
+
+/*=================== Start: Dropdown Properties ===================*/
+#bet-container .dropdown-toggle::after {
+    font-size: 18px;
+    position: relative;
+    text-align: right;
+    left: 10px
+}
+
+#bet-container .dropdown-item {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#bet-btn > span {
+    width: 40px;
+    height: 23px;
+    display: inline-flex;
+    position: relative;
+    background: url('./img/lucky-chip.png')right center no-repeat;
+    background-size: auto;
+    background-size: 100% 100%;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+#bet-dropdown .dropdown-menu.show > a {
+    background: url('./img/lucky-chip.png')center center no-repeat;
+    background-size: auto;
+    text-align: center;
+    background-size: 67% 90%;
+    margin-top: 2px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform .2s;
+}
+
+#bet-dropdown .dropdown-menu.show a:hover {
+    color: #e54304;
+    text-decoration: none;
+    background: url('./img/red-chip.png')center center no-repeat;
+    background-size: 67% 90%;
+    transform: scale(1.5);
+}
+
+#bet-container .dropdown-menu {
+    min-width: 5rem;
+    text-align: center;
+}
+
+#bet-dropdown .dropdown-menu.show {
+    min-width: 1rem;
+    right: 28px;
+    background: linear-gradient(to right, #0c0c25, #19195a);
+}
+
+#bet-dropdown .dropdown-menu[x-placement^="bottom"], #bet-dropdown .dropdown-menu[x-placement^="left"], #bet-dropdown .dropdown-menu[x-placement^="right"], #bet-dropdown .dropdown-menu[x-placement^="top"] {
+    left: auto !important;
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 375px) {
+    #bet-container .dropdown-toggle::after {
+        left: -2px
+    }
+
+    #bet-dropdown .dropdown-menu.show {
+        right: 8px;
+    }
+}
+/*=================== End: Dropdown Properties ===================*/

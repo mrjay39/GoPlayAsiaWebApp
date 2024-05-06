@@ -1,0 +1,27 @@
+﻿
+
+<div class="warningIcon row justify-content-center">
+    <i class="bi bi-exclamation-circle-fill d-block" style="font-size:50px"></i>
+</div>
+<h3>It looks like you're using an unsupported browser</h3>
+<h4 class="mt-1">For an optimal experience with goplayasia, please switch to a supported browser</h4>
+<div><img src="/img/suppbrowser.png" class="w-100"/></div>
+<div class="btnCon row d-flex">
+    <button type="button" class="col  btn btn-primary" @onclick="() => Confirmation(true)">Ok</button>
+</div>
+@inject NavigationManager NavigationManager;
+@Message
+@code {
+    public bool Show { get; set; }
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string Class { get; set; } = "";
+    [Parameter] public string Message { get; set; } = "";
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+
+    public void Confirmation(bool value)
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok(value));
+    }
+
+}

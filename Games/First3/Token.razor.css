@@ -1,0 +1,139 @@
+﻿.tokenContainer { /*default*/
+
+ 
+    margin: 0 auto;
+}
+/*.DistokenContainer {
+    filter: grayscale(100%);
+    pointer-events: none;
+    overflow: hidden;
+    overflow: auto;
+    height: 52px;
+    max-width: 640px;
+    margin: 0 auto;
+}*/
+.tokenRelative {
+    position: relative;
+    margin: 5px;
+    width: fit-content;
+}
+
+a {
+    text-decoration: none !important;
+    color: black;
+    font-weight: 600;
+}
+
+.tokenValueAbsolute {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+}
+
+img.selectedToken {
+    border: 3px solid yellow;
+    height: 30px;
+    width: 50px;
+   
+}
+
+.default {
+    height: 30px;
+    width: 50px;
+}
+
+.payoutAmount {
+    color: gold;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.newBetBtn {
+    background-color: rgb(69, 219, 18);
+    color: white;
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    color: #103100;
+    padding: 8px 0;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    animation: activeBet 1s infinite;
+}
+@keyframes activeBet {
+    from {
+        border: 3px solid black;
+    }
+
+    to {
+        border: 3px solid #FF6C2F;
+    }
+}
+.disnewBetBtn {
+    background-color: rgb(69, 219, 18);
+    color: #103100;
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    pointer-events: none;
+    padding: 8px 0;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.newBackBtn {
+    background-color: rgb(128, 128, 128, .4);
+    border-radius: 50%;
+    color: white;
+    padding: 8px 0;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* position: relative;
+    z-index: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 50%;
+    &::before
+
+{
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #399953;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#f1c232, #f1c232), linear-gradient(#7f6000, #7f6000), linear-gradient(#f1c232, #f1c232), linear-gradient(#7f6000, #7f6000);
+    animation: rotate 4s linear infinite;
+}
+
+&::after {
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 13px);
+    height: calc(100% - 12px);
+    background: white;
+}
+}*/
+

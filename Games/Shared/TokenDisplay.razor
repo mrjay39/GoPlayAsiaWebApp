@@ -1,0 +1,11 @@
+﻿@if (Amount != null)
+{
+    @if (int.Parse(Amount, System.Globalization.NumberStyles.AllowThousands) > 0)
+    {
+        <div class="additionaltokencontainer">
+            <img class="tokenSelectedBet" src="/img/selectedToken.png" />
+            <div class="selectedAmountToken">@(NumFormatter(Amount))</div>
+        </div>
+    }
+
+}

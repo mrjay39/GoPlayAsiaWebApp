@@ -1,0 +1,80 @@
+﻿@using GoplayasiaBlazor.Core.Global.Interface
+@*@using GoplayasiaBlazor.Main.Tours*@
+@using GoPlayAsiaWebApp.Shared.Popup
+@using GoPlayAsiaWebApp.ViewModels
+@*@using PSC.Blazor.Components.Tours.Interfaces;*@
+@inject NotificationViewModel notificationViewModel
+@*@inject ITourService TourService*@
+@inject NavigationManager MyNavigationManager
+@inject ICurrentUser _icurrentUser
+<div class="mainContainer">
+    <div class="bg-grey">
+        <div class="container">
+            <div class="icon-bar " >
+                <a href="lobby" class="@(@currentRoute == "lobby"? "highlight" : "")" ><i class="bi bi-controller"></i><span>Games</span></a>
+                <a href="bethistory" class="@(@currentRoute == "bethistory"? "highlight" : "")" ><i class="bi bi-hourglass-bottom"></i><span>History</span></a>
+                @if(notificationViewModel._icurrentUser != null){
+                    @if(notificationViewModel._icurrentUser.Status == 1){
+                        <a href="credit" class="@(@currentRoute == "credit"? "highlight" : "")" NavMenuTour-1><i class="bi bi-credit-card-fill"></i><span>Wallet</span></a>
+                    }
+                }
+                <a href="notification" class="@(@currentRoute == "notification"? "highlight" : "")" ><i class="bi bi-bell-fill"></i><span>Notification</span></a>
+                <a href="setting" class="@(@currentRoute == "setting"? "highlight" : "")" ><i class="bi bi-gear-fill"></i><span>Settings</span></a>
+                @*<a href="#" @onclick:preventDefault @onclick="logout"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>*@
+            </div>
+        </div>
+    </div>
+</div>
+	
+<NavMenuTour />
+@code {
+
+    [CascadingParameter] public IModalService popupModal { get; set; }
+    private string currentRoute = "";
+
+    protected override async Task OnParametersSetAsync()
+    {
+        currentRoute = MyNavigationManager.Uri.ToLower().ToString().Replace(MyNavigationManager.BaseUri,"");
+
+        if (!_icurrentUser.ToppedUp && !_icurrentUser.TourWalletShown)
+        {
+            //await Task.Delay(500);
+            //_icurrentUser.TourWalletShown = true;
+            //await _icurrentUser.updateSessionAsync();
+            //await StartTour();
+        }
+    }
+
+    public async Task StartTour()
+    {
+        //await TourService.StartTour("NavMenuTour");
+    }
+    //private async Task logout(){
+    //    var parameters = new ModalParameters();
+    //    parameters.Add("Message","Confirm Logout");
+    //    var popupConfirm = popupModal.Show<PopupLogout>("", parameters, new ModalOptions() { Class = "op-modal" });
+    //    ModalResult result = await popupConfirm.Result;
+    //    if(result.Data != null)
+    //    {
+    //        if ((bool) result.Data)
+    //        {
+    //            await lobbyViewModel.Logout();
+    //        }
+    //    }
+    //}
+
+
+    //luckyViewModel.popupConfirm = popupModal.Show<PopupConfirm>("", parameters, new ModalOptions() { Class = "op-modal" });
+    //ModalResult result = await luckyViewModel.popupConfirm.Result;
+    //if(result.Data != null)
+    //{
+    //    if ((bool) result.Data)
+    //    {
+    //        luckyViewModel.popupConfirm.Close();
+    //        luckyViewModel.popupBet.Close();
+    //        await luckyViewModel.SubmitBet();
+
+    //    }
+    //}
+}
+

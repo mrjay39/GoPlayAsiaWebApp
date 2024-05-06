@@ -1,0 +1,191 @@
+﻿@using GoPlayAsiaWebApp.ViewModels
+@using GoplayasiaBlazor.Models
+@using GoplayasiaBlazor.Models.Constants;
+@inject DiceViewModel _diceViewModel;
+
+@if (GameChips != null)
+{
+    <div class="mt-1 w-100" style="background-color:#151515f2; padding: 6px 6px 3px 6px;">
+
+        <div class="d-flex">
+            <div class="col-5 p-0 pl-1 payoutAmount">Bet: @_diceViewModel.BetAmount </div>
+            @if (_diceViewModel.CurrentGameType != (int)Settings.DiceBetTypes.Number)
+            {
+                <div class="col p-0 pr-1 d-flex justify-content-end payoutAmount"> Payout:   @Decimal.Truncate(@_diceViewModel.Payout)</div>
+            }
+        </div>
+
+        <div class="d-flex justify-content-center">
+            @if (GameChips.Chip1 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip1))'>
+                    <div class="tokenRelative ">
+                        <div class="tokenValueAbsolute">@GameChips.Chip1Display</div>
+                        <img class="@(_diceViewModel.BetAmount == GameChips.Chip1? "selectedToken" : "default") " src="/img/1-100.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip2 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip2))'>
+                    <div class="tokenRelative">
+                        <div class="tokenValueAbsolute">@GameChips.Chip2Display</div>
+                        <img class="@(_diceViewModel.BetAmount == GameChips.Chip2? "selectedToken" : "default") " src="/img/1-200.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip3 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip3))'>
+                    <div class="tokenRelative">
+                        <div class="tokenValueAbsolute">@GameChips.Chip3Display</div>
+                        <img class="@(_diceViewModel.BetAmount == GameChips.Chip3? "selectedToken" : "default") " src="/img/1-500.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip4 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip4))'>
+                    <div class="tokenRelative">
+                        <div class="tokenValueAbsolute">@GameChips.Chip4Display</div>
+                        <img class="@(_diceViewModel.BetAmount == GameChips.Chip4? "selectedToken" : "default") " src="/img/1-1k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip5 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip5))'>
+                    <div class="tokenRelative">
+                        <div class="tokenValueAbsolute">@GameChips.Chip5Display</div>
+                        <img class="@(_diceViewModel.BetAmount == GameChips.Chip5? "selectedToken" : "default") " src="/img/1-1-5k.png" />
+                    </div>
+                </a>
+            }
+            <!-----ROW 2 TOKEN----->
+        </div>
+        <div class="d-flex d-flex justify-content-center ">
+            @if (GameChips.Chip6 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip6))'>
+                    <div class="tokenRelative">
+                        <div class="tokenValueAbsolute">@GameChips.Chip6Display</div>
+                        <img class="@(_diceViewModel.BetAmount == GameChips.Chip6? "selectedToken" : "default") " src="/img/1-2k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip7 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip7))'>
+                    <div class="tokenRelative">
+                        <div class="tokenValueAbsolute">@GameChips.Chip7Display</div>
+                        <img class="@(_diceViewModel.BetAmount == GameChips.Chip7? "selectedToken" : "default") " src="/img/1-3k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip8 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip8))'>
+                    <div class="tokenRelative">
+                        <div class="tokenValueAbsolute">@GameChips.Chip8Display</div>
+                        <img class="@(_diceViewModel.BetAmount == GameChips.Chip8? "selectedToken" : "default") " src="/img/2-5k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip9 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip9))'>
+                    <div class="tokenRelative">
+                        <div class="tokenValueAbsolute">@GameChips.Chip9Display</div>
+                        <img class="@(_diceViewModel.BetAmount == GameChips.Chip9? "selectedToken" : "default") " src="/img/2-8k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip10 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip10))'>
+                    <div class="tokenRelative">
+                        <div class="tokenValueAbsolute">@GameChips.Chip10Display</div>
+                        <img class="@(_diceViewModel.BetAmount == GameChips.Chip10? "selectedToken" : "default") " src="/img/2-10k.png" />
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+
+    <div class=" col pb-3 d-flex justify-content-center" style="background-color: #151515f2; padding: 6px;">
+        <div class="col-3 p-0 text-light d-flex justify-content-center align-items-center" style="font-size: 12px;">
+            <div class="" style="font-size: 10px; line-height: .8;">
+                <p>TAP BET TO</p>
+                <p class="mb-0">CONFIRM ></p>
+            </div>
+        </div>
+        <div class="col-6">
+            <button id="betButton" class="w-100 d-flex justify-content-center mr-2 @(isDisabled ? "disnewBetBtn" : "newBetBtn")" @onclick="(()=> SubmitBet())" disabled="@isDisabled">
+                <div> BET </div>
+            </button>
+        </div>
+        <button id="cancelBtn" class="newBackBtn col-2 d-flex justify-content-center align-items-center" @onclick="(()=> CloseDiv())">
+            <div>X</div>
+        </button>
+    </div>
+}
+
+
+@code {
+    [CascadingParameter] public IModalService popupModalDB { get; set; }
+    [Parameter] public GameChipModel GameChips { get; set; }
+    [Parameter] public EventCallback<string> OnClickCallback { get; set; }
+    private bool isDisabled = true;
+
+    private async Task SetBetAmount(int? Amount)
+    {
+        isDisabled = false;
+        await _diceViewModel.SetBetSelectedValue(Amount);
+        await OnClickCallback.InvokeAsync();
+    }
+
+    public async Task CloseDiv()
+    {
+        var cancellationTokenSource = new CancellationTokenSource();
+        var cancellationToken = cancellationTokenSource.Token;
+
+        isDisabled = true;
+        _diceViewModel.BetAmount = 0;
+        await ResetToInitial();
+        await _diceViewModel.HideDivToken();
+    }
+
+    public async Task ResetToInitial()
+    {
+        isDisabled = true;
+        _diceViewModel.IsBetting_Button_Disabled = false;
+        _diceViewModel.Payout = 0;
+        _diceViewModel.GameVariantId = 0;
+        _diceViewModel.BetCombinationValue = String.Empty;
+    }
+
+    public async Task SubmitBet()
+    {
+        bool valid = await _diceViewModel.ValidateBet(_diceViewModel.BetCombinationValue);
+        if (valid)
+        {
+            bool doublebet = await _diceViewModel.IsDoubleBet();
+            if (doublebet)
+            {
+                var parametersdb = new ModalParameters();
+                parametersdb.Add("Message", "Already Placed Bet, Do you wish to proceed?");
+                var popupDB = popupModalDB.Show<PopupConfirm>("", parametersdb, new ModalOptions() { Class = "op-modal" });
+                ModalResult resultdb = await popupDB.Result;
+                if ((bool)resultdb.Data)
+                {
+                    await _diceViewModel.SubmitBet();
+                }
+            }
+            else
+            {
+                await _diceViewModel.SubmitBet();
+            }
+            await ResetToInitial();
+        }
+    }
+}

@@ -1,0 +1,227 @@
+﻿@using Blazored.Typeahead
+<div class="mainContainer">
+    <div class="containerControler">
+    <h4 class="text-center mt-2 m-0 text-light">Withdraw</h4>
+    <p class="text-center text-light mb-1">select your withdraw method</p>
+
+    @if (_mainCreditsViewModel.UserInfo.Verified == 1)
+    {
+        <!-- MENU -->
+        <div class="row d-flex p3  p1-1 m-1">
+            @if (_mainCreditsViewModel.CashOutSettings.PaymentGateway)
+            {
+                <a class="icon-withdraw btn col p-0 ml-2" href="#" @onclick:preventDefault @onclick='(() => SelPaymentGateway("GCASH"))'>
+                    <img src="/img/gcash-withdraw.png" />
+                </a>
+
+                <a class="icon-withdraw btn col p-0 " href="#" @onclick:preventDefault @onclick='(() => SelPaymentGateway("OTHER BANKS"))'>
+                    <img src="/img/instapayicon.png" />
+                </a>
+
+                <a class="icon-withdraw btn col p-0" href="#" @onclick:preventDefault @onclick='(() => SelPaymentGateway("UNION BANK"))'>
+                    <img src="/img/ub-for-withdraw.png" />
+                </a>
+            }
+    @*         @if (_mainCreditsViewModel.CashOutSettings.OTC)
+            {
+                <a class="icon-withdraw btn col p-0 pr-1" @onclick:preventDefault @onclick='(() => SelPaymentGateway("OTC"))'>
+                    <img src="/img/otc-cashout.png" />
+                </a>
+            } *@
+        </div>
+
+        <h6 class="d-flex justify-content-center text-light font-weight-bold mt-1">@PgHeader</h6>
+
+        <!-- CASH OUT FORMS -->
+        <form class="CashoutForm ">
+
+            <!-- GCASH -->
+            <div class="form-group GcashDetails m-1 p-1" hidden="@hidePGWithdrawGCash">
+
+                <!-- DEFAULT AMOUNT -->
+                <DefaultAmount OnClickCallback="@(() => UpdateState())"/>
+
+                <!-- FULL NAME -->
+                <div class="form-group">
+                    <input class="form-control" type="text" value="@_mainCreditsViewModel.UserInfo.FullName" disabled />
+                </div>
+
+                <!-- ACCOUNT NUMBER -->
+                <div class="form-group">
+                    <input class="form-control" type="text" value="@_mainCreditsViewModel.WithdrawRequestGCashParamsDtl.AccountNumber" disabled />
+                </div>
+
+                <!-- AMOUNT -->
+                <div class="pesoContainer mt-3 inner-addon left-addon">
+                    <span class="peso">&#8369;</span>
+                    <input autocomplete="stopdoingthat" class="form-control pl-4 input-lg " type="number" placeholder="Input Other Amount (500-50,000)" @bind-value="_mainCreditsViewModel.WithdrawAmount" onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <input class="addCredit-submit btn btn-primary mb-2 mt-2" type="button" @onclick="WithdrawUBGcash" value="Submit" />
+            </div>
+
+            <!-- INSTAPAY -->
+            <div class="form-group BankDetails m-1 p-1" hidden="@hidePGOtherBanks">
+
+                <!-- DEFAULT AMOUNT -->
+                <DefaultAmount OnClickCallback="@(() => UpdateState())"/>
+
+                <!-- BANK SELECTION -->
+                <div class="form-group" style="background-color: white; border-radius: 5px;">
+                    <BlazoredTypeahead SearchMethod="@SearchBanks" @bind-Value="@SelectedBank" placeholder="Input name of your bank" Debounce="500" class="selBank">
+                        <SelectedTemplate> 
+                            @context.bank 
+                        </SelectedTemplate>
+                        <ResultTemplate> 
+                            @context.bank 
+                        </ResultTemplate>
+                        <NotFoundTemplate>
+                            Sorry, there weren't any search results.
+                        </NotFoundTemplate>
+                    </BlazoredTypeahead>
+                </div>
+
+                <!-- FULL NAME -->
+                <div class="form-group">
+                    <input class="form-control" type="text" value="@_mainCreditsViewModel.UserInfo.FullName" disabled />
+                </div>
+
+                <!-- ACCOUNT NUMBER -->
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Bank Acct. Number" @bind-value="_mainCreditsViewModel.WithdrawRequestUBParamsDtl.AccountNumber" />
+                </div>
+                    
+                <!-- AMOUNT -->
+                <div class="pesoContainer mt-3 inner-addon left-addon">
+                    <span class="peso">&#8369;</span>
+                    <input autocomplete="stopdoingthat" class="form-control pl-4 input-lg " type="number" placeholder="Input Other Amount (500-50,000)" @bind-value="_mainCreditsViewModel.WithdrawAmount" onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <input class="addCredit-submit btn btn-primary mt-2 mb-2" type="button" @onclick="WithdrawUBInstaPay" value="Submit" />
+            </div>
+
+            <!-- UNION -->
+            <div class="form-group BankDetails m-1 p-1" hidden="@hidePGWithdrawUB">
+
+                <!-- DEFAULT AMOUNT -->
+                <DefaultAmount OnClickCallback="@(() => UpdateState())"/>
+
+                <!-- FULL NAME -->
+                <div class="form-group">
+                    <input class="form-control" type="text" value="@_mainCreditsViewModel.UserInfo.FullName" disabled />
+                </div>
+
+                <!-- ACCOUNT NUMBER -->
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Union Bank Account Number" @bind-value="_mainCreditsViewModel.WithdrawRequestUBParamsDtl.AccountNumber" />
+                </div>
+
+                <!-- AMOUNT -->
+                <div class="pesoContainer mt-3 inner-addon left-addon">
+                    <span class="peso">&#8369;</span>
+                    <input autocomplete="stopdoingthat" class="form-control pl-4 input-lg " type="number" placeholder="Input Other Amount (500-50,000)" @bind-value="_mainCreditsViewModel.WithdrawAmount" onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <input class="addCredit-submit btn btn-primary mb-2 mt-2" type="button" @onclick="WithdrawUBToUB" value="Submit" />
+            </div>
+
+            <!-- OVER THE COUNTER -->
+            <div class="form-group m-1 p-1" hidden="@hideWithdrawCredit">
+
+                <!-- DEFAULT AMOUNT -->
+                <DefaultAmount OnClickCallback="@(() => UpdateState())"/>
+
+                <!-- AGENT USERNAME -->
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="AgentXXX" value="@_mainCreditsViewModel.UserParentDtl.Username" disabled />
+                </div>
+
+                <!-- AMOUNT -->
+                <div class="pesoContainer form-group">
+                    <span class="peso">&#8369;</span>
+                    <input class="form-control pl-4 input-lg" autocomplete="stopdoingthat" type="number" placeholder="Input Other Amount (500-50,000)" @bind-value='_mainCreditsViewModel.WithdrawAmount' onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                </div>
+
+                <!-- PASSWORD 
+                <div class="eyeContainer mt-3 mb-3 inner-addon right-addon">
+                    <span class="eye @showpassicon" @onclick="ShowPassword"></span>
+                    <input class="form-control" type="@showpass" placeholder="Password" @bind-value="_mainCreditsViewModel.WithdrawPassword" />
+                </div> -->
+
+                <!-- SUBMIT BUTTON -->
+                <input class="addCredit-submit btn btn-primary mb-2 mt-2" type="button" @onclick="RequestWithdrawCredit" value="Submit" />
+            </div>
+        </form>
+
+        <!-- GOPLAY ASIA GCASH -->
+        @if (_mainCreditsViewModel.CashOutSettings.GoplayAsia)
+        {
+            @if (!hideWithdrawGoplay)
+            {
+                <form>
+                    @if (!hideWithdrawGCash)
+                    {
+                        <DefaultAmount OnClickCallback="@(() => UpdateState())"/>
+                        <div class="form-group GcashDetails m-1">
+                            
+                            <div class="form-group">
+                                <p class="form-control font-weight-bolder" type="text">@_mainCreditsViewModel.UserInfo.FullName</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <p class="form-control font-weight-bolder" type="text" maxlength="11">@_mainCreditsViewModel.WithdrawRequestGCashParamsDtl.AccountNumber</p>
+                            </div>
+
+                                <input class="form-control font-weight-bolder" type="number" placeholder="Input Other Amount (@($"{String.Format("{0:#,##0.#}", _mainCreditsViewModel.WithdrawMinAmount)} - {String.Format("{0:#,##0.#}", _mainCreditsViewModel.WithdrawMaxAmount)}"))" @bind-value="_mainCreditsViewModel.WithdrawAmount" onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                            
+                            <div class="eyeContainer mt-3 inner-addon right-addon">
+                                <span class="eye @showpassicon" @onclick="ShowPassword"></span>
+                                <input class="form-control" type="@showpass" placeholder="Password" @bind-value="_mainCreditsViewModel.WithdrawPassword" />
+                            </div>
+                            <input class="addCredit-submit btn btn-primary mt-3" type="button" @onclick="RequestWithdrawGCashGoplay" value="Submit" />
+                        </div>
+                    }
+                </form>
+            }
+        }
+    }
+    else if (_mainCreditsViewModel.UserInfo.Verified == 2)
+    {
+        <form>
+            <div class="VerifiedInformationText mr-2 ml-2">
+                <!--START VERFICATION TEXT-->
+                <div class="VeryfiedCon tex-center">
+                    <i class="bi bi-info-circle d-flex justify-content-center align-content-center m-1 p-2" style="font-size: 40px; color: dodgerblue;"></i>
+                    <p class="text-center">
+                        Your account is being reviewed as of the moment. Please check again later.
+                        We will keep you informed thru sms on any further updates.
+                    </p>
+                </div>
+            </div>
+        </form>
+    }
+    else
+    {
+        <form>
+            <div class="VerifiedInformationText mr-2 ml-2">
+                <!--START VERFICATION TEXT-->
+                <div class="VeryfiedCon tex-center">
+                    <i class="bi bi-info-circle d-flex justify-content-center align-content-center m-1 p-2" style="font-size: 40px; color: dodgerblue;"></i>
+                    <p class="text-center">
+                        Verify your account by clicking the button below.
+                    </p>
+                    <div class="row">
+                        <div class="col d-flex">
+                            <button class="btn btn-primary col mr-1 p-1" style="border: none; font-size: 16px;" @onclick="Verification">Complete signup now</button>
+                            @*<button class="btn btn-danger col-5" style="border: none;">Cancel</button>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    }
+    </div>
+</div>

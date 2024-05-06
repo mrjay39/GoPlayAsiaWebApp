@@ -1,0 +1,74 @@
+﻿.errorMessage {
+    font-size: 16px;
+    font-weight: 400;
+    color: red;
+    margin: 5px;
+}
+
+.main {
+    position: relative;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 56%, rgba(221,216,216,1) 66%, rgba(0,0,0,1) 99%);
+    max-width: 480px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+    height:400px;
+}
+.xButton {
+  border-radius: 8px;
+    float: right;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    padding: 4px 9px;
+    line-height: normal;
+}
+.imageAbsolute {
+    position: absolute;
+    bottom: 0;
+    width: 640px;
+    left: 0;
+}
+img.lockIcon {
+    color: gold;
+    display: flex;
+    justify-content: center;
+    width: 40px;
+}
+
+.btnSub {
+    background-color: #05976a;
+    border: none;
+    padding: 0;
+    border-radius: 5px;
+    padding: 5px 0;
+    margin-top: 5px;
+}
+
+.main {
+    max-width: 320px;
+}
+
+.verfifiedTxt {
+    color: red;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.reqCode {
+    font-weight: 600;
+    color: white;
+}
+
+.btnCancel {
+    font-weight: 600;
+    color: #05976a;
+    border: none;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+    background: none;
+}

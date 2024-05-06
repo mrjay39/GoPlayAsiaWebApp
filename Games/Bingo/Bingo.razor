@@ -1,0 +1,45 @@
+﻿@page "/games/bingo"
+@using GoPlayAsiaWebApp.ViewModels
+@inject BingoViewModel _iBingoViewModel
+@using GoPlayAsiaWebApp.Games.Bingo.Components
+@using GoPlayAsiaWebApp.Games.Shared;
+@using GoPlayAsiaWebApp.Games.Bingo.CardTemplate
+@using GoPlayAsiaWebApp.ViewModels
+<CascadingValue Value="@_iBingoViewModel._BingoPrizePerDrawDTO">
+    <CascadingValue Value="@_iBingoViewModel.GameChips">
+        <CascadingValue Value="@_iBingoViewModel.TotalBets">
+            <CascadingValue Value="@_iBingoViewModel.BetAmount">
+                <div class="bingoContainer">
+                    @* <GameHeader /> *@
+                    <GameHeader />
+                    <MainDisplayCards JackpotPrize="@_iBingoViewModel.JackpotPrize"
+                                      MiniJackpot="@_iBingoViewModel.MiniJackpot"
+                                      BetValue1="@_iBingoViewModel.BetValue1"
+                                      BetValue2="@_iBingoViewModel.BetValue2"
+                                      BetValue3="@_iBingoViewModel.BetValue3"
+                                      BetValue4="@_iBingoViewModel.BetValue4"
+                                      BetValue5="@_iBingoViewModel.BetValue5"
+                                      BetValue6="@_iBingoViewModel.BetValue6" />
+
+                    <TokenSelection />
+                    <BetButtons />
+
+                    @* <GameNoComponent /> *@
+                    <CurrentCards />
+                    <WinnersList />
+
+                </div>
+            </CascadingValue>
+        </CascadingValue>
+    </CascadingValue>
+</CascadingValue>
+
+
+
+
+
+
+
+
+
+

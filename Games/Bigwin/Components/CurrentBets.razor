@@ -1,0 +1,78 @@
+﻿@using GoplayasiaBlazor.Models;
+@using System.Collections.ObjectModel;
+@using static GoplayasiaBlazor.Models.Constants.Settings;
+@using GoPlayAsiaWebApp.ViewModels;
+@inject BigWinViewModel iBigWinViewModel
+
+@if (UserBets != null)
+{
+    <div id="bigWinPlayerBetsContainer" class="container overflow-auto">
+        <div class="row">
+            @foreach (var _userbets in UserBets)
+            {
+                string winnerClass = "";
+                @if (_userbets.BetStatus == (int)BetStatus.Win || _userbets.BetStatus == (int)BetStatus.Consolation)
+                {
+                    if (_userbets.Winnings > 12000000 && _userbets.BetStatus == (int)BetStatus.Win)
+                    {
+                        winnerClass = "grandJackpot";
+                    }
+                    else if (_userbets.Winnings <= 12000000 && _userbets.BetStatus == (int)BetStatus.Win)
+                    {
+                        winnerClass = "miniJackpot";
+                    }
+                    else if (_userbets.BetStatus == (int)BetStatus.Consolation)
+                    {
+                        winnerClass = "consol";
+                    }
+                    else
+                    {
+                        winnerClass = "default";
+                    }
+                }
+
+                <div class="pl-1 mt-1 pr-1 current-bets  @winnerClass">
+                    <p class="flex justify-content-center align-items-center  ">
+                        @if (_userbets.BetValue.Length >= 5)
+                        {
+                            <span class="winBall">@_userbets.BetValue.Substring(0, 1)</span>
+                            <span class="winBall">@_userbets.BetValue.Substring(1, 1)</span>
+                            <span class="winBall">@_userbets.BetValue.Substring(2, 1)</span>
+                            <span class="winBall">@_userbets.BetValue.Substring(3, 1)</span>
+                            <span class="winBall">@_userbets.BetValue.Substring(4, 1)</span>
+                            <span class="goldChip">&nbsp;</span>
+                            <span class="winAmount">@iBigWinViewModel.JackpotPrize</span>
+                        }
+                    </p>
+                </div>
+            }
+        </div>
+
+    </div>
+}
+
+
+@code {
+    [Parameter]
+    public GameRoundModel PrevGameRound { get; set; }
+    [Parameter]
+    public ObservableCollection<BetModel> UserBets { get; set; }
+    [Parameter]
+    public ObservableCollection<BetModel> PreviousBets { get; set; }
+    [Parameter]
+    public bool isPrevious { get; set; }
+
+    [Parameter] public string RoundStatusString { get; set; } = "";
+    [Parameter] public string CurrView { get; set; } = "Current";
+    [Parameter]
+    public String JackpotPrize { get; set; }
+    public async Task SelectView(String IView)
+    {
+        iBigWinViewModel.CurrView = IView;
+        CurrView = IView;
+        if (IView == "Previous")
+        {
+            await iBigWinViewModel.GetPrevRoundBets();
+        }
+    }
+}

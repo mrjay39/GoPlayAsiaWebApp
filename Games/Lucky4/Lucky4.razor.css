@@ -1,0 +1,8 @@
+﻿.mainContainer {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: url('./img/maroon-bg.jpg');
+}

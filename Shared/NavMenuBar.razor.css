@@ -1,0 +1,138 @@
+
+.mainContainer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 0;
+}
+
+.bg-grey {
+    background-color: #101019;
+}
+
+.icon-bar {
+    width: 100%;
+    background-color: #101019;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+    .icon-bar a {
+        width: 150px;
+        text-align: center;
+        padding: 8px 0;
+        transition: all 0.3s ease;
+        color: rgb(243, 195, 107);
+        font-size: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .icon-bar a:hover {
+            text-decoration: none;
+        }
+
+        .icon-bar a:hover {
+            background-color: #213048;
+        }
+        .icon-bar a:active {
+            background-color: #213048;
+        }
+    .icon-bar .highlight {
+        background-color: #213048;
+        border-radius: 5px;
+    }
+        .icon-bar .highlight i {
+            font-size: 35px;
+            color: #Ffad20;
+        }
+
+
+
+.icon-bar a span {
+    font-size: 16px;
+    margin-left: 5px;
+    padding: 5px;
+}
+
+a {
+    font-family: sans-serif;
+}
+
+/* Set the background color of body to tan */
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+    .icon-bar a span {
+        font-size: 118px;
+        margin-left: 5px;
+        padding: 5px;
+    }
+
+    /* On screens that are 600px or less, set the background color to olive */
+    @media screen and (max-width: 600px) {
+    }
+
+    .mainContainer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .icon-bar a span {
+        margin-left: 0;
+        font-size: 12px;
+        padding: 2px;
+    }
+
+    .icon-bar {
+        width: 100%;
+        background: none;
+        overflow: auto;
+    }
+
+        .icon-bar a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .icon-bar a i {
+                font-size: 25px;
+            }
+}
+
+@media screen and (max-width: 412px) {
+}
+
+.mainContainer {
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.icon-bar a span {
+    margin-left: 0;
+    font-size: 12px;
+    padding: 2px;
+}
+
+.icon-bar {
+    width: 100%;
+    background: none;
+    overflow: auto;
+}
+
+    .icon-bar a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        .icon-bar a i {
+            font-size: 25px;
+        }
+}

@@ -1,0 +1,120 @@
+﻿
+<!-- Modal -->
+<div class="modal fade" id="luckySlot-option-cont" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div id="btn-options" class="modal-body">
+                @* ======= Animals ========  *@              
+                <div id="animal-btn-container">
+                    <button class="animal-1"></button>
+                    <button class="animal-2"></button>
+                    <button class="animal-3"></button>
+                    <button class="animal-4"></button>
+                    <button class="animal-5"></button>
+               </div>
+               @* ======= Fruits ========  *@              
+                <div id="fruit-btn-container">
+                    <button class="fruit-1"></button>
+                    <button class="fruit-2"></button>
+                    <button class="fruit-3"></button>
+                    <button class="fruit-4"></button>
+                    <button class="fruit-5"></button>
+               </div>
+               @* ======= Balls ========  *@              
+                <div id="ball-btn-container">
+                    <button class="ball-1"></button>
+                    <button class="ball-2"></button>
+                    <button class="ball-3"></button>
+                    <button class="ball-4"></button>
+                    <button class="ball-5"></button>
+               </div>
+               @* ======= Cars ========  *@              
+                <div id="car-btn-container">
+                    <button class="car-1"></button>
+                    <button class="car-2"></button>
+                    <button class="car-3"></button>
+                    <button class="car-4"></button>
+                    <button class="car-5"></button>
+               </div>
+               @* ======= Gems ========  *@              
+                <div id="gem-btn-container">
+                    <button class="gem-1"></button>
+                    <button class="gem-2"></button>
+                    <button class="gem-3"></button>
+                    <button class="gem-4"></button>
+                    <button class="gem-5"></button>
+               </div>
+                @* ======= Card Sign ========  *@
+                <div id="card-btn-container">
+                    <button class="card-1"></button>
+                    <button class="card-2"></button>
+                    <button class="card-3"></button>
+                    <button class="card-4"></button>
+                    <button class="card-5"></button>
+               </div>
+            </div>
+            <div class="modal-footer pl-1 pr-1 justify-content-center">
+                <button id="close-btn" type="button" class="btn col-2 btn-warning" data-dismiss="modal"><i class="fa-solid fa-rectangle-xmark"></i> </button>
+                <div id ="bet-dropdown" class="dropdown col-7 pr-2 pl-0">
+                    <button id="bet-btn" disabled type="button" class="btn font-weight-bold col mx-1 slot-btn dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa-solid fa-thumbs-up"></i> BET
+                        <span class="bet-chips">5</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item">20</a>
+                        <a class="dropdown-item">15</a>
+                        <a class="dropdown-item">10</a>
+                        <a class="dropdown-item">5</a>
+                        <a class="dropdown-item">3</a>
+                        <a class="dropdown-item">2</a>
+                        <a class="dropdown-item">1</a>
+                    </div>
+                </div>
+                <button id="remove-btn" type="button" class="btn col-2 btn-danger"><i class="fa-solid fa-trash"></i> </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        var maxSelected = 5;
+        var selectedButtons = [];
+
+        $('#btn-options button').click(function () {
+            var selectedCount = selectedButtons.length;
+
+            if (selectedCount < maxSelected) {
+                $(this).addClass('selected');
+                selectedButtons.push(this);
+            }
+
+            selectedCount = selectedButtons.length; 
+
+            if (selectedCount === maxSelected) {
+                $('#bet-btn').addClass('active');
+                $('#bet-btn').prop('disabled', false);
+            }
+        });
+
+        $('#remove-btn').click(function () {
+            if (selectedButtons.length > 0) {
+                var lastSelectedButton = selectedButtons.pop();
+                $(lastSelectedButton).removeClass('selected');
+                $('#bet-btn').removeClass('active');
+                $('#bet-btn').prop('disabled', true);
+            }
+        });
+
+        $('.dropdown-item').on('click', function () {
+            var selectedValue = $(this).text();
+            $('.bet-chips').text(selectedValue);
+        });
+
+        $('#close-btn').click(function () {
+            $('#btn-options button').removeClass('selected');
+            $('#bet-btn').removeClass('active').prop('disabled', true);
+            selectedButtons = []; // Reset the array
+        })
+
+    });
+</script>

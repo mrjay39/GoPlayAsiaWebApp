@@ -1,0 +1,16 @@
+﻿<button class="btn col cardDiv" @onclick="OnClickCallback">
+    <div class="d-flex">
+        <div class="cardValue black mr-1" style="letter-spacing: -2px">10</div>
+        <div> <img class="cardSuit" src="img/spade.png" /> </div>
+    </div>
+    <div class="d-flex" style=" transform: rotate(-.50turn);">
+        <div class="cardValue black mr-1" style="letter-spacing: -2px">10</div>
+        <div> <img class="cardSuit" src="img/spade.png" /> </div>
+    </div>
+
+</button>
+
+@code {
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+}

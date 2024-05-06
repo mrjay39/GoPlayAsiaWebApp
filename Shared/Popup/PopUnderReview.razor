@@ -1,0 +1,25 @@
+﻿@page "/noload"
+
+<div class="warningIcon row justify-content-center">
+    <i class="bi bi-exclamation-circle-fill d-block" style="font-size:50px"></i>
+</div>
+<p>Your Account is currently under review, you can join games but betting is disabled.</p>
+<div class="btnCon row d-flex">
+    <button type="button" class="col  btn btn-primary" @onclick="() => Confirmation(true)">I Understand</button>
+</div>
+@inject NavigationManager NavigationManager;
+@Message
+@code {
+    public bool Show { get; set; }
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string Class { get; set; } = "";
+    [Parameter] public string Message { get; set; } = "";
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+  
+    public void Confirmation(bool value)
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok(value));
+    }
+
+}

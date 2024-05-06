@@ -1,0 +1,232 @@
+﻿@using GoPlayAsiaWebApp.Games.SharedCards.Diamonds
+@using GoPlayAsiaWebApp.Games.SharedCards.Club
+@using GoPlayAsiaWebApp.Games.SharedCards.Hearts
+@using GoPlayAsiaWebApp.Games.SharedCards.Spade
+
+@*Diamonds*@
+@if (CardToShow == "A-D-R")
+{
+    <ADR  />
+}
+else if (CardToShow == "10-D-R")
+{
+    <C10DR   />
+}
+else if (CardToShow == "2-D-R")
+{
+    <C2DR   />
+}
+else if (CardToShow == "3-D-R")
+{
+    <C3DR   />
+}
+else if (CardToShow == "4-D-R")
+{
+    <C4DR   />
+}
+else if (CardToShow == "5-D-R")
+{
+    <C5DR   />
+}
+else if (CardToShow == "6-D-R")
+{
+    <C6DR  />
+}
+else if (CardToShow == "7-D-R")
+{
+    <C7DR  />
+}
+else if (CardToShow == "8-D-R")
+{
+    <C8DR  />
+}
+else if (CardToShow == "9-D-R")
+{
+    <C9DR  />
+}
+else if (CardToShow == "J-D-R")
+{
+    <JDR  />
+}
+else if (CardToShow == "K-D-R")
+{
+    <KDR  />
+}
+else if (CardToShow == "Q-D-R")
+{
+    <QDR  />
+}
+@*Diamonds*@
+
+
+@*Clubs*@
+@if (CardToShow == "A-C-B")
+{
+    <ACB   />
+}
+else if (CardToShow == "10-C-B")
+{
+    <C10CB />
+}
+else if (CardToShow == "2-C-B")
+{
+    <C2CB  />
+}
+else if (CardToShow == "3-C-B")
+{
+    <C3CB  />
+}
+else if (CardToShow == "4-C-B")
+{
+    <C4CB  />
+}
+else if (CardToShow == "5-C-B")
+{
+    <C5CB  />
+}
+else if (CardToShow == "6-C-B")
+{
+    <C6CB  />
+}
+else if (CardToShow == "7-C-B")
+{
+    <C7CB  />
+}
+else if (CardToShow == "8-C-B")
+{
+    <C8CB  />
+}
+else if (CardToShow == "9-C-B")
+{
+    <C9CB   />
+}
+else if (CardToShow == "J-C-B")
+{
+    <JCB  />
+}
+else if (CardToShow == "K-C-B")
+{
+    <KCB  />
+}
+else if (CardToShow == "Q-C-B")
+{
+    <QCB  />
+}
+@*CLUBS*@
+
+
+@*HEARTS*@
+@if (CardToShow == "A-H-R")
+{
+    <AHR  />
+}
+else if (CardToShow == "10-H-R")
+{
+    <C10HR  />
+}
+else if (CardToShow == "2-H-R")
+{
+    <C2HR  />
+}
+else if (CardToShow == "3-H-R")
+{
+    <C3HR  />
+}
+else if (CardToShow == "4-H-R")
+{
+    <C4HR  />
+}
+else if (CardToShow == "5-H-R")
+{
+    <C5HR  />
+}
+else if (CardToShow == "6-H-R")
+{
+    <C6HR  />
+}
+else if (CardToShow == "7-H-R")
+{
+    <C7HR  />
+}
+else if (CardToShow == "8-H-R")
+{
+    <C8HR  />
+}
+else if (CardToShow == "9-H-R")
+{
+    <C9HR  />
+}
+else if (CardToShow == "J-H-R")
+{
+    <JHR  />
+}
+else if (CardToShow == "K-H-R")
+{
+    <KHR  />
+}
+else if (CardToShow == "Q-H-R")
+{
+    <QHR  />
+}
+@*HEARTS*@
+
+
+@*SPADE*@
+@if (CardToShow == "A-S-B")
+{
+    <ASB />
+}
+else if (CardToShow == "10-S-B")
+{
+    <C10SB  />
+}
+else if (CardToShow == "2-S-B")
+{
+    <C2SB  />
+}
+else if (CardToShow == "3-S-B")
+{
+    <C3SB  />
+}
+else if (CardToShow == "4-S-B")
+{
+    <C4SB  />
+}
+else if (CardToShow == "5-S-B")
+{
+    <C5SB  />
+}
+else if (CardToShow == "6-S-B")
+{
+    <C6SB  />
+}
+else if (CardToShow == "7-S-B")
+{
+    <C7SB  />
+}
+else if (CardToShow == "8-S-B")
+{
+    <C8SB  />
+}
+else if (CardToShow == "9-S-B")
+{
+    <C9SB  />
+}
+else if (CardToShow == "J-S-B")
+{
+    <JSB  />
+}
+else if (CardToShow == "K-S-B")
+{
+    <KSB  />
+}
+else if (CardToShow == "Q-S-B")
+{
+    <QSB  />
+}
+@*SPADE*@
+@code {
+    [Parameter]
+    public String CardToShow { get; set; } = "";
+
+}

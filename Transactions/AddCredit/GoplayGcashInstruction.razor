@@ -1,0 +1,46 @@
+﻿
+<container>
+    <section class="mainCon">
+        <div class="stepText d-block">
+            <p class="stepHeader font-weight-bolder">GCASH Transfer Details</p>
+            <p class="stepHeader mb-0"><strong>Step 1:</strong> Login to your Gcash App</p>
+            <p class="stepHeader mb-0"><strong>Step 2:</strong> Click Send </p>
+            <p class="stepHeader mb-0"><strong>Step 3:</strong> Click Express Send </p>
+            <p class="stepHeader mb-0"><strong>Step 4:</strong> Input Mobile Number and Amount then Click Next</p>
+            <p class="stepHeader mb-0"><strong>Step 5:</strong> Copy Reference Number and paste to Message</p>
+            <p class="stepHeader mb-0"><strong>Step 6:</strong> Continue to confirmation page</p>
+        </div>
+
+        <table class="table table-striped ">
+            <tbody>
+                <tr>
+                    <td>Account Name:</td>
+                    <td>@_mainCreditsViewModel.AccountName</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Gcash Number:</td>
+                    <td>@_mainCreditsViewModel.AccountNumber</td>
+                    <td><button class="btn btn-primary" onclick="navigator.clipboard.writeText('@_mainCreditsViewModel.AccountNumber')">Copy</button></td>
+                </tr>
+                <tr>
+                    <td>Ref Number:</td>
+                    <td>@_mainCreditsViewModel.ReferenceNumber</td>
+                    <td><button class="btn btn-primary" onclick="navigator.clipboard.writeText('@_mainCreditsViewModel.ReferenceNumber')">Copy</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row d-flex align-items-center justify-content-center w-100 m-0 p-0 ">
+            <button class="btn btn-primary mt-2 mb-2" @onclick="() => Close(true)">Close</button>
+        </div>
+
+    </section>
+
+</container>
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    public void Close(bool value)
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok(value));
+    }
+}

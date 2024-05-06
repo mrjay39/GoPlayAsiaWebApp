@@ -1,0 +1,229 @@
+﻿@page "/winpop"
+@using GoplayasiaBlazor.Models
+@using GoplayasiaBlazor.Models.Constants
+
+
+
+@if (GameWinner.IsJackpotBased)
+{
+    @if (GameWinner.Consolled == false)
+    {
+        <div class="cardMain">
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="innerConRel">
+                <div class="cardConFront">
+                    <div class="winResult text-dark text-center">
+                        @GameWinner.WinningCombination
+                    </div>
+                    <div class="congratsHeader text-center">
+                        CONGRATULATIONS!
+                    </div>
+                    <img src="/img/jackIcon.png" class="align-items-center justify-content-center d-flex" height="120px">
+                    <div class="congrats text-center mt-2">
+                        YOU HAVE WON
+                    </div>
+                    <div class="jackPayout text-center mt-2">
+                        @GameWinner.AmountWonString
+                    </div>
+                    @*   <div class="text-center mt-2">
+            You are one of the 3 lucky winners of JACKPOT!
+            </div>*@
+                </div>
+                <div class="cardConBack d-block">
+                    <div class="jackText text-center m-0 p-0 col">JACKPOT</div>
+                    <div class="prizeText text-center  col">PRIZE</div>
+                </div>
+                <div class="winResult">
+                </div>
+                <p class="text-center text-light">
+                    Our service representative will contact you, Please keep your line open.
+                </p>
+
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="cardMain " @onclick="() => Close(true)">
+            <div class="innerConRel">
+                <div class="cardConFront" style="height: 220px;">
+                    <div class="winResult text-dark text-center">
+                        Winning Result: @GameWinner.WinningCombination
+                    </div>
+                    <div class="congrats text-center" style="font-size: 25px;">
+                      CONSOLATION PRIZE
+                    </div>
+              @*      <img src="/img/jackIcon.png" class="align-items-center justify-content-center d-flex" height="120px">*@
+                    <div class="congrats text-center mt-2">
+                        You have won consolation prize for game #@GameWinner.RoundNumber of @GameWinner.GameName
+                    </div>
+                    <div class="jackPayout text-center ">
+                        @GameWinner.AmountWonString
+                    </div>
+                    <div class="text-center mt-2">
+                        @*You are one of the @GameWinner.ConsolledCombination.Count lucky consolation prize Winners!*@
+                    </div>
+                </div>
+                <div class="cardConBack d-block" style=" height: 290px;" >
+                    <div class="jackText text-center m-0 p-0 col" style="line-height: 2.4; font-size: 25px;">CONGRATULATIONS!</div>
+                </div>
+                <div class="winResult">
+                </div>
+           
+
+            </div>
+        </div>
+    }
+
+}
+else
+{
+
+
+    <div class="container-fluid " @onclick="() => Close(true)">
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="winningIcon row">
+            <img class="winningLogo col-2" src="/img/win.png" />
+        </div>
+        <h3 class="text-center mb-0">Congratulations!</h3>
+        <h4 class="text-center">You won game @GameWinner.RoundNumber of @GameWinner.GameName</h4>
+        @if (GameWinner.IsFixedWon || GameWinner.IsOddsWon || GameWinner.IsDrawWon)
+        {
+
+            <p class="text-center">
+                Bet on: <span class="font-weight-bolder">@GameWinner.WinningCombination</span>
+            </p>
+            <p class="text-center">
+
+                Won:<span class="font-weight-bolder text-dark totalWinnings">
+                    @(@GameWinner.IsFixedWon ? GameWinner.FixedWonString : "")
+                    @(@GameWinner.IsOddsWon ? GameWinner.OddsWonString : "")
+                    @(@GameWinner.IsDrawWon ? GameWinner.DrawWonString : "")
+
+                </span>
+            </p>
+        }
+
+        @if (GameWinner.GameTypeId == (int)Settings.GameTypes.Lucky_9)
+        {
+
+            <ul class="list-group">
+                @if(GameWinner.TargetPlayerWon > 0 ||
+               GameWinner.TargetBankerWon > 0 ||
+                GameWinner.SuitsPlayerWon > 0 ||
+               GameWinner.SuitsBankerWon > 0 ||
+               GameWinner.ColorRedPlayerWon > 0 ||
+               GameWinner.ColorBlackPlayerWon > 0 ||
+               GameWinner.ColorRedBankerWon > 0 ||
+               GameWinner.ColorBlackBankerWon > 0 ||
+               GameWinner.PairPlayerWon > 0 ||
+               GameWinner.PairBankerWon > 0
+                ){
+                    <h6>Side Bets</h6>
+                }
+                @if (GameWinner.TargetPlayerWon > 0)
+                {
+                    <li class="list-group-item">Lucky 9 (Player):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.TargetPlayerWon.ToString("N2")</span> </li>
+                }
+                @if (GameWinner.TargetBankerWon > 0)
+                {
+                    <li class="list-group-item">Lucky 9 (Banker):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.TargetBankerWon</span></li>
+                }
+                @if (GameWinner.SuitsPlayerWon > 0)
+                {
+                    <li class="list-group-item">Suites (Player):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.SuitsPlayerWon</span> </li>
+                }
+                @if (GameWinner.SuitsBankerWon > 0)
+                {
+                    <li class="list-group-item">Suites (Banker):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.SuitsBankerWon</span> </li>
+                }
+                @if (GameWinner.ColorRedPlayerWon > 0)
+                {
+                    <li class="list-group-item">Color Red (Player):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.ColorRedPlayerWon</span> </li>
+                }
+                @if (GameWinner.ColorBlackPlayerWon > 0)
+                {
+                    <li class="list-group-item">Color Black (Player):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.ColorBlackPlayerWon</span> </li>
+                }
+                @if (GameWinner.ColorRedBankerWon > 0)
+                {
+                    <li class="list-group-item">Color Red (Banker):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.ColorRedBankerWon</span> </li>
+                }
+                @if (GameWinner.ColorBlackBankerWon > 0)
+                {
+                    <li class="list-group-item">Color Black (Banker):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.ColorBlackBankerWon</span> </li>
+                }
+
+                @if (GameWinner.PairPlayerWon > 0)
+                {
+                    <li class="list-group-item">Pair (Player):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.PairPlayerWon</span> </li>
+                }
+                @if (GameWinner.PairBankerWon > 0)
+                {
+                    <li class="list-group-item">Pair (Banker):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.PairBankerWon</span> </li>
+                }
+            </ul>
+
+        }
+        else @if (GameWinner.GameTypeId == (int)Settings.GameTypes.Gold_And_Silver)
+        {
+
+            <ul class="list-group">
+                @if (GameWinner.SuitsGoldWon > 0 ||
+               GameWinner.SuitsSilverWon > 0 ||
+               GameWinner.ColorBlackGoldWon > 0 ||
+               GameWinner.ColorRedGoldWon > 0 ||
+               GameWinner.ColorBlackSilverWon > 0 ||
+               GameWinner.ColorRedGoldWon > 0
+                ){
+                <h6>Side Bets</h6>
+                }
+                @if (GameWinner.SuitsGoldWon > 0)
+                {
+                    <li class="list-group-item">Suits (Gold):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.SuitsGoldWon</span> </li>
+                }
+                @if (GameWinner.SuitsSilverWon > 0)
+                {
+                    <li class="list-group-item">Suits (Silver):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.SuitsSilverWon</span> </li>
+                }
+                @if (GameWinner.ColorBlackGoldWon > 0)
+                {
+                    <li class="list-group-item">Color Black (Gold):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.ColorBlackGoldWon</span> </li>
+                }
+                @if (GameWinner.ColorRedGoldWon > 0)
+                {
+                    <li class="list-group-item">Color Red( Silver):<span class="badge badge-info font-weight-bolder fontWin"> @GameWinner.ColorRedGoldWon</span></li>
+                }
+                @if (GameWinner.ColorBlackSilverWon > 0)
+                {
+                    <li class="list-group-item">Color Black(Gold):<span class="badge badge-info font-weight-bolder fontWin"> @GameWinner.ColorBlackSilverWon</span></li>
+                }
+                @if (GameWinner.ColorRedSilverWon > 0)
+                {
+                    <li class="list-group-item">Color Red(Silver):<span class="badge badge-info font-weight-bolder fontWin">@GameWinner.ColorRedSilverWon</span> </li>
+                }
+            </ul>
+        }
+        <p class="text-center mt-3 ">
+            Total Winnings: <span class="font-weight-bolder badge badge-primary totalWinnings"> @GameWinner.AmountWonString </span>
+        </p>
+    </div>
+}
+@code {
+    [Parameter]
+    public UpdateGameWinnerModel GameWinner { get; set; } = new UpdateGameWinnerModel();
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+ 
+    }
+    public void Close(bool value)
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok(value));
+    }
+}

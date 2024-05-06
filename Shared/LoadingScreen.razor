@@ -1,0 +1,32 @@
+﻿
+@if (isLoaded)
+{
+    @ChildContent
+}
+else
+{
+    <div class="authCon">
+        @*<img src="/img/goplay-logo-round.webp" height="60px" width="60px" class="gpaIcon" />*@
+        @* <div class="lds-ripple"><div></div><div></div></div> *@
+        <div class="row justify-content-center">
+            <img src="/img/loading.webp" />
+        </div>
+
+        <h2 class="m-3 text text-center">Loading...</h2>
+    </div>
+
+ 
+}
+
+@code {
+    bool isLoaded;
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        //await Task.Delay(500); // TODO actual initialization job
+        isLoaded = true;
+    }
+}

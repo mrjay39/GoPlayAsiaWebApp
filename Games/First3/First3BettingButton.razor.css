@@ -1,0 +1,583 @@
+﻿
+.mainContainer {
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.maxWidth {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+body { 
+    background-color: black;
+}
+
+.gameTitle {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/*SEPARATOR*/
+marquee {
+    max-width: 640px;
+    margin: 0 auto;
+    background: rgb(64,4,6);
+    background: linear-gradient(90deg, rgba(64,4,6,1) 0%, rgba(158,12,17,1) 50%, rgba(64,4,6,1) 100%);
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+.payout {
+    font-size: 11px;
+}
+
+.betAmount {
+    font-size: 11px;
+}
+
+.smallHeader {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.conBorder {
+    border: 1px solid #6d6d6d;
+}
+
+
+
+.Black2Gold {
+    background-color: #680004;
+    color: white;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+    .Black2Gold:focus {
+        background-color: #ff000a;
+        color: white;
+    }
+
+.Red2Silver {
+    background-color: #28355b;
+    color: white;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+    .Red2Silver:focus {
+        background-color: #008aff;
+        color: white;
+    }
+
+.Black2Silver {
+    background-color: #28355b;
+    color: white;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+    .Black2Silver:focus {
+        background-color: #008aff;
+        color: white;
+    }
+
+/*suite icons*/
+img.resultSuitesIcon {
+    height: 18px;
+    width: 15px;
+}
+/*rotate*/
+.cardResultsGoldRotated {
+    line-height: normal;
+    font-size: 20px;
+    border-radius: 2px;
+    border: 1px solid white;
+    max-width: fit-content;
+    padding: 3px 10px;
+    color: black;
+    background-color: white;
+}
+/*Total Result value*/
+.totalResultValue {
+    background-color: red;
+    color: white;
+    height: 25px;
+    width: 25px;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 50%;
+    border: 1px solid white;
+    line-height: normal;
+}
+/*rotate*/
+.cardResultsVertical {
+    margin: 1px;
+    line-height: normal;
+    font-size: 20px;
+    border-radius: 2px;
+    border: 1px solid white;
+    width: fit-content;
+    padding: 3px 15px;
+    color: black;
+    background-color: white;
+    max-width: fit-content;
+}
+
+.EmptyCardResults {
+    margin: 1px;
+    line-height: normal;
+    font-size: 20px;
+    border-radius: 2px;
+    max-width: 47px;
+    height: 54px;
+    border: solid 2px white;
+}
+
+/*suite icons*/
+/*   */
+.GoldButton {
+    background-color: #680004;
+    color: white;
+    margin-right: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+    .GoldButton:focus {
+        background-color: #ff000a;
+        color: white;
+    }
+
+.SilverButton {
+    background-color: #28355b;
+    color: white;
+    margin-left: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+    .SilverButton:focus {
+        background-color: #008aff;
+        color: white;
+    }
+
+.Trio {
+    background-color: grey;
+    color: white;
+    border: 1px solid rgb(90, 72, 26);
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    background-color: #7f6000;
+}
+
+    .Trio:focus {
+        background-color: #dde611;
+        color: black;
+        border: 1px solid rgb(90, 72, 26);
+    }
+
+
+.pLucky9 {
+    background-color: #680004;
+    color: white;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+    .pLucky9:focus {
+        background-color: #ff000a;
+        color: white;
+    }
+
+.bLucky9 {
+    background-color: #28355b;
+    color: white;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+    .bLucky9:focus {
+        background-color: #008aff;
+    }
+
+.borderGold {
+    border: 1px solid #6d6d6d;
+}
+
+.borderWhite {
+    border: 1px solid white;
+}
+
+.anyPairGold {
+    background-color: #680004;
+    color: white;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+    .anyPairGold:focus {
+        background-color: #ff000a;
+        color: white;
+    }
+
+.sameSuitGold {
+    background-color: #680004;
+    color: white;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+    .sameSuitGold:focus {
+        background-color: #ff000a;
+        color: white;
+    }
+
+.anyPairSilver {
+    background-color: #28355b;
+    color: white;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+    .anyPairSilver:focus {
+        background-color: #008aff;
+    }
+
+.sameSuitSilver {
+    background-color: #28355b;
+    color: white;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+    .sameSuitSilver:focus {
+        background-color: #008aff;
+        color: white;
+    }
+
+.delButton {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+.backButton {
+    background-color: #ffb400;
+    color: white;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+.betButton {
+    background-color: #008045;
+    color: white;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+    .betButton:focus {
+        background-color: #0dc26e;
+        color: white;
+        border-radius: 5px;
+    }
+/* START TOKEN CSS */
+.tokenContainer {
+    max-width: 640px;
+    overflow: hidden;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+.betButtonContainer {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+button.token {
+    border: 4px solid #e5cd7f;
+    border-radius: 3px;
+    margin: 2px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    min-width: 45px;
+    min-height: 40px;
+    background-color: #c69d14;
+    padding: 0;
+    color: black !important;
+}
+
+    button.token:focus {
+        border: 4px solid #ff7800;
+        border-radius: 3px;
+        margin: 2px;
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+        min-width: 45px;
+        min-height: 40px;
+        background-color: #fcae1e;
+        padding: 0;
+        color: black !important;
+    }
+
+/* END TOKEN CSS */
+/*START DISABLED BUTTON CSS*/
+.DisSilverButton {
+    filter: grayscale(100%);
+    pointer-events: none;
+    margin-left: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    color: white;
+}
+
+.DisGoldButton {
+    filter: grayscale(100%);
+    pointer-events: none;
+    margin-left: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    color: white;
+    background-color: grey;
+}
+
+.DispLucky9 {
+    filter: grayscale(100%);
+    pointer-events: none;
+    margin-right: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    background-color: grey;
+}
+
+.DistokenContainer {
+    filter: grayscale(100%);
+    pointer-events: none;
+    border-radius: 5px;
+    max-width: 640px;
+    overflow: hidden;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+.DisdelButton {
+    filter: grayscale(100%);
+    pointer-events: none;
+    background-color: grey;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+.DisbackButton {
+    filter: grayscale(100%);
+    pointer-events: none;
+    background-color: grey;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+.DisbetButton {
+    filter: grayscale(100%);
+    pointer-events: none;
+    background-color: grey;
+    border-radius: 5px;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+/*END DISABLED BUTTON CSS*/
+/*START WINNING RESULT DIV CSS */
+.WinGoldButton {
+    background-color: forestgreen;
+    color: white;
+    margin-right: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+.WinSilverButton {
+    background-color: forestgreen;
+    color: white;
+    margin-right: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+/*END WINNING RESULT DIV CSS */
+/* CURRENT BETS*/
+tr {
+    padding: 2px 0;
+}
+
+td {
+    line-height: normal;
+    font-size: 13px;
+    color: white;
+    font-weight: 600;
+    border-bottom: 1px solid #dabc33;
+}
+/* START CURRENT BETS*/
+table {
+    border-top: 1px solid #dabc33;
+}
+
+.label {
+    line-height: normal;
+    font-size: 13px;
+    color: white;
+    font-weight: 600;
+    background-color: #dabc33;
+    margin-top: 5px;
+    width: fit-content;
+    padding: 1px 10px;
+}
+
+.winningAmountGreen {
+    color: #00c96b;
+}
+
+.losingAmountRed {
+    color: red;
+}
+/* END CURRENT BETS*/
+
+
+
+
+
+.betButton { /*Bet button default*/
+    background-color: #479d22;
+    color: white;
+    border-radius: 5px;
+}
+
+.betButtonActivated { /*Bet button activated*/
+    background-color: #4cff00;
+    color: black;
+}
+
+.disBetButton { /*Bet button disabled*/
+    filter: grayscale(100%);
+    pointer-events: none;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+}
+
+.resetButton { /*Reset button default*/
+    background-color: #9d0a0a;
+    color: white;
+    border-radius: 5px;
+}
+
+.resetButtonActivated { /*Reset button activated*/
+    background-color: #ff0000;
+    color: white;
+    border-radius: 5px;
+}
+
+.disResetButton { /*Bet button disabled*/
+    filter: grayscale(100%);
+    pointer-events: none;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+}
+/*CANCELLED BETS RETURN*/
+.cancelledText {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    z-index: 1;
+    font-size: 35px;
+    color: red;
+    font-weight: 600;
+}
+
+
+/*CANCELLED BETS RETURN*/
+/*SEPARATOR*/
+.breaker {
+    background: rgb(90,107,52);
+    background: linear-gradient(90deg, rgba(90,107,52,1) 0%, rgba(144,193,35,1) 46%, rgba(90,107,52,1) 100%);
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+p {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+/*SEPARATOR*/
+
+/*NEW TOKEN CSS*/
+.block {
+    position: absolute;
+    animation-name: tokenAnimationEaseIn;
+    animation-duration: .6s;
+    bottom: -70%;
+    width: 100%;
+    z-index: 1;
+}
+
+@keyframes tokenAnimationEaseIn {
+    from {
+        bottom: -100%;
+        opacity: 0;
+    }
+
+    to {
+        bottom: -70%;
+        opacity: 100%;
+    }
+}
+
+.none {
+   display: none;
+    opacity: 0;
+    position: absolute;
+    bottom: -60%;
+    width: 100%;
+    animation-name: closetokenAnimationEaseout;
+    animation-duration: .6s;
+}
+
+@keyframes closetokenAnimationEaseout {
+    from {
+        bottom: -70%;
+        opacity: 100%;
+    }
+
+    to {
+        bottom: -100%;
+        opacity: 0;
+    }
+}
+
+.tokenhide {
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    bottom: -60%;
+    width: 100%;
+}
+/*NEW TOKEN CSS*/

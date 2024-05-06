@@ -1,0 +1,129 @@
+﻿@page "/gamerules/lucky9"
+@using GoplayasiaBlazor.Core.Global.Interface;
+@using GoPlayAsiaWebApp.Games.Shared
+@attribute [Authorize(Roles = "1")]
+@inject ICurrentUser icurrentUser
+<TopContent CreditsDisp="@icurrentUser.CreditsDisp" />
+<section>
+    <main class="container">
+        <h5 class="font-weight-bold mt-2">LUCKY 9 HOUSE RULES</h5>
+        <div class="">
+            <div class="containerVid">
+                <iframe class="responsive-iframe" src="https://www.youtube.com/embed/_EVXZTRh4cg"></iframe>
+            </div>
+            <content class="">
+                <div class="d-flex justify-content-center mt-2">
+                    <a href="/games/lucky9" <button class="btn btn-primary text-center d-flex">Back To Game</button></a>
+                </div>
+              
+                <h4 class="mt-2">I. Minimum/MaximumBet Limit and Payout Odds</h4>
+                <p class="mt-2 font-weight-bold">A. REGULAR BET:</p>
+                <p class="mb-0">1.Min/Max Bet Per Player -  <strong> P100 / P10,000</strong></p>
+                <p class="mb-0">2.Maximum Bet Per Game <strong> P50,000 </strong></p>
+                <p class="">3. Payout Odds <strong> 1 = 195%</strong></p>
+                <p class="">Note: Payout is equal to placed bet plus winnings. Bets shall be returned if the result is a TIE</p>
+                <!--2nd part-->
+                <p class="mt-2 font-weight-bold">B. RUNNING ODDS BET:</p>
+                <p class="mb-0">Min/Max Bet Per Player -  <strong> P100 / P10,000</strong></p>
+                <p class="mb-0">Maximum Bet Per Game <strong> P50,000 </strong></p>
+                <p class="">Payout Odds <strong> Prize Pool*</strong></p>
+                <p class="">*Total bets less 5% commission divided by</p>
+                <p class="mb-0">Notes: Bets shall be returned if:</p>
+                <ol>
+                    <li> No bets on either hand, or </li>
+                    <li>Either hand prize pool is below 150%, or</li>
+                    <li>The result is a TIE.</li>
+                </ol>
+                <h4 class="">II. Dealing Procedure</h4>
+                <p class="">The dealing procedure of each game shall be</p>
+                <ol>
+                    <li>
+                        The Dealer shall be looking at the Dealer Dashboard with the attached
+                        camera before and after the deal for instruction or guidance.
+                    </li>
+                    <li>
+                        Accepting of bets thru remote gaming platform ensue when the status on the
+                        Dealer Dashboard reads "OPEN"
+                    </li>
+                    <li>
+                        Player bets on PLAYER or BANKER whether on regular bet and/or running
+                        odds bet options. Once player clicks his/her choice/s, the bet amount option
+                        pop-up, enter preset chip denominations or manually key-in amount then
+                        click "PLACE BET," otherwise "CANCEL"
+                    </li>
+                    <li>
+                        A confirmation button shall appear for the player to confirm selected bet
+                        option and amount by clicking "Yes,"
+                    </li>
+                    <li>The countdown timer continues running and the status changes to "CLOSED" at the end of the</li>
+                    <li>2 Cards are given point values as follows: Ace = 1, 2-9 = pip value, Face Cards = 0</li>
+                    <li>
+                        If the total value of the cards are two digits, the first digit is dropped. Eg. 9 and
+                        5 = 14 (final result is 4), 9 and 1 = 10 (fin
+                    </li>
+                    <li>
+                        The Dealer shall start with the deal in the following sequence:
+                        "1st CARD to PLAYER" (placed on the right side of the printed PLAYER) "2nd CARD to BANK" (placed on the right side of the printed BANKER) "3rd CARD to PLAYER" (placed on the left side of the first PLAYER card) "4th CARD to BANK" (placed on the left side of the first
+                    </li>
+                    <li>
+                        If the PLAYER/BANKER card has a total value of 5 and below must deal an
+                        additional card;
+                        The 5th and/or 6th card shall be dealt with according to hitting rules and
+                        position in their
+                    </li>
+                    <li>
+                        . After drawing the initial two (2) cards for PLAYER and BANKER, the Dealer
+                        opens each hand one at a time, while hitting card (if any) shall be drawn and
+                        laid face up on their respective positions on
+                    </li>
+                    <li>
+                        . When the result of the deal has been established, the Dealer inverts the
+                        appropriate winning marker (no marker shall be inverted in case of a TIE) and
+                        pressesthe game result on the Dealer tablet
+                    </li>
+                    <li>
+                        After Dealer determines the game result, another validation of result shall be
+                        made by the Proponent remotely and on a separate module ("Validator"). Only
+                        after confirmation of the result, the winning bet/s shall be processed
+                    </li>
+                    <li>
+                        When the status on the Dealer Dashboard changes to "OPEN," Dealer shall
+                        collect the cards on the lay-out and prepares
+                    </li>
+                    <li>
+                        Dealer shall perform this dealing cycle continuously during his stint on the
+                        table until he is relieved by another Dealer, the last deal indicator has been
+                        dealt, or the table needs to
+                    </li>
+                    <li>
+                        The Dealer makes the necessary declaration for the last deal and places the
+                        indicator/cut card on top of the shoe
+                    </li>
+                    <li>
+                        In case of system failure, malfunction, and/or error, the Gaming
+                        Operator has the right to declare any and all of the affected game/s
+                        and winning/s as invalid and void, and to recover from the account of
+                        the affected player any payments made as a result of said system
+                        failure, malfunction and/or errors without the need of consent from
+                        the said player. This clause shall not be considered to be excluding
+                        liability for anything which itwould be unlawful to exclude under
+                        applicable law.
+                    </li>
+                    <li>
+                        Bets can’t be cancelled once confirmed but can be increased within
+                        the duration of betting time.
+                    </li>
+                    <li>Philippine Peso Currency is converted into Token with a 1:1 ratio</li>
+                </ol>
+            </content>
+            <div class="d-flex justify-content-center pb-5">
+                <a href="/games/lucky9" <button class="btn btn-primary text-center d-flex">Back To Lucky9 Game</button></a>
+            </div>
+
+        </div>
+
+    </main>
+</section>
+@code {
+
+}

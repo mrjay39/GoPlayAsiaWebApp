@@ -1,0 +1,127 @@
+﻿<div class="container pt-2 pl-1 pr-1 pb-0 mb-3">
+    <div class="row justify-content-center">
+        <div class="card m-1 text-center position-relative bg-transparent base">
+            @*  <div class="dice-result yellow">
+            <span>@First_Dice_Result</span>
+            </div> *@
+            <div class="cube-container">
+                <div class="dice-result cube @(!string.IsNullOrEmpty(First_Dice_Result) || !string.IsNullOrEmpty(PreFirst_Dice_Result) ? "win" : "")">
+                    <div class="face yellow">
+
+                        @if (GameResult != String.Empty && GameResult is not null)
+                        {
+                            <span class="circle">@First_Dice_Result</span>
+                        }
+                        else if (!string.IsNullOrEmpty(PreFirst_Dice_Result))
+                        {
+                            <span class="circle">@PreFirst_Dice_Result</span>
+                        }
+                        else
+                        {
+                            <span class="circle">1</span>
+                        }
+
+                    </div>
+                    <div class="face yellow">
+                        <span class="circle">2</span>
+                    </div>
+                    <div class="face yellow">
+                        <span class="circle">6</span>
+                    </div>
+                    <div class="face yellow">
+                        <span class="circle">4</span>
+                    </div>
+                    <div class="face yellow">
+                        <span class="circle">5</span>
+                    </div>
+                    <div class="face yellow">
+                        <span class="circle">3</span>
+                    </div>
+                </div>
+            </div>
+            <span class="btm-label">1</span>
+        </div>
+        <div class="card m-1 text-center position-relative bg-transparent base">
+            <div class="cube-container">
+                <div class="dice-result cube @(!string.IsNullOrEmpty(Second_Dice_Result) || !string.IsNullOrEmpty(PreSecond_Dice_Result) ? "win" : "")">
+                    <div class="face blue">
+                        @if (GameResult != String.Empty && GameResult is not null)
+                        {
+                            <span class="circle">@Second_Dice_Result</span>
+                        }
+                        else if (!string.IsNullOrEmpty(PreSecond_Dice_Result))
+                        {
+                            <span class="circle">@PreSecond_Dice_Result</span>
+                        }
+                        else
+                        {
+                            <span class="circle">1</span>
+                        }
+                    </div>
+                    <div class="face blue">
+                        <span class="circle">2</span>
+                    </div>
+                    <div class="face blue">
+                        <span class="circle">3</span>
+                    </div>
+                    <div class="face blue">
+                        <span class="circle">5</span>
+                    </div>
+                    <div class="face blue">
+                        <span class="circle">4</span>
+                    </div>
+                    <div class="face blue">
+                        <span class="circle">6</span>
+                    </div>
+                </div>
+            </div>
+            <span class="btm-label">2</span>
+        </div>
+        <div class="card m-1 text-center position-relative bg-transparent base">
+            <div class="cube-container">
+                <div class="dice-result cube @(!string.IsNullOrEmpty(Third_Dice_Result)  || !string.IsNullOrEmpty(PreThird_Dice_Result) ? "win" : "")">
+                    <div class="face red">
+                        @if (GameResult != String.Empty && GameResult is not null)
+                        {
+                            <span class="circle">@Third_Dice_Result</span>
+                        }
+                        else if (!string.IsNullOrEmpty(PreThird_Dice_Result))
+                        {
+                            <span class="circle">@PreThird_Dice_Result</span>
+                        }
+                        else
+                        {
+                            <span class="circle">1</span>
+                        }
+                    </div>
+                    <div class="face red">
+                        <span class="circle">3</span>
+                    </div>
+                    <div class="face red">
+                        <span class="circle">5</span>
+                    </div>
+                    <div class="face red">
+                        <span class="circle">2</span>
+                    </div>
+                    <div class="face red">
+                        <span class="circle">6</span>
+                    </div>
+                    <div class="face red">
+                        <span class="circle">4</span>
+                    </div>
+                </div>
+            </div>
+            <span class="btm-label">3</span>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string First_Dice_Result { get; set; } = "";
+    [Parameter] public string Second_Dice_Result { get; set; } = "";
+    [Parameter] public string Third_Dice_Result { get; set; } = "";
+    [Parameter] public string PreFirst_Dice_Result { get; set; } = "";
+    [Parameter] public string PreSecond_Dice_Result { get; set; } = "";
+    [Parameter] public string PreThird_Dice_Result { get; set; } = "";
+    [Parameter] public string GameResult { get; set; } = "";    
+}

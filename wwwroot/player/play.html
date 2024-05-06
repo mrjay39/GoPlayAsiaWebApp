@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+ 
+
+    <div class="video-container">
+        <video id="vplayer" class="video-js vjs-16-9  vjs-big-play-centered" controls autoplay playsinline data-setup='{ "poster": "/img/poster.jpg" }'></video>
+    </div>
+
+</body>
+<script src="https://unpkg.com/video.js/dist/video.js"></script>
+<script src="https://unpkg.com/videojs-contrib-dash/dist/videojs-dash.js"></script>
+<!--<script src="https://www.unpkg.com/browse/dashjs@4.7.2/dist/dash.all.min.js"></script>-->
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const token = urlParams.get('token');
+    const url = urlParams.get('url');
+
+    var dashplayer = dashjs.MediaPlayer().create();
+    dashplayer.extend("RequestModifier", function () {
+        return {
+            modifyRequestHeader: function (xhr) {
+
+                return xhr;
+            },
+            modifyRequestURL: function (url) {
+
+                return url + '?&token=' + token;
+            },
+            modifyRequest(request) {
+            },
+        };
+    });
+    dashplayer.updateSettings({
+        delay: {
+            liveDelay: 7
+        },
+        streaming: {
+
+            liveCatchup: {
+                maxDrift: 0.05,
+                playbackRate: 3,
+                latencyThreshold: 60
+            }
+        }
+
+
+    });
+    var player = videojs('vplayer');
+    dashplayer.initialize(document.querySelector("#vplayer_html5_api"), url, false);
+    player.play();
+</script>
+
+</html>

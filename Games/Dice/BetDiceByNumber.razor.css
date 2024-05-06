@@ -1,0 +1,111 @@
+﻿#btnNumberContainer .btn-font {
+    width: 43px;
+    height: 53px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px !important;
+    font-weight: bold !important;
+}
+#btnNumberContainer > div > div {
+    padding: 2px;
+}
+#btnNumberContainer .diceButton {
+    font-weight: bolder;
+    font-size: 11px;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-weight: bold;
+    margin: 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    outline-offset: -2px;
+    border-radius: 5px;
+    border: none;
+}
+#btnNumberContainer .diceButton {
+    color: #ffffff;
+    border: solid #85F96D 2px;
+    outline: 2px solid #35ea43 !important;
+    background-color: #13841e;
+    box-shadow: 0px 10px 10px #0fb722 inset, 0px 5px 10px rgba(96, 155, 38, 0.47), 0px -10px 10px #15e830 inset;
+}
+#btnNumberContainer .diceButton:hover, #btnNumberContainer button.selected{
+    color: #072b04;
+    border: solid #6CB317 2px;
+    outline: 2px solid #84fb5a !important;
+    background-color: #42c61d;
+    box-shadow: 0px 10px 10px #93ee54 inset, 0px 5px 10px rgba(187, 221, 21, 0.21), 0px -10px 10px #5eff30 inset;
+}
+
+#closedBet #diceNumberGameContainer > #btnNumberContainer div > button.diceButton.win {
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    animation: win 1s infinite;
+    color: black;
+    border: 3px solid rgb(69, 219, 18);
+}
+
+@keyframes win {
+    from {
+        background-color: yellow;
+        border: 3px solid yellow;
+    }
+
+    to {
+        background-color: rgb(69, 219, 18);
+        border: 3px solid rgb(69, 219, 18);
+    }
+}
+/*================== Start: Token Animation Display Properties ==============================*/
+.additionaltokencontainer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    /*animation-name: additionaltokenAnimation;*/
+    animation-duration: var(--animation);
+    animation-iteration-count: 3;
+    animation: additionaltokenAnimation .8s;
+}
+
+@keyframes additionaltokenAnimation {
+    from {
+        transform: rotateY(-360deg);
+        z-index: 1;
+        bottom: -250%;
+        left: 100%;
+    }
+
+    to {
+        transform: rotateY(360deg);
+        z-index: 1;
+        bottom: 0%;
+        left: 1%;
+    }
+}
+
+img.tokenSelectedBet {
+    position: relative;
+}
+
+.selectedAmountToken {
+    position: absolute;
+    z-index: 1;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p {
+    margin-bottom: 0 !important;
+}
+/*================== End: Token Animation Display Properties ==============================*/

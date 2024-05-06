@@ -1,0 +1,52 @@
+﻿@using GoplayasiaBlazor.Models
+@using GoplayasiaBlazor.Models.Constants
+@using GoPlayAsiaWebApp.ViewModels
+@using System.Collections.ObjectModel
+@inject Lucky4V2ViewModel lucky4ViewModel;
+
+@if (L4UserBets != null)
+{
+    @* <h6 class="text-light mt-2 mb-1 font-weight-bold text-center">CURRENT BETS</h6> *@
+    <div id="betResultContainer" class="maxWidth m-0 overflow-auto">
+        @foreach (var userBets in L4UserBets)
+        {
+            <div class="container p-0 pick4-container">
+                <div class="d-flex">
+                    <span class="col-2 ml-2 mr-2 p-0 text-white">Lucky 4</span>
+                    <div class="numCombi col-4 p-0">
+                        <span class="c-purple">@userBets.BetValue[0]</span>
+                        <span class="c-green">@userBets.BetValue[1]</span>
+                        @if (userBets.BetValue.Length > 2)
+                        {
+                            <span class="c-blue">@userBets.BetValue.Substring(2, 1)</span>
+                        }
+                        @if (userBets.BetValue.Length > 3)
+                        {
+                            <span class="c-red">@userBets.BetValue.Substring(3, 1)</span>
+                        }
+                    </div>
+                    <span class="col-2 pr-0 text-white" style="text-align: center">@userBets.BetAmount?.ToString("N0")</span>
+                    <span class="col-2 text-white" style="text-align: center">@userBets.WinableAmount</span>
+                </div>
+            </div>
+        }
+    </div>
+}
+@code {
+
+    [Parameter] public ObservableCollection<BetModel> L4UserBets { get; set; }
+    [Parameter] public ObservableCollection<BetModel> L4PreviousBets { get; set; }
+
+    [Parameter] public string RoundStatusString { get; set; } = "";
+    [Parameter] public string CurrView { get; set; } = "Current";
+
+    public async Task SelectView(String IView)
+    {
+        lucky4ViewModel.CurrView = IView;
+        CurrView = IView;
+        if (IView == "Previous")
+        {
+            await lucky4ViewModel.GetPreviousBets();
+        }
+    }
+}

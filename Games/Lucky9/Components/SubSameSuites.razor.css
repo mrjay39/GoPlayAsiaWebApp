@@ -1,0 +1,161 @@
+﻿
+
+/* #region BOTH */
+.withBet {
+    visibility: hidden;
+}
+    .borderGold {
+        border: 1px solid #6d6d6d;
+    }
+
+    .smallHeader {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .betAmount {
+        font-size: 11px;
+    }
+
+    .payout {
+        font-size: 11px;
+    }
+/* #endregion */
+
+/* #region PLAYER */
+
+    /* #region DEFAULT */
+        .sameSuitPlayer {
+            background-color: #970000;
+            color: white;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+        }
+    /* #endregion */
+
+    /* #region ACTIVATED */
+        .sameSuitPlayerActivated {
+            background-color: #ff0000;
+            color: white;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+            border: 1px solid yellow !important;
+        }
+    /* #endregion */
+
+    /* #region DISABLED */
+        .disSameSuitPlayer {
+            pointer-events: none;
+            background-color: gray;
+            color: white;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+        }
+    /* #endregion */
+
+    /* #region WINNER */
+        .winSameSuitPlayer {
+            margin-right: 2px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+            pointer-events: none;
+            animation: activeBet 1s infinite;
+        }
+        @keyframes activeBet {
+            from {
+                background-color: yellow;
+                color: black !important;
+            }
+
+            to {
+                background-color: rgb(69, 219, 18);
+                color: black !important;
+            }
+        }
+    /* #endregion */
+
+    /* #region TOKEN DISPLAY */
+    /* #endregion */
+
+/* #endregion */
+
+/* #region BANKER */
+
+    /* #region DEFAULT */
+        .sameSuitBanker {
+            background-color: #28355b;
+            color: white;
+            margin-bottom: 2px;
+            border-radius: 5px;
+            margin-right: 2px;
+        }
+    /* #endregion */
+
+    /* #region ACTIVATED */
+        .sameSuitBankerActivated {
+            background-color: #0f40cc;
+            color: white;
+            margin-bottom: 2px;
+            border-radius: 5px;
+            border: 1px solid yellow !important;
+        }
+    /* #endregion */
+
+    /* #region DISABLED */
+        .disSameSuitBanker {
+            margin-right: 2px;
+            pointer-events: none;
+            background-color: gray;
+            color: white;
+            margin-bottom: 2px;
+            border-radius: 5px;
+        }
+    /* #endregion */
+
+    /* #region WINNER */
+        .winSameSuitBanker {
+            color: white;
+            margin-bottom: 2px;
+            border-radius: 5px;
+            pointer-events: none;
+            animation: activeBet 1s infinite;
+        }
+    /* #endregion */
+
+    /* #region TOKEN DISPLAY */
+    /* #endregion */
+
+/* #endregion */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+

@@ -1,0 +1,27 @@
+﻿@using System.Collections.ObjectModel
+
+<div class="ticketGameCon">
+    
+    <h6 class="gHeaderCon  mt-4 mb-2 font-weight-bold">GAME RESULT</h6>
+
+    @if (TrendsDisplay != null)
+    {
+        <div class="trendsMainCon container-fluid row flex-nowrap">
+            @foreach (var _trends in TrendsDisplay)
+            {
+                <div class="roinnerCon col-m-1">
+                    <Virtualize Items="_trends.CurrentList" Context="_trenditems">
+                        <div class="row trendsCon">
+                            <p class="dwGameNum">#@_trenditems.TrendsNumberDisplay</p>
+                            <p class="dwGameRes">@_trenditems.NonCardsResultDisplay</p>
+                        </div>
+                    </Virtualize>
+                </div>
+            }
+        </div>
+    }
+
+</div>
+
+
+

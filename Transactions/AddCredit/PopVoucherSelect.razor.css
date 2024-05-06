@@ -1,0 +1,59 @@
+﻿section {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+}
+.container-fluid {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+}
+.VoucherCon {
+    width: 100%;
+   border-radius: 5px;
+   height: fit-content;
+   background-color:#dbdbdb;
+   margin: 0 auto;
+   padding: o;
+}
+.left-container {
+    background-color: #ff6a00;
+    border-radius: 5px;
+}
+.offerTime {
+    background-color: #27897a;
+    color: white;
+    font-size: 11px;
+ 
+}
+.PromoCode {
+    font-weight: 600;
+    color: white;
+}
+.voucherInfo {
+    font-size: 14px;
+    font-weight: 400;
+}
+.ApplyVoucherBtn {
+    background-color: #27897a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 8px 0;
+}
+.closeVoucherBtn {
+    background-color: #a81919;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 8px 0;
+    margin-right: 5px;
+}
+.conButton {
+
+}
+.progress {
+    width: 100%;
+}

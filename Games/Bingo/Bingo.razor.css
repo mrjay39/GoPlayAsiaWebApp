@@ -1,0 +1,63 @@
+﻿.bingoContainer {
+    padding-bottom: 120px;
+    max-height: 100vh;
+    overflow: auto;
+}
+.modal-body {
+    position: relative;
+}
+.upperLeft {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+.upperRight {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    transform: rotate(90deg)
+}
+.lowerLeft {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    transform: rotate(-90deg)
+}
+.lowerRight {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    transform: rotate(180deg);
+ 
+    
+}
+.modal-body {
+    border: 2px solid #fabc4d;
+}
+
+.buttons {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.quickButton {
+    border: 4px solid;
+    border-image: linear-gradient(45deg, #aa7800, gold, #aa7800) 1;
+    background-color: #816004;
+    color: gold;
+    border-radius: 5px !important;
+}
+.betBtn {
+    border: 4px solid;
+    border-image: linear-gradient(45deg, #2f9049, #b6ff00, #2f9049) 1;
+    background-color: #0a4d1c;
+    color: #b6ff00;
+    border-radius: 5px !important;
+}
+.pickCard {
+    border: 4px solid;
+    border-image: linear-gradient(45deg, #01675d, #1ebdc7, #01675d) 1;
+    background-color: #043d38;
+    color: #90f6fc;
+    border-radius: 5px !important;
+}

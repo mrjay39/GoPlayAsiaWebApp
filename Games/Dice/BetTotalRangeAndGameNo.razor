@@ -1,0 +1,54 @@
+﻿<div id="betRangeContainer" class="container p-0">
+    <div class="d-flex text-center">
+
+        <!-- ROUND NUMBER -->
+        <div class="col p-1">
+            <p class="blue-border">
+                <span class="text-warning bold"><i class="fa-solid fa-dice"></i> G # </span>
+                <span>@RoundNumber</span>
+            </p>
+        </div>
+
+        <!-- MIN & max chip -->
+        <div class="col p-1">
+            <p class="blue-border">
+                <span><i class="fa-solid fa-coins text-warning"></i></span>
+                <span>@(NumFormatter(MinChipDisplay)) - @(NumFormatter(MaxChipDisplay))</span>
+            </p>
+        </div>
+
+        <!-- USER TOTAL BETS -->
+        <div class="col p-1">
+            <p class="blue-border">
+                <span><i class="fa-solid fa-coins text-warning"></i></span>
+                <span>@TotalBets</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public int RoundNumber { get; set; }
+    [Parameter] public int TotalBets { get; set; }
+    [Parameter] public int MinChipDisplay { get; set; }
+    [Parameter] public int MaxChipDisplay { get; set; }
+
+
+    public static string NumFormatter(int param)
+    {
+        double value = Math.Truncate(10 * (param / 1000D)) / 10;
+
+        if (param == 0 || param < 1000)
+        {
+            return param.ToString();
+        }
+        else if (param % 100 == 0)
+        {
+            return value.ToString() + "K";
+        }
+        else
+        {
+            return value.ToString() + "K+";
+        }
+    }
+}

@@ -1,0 +1,49 @@
+﻿.combo7 {
+    background-color: #ff03e3;
+    color: white;
+    border-radius: 30px;
+   line-height: .8;
+}
+.combo8 {
+    background-color: #ff6a00;
+    color: white;
+    border-radius: 30px;
+    line-height: .8;
+}
+.betBtn {
+    border-radius: 30px;
+    line-height: .8;
+}
+/*back and delete*/
+.relativePos {
+    position: relative;
+}
+
+.backAbsolute {
+    position: absolute;
+    top: -32%;
+    left: -2%;
+    border: none;
+    width: 41px;
+    height: 41px;
+    padding: 0;
+    line-height: 1;
+    background: none;
+    color: gold;
+}
+
+.delAbsolut {
+    position: absolute;
+    top: -32%;
+    right: -2%;
+  color: white;
+    width: 41px;
+    height: 41px;
+    padding: 0;
+    line-height: 1;
+    background: none;
+}
+/*back and delete*/
+a {
+    margin: 0 3px;
+}

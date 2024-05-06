@@ -1,0 +1,281 @@
+﻿/* running odds */
+.v2-headings-prev {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #303030;
+    border-top: solid 2px white;
+    border-bottom: solid 2px white;
+    max-width: 640px;
+}
+.rodraw {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid white;
+    font-size: 20px;
+    color: white;
+    background: #7f6000;
+    justify-content: center;
+    align-content: center;
+    margin: 2px;
+
+}
+
+.roplayer {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid white;
+    font-size: 20px;
+    color: white;
+    margin: 2px;
+    background-color: #ff2d2d;
+    justify-content: center;
+    align-content: center;
+}
+
+.rocancelled {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid white;
+    font-size: 20px;
+    color: white;
+    margin: 2px;
+    background: #808080;
+    justify-content: center;
+    align-content: center;
+}
+
+.robanker {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid white;
+    font-size: 20px;
+    color: white;
+    margin: 2px;
+    background-color: #06399f;
+    justify-content: center;
+    align-content: center;
+}
+
+.romainCon {
+    max-width: 650px;
+    margin: 0 auto;
+    overflow: hidden;
+    overflow: auto;
+    background: #101f44;
+}
+
+.roinnerCon {
+    height: min-content;
+    max-width: 50px;
+    margin-right: 3px;
+    padding: 0;
+}
+
+
+/* fixed */
+
+.cancelled, .banker, .player, .draw {
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    justify-content: center;
+    align-content: center;
+    margin: 3px;
+}
+.draw {
+    color: #232222 !important;
+    outline: 1px solid #FBE426;
+    border: 1px solid #FBE426;
+    background-color: #e6b82b;
+    box-shadow: 0px 10px 10px #ffbc11 inset, 0px 5px 10px rgba(85, 64, 1, 0.92), 0px -10px 10px #e1b91d inset;
+}
+.player {
+    outline: 1px solid #df1e1e !important;
+    background-color: #bd0b0b;
+    border: solid #fd1c1c 1px;
+    box-shadow: 0px 10px 10px #ff1515 inset, 0px 5px 10px rgb(121 6 6 / 94%), 0px -10px 10px #91050a inset;
+}
+.cancelled {
+    outline: 1px solid #737373 !important;
+    background-color: #494646;
+    border: solid #6d6d6d 1px;
+    box-shadow: 0px 10px 10px #3d3939 inset, 0px 5px 10px rgb(62 62 62 / 94%), 0px -10px 10px #272525 inset;
+}
+.banker {
+    border: solid #102ab7 1px;
+    outline: 1px solid #0318ff;
+    background-color: #0816b3;
+    box-shadow: 0px 10px 10px #0b179f inset, 0px 5px 10px rgb(11, 48, 159), 0px -10px 10px #091adb inset;
+}
+
+/*=================== Start: New Trends Icon =====================*/
+div.newLegend{
+    background-color: black;
+  border-radius: 5px
+}
+.playerTrends, .bankerTrends, .tieTrends, .canceledTrends {
+    display: inline-flex;
+    width: 25px;
+    height: 25px;
+    margin-right: 6px;
+    border-radius: 50%;
+    padding: 10px;
+}
+.trendsCount {
+    color: white;
+    font-weight: bold;
+}
+.playerTrends{background-color: #0816b3;}
+.bankerTrends{background-color: #bd0b0b;}
+.tieTrends{background-color: #e6b82b;}
+.canceledTrends{background-color: #494646;}
+
+/*=================== End: New Trends Icon =====================*/
+
+
+body {
+    margin: 40px;
+    height: 480px;
+}
+
+.box {
+    background-color: lightgrey;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.wrapper {
+    width: 40px;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(5, 50px);
+    grid-auto-flow: column;
+}
+
+.mainCon {
+    max-width: 650px;
+    margin: 0 auto;
+    overflow: hidden;
+    overflow: auto;
+}
+.innerCon {
+    height: min-content;
+    max-width: 20px;
+}
+
+/*START LEGEND STYLE*/
+.legendLeft {
+    background-color: #ff2d2d;
+    color: white;
+    border-radius: 15px;
+    padding: 2px 8px;
+}
+
+.legendRight {
+    background-color: #5275bb;
+    color: white;
+    border-radius: 15px;
+    margin: 0;
+    padding: 2px 8px;
+}
+
+.legendDraw {
+    background-color: #7f6000;
+    color: white;
+    border-radius: 15px;
+    margin: 0;
+    padding: 2px 15px;
+}
+
+.legendCancel {
+    background-color: #808080;
+    color: white;
+    border-radius: 15px;
+    margin: 0;
+    padding: 2px 8px;
+}
+
+.legend {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3px;
+    padding-left: 0px;
+}
+
+.trendHeader {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+h2.trendHeader {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+    /*padding: 0 0px;*/
+    font-weight: 600;
+}
+
+.trendFooter {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    padding-left: 0px;
+}
+
+h2.trendFooter {
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    margin-top: 5px;
+    padding: 5px;
+    padding-left : 0px;
+}
+
+/*END LEGEND STYLE*/
+
+@media screen and (max-width: 600px) {
+  
+}
+.newLegend {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 13px;
+}
+.trends, .playerL, .bankerL, .tieL, .cancelledL {
+    font-weight: 600;
+    color: #fff;
+    padding:3px;
+    border-radius: 8px;
+    margin: 0 2px;
+}
+.trends {
+    background-color: #0a7346;
+}
+.playerL {
+    background-color: red;
+}
+.bankerL {
+    background-color: blue;
+}
+.tieL {
+    background-color: gold;
+    color: black;
+}
+.cancelledL {
+    background-color: #494646;
+}

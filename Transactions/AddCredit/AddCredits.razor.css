@@ -1,0 +1,260 @@
+﻿section {
+    max-width: 640px;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav-link.active {
+    color: white;
+    background-color: #ff6a00;
+    font-weight: 600;
+}
+
+.nav-link {
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+h6.headerText {
+    text-decoration: none;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+}
+
+.addCredit img, .overthecounterBtn img {
+    height: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.addCredit {
+    text-align: center;
+}
+/*trasnsaction*/
+.transCon {
+    max-width: 640px;
+}
+
+.innerTransCon {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.innerTable {
+    background-color: #263142;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.rightContent {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.transHeader {
+    padding-top: 5px;
+    background-color: white;
+    color: black;
+    margin: 0 auto;
+}
+/*transaction*/
+h6.topUpMEssage {
+    padding: 10px;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+
+.overthecounterBtn {
+  background-color: white;
+  /*  background-image: linear-gradient(to right, #f476b3, #fad28c, #f6a317 );*/
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 3px solid white;
+}
+
+.PaymentGateWayCon {
+    background-color: #2298d4;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px;
+    height: 100%;
+}
+.optionBtn {
+    height: 90px;
+}
+i.voucherIcon {
+    color: orange;
+    font-size: 25px;
+}
+
+.voucherBtn {
+    border: none;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #213642;
+}
+
+.voucherBtnFree {
+    border: none;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #254d64;
+}
+
+.addCredit-submit {
+    width: 100%;
+    background-color: #07966a;
+    border: none;
+    padding: 10px 0;
+}
+
+.voucText {
+    color: orange;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.voucTextLow {
+    color: orange;
+    font-size: 11px;
+}
+
+.voucTextFree {
+    color: #263142;
+    font-size: 14px;
+    font-weight: 600;
+    color: orange;
+}
+
+.voucTextLowFree {
+    display: flex;
+    color: #263142;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: orange;
+}
+
+.CaretRigth {
+    color: orange;
+    font-size: 20px;
+}
+
+.eye {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    transform: translate(-50% 0);
+    font-size: 25px;
+}
+
+.eyeContainer {
+    position: relative;
+}
+h1 {
+    text-decoration: underline;
+    color: #137ef1;
+    font-size: 15px;
+    /*   border: 1px solid white;*/
+    border-radius: 10px;
+    margin-left: 5px;
+}
+/*GATEWAY*/
+/*GATEWAY*/
+@media screen and (max-width: 600px) {
+  /*  .overthecounterBtn {
+        margin-bottom: 5px;
+    }
+*/
+    .creditContainer {
+       /* margin: 5px;*/
+    }
+}
+.PaymentGateWayGPA {
+    background-image: linear-gradient(to right, #45b45f, #80d995, #20a9a5 );
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px;
+    height: 110px;
+}
+
+.PaymentGateWayGPAWid {
+    background-color: #2298d4;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px;
+}
+/*START VERIFIED INFORMATION DISPLAY*/
+.VeryfiedCon {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.VerifiedInformationText {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0;
+}
+/*END VERIFIED INFORMATION DISPLAY*/
+
+.pesoContainer {
+    position: relative;
+}
+
+.peso {
+    position: absolute;
+    top: 1%;
+    left: 1.5%;
+    transform: translate(-50% 0);
+    font-size: 25px;
+}
+form {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.CashinForm input {
+    width: 100%;
+    margin: 0 auto;
+}

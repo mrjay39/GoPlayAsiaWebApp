@@ -1,0 +1,41 @@
+﻿
+#center {
+    /*position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 30em;
+    height: 18em;
+    margin-top: -9em;*/ /*set to a negative number 1/2 of your height*/
+    /*margin-left: -15em;*/ /*set to a negative number 1/2 of your width*/
+    /*border: 1px solid #ccc;
+    background-color: #f3f3f3;*/
+}
+
+.authCon {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+img {
+}
+
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+img {
+    -webkit-animation: rotating 2s linear infinite;
+}

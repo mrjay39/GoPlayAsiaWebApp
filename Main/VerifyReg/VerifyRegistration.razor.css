@@ -1,0 +1,264 @@
+﻿.Step1, .Step2, .Step3, .Step4, .Step5, .Step6 {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.box input::-webkit-input-placeholder {
+    color: gray;
+}
+
+.page {
+    margin-top: 30px;
+    background-color: white;
+}
+
+.titleHolder {
+    height: 18px;
+    color: #e6b90c;
+    font-weight: 400;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+p {
+    width: max-content;
+    padding: 0 5px;
+    border-radius: 2px;
+}
+
+.agree {
+    background: none;
+    color: white;
+    font-weight: 400;
+}
+
+.errorMessage {
+    color: red;
+    font-weight: 600;
+}
+
+#passField {
+    position: relative;
+}
+
+#passFieldConfirm {
+    position: relative;
+}
+
+.eye, .eyeCon {
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    transform: translate(-50% -50%);
+    font-size: 25px;
+}
+
+.form-control {
+    margin-bottom: 8px;
+    border-radius: 5px;
+    height: 31px;
+    border: 1px solid #380c16;
+}
+
+.nextBtn {
+    background-color: #e6a50c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: 400;
+    border-radius: 3px;
+    margin-right: 0;
+}
+
+.LoginPage {
+    text-decoration: underline;
+    color: #f7b700;
+    padding: 0;
+    font-weight: 400;
+    border: none;
+    border-radius: 3px;
+    background: none;
+}
+
+.backLoginPage {
+    font-weight: 400;
+    padding: 0;
+ 
+}
+.backLoginPage:hover{
+    text-decoration: none;
+}
+
+.backprevNext {
+    padding: 0;
+    position: relative;
+}
+
+.prevNext {
+    padding: 0;
+}
+
+.citySelector {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.prevNext {
+    padding: 0;
+}
+
+h5 {
+    color: #f7b700;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.dateOfBirth {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.container-fluid {
+    background-color: #120307;
+    min-height: 100vh;
+    padding: 10px 20px 20px 20px;
+}
+
+.transparentBox {
+    background-color: #491320;
+    border-radius: 15px;
+    padding: 0;
+    max-width: 640px;
+    margin: 0 auto;
+}
+.profilePic {
+    position: relative;
+}
+.govId {
+    position: relative;
+}
+.profilePic, .govId {
+    border: 1px solid #808080;
+    border-radius: 5px;
+    height: 240px;
+    overflow: auto;
+    overflow: hidden;
+    background-color: white;
+
+}
+
+    .profilePic img, .govId img {
+        width: 100%; /* or any custom size */
+        height: 100%;
+        object-fit: contain;
+        overflow: auto;
+        overflow: hidden;
+    }
+
+.form-check-input {
+    border: 2px solid;
+}
+
+input.permanentBox[type=checkbox] {
+    transform: scale(2);
+}
+
+input.permanentBox2[type=checkbox] {
+    transform: scale(1.8);
+    font-weight: 600;
+}
+
+.agentCodeSub {
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: red;
+    font-weight: 600;
+}
+
+.referralKey {
+    text-align: center;
+    background-color: #f8f8f8;
+    border: 1px solid #808080;
+    font-weight: 400;
+}
+
+.disSubmit {
+    text-align: center;
+    background-color: gray;
+    border: 1px solid #808080;
+    font-weight: 400;
+    color: black;
+}
+
+.titleHolder.streetBar {
+    margin-bottom: 0;
+}
+
+.refCode::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    /*  font-weight: 600;*/
+}
+
+input::placeholder { /* Internet Explorer 10-11 */
+    color: #380c16;
+    /*   font-weight: 600;*/
+}
+
+:-ms-input-placeholder { /* Microsoft Edge */
+    color: #2397bd;
+    /*  font-weight: 600;*/
+}
+
+.errorMessage {
+    margin: 0 auto;
+    width: 100%;
+    font-size: 12px;
+    background-color: white;
+    padding: 3px;
+    border-radius: 3px;
+    /*font-weight: 400;*/
+}
+
+@media {
+}
+
+.innerContainer {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    padding: 5px;
+}
+
+img.gpaIcon {
+    width: 120px;
+    height: 30px;
+}
+
+.sr-only {
+    sr-only position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.input-label {
+    padding: 20px;
+    background-color: #9a1d21;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+/*FLOATS CAMERA CSS*/
+.uploadCameraBtn {
+    position: absolute;
+    bottom: 0;
+    left:5px;
+}
+/*FLOATS CAMERA CSS*/

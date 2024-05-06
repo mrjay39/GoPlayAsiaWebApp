@@ -1,0 +1,86 @@
+﻿@page "/games/luckySlots"
+<GoplayasiaBlazor.Games.Shared.GameHeader />
+
+<div id="" class="mainContainer" style="max-width: 640px; margin: 0 auto;">
+    <div class="upper-bg">
+        <div class="container">
+            <div class="slotMachine text-center">
+                <div class="d-flex">
+                    @foreach (var symbolGroup in symbolGroups)
+                    {
+                        <div class="slot-machine">
+                            <div class="reel br-3 @spinClass ">
+                                @foreach (var symbol in symbolGroup)
+                                {
+                                    <div class="symbol"> <img src="./img/luckySlot-images/@($"{symbol}.png")" /></div>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <OptionButtons />
+
+        <div id="bet-container" class="container">
+            <div class="row justify-content-center">
+                <button data-toggle="modal" data-target="#luckySlot-option-cont" class="btn btn-warning col mx-1 slot-btn">Pick 5 Cards</button>
+
+                <div id="bet-dropdown" class="dropdown col pl-0 pr-2">
+                    <button id="bet-btn" disabled="@IsBetButtonDisabled" type="button" class="btn font-weight-bold col mx-1 slot-btn dropdown-toggle @active" data-toggle="dropdown">
+                        <i class="fa-solid fa-thumbs-up"></i> BET
+                        <span class="bet-chips">@selectedBet</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        @foreach (var betValue in betValues)
+                        {
+                            <a class="dropdown-item" @onclick="() => SelectBetChips(betValue)">@betValue</a>
+                        }
+                    </div>
+                </div>
+
+                <button id="quickBet" class="btn btn-danger col mx-1 slot-btn quick-btn" @onclick="SpinSlotMachine">QUICK BET</button>
+            </div>
+        </div>
+
+    </div>
+
+    <GameNoAndToken />
+    <BetPlayerResult />
+    <BetTrends />
+</div>
+
+@code {
+    private string spinClass = "";
+    private string active = "";
+    private List<string> betValues = new List<string> { "20", "15", "10", "5", "3", "2", "1" };
+    private string selectedBet = "5"; // Default value
+    private bool IsBetButtonDisabled = true;
+
+    private void SpinSlotMachine()
+    {
+        spinClass = "spin";
+        active = "active";
+        StateHasChanged();
+        IsBetButtonDisabled = false;
+
+        Task.Delay(1200).ContinueWith(_ =>
+        {
+            spinClass = "";
+            StateHasChanged();
+        });
+    }
+
+    private void SelectBetChips(string value)
+    {
+        selectedBet = value;
+    }
+
+    private string[][] symbolGroups = {
+        new string[] { "animal-1", "fruit-1", "ball-1", "car-1", "gem-1", "zodiac-1" },
+        new string[] { "animal-2", "fruit-2", "ball-2", "car-2", "gem-2", "zodiac-2" },
+        new string[] { "animal-3", "fruit-3", "ball-3", "car-3", "gem-3", "zodiac-3" },
+        new string[] { "animal-4", "fruit-4", "ball-4", "car-4", "gem-4", "zodiac-4" },
+        new string[] { "animal-5", "fruit-5", "ball-5", "car-5", "gem-5", "zodiac-5" }
+    };
+}

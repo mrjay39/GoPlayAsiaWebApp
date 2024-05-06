@@ -1,0 +1,28 @@
+﻿@page "/upaytut"
+@attribute [Authorize(Roles = "1")]
+
+<div class="main justify-content-center align-items-center d-block">
+    <div class="iframe-container bg-white">
+        <iframe src="@Hlink" class="pdfCon"></iframe>
+        @*<p class="loadingScreenGrules">LOADING</p>*@
+    </div>
+    <div class="d-flex justify-content-center align-items-center p-3">
+      @*  View Cashout Tutorial?*@
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+        <button type="button" class="btnCancel text-center" @onclick="() => Confirmation(true)">CLOSE</button>
+    </div>
+</div>
+
+@code {
+    public bool Show { get; set; }
+    [Parameter] public string Title { get; set; } = "";
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [Parameter] public string Hlink { get; set; } = "";
+    public void Confirmation(bool value)
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok(value));
+    }
+
+
+}

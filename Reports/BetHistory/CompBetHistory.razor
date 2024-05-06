@@ -1,0 +1,55 @@
+@using static GoplayasiaBlazor.Models.Constants.Settings
+<table class="maincontainer d-block ">
+    <thead class="header text-center row">
+        <tr class="row headerContainer">
+            <th class="status col-4">BET</th>
+            <th class="status col">GAME RESULT</th>
+            <th class="winStatusContainer col">WIN/LOSS</th>
+        </tr>
+    </thead>
+    <tbody class="tableCon row" style="padding-bottom: 30px;">
+        @if (_compBetHistoryViewModel.GameRounds != null)
+        {
+            <Virtualize Items="_compBetHistoryViewModel.GameRounds" Context="_gameround">
+                @*@foreach (var _gameround in _compBetHistoryViewModel.GameRounds)
+            {*@
+                <tr class="beHistoryBg row text-center mt-1 text-light mr-0">
+                    <td class="col m-0 p-0">
+                        <div>@_gameround.GameTypeName</div>
+                        <div>@_gameround.DateCreatedString</div>
+                        <div>@_gameround.DateCreatedTime</div>
+                        <div>@_gameround.GameRound</div>
+                        <div>@_gameround.BetValue</div>
+                        <div>@_gameround.BetAmount</div>
+                    </td>
+                    <td class="col align-items-center justify-content-center d-flex">@_gameround.GameResult</td>
+                    @if (_gameround.Won)
+                    {
+                    <td class="WinStatus col align-items-center justify-content-center d-flex">@(Decimal.Parse(_gameround.WonAmount).ToString("N2"))</td >
+                    }
+                    else if (_gameround.Lost)
+                    {
+                        <td class="LossStatus col align-items-center justify-content-center d-flex">@(Decimal.Parse(_gameround.LostAmount).ToString("N2"))</td>
+                    }
+                    else if (_gameround.ConsoledAmount != "")
+                    {
+                        <td class="ConsoStatus col align-items-center justify-content-center d-flex">@(Decimal.Parse(_gameround.ConsoledAmount).ToString("N2")) </td>
+                    }
+                    else if (_gameround.RoundStatus == (int)RoundStatus.PendingResult || _gameround.RoundStatus == (int)RoundStatus.Open)
+                    {
+                        <td class="ConsoStatus col align-items-center justify-content-center d-flex">@Constants.PendingBets </td>
+                    }
+                    else if (_gameround.Cancelled || (!_gameround.Won && !_gameround.Lost && !_gameround.Cancelled))
+                    {
+                        <td class="col align-items-center justify-content-center d-flex">@Constants.BetReturned</td>
+                    }
+                </tr>
+                @*}*@
+            </Virtualize>
+        }
+        else
+        {
+            <span>Loading </span>
+        }
+    </tbody>
+</table>

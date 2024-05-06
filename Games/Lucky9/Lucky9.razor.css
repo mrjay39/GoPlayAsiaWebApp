@@ -1,0 +1,14 @@
+﻿.mainContainer {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #4d0b0b;
+}
+
+/*.animationDisplay {
+    position: absolute;
+    top: 50px;
+    left: 50px;*/
+    /* transform: translate(-5%, -5%);
+    top: 60px;
+    left: 60%;*/
+/*}*/

@@ -1,0 +1,59 @@
+﻿h2 {
+    text-decoration: none;
+}
+
+.accordion {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+}
+
+.card button {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.card-header::{
+    padding: 0;
+}
+.bdayField {
+    width: 100%;
+    margin: 0 auto;
+}
+
+label {
+    background-color: #176c97;
+    border: none;
+    padding: 2px 10px;
+    margin-bottom: 0;
+    color: white;
+}
+
+span {
+    color: red;
+    font-weight: 500;
+}
+
+disInput {
+    text-align: center;
+    border: 3px solid #2db3b5;
+    background-color: #b0b0b0;
+    color: white;
+    font-weight: 400;
+}
+.idHolder {
+    padding-bottom: 80px;
+}
+#headingFive {
+    background-color: #e06d65;
+    padding: 0;
+}
+    #headingOne, #headingTwo, #headingThree, #headingFour {
+        padding: 0
+    }
+    i {
+        font-size: 20px;
+        margin: 0 auto;
+        padding: 0;
+    }

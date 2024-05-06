@@ -1,0 +1,107 @@
+﻿@page "/otp"
+@using GoplayasiaBlazor.Core.Services.Interface
+@inject IAccountService _accountService
+
+@*<div class="main">
+    <div class="message ">
+        <div>
+            <p>Enter the One-time Password sent to your Mobile Number <span>*</span></p>
+            <span class="errorMessage" hidden="@errorOTP">@errorOTMMSG</span>
+        </div>
+    </div>
+    <div class="row">
+        <input maxlength="20" class="form-control mb-2" type="text" placeholder="OTP" @bind-value="@OTP" />
+    </div>
+    <button type="button" class="btn btn-warning" @onclick="() => ReqNewCode()">Request New Code</button>
+    <button type="button" class="btn btn-primary" @onclick="() => Validate()">Validate</button>
+    <button type="button" class="btn btn-primary" @onclick="() => CancelVerification()">Cancel Verification</button>
+</div>*@
+
+<div class="main">
+    <div class="imageAbsolute">
+        <img src="/img/overlay-otp.png" />
+    </div>
+    <button type="button" class="xButton btn" @onclick="() => CancelVerification()">x</button>
+    <div class="message ">
+        <div class="d-flex justify-content-center">
+            <img class="lockIcon m-0" src="/img/lock-icon.png" />
+        </div>
+        <div>
+            <p class="text-center text-dark font-weight-bolder">Please enter the One-time Password sent to your registered Mobile Number.</p>
+            <button type="button" class="reqCode btn w-100 text-center" style="color: maroon" @onclick="() => ReqNewCode()">Request New Code</button>
+
+        </div>
+    </div>
+    <div class="otpCon mb-2 row d-block">
+
+        <input maxlength="20" class="form-control col" type="number" placeholder="OTP" @bind-value="@OTP" />
+        <span class="errorMessage" hidden="@errorOTP">@errorOTMMSG</span>
+        @if (counter == 0)
+        {
+            <button type="button" class="reqCode btn w-100 text-center" style="color: maroon" @onclick="() => ReqNewCode()">Request New Code</button>
+        }
+        else
+        {
+            <span class="reqCode btn w-100 text-center" style="color: maroon">
+                Request new code in @counter
+            </span>
+        }
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btnSub btn-primary col-6 text-center " @onclick="() => Validate()">SUBMIT OTP</button>
+        </div>
+
+    </div>
+    @*    <div class="row">
+    <button type="button" class="btnCancel w-100 text-center" @onclick="() => CancelVerification()">Cancel Request</button>
+    </div>*@
+</div>
+   @* <div class="message ">
+        <div>
+            <p class="text-center text-light">Please enter the One-time Password sent to your registered Mobile Number.</p>
+            <p class="verfifiedTxt text-center">Request will not proceed unless verified.</p>
+         
+        </div>
+    </div>
+    <div class="otpCon mb-2 row d-block">
+        <input maxlength="20" class="form-control col" type="number" placeholder="OTP" @bind-value="@OTP" />
+        <span class="errorMessage" hidden="@errorOTP">@errorOTMMSG</span>
+        @if (counter == 0)
+        {
+               <button type="button" class="reqCode btn w-100 text-right" @onclick="() => ReqNewCode()">Request New Code</button>
+        }
+        else
+        {
+            <span class="reqCode btn w-100 text-right">
+                Request new code in @counter
+            </span>
+        }
+        <button type="button" class="btnSub btn-primary w-100 col text-center" @onclick="() => Validate()">Submit</button>
+    </div>
+    <div class="row">
+        <button type="button" class="btnCancel w-100 text-center" @onclick="() => CancelVerification()">Cancel Request</button>
+    </div>
+</div>*@
+@code{
+    private static System.Timers.Timer aTimer;
+    private int counter = 60;
+
+    public void StartTimer()
+    {
+        aTimer = new System.Timers.Timer(1000);
+        aTimer.Elapsed += CountDownTimer;
+        aTimer.Enabled = true;
+    }
+
+    public void CountDownTimer(Object source, System.Timers.ElapsedEventArgs e)
+    {
+        if (counter > 0)
+        {
+            counter -= 1;
+            StateHasChanged();
+        }
+        else
+        {
+            aTimer.Enabled = false;
+        }
+    }
+}

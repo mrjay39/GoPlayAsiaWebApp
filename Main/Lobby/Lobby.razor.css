@@ -1,0 +1,166 @@
+﻿.mainContainer {
+    padding: 5px 0 !important;
+    max-width: 100%;
+    min-height: 100vh;
+    background: rgb(88,14,15);
+    background: linear-gradient(0deg, rgba(88,14,15,1) 62%, rgba(26,8,8,1) 98%);
+}
+section {
+    padding-bottom: 150px;
+}
+button {
+    background: none;
+    border: none;
+}
+    button:focus {
+        background-color: #c4943d;
+        border: none;
+        color: white;
+    }
+.textHeader:focus {
+    z-index:1;
+    color: red;
+}
+.gameTypeSelector {
+    background-color: #f3c36b;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.icons {
+    height: 50px;
+}
+    .content {
+        background-color: #101019;
+    }
+
+.container {
+    padding: 5px;
+    width: 320px;
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    grid-template-rows: .25fr .25fr;
+    gap: .25em .25em;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "GAME1 game2 ."
+        "game3 game4 .";
+   
+}
+
+nav {
+    margin-bottom: 1.5em;
+}
+
+.GAME1 {
+    padding: 2px;
+}
+
+.game2 {
+    padding: 2px;
+}
+
+.game3 {
+    grid-area: game3;
+    display: flex;
+    padding: 2px;
+}
+
+.game4 {
+    grid-area: game4;
+    display: flex;
+    padding: 2px;
+}
+
+.game5 {
+    grid-area: game5;
+    display: flex;
+    padding: 2px;
+    height: 50px;
+}
+
+.game6 {
+    grid-area: game6;
+    display: flex;
+    padding: 2px;
+    height: fit-content;
+}
+
+.game7 {
+    grid-area: game7;
+    display: flex;
+    padding: 2px;
+    height: fit-content;
+}
+
+.row {
+    margin-right: 0;
+}
+
+.keepItFun img.col {
+    width: 100px;
+    height: 50px;
+}
+/*animation icons*/
+.static {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    /*background: white;*/
+}
+
+    .static:hover {
+        opacity: 0;
+    }
+.animated {
+    /*position: absolute;*/
+    margin: 0;
+    padding: 0;
+    /*background: white;*/
+}
+/*animation icons*/
+@media screen and (max-width: 400px) {
+    /*  section {
+        height: 550px;
+    }*/
+    .textHeader {
+        font-size: 12px;
+    }
+}
+/*NEW LOBBY CONTAINER*/
+.newLobby {
+    display: block !important;
+    max-width: 320px;
+    margin: 0 auto;
+}
+.newLobby img {
+    margin-bottom: 10px;
+}
+/*NEW LOBBY CONTAINER*/
+.textHeader {
+    line-height: normal;
+}
+.shimmer {
+    color: grey;
+    display: inline-block;
+    -webkit-mask: linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+    background-repeat: no-repeat;
+    animation: shimmer 2.5s infinite;
+   
+}
+@keyframes shimmer {
+    100% {
+        -webkit-mask-position: left;
+    }
+}
+.hoorayRelative {
+ position: relative;
+}
+.lobbyPrize {
+    height: 60px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999 !important;
+}

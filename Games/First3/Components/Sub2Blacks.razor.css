@@ -1,0 +1,268 @@
+﻿
+
+/* #region BOTH */
+    .borderGold {
+        border: 1px solid #6d6d6d;
+    }
+
+    .tieRelative {
+        position: relative;
+    }
+
+    .smallHeader {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .payout {
+        font-size: 16px;
+    }
+
+    .betAmount {
+        font-size: 11px;
+    }
+
+.tokenSelectedBet {
+    position: relative;
+    height: 20px;
+    width: 44px;
+}
+
+    .selectedAmountToken {
+        position: absolute;
+        z-index: 1;
+        color: black;
+        font-size: 15px;
+        font-weight: 600;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+/* #endregion */
+
+/* #region GOLD */
+
+    /* #region DEFAULT */
+        .black2Gold {
+            outline: 2px solid #101019 !important;
+            outline-offset: -2px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ffac00;
+            color: rgb(74, 56, 1);
+            box-shadow: 0px 10px 10px rgb(252, 226, 145) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(122, 93, 4) inset;
+        }
+    /* #endregion */
+
+    /* #region ACTIVATED */
+.black2GoldActivated {
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    color: black;
+    outline: 2px solid #51ff00 !important;
+    outline-offset: -2px;
+    border-radius: 5px;
+}
+    /* #endregion */
+
+    /* #region DISABLED */
+        .disBlack2Gold {
+            pointer-events: none;
+            background-color: gray;
+            color: white;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+        }
+
+    /* #endregion */
+
+    /* #region WINNER */
+.winBlack2Gold {
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    color: black;
+  
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    pointer-events: none;
+    animation: win 1s infinite;
+}
+@keyframes win {
+    from {
+        background-color: yellow;
+        border: 3px solid yellow;
+    }
+
+    to {
+        background-color: rgb(69, 219, 18);
+        border: 3px solid rgb(69, 219, 18);
+    }
+}
+    /* #endregion */
+
+    /* #region TOKEN DISPLAY */
+        .additionaltokencontainer {
+            position: absolute;
+            bottom: 3%;
+            left: 50%;
+            transform: translate(-50%, -25%);
+            animation-name: additionaltokenAnimation;
+            animation-duration: var(--animation);
+            animation-iteration-count: 1;
+        }
+
+        @keyframes additionaltokenAnimation {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -50%;
+                left: 80%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 8%;
+                left: 33%;
+            }
+        }
+    /* #endregion */
+
+/* #endregion */
+
+/* #region SILVER */
+
+    /* #region DEFAULT */
+        .black2Silver {
+            outline: 2px solid #101019 !important;
+            outline-offset: -2px;
+            border-radius: 5px;
+            border: none;
+            background-color: #0b3cdc;
+            color: white;
+            box-shadow: 0px 10px 10px rgb(78, 170, 248) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(0, 8, 161) inset;
+        }
+    /* #endregion */
+
+    /* #region ACTIVATED */
+.black2SilverActivated {
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    color: black;
+    outline: 2px solid #51ff00 !important;
+    outline-offset: -2px;
+    border-radius: 5px;
+}
+    /* #endregion */
+
+    /* #region DISABLED */
+        .disBlack2Silver {
+            pointer-events: none;
+            background-color: gray;
+            color: white;
+            margin-bottom: 2px;
+            border-radius: 5px;
+        }
+    /* #endregion */
+
+    /* #region WINNER */
+.winBlack2Silver {
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    color: black;
+
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    pointer-events: none;
+    animation: win 1s infinite;
+}
+
+@keyframes win {
+    from {
+        background-color: yellow;
+        border: 3px solid yellow;
+    }
+
+    to {
+        background-color: rgb(69, 219, 18);
+        border: 3px solid rgb(69, 219, 18);
+    }
+}
+    /* #endregion */
+
+    /* #region TOKEN DISPLAY */
+        .additionaltokencontainerSilver {
+            position: absolute;
+            bottom: 3%;
+            left: 50%;
+            transform: translate(-50%, -25%);
+            animation-name: additionaltokencontainerSilver;
+            animation-duration: var(--animation);
+            animation-iteration-count: 1;
+        }
+
+        @keyframes additionaltokencontainerSilver {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -50%;
+                left: -120%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 9%;
+                left: 33%;
+            }
+        }
+    /* #endregion */
+
+/* #endregion */
+
+/* #region MOBILE */
+    @media only screen and (max-width: 600px) {
+
+        /* #region TOKEN ANIMATION (GOLD) */
+        @keyframes additionaltokenAnimation {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -50%;
+                left: 70%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 9%;
+                left: 20%;
+            }
+        }
+        /* #endregion */
+
+        /* #region TOKEN ANIMATION (SILVER) */
+        @keyframes additionaltokencontainerSilver {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -50%;
+                left: -140%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 10%;
+                left: 20%;
+            }
+        }
+        /* #endregion */
+    }
+/* #endregion */
+.withBetF3 {
+    visibility: hidden;
+}

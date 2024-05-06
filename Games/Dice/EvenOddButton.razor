@@ -1,0 +1,152 @@
+﻿@using GoPlayAsiaWebApp.Games.Shared
+@using GoplayasiaBlazor.Models.Constants;
+@using GoPlayAsiaWebApp.ViewModels;
+@inject DiceViewModel _diceViewModel;
+
+<div id="smallBigOddEven-container" class="container  pt-0 pl-1 pr-1 pb-0">
+    <div class="d-flex">
+
+        <!-- DICE SMALL & DICE BIG -->
+        <div class="d-flex col p-0 smallAndBig-btn">
+            <!-- DICE SMALL -->
+            <button type="button" class="diceButton col-2 flex p-1 mr-1 @(SmallBig_Dice_Result == Settings.Constants.Small ? "win" : "")" data-toggle="modal" data-target="#betDiceTokenModal" @onclick="(() => SelectBetType((int)Settings.DiceBetTypes.Small))">
+                <p class="m-0"><span>SMALL</span></p>
+                <p class="mb-0"><span>1-3</span></p>
+                <p class="mb-0"><span>@Dice_SmallBig_Multiplier</span></p>
+
+                <!-- TOKEN DISPLAY -->
+                <TokenDisplay Amount="@User_DiceSmall_Total_Bets" />
+            </button>
+
+            <!--DICE  BIG -->
+            <button class="diceButton col-2 flex p-1 mr-1 @(SmallBig_Dice_Result == Settings.Constants.Big ? "win" : "")" @onclick="(() => SelectBetType((int)Settings.DiceBetTypes.Big))">
+                <p class="m-0"><span>BIG &nbsp;</span></p>
+                <p class="mb-0"><span>4-6</span></p>
+                <p class="mb-0"><span>@Dice_SmallBig_Multiplier</span></p>
+
+                <!-- TOKEN DISPLAY -->
+                <TokenDisplay Amount="@User_DiceBig_Total_Bets" />
+            </button>
+        </div>
+
+        <!-- ANIMATION -->
+        <div class="flex p-0 text-center img-container">
+            <img src="./img/truduck2.gif" class="col p-0 model-image img-fluid" />
+
+            @* ========== The image will be displayed when the player loses.=================*@
+            @* <img src="./img/ducklose.gif" class="col p-0 model-image img-fluid" /> *@
+        </div>
+
+        <!-- DICE ODD & EVEN -->
+        <div class="d-flex col p-0 smallAndBig-btn">
+            <!-- DICE ODD -->
+            <button class="diceButton col-2 flex p-1 mr-1 @(OddEven_Dice_Result == Settings.Constants.Odd ? "win" : "")" @onclick="(() => SelectBetType((int)Settings.DiceBetTypes.Odd))">
+                <p class="m-0"><span>ODD</span></p>
+                <p class="mb-0"><span>1-3-5</span></p>
+                <p class="mb-0"><span>@Dice_OddEven_Multiplier</span></p>
+
+                <!-- TOKEN DISPLAY -->
+                <TokenDisplay Amount="@User_DiceOdd_Total_Bets" />
+            </button>
+
+            <!-- DICE EVEN -->
+            <button class="diceButton col-2 flex p-1 @(OddEven_Dice_Result == Settings.Constants.Even ? "win" : "")" @onclick="(() => SelectBetType((int)Settings.DiceBetTypes.Even))">
+                <p class="m-0"><span>EVEN</span></p>
+                <p class="mb-0"><span>2-4-6</span></p>
+                <p class="mb-0"><span>@Dice_OddEven_Multiplier</span></p>
+
+                <!-- TOKEN DISPLAY -->
+                <TokenDisplay Amount="@User_DiceEven_Total_Bets" />
+            </button>
+        </div>
+    </div>
+</div>
+<div id="diceNumberGameContainer" class="container pt-1 diceNumberGameContainer">
+    <div id="diceNoHeaderContainer" class="container text-center p-0">
+        <div class="d-flex justify-content-center rounded-lg">
+            <div class="col flex p-1 rounded-lg hd2-round">
+                <p class="mb-0 up-font">
+                    <span class="dice-icon">
+                        <i class="dice-icon-1"></i>x2
+                    </span>
+                </p>
+            </div>
+            <div class="col flex p-1 rounded-lg hd2-round">
+                <p class="mb-0 up-font">
+                    <span class="dice-icon">
+                        <i class="dice-icon-1"></i> 
+                        <i class="dice-icon-2"></i> x3
+                    </span>
+                </p>
+            </div>
+            <div class="col flex p-1 rounded-lg hd2-round">
+                <p class="mb-0 up-font">
+                    <span class="dice-icon">
+                        <i class="dice-icon-1"></i> 
+                        <i class="dice-icon-2"></i> 
+                        <i class="dice-icon-3"></i> x4
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <BetDiceByNumber User_Number1_Total_Bets="@User_Number1_Total_Bets"
+                     User_Number2_Total_Bets="@User_Number2_Total_Bets"
+                     User_Number3_Total_Bets="@User_Number3_Total_Bets"
+                     User_Number4_Total_Bets="@User_Number4_Total_Bets"
+                     User_Number5_Total_Bets="@User_Number5_Total_Bets"
+                     User_Number6_Total_Bets="@User_Number6_Total_Bets"
+                     Winning_Result="@Winning_Result" />
+</div>
+
+@code {
+    [Parameter] public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+    [Parameter] public string Dice_SmallBig_Multiplier { get; set; } = "";
+    [Parameter] public string Dice_OddEven_Multiplier { get; set; } = "";
+    [Parameter] public string User_DiceSmall_Total_Bets { get; set; } = "0";
+    [Parameter] public string User_DiceBig_Total_Bets { get; set; } = "0";
+    [Parameter] public string User_DiceOdd_Total_Bets { get; set; } = "0";
+    [Parameter] public string User_DiceEven_Total_Bets { get; set; } = "0";
+    [Parameter] public string User_Number1_Total_Bets { get; set; } = "0";
+    [Parameter] public string User_Number2_Total_Bets { get; set; } = "0";
+    [Parameter] public string User_Number3_Total_Bets { get; set; } = "0";
+    [Parameter] public string User_Number4_Total_Bets { get; set; } = "0";
+    [Parameter] public string User_Number5_Total_Bets { get; set; } = "0";
+    [Parameter] public string User_Number6_Total_Bets { get; set; } = "0";
+    [Parameter] public string SmallBig_Dice_Result { get; set; } = "";
+    [Parameter] public string OddEven_Dice_Result { get; set; } = "";
+    [Parameter] public string Winning_Result { get; set; } = "";
+
+    public async Task SelectBetType(int BetType)
+    {
+        _diceViewModel.CurrentGameType = BetType;
+        _diceViewModel.IsBetting_Button_Disabled = true;
+        _diceViewModel.CSS_SingleColor_NumberBtn_Div = "hide";
+
+        switch (BetType)
+        {
+            case (int)Settings.DiceBetTypes.Small:
+                _diceViewModel.GameVariantId = (int)Settings.GameVariant.DiceSmallBig;
+                _diceViewModel.BetCombinationValue = Settings.Constants.DiceSmall;
+                await _diceViewModel.SetGameChips((int)Settings.GameVariant.DiceSmallBig, true);
+                break;
+            case (int)Settings.DiceBetTypes.Big:
+                _diceViewModel.GameVariantId = (int)Settings.GameVariant.DiceSmallBig;
+                _diceViewModel.BetCombinationValue = Settings.Constants.DicecBig;
+                await _diceViewModel.SetGameChips((int)Settings.GameVariant.DiceSmallBig, true);
+                break;
+            case (int)Settings.DiceBetTypes.Odd:
+                _diceViewModel.GameVariantId = (int)Settings.GameVariant.DiceOddEven;
+                _diceViewModel.BetCombinationValue = Settings.Constants.DiceOdd;
+                await _diceViewModel.SetGameChips((int)Settings.GameVariant.DiceOddEven, true);
+                break;
+            case (int)Settings.DiceBetTypes.Even:
+                _diceViewModel.GameVariantId = (int)Settings.GameVariant.DiceOddEven;
+                _diceViewModel.BetCombinationValue = Settings.Constants.DiceEven;
+                await _diceViewModel.SetGameChips((int)Settings.GameVariant.DiceOddEven, true);
+                break;
+        }
+
+        await _diceViewModel.ShowDivToken();
+    }
+}

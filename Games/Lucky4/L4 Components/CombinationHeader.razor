@@ -1,0 +1,42 @@
+﻿<div id="luck4-header" class="d-flex justify-content-center">
+    <div class="@(IsEnabled_First2 ? "ActivatedEz2Btn" : "ez2Btn" ) pick2 text-center justify-content-center align-items-center text-center">
+        <p class="mb-o text-white pick-label" style="font-weight: bold;"><span>PICK 2</span></p>
+        <p class="mt-3">
+            <span class="lucky-circle maroon">1</span>
+            <span class="lucky-circle green">2</span>
+        </p>
+        <p class="multiplier"><span>x70</span></p>
+    </div>
+    <div class="@(IsEnabled_First3 ? "ActivatedEz3Btn" : "s3Btn" ) pick3 text-center mr-1 ml-1 justify-content-center align-items-center text-center">
+        <p class="mb-o text-white pick-label" style="font-weight: bold;"><span>PICK 3</span></p>
+        <p class="mt-3">
+            <span class="lucky-circle maroon">1</span>
+            <span class="lucky-circle green">2</span>
+            <span class="lucky-circle blue">3</span>
+        </p>
+        <p class="multiplier"><span>x600</span></p>
+    </div>
+    <div class="@(IsEnabled_All4 ? "Activatedl4Btn" : "l4Btn" ) pick4 luck4-bg justify-content-center align-items-center text-center">
+        <p class="mb-o text-white pick-label" style="font-weight: bold;"><span>PICK 4</span></p>
+        <p class="mt-3">
+            <span class="lucky-circle maroon">1</span>
+            <span class="lucky-circle green">2</span>
+            <span class="lucky-circle blue">3</span>
+            <span class="lucky-circle red">4</span>
+        </p>
+        <p class="multiplier"><span>x5000</span></p>
+    </div>
+</div>
+@code {
+    [Parameter] public string RatioDisplay_F2 { get; set; } = "";
+
+    [Parameter] public string RatioDisplay_F3 { get; set; } = "";
+
+    [Parameter] public string RatioDisplay_All4 { get; set; } = "";
+
+    [Parameter] public bool IsEnabled_First2 { get; set; } = false;
+
+    [Parameter] public bool IsEnabled_First3 { get; set; } = false;
+
+    [Parameter] public bool IsEnabled_All4 { get; set; } = false;
+}

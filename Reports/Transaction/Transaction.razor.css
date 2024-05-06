@@ -1,0 +1,131 @@
+﻿section {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+form {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav-link.active {
+    color: white;
+    background-color: #ff6a00;
+    font-weight: 600;
+}
+
+img.imgLogo {
+    height: 50px;
+}
+
+.nav-link {
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+h6.headerText {
+    text-decoration: none;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+}
+
+.addCredit img, .overthecounterBtn img {
+    height: 80px;
+    width: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+.addCredit {
+    text-align: center;
+}
+/*trasnsaction*/
+.transCon {
+    max-width: 640px;
+}
+
+.innerTransCon {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.innerTable {
+    background-color: #263142;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.rightContent {
+    align-items: center;
+    padding: 0;
+  
+}
+
+.transHeader {
+    padding-top: 5px;
+    background-color: white;
+    color: black;
+    margin: 0 auto;
+}
+/*transaction*/
+h6.topUpMEssage {
+    background-color: #288187;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.overthecounterBtn {
+    background-color: red; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, #f476b3, #fad28c, #f6a317 );
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.PaymentGateWayCon {
+    background-color: #2298d4;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.addCredit-submit {
+    width: 100%;
+    background-color: #07966a;
+    border: none;
+}
+/*GATEWAY*/
+
+/*GATEWAY*/
+
+@media screen and (max-width: 600px) {
+    .overthecounterBtn {
+        margin-bottom: 5px;
+    }
+
+    .creditContainer {
+        margin: 20px;
+    }
+}

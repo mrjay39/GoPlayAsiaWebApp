@@ -1,0 +1,639 @@
+﻿
+.mainContainer {
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+}
+.maxWidth {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: black;
+}
+
+.gameTitle {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+.payout {
+    font-size: 11px;
+}
+
+.betAmount {
+    font-size: 11px;
+}
+
+.smallHeader {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.conBorder {
+    border: 1px solid #6d6d6d;
+}
+.h-85{
+    height: 75px;
+    justify-content:center;
+}
+.h-125 {
+    height: 125px;
+}
+.row2, .row3 {
+    justify-content: center;
+    align-items: center;
+}
+.row2{height: 55px;}
+.row3{height: 40px; margin-bottom: 7px;}
+
+.animation > img{
+    height: 95%;
+}
+
+.Black2Player {
+    background-color: #680004;
+    color: white;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+.Black2Player:focus {
+    background-color: #ff000a;
+    color: white;
+}
+
+.Red2Banker {
+    background-color: #28355b;
+    color: white;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+.Red2Banker:focus {
+    background-color: #008aff;
+    color: white;
+}
+
+.Black2Banker {
+    background-color: #28355b;
+    color: white;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+.Black2Banker:focus {
+    background-color: #008aff;
+    color: white;
+}
+
+/*suite icons*/
+img.resultSuitesIcon {
+    height: 18px;
+    width: 15px;
+}
+/*rotate*/
+.cardResultsPlayerRotated {
+    line-height: normal;
+    font-size: 20px;
+    border-radius: 2px;
+    border: 1px solid white;
+    max-width: fit-content;
+    padding: 3px 10px;
+    color: black;
+    background-color: white;
+}
+/*Total Result value*/
+.totalResultValue {
+    background-color: red;
+    color: white;
+    height: 25px;
+    width: 25px;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 50%;
+    border: 1px solid white;
+    line-height: normal;
+}
+/*rotate*/
+.cardResultsVertical {
+    margin: 1px;
+    line-height: normal;
+    font-size: 20px;
+    border-radius: 2px;
+    border: 1px solid white;
+    width: fit-content;
+    padding: 3px 15px;
+    color: black;
+    background-color: white;
+    max-width: fit-content;
+}
+
+.EmptyCardResults {
+    margin: 1px;
+    line-height: normal;
+    font-size: 20px;
+    border-radius: 2px;
+    max-width: 40px;
+    height: 54px;
+    border: solid 2px white;
+}
+
+/*suite icons*/
+/*   */
+.playerButton {
+    background-color: #680004;
+    color: white;
+    margin-right: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+.playerButton:focus {
+    background-color: #ff000a;
+    color: white;
+}
+
+.bankerButton {
+    background-color: #28355b;
+    color: white;
+    margin-left: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+.bankerButton:focus {
+    background-color: #008aff;
+    color: white;
+}
+
+.tieButton {
+    background-color: grey;
+    color: white;
+    border: 1px solid rgb(90, 72, 26);
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    background-color: #7f6000;
+}
+
+.tieButton:focus {
+    background-color: #dde611;
+    color: black;
+    border: 1px solid rgb(90, 72, 26);
+}
+
+.pLucky9 {
+    background-color: #680004;
+    color: white;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+.pLucky9:focus {
+    background-color: #ff000a;
+    color: white;
+}
+
+.bLucky9 {
+    background-color: #28355b;
+    color: white;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+.bLucky9:focus {
+    background-color: #008aff;
+}
+
+.borderGold {
+    border: 1px solid #6d6d6d;
+}
+
+.borderWhite {
+    border: 1px solid white;
+}
+
+.anyPairPlayer {
+    background-color: #680004;
+    color: white;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+.anyPairPlayer:focus {
+    background-color: #ff000a;
+    color: white;
+}
+
+.sameSuitPlayer {
+    background-color: #680004;
+    color: white;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+.sameSuitPlayer:focus {
+    background-color: #ff000a;
+    color: white;
+}
+
+.anyPairBanker {
+    background-color: #28355b;
+    color: white;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+.anyPairBanker:focus {
+    background-color: #008aff;
+}
+
+.sameSuitBanker {
+    background-color: #28355b;
+    color: white;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+.sameSuitBanker:focus {
+    background-color: #008aff;
+    color: white;
+}
+
+.delButton {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+.backButton {
+    background-color: #ffb400;
+    color: white;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+.betButton {
+    background-color: #008045;
+    color: white;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+    .betButton:focus {
+        background-color: #0dc26e;
+        color: white;
+        border-radius: 5px;
+    }
+/* START TOKEN CSS */
+.tokenContainer {
+    max-width: 640px;
+    overflow: hidden;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+.betButtonContainer {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+button.token {
+    border: 4px solid #e5cd7f;
+    border-radius: 3px;
+    margin: 2px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    min-width: 45px;
+    min-height: 40px;
+    background-color: #c69d14;
+    padding: 0;
+    color: black !important;
+}
+
+    button.token:focus {
+        border: 4px solid #ff7800;
+        border-radius: 3px;
+        margin: 2px;
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+        min-width: 45px;
+        min-height: 40px;
+        background-color: #fcae1e;
+        padding: 0;
+        color: black !important;
+    }
+
+/* END TOKEN CSS */
+/*START DISABLED BUTTON CSS*/
+.DisbankerButton {
+    filter: grayscale(100%);
+    pointer-events: none;
+    margin-left: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    color: white;
+}
+
+.DisplayerButton {
+    filter: grayscale(100%);
+    pointer-events: none;
+    margin-left: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    color: white;
+    background-color: grey;
+}
+
+.DispLucky9 {
+    filter: grayscale(100%);
+    pointer-events: none;
+    margin-right: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    background-color: grey;
+}
+
+.DistokenContainer {
+    filter: grayscale(100%);
+    pointer-events: none;
+    border-radius: 5px;
+    max-width: 640px;
+    overflow: hidden;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+.DisdelButton {
+    filter: grayscale(100%);
+    pointer-events: none;
+    background-color: grey;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+.DisbackButton {
+    filter: grayscale(100%);
+    pointer-events: none;
+    background-color: grey;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+.DisbetButton {
+    filter: grayscale(100%);
+    pointer-events: none;
+    background-color: grey;
+    border-radius: 5px;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+/*END DISABLED BUTTON CSS*/
+/*START WINNING RESULT DIV CSS */
+.WinplayerButton {
+    background-color: forestgreen;
+    color: white;
+    margin-right: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+
+.WinbankerButton {
+    background-color: forestgreen;
+    color: white;
+    margin-right: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+}
+/*END WINNING RESULT DIV CSS */
+/* CURRENT BETS*/
+tr {
+    padding: 2px 0;
+}
+
+td {
+    line-height: normal;
+    font-size: 13px;
+    color: white;
+    font-weight: 600;
+    border-bottom: 1px solid #dabc33;
+}
+/* START CURRENT BETS*/
+table {
+    border-top: 1px solid #dabc33;
+}
+
+.label {
+    line-height: normal;
+    font-size: 13px;
+    color: white;
+    font-weight: 600;
+    background-color: #dabc33;
+    margin-top: 5px;
+    width: fit-content;
+    padding: 1px 10px;
+}
+
+.winningAmountGreen {
+    color: #00c96b;
+}
+
+.losingAmountRed {
+    color: red;
+}
+/* END CURRENT BETS*/
+.lucky9-border {
+    border: 2px solid #872d2d;
+    border-radius: 8px;
+}
+.firstBet-text {
+    margin: 0 15px;
+    font-weight: bold;
+}
+.playerRed, .bankerBlue {
+    display: inline-flex;
+    width: 25px;
+    height: 15px;
+    border-radius: 44%;
+    margin-left: 5px;
+    margin-right: 4px;
+}
+.playerRed{
+    background-color: red;
+}
+.bankerBlue {
+    background-color: blue;
+}
+
+.betButton { /*Bet button default*/
+    background-color: #479d22;
+    color: white;
+    border-radius: 5px;
+}
+
+.betButtonActivated { /*Bet button activated*/
+    background-color: #4cff00;
+    color: black;
+}
+
+.disBetButton { /*Bet button disabled*/
+    filter: grayscale(100%);
+    pointer-events: none;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+}
+
+.resetButton { /*Reset button default*/
+    background-color: #9d0a0a;
+    color: white;
+    border-radius: 5px;
+}
+
+.resetButtonActivated { /*Reset button activated*/
+    background-color: #ff0000;
+    color: white;
+    border-radius: 5px;
+}
+
+.disResetButton { /*Bet button disabled*/
+    filter: grayscale(100%);
+    pointer-events: none;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+}
+/*CANCELLED BETS RETURN*/
+.cancelledText {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    z-index: 1;
+    font-size: 35px;
+    color: red;
+    font-weight: 600;
+}
+
+/*CANCELLED BETS RETURN*/
+
+/*SEPARATOR*/
+.breaker {
+    background: rgb(154,132,16);
+    background: linear-gradient(90deg, rgba(154,132,16,1) 0%, rgba(221,215,32,1) 46%, rgba(154,132,16,1) 100%);
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+p {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+/*SEPARATOR*/
+marquee {
+    max-width: 640px;
+    margin: 0 auto;
+    background: rgb(64,4,6);
+    background: linear-gradient(90deg, rgba(64,4,6,1) 0%, rgba(158,12,17,1) 50%, rgba(64,4,6,1) 100%);
+}
+/*NEW TOKEN CSS*/
+.blackBg {
+    background-color: black;
+}
+
+.tokenRelativeCon {
+    z-index: 1;
+    position: relative !important;
+}
+
+.tokenAbsolute {
+    position: absolute !important;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.block {
+    position: absolute;
+    animation-name: tokenAnimationEaseIn;
+    animation-duration: .6s;
+    bottom: -72%;
+    width: 100%;
+    z-index: 1;
+}
+
+@keyframes tokenAnimationEaseIn {
+    from {
+        bottom: -72%;
+        opacity: 0;
+    }
+
+    to {
+        bottom: -72%;
+        opacity: 100%;
+    }
+}
+
+.none {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    animation-name: closetokenAnimationEaseout;
+    animation-duration: .6s;
+    display: none;
+}
+
+@keyframes closetokenAnimationEaseout {
+
+
+    from {
+        bottom: 130px;
+        opacity: 100%;
+    }
+
+    to {
+        bottom: -72%;
+        opacity: 0;
+    }
+}
+
+.tokenhide {
+    opacity: 0;
+    position: absolute;
+    bottom: -60%;
+    width: 100%;
+    z-index: -1;
+    display:none;
+}
+
+@media only screen and (max-width: 375px) {
+    .horizontalCardBlankBanker, .EmptyCardResults {
+        max-width: 30px;
+        height: 45px;
+    }
+}
+
+/*NEW TOKEN CSS*/

@@ -1,0 +1,141 @@
+﻿@page "/gamerules/lucky4"
+@using GoplayasiaBlazor.Core.Global.Interface;
+@using GoPlayAsiaWebApp.Games.Shared
+@attribute [Authorize(Roles = "1")]
+@inject ICurrentUser icurrentUser
+<TopContent CreditsDisp="@icurrentUser.CreditsDisp" />
+<section>
+    <main class="container">
+        <h5 class="font-weight-bold mt-2">LUCKY 4 HOUSE RULES</h5>
+        <div class="">
+            @*            <div class="containerVid">
+            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/04TIzvX36lc"></iframe>
+            </div>*@
+            <content class="">
+                <div class="d-flex justify-content-center mt-2">
+                    <a href="/games/Lucky4" <button class="btn btn-primary text-center d-flex">Back To Game</button></a>
+                </div>
+                <h4 class="mt-5">I. Minimum/MaximumBet Limit and Payout Odds</h4>
+                <table class="w-100 text-center">
+                    <tr>
+                        <td class="font-weight-bold">Details</td>
+                        <td class="font-weight-bold">F2</td>
+                        <td class="font-weight-bold">F3</td>
+                        <td class="font-weight-bold">ALL 4</td>
+                    </tr>
+                    <tr>
+                        <td>Min bet</td>
+                        <td>P20</td>
+                        <td>P10</td>
+                        <td>P10</td>
+                    </tr>
+                    <tr>
+                        <td>Max bet</td>
+                        <td>P500-P1,000</td>
+                        <td>P100-P500</td>
+                        <td>P20</td>
+                    </tr>
+                    <tr>
+                        <td>Payout Odds</td>
+                        <td>P20= P1,400</td>
+                        <td>P10= P6,000</td>
+                        <td>P10= P50,000</td>
+                    </tr>
+                </table>
+                <p class="mt-2 ">
+                    The Lucky 4 Drop Ball game is designed at Ten Pesos (P10) per ticket transaction.However, for F2, a minimum of two (2) ticket transaction is required to play the game.
+                </p>
+                <h4 class="">DEALING PROCEDURES : The following shall be observed:</h4>
+
+                <ol>
+                    <li>
+                        The Dealer shall look at the Dealer's Dashboard (with attached
+                        camera) before and after the deal for instruction or guidance
+                    </li>
+                    <li>
+                        Accepting of bets through remote gaming platform ensue when the
+                        status on the Dealer Dashboard reads "OPEN".
+                    </li>
+                    <li>
+                        Lucky 4 Drop Ball Game will be using four (4) canisters.  Canisters 1 – 3 will have a numeric value from 0 to 9, while Canister 4 will have letters from  A to J;
+                    </li>
+                    <li>
+                        First 2 (F2) results will be based on Canister 1 and 2; the First 3 (F3) results will be based on Canister 1, 2, and 3; All 4 (A4) results will be based on Canister 1, 2, 3, and 4);
+                    </li>
+                    <li>Player bet/s for the desired combination/s (0-9 for Canister 1, 2, and 3; A-J for Canister 4 ), either F2, F3, and AF, in exact order. Once the player clicks his/her choice/s, the bet amount option pop-up, either enter preset chip denominations or manually key-in the amount then click "PLACE BET," otherwise "CANCEL".</li>
+                    <li>
+                        The system timerstarts until the allotted period for betting ends. System automatically disables all access for betting and changes the
+                        status to "CLOSED".
+                    </li>
+                    <li>
+                        Before the closing of bets, the Dealer shall start with the dealing procedure in the following sequence:
+                        <ul>
+                            <li>a.) The Dealer shall pick up the ball inside each canister</li>
+                            <li>
+                                b.) Upon retrieval, the Dealer shall immediately throw I drop the
+                                ball in any way creating a circular motion inside each
+                                transparent funnel, from first canister to fourth canister, in
+                                that order.
+                            </li>
+                            <li>
+                                c.) Wait until the balls settle on every canister, the Dealer then
+                                shall declare I encode the winning outcome in the Dealer's
+                                Tablet for the Game Validator's confirmation.
+                            </li>
+                            <li>
+                                d.) After Dealer determinesthe game result, another validation
+                                of result shall be made by the Proponent remotely and on a
+                                separate module ("Validator"). Only after confirmation of the
+                                result, the winning bet/sshall be processed.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Dealershall perform this dealing cycle continuously during his stint
+                        until he is relieved by another Dealer, the last deal has been
+                        announced, or the table needs to undergo maintenance.
+                    </li>
+                    <li>
+                        In case of system failure, malfunction, and/or error, the Gaming Operator
+                        has the right to declare any and all of the affected game/s and winning/s as
+                        invalid and void, and to recover from the account of the affected
+                        player any payments made as a result of said system failure, malfunction
+                        and/or errors without the need of consent from the said player. This
+                        clause shall not be considered to be excluding liability for anything which
+                        itwould be unlawful to exclude under applicable law.
+                    </li>
+                    <li>
+                        Bets can’t be cancelled once confirmed but can be increased within the
+                        duration of betting time.
+                    </li>
+                    <li>
+                        Philippine Peso Currency is converted into Token with a 1:1 ratio or value.
+                    </li>
+                </ol>
+
+                <h4 class="">Game Rules</h4>
+
+                <ol>
+                    <li>Lucky 4 Drop Ball Game will use 4 canisters. Canister 1-3 will have a numeric value from 0-9 and Canister 4 will have letters from A-J;</li>
+                    <li>First 2 (F2) results will be based on Canister 1 and 2;</li>
+                    <li>First 3 (F3) results will be based on Canister 1, 2, and 3;</li>
+                    <li>All 4 (A4) results will be based on Canister 1, 2, 3, and 4);</li>
+                    <li>The player must bet with the desired combination using 0-9 on Canister 1, 2, and 3 and A-J for Canister 4).  This will apply either on F2, F3, and AF;</li>
+                    <li>Upon close bet, the Dealer shall immediately spin the ball in a circular motion inside each transparent funnel, from the first canister to the fourth canister, in that order;</li>
+                    <li>If the ball has spun out of the canister, the dealer shall use a new Ping-Pong Ball and proceed with the spinning of the ball in the said canister; and</li>
+                    <li>Player wins if the result drawn in Canister 1-4 is in exact order.</li>
+
+                </ol>
+            </content>
+            <div class="d-flex justify-content-center pb-5">
+                <a href="/games/lucky4" <button class="btn btn-primary text-center d-flex">Back To Game</button></a>
+
+            </div>
+
+        </div>
+
+    </main>
+</section>
+@code {
+
+}

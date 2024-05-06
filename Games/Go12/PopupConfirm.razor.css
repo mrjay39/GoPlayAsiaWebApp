@@ -1,0 +1,39 @@
+﻿.container {
+    max-width: 360px;
+  
+}
+
+.popconfirm {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightblue;
+    width: 100%;
+    position: absolute;
+    top: -50px;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.btnNo {
+    background-color: #fe0000;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 2px;
+}
+
+.btnYes {
+    background-color: #05976a;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 2px;
+}
+@media only screen and (max-width: 360px) {
+    .container {
+       width: 100%;
+    }
+}

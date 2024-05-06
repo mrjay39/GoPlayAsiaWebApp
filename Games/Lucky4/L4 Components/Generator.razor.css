@@ -1,0 +1,14 @@
+﻿.generator {
+    background: rgb(115,29,29);
+    background: linear-gradient(90deg, rgba(115,29,29,1) 0%, rgba(238,70,70,1) 46%, rgba(115,29,29,1) 100%);
+    color: white;
+    margin-bottom: 3px;
+    height: 26px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-bottom: 0;
+    font-weight: bolder;
+}

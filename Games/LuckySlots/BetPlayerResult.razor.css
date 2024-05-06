@@ -1,0 +1,91 @@
+﻿.header-text {
+    font-size: 12px;
+    min-width: 85px;
+    display: inline-flex;
+}
+
+.min-w110 {
+    min-width: 81px;
+    font-size: 12px;
+}
+
+.min-w210 {
+    min-width: 210px;
+}
+
+#gamePlayerResultsContainer .player-result > p{
+    display: flex;
+    align-items: center;
+}
+#gamePlayerResultsContainer .player-result span.gameNo {
+    background: none;
+    width: 35px;
+}
+.player-result span {
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+    display: inline-block;
+    /*background-color: #e1e1e1;*/
+}
+/*========= Start Animals Properties ==============*/
+.animal-1 {
+    background: url('./img/luckySlot-images/animal-1.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+.animal-2 {background: url('./img/luckySlot-images/animal-2.png') center center no-repeat; background-size: 100% 100%;}
+.animal-3 {background: url('./img/luckySlot-images/animal-3.png') center center no-repeat; background-size: 100% 100%;}
+.animal-4 {background: url('./img/luckySlot-images/animal-4.png') center center no-repeat; background-size: 100% 100%;}
+.animal-5 {background: url('./img/luckySlot-images/animal-5.png') center center no-repeat; background-size: 100% 100%;}
+
+/*========= Start GEMS Properties ==============*/
+.gem-1 {background: url('./img/luckySlot-images/gem-1.png') center center no-repeat; background-size: 100% 100%;}
+.gem-2 {background: url('./img/luckySlot-images/gem-2.png') center center no-repeat; background-size: 100% 100%;}
+.gem-3 {background: url('./img/luckySlot-images/gem-3.png') center center no-repeat; background-size: 100% 100%;}
+.gem-4 {background: url('./img/luckySlot-images/gem-4.png') center center no-repeat; background-size: 100% 100%;}
+.gem-5 {background: url('./img/luckySlot-images/gem-5.png') center center no-repeat; background-size: 100% 100%;}
+
+/*========= Start CARS Properties ==============*/
+.car-1 {background: url('./img/luckySlot-images/car-1.png') center center no-repeat; background-size: 100% 100%;}
+.car-2 {background: url('./img/luckySlot-images/car-2.png') center center no-repeat; background-size: 100% 100%;}
+.car-3 {background: url('./img/luckySlot-images/car-3.png') center center no-repeat; background-size: 100% 100%;}
+.car-4 {background: url('./img/luckySlot-images/car-4.png') center center no-repeat; background-size: 100% 100%;}
+.car-5 {background: url('./img/luckySlot-images/car-5.png') center center no-repeat; background-size: 100% 100%;}
+
+/*========= Start Fruits Properties ==============*/
+.fruit-1 {background: url('./img/luckySlot-images/fruit-1.png') center center no-repeat; background-size: 100% 100%;}
+.fruit-2 {background: url('./img/luckySlot-images/fruit-2.png') center center no-repeat; background-size: 100% 100%;}
+.fruit-3 {background: url('./img/luckySlot-images/fruit-3.png') center center no-repeat; background-size: 100% 100%;}
+.fruit-4 {background: url('./img/luckySlot-images/fruit-4.png') center center no-repeat; background-size: 100% 100%;}
+.fruit-5 {background: url('./img/luckySlot-images/fruit-5.png') center center no-repeat; background-size: 100% 100%;}
+
+/*========= Start Balls Properties ==============*/
+.ball-1 {background: url('./img/luckySlot-images/ball-1.png') center center no-repeat; background-size: 100% 100%;}
+.ball-2 {background: url('./img/luckySlot-images/ball-2.png') center center no-repeat; background-size: 100% 100%;}
+.ball-3 {background: url('./img/luckySlot-images/ball-3.png') center center no-repeat; background-size: 100% 100%;}
+.ball-4 {background: url('./img/luckySlot-images/ball-4.png') center center no-repeat; background-size: 100% 100%;}
+.ball-5 {background: url('./img/luckySlot-images/ball-5.png') center center no-repeat; background-size: 100% 100%;}
+
+/* Start: Results Propeties */
+#gamePlayerResultsContainer {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: bold;
+    border-top: solid 1px #9d7a37;
+}
+
+@media screen and (min-width: 320px) {
+}
+
+@media screen and (min-width: 360px) {
+    div.width-31 {
+        width: 60%;
+    }
+}
+
+@media (min-width:640px) {
+    div.width-31 {
+        width: 57.5%;
+    }
+}

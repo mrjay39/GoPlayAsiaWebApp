@@ -1,0 +1,52 @@
+﻿@using static GoplayasiaBlazor.Models.Constants.Settings;
+@if (RoundStatusString == Constants.Cancelled)
+{
+    <section class="mainCon">
+
+        <div class="text-center ">
+            <p class="gameResultDisplay text-center"><span class="resultColored">Cancelled</span></p>
+        </div>
+
+    </section>
+}
+
+<div class="ticketGameCon">
+
+    <h6 class="gHeaderCon ml-3 mt-2 mb-2 font-weight-bold text-left">GAME RESULTS</h6>
+    @if (TrendsDisplay != null)
+    {
+        <div id="gameResultContainer" class="trendsMainCon container-fluid row flex-nowrap">
+            @foreach (var _trends in TrendsDisplay)
+            {
+                <div class="col m-1 trends-parent">
+                    <Virtualize Items="_trends.CurrentList" Context="_trenditems">
+                        <div class="row pick4-container">
+                            <div class="d-flex">
+                                <span class="ml-1 mr-1 p-0 text-white gameNo">G# @_trenditems.TrendsNumberDisplay</span>
+                                @if (_trenditems.RoundStatus == (int)RoundStatus.Cancelled)
+                                {
+                                    <div class="row trendsCon d-block">
+                                        <p class="dwGameRes">@_trenditems.NonCardsResultDisplay</p>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="numCombi p-0">
+                                        <span class="c-purple">@_trenditems.NonCardsResultDisplay.Substring(0, 1)</span>
+                                        <span class="c-green">@_trenditems.NonCardsResultDisplay.Substring(1, 1)</span>
+                                        <span class="c-blue">@_trenditems.NonCardsResultDisplay.Substring(2, 1)</span>
+                                        <span class="c-red">@_trenditems.NonCardsResultDisplay.Substring(3, 1)</span>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </Virtualize>
+                </div>
+            }
+        </div>
+    }
+
+</div>
+
+
+

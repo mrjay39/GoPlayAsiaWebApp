@@ -1,0 +1,475 @@
+﻿
+
+/* #region BOTH */
+
+marquee {
+    max-width: 640px;
+    margin: 0 auto;
+    background: rgb(64,4,6);
+    background: linear-gradient(90deg, rgba(64,4,6,1) 0%, rgba(158,12,17,1) 50%, rgba(64,4,6,1) 100%);
+}
+
+section {
+    max-width: 640px;
+    display: flex;
+    padding: 3px 3px;
+    margin: 0 auto;
+}
+
+a {
+    color: white !important;
+    text-decoration: none;
+}
+
+/* #region v2 CUSTOM SETTINGS */
+.RegularGame, .disrunningOdds,
+.runningOdds {
+    height: 104px;
+    margin-top: 0;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+    /* Active */
+    .RegularGame .betContainer .v2-option .v2-label-type,
+    .runningOdds .betContainer .v2-option .v2-label-type {
+        width: 115px;
+        height: 115px;
+        border-radius: 50%;
+        color: #fc8c8c;
+    }
+
+    .RegularGame .bankerBetContainer .v2-option .v2-label-type,
+    .runningOdds .bankerBetContainer .v2-option .v2-label-type {
+        color: #5275bb;
+    }
+
+    /* Disabled */
+    .RegularGame .disbetPlayerRegContainer .v2-option .v2-label-type,
+    .disrunningOdds .disbetPlayerOddsContainer .v2-option .v2-label-type {
+        width: 125px;
+        color: #808080;
+    }
+
+    .RegularGame .disbetBankerRegContainer .v2-option .v2-label-type,
+    .disrunningOdds .disbankerBetContainer .v2-option .v2-label-type {
+        color: #808080;
+    }
+/* #endregion */
+
+/* #region V2 Design */
+section {
+    padding: 1px !important 0;
+}
+
+section {
+    max-width: 640px;
+    display: flex;
+    padding: 3px 3px;
+    margin: 0 auto;
+    max-height: 110px;
+}
+
+.v2subText {
+    font-size: 14px;
+}
+
+.v2-headings {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #303030;
+    border-top: solid 2px #b07c28;
+    border-bottom: solid 2px #b07c28;
+    max-width: 640px;
+    margin: 0 auto 1px;
+}
+
+.v2-holder {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.v2-option {
+    display: flex;
+    margin-top: 20px !important;
+    align-items: center;
+    flex-direction: column;
+    min-height: 145px;
+    height: calc();
+}
+
+    .v2-option .v2-label {
+        font-size: 25px;
+        line-height: normal;
+        text-decoration: none !important;
+    }
+
+    .v2-option .v2-label-type {
+        background-color: #fff;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 16px;
+        text-align: center;
+    }
+
+    .v2-option .v2-label-bet {
+        font-size: 20px;
+        margin-top: 8px;
+    }
+
+.v2-details {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+    .v2-details .v2-win {
+        text-align: left;
+        padding-left: 2px !important;
+        font-size: 18px;
+    }
+
+    .v2-details .v2-multiplier {
+        text-align: right;
+        padding-right: 2px !important;
+    }
+
+.v2-details-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+    .v2-details-top .v2-totalbetsodds {
+        text-align: left;
+        padding-left: 5px !important;
+        font-size: 18px;
+    }
+
+.betContainer,
+.disbetPlayerRegContainer,
+.disbetPlayerOddsContainer {
+    margin: 0px 3px 0 0 !important;
+}
+/* #endregion */
+
+/* #region TOKEN DISPLAY */
+.tokenSelectedBet {
+    position: relative;
+    height: 30px;
+    width: 55px;
+}
+
+.selectedAmountToken {
+    position: absolute;
+    z-index: 1;
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* #endregion */
+
+.winbetContainer {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    color: black !important;
+    animation: activeBet 1s infinite;
+}
+
+
+@keyframes activeBet {
+    from {
+        background-color: yellow;
+        color: black !important;
+      
+    }
+
+    to {
+        background-color: rgb(69, 219, 18);
+        color: black !important;
+    
+      
+    }
+}
+    .betCancelled {
+        transform: rotate(-40deg);
+        font-size: 20px;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        color: red;
+        z-index: 1;
+    }
+    /* #endregion */
+    /* #region HEADS */
+    /* #region DEFAULT */
+    .betContainer {
+        max-width: 100px;
+        max-height: 100px;
+        border-radius: 50%;
+        outline: 2px solid #101019 !important;
+        outline-offset: -2px;
+        border: none;
+        background-color: rgb(251, 4, 4);
+        color: white;
+        box-shadow: 0px 20px 20px rgb(252, 163, 163) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 5px -15px 20px rgb(141, 0, 0) inset;
+    }
+
+    .betContainer {
+        background-color: #ff4949;
+        border: 1px solid #fff;
+    }
+    /* #endregion */
+    /* #region ACTIVATED */
+    .betContainerActive {
+        max-width: 100px;
+        max-height: 100px;
+        border-radius: 50%;
+        text-decoration: none !important;
+        outline: 5px solid #51ff00 !important;
+        outline-offset: -5px;
+        border: none;
+        background-color: rgb(251, 4, 4);
+        color: white;
+        box-shadow: 0px 20px 20px rgb(252, 163, 163) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 5px -15px 20px rgb(141, 0, 0) inset;
+    }
+    /* #endregion */
+    /* #region DISABLED */
+    .disbetPlayerRegContainer {
+        max-width: 100px;
+        max-height: 100px;
+        border-radius: 50%;
+        background-color: grey;
+        width: 480px;
+        color: white;
+        position: relative;
+        margin-right: 3px;
+    }
+    /* #endregion */
+    /* #region WINNER */
+    /* #endregion */
+    /* #region TOKEN DISPLAY */
+    .additionaltokencontainer {
+        position: absolute;
+        bottom: 7%;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        animation-name: additionaltokenAnimation;
+        animation-duration: var(--animation);
+        animation-iteration-count: 1;
+    }
+
+    @keyframes additionaltokenAnimation {
+        from {
+        transform: rotateY(-360deg);
+        z-index: 1;
+        bottom: -180%;
+        left: 120%;
+    }
+
+    to {
+        transform: rotateY(360deg);
+        z-index: 1;
+        bottom: 12%;
+        left: 39%;
+    }
+}
+/* #endregion */
+
+/* #endregion */
+
+/* #region TAILS */
+
+/* #region DEFAULT */
+.bankerBetContainer {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    text-decoration: inherit;
+    outline: 2px solid #101019 !important;
+    outline-offset: -2px;
+    border: none;
+    background-color: rgb(0, 49, 242);
+    color: white;
+    box-shadow: 5px 20px 20px rgb(108, 137, 254) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 5px -15px 50px rgb(0, 30, 147) inset;
+}
+
+.bankerBetContainer {
+    background-color: #5275bb;
+    border: 1px solid #fff;
+}
+/* #endregion */
+
+/* #region ACTIVATED */
+.bankerBetContainerActive {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    outline: 5px solid #51ff00 !important;
+    outline-offset: -5px;
+    border: none;
+    background-color: rgb(0, 49, 242);
+    box-shadow: 5px 20px 20px rgb(108, 137, 254) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 5px -15px 50px rgb(0, 30, 147) inset;
+}
+/* #endregion */
+
+/* #region DISABLED */
+.disbetBankerRegContainer {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    background-color: grey;
+    width: 480px;
+    color: white;
+    position: relative;
+    margin-right: 3px;
+}
+/* #endregion */
+
+/* #region WINNER */
+/* #endregion */
+
+/* #region TOKEN DISPLAY */
+.additionaltokencontainerTails {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    animation-name: additionaltokenAnimationTails;
+    animation-duration: var(--animation);
+}
+
+@keyframes additionaltokenAnimationTails {
+    from {
+        transform: rotateY(-360deg);
+        z-index: 1;
+        bottom: -175%;
+        left: -45%;
+    }
+
+    to {
+        transform: rotateY(360deg);
+        z-index: 1;
+        bottom: 10%;
+        left: 38%;
+    }
+}
+/* #endregion */
+
+/* #endregion */
+
+/* #region MOBILE */
+@media only screen and (max-width: 600px) {
+
+    .betCancelled {
+        top: 25%;
+        left: 15%;
+        font-size: 15px;
+    }
+
+    /* #region TOKEN ANIMATION (HEADS) */
+    @keyframes additionaltokenAnimation {
+        from {
+            transform: rotateY(-360deg);
+            z-index: 1;
+            bottom: -170%;
+            left: 120%;
+        }
+
+        to {
+            transform: rotateY(360deg);
+            z-index: 1;
+            bottom: 13%;
+            left: 31%;
+        }
+    }
+    /* #endregion */
+
+    /* #region TOKEN ANIMATION (TAILS) */
+    @keyframes additionaltokenAnimationTails {
+        from {
+            transform: rotateY(-360deg);
+            z-index: 1;
+            bottom: -175%;
+            left: -55%;
+        }
+
+        to {
+            transform: rotateY(360deg);
+            z-index: 1;
+            bottom: 10%;
+            left: 30%;
+        }
+    }
+    /* #endregion */
+}
+/* #endregion */
+
+/* #region CHIPS POPUP CSS */
+.block {
+    position: absolute;
+    animation-name: tokenAnimationEaseIn;
+    animation-duration: .6s;
+    bottom: -197%;
+    width: 100%;
+    z-index: 1;
+}
+
+    @keyframes tokenAnimationEaseIn {
+        from {
+            bottom: -300%;
+            opacity: 0;
+        }
+
+        to {
+            bottom: -197%;
+            opacity: 100%;
+        }
+    }
+
+    .none {
+        z-index: 1;
+        opacity: 0;
+        position: absolute;
+        bottom: -275%;
+        width: 100%;
+        animation-name: closetokenAnimationEaseout;
+        animation-duration: .6s;
+    }
+
+    @keyframes closetokenAnimationEaseout {
+        from {
+            bottom: -197%;
+            opacity: 100%;
+        }
+
+        to {
+            bottom: -300%;
+            opacity: 0;
+        }
+    }
+
+
+    .tokenhide {
+        display: none;
+    }
+/* #endregion */
+.majority {
+    position: absolute;
+    width: 120px;
+    bottom: -5%;
+    left: 50%;
+    transform: translate(-50%, -5%)
+}
+.animCenter {
+    position: relative;
+    margin-top: -47px;
+}

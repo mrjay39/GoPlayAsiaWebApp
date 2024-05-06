@@ -1,0 +1,33 @@
+﻿
+@*
+	<div class="center">
+		<div class="ring"></div>
+		<div class="span">
+			<span>Loading</span>
+		</div>
+	</div>
+*@
+@*<div class="container">
+    <div class="main align-content-center">
+    <div class="d-flex justify-content-center">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <p class="text-light text-center">Loading please wait</p>
+    </div>
+</div>*@
+
+<div class="authCon col " >
+    @*<img src="/img/goplay-logo-round.webp" height="60px" width="60px" class="gpaIcon" />*@
+    @*<div class=" lds-ripple"><div></div><div></div></div>*@
+  @*   <img src="/img/logocoin.png" class="logorotate p-3" /> *@
+    @*<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>*@
+    <div class="row justify-content-center">
+        <img src="/img/loading.webp" />
+    </div>
+    <h4 class="d-flex justify-content-center align-items-center" style="color:palegoldenrod">@Message</h4>
+</div>
+@code {
+    [Parameter]
+    public string? Message { get; set; } = "Fetching Data...";
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+}

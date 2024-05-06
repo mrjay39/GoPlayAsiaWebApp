@@ -1,0 +1,100 @@
+﻿@using GoPlayAsiaWebApp.Games.Shared
+@using GoplayasiaBlazor.Models.Constants
+@using GoPlayAsiaWebApp.ViewModels
+@inject Lucky9ViewModel luckyViewModel;
+
+@if (BetType == (int)Settings.L9SubBetTypes.Target9Player)
+{
+    <!-- PLAYER TARGET -->
+    <button style="border-radius: 44%; height: 44px;" class="col btn p-0 borderGold tieRelative @(Settings.Constants.TargetPlayer == WinnerResults ? "winPLucky9" : TargetPlayer)" @onclick=OnClickCallback disabled="@isDisabled">
+        @* <div class="d-block">
+    <p class=" smallHeader" style="font-size:13px;">
+    <span>Lucky</span>
+    <span style="font-size: 19px;">9</span>
+    </p>
+    </div> *@
+        <p class="font-weight-bold smallHeader mb-1" style="font-size:10px; margin-top: 2px;">
+            <span>LUCKY</span>
+            <span style="font-size:15px">9</span>
+        </p>
+
+        <div class="d-flex">
+            @if (luckyViewModel.L9Target != null)
+            {
+                <p style="font-size: 13px;" class="payout font-weight-bold col p-0 d-flex justify-content-center mb-0 @(UserTotalBet_TargetPlayer != "0" ? "withBet" : "")">@(UserTotalBet_TargetPlayer != "0" ? SampleWinTargetPlayer : "x" + luckyViewModel.L9Target.FixedPriceMultiplier.ToString("G29"))</p>
+            }
+        </div>
+
+        <!-- TOKEN DISPLAY -->
+        <TokenDisplay Amount="@UserTotalBet_TargetPlayer" />
+        @if (luckyViewModel.Token_Animation != "" && luckyViewModel.CurrentGameType == (int)Settings.L9SubBetTypes.Target9Player)
+        {
+            <div class="additionaltokencontainer" style="--animation: @luckyViewModel.Token_Animation">
+                <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+                <p class="selectedAmountToken">@luckyViewModel.BetAmount</p>
+            </div>
+        }
+    </button>
+}
+@if (BetType == (int)Settings.L9MainBetTypes.Draw)
+{
+    <!-- TIE -->
+    <button style="border-radius: 50%; height: 93%;" class="bankerButton tieRelative borderGold btn col-2 p-0 justify-content-center align-items-center @(Settings.Constants.Draw == WinnerResults ? "winTieButton" : TargetTie)" @onclick=OnClickCallback disabled="@isDisabled">
+        <div class="d-flex mt-1 justify-content-center">
+            <p class="font-weight-bold mb- mt-1 mb-2 font-weight-bold" style="font-size: 19px; letter-spacing: 2px;">TIE</p>
+        </div>
+        <div class="d-flex">
+            @if (luckyViewModel.L9Draw != null)
+            {
+                <p style="font-size: 15px;" class="payout font-weight-bold col p-0 d-flex justify-content-center mb-0 ">
+                    @(UserTotalBet_Draw != "0" ? "" : "x" + luckyViewModel.L9Draw.FixedPriceMultiplier.ToString("G29"))
+                </p>
+            }
+        </div>
+
+        <!-- TOKEN DISPLAY -->
+        <TokenDisplay Amount="@UserTotalBet_Draw" />
+        @if (luckyViewModel.Token_Animation != "" && luckyViewModel.CurrentGameType == (int)Settings.L9MainBetTypes.Draw)
+        {
+            <div class="additionaltokencontainerTie" style="--animation: @luckyViewModel.Token_Animation">
+                <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+                <p class="selectedAmountToken">@luckyViewModel.BetAmount</p>
+            </div>
+        }
+    </button>
+}
+@if (BetType == (int)Settings.L9SubBetTypes.Target9Banker)
+{
+    <!-- BANKER TARGET -->
+    <button style="border-radius: 44%; height: 44px;" class="col btn p-0 borderGold tieRelative @(Settings.Constants.TargetBanker == WinnerResults ?  "winBLucky9" : TargetBanker)" @onclick=OnClickCallback disabled="@isDisabled">
+        @* <div class="d-block">
+    <p class=" smallHeader" style="font-size:13px;">
+    <span>Lucky </span>
+    <span style="font-size: 19px;">9</span>
+    </p>
+    </div> *@
+        <p class="font-weight-bold smallHeader mb-1" style="font-size:10px; margin-top: 2px;">
+            <span>LUCKY</span>
+            <span style="font-size:15px">9</span>
+        </p>
+
+        <div class="d-flex">
+            @if (luckyViewModel.L9Target != null)
+            {
+                <p style="font-size: 13px;" class="payout font-weight-bold col p-0 d-flex justify-content-center @(UserTotalBet_TargetBanker != "0" ? "withBet" : "") ">
+                    @(UserTotalBet_TargetBanker != "0" ? SampleWinTargetBanker : "x" + luckyViewModel.L9Target.FixedPriceMultiplier.ToString("G29"))
+                </p>
+            }
+        </div>
+
+        <!-- TOKEN DISPLAY -->
+        <TokenDisplay Amount="@UserTotalBet_TargetBanker" />
+        @if (luckyViewModel.Token_Animation != "" && luckyViewModel.CurrentGameType == (int)Settings.L9SubBetTypes.Target9Banker)
+        {
+            <div class="additionaltokencontainerBanker" style="--animation: @luckyViewModel.Token_Animation">
+                <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+                <p class="selectedAmountToken">@luckyViewModel.BetAmount</p>
+            </div>
+        }
+    </button>
+}

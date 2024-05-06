@@ -1,0 +1,14 @@
+﻿<button @onclick="onCardClick">
+        <div class="">
+            <div class="cardValue d-flex justify-content-center font-weight-bolder red" style="color: @cardColor">@cardValue?.ToUpper()</div>
+            @if (imageStr == null)
+            {
+                <img />
+            }
+            else
+            {
+                <img class="cardSuit" src="@imageStr" style="width: 15px; height:18px; margin-top: -2px; border: none !important" />
+
+            }
+        </div>
+</button>

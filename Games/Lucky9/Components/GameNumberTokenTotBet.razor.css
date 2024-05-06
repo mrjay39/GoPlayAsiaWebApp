@@ -1,0 +1,59 @@
+﻿.MainContainer {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #4d0b0b;
+}
+.gameText {
+    color: gold;
+    font-weight: 600;
+    font-size: 15px;
+}
+.gameNumber {
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+}
+.token {
+    height: 40px;
+    height: 40px;
+    position: relative;
+
+}
+
+.borderGold {
+   /* border: solid 1px gold;*/
+    padding: 3px 0;
+    height: 25px;
+}
+p {
+    line-height: normal;
+    margin: 0;
+}
+.tokenValue {
+    font-weight: 600;
+    font-size: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.userTotalBet {
+    font-weight: 600;
+    font-size: 15px;
+}
+.resetButton, .betButton {
+    color: white;
+    background: rgb(19,104,116);
+    background: linear-gradient(0deg, rgba(19,104,116,1) 41%, rgba(78,162,180,1) 76%);
+    border-radius: 50px;
+    border: 1px solid rgb(94, 237, 237)
+}
+.mainTokenRelative {
+    position: relative;
+}
+.betrangeAbsolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

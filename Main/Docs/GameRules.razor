@@ -1,0 +1,23 @@
+﻿@page "/gamerules"
+@attribute [Authorize(Roles = "1")]
+
+<div class="main container-fluid">
+    <div class="iframe-container bg-white">
+        <iframe src="https://drive.google.com/file/d/1bCNhNlkyU2N2cnbZuy0OpkfGRPSeEfdr/preview" class="pdfCon" style="max-width: 100%; margin: 0 auto; padding: 0;"></iframe>
+            @*<p class="loadingScreenGrules">LOADING</p>*@
+    </div>
+    <div class="row mt-2 ">
+        <button type="button" class="btnCancel text-center" @onclick="() => Confirmation(true)">CLOSE</button>
+    </div>
+</div>
+
+@code {
+    public bool Show { get; set; }
+    [Parameter] public string Title { get; set; } = "";
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    public void Confirmation(bool value)
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok(value));
+    }
+    }

@@ -1,0 +1,156 @@
+﻿#diceGameResultsContainer {
+    padding: 6px 3px 6px 3px;
+    max-height: 200px;
+    overflow-x: scroll;
+    white-space: nowrap
+}
+
+#diceGameResultsContainer > div {
+    width: 100%;
+    margin: 0 1px;
+}
+#diceGameResultsContainer > div > div{
+    width: 50%;
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: top;
+}
+
+#diceGameResultsContainer div > p {
+    font-size: 60%;
+    font-weight: bolder;
+    text-align: center;
+    padding: 2px 0;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #823434;
+}
+
+#diceGameResultsContainer h6 {
+    color: #fff;
+    background: #8e0000;
+    padding: 5px 0;
+}
+
+#diceGameResultsContainer h6 > span:first-child {
+    border-right: 3px solid #fd2b2b;
+}
+
+#diceGameResultsContainer {
+    padding: 6px 3px 6px 3px;
+    max-height: 200px;
+    overflow-x: scroll;
+    white-space: nowrap
+}
+
+#diceGameResultsContainer > div {
+    width: 100%;
+    margin: 0 1px;
+}
+#diceGameResultsContainer > div > div{
+    width: 33%;
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: top;
+}
+
+#diceGameResultsContainer div > p {
+    font-size: 60%;
+    font-weight: bolder;
+    text-align: start;
+    padding: 2px 0;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #9d7a37;
+}
+
+#diceGameResultsContainer h6 {
+    color: #fff;
+    background: #8e0000;
+    padding: 5px 0;
+}
+
+#diceGameResultsContainer p > span:first-child {
+    margin-right: 3px;
+    color: #fff;
+    width: 27px;
+    display: inline-block;
+}
+
+#diceGameResultsContainer p > span:not(:first-child) {
+    width: 15px;
+    height: 15px;
+    margin: 1.5% 1.8%;
+    padding: 9px;
+    border-radius:3px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 11px;
+}
+
+#diceGameResultsContainer .red {
+    outline: 1px solid #f78187 !important;
+    background-color: #c14053;
+    box-shadow: 0px 10px 10px #ff5a5a inset, 0px 5px 10px rgba(234, 87, 108, 0.21), 0px -10px 10px #cc080f inset;
+}
+
+#diceGameResultsContainer .blue {
+    outline: 1px solid #88a2f2 !important;
+    background-color: #1634d2;
+    box-shadow: 0px 10px 10px #1e2ff7 inset, 0px 5px 10px rgba(59, 95, 202, 0.72), 0px -10px 10px #0a16c4 inset;
+}
+
+#diceGameResultsContainer .yellow {
+    outline: 1px solid #FBE426;
+    background-color: #f0b80f;
+    box-shadow: 0px 10px 10px #d0ab19 inset, 0px 5px 10px rgba(138, 106, 9, 0.51), 0px -10px 10px #9d8113 inset;
+}
+
+.trendsHeader > span:first-child {
+    padding: 5px 0;
+    background: #d9500e;
+    color: #fff;
+}
+.result-header {
+    background: #51ac05;
+    color: #fff;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.result-header > h6 {
+    font-weight: bold;
+}
+
+.canceled {
+    display: block;
+    text-align: left !important;
+    background: url('./img/canceled-2.png') center right no-repeat;
+    background-size: 90px 35px;
+    min-height: 27.7px;
+}
+.canceled > span{
+    text-align: left;
+}
+
+@media screen and (max-width: 375px) {
+    #diceColor .red, .red, #diceColor .blue, .blue, #diceColor .green, .green {
+        width: 30%;
+        height: 45%;
+        margin: 2px;
+    }
+}
+@media (min-width:640px) {
+    #diceGameResultsContainer > div > div {
+        width: 32%;
+    }
+    #diceGameResultsContainer p > span:not(:first-child) {
+        margin: 2% 6%;
+    }
+    #diceGameResultsContainer div > p{
+        text-align:center;
+    }
+    .canceled {
+        min-height: 31.1px;
+    }
+}

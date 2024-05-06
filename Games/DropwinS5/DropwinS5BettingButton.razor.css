@@ -1,0 +1,554 @@
+﻿.mainCon {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+p {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/*START TAB*/
+
+.innerCon {
+    margin: 0;
+    padding: 5px;
+}
+/*START ACTIVE*/
+.TabActive {
+    background-color: #ecc94b !important;
+    border-radius: 10px;
+    height: 90px;
+    padding: 0;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+}
+
+    .TabActive a {
+        color: black;
+        text-decoration: none;
+    }
+
+.TabActiveHeader {
+    background-color: #d79e2d !important;
+}
+/* END OF ACTIVE*/
+/*START CLOSE BET/DISABLED */
+
+.disf2Tab {
+    background-color: dimgrey;
+    color: white;
+    border-radius: 10px;
+    height: 90px;
+    padding: 0;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.f2Tab a {
+    color: black;
+}
+
+.disf2Header {
+    background-color: #343434;
+}
+
+
+.disf3Tab {
+    background-color: dimgrey;
+    color: white;
+    border-radius: 10px;
+    height: 90px;
+    padding: 0;
+    overflow: hidden;
+    margin-left: 3px;
+    margin-right: 3px;
+    text-decoration: none;
+}
+
+.disf3Header {
+    background-color: #343434;
+}
+
+.disf4Tab {
+    background-color: dimgrey;
+    color: white;
+    border-radius: 10px;
+    height: 90px;
+    padding: 0;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.disf4Header {
+    background-color: #343434;
+}
+/*END CLOSE BET/DISABLED */
+.f2Tab {
+    background-color: #4298e1;
+    color: black;
+    border-radius: 10px;
+    height: 74px;
+    padding: 0;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+    .f2Tab a {
+        color: black;
+    }
+
+.f2Header {
+    background-color: #2d5181;
+}
+
+
+.f3Tab {
+    background-color: #4298e1;
+    color: black;
+    border-radius: 10px;
+    height: 74px;
+    padding: 0;
+    overflow: hidden;
+    margin-left: 3px;
+    margin-right: 3px;
+    text-decoration: none;
+}
+
+.f3Header {
+    background-color: #2d5181;
+}
+
+.f4Tab {
+    background-color: #4298e1;
+    color: black;
+    border-radius: 10px;
+    height: 74px;
+    padding: 0;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.f4Header {
+    background-color: #2d5181;
+}
+/*END TAB*/
+.selectTokenConLower {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.selectTokenCon {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+    .selectTokenCon p {
+        margin: 0;
+    }
+/*START TOKEN COONTAINER*/
+.ticketGameCon {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.innerConToken {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 480px;
+}
+
+    .innerConToken img {
+        height: 55px;
+        width: 55px;
+    }
+
+.tokenCon {
+    position: relative;
+    padding: 5px;
+}
+
+    .tokenCon p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 19px;
+        font-weight: 600;
+    }
+
+/*A4 token margin*/
+.innerConToken a {
+    text-decoration: none;
+    color: black;
+}
+
+/*START TOKEN COONTAINER*/
+/*START COMBINATION FIELD*/
+
+.comboCon {
+    position: relative;
+    margin: 0 auto;
+    max-width: 370px;
+    justify-items: center;
+    padding-top: 20px;
+}
+.comboCons4 {
+    position: relative;
+    margin: 0 auto;
+    max-width: 500px;
+    justify-items: center;
+    padding-top: 20px;
+}
+.betAmountHeader {
+    position: absolute;
+    color: white;
+    top: 10%;
+    left: 46%;
+    font-size: 12px;
+    transform: translate(0, -46%)
+}
+.betAmountHeaders4 {
+    position: absolute;
+    color: white;
+    top: 10%;
+    right: 11%;
+    font-size: 12px;
+    transform: translate(0, -46%)
+}
+.betfieldHeader {
+    position: absolute;
+    color: white;
+    top: 10%;
+    left: 27%;
+    font-size: 12px;
+    transform: translate(-50%, -50%)
+}
+.betfieldHeaders4 {
+    position: absolute;
+    color: white;
+    top: 10%;
+    left: 25%;
+    font-size: 12px;
+    transform: translate(-50%, -50%)
+}
+.placeHolder {
+    position: absolute;
+    color: #797979;
+    top: 50%;
+    left: 35%;
+    font-size: 16px;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+}
+.placeHolders409 {
+    position: absolute;
+    color: #797979;
+    top: 50%;
+    left: 15%;
+    font-size: 16px;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+}
+.placeHolders4 {
+    position: absolute;
+    color: #797979;
+    top: 50%;
+    right: 15%;
+    font-size: 16px;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+}
+input.actives4Number {
+    border: 5px solid #59ce23;
+    border-radius: 5px;
+}
+
+.dwbetBotton {
+    border-radius: 3px;
+    padding: 10px 10px;
+    border: none;
+    background-color: #59ce23;
+    color: white;
+    font-weight: 600;
+}
+.dws4betBotton {
+    border-radius: 3px;
+    padding: 10px 10px;
+    border: none;
+    background-color: #59ce23;
+    color: white;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.comboField {
+    padding: 10px;
+    border: none;
+    margin-right: 5px;
+    min-height: 44px;
+    font-weight: 700;
+    font-size: 19px;
+}
+.comboInnerConAlpha {
+    position: relative;
+}
+.clearField {
+    position: relative;
+}
+
+.clearBtn {
+    position: absolute;
+    border: none;
+    background-color: #343434;
+    color: white;
+    right: 10px;
+    top: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    clip-path: polygon(20% 10%, 99% 10%, 100% 100%, 20% 100%, 0 50%);
+}
+.clearBtnAlpha {
+    position: absolute;
+    border: none;
+    background-color: #343434;
+    color: white;
+    right: 15px;
+    top: 4px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    clip-path: polygon(20% 10%, 99% 10%, 100% 100%, 20% 100%, 0 50%);
+}
+.clearBtnNumeric {
+    position: absolute;
+    border: none;
+    background-color: #343434;
+    color: white;
+    right: 15px;
+    top: 4px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    clip-path: polygon(20% 10%, 99% 10%, 100% 100%, 20% 100%, 0 50%);
+}
+
+
+.betField {
+    text-align: center;
+    padding: 10px;
+    border: none;
+    margin-right: 5px;
+    min-height: 44px;
+    font-weight: 700;
+    font-size: 19px;
+}
+
+/*END COMBINATION FIELD*/
+/*START BET LETTERS*/
+.betInnerCon {
+    padding: 0 5px;
+    max-height: 120px;
+}
+
+.letterCon.row {
+    margin: 0 !important;
+}
+
+.betLetters {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 480px;
+}
+
+.btns {
+    position: relative;
+    padding: 0;
+}
+
+.lettersBtn {
+    margin: 2px;
+}
+
+    .lettersBtn.col {
+        padding: 0;
+        max-width: 55px;
+    }
+
+.topNumber {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    font-size: 18px;
+}
+
+.btn.btns {
+    background-color: white;
+}
+
+.btns {
+    padding: 0;
+    font-size: 30px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    height: 55px;
+    width: 55px;
+    margin-top: 5px;
+}
+/*END BET LETTERS*/
+/*START LUCKY PICK*/
+.luckypickCon {
+    max-width: 370px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.innerLuckypickCon {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.x1, .x5 {
+    color: black;
+    /*    background-color: #d79e2d;*/
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+/*END LUCKY PICK*/
+/*START F2,f3,header*/
+.gHeaderCon {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    color: white;
+}
+
+.f2ColorHeader {
+    background-color: #b41a94;
+}
+
+.f3ColorHeader {
+    background-color: #2f85d8;
+}
+
+.f4ColorHeader {
+    background-color: #26aa6e;
+}
+/*END F2,f3,header*/
+/*START GAME RESULT DISPLAY*/
+.gameResultDisplay {
+    margin: 0 auto;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #2f85d8;
+    width: fit-content;
+}
+/*END GAME RESULT DISPLAY*/
+/*START GAME TICKET*/
+.ticketMainDiv {
+    margin: 0 auto;
+    padding: 0 3px;
+}
+
+.myTicketsf2 {
+}
+
+.ticketNum {
+    padding: 10px 10px;
+    border: solid 1px white;
+    text-align: center;
+    font-weight: 600;
+}
+
+.betAmo {
+    padding: 0 5px;
+    text-align: center;
+    font-weight: 600;
+    border: solid 1px white;
+}
+
+.winningAmo {
+    border: solid 1px white;
+    padding: 0 5px;
+    font-weight: 600;
+}
+/*END GAME TICKET*/
+/*START TRENDS*/
+.trendsMainCon {
+    margin: 0 auto;
+    padding: 0;
+    max-height: 290px;
+    overflow: hidden;
+    overflow: auto;
+}
+
+.trendsCon {
+    margin: 0;
+    border-radius: 5px;
+    border: solid 1px white;
+    max-width: 100px;
+    padding: 20px 20px 10px 20px;
+    position: relative;
+    background-color: #2a2a2a;
+}
+
+.dwGameNum {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    transform: translate(-30% -50%);
+    color: white;
+    font-size: 14px;
+}
+
+.dwGameRes {
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+/*END TRENDS*/
+@media only screen and (max-width: 321px) {
+    .letterCon {
+        margin: 0 auto;
+        padding: 0;
+        min-width: 300px;
+    }
+
+    .btns {
+        padding: 0;
+        font-size: 30px;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        height: 50px;
+        width: 50px;
+        margin-top: 5px;
+    }
+
+    .topNumber {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        font-size: 15px;
+    }
+    .innerConToken {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 480px;
+    }
+
+        .innerConToken img {
+            height: 50px;
+            width: 50px;
+        }
+
+}

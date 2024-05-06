@@ -1,0 +1,36 @@
+﻿
+<div class="buttons d-flex mt-3 pl-2 pr-2 mb-1">
+    <button style="line-height: .8" type="button" class="pickCard btn-13 col p-0 btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModalCenter">
+        <div class="text-center">
+            <div><span style="font-size: 13px; font-weight: bolder">Choose</span> <span style="font-size: 16px; font-weight: bolder">6 </span><span style="font-size: 13px; font-weight: bolder"> Cards</span> </div>
+        </div>
+    </button>
+    <!-- Modal selection cards -->
+    <div class="modal  p-0 fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body w-100" style="background-color: #800000; padding: 10px 0;">
+                    <img class="upperLeft" src="/img/edge.png" />
+                    <img class="upperRight" src="/img/edge.png" />
+                    <img class="lowerLeft" src="/img/edge.png" />
+                    <img class="lowerRight" src="/img/edge.png" />
+                    <div style="z-index: 999 !important">
+                        <CardSelection />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="col-4 btn-12 p-0 btn betBtn">
+        <div class="text-center" style="line-height: normal">BET</div>
+        @* <div class="text-center" style="font-size: 12px;line-height: normal; margin-top: -3px;">+1 for Hooray</div> *@
+    </button>
+    <!-- Modal -->
+ 
+    <button type="button" class="quickButton btn-11 col p-0  ml-2 btn btn-warning">
+        <i class="bi bi-arrow-repeat"></i> Auto Pick
+    </button>
+</div>
+

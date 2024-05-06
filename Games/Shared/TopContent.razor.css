@@ -1,0 +1,108 @@
+﻿
+img.pagcorIcon {
+    width: 50px;
+    height: 50px;
+}
+.innerContainer {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 0;
+   
+
+}
+.rounded-circle:active {
+    background: none;
+}
+img.gpaIcon {
+    width: 100px;
+    height: 26px;
+}
+.rounded-circle {
+    height: 50px;
+    width: 50px;
+}
+.topMenu {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+}
+
+.currentToken {
+    color: #d59116;
+    text-decoration: none;
+}
+
+.tokenContainer {
+    padding: 0 15px;
+    align-items: center;
+    right: 0;
+}
+/*dropdown*/
+.btn-secondary {
+    background: none;
+}
+
+.dropdown-menu {
+    padding: 0;
+    background-color : lightgrey;
+}
+
+.Dropsettings {
+    border-bottom: 1px solid #b9b9b9;
+}
+
+/*dropdown*/
+@media only screen and (max-width: 600px) {
+    .topMenu {
+        width: 100%;
+    }
+}
+.btn-group {
+    position: relative;
+}
+.verifyBtn {
+    position: absolute;
+    bottom: -70%;
+    border: none;
+    border-radius: 5px;
+    background-color: #d94f4f;
+    color: #fff !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    right: 5%;
+}
+.bi-hand-index-thumb {
+    position: absolute;
+    bottom: -120%;
+    right:110%;
+    font-size: 20px;
+    color: white;
+    transform: translate(-110%, -30%)
+}
+.handSignal {
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-name: slidein;
+    animation-duration: .5s;
+   
+  
+}
+
+
+@keyframes slidein {
+    from {
+        bottom: -120%;
+     
+       
+    }
+
+    to {
+        bottom: -140%;
+      
+       
+    }
+
+}

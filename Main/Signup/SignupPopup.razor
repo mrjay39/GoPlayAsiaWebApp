@@ -1,0 +1,25 @@
+﻿@page "/signpopup"
+<container>
+    <div class="mainContainer p-2">
+        <i class="bi bi-shield-fill-check d-flex justify-content-center align-items-center mt-3 mb-3" style="margin: 0 auto; font-size: 50px; color: forestgreen;"></i>
+        <p class="text-center font-weight-bold" style="font-size: 18px;">Want to fully verify your account?</p>
+        <div class="buttonCon row d-flex">
+            <button class="btn btn-warning col font-weight-bold text-light mr-2 " style="background-color: darkgoldenrod;" @onclick="() => VerifyAccount()">YES</button>
+            <button class="btn btn-success col-7 font-weight-bold text-center" @onclick="() => Finish()">SUBMIT <span class="d-block text-center">(Verify Later)</span></button>
+        </div>
+    </div>
+</container>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    public void VerifyAccount()
+    {
+         BlazoredModal.CloseAsync(ModalResult.Ok("Verify"));
+    }
+
+    public void Finish()
+    {
+         BlazoredModal.CloseAsync(ModalResult.Ok("Finish"));
+    }
+}

@@ -1,0 +1,14 @@
+﻿.main-container {
+    position: absolute;
+    bottom: -5%;
+    right: 5%;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-container {
+        right: 10%;
+    }
+    .main-container img {
+        height: 200px;
+    }
+}

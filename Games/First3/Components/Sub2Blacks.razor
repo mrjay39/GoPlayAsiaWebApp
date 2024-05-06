@@ -1,0 +1,54 @@
+﻿@using GoPlayAsiaWebApp.ViewModels
+@using GoplayasiaBlazor.Models.Constants
+@inject First3ViewModel first3ViewModel;
+@using GoPlayAsiaWebApp.Games.Shared
+
+@if (BetValueDisplay == Settings.Constants.Gold)
+{
+    <!-- GOLD BLACK -->
+    <button class="col btn p-0 borderGold tieRelative @(Settings.Constants.ColorBlackGold == WinnerResults ?  "winBlack2Gold" : TwoBlackGold)" @onclick="OnClickCallback" disabled="@isDisabled">
+        <p class="font-weight-bold smallHeader  smallHeader" style="font-size:16px; margin-bottom: 3px; line-height: normal;">3 <span style="font-size:14px;">BLACKS</span> </p>
+
+        
+        <div class="d-flex">
+            @if (first3ViewModel.F3Color != null)
+            {
+                <p class="payout col p-0 d-flex justify-content-center font-weight-bold @(UserTotalBet_ColorBlackGold != "0" ? "withBetF3" : "") ">@(UserTotalBet_ColorBlackGold != "0" ? SampleWinColorBlackGold : "x" + first3ViewModel.F3Color.FixedPriceMultiplier.ToString("G29"))</p>
+            }
+        </div>
+
+        <!-- TOKEN DISPLAY -->
+        <TokenDisplay Amount="@UserTotalBet_ColorBlackGold" />
+        @if (first3ViewModel.Token_Animation != "" && first3ViewModel.CurrentGameType == (int)Settings.F3SubBetTypes.TwoBlackGold)
+        {
+            <div class="additionaltokencontainer" style="--animation: @first3ViewModel.Token_Animation">
+                <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+                <p class="selectedAmountToken">@first3ViewModel.BetAmount</p>
+            </div>
+        }
+    </button>
+}
+else
+{
+    <!-- SILVER BLACK -->
+    <button class="col btn p-0 borderGold tieRelative @(Settings.Constants.ColorBlackSilver == WinnerResults ?  "winBlack2Silver" : TwoBlackSilver) " @onclick="OnClickCallback" disabled="@isDisabled">
+        <p class="font-weight-bold smallHeader  smallHeader " style="font-size:16px; margin-bottom: 3px; line-height: normal;">3 <span style="font-size:14px;">BLACKS</span></p>
+
+        <div class="d-flex">
+            @if (first3ViewModel.F3Color != null)
+            {
+                <p class="payout col p-0 d-flex justify-content-center font-weight-bold @(UserTotalBet_ColorBlackSilver != "0" ? "withBetF3" : "") ">@(UserTotalBet_ColorBlackSilver != "0" ? SampleWinColorBlackSilver : "x" + first3ViewModel.F3Color.FixedPriceMultiplier.ToString("G29"))</p>
+            }
+        </div>
+
+        <!-- TOKEN DISPLAY -->
+        <TokenDisplay Amount="@UserTotalBet_ColorBlackSilver" />
+        @if (first3ViewModel.Token_Animation != "" && first3ViewModel.CurrentGameType == (int)Settings.F3SubBetTypes.TwoBlackSilver)
+        {
+            <div class="additionaltokencontainerSilver" style="--animation: @first3ViewModel.Token_Animation">
+                <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+                <p class="selectedAmountToken">@first3ViewModel.BetAmount</p>
+            </div>
+        }
+    </button>
+}

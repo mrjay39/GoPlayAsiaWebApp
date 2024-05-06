@@ -1,0 +1,24 @@
+﻿.mainCon {
+    background-color: white;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 640px;
+}
+.table {
+    width:100%;
+    margin: 0 auto;
+    padding: 0;
+}
+.gcashIcon {
+    margin: 0 auto;
+    padding: 0;
+}
+.stepText {
+    margin: 0;
+    padding: 15px;
+}
+.btn {
+    height: 35px;
+    padding: 5px;
+}

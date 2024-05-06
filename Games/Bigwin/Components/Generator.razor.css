@@ -1,0 +1,48 @@
+﻿.generator {
+    background: rgb(115,29,29);
+    background: linear-gradient(90deg, rgba(115,29,29,1) 0%, rgba(238,70,70,1) 46%, rgba(115,29,29,1) 100%);
+    color: white;
+    margin-bottom: 3px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+marquee {
+    color: white;
+    font-weight: 600;
+    background: rgb(115,29,29);
+    background: linear-gradient(90deg, rgba(115,29,29,1) 0%, rgba(238,70,70,1) 46%, rgba(115,29,29,1) 100%);
+}
+
+.marqueeNoDelay {
+    color: white;
+    font-weight: 600;
+    background: rgb(115,29,29);
+    background: linear-gradient(90deg, rgba(115,29,29,1) 0%, rgba(238,70,70,1) 46%, rgba(115,29,29,1) 100%);
+}
+
+.animatedPayoutJack {
+    margin: 1rem auto;
+    animation: neon 1s ease infinite;
+}
+
+
+.animated {
+    margin: 1rem auto;
+    animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+    0%, 100% {
+        text-shadow: 0 0 10px #ef00e3a8, 0 0 20px #ef00e3a8, 0 0 20px #ef00e3a8, 0 0 20px #ef00e3a8, 0 0 2px #fed128, 2px 2px 2px #806914;
+        color: #fed128;
+    }
+
+    50% {
+        text-shadow: 0 0 2px #00b5fa, 0 0 5px #800e0b, 0 0 5px #800e0b, 0 0 5px #800e0b, 0 0 2px #800e0b, 4px 4px 2px #800e0b,;
+        color: white;
+    }
+}

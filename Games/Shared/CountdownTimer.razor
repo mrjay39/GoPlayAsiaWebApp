@@ -1,0 +1,84 @@
+﻿@page "/countdown"
+@using GoplayasiaBlazor.Models.Constants;
+@using System.Globalization;
+@if (RoundStatusString != null && timer != "..." && timer != "00:00" && timer != "00:" && timer != "")
+{
+    @if (RoundStatusString == Settings.Constants.Open)
+    {
+        <div class="main-container">
+            <svg width="80" height="80" viewBox="5 5 65 65" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg); position:relative;">
+                <circle r="27.5" cx="37.5" cy="37.5" fill="transparent" stroke="#000" stroke-width="7" stroke-dasharray="@(circumference)px" stroke-dashoffset="0"></circle>
+                <circle r="27.5" cx="37.5" cy="37.5" stroke="@textcolor" stroke-width="4" stroke-linecap="round" stroke-dashoffset="@(percentage)px" fill="blue" stroke-dasharray="172.70000000000002px"></circle>
+            </svg>
+            <div class="txt">
+                <text class="@blink" fill="#ffffff" font-size="50px" font-weight="bolder">@timedisplay</text>
+            </div>
+        </div>
+    }
+}
+
+
+@code {
+    public int size { get; set; } = 75;
+    public double radius { get; set; }
+    public double circumference { get; set; }
+    public double percentage { get; set; }
+    public double percentagevalue { get; set; }
+    [Parameter]
+    public string timer { get; set; }
+    [Parameter]
+    public int? maxvalue { get; set; }
+    [Parameter] public string RoundStatusString { get; set; }
+    private string textcolor = "#08d977";
+    private string fiftybelowcolor = "#f7b355";
+    private string twentybelowcolor = "#d90808";
+    private string fiftabovecolor = "#08d977";
+    private string blink = "";
+    private int min;
+    private int second;
+    private string timedisplay = "";
+    protected override Task OnParametersSetAsync()
+    {
+        @if (RoundStatusString != null && timer != "..." && timer != "00:00" && timer != "00:" && timer != "")
+        {
+            if (RoundStatusString == Settings.Constants.Open)
+            {
+                DateTime Time = DateTime.ParseExact(timer, "mm:ss", CultureInfo.InvariantCulture);
+                min = Time.Minute;
+                second = Time.Second;
+                timedisplay = ((min * 60) + second).ToString();
+
+                var sec = TimeSpan.Parse("00:" + timer).TotalSeconds;
+                percentagevalue = ((sec / maxvalue.Value) * 100);
+                radius = (size / 2) - 10;
+                circumference = 3.14 * ((size / 2) - 2) * 2;
+                var circ = 3.14 * radius * 2;
+                percentage = Math.Round((circ * ((100 - percentagevalue) / 100)));
+
+                if (percentagevalue > 50)
+                {
+                    textcolor = fiftabovecolor;
+                }
+                else if (percentagevalue <= 50 && percentagevalue > 25)
+                {
+                    textcolor = fiftybelowcolor;
+                }
+                else if (percentagevalue <= 25)
+                {
+                    textcolor = twentybelowcolor;
+                }
+
+                if (second <= 10)
+                {
+                    blink = "blink_me";
+                }
+            }
+        }
+        else
+        {
+            blink = "";
+        }
+        return base.OnParametersSetAsync();
+    }
+
+}

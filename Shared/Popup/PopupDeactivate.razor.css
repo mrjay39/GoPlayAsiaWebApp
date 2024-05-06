@@ -1,0 +1,32 @@
+﻿.errorMessage {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.popconfirm {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightblue;
+    width: 250px;
+    position: absolute;
+    top: -50px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.btnNo {
+    background-color: #fe0000;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 2px;
+}
+
+.btnYes {
+    background-color: #05976a;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 2px;
+}

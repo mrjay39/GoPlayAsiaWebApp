@@ -202,3 +202,199 @@ code {
             justify-content: inherit !important;
         }
 }
+
+
+/*START GLOBAL CARD CSS*/
+.btn.cardDiv {
+    line-height: normal;
+    font-size: 20px;
+    border-radius: 2px;
+    border: 1px solid white;
+    width: fit-content;
+    color: black;
+    background-color: white;
+    max-width: 54px;
+    max-height: 50px;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+
+    .btn.cardDiv.red {
+        color: red;
+    }
+
+    .btn.cardDiv.black {
+        color: black;
+    }
+
+.cardValue {
+    line-height: normal;
+    font-size: clamp(15px,15px,20px);
+}
+
+.cardSuit {
+    height: 18px;
+    width: 15px;
+}
+
+p {
+    margin-bottom: 3px;
+}
+/*END GLOBAL CARD CSS*/
+/*START WITH BET*/
+.withBet {
+    color: #fcae1e;
+    font-weight: 600;
+}
+
+.withBetF3 {
+    color: #f5ff00;
+    font-weight: 600;
+}
+/*END WITH BET*/
+
+/*================= Start: Dice Games Closed Bet Properties ==========================*/
+#closedBet #smallBigOddEven-container button.diceButton {
+    background: gray;
+    border: solid 2px #cacaca;
+    box-shadow: none;
+    pointer-events: none;
+    border: none;
+    outline: none;
+    color: #d5d5d5;
+    text-align: center;
+}
+
+#closedBet button, #closedBet #diceNumberGameContainer button.diceButton {
+    border: solid #ddd 2px;
+    pointer-events: none;
+    outline: none !important;
+    background-color: #cecece;
+    box-shadow: 0px 10px 10px #6a736b inset, 0px 5px 10px rgba(99, 100, 98, 0.14), 0px -10px 10px #6c736d inset;
+}
+
+#closedBet #luck4-header, #closedBet #luckyNumberContainer-btn, #closedBet #btn-container, #closedBet #placeHolder-container > a.clear-btn {
+    display: none !important;
+}
+
+#closedBet #gameResultContainer {
+    min-height: 250px;
+}
+
+#closedBet #diceColor {
+    display: none;
+}
+
+.hide {
+    display: none;
+    opacity: 0;
+    top: 100%;
+    left: 50%;
+    position: absolute;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/*================== Start: Token Animation Display Properties ==============================*/
+#smallBigOddEven-container .additionaltokencontainer {
+    animation: evenOddtokenAnimation .7s;
+}
+
+#btnNumberContainer .additionaltokencontainer {
+    animation: diceNumberTokenAnimation .7s;
+}
+
+#btnNumberContainer .additionaltokencontainer, #smallBigOddEven-container .additionaltokencontainer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+}
+
+@keyframes evenOddtokenAnimation {
+    from {
+        transform: rotateY(-360deg);
+        z-index: 1;
+        bottom: -410%;
+        left: 0%;
+    }
+
+    to {
+        transform: rotateY(360deg);
+        z-index: 1;
+        bottom: 0%;
+        left: 1%;
+    }
+}
+
+@keyframes diceNumberTokenAnimation {
+    from {
+        transform: rotateY(-360deg);
+        z-index: 1;
+        bottom: -250%;
+        left: 0%;
+    }
+
+    to {
+        transform: rotateY(360deg);
+        z-index: 1;
+        bottom: 0%;
+        left: 1%;
+    }
+}
+
+#btnNumberContainer img.tokenSelectedBet, #smallBigOddEven-container img.tokenSelectedBet {
+    position: relative;
+}
+
+#btnNumberContainer .selectedAmountToken, #smallBigOddEven-container .selectedAmountToken {
+    position: absolute;
+    z-index: 1;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*p {
+    margin-bottom: 0 !important;
+}*/
+/*================== End: Token Animation Display Properties ==============================*/
+
+@media only screen and (max-width: 375px) {
+
+    #lucky9 .btn.cardDiv {
+        max-width: 35px;
+        max-height: 40px;
+        font-size: 16px;
+    }
+
+    #lucky9 .cardSuit {
+        height: 10px;
+        width: 7px;
+    }
+
+    #lucky9 .cardResultsPlayerContainer {
+        position: relative;
+        left: 5px;
+    }
+
+    #lucky9 .cardResultsPlayerContainer {
+        position: relative;
+        left: 5px;
+    }
+
+    #lucky9 .cardResultsBankerContainer {
+        position: relative;
+        right: 5px;
+    }
+}
