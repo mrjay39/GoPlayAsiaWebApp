@@ -1,0 +1,99 @@
+﻿@page "/games/dice"
+@using GoPlayAsiaWebApp.Goplay.Games.Shared;
+@using static GoplayasiaBlazor.Models.Constants.Settings;
+@using GoPlayAsiaWebApp.Goplay.ViewModels;
+    using GoPlayAsiaWebApp.Goplay.ViewModels;
+
+
+<GameHeader StreamId="@_diceViewModel.StreamId"
+            RoundTimer="@_diceViewModel.RoundTimer"
+            RoundStatusString="@_diceViewModel.RoundStatusString"
+            RoundNumber="@_diceViewModel.RoundNumber"
+            TimerBackground="@_diceViewModel.RoundStatusColor"
+            GameResultString="@_diceViewModel.GameResultString"
+            ShowFlashing="@_diceViewModel.ShowFlashing"
+            CreditsDisp="@_diceViewModel._icurrentUser.CreditsDisp"
+            PlayerCategory="@_diceViewModel.PlayerCategory"
+            OnClickCallback="@(() => SetGameChips())"
+            Token="@_diceViewModel.streamKey"
+            GifSrc="@_diceViewModel.Game_Gif"
+            IsDisabledCategory="false"
+            MaxRoundTimer="@(_diceViewModel.GameSetting != null ? _diceViewModel.GameSetting.BettingDuration  : 0)" />
+
+<div id="@(_diceViewModel.RoundStatusString == Constants.Open ? "" : "closedBet")" class="mainContainer" style="max-width: 640px; margin: 0 auto;">
+
+    <div class=" @(_diceViewModel.IsBetting_Button_Disabled ? "disabledBetting" : "")">
+
+        @if (_diceViewModel.RoundStatusString != Constants.Open)
+        {
+            <UpperDiceResults First_Dice_Result="@_diceViewModel.First_Dice_Result"
+                              Second_Dice_Result="@_diceViewModel.Second_Dice_Result"
+                              Third_Dice_Result="@_diceViewModel.Third_Dice_Result"
+                              PreFirst_Dice_Result="@_diceViewModel.PreFirst_Dice_Result"
+                              PreSecond_Dice_Result="@_diceViewModel.PreSecond_Dice_Result"
+                              PreThird_Dice_Result="@_diceViewModel.PreThird_Dice_Result"
+                              GameResult="@_diceViewModel.Winning_Result" />
+        }
+        else
+        {
+            <OpenBetDiceAnimation />
+        }
+
+
+        <EvenOddButton Dice_SmallBig_Multiplier="@_diceViewModel.SmallBig_Multiplier_Display"
+                       Dice_OddEven_Multiplier="@_diceViewModel.OddEven_Multiplier_Display"
+                       User_DiceSmall_Total_Bets="@_diceViewModel.User_DiceSmall_Total_Bets"
+                       User_DiceBig_Total_Bets="@_diceViewModel.User_DiceBig_Total_Bets"
+                       User_DiceOdd_Total_Bets="@_diceViewModel.User_DiceOdd_Total_Bets"
+                       User_DiceEven_Total_Bets="@_diceViewModel.User_DiceEven_Total_Bets"
+                       User_Number1_Total_Bets="@_diceViewModel.User_Number1_Total_Bets"
+                       User_Number2_Total_Bets="@_diceViewModel.User_Number2_Total_Bets"
+                       User_Number3_Total_Bets="@_diceViewModel.User_Number3_Total_Bets"
+                       User_Number4_Total_Bets="@_diceViewModel.User_Number4_Total_Bets"
+                       User_Number5_Total_Bets="@_diceViewModel.User_Number5_Total_Bets"
+                       User_Number6_Total_Bets="@_diceViewModel.User_Number6_Total_Bets"
+                       SmallBig_Dice_Result="@_diceViewModel.SmallBig_Dice_Result"
+                       OddEven_Dice_Result="@_diceViewModel.OddEven_Dice_Result"
+                       Winning_Result="@_diceViewModel.Winning_Result" />
+
+        <BetDiceByColor All_Dice_Multiplier="@_diceViewModel.AllDice_Multiplier_Display"
+                        Single_Dice_Multiplier="@_diceViewModel.SingleDice_Multiplier_Display"
+                        Bet_Value="@_diceViewModel.BetCombinationValue"
+                        CSS_SingleColor_NumberBtn="@_diceViewModel.CSS_SingleColor_NumberBtn"
+                        CSS_SingleColor_NumberBtn_Div="@_diceViewModel.CSS_SingleColor_NumberBtn_Div"
+                        OnClickCallback="@(() => NumberClicked())" />
+    </div>
+    <BetDiceResult User_PerDice_Bets="@_diceViewModel.User_PerDice_Bets"
+                   FirstDice_Result="@_diceViewModel.First_Dice_Result"
+                   SecondDice_Result="@_diceViewModel.Second_Dice_Result"
+                   ThirdDice_Result="@_diceViewModel.Third_Dice_Result"
+                   Winning_Result="@_diceViewModel.Winning_Result" />
+
+    <BetTotalRangeAndGameNo RoundNumber="@_diceViewModel.RoundNumber"
+                            MinChipDisplay="@_diceViewModel.MinChip"
+                            MaxChipDisplay="@_diceViewModel.MaxChip"
+                            TotalBets="@_diceViewModel.TotalBets" />
+
+    <BetTrendsAndCancelled TrendsDisplay="@_diceViewModel.TrendsDisplay" />
+
+    <BetDiceTokenPopUp />
+
+    <div class="@_diceViewModel.tokenDiv">
+        <Token GameChips="@_diceViewModel.GameChips" />
+    </div>
+    @if (_diceViewModel.RoundStatusString == Constants.Cancelled)
+    {
+        <div class="modal show" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-transparent">
+                    <div class="modal-body text-center">
+                        <h2 class="text-uppercase fw-bolder text-center">
+                            <span>Canceled Game</span><br>
+                            <span>Bets Return</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

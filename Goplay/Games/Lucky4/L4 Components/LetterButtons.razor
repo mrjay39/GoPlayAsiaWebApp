@@ -1,0 +1,101 @@
+﻿@using GoPlayAsiaWebApp.Goplay.ViewModels;
+    using GoPlayAsiaWebApp.Goplay.ViewModels;
+    using GoPlayAsiaWebApp.Goplay.ViewModels;
+@inject Lucky4V2ViewModel iLucky4Model;
+
+<!--########START LETTER BUTTONS###############-->
+<div id="luckyNumberContainer-btn" class="@(iLucky4Model.IsBettingEnabled ? "" : "betButtonDisabled")">
+    @if (!iLucky4Model.IsEnabled_First3 && !iLucky4Model.IsEnabled_All4)
+    {
+        <div class="disNumberButtons container pl-1 pr-1">
+            <div class="upperDiv d-flex mt-1 justify-content-center align-items-center">
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("1"))'>
+                    <p class="bgInside ">1</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("2"))'>
+                    <p class="bgInside">2</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("3"))'>
+                    <p class="bgInside">3</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("4"))'>
+                    <p class="bgInside">4</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("5"))'>
+                    <p class="bgInside">5</p>
+                </button>
+            </div>
+            <div class="lowerDiv d-flex mt-1 justify-content-center align-items-center">
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("6"))'>
+                    <p class="bgInside ">6</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("7"))'>
+                    <p class="bgInside">7</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("8"))'>
+                    <p class="bgInside">8</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("9"))'>
+                    <p class="bgInside">9</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("0"))'>
+                    <p class="bgInside">0</p>
+                </button>
+            </div>
+        </div>
+    }
+    <!--########END LETTER BUTTONS###############-->
+    @if (iLucky4Model.IsEnabled_First3 || iLucky4Model.IsEnabled_All4)
+    {
+
+        <!--########START LETTER BUTTONS###############-->
+        <div class="LetterButtons LetterButtons container pl-1 pr-1">
+            <div class="upperDiv d-flex mt-1 justify-content-center">
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("A"))'>
+                    <p class="bgInside ">A</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("B"))'>
+                    <p class="bgInside">B</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("C"))'>
+                    <p class="bgInside">C</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("D"))'>
+                    <p class="bgInside">D</p>
+                </button>
+                <button class=" p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("E"))'>
+                    <p class="bgInside">E</p>
+                </button>
+            </div>
+            <div class="lowerDiv d-flex mt-1 justify-content-center">
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("F"))'>
+                    <p class="bgInside ">F</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("G"))'>
+                    <p class="bgInside">G</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("H"))'>
+                    <p class="bgInside">H</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("I"))'>
+                    <p class="bgInside">I</p>
+                </button>
+                <button class="p-0 d-flex justify-content-center align-items-center m-1" @onclick:preventDefault @onclick='(() => AddCharacter("J"))'>
+                    <p class="bgInside">J</p>
+                </button>
+            </div>
+        </div>
+
+        <!--########END LETTER BUTTONS###############-->
+    }
+</div>
+
+@code {
+
+    [Parameter] public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+    private async Task AddCharacter(string param)
+    {
+        await iLucky4Model.AddCharacter(param);
+        await OnClickCallback.InvokeAsync();
+    }
+}

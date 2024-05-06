@@ -1,0 +1,51 @@
+﻿@using GoPlayAsiaWebApp.Goplay.ViewModels;
+@using GoPlayAsiaWebApp.Goplay.Games.Lucky4.L4_Components
+@using static GoplayasiaBlazor.Models.Constants.Settings;
+@using GoPlayAsiaWebApp.Goplay.ViewModels;
+@inject Lucky4V2ViewModel iLucky4Model;
+<div class="main-container">
+
+    <Generator WinRate="@iLucky4Model.Winrate" SelectedChipAmount="@iLucky4Model.SelectedChipAmount" />
+
+    <CombinationHeader RatioDisplay_All4="@iLucky4Model.RatioDisplay_All4"
+                       RatioDisplay_F2="@iLucky4Model.RatioDisplay_F2"
+                       RatioDisplay_F3="@iLucky4Model.RatioDisplay_F3"
+                       IsEnabled_First2="@iLucky4Model.IsEnabled_First2"
+                       IsEnabled_First3="@iLucky4Model.IsEnabled_First3"
+                       IsEnabled_All4="@iLucky4Model.IsEnabled_All4" />
+
+    <CombiDisplay LetterValue1="@iLucky4Model.LetterValue1"
+                  LetterValue2="@iLucky4Model.LetterValue2"
+                  LetterValue3="@iLucky4Model.LetterValue3"
+                  LetterValue4="@iLucky4Model.LetterValue4"
+                  GameResult="@iLucky4Model.GameResult"
+                  PreGameResult="@iLucky4Model.PreGameResult" />
+
+    <LetterButtons OnClickCallback="@(() => LetterClicked())" />
+
+    <Chips GameChips="@GameChips" IsDisabled="@iLucky4Model.IsChipsDisabled"
+                       IsEnabled_First2="@iLucky4Model.IsEnabled_First2"
+                       IsEnabled_First3="@iLucky4Model.IsEnabled_First3"
+                       IsEnabled_All4="@iLucky4Model.IsEnabled_All4" />
+
+    <div id="btn-container" class="betButtonContainer d-flex justify-content-center align-items-center pl-1 pr-1">
+        <div class="d-flex align-items-center border border-warning bg-brown text-white rounded-lg">
+            <p class="container p-0 text-center">
+                <span class="text-warning bold"><i class="fa-solid fa-gamepad"></i> G# </span>
+                <span class="font-weight-bold">@RoundNumber</span>
+            </p>
+        </div>
+        <div class="d-flex align-items-center">
+            <button id="betButton" class="d-flex justify-content-center align-items-center @(!iLucky4Model.IsPlaceBetEnabled ? "disResetButton" : "betButton")" @onclick:preventDefault @onclick='(() => PlaceBet())'><i class="fa-regular fa-thumbs-up"></i> &nbsp; BET</button>
+        </div>
+        <div class="d-flex align-items-center border border-warning bg-brown text-white rounded-lg">
+            <p class="container p-0 text-center">
+                <span><i class="fa-solid fa-coins text-warning"></i></span>
+                <span class="font-weight-bold">@TotalAccumulatedBetsString</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+

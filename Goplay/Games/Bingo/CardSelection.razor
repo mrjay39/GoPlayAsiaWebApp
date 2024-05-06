@@ -1,0 +1,266 @@
+﻿@using GoPlayAsiaWebApp.Goplay.Games.Bingo.CardTemplate
+@using GoPlayAsiaWebApp.Goplay.Games.Bingo.Components
+@using GoPlayAsiaWebApp.Goplay.ViewModels;
+    using GoPlayAsiaWebApp.Goplay.ViewModels
+@inject BingoViewModel _iBingoViewModel
+<!--TIMER PROGESS BAR-->
+<div class="w-75 m-auto">
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: @progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+</div>
+
+<div class="d-flex" style="max-width: 640px; margin: 0 auto; z-index: 1;">
+    <div class="" style="max-width: 640px; margin: 0 auto ;">
+        <!-----------Card Selected Display----------->
+        <div class="d-flex justify-content-center mb-1" style="border-bottom: 1px solid gold;">
+            <div class="individualCard ">
+                <Card cardValue="@_cardValue1" suite="@_cardSuite1" />
+            </div>
+            <div class="individualCard ">
+                <Card cardValue="@_cardValue2" suite="@_cardSuite2" />
+            </div>
+            <div class="individualCard ">
+                <Card cardValue="@_cardValue3" suite="@_cardSuite3" />
+            </div>
+            <div class="individualCard ">
+                <Card cardValue="@_cardValue4" suite="@_cardSuite4" />
+            </div>
+            <div class="individualCard ">
+                <Card cardValue="@_cardValue5" suite="@_cardSuite5" />
+            </div>
+            <div class="individualCard ">
+                <Card cardValue="@_cardValue6" suite="@_cardSuite6" />
+            </div>
+            <div class="individualCard ">
+                <Card cardValue="@_cardValue7" suite="@_cardSuite7" />
+            </div>
+            <div class="individualCard ">
+                <Card cardValue="@_cardValue8" suite="@_cardSuite8" />
+            </div>
+        </div>
+        <!--------------diamond----------------->
+        <div class="">
+            <div class="d-flex justify-content-center">
+                <Card betValue="d-a" OnClickCallback="selectCard" />
+                    <Card betValue="d-2" OnClickCallback="selectCard" />
+                    <Card betValue="d-3" OnClickCallback="selectCard" />
+                    <Card betValue="d-4" OnClickCallback="selectCard" />
+                    <Card betValue="d-5" OnClickCallback="selectCard" />
+                    <Card betValue="d-6" OnClickCallback="selectCard" />
+                    <Card betValue="d-7" OnClickCallback="selectCard" />
+            </div>
+            <div class="d-flex justify-content-center">
+                    <Card betValue="d-8"   OnClickCallback="selectCard"  />
+                    <Card betValue="d-9"   OnClickCallback="selectCard"  />
+                    <Card betValue="d-10"  OnClickCallback="selectCard"   />
+                    <Card betValue="d-j"   OnClickCallback="selectCard"  />
+                    <Card betValue="d-q"   OnClickCallback="selectCard"  />
+                    <Card betValue="d-k"   OnClickCallback="selectCard"  />
+            </div>
+        </div>
+        <!--------------CLUB----------------->
+        <div class="">
+            <div class="d-flex justify-content-center">
+                    <Card betValue="c-a"  OnClickCallback="selectCard"/>
+                    <Card betValue="c-2"  OnClickCallback="selectCard"/>
+                    <Card betValue="c-3"  OnClickCallback="selectCard"/>
+                    <Card betValue="c-4"  OnClickCallback="selectCard"/>
+                    <Card betValue="c-5"  OnClickCallback="selectCard"/>
+                    <Card betValue="c-6"  OnClickCallback="selectCard"/>
+                    <Card betValue="c-7"  OnClickCallback="selectCard"/>
+            </div>
+            <div class="d-flex justify-content-center">
+                    <Card betValue="c-8"    OnClickCallback="selectCard"/>
+                    <Card betValue="c-9"    OnClickCallback="selectCard"/>
+                    <Card betValue="c-10"   OnClickCallback="selectCard" />
+                    <Card betValue="c-j"    OnClickCallback="selectCard"/>
+                    <Card betValue="c-q"    OnClickCallback="selectCard"/>
+                    <Card betValue="c-k"    OnClickCallback="selectCard"/>
+            </div>
+        </div>
+
+        <!--------------Heart----------------->
+        <div class="">
+            <div class="d-flex justify-content-center">
+                    <Card betValue="h-a" OnClickCallback="selectCard"/>
+                    <Card betValue="h-2" OnClickCallback="selectCard"/>
+                    <Card betValue="h-3" OnClickCallback="selectCard"/>
+                    <Card betValue="h-4" OnClickCallback="selectCard"/>
+                    <Card betValue="h-4" OnClickCallback="selectCard"/>
+                    <Card betValue="h-5" OnClickCallback="selectCard"/>
+                    <Card betValue="h-6" OnClickCallback="selectCard"/>
+            </div>
+            <div class="d-flex justify-content-center">
+                    <Card betValue="c-8"   OnClickCallback="selectCard"/>
+                    <Card betValue="c-9"   OnClickCallback="selectCard"/>
+                    <Card betValue="c-10"  OnClickCallback="selectCard" />
+                    <Card betValue="c-j"   OnClickCallback="selectCard"/>
+                    <Card betValue="c-q"   OnClickCallback="selectCard"/>
+                    <Card betValue="c-k"   OnClickCallback="selectCard"/>
+            </div>
+        </div>
+        <!--------------SPADE----------------->
+        <div class="">
+            <div class="d-flex justify-content-center">
+                    <Card betValue="s-a" OnClickCallback="selectCard"/>
+                    <Card betValue="s-2" OnClickCallback="selectCard"/>
+                    <Card betValue="s-3" OnClickCallback="selectCard"/>
+                    <Card betValue="s-4" OnClickCallback="selectCard"/>
+                    <Card betValue="s-5" OnClickCallback="selectCard"/>
+                    <Card betValue="s-6" OnClickCallback="selectCard"/>
+                    <Card betValue="s-7" OnClickCallback="selectCard"/>
+            </div>
+            <div class="d-flex justify-content-center">
+                    <Card betValue="s-8"   OnClickCallback="selectCard"/>
+                    <Card betValue="s-9"   OnClickCallback="selectCard"/>
+                    <Card betValue="s-10"  OnClickCallback="selectCard" />
+                    <Card betValue="s-j"   OnClickCallback="selectCard"/>
+                    <Card betValue="s-q"   OnClickCallback="selectCard"/>
+                    <Card betValue="s-k"   OnClickCallback="selectCard"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="relativePos">
+
+    <TokenSelection />
+
+    <button type="button"
+            class="backAbsolute btn col-2 btn-secondary mr-3 d-flex align-items-center justify-content-center"
+            data-dismiss="modal">
+        <img style="height: 13px; width: 13px;" src="/img/back-arrow.png" />
+        @*  <i style="font-size: 22px" class="bi bi-arrow-left-circle-fill"></i> *@
+    </button>
+    <button class=" delAbsolut btn  col-2  ml-3 d-flex align-items-center justify-content-center"
+            @onclick='() => setDel()'>
+        <i style="font-size: 15px" class="bi bi-trash3-fill"></i>
+    </button>
+
+</div>
+
+<div class="pl-2 pr-2 mt-2">
+
+    <div class="d-flex mt-1 ">
+        <button class="combo7 btn pl-0 pr-0  col btn-success ml-1 mr-1">Combo 7</button>
+        <button class="btn pl-0 betBtn  pr-0  col btn-success ml-1 mr-1">BET - @BetAmount</button>
+        <button class="combo8 btn pl-0 pr-0  col btn-success ml-1 mr-1">Combo 8</button>
+
+    </div>
+</div>
+
+
+
+@code {
+    [CascadingParameter]
+    public int BetAmount { get; set; } = 2;
+    public string progress { get; set; } = "50%";
+
+    private string _cardValue1 = "";
+    private string _cardSuite1 = "";
+
+    private string _cardValue2 = "";
+    private string _cardSuite2 = "";
+
+    private string _cardValue3 = "";
+    private string _cardSuite3 = "";
+
+    private string _cardValue4 = "";
+    private string _cardSuite4 = "";
+
+    private string _cardValue5 = "";
+    private string _cardSuite5 = "";
+
+    private string _cardValue6 = "";
+    private string _cardSuite6 = "";
+
+    private string _cardValue7 = "";
+    private string _cardSuite7 = "";
+
+    private string _cardValue8 = "";
+    private string _cardSuite8 = "";
+
+    private int sel = 1;
+
+    private void selectCard(string betValue)
+    {
+        Console.WriteLine(betValue);
+    }
+
+
+    private void setCard(string cardValue, string cardSuite)
+    {
+        if (sel == 1)
+        {
+
+            _cardValue1 = cardValue;
+            _cardSuite1 = cardSuite;
+            sel++;
+            return;
+        }
+        if (sel == 2)
+        {
+
+            _cardValue2 = cardValue;
+            _cardSuite2 = cardSuite;
+            sel++;
+            return;
+        }
+        if (sel == 3)
+        {
+
+            _cardValue3 = cardValue;
+            _cardSuite3 = cardSuite;
+            sel++;
+            return;
+        }
+        if (sel == 4)
+        {
+
+            _cardValue4 = cardValue;
+            _cardSuite4 = cardSuite;
+            sel++;
+            return;
+        }
+        if (sel == 5)
+        {
+
+            _cardValue5 = cardValue;
+            _cardSuite5 = cardSuite;
+            sel++;
+            return;
+        }
+        if (sel == 6)
+        {
+
+            _cardValue6 = cardValue;
+            _cardSuite6 = cardSuite;
+            sel++;
+            return;
+        }
+        if (sel == 7)
+        {
+
+            _cardValue7 = cardValue;
+            _cardSuite7 = cardSuite;
+            sel++;
+            return;
+        }
+        if (sel == 8)
+        {
+
+            _cardValue8 = cardValue;
+            _cardSuite8 = cardSuite;
+            sel++;
+            return;
+        }
+
+
+    }
+    private void setDel()
+    {
+        progress = "40%";
+    }
+
+
+}

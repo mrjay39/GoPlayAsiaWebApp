@@ -1,0 +1,81 @@
+﻿@using System.Collections.ObjectModel
+@using static GoPlayAsiaWebApp.Goplay.ViewModels.Lucky9ViewModel
+<div class="d-flex newLegend py-1">
+    @* <div class="col trends">TRENDS</div>
+    <div class="col playerL">PLAYER</div>
+    <div class="col bankerL">BANKER</div>
+    <div class="col tieL">TIE</div>
+    <div class="col cancelledL text-light">CANCELED</div> *@
+    <div class="col d-flex align-items-center justify-content-center p-0">
+        <span class="playerTrends flex align-items-center justify-content-center text-white fw-bold">P</span>
+        <span class="trendsCount">404</span>
+    </div>
+    <div class="col d-flex align-items-center justify-content-center p-0">
+        <span class="bankerTrends flex align-items-center justify-content-center text-white fw-bold">B</span>
+        <span class="trendsCount">405</span>
+    </div>
+    <div class="col d-flex align-items-center justify-content-center p-0">
+        <span class="tieTrends flex align-items-center justify-content-center text-white fw-bold">T</span>
+        <span class="trendsCount">406</span>
+    </div>
+    <div class="col d-flex align-items-center justify-content-center p-0">
+        <span class="canceledTrends flex align-items-center justify-content-center text-white fw-bold">C</span>
+        <span class="trendsCount">407</span>
+    </div>
+</div>
+
+@if (PayoutTrendsDisplay != null)
+{
+    <div class="mainCon row flex-nowrap">
+        @*  @foreach (var _trends in PayoutTrendsDisplay)
+    {*@
+        <Virtualize Items="PayoutTrendsDisplay" Context="_trends">
+            @if (_trends.CurrentList.ToList().Count > 0)
+            {
+                <div class="innerCon col p-0 ">
+                    <Virtualize Items="_trends.CurrentList" Context="_trenditems">
+                        @* @foreach (var _trenditems in _trends.CurrentList)
+                {*@
+                        <div class="row @_trenditems.TrendsResultColor">
+                            @* @_trenditems.RoundNumber *@
+                        </div>
+
+
+                        @*}*@
+                    </Virtualize>
+                </div>
+            }
+            @*}*@
+        </Virtualize>
+    </div>
+}
+
+@*<h2 class="trendFooter robotoserif">RUNNING ODDS</h2>
+@if (OddsTrendsDisplay != null)
+{
+    <div class="romainCon row flex-nowrap">
+
+        <Virtualize Items="OddsTrendsDisplay" Context="_trends">
+            @if (_trends.CurrentList.ToList().Count > 0)
+            {
+                <div class="roinnerCon col">
+                    <Virtualize Items="_trends.CurrentList" Context="_trenditems">
+                        <div class="row @_trenditems.OddsTrendsResultColor">
+                            @_trenditems.TrendsNumberDisplay
+                        </div>
+                    </Virtualize>
+
+                </div>
+            }
+        </Virtualize>
+    </div>
+}*@
+
+
+@code {
+    [Parameter]
+    public ObservableCollection<TrendsDisplayModel> PayoutTrendsDisplay { get; set; }
+    [Parameter]
+    public ObservableCollection<TrendsDisplayModel> OddsTrendsDisplay { get; set; }
+
+}

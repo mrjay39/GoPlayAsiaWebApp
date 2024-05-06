@@ -1,0 +1,63 @@
+﻿@page "/games/bigwin"
+@using GoPlayAsiaWebApp.Goplay.Games.Bigwin.Components
+@using GoPlayAsiaWebApp.Goplay.Games.Shared
+@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using static GoplayasiaBlazor.Models.Constants.Settings
+@inject BigWinViewModel iBigWinViewModel
+@attribute [Authorize(Roles = "1")]
+@implements IAsyncDisposable
+
+
+<GameHeader StreamId="@iBigWinViewModel.StreamId"
+            RoundTimer="@iBigWinViewModel.RoundTimer"
+            RoundStatusString="@iBigWinViewModel.RoundStatusString"
+            RoundNumber="@iBigWinViewModel.RoundNumber"
+            TimerBackground="@iBigWinViewModel.RoundStatusColor"
+            GameResultString="@iBigWinViewModel.GameResultString"
+            ShowFlashing="@iBigWinViewModel.ShowFlashing"
+            CreditsDisp="@iBigWinViewModel._icurrentUser.CreditsDisp"
+            Token="@iBigWinViewModel.streamKey"
+            GifSrc="@iBigWinViewModel.BWgif"
+            IsDisabledCategory="true"
+            MaxRoundTimer="@(iBigWinViewModel.GameSetting != null ? iBigWinViewModel.GameSetting.BettingDuration  : 0)" />
+
+<section id="bigWinSectionContainer" class="container p-0" style="max-width: 640px; margin: 0 auto;">
+
+    @if (@iBigWinViewModel.RoundStatusString == Constants.Open)
+    {
+        <BigwinBettingButton JackpotPrize="@iBigWinViewModel.JackpotPrize"
+                             ConsolationPrize="@iBigWinViewModel.ConsolationPrize"
+                             MiniJackpotPrize="@iBigWinViewModel.MiniJackpot"
+                             UserBets="@iBigWinViewModel.UserBets"
+                             PrevGameRound="@iBigWinViewModel.PrevGameRound"
+                             UserPrevBets="@iBigWinViewModel.UserPrevBets"
+                             GameResultString="@iBigWinViewModel.GameResult"
+                             IsLuckyPickEnabled="@iBigWinViewModel.IsLuckyPickEnabled"
+                             IsGameOpen="@iBigWinViewModel.IsGameOpen"
+                             BaseBetValue="@iBigWinViewModel.BaseBetValue"
+                             IsBetEnabled="@iBigWinViewModel.IsBetEnabled"
+                             TotalBets="@iBigWinViewModel.TotalBets"
+                             RoundStatusString="@iBigWinViewModel.RoundStatusString" />
+    }
+    else
+    {
+        <CombiDisplay LetterValue1="@iBigWinViewModel.GameResult1"
+                      LetterValue2="@iBigWinViewModel.GameResult2"
+                      RoundStatusString="@iBigWinViewModel.RoundStatusString"
+                      LetterValue3="@iBigWinViewModel.GameResult3"
+                      LetterValue4="@iBigWinViewModel.GameResult4"
+                      LetterValue5="@iBigWinViewModel.GameResult5"
+                      PreLetterValue="@iBigWinViewModel.PreLetterValue" />
+    }
+
+
+    <CurrentBets UserBets="@iBigWinViewModel.UserBets" isPrevious="false" PreviousBets="@iBigWinViewModel.UserPrevBets" CurrView="@iBigWinViewModel.CurrView" JackpotPrize="@iBigWinViewModel.JackpotPrize" RoundStatusString="@iBigWinViewModel.RoundStatusString" />
+
+
+
+    <BigwinTrends RoundStatusString="@iBigWinViewModel.RoundStatusString" TrendsDisplay="@iBigWinViewModel.TrendsDisplay" UserBets="@iBigWinViewModel.UserBets" TotalBets="@iBigWinViewModel.TotalBets" ticketRows="@iBigWinViewModel.ticketRows" />
+    <div class="noticeMsg text-center m-0">
+        <p class="red m-0" style="color: red;">Notice:</p>
+        <p class="text-light m-0 pb-3">All winnings above 10K including jackpot prizes are subject to 20% tax.</p>
+    </div>
+</section>

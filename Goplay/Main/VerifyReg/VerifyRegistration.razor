@@ -1,0 +1,284 @@
+﻿@attribute [Authorize(Roles = "1")]
+@page "/VerifyReg"
+
+@using Blazored.Typeahead
+@using GoplayasiaBlazor.Models
+@using GoPlayAsiaWebApp.Goplay.Shared.Popup  
+<GoplayasiaBlazor.Games.Shared.TopContent />
+<section class="container-fluid mt-3">
+    <div class="transparentBox">
+
+        <EditForm Model="@SignupDTO" OnValidSubmit="@ValdiateStep1" autocomplete="off">
+            <DataAnnotationsValidator />
+            <div class="Step1 box" style="padding-bottom: 50px;" hidden="@step1">
+                <div class="main">
+                    <h5 class="mb-1 text-center">VERIFICATION</h5>
+
+                    <!-- FIRST NAME -->
+                    <div class="form-group m-0">
+                        <p class="font-weight-bold titleHolder">First Name*</p>
+                        <input class="form-control mt-0" type="text" placeholder="First Name" @bind-value="SignupDTO.FirstName">
+                    </div>
+
+                    <!-- MIDDLE NAME -->
+                    <div class="form-group">
+                        <p class="font-weight-bold titleHolder">Middle Name</p>
+                        <input class="form-control" type="text" placeholder="Midde Name" @bind-value="SignupDTO.MiddleName">
+                    </div>
+
+                    <!-- LAST NAME -->
+                    <div class="form-group">
+                        <p class="font-weight-bold titleHolder">Last Name*</p>
+                        <input class="form-control" type="text" placeholder="Last Name" @bind-value="SignupDTO.LastName">
+                    </div>
+
+                    <!-- BIRTHDAY -->
+                    <div class="form-group">
+                        <p class="font-weight-bold titleHolder">Date of Birth (mm/dd/yyyy)*</p>
+                        <div class="dateOfBirth row text-center">
+                            <input class="form-control col p-1 text-center" type="text" placeholder="mm" onchange="@onchange_bdmonth" value="@SignupDTO.Month" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" oninput="javascript: if (this.value.length > 2){ this.value = this.value.slice(0, 2)};">
+                            <input class="form-control col mr-1 ml-1 p-1 text-center" type="text" placeholder="dd" onchange="@onchange_bdday" value="@SignupDTO.Day" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" oninput="javascript: if (this.value.length > 2){ this.value = this.value.slice(0, 2)};">
+                            <input class="form-control col p-1 text-center" type="text" placeholder="yyyy" @bind-value="SignupDTO.Year" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" oninput="javascript: if (this.value.length > 4){ this.value = this.value.slice(0, 4)};">
+                        </div>
+                    </div>
+
+                    <!-- PROFILE IMAGE -->
+                    <div class="form-group">
+                        <p class="font-weight-bold titleHolder">Upload Profile Photo*</p>
+                        <div class="profilePic mb-2 img-fluid">
+                            <img src="@ProfileImageUri" class="w-100 h-100" />
+                            <div class="justify-content-center uploadCameraBtn">
+                                <div class="d-flex">
+                                    <label for="profcameraupload" class=" input-label  mr-1 mb-0"><i class="bi bi-camera-fill mr-1"></i>Use Camera</label>
+                                    <InputFile accept="image/*" OnChange="@LoadProfileImage" capture="user" id="profcameraupload" class="sr-only" />
+                                    <label for="proffileupload" class="input-label mb-0 "><i class="bi bi-image-fill mr-1"></i>From Library</label>
+                                    <InputFile accept="image/*" OnChange="@LoadProfileImage" id="proffileupload" class="sr-only" />
+                                </div>
+                                @if (progress != null)
+                                {
+                                    <div>
+                                        <progress class="p-0" value="@progress.UploadedBytes" max="@progress.Size"></progress><span class="text-light m-0 p-0">@progress.UploadedPercentage.ToString("")%</span>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEXT BUTTON -->
+                <div class="prevNext d-block justify-content-center align-content-center mb-3 p-0">
+                    <div class="d-flex col justify-content-center align-content-center mb-3">
+                        <input class="nextBtn col-8" type="button" @onclick="ValdiateStep1" value="NEXT" />
+                    </div>
+                    <div class="align-content-center d-flex  text-center">
+                        <a href="/credit/withdraw" class="backLoginPage" style="margin: 0 auto; color:#f7b700; "><i class="fa-solid fa-arrow-left"></i> Back to Wallet Page</a>
+                    </div>
+                </div>
+
+                <!-- PAGCOR LOGO -->
+                <div class="img21yearsold justify-content-center align-content-center d-flex mt-2">
+                    <img class="mr-3" src="/img/pagcor-icon.png" />
+                    <img src="/img/21yrs.png" style="width: 121px; height:50px">
+                </div>
+            </div>
+            <ValidationSummary />
+        </EditForm>
+
+        <EditForm Model="@SignupDTO" OnValidSubmit="@ValidateStep2">
+            <DataAnnotationsValidator />
+            <div class="Step2 box" hidden="@step2">
+                <div class="main">
+                    <h4 class="text-center font-weight-bold mb-4" style="color: #e5e2e2; ">VERIFICATION</h4>
+                    <h5>ACCOUNT INFORMATION</h5>
+                </div>
+
+                <!-- PERSONAL INFO -->
+                <h6 class="text-light">PERSONAL INFO</h6>
+
+                <!-- EMAIL ADDRESS -->
+                <div class="form-group m-0">
+                    <p class="font-weight-bold titleHolder">Email Address</p>
+                    <input class="form-control" type="email" placeholder="Email Address(Optional)" @bind-value="SignupDTO.EmailAddress" @oninput="onchange_txtEmail">
+                    <span class="errorMessage" hidden="@(@_verifyRegistrationViewModel.errEmail != "Ok"? false : true)">@_verifyRegistrationViewModel.errEmail</span>
+                </div>
+
+                <!-- PLACE OF BIRTH -->
+                 <div class="form-group m-0">
+                    <p class="font-weight-bold titleHolder">Place of Birth</p>
+                    <input class="form-control" type="text" placeholder="PLACE OF BIRTH" @bind-value="SignupDTO.PlaceOfBirth">
+                </div> 
+                <!-- GENDER -->
+                <div class="form-group m-0">
+                    <p class="font-weight-bold titleHolder">Gender*</p>
+                    <GenderSelect @bind-Item="@SignupDTO.Gender" />
+                </div>
+
+                <!-- NATIONALITY -->
+                <div class="form-group mt-2 mb-1">
+                    <p class="font-weight-bold titleHolder">Nationality*</p>
+                    <div class="form-group" style="background-color: white; border-radius: 5px;">
+                        <BlazoredTypeahead SearchMethod="SearchNationality" @bind-Value="selectedNationality" placeholder="Select Nationality">
+                            <SelectedTemplate Context="NationalityId">
+                                @NationalityId.Name
+                            </SelectedTemplate>
+                            <ResultTemplate Context="nationality">
+                                @nationality.Name
+                            </ResultTemplate>
+                        </BlazoredTypeahead>
+                    </div>
+                </div>
+
+                <!-- CURRENT ADDRESS -->
+                <h6 class="text-light mt-3">CURRENT ADDRESS</h6>
+
+                <!-- HOME ADDRESS -->
+                <div class="form-group m-0">
+                    <p class="font-weight-bold titleHolder">Home Address*</p>
+                    <input class="form-control" type="text" placeholder="Home Address" @bind-value="SignupDTO.CurrentStreet">
+                </div>
+
+                <!-- CITY/MUNICIPALITY -->
+                <div class="form-group m-0">
+                    <p class="font-weight-bold titleHolder">City/Municipality*</p>
+                    <div class="citySelector mt-1" style="background-color: white; border-radius: 5px;">
+                        <BlazoredTypeahead SearchMethod="SearchCity" TItem="CityModel" TValue="CityModel" Value="selectedCurrCity" ValueChanged="selectedCurrCityChanged" ValueExpression="@(() => selectedCurrCity)" placeholder="Select Current City">
+                            @*@bind-Value="selectedCurrCity"*@
+                            <SelectedTemplate Context="CurrentCityId">
+                                @{
+                                    var selectCurrCity = LoadSelCurrCity(CurrentCityId.Id);
+
+                                    <text>@selectCurrCity?.Name</text>
+                                }
+                            </SelectedTemplate>
+                            <ResultTemplate Context="currentcity">
+                                @currentcity.Name
+                            </ResultTemplate>
+                        </BlazoredTypeahead>
+                    </div>
+                </div>
+
+                <!-- PROVINCE -->
+                <div class="form-group m-0">
+                    <p class="font-weight-bold titleHolder">Province*</p>
+                    <input class="form-control" type="text" disabled value="@SignupDTO.CurrentProvince">
+                </div>
+
+                <!-- REGION -->
+                <div class="form-group m-0">
+                    <p class="font-weight-bold titleHolder">Region*</p>
+                    <input class="form-control" type="text" disabled value="@SignupDTO.CurrentRegion">
+                </div>
+
+            </div>
+            <ValidationSummary />
+        </EditForm>
+
+        <EditForm Model="@SignupDTO" OnValidSubmit="@ValidateStep3">
+            <DataAnnotationsValidator />
+            <div class="Step3 box" hidden="@step3">
+                <div class="main">
+                    <h4 class="text-center font-weight-bold mb-4" style="color: #e5e2e2;; ">VERIFICATION</h4>
+                    <h5>ACCOUNT INFORMATION (PROFILE)</h5>
+                </div>
+
+                <!-- NATURE OF WORK -->
+                <div class="form-group m-0">
+                    <p class="font-weight-bold titleHolder">Nature of Work*</p>
+                    <div class="form-group" style="background-color: white; border-radius: 5px;">
+                        <BlazoredTypeahead SearchMethod="SearchNatureofwork" EnableDropDown="true" TItem="NatureOfWorkModel" TValue="NatureOfWorkModel" Value="selectedNatureofwork" ValueChanged="selectedNatureOfWorChanged" ValueExpression="@(() => selectedNatureofwork)" placeholder="SELECT NATURE OF WORK">
+                            <SelectedTemplate Context="NatureOfWorkId">
+                                @{
+                                    var selectNatureofwork = LoadSelNatureOfWork(NatureOfWorkId.Id);
+
+                                    <text>@selectNatureofwork?.Name</text>
+                                }
+                            </SelectedTemplate>
+                            <ResultTemplate Context="natureofwork">
+                                @natureofwork.Name
+                            </ResultTemplate>
+                        </BlazoredTypeahead>
+                    </div>
+                </div>
+
+                <!-- OTHER NATURE OF WORK -->
+                <div hidden="@hideOtherNatureOfWOrk">
+                    <div class="form-group m-0">
+                        <p class="font-weight-bold titleHolder">Specify</p>
+                        <div>
+                            <input class="form-control" type="text" placeholder="Other Nature of Work" @bind-value="@SignupDTO.OtherNatureOfWork" aria-label="default input example">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOURCE OF INCOME -->
+                <div class="form-group m-0">
+                    <p class="font-weight-bold titleHolder">Source of Income*</p>
+                    <div class="form-group" style="background-color: white; border-radius: 5px;">
+                        <BlazoredTypeahead SearchMethod="SearchSourcofIncome" EnableDropDown="true" TItem="SourceOfIncomeModel" TValue="SourceOfIncomeModel" Value="selectedSourceofincome" ValueChanged="selectedSourceOfIncomeChanged" ValueExpression="@(() => selectedSourceofincome)" placeholder="SELECT SOURCE OF INCOMCE">
+                            <SelectedTemplate Context="SourceOfIncomeId">
+                                @{
+                                    var selectSourceofincomce = LoadSelSourceOfIncome(SourceOfIncomeId.Id);
+
+                                    <text>@selectSourceofincomce?.Name</text>
+                                }
+                            </SelectedTemplate>
+                            <ResultTemplate Context="sourceofincome">
+                                @sourceofincome.Name
+                            </ResultTemplate>
+                        </BlazoredTypeahead>
+                    </div>
+                </div>
+
+                <!-- OTHER SOURCE OF INCOME -->
+                <div hidden="@hideOtherSourceOfIncome">
+                    <div class="form-group m-0">
+                        <p class="font-weight-bold titleHolder">Specify</p>
+                        <div>
+                            <input class="form-control" type="text" placeholder="Other Source of Income" @bind-value="@SignupDTO.OtherSourceOfIncome" aria-label="default input example">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GOVERNMENT ID -->
+                <div class="form-group m-0">
+                    <p class="font-weight-bold titleHolder">Upload Government ID*</p>
+                    <div class="govId mb-2 img-fluid">
+                        <div class="justify-content-center uploadCameraBtn">
+                            <label for="govcameraupload" class="input-label  mb-0"><i class="bi bi-camera-fill mr-1 "></i> Use Camera</label>
+                            <InputFile accept="image/*" OnChange="@LoadIDImage" capture="environment" id="govcameraupload" class="sr-only" />
+                            <label for="govfileupload" class="input-label  mb-0"><i class="bi bi-image-fill mr-1"></i>From Library</label>
+                            <InputFile accept="image/*" OnChange="@LoadIDImage" id="govfileupload" class="sr-only" />
+                            @if (progressid != null)
+                            {
+                                <div>
+                                    <progress value="@progressid.UploadedBytes" max="@progressid.Size"></progress>@progressid.UploadedPercentage.ToString("")%
+                                    @*(@FormatBytes(progressid.UploadedBytes) / @FormatBytes(progressid.Size))*@
+                                </div>
+                            }
+                        </div>
+                        <img src="@IDImageUri" class="w-100 h-100" />
+                    </div>
+                </div>
+
+                <!-- ID NUMBER -->
+                <div class="form-group m-0">
+                    <p class="font-weight-bold titleHolder">Government ID Number*</p>
+                    <input class="form-control" type="text" placeholder="Government ID Number" @bind-value="SignupDTO.IdentificationNumber">
+                </div>
+
+                <!-- PREVIOUS & NEXT BUTTONS -->
+                <div class="prevNext d-flex mt-4 pb-2">
+                    <div class="col pl-0">
+                        <input class="LoginPage" type="button" @onclick="ShowStep2" value="< BACK" />
+                    </div>
+                    <div>
+                        <input class="nextBtn" type="button" @onclick="ValidateStep3" value="SUBMIT" />
+                    </div>
+                </div>
+            </div>
+            <ValidationSummary />
+        </EditForm>
+
+    </div>
+</section>
+@*<NavMenuBar />*@

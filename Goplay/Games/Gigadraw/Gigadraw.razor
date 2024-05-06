@@ -1,0 +1,40 @@
+﻿@page "/games/gigadraw"
+@using GoPlayAsiaWebApp.Goplay.Games.Shared
+@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using static GoplayasiaBlazor.Models.Constants.Settings
+@inject GigadrawModel iGigadrawModel
+@attribute [Authorize(Roles = "1")]
+@*@implements IDisposable*@
+@implements IAsyncDisposable
+
+<GameHeader StreamId="@iGigadrawModel.StreamId"
+            RoundTimer="@iGigadrawModel.RoundTimer"
+            RoundStatusString="@iGigadrawModel.RoundStatusString"
+            RoundNumber="@iGigadrawModel.RoundNumber"
+            TimerBackground="@iGigadrawModel.RoundStatusColor"
+            ShowFlashing="@iGigadrawModel.ShowFlashing"
+            CreditsDisp="@iGigadrawModel._icurrentUser.CreditsDisp"
+            Token="@iGigadrawModel.streamKey" />
+
+<GigaDrawBettingButton JackpotPrize="@iGigadrawModel.JackpotPrize"
+                       ConsolationPrize="@iGigadrawModel.ConsolationPrize"
+                       UserBets="@iGigadrawModel.UserBets"
+                       PrevGameRound="@iGigadrawModel.PrevGameRound"
+                       UserPrevBets="@iGigadrawModel.UserPrevBets"
+                       IsLuckyPickEnabled="@iGigadrawModel.IsLuckyPickEnabled"
+                       IsGameOpen="@iGigadrawModel.IsGameOpen"
+                       GameResultString="@iGigadrawModel.GameResult"
+                       BaseBetValue="@iGigadrawModel.BaseBetValue" TotalBets="@iGigadrawModel.TotalBets" />
+
+@*<DropwinBettingButton GameChips="@iDropWinModel.GameChips" RoundStatusString="@iDropWinModel.RoundStatusString" IsChipsVisible="@iDropWinModel.IsChipsVisible" />
+
+<DropWinTrends TrendsDisplay="@iDropWinModel.TrendsDisplay" UserBets_F2="@iDropWinModel.UserBets_F2" UserBets_F3="@iDropWinModel.UserBets_F3" UserBets_All4="@iDropWinModel.UserBets_All4" />*@
+
+<GigadrawTrends RoundStatusString="@iGigadrawModel.RoundStatusString" TrendsDisplay="@iGigadrawModel.TrendsDisplay" UserBets="@iGigadrawModel.UserBets" TotalBets="@iGigadrawModel.TotalBets" ticketRows="@iGigadrawModel.ticketRows" />
+<div class="noticeMsg text-center m-0">
+    <p class="red m-0" style="color: red;">Notice:</p>
+    <p class="text-light m-0 pb-3">All jackpot prizes for this game are subject to 20% tax</p>
+</div>
+@code {
+
+}

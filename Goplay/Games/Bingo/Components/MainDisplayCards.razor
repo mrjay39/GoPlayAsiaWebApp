@@ -1,0 +1,61 @@
+﻿@using GoPlayAsiaWebApp.Goplay.Games.Bingo.CardTemplate
+
+<div class="d-flex col p-0">
+    <div class="jackpotImage col p-0 mt-2 ">
+        <div class="d-flex col p-0 justify-content-center">
+            <div class="jackpotImage col p-0">
+                <img class=" img-fluid col p-0" height="30px" src="/img/jackpotimage.png" />
+                <div class="jackpotHeader text-center fw-bolder ">Jackpot</div>
+                <div class="majorText text-center">
+                    <div class="grandPrize text-center fw-bolder">@JackpotPrize</div>
+                </div>
+            </div>
+
+            
+           
+            <div class="majorImage col p-0">
+                <img class=" img-fluid col p-0" height="30px" src="/img/jackpotimage.png" />
+                <div class="majorHeader text-center fw-bolder ">Prize Pool</div>
+                <div class="majorText text-center">
+                    <div class="text-center grandPrize fw-bolder">@MiniJackpot</div>
+                </div>
+            </div>`
+        </div>
+
+    </div>
+  
+
+</div>
+
+<div class="displayContainer d-flex justify-content-center" >
+    <Card betValue="@BetValue1" />
+    <Card betValue="@BetValue2" />
+    <Card betValue="@BetValue3" />
+    <Card betValue="@BetValue4" />
+    <Card betValue="@BetValue5" />
+    <Card betValue="@BetValue6" />
+</div>
+
+@code{
+    [Parameter]
+    public string JackpotPrize { get; set; } = string.Empty;
+    [Parameter]
+    public string MiniJackpot { get; set; } = string.Empty;
+    [Parameter]
+    public string BetValue1 { get; set; } = "";
+    [Parameter]
+    public string BetValue2 { get; set; } = "";
+    [Parameter]
+    public string BetValue3 { get; set; } = "";
+    [Parameter]
+    public string BetValue4 { get; set; } = "";
+    [Parameter]
+    public string BetValue5 { get; set; } = "";
+    [Parameter]
+    public string BetValue6 { get; set; } = "";
+    [Parameter]
+    public string BetValue7 { get; set; } = "";
+    [Parameter]
+    public string BetValue8 { get; set; } = "";
+
+}

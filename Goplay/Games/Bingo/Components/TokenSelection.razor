@@ -1,0 +1,109 @@
+﻿@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoplayasiaBlazor.DTOs.Bingo
+@using GoplayasiaBlazor.Models
+@using GoPlayAsiaWebApp.Goplay.ViewModels;
+    using GoPlayAsiaWebApp.Goplay.ViewModels
+@inject BingoViewModel _BingoViewModel;
+<!-- Button trigger modal -->
+
+
+<div class="tokenContainer">
+
+    <div class="d-flex">
+        @if(_BingoPrizePerDrawDTO != null)
+        {
+            @foreach (var item in _BingoPrizePerDrawDTO)
+            {
+                <div class="text-center patternDiv col p-0">
+                    <div class="cardText">CARD </div>
+
+                    <div class="cardText cardNoText">@item.LowDrawNo @(item.LowDrawNo == item.HighDrawNo ? "" : " - " + item.HighDrawNo)</div>
+                    <div class="payoutText">@item.WinningAmount.ToString("N0")</div>
+                </div>
+            }
+
+        }
+        else
+        {
+            <p><i>loading...</i></p>
+        }
+
+    </div>
+
+    <div class="d-flex col currencyDiv">
+        <div class="d-flex col p-0 justify-content-start align-items-center  ml-1 " style="font-size:14px">
+            Bet Amount ( &#8369; @_BingoViewModel.BetAmount.ToString("N0") )  @* Jackpot will be based on the first 6 cards drawn *@
+        </div>
+        <div style="font-size:15px" class="col p-0 d-flex  justify-content-end align-items-center mr-1">
+            Total Bets: @* <img style="height:18px; " src="/img/coins.png" /> *@ <span class="font-weight-bold ml-2"> @TotalBets.ToString("N0")</span>
+        </div>
+    </div>
+    <div class="flex-md-column p-0 ml-4 mr-4 justify-content-center mt-2">
+        <div>
+            @if (GameChips != null)
+            {
+                <div class="d-flex">
+                    <button @onclick="() => SelectButton(GameChips.Chip1)" class="col  @GetButtonClass(GameChips.Chip1)"> @GameChips.Chip1Display</button>
+                    <button @onclick="() => SelectButton(GameChips.Chip2)" class="col   @GetButtonClass(GameChips.Chip2)"> @GameChips.Chip2Display</button>
+                    <button @onclick="() => SelectButton(GameChips.Chip3)" class="col   @GetButtonClass(GameChips.Chip3)"> @GameChips.Chip3Display</button>
+                    <button @onclick="() => SelectButton(GameChips.Chip4)" class="col   @GetButtonClass(GameChips.Chip4)"> @GameChips.Chip4Display</button>
+                </div>
+
+                <div class="d-flex mt-2 ">
+                    <button @onclick="() => SelectButton(GameChips.Chip5)" class="col   @GetButtonClass(GameChips.Chip5)"> @GameChips.Chip5Display</button>
+                    <button @onclick="() => SelectButton(GameChips.Chip6)" class="col   @GetButtonClass(GameChips.Chip6)"> @GameChips.Chip6Display</button>
+                    <button @onclick="() => SelectButton(GameChips.Chip7)" class="col   @GetButtonClass(GameChips.Chip7)"> @GameChips.Chip7Display</button>
+                    <button @onclick="() => SelectButton(GameChips.Chip8)" class="col  @GetButtonClass(GameChips.Chip8)"> @GameChips.Chip8Display</button>
+                </div>
+            }
+           
+      @*       <div class="text-center text-light" style="font-size:9px">
+                Major Prizes for first  7 - 12  cards drawn / 19 - 37 for Minor Prizes
+            </div> *@
+        </div>
+    </div>
+</div>
+
+
+@* <div class="text-center text-light " style="font-size: 12px;">Bet Amount (&#8369;)  </div> *@
+
+
+
+@code {
+    [CascadingParameter] public List<BingoPrizePerDrawDTO> _BingoPrizePerDrawDTO { get; set; }
+    [CascadingParameter] public GameChipModel GameChips { get; set; }
+    [CascadingParameter] public int TotalBets { get; set; } = 0;
+    int selectedButton = 0;
+   
+    private void SelectButton(int? betAmount)
+    {
+        _BingoViewModel.BetAmount = (int)betAmount;
+        _BingoViewModel.GetGetPrizeByChip(_BingoViewModel.BetAmount);
+    }
+
+    string GetButtonClass(int? buttonNumber)
+    {
+        return _BingoViewModel.BetAmount == buttonNumber ? "selected" : "";
+    }
+
+    // Define a simple Person class
+    public class Pattern
+    {
+        public string CardDrawNumber { get; set; }
+        public int Payout { get; set; }
+    }
+    // Create and initialize an array of objects (People)
+    Pattern[] payoutPattern = {
+        new Pattern { CardDrawNumber = "John Doe", Payout = 25 },
+        new Pattern {  CardDrawNumber = "Jane Doe", Payout = 30 },
+        new Pattern {  CardDrawNumber = "Jane Doe", Payout = 30 },
+        new Pattern {  CardDrawNumber = "Jane Doe", Payout = 30 },
+        new Pattern {  CardDrawNumber = "Jane Doe", Payout = 30 },
+        new Pattern {  CardDrawNumber = "Jane Doe", Payout = 30 },
+    };
+    // protected override Task OnAfterRenderAsync(bool firstRender)
+    // {
+    //     payoutPattern[0]
+    //     return base.OnAfterRenderAsync(firstRender);
+    // }
+}

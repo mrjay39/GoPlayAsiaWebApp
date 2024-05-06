@@ -7,11 +7,11 @@ using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Global;
 using GoplayasiaBlazor.Core.Helpers.Interface;
 using GoplayasiaBlazor.Core.Helpers;
-using GoPlayAsiaWebApp.ViewModels;
 using Microsoft.AspNetCore.Components.Authorization;
 using Blazored.SessionStorage;
 using Blazored.Toast;
 using Blazored.Modal;
+using GoPlayAsiaWebApp.Goplay.ViewModels;
 
 namespace GoPlayAsiaWebApp
 {

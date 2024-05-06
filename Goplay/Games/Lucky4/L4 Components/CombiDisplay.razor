@@ -1,0 +1,107 @@
+﻿@using GoPlayAsiaWebApp.Goplay.ViewModels;
+@inject Lucky4V2ViewModel iLucky4Model;
+@using static GoplayasiaBlazor.Models.Constants.Settings;
+    using GoPlayAsiaWebApp.Goplay.ViewModels;
+    using GoPlayAsiaWebApp.Goplay.ViewModels;
+
+<div id="placeHolder-container" class="selectedCombiPlaceHolder d-flex justify-content-center">
+    <div class="blockContainer1">
+        <div class="selectedPlaceholder1 d-flex justify-content-center ">
+            <div class="selCombi1 d-flex align-items-center justify-content-center">
+                @if (GameResult != String.Empty && GameResult is not null)
+                {
+                    @GameResult.Substring(0, 1)
+                }
+                else if (PreGameResult.Length > 0)
+                {
+                    @PreGameResult.Substring(0, 1)
+                }
+                else
+                {
+                    @LetterValue1 
+                }
+            </div>
+        </div>
+        <div class="traiangel">
+            <img src="/img/L4-images/placeHolder01.png" />
+        </div>
+    </div>
+    <div class="blockContainer2">
+        <div class="selectedPlaceholder1 d-flex justify-content-center ">
+            <div class="selCombi1 d-flex align-items-center justify-content-center">
+                @if (GameResult != String.Empty && GameResult is not null)
+                {
+                    @GameResult.Substring(1, 1)
+                }
+                else if (PreGameResult.Length > 1)
+                {
+                    @PreGameResult.Substring(1, 1)
+                }
+                else
+                {
+                    @LetterValue2
+                }
+            </div>
+        </div>
+        <div class="traiangel">
+            <img src="/img/L4-images/placeHolder02.png" />
+        </div>
+    </div>
+    <div class="blockContainer3">
+        <div class="selectedPlaceholder1 d-flex justify-content-center ">
+            <div class="selCombi1 d-flex align-items-center justify-content-center">
+                @if (GameResult != String.Empty && GameResult is not null)
+                {
+                    @GameResult.Substring(2, 1)
+                }
+                else if (PreGameResult.Length > 2)
+                {
+                    @PreGameResult.Substring(2, 1)
+                }
+                else
+                {
+                    @LetterValue3
+                }
+            </div>
+        </div>
+        <div class="traiangel">
+            <img src="/img/L4-images/placeHolder03.png" />
+        </div>
+    </div>
+    <div class="blockContainer4">
+        <div class="selectedPlaceholder1 d-flex justify-content-center ">
+            <div class="selCombi1 d-flex align-items-center justify-content-center">
+                @if (GameResult != String.Empty && GameResult is not null)
+                {
+                    @GameResult.Substring(3, 1)
+                }
+                else if (PreGameResult.Length > 3)
+                {
+                    @PreGameResult.Substring(3, 1)
+                }
+                else
+                {
+                    @LetterValue4
+                }
+            </div>
+        </div>
+        <div class="traiangel">
+            <img src="/img/L4-images/placeHolder04.png" />
+        </div>
+    </div>
+    <a class="flex clear-btn"><i class="fa-solid fa-circle-xmark" style="color: red; background: white; border-radius: 45px; position: absolute; top: 5px;" @onclick:preventDefault @onclick='(() => RemoveCharacter())'></i> </a>
+</div>
+
+@code {
+    [Parameter] public string LetterValue1 { get; set; } = "";
+    [Parameter] public string LetterValue2 { get; set; } = "";
+    [Parameter] public string LetterValue3 { get; set; } = "";
+    [Parameter] public string LetterValue4 { get; set; } = "";
+    [Parameter] public string GameResult { get; set; } = "";
+    [Parameter] public string PreGameResult { get; set; } = "";
+
+    private async Task RemoveCharacter()
+    {
+        await iLucky4Model.RemoveLastCharacter();
+    }
+}

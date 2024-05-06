@@ -1,0 +1,88 @@
+﻿@page "/lobby"
+@using GoPlayAsiaWebApp.Goplay.Games.Shared;;
+@implements IAsyncDisposable
+@attribute [Authorize(Roles = "1")]
+<div class="mainContainer">
+
+
+    <section>
+        <TopContent CreditsDisp="@lobbyViewModel._icurrentUser.CreditsDisp" />
+        <div class="gameTypeSelector pt-1 pb-1 mt-5">
+            <div class="d-flex m-auto">
+                <div class="d-flex col m-0 p-0">
+                    <button class="col p-0 btn" @onclick:preventDefault @onclick='(() => ShowCards())'>
+                        <img class="d-flex icons m-auto" src="/img/lobbycard-icon.png" />
+                        <div class="text-center textHeader">CARDS</div>
+                    </button>
+                    <button class="col btn p-0" @onclick:preventDefault @onclick='(() => ShowCoins())'>
+                        <img class="m-auto d-flex icons" src="/img/newlobby/hticon.png" />
+                        <div class="text-center textHeader">COINS</div>
+                    </button>
+                    <button class="col btn p-0" @onclick:preventDefault @onclick='(() => ShowBalls())'>
+                        <img class="m-auto d-flex icons" src="/img/newlobby/dropball.png" />
+                        <div class="text-center textHeader">DROP BALL</div>
+                    </button>
+                    <button class="col btn p-0" @onclick:preventDefault @onclick='(() => ShowDice())'>
+                        <img class="m-auto d-flex icons" src="/img/newlobby/soon-icon.png" />
+                        <div class="text-center textHeader">DICE</div>
+                    </button>
+                    <button class="col btn p-0" @onclick:preventDefault @onclick='(() => ShowAll())'>
+                        <img class="m-auto d-flex icons" src="/img/newlobby/all-icon.png" />
+                        <div class="text-center textHeader">ALL</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="newLobby">
+           
+            <!-- CARDS -->
+            <div class="mt-2" hidden="@cards">
+                <a href="/games/bingo" class="shimmer hoorayRelative">
+                    <img class=" lobbyPrize" src="img/prizepool.png" alt="horray logo">
+                    <img class=" img-fluid" src="img/hooray.png" alt="horray logo">
+                </a>
+                <a href="/games/first3" class="shimmer">
+                    <img class="img-fluid" src="img/new-f3icon.png" alt="f3 logo">
+                </a>
+                <a href="/games/lucky9" class="shimmer">
+                    <img class="img-fluid" src="img/new-l9icon.png" alt="l9 logo">
+                </a>
+            </div>
+
+            <!-- COINS -->
+            <div class="mt-2" hidden="@coins">
+                <a href="/games/headstails" class="shimmer">
+                    <img class="img-fluid" src="img/new-hticon.png" alt="ht logo">
+                </a>
+            </div>
+
+            <!-- DROP BALL -->
+            <div class="mt-2" hidden="@balls">
+                <a href="/games/bigwin" class="shimmer">
+                    <img class="img-fluid" src="img/bw-icon.png" alt="bigwin logo">
+                </a>
+                <a href="/games/lucky4" class="shimmer">
+                    <img class="img-fluid" src="img/l4-icon.png" alt="l4 logo">
+                </a>    
+                <a href="/games/go12" class="shimmer">
+                    <img class="img-fluid" src="img/new-go12icon.png" alt="go12 logo">
+                </a>
+            </div>
+
+            <!-- DICE -->
+            <div class="mt-2" hidden="@dice">
+                <a href="/games/dice" class="shimmer">
+                    <img class="img-fluid" src="img/new-dice.png" alt="dice logo">
+                </a>
+            </div>
+        </div>
+        <div class="keepItFun row d-flex justify-content-center" alt="pagcor 21yrs old">
+            <img src="/img/21yrs.png" class="ml-3">
+        </div>
+    </section>
+</div>
+  
+
+<NavMenuBar />
+
+

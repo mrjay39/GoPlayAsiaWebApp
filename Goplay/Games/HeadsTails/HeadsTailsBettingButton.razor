@@ -1,0 +1,193 @@
+﻿@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using static GoplayasiaBlazor.Models.Constants.Settings
+@inject HeadsAndTailsViewModel iHeadsTailsViewModel;
+@using GoPlayAsiaWebApp.Goplay.Games.Shared
+@inject IToastService toastService;
+
+<marquee class="text-light d-flex justify-content-center font-weight-bolder" style="font-size: 18px; padding: 3px 0;  user-select: none;">WELCOME TO HEADS OR TAILS COIN GAME!</marquee>
+
+@if (RoundStatusString == Constants.Open)
+{
+    <section class="RegularGame d-flex justify-content-center col p-0" hidden="@(@iHeadsTailsViewModel.GameSetting.FixedPriceEnabled? false : true) " style="  user-select: none;">
+
+        <!-- HEADS REGULAR (OPEN) -->
+        @if (IsFixedHeadsEnabled)
+        {
+            <div class="betContainer  d-flex align-items-center justify-content-center col p-0 @(iHeadsTailsViewModel.BetCombinationValue == Constants.FixedHeads ? "betContainerActive" : "")">
+                <a class="d-flex" href="" @onclick:preventDefault @onclick='(() => enableToken(Constants.Heads, Constants.FixedHeads))'>
+                    <div class="">
+                        <!-- MULTIPLIER -->
+                        <div class=" ">
+                            <div class="font-weight-bolder" style="font-size: 20px;line-height: normal">HEADS</div>
+
+                        </div>
+                        <div class=" d-flex justify-content-center ">
+                            <div class="font-weight-bolder " style="font-size: 15px; line-height: .7">@FixedPriceHeadsMultiplier</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- TOKEN DISPLAY -->
+                <TokenDisplay Amount="@UserTotalBet_FixedPrizeHeads" />
+                @if (iHeadsTailsViewModel.Token_Animation != "" && iHeadsTailsViewModel.BetCombinationValue == Constants.FixedHeads)
+                {
+                    <div class="additionaltokencontainer" style="--animation: @iHeadsTailsViewModel.Token_Animation">
+                        <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+                        <p class="selectedAmountToken">@iHeadsTailsViewModel.BetAmount</p>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="disbetPlayerRegContainer">
+                <div class="">
+                    <!-- MULTIPLIER -->
+                    <div class=" ">
+                        <div class="font-weight-bolder" style="font-size: 20px;line-height: normal">HEADS</div>
+
+                    </div>
+                    <div class=" d-flex justify-content-center ">
+                        <div class="font-weight-bolder " style="font-size: 15px; line-height: .7">@FixedPriceHeadsMultiplier</div>
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- ANIMATION -->
+        <div class="col-3 p-0 d-flex align-items-center justify-content-center">
+            <div>
+                <img class="animCenter" style=" max-height: 100px; width:100px;" src="/img/HTAnimation.gif" />
+                <div class="majority text-light font-weight-bold text-center v2subText">MAJORITY WINS</div>
+            </div>
+
+        </div>
+
+        <!-- TAILS REGULAR (OPEN) -->
+        @if (@IsFixedTailsEnabled)
+        {
+            <div class="bankerBetContainer text-light d-flex align-items-center justify-content-center col p-0 @(iHeadsTailsViewModel.BetCombinationValue == Constants.FixedTails ? "bankerBetContainerActive" : "")">
+                <a class="d-flex" href="" @onclick:preventDefault @onclick='(() => enableToken(Constants.Tails, Constants.FixedTails))'>
+
+                    <div class="">
+                        <!-- MULTIPLIER -->
+                        <div class=" ">
+                            <div class="font-weight-bolder" style="font-size: 20px;line-height: normal">TAILS</div>
+
+                        </div>
+                        <div class=" d-flex justify-content-center ">
+                            <div class="font-weight-bolder " style="font-size: 15px; line-height: .7">@FixedPriceTailsMultipler</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- TOKEN DISPLAY -->
+                <TokenDisplay Amount="@UserTotalBet_FixedPrizeTails" />
+                @if (iHeadsTailsViewModel.Token_Animation != "" && iHeadsTailsViewModel.BetCombinationValue == Constants.FixedTails)
+                {
+                    <div class="additionaltokencontainerTails" style="--animation: @iHeadsTailsViewModel.Token_Animation">
+                        <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+                        <p class="selectedAmountToken">@iHeadsTailsViewModel.BetAmount</p>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="disbetBankerRegContainer text-light col p-0">
+                <div class="">
+                    <!-- MULTIPLIER -->
+                    <div class=" ">
+                        <div class="font-weight-bolder" style="font-size: 20px;line-height: normal">TAILS</div>
+
+                    </div>
+                    <div class=" d-flex justify-content-center ">
+                        <div class="font-weight-bolder " style="font-size: 15px; line-height: .7">@FixedPriceTailsMultipler</div>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+
+        <!-- POPUP CHIPS -->
+        <div class="@iHeadsTailsViewModel.tokenDiv">
+            <Token GameChips="@iHeadsTailsViewModel.GameChips" OnClickCallback="@(() => CheckIfPlaceBetReady())" />
+        </div>
+    </section>
+}
+
+
+
+else @if (@RoundStatusString == Constants.Closed || @RoundStatusString == Constants.Cancelled)
+{
+    <section class="RegularGame  disabledDiv d-flex justify-content-center" hidden="@(@iHeadsTailsViewModel.GameSetting.FixedPriceEnabled? false : true)" style="  user-select: none;">
+
+        <!-- HEADS REGULAR (CLOSE/CANCELLED) -->
+        <div class="disbetPlayerRegContainer d-flex align-items-center justify-content-center  @(IsPayoutWon_Heads? "winbetContainer" : "text-dark") ">
+
+            <div class="">
+                <!-- MULTIPLIER -->
+                <div class=" ">
+                    <div class="font-weight-bolder"><span class="d-flex justify-content-center" style="font-size:14px; line-height: normal; color: red !important;">@(IsPayoutWon_Heads ? "WINNER" : "")</span> </div>
+                    <div class="font-weight-bolder" style="font-size: 20px;line-height: normal">HEADS</div>
+                </div>
+                <div class=" d-flex justify-content-center ">
+                    <div class="font-weight-bolder " style="font-size: 15px; line-height: .7">@FixedPriceHeadsMultiplier</div>
+                </div>
+            </div>
+
+            <!-- CANCELLED DISPLAY -->
+            @if (@IsFixedPrizeCancelled)
+            {
+                <div class="betCancelled text-center justify-content-center">
+                    <strong class="text-center d-block">Cancelled</strong>
+                    <strong>Bets Returned</strong>
+                </div>
+            }
+
+            <!-- TOKEN DISPLAY -->
+            <TokenDisplay Amount="@UserTotalBet_FixedPrizeHeads" />
+        </div>
+
+        <!-- ANIMATION -->
+        <div class="col-3 p-0 d-flex align-items-center justify-content-center">
+            <div>
+                <img class="animCenter" style=" max-height: 100px; width:100px;" src="/img/HTAnimation.gif" />
+                <div class="majority text-light font-weight-bold text-center v2subText">MAJORITY WINS</div>
+            </div>
+
+        </div>
+
+        <!-- TAILS REGULAR (CLOSE) -->
+        <div class="disbetBankerRegContainer d-flex align-items-center justify-content-center @(IsPayoutWon_Tails? "winbetContainer" : "text-dark")">
+
+            <div class="">
+                <!-- MULTIPLIER -->
+                <div class=" ">
+                    <div class="font-weight-bolder" style="font-size: 14px;line-height: normal;color: red !important;"><span class="d-flex justify-content-center">@(IsPayoutWon_Tails ? "WINNER" : "")</span> </div>
+                    <div class="font-weight-bolder" style="font-size: 20px;line-height: normal">TAILS</div>
+
+                </div>
+                <div class=" d-flex justify-content-center ">
+                    <div class="font-weight-bolder " style="font-size: 15px; line-height: .7">@FixedPriceTailsMultipler</div>
+                </div>
+            </div>
+
+
+            <!-- CANCELLED DISPLAY -->
+            @if (@IsFixedPrizeCancelled)
+            {
+                <div class="betCancelled text-center justify-content-center">
+                    <strong class="text-center d-block">Cancelled</strong>
+                    <strong class="d-block text-center">Bets Returned</strong>
+                </div>
+            }
+
+            <!-- TOKEN DISPLAY -->
+            <TokenDisplay Amount="@UserTotalBet_FixedPrizeTails" />
+        </div>
+    </section>
+}
+<div style="max-width: 640px; margin: 0 auto;">
+    
+</div>

@@ -1,0 +1,71 @@
+﻿
+@using GoplayasiaBlazor.DTOs
+@using GoPlayAsiaWebApp.Goplay.ViewModels;
+    using GoPlayAsiaWebApp.Goplay.ViewModels
+@inject MainCreditViewModel _mainCreditsViewModel;
+<section>
+    @if (_mainCreditsViewModel.ApplicableVouchers != null)
+    {
+        @foreach (var _vouchers in _mainCreditsViewModel.ApplicableVouchers)
+        {
+            <div class="container-fluid">
+                <div class="VoucherCon row d-flex mt-1">
+                    <div class="left-container col-4">
+                        <div class="offerTime text-center mt-1">
+                            Limited Redemptions @* @(_vouchers.Count - _vouchers.Used) Remaining*@
+                        </div>
+                        <div class="PromoCode d-flex align-items-center justify-content-center mt-1">
+                            @_vouchers.Code
+                        </div>
+                    </div>
+                    <div class="center-container col-6 d-flex">
+                        <div class="voucherInfo align-items-center justify-content-center d-flex">
+                          @*  @((MarkupString)@_vouchers.Description)*@Free 200 for newly registered player
+                        </div>
+                    </div>
+                    <div class="radio-container col-2 align-items-center justify-content-center d-flex">
+                        <input type="radio" value="@_vouchers.Code" @onchange="SelectionChanged" name="radvoucher">
+                    </div>
+                </div>
+                <div class="progress mt-1">
+                    <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: @(string.Format("{0:0.00}", ((double)(_vouchers.Used / (double)_vouchers.Count)) * 100))%;" aria-valuenow="@(string.Format("{0:0.00}", ((double)(_vouchers.Used / (double)_vouchers.Count)) * 100))" aria-valuemax="100">@(string.Format("{0:0.00}", ((double)(_vouchers.Used / (double)_vouchers.Count)) * 100))% Remaining</div>
+                </div>
+                <div class="conButton row d-flex align-items-center justify-content-center w-100 m-0 p-0">
+                    <button class="closeVoucherBtn col mt-3" @onclick="(() => Close())">Close</button>
+                    <button class="ApplyVoucherBtn col mt-3" @onclick="(() => SetSelectedVoucher())">APPLY VOUCHER</button>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <span>Loading</span>
+    }
+
+   
+</section>
+@code {
+    voucherActiveModel selVoucherModel = new voucherActiveModel();
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    void SelectionChanged(ChangeEventArgs args)
+    {
+        string sel = (string)args.Value;
+        selVoucherModel = _mainCreditsViewModel.ApplicableVouchers.FirstOrDefault(x => x.Code == sel);
+
+    }
+    void SetSelectedVoucher()
+    {
+        if (selVoucherModel != null)
+        {
+            if (!String.IsNullOrEmpty(selVoucherModel.Code))
+            _mainCreditsViewModel.activeVoucher = selVoucherModel;
+        }
+        BlazoredModal.CloseAsync();
+    }
+    void Close()
+    {
+        BlazoredModal.CloseAsync();
+    }
+
+}

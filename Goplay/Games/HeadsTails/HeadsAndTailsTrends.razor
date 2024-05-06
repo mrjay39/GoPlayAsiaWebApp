@@ -1,0 +1,31 @@
+﻿@using System.Collections.ObjectModel
+@using static GoPlayAsiaWebApp.Goplay.ViewModels.HeadsAndTailsViewModel
+
+<div class="legend w-100 d-flex text-center justify-content-center mt-1">
+    <div class="legendTrends col p-0">TRENDS</div>
+    <div class="legendLeft col p-0">HEADS</div>
+    <div class="legendRight col p-0">TAILS</div>
+    <div class="legendCancel col-4 p-0">CANCELLED</div>
+</div>
+@if (PayoutTrendsDisplay != null)
+{
+    <div class="mainCon row flex-nowrap mt-1">
+        <Virtualize Items="PayoutTrendsDisplay" Context="_trends">
+            @if (_trends.CurrentList.ToList().Count > 0)
+            {
+                <div class="innerCon " style="margin-top: -8px; margin-left: 10px;">
+                    <Virtualize Items="_trends.CurrentList" Context="_trenditems">
+                        <div class="row d-flex justify-content-center @_trenditems.TrendsResultColor">
+                            @_trenditems.RoundNumber
+                        </div>
+                    </Virtualize>
+                </div>
+            }
+        </Virtualize>
+    </div>
+}
+@code {
+    [Parameter]
+    public ObservableCollection<TrendsDisplayModel> PayoutTrendsDisplay { get; set; }
+
+}

@@ -1,0 +1,41 @@
+﻿@page "/games/dropwin"
+@using GoPlayAsiaWebApp.Goplay.Games.Shared
+@using static GoplayasiaBlazor.Models.Constants.Settings
+@attribute [Authorize(Roles = "1")]
+@*@implements IDisposable*@
+
+@implements IAsyncDisposable
+
+<GameHeader StreamId="@iDropWinModel.StreamId"
+            RoundTimer="@iDropWinModel.RoundTimer"
+            RoundStatusString="@iDropWinModel.RoundStatusString"
+            RoundNumber="@iDropWinModel.RoundNumber"
+            TimerBackground="@iDropWinModel.RoundStatusColor"
+            GameResultString="@iDropWinModel.GameResultString"
+            ShowFlashing="@iDropWinModel.ShowFlashing"
+            CreditsDisp="@iDropWinModel._icurrentUser.CreditsDisp"
+            Token="@iDropWinModel.streamKey" />
+
+<DropWinUserCombinations UserBets_F2="@iDropWinModel.UserBets_F2" 
+                         UserBets_F3="@iDropWinModel.UserBets_F3" 
+                         UserBets_All4="@iDropWinModel.UserBets_All4" 
+                         RoundStatusString="@iDropWinModel.RoundStatusString"
+                         IsPrevious=false />
+
+<DropwinBettingButton GameChips="@iDropWinModel.GameChips" RoundStatusString="@iDropWinModel.RoundStatusString" IsChipsVisible="@iDropWinModel.IsChipsVisible" />
+
+@* Must replace with correct variable value *@
+@if (@iDropWinModel.RoundStatusString == Constants.Open)
+{
+    <DropWinUserCombinations UserBets_F2="@iDropWinModel.UserPrevBets_F2"
+                         UserBets_F3="@iDropWinModel.UserPrevBets_F3"
+                         UserBets_All4="@iDropWinModel.UserPrevBets_All4"
+                         PrevGameRound="@iDropWinModel.PrevGameRound"
+                         IsPrevious=true />
+}
+
+<DropWinTrends TrendsDisplay="@iDropWinModel.TrendsDisplay" />
+
+@code {
+
+}

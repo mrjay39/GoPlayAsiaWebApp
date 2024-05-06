@@ -1,0 +1,67 @@
+﻿@using System.Collections.ObjectModel
+@using static GoPlayAsiaWebApp.Goplay.ViewModels.First3ViewModel
+
+<div class="d-flex newLegend">
+    <div class="col p-0 trends">TRENDS</div>
+    <div class="col p-0 playerL">GOLD</div>
+    <div class="col p-0 bankerL">SILVER</div>
+    <div class="col-1 p-0 tieL">TIE</div>
+    <div class="col p-0 cancelledL text-light">CANCELLED</div>
+</div>
+
+@if (PayoutTrendsDisplay != null)
+{
+    <div class="mainCon row flex-nowrap">
+        @*  @foreach (var _trends in PayoutTrendsDisplay)
+    {*@
+        <Virtualize Items="PayoutTrendsDisplay" Context="_trends">
+            @if (_trends.CurrentList.ToList().Count > 0)
+            {
+                <div class="innerCon col p-0 ">
+                    <Virtualize Items="_trends.CurrentList" Context="_trenditems">
+                        @* @foreach (var _trenditems in _trends.CurrentList)
+                {*@
+                           <div class="row @_trenditems.TrendsResultColor" >
+                            @_trenditems.RoundNumber
+                        </div>
+              
+                     
+                        @*}*@
+                    </Virtualize>
+                </div>
+            }
+            @*}*@
+        </Virtualize>
+  
+    </div>
+}
+
+@*<h2 class="trendFooter robotoserif">RUNNING ODDS</h2>
+@if (OddsTrendsDisplay != null)
+{
+    <div class="romainCon row flex-nowrap">
+
+        <Virtualize Items="OddsTrendsDisplay" Context="_trends">
+            @if (_trends.CurrentList.ToList().Count > 0)
+            {
+                <div class="roinnerCon col">
+                    <Virtualize Items="_trends.CurrentList" Context="_trenditems">
+                        <div class="row @_trenditems.OddsTrendsResultColor">
+                            @_trenditems.TrendsNumberDisplay
+                        </div>
+                    </Virtualize>
+
+                </div>
+            }
+        </Virtualize>
+    </div>
+}*@
+
+
+@code {
+    [Parameter]
+    public ObservableCollection<TrendsDisplayModel> PayoutTrendsDisplay { get; set; }
+    [Parameter]
+    public ObservableCollection<TrendsDisplayModel> OddsTrendsDisplay { get; set; }
+
+}

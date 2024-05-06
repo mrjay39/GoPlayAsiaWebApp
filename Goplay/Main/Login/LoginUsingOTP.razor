@@ -1,0 +1,368 @@
+﻿@page "/loginviaotp"
+@using GoplayasiaBlazor.Core.Global.Interface
+@using GoplayasiaBlazor.Core.Services.Interface
+@using GoplayasiaBlazor.DTOs.DTOOut
+@using GoplayasiaBlazor.Dtos.DTOIn
+@using GoPlayAsiaWebApp.Goplay.Shared.Popup  
+@using static GoplayasiaBlazor.Models.Constants.Settings
+@attribute [AllowAnonymous]
+@inject IAccountService _accountService
+@inject IToastService toastService
+@inject IJSRuntime JSRuntime
+@inject ICurrentUser _iCurrentUser;
+<PageTitle>GoPlayAsia: Login</PageTitle>
+
+
+
+<div class="maincontainer">
+    <div class="innerCon row justify-content-center w-100 m-0">
+        <div class="cardWidth">
+            <div class="imgContainer d-flex justify-content-center">
+                <img class=" img-fluid" src="/img/header-img.png" />
+                <div class="breath-light1"></div>
+                <div class="breath-light2"></div>
+                <div class="breath-light3"></div>
+                <div class="breath-light4"></div>
+                <div class="breath-light5"></div>
+                <div class="breath-light6"></div>
+                <div class="breath-light7"></div>
+                <div class="breath-light8"></div>
+                <div class="breath-light9"></div>
+            </div>
+
+            @if (_viewState == 1)
+            {
+                <EditForm Model="@_loginOPT" OnValidSubmit="@createOTP" autocomplete="stopdoingthat">
+                    <DataAnnotationsValidator />
+                    <div class="container mt-5 mb-5 pt-4 pb-4">
+                        <div class="container-fluid text-center mb-2">
+                            <p class="h4 mb-0 text-white fw-bold"><b>What's your mobile number?</b></p>
+                            <p class="text-white">We'll send a code to your mobile number.</p>
+                        </div>
+                        <input @ref="_refmobileNumber" @bind-value="_loginOPT.mobileNumber" class="form-control mb-4 mt-3 text-center" type="tel" placeholder="09XX XXX XXXX" required>
+                        @if (!string.IsNullOrEmpty(_loginOPT.mobileNumber) && !_loginOPT.IsValid)
+                        {
+                            <p class="validator-msg">Invalid mobile number format. Please enter a valid 11-digit mobile number.</p>
+                        }
+                        <ValidationSummary />
+                        <button class="btn btn-success col fw-bold">Login</button>
+                    </div>
+                </EditForm>
+            }
+            else if (_viewState == 2)
+            {
+                <div class="container mt-5 mb-5 pt-3 pb-3">
+                    <div class="container-fluid text-center mb-2">
+                        <p class="h4 mb-0 text-white fw-bold"><b>Enter the code</b></p>
+                        <p class="text-white">Please enter 6-digit code sent to:</p>
+                        <p class="row align-items-center">
+                            <span class="col text-left fw-bold text-white p-0">@_loginOPT.mobileNumber</span>
+                            @if (counter > 0)
+                            {
+                                <a class="btn col text-right text-white pr-0">
+                                    Resend code in
+                                    <span class="resendCode" id="timer"><b class="text-warning fw-bold">@counter</b></span>
+                                </a>
+                            }
+                            else
+                            {
+                                <button class="btn btn-success col fw-bold" @onclick="createOTP">Request new OTP</button>
+                            }
+                        </p>
+                    </div>
+                    <div class="code-input mb-2">
+                        <input type="number" @ref="_refcode1" @bind-value="_code1" @oninput="(args) => onCodeChange(args)" @onclick="( () => setFocused(1))" maxlength="1" autocomplete="off" class="my-input gray">
+                        <input type="number" @ref="_refcode2" @bind-value="_code2" @oninput="(args) => onCodeChange(args)" @onclick="( () => setFocused(2))" maxlength="1" autocomplete="off" class="my-input gray">
+                        <input type="number" @ref="_refcode3" @bind-value="_code3" @oninput="(args) => onCodeChange(args)" @onclick="( () => setFocused(3))" maxlength="1" autocomplete="off" class="my-input gray">
+                        <input type="number" @ref="_refcode4" @bind-value="_code4" @oninput="(args) => onCodeChange(args)" @onclick="( () => setFocused(4))" maxlength="1" autocomplete="off" class="my-input gray">
+                        <input type="number" @ref="_refcode5" @bind-value="_code5" @oninput="(args) => onCodeChange(args)" @onclick="( () => setFocused(5))" maxlength="1" autocomplete="off" class="my-input gray">
+                        <input type="number" @ref="_refcode6" @bind-value="_code6" @oninput="(args) => onCodeChange(args)" @onclick="( () => setFocused(6))" maxlength="1" autocomplete="off" class="my-input gray">
+                    </div>
+                    <button @onclick="nextFocus" class="btn btn-success col fw-bold">@LoginStr</button>
+                </div>
+            }
+
+            <div class="border-0">
+                <div class="d-flex justify-content-center">
+                    <img class="logo-pagcor" src="/img/FOOTER.png" alt="footer">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@code {
+    [Inject]
+    NavigationManager _navigationManager { get; set; }
+    [Inject] AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+    public LoginOTPDTO _loginOPT { get; set; } = new LoginOTPDTO();
+    private int _viewState { get; set; } = 1;
+    private int _currFocusedCode { get; set; } = 1;
+    private ElementReference _refmobileNumber;
+    private ElementReference _refcode1;
+    private ElementReference _refcode2;
+    private ElementReference _refcode3;
+    private ElementReference _refcode4;
+    private ElementReference _refcode5;
+    private ElementReference _refcode6;
+    private string _code1 = string.Empty;
+    private string _code2 = string.Empty;
+    private string _code3 = string.Empty;
+    private string _code4 = string.Empty;
+    private string _code5 = string.Empty;
+    private string _code6 = string.Empty;
+    public SMSResultDTO _referenceNo { get; private set; }
+    private int counter = 60;
+    [CascadingParameter] public IModalService popupModal { get; set; }
+    private static System.Timers.Timer aTimer;
+    public string otpCode { get; set; } = "";
+    public string LoginStr { get; set; } = "Next";
+    String DeviceToken = "";
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            DeviceToken = await JSRuntime.InvokeAsync<string>(identifier: "identifyBrowser");
+
+            await _refmobileNumber.FocusAsync();
+        }
+    }
+    public async Task<bool> CheckifApple()
+    {
+        try
+        {
+            var isApple = await JSRuntime.InvokeAsync<bool>(identifier: "checkifApple");
+            return isApple;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+    private async Task createOTP()
+    {
+
+        if(await RequestNewCode())
+        {
+            _viewState = 2;
+            StateHasChanged();
+            StartTimer();
+            await Task.Delay(100);
+
+            //set focused
+            await _refcode1.FocusAsync();
+            _currFocusedCode = 1;
+        };
+        
+    }
+    private async Task onCodeChange(ChangeEventArgs val)
+    {
+        switch (_currFocusedCode)
+        {
+            case 1:
+                _code1 = val.Value?.ToString();
+                break;
+            case 2:
+                _code2 = val.Value?.ToString();
+                break;
+            case 3:
+                _code3 = val.Value?.ToString();
+                break;
+            case 4:
+                _code4 = val.Value?.ToString();
+                break;
+            case 5:
+                _code5 = val.Value?.ToString();
+                break;
+            case 6:
+                _code6 = val.Value?.ToString();
+                break;
+        }
+        if (checkIfOTPcomplete())
+        {
+            LoginStr = "Login";
+        }
+        else
+        {
+            LoginStr = "Next";
+            await nextFocus();
+        }
+
+
+    }
+    private bool checkIfOTPcomplete()
+    {
+        if (!String.IsNullOrEmpty(_code1) && !String.IsNullOrEmpty(_code2)
+           && !String.IsNullOrEmpty(_code3) && !String.IsNullOrEmpty(_code4) &&
+           !String.IsNullOrEmpty(_code5) && !String.IsNullOrEmpty(_code6))
+        {
+            otpCode = _code1 + _code2 + _code3 + _code4 + _code5 + _code6;
+            return true;
+        }
+
+        return false;
+    }
+    private async Task setFocused(int focused)
+    {
+        _currFocusedCode = focused;
+        switch (focused)
+        {
+            case 1:
+                _code1 = string.Empty;
+                break;
+            case 2:
+                _code2 = string.Empty;
+                break;
+            case 3:
+                _code3 = string.Empty;
+                break;
+            case 4:
+                _code4 = string.Empty;
+                break;
+            case 5:
+                _code5 = string.Empty;
+                break;
+            case 6:
+                _code6 = string.Empty;
+                break;
+        }
+        StateHasChanged();
+    }
+    private async Task nextFocus()
+    {
+        if (checkIfOTPcomplete())
+        {
+            var refpopuLoadingpModal = popupModal.Show<PopupLoading>("");
+            var response = await _accountService.LoginWithOTP(_referenceNo.ReferenceNo, otpCode, _loginOPT.mobileNumber, DeviceToken);
+            var isApple = await CheckifApple();
+            if (response == null)
+            {
+                refpopuLoadingpModal.Close();
+                toastService.ShowError("Login failed. Try again later");
+                return;
+            }
+            if (!response.Success)
+            {
+                if (response.Message.Contains("logged in to another device"))
+                {
+
+                    await _accountService.ForceLogoutUser(response.Id, response.User.Username);
+                    await Task.Delay(1000); 
+                    refpopuLoadingpModal.Close();
+
+                    return;
+                }
+
+            }
+            if (response.User.RoleType != (int)RoleTypes.Player)
+            {
+                refpopuLoadingpModal.Close();
+                toastService.ShowError("Login failed. Account is not recognized as a Player");
+                return;
+            }
+            _iCurrentUser.Id = response.User.Id;
+            _iCurrentUser.Username = response.User.Username;
+            _iCurrentUser.FullName = response.User.FullName;
+            _iCurrentUser.Token = response.User.JWTToken;
+            _iCurrentUser.EmailAddress = response.User.EmailAddress;
+            _iCurrentUser.EmailValidated = response.User.EmailValidated;
+            _iCurrentUser.MobileNumber = response.User.MobileNumber;
+            _iCurrentUser.MobileNumberValidated = response.User.MobileNumberValidated;
+            _iCurrentUser.Credits = response.User.Credits;
+            _iCurrentUser.CreditsDisp = String.Format("{0:0,0.00}", response.User.Credits);
+            _iCurrentUser.RoleType = response.User.RoleType;
+            _iCurrentUser.RemainingViewTime = response.User.RemainingViewTime;
+            _iCurrentUser.ProfileImage = response.User.ProfileImageFullPath;
+            _iCurrentUser.PopupTimer = response.User.PopupTimer;
+            _iCurrentUser.IdleTimer = response.User.IdleTimer;
+            _iCurrentUser.DeviceToken = response.User.DeviceToken;
+            _iCurrentUser.Status = response.User.Status;
+            _iCurrentUser.Verified = response.User.Verified;
+            _iCurrentUser.ToppedUp = response.User.ToppedUp;
+            _iCurrentUser.TourWalletShown = false;
+            _iCurrentUser.HoldCredits = response.User.HoldCredits;
+            _iCurrentUser.isApple = isApple;
+
+            await _iCurrentUser.updateSessionAsync();
+
+            await ((CustomAuthStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated();
+            if (_iCurrentUser.ToppedUp || _iCurrentUser.Verified != 0)
+            {
+
+                _navigationManager.NavigateTo("/lobby");
+            }
+            else
+            {
+                _navigationManager.NavigateTo("/landing");
+            }
+        }
+        else
+        {
+            switch (_currFocusedCode)
+            {
+                case 1:
+                    await _refcode2.FocusAsync();
+                    await setFocused(2);
+                    break;
+                case 2:
+                    await _refcode3.FocusAsync();
+                    await setFocused(3);
+                    break;
+                case 3:
+                    await _refcode4.FocusAsync();
+                    await setFocused(4);
+                    break;
+                case 4:
+                    await _refcode5.FocusAsync();
+                    await setFocused(5);
+                    break;
+                case 5:
+                    await _refcode6.FocusAsync();
+                    await setFocused(6);
+                    break;
+
+            }
+        }
+    }
+    public async Task<bool> RequestNewCode()
+    {
+        var popupRes = popupModal.Show<PopupLoading>("");
+        _referenceNo = await _accountService.RequestForLoginOTP(_loginOPT.mobileNumber);
+        popupRes.Close();
+
+        if (_referenceNo == null)
+        {
+            toastService.ShowError("Request OTP failed, try again later...");
+            return false;
+        }
+        return true;
+    }
+    public void StartTimer()
+    {
+        counter = 60;
+        aTimer = new System.Timers.Timer(1000);
+        aTimer.Elapsed += CountDownTimer;
+        aTimer.Enabled = true;
+    }
+    public void CountDownTimer(Object source, System.Timers.ElapsedEventArgs e)
+    {
+        if (counter > 0)
+        {
+            counter -= 1;
+            StateHasChanged();
+        }
+        else
+        {
+            aTimer.Enabled = false;
+        }
+    }
+    private string AutoHighlight()
+    {
+        return "if (window.focusedElement == this) return; window.focusedElement = this;  setTimeout(function () { window.focusedElement.setSelectionRange(0, window.focusedElement.value.length) }, 100);";
+
+    }
+}
+
+

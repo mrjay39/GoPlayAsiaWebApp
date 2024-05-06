@@ -1,0 +1,92 @@
+﻿@page "/games/lucky9"
+@attribute [Authorize(Roles = "1")]
+@using GoplayasiaBlazor.Core.Helpers.Interface
+@using GoPlayAsiaWebApp.Goplay.Games.Lucky9.Components
+@using GoPlayAsiaWebApp.Goplay.Games.Shared;;
+@using GoplayasiaBlazor.Models.Constants
+@implements IDisposable
+@implements IAsyncDisposable
+<div class="container-fluid p-0" style="background: #0b310a; height: 100vh;">
+<GameHeader StreamId="@luckyViewModel.StreamId"
+            RoundTimer="@luckyViewModel.RoundTimer"
+            RoundStatusString="@luckyViewModel.RoundStatusString"
+            RoundNumber="@luckyViewModel.RoundNumber"
+            TimerBackground="@luckyViewModel.RoundStatusColor"
+            GameResultString="@luckyViewModel.GameResultString"
+            ShowFlashing="@luckyViewModel.ShowFlashing"
+            CreditsDisp="@luckyViewModel._icurrentUser.CreditsDisp"
+            PlayerCategory="@luckyViewModel.PlayerCategory"
+            OnClickCallback="@(() => setGameChips())"
+            Token="@luckyViewModel.streamKey"
+            GifSrc="@luckyViewModel.L9gif"
+            IsDisabledCategory="false"
+            MaxRoundTimer="@(luckyViewModel.GameSetting != null ? luckyViewModel.GameSetting.BettingDuration  : 0)" />
+    <div id="lucky9" class="mainContainer row d-block pl-1 pr-1" style="line-height: normal; background: #0b310a !important;">
+    @if (luckyViewModel.RoundStatusString == Settings.Constants.Open)
+    {
+        <Lucky9BettingButton RoundStatusString="@luckyViewModel.RoundStatusString"
+                             FixedPricePlayerTotalBets="@luckyViewModel.FixedPricePlayerTotalBets"
+                             FixedPriceBankerTotalBets="@luckyViewModel.FixedPriceBankerTotalBets"
+                             RunningOddsPlayerTotalBets="@luckyViewModel.RunningOddsPlayerTotalBets"
+                             RunningOddBankerTotalBets="@luckyViewModel.RunningOddBankerTotalBets"
+                             UserTotalBet_FixedPrizePlayer="@luckyViewModel.UserTotalBet_FixedPrizePlayer"
+                             UserTotalBet_FixedPrizeBanker="@luckyViewModel.UserTotalBet_FixedPrizeBanker"
+                             UserTotalBet_OddsPlayer="@luckyViewModel.UserTotalBet_OddsPlayer"
+                             UserTotalBet_OddsBanker="@luckyViewModel.UserTotalBet_OddsBanker"
+                             SampleWinFixedPrizePlayer="@luckyViewModel.SampleWinFixedPrizePlayer"
+                             SampleWinFixedPrizeBanker="@luckyViewModel.SampleWinFixedPrizeBanker"
+                             SampleWinOddsPlayer="@luckyViewModel.SampleWinOddsPlayer"
+                             SampleWinOddsBanker="@luckyViewModel.SampleWinOddsBanker"
+                             SampleWinDraw="@luckyViewModel.SampleWinDraw"
+                             IsPayoutWon_Player="@luckyViewModel.IsPayoutWon_Player"
+                             IsPayoutWon_Banker="@luckyViewModel.IsPayoutWon_Banker"
+                             IsOddsWon_Player="@luckyViewModel.IsOddsWon_Player"
+                             IsOddsWon_Banker="@luckyViewModel.IsOddsWon_Banker"
+                             IsRunningOddsCancelled="@luckyViewModel.IsRunningOddsCancelled"
+                             IsFixedPrizeCancelled="@luckyViewModel.IsFixedPrizeCancelled"
+                             FixedPricePlayerMultiplier="@luckyViewModel.FixedPricePlayerMultiplier"
+                             FixedPriceBankerMultipler="@luckyViewModel.FixedPriceBankerMultipler"
+                             RunningOddsPlayerMultiplier="@luckyViewModel.RunningOddsPlayerMultiplier"
+                             RunningOddBankerMultiplier="@luckyViewModel.RunningOddBankerMultiplier"
+                             IsFixedBankerEnabled="@luckyViewModel.IsFixedBankerEnabled"
+                             IsFixedPlayerEnabled="@luckyViewModel.IsFixedPlayerEnabled" />
+
+        <GameNumberTokenTotBet RoundNumber="@luckyViewModel.RoundNumber" TotalBets="@luckyViewModel.TotalBets" MinChipDisplay="@luckyViewModel.MinChip" MaxChipDisplay="@luckyViewModel.MaxChip" />
+        <Lucky9Trends PayoutTrendsDisplay="@luckyViewModel.PayoutTrendsDisplay"
+                      OddsTrendsDisplay="@luckyViewModel.OddsTrendsDisplay" />
+    }
+    else
+    {
+        <Lucky9BettingButton RoundStatusString="@luckyViewModel.RoundStatusString"
+                             FixedPricePlayerTotalBets="@luckyViewModel.FixedPricePlayerTotalBets"
+                             FixedPriceBankerTotalBets="@luckyViewModel.FixedPriceBankerTotalBets"
+                             RunningOddsPlayerTotalBets="@luckyViewModel.RunningOddsPlayerTotalBets"
+                             RunningOddBankerTotalBets="@luckyViewModel.RunningOddBankerTotalBets"
+                             UserTotalBet_FixedPrizePlayer="@luckyViewModel.UserTotalBet_FixedPrizePlayer"
+                             UserTotalBet_FixedPrizeBanker="@luckyViewModel.UserTotalBet_FixedPrizeBanker"
+                             UserTotalBet_OddsPlayer="@luckyViewModel.UserTotalBet_OddsPlayer"
+                             UserTotalBet_OddsBanker="@luckyViewModel.UserTotalBet_OddsBanker"
+                             SampleWinFixedPrizePlayer="@luckyViewModel.SampleWinFixedPrizePlayer"
+                             SampleWinFixedPrizeBanker="@luckyViewModel.SampleWinFixedPrizeBanker"
+                             SampleWinOddsPlayer="@luckyViewModel.SampleWinOddsPlayer"
+                             SampleWinOddsBanker="@luckyViewModel.SampleWinOddsBanker"
+                             SampleWinDraw="@luckyViewModel.SampleWinDraw"
+                             IsPayoutWon_Player="@luckyViewModel.IsPayoutWon_Player"
+                             IsPayoutWon_Banker="@luckyViewModel.IsPayoutWon_Banker"
+                             IsOddsWon_Player="@luckyViewModel.IsOddsWon_Player"
+                             IsOddsWon_Banker="@luckyViewModel.IsOddsWon_Banker"
+                             IsRunningOddsCancelled="@luckyViewModel.IsRunningOddsCancelled"
+                             IsFixedPrizeCancelled="@luckyViewModel.IsFixedPrizeCancelled"
+                             FixedPricePlayerMultiplier="@luckyViewModel.FixedPricePlayerMultiplier"
+                             FixedPriceBankerMultipler="@luckyViewModel.FixedPriceBankerMultipler"
+                             RunningOddsPlayerMultiplier="@luckyViewModel.RunningOddsPlayerMultiplier"
+                             RunningOddBankerMultiplier="@luckyViewModel.RunningOddBankerMultiplier"
+                             IsFixedBankerEnabled="@luckyViewModel.IsFixedBankerEnabled"
+                             IsFixedPlayerEnabled="@luckyViewModel.IsFixedPlayerEnabled" />
+
+        <GameNumberTokenTotBet RoundNumber="@luckyViewModel.RoundNumber" TotalBets="@luckyViewModel.TotalBets" MinChipDisplay="@luckyViewModel.MinChip" MaxChipDisplay="@luckyViewModel.MaxChip" />
+        <Lucky9Trends PayoutTrendsDisplay="@luckyViewModel.PayoutTrendsDisplay"
+                      OddsTrendsDisplay="@luckyViewModel.OddsTrendsDisplay" />
+    }
+</div>
+</div>

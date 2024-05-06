@@ -1,0 +1,51 @@
+﻿@page "/landing"
+@using GoPlayAsiaWebApp.Goplay.Games.Shared;
+@attribute [Authorize(Roles = "1")]
+
+<section>
+   
+@*    <TopContent CreditsDisp="0" />*@
+
+    <div class="container d-flex justify-content-center flex-column mb-3">
+        <div class="d-flex justify-content-center">
+            <img class="img-fluid" style="width:550px;" src="/img/header-img.png" />
+        </div>
+        <img class="bg-image" src="/img/bonustoken200.png" style="background: none;">
+        <p class="verifiedText text-center mb-1">UPON CASH-IN FOR NEW COMERS WITH A MINIMUM AMOUNT OF P500</p>
+        <div class="mt-1">
+            <div class="d-flex col p-0">
+                <div class="w-100 d-flex col p-0 mr-2">
+                    <a href="/lobby" class="animated-button2 col m-0  d-flex justify-content-center align-items-center">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        CONTINUE
+                    </a>
+                </div>
+                <div class="w-100 d-flex col p-0 ">
+                    <a href="/credit" class="animated-button7 col m-0 d-flex align-items-center justify-content-center">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        CASH IN
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+@*        <div class="keepItFun row d-flex justify-content-center pt-5" alt="pagcor 21yrs old" style="margin: 0 auto; padding: 0;">
+            <img src="/img/icons-landing.png">
+
+        </div>*@
+    </div>
+    <div class="innerContainer d-flex justify-content-center col mt-1">
+        <img class="footer" src="/img/FOOTER.png" />
+    </div>
+</section>
+
+@code {
+
+}

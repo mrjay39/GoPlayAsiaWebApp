@@ -1,0 +1,129 @@
+﻿@using GoplayasiaBlazor.Models
+@using GoPlayAsiaWebApp.Goplay.ViewModels;
+    using GoPlayAsiaWebApp.Goplay.ViewModels
+@inject Lucky9ViewModel lucky9ViewModel;
+
+@if (GameChips != null)
+{
+
+    <div class=" @TokenContainer  mt-1 " style="background-color: rgba(0,0,0,0.8); padding: 6px; border-radius: 6px;">
+       @*  <div class="d-flex">
+            <div class="col payoutAmount">Bet: @lucky9ViewModel.BetAmount </div>
+            <div class="col d-flex justify-content-end payoutAmount"> Payout: @lucky9ViewModel.Payout</div>
+
+        </div> *@
+        <div class="d-flex justify-content-center">
+            @if (GameChips.Chip1 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => setBetAmount(GameChips.Chip1))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip1Display</div>
+                        <img class="@(lucky9ViewModel.BetAmount == GameChips.Chip1? "selectedToken" : "default") " src="/img/1-100.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip2 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => setBetAmount(GameChips.Chip2))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip2Display</div>
+                        <img class="@(lucky9ViewModel.BetAmount == GameChips.Chip2? "selectedToken" : "default") " src="/img/1-200.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip3 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => setBetAmount(GameChips.Chip3))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip3Display</div>
+                        <img class="@(lucky9ViewModel.BetAmount == GameChips.Chip3? "selectedToken" : "default") " src="/img/1-500.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip4 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => setBetAmount(GameChips.Chip4))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip4Display</div>
+                        <img class="@(lucky9ViewModel.BetAmount == GameChips.Chip4? "selectedToken" : "default") " src="/img/1-1k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip5 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => setBetAmount(GameChips.Chip5))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip5Display</div>
+                        <img class="@(lucky9ViewModel.BetAmount == GameChips.Chip5? "selectedToken" : "default") " src="/img/1-1-5k.png" />
+                    </div>
+                </a>
+            }
+        </div>
+        <!-----ROW 2 TOKEN----->
+        <div class="d-flex d-flex justify-content-center mb-2">
+            @if (GameChips.Chip6 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => setBetAmount(GameChips.Chip6))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip6Display</div>
+                        <img class="@(lucky9ViewModel.BetAmount == GameChips.Chip6? "selectedToken" : "default") " src="/img/1-2k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip7 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => setBetAmount(GameChips.Chip7))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip7Display</div>
+                        <img class="@(lucky9ViewModel.BetAmount == GameChips.Chip7? "selectedToken" : "default") " src="/img/1-3k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip8 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => setBetAmount(GameChips.Chip8))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip8Display</div>
+                        <img class="@(lucky9ViewModel.BetAmount == GameChips.Chip8? "selectedToken" : "default") " src="/img/2-5k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip9 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => setBetAmount(GameChips.Chip9))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip9Display</div>
+                        <img class="@(lucky9ViewModel.BetAmount == GameChips.Chip9? "selectedToken" : "default") " src="/img/2-8k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip10 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => setBetAmount(GameChips.Chip10))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip10Display</div>
+                        <img class="@(lucky9ViewModel.BetAmount == GameChips.Chip10? "selectedToken" : "default") " src="/img/2-10k.png" />
+                    </div>
+                </a>
+            }
+        </div>
+
+
+    </div>
+    <div class=" col p-0 d-flex justify-content-center" style="background-color: rgba(0,0,0,0.8); padding: 6px; border-radius: 6px;">
+        <div class="col p-0 text-light d-flex justify-content-center align-items-center" style="font-size: 12px;">
+            <div class="">
+                <p>TAP BET TO</p>
+                <p>CONFIRM ></p>
+            </div>
+        </div>
+
+        <button class="col-7 d-flex justify-content-center mr-2 @(isDisabled ? "disnewBetBtn" : "newBetBtn")" @onclick="(()=> SubmitBet())" disabled="@isDisabled">
+            <div>BET</div>
+        </button>
+        <button class="newBackBtn col-2 d-flex justify-content-center" @onclick="(()=> CloseDiv())">
+            <div>X</div>
+        </button>
+
+    </div>
+}

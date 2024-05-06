@@ -1,0 +1,37 @@
+﻿@using GoplayasiaBlazor.Models.Constants
+@using GoPlayAsiaWebApp.Goplay.ViewModels;
+    using GoPlayAsiaWebApp.Goplay.ViewModels
+@inject Lucky9ViewModel luckyViewModel;
+
+@if (BetValueDisplay == Settings.Constants.Player)
+{
+    <button class="col h-100 borderGold btn p-0 d-block @(Settings.Constants.SuitsPlayer == WinnerResults ? "winSameSuitPlayer" : SameSuitePlayer)" @onclick=OnClickCallback>
+        <p class="smallHeader font-weight-bold">Same SUITS</p>
+        <div class="d-flex">
+            <p class="betAmount col p-0 ml-1 d-flex justify-content-start @(UserTotalBet_SuitsPlayer != "0" ? "withBet" : "") ">@(UserTotalBet_SuitsPlayer != "0" ? @UserTotalBet_SuitsPlayer : "BET")</p>
+            @if (luckyViewModel.L9Suits != null)
+            {
+                <p class="payout col p-0 mr-1 d-flex justify-content-end @(UserTotalBet_SuitsPlayer != "0" ? "withBet" : "") ">
+                    @(UserTotalBet_SuitsPlayer != "0" ? SampleWinSuitsPlayer : "x" + luckyViewModel.L9Suits.FixedPriceMultiplier.ToString("G29"))
+                </p>
+            }
+        </div>
+    </button>
+}
+else if (BetValueDisplay == Settings.Constants.Banker)
+{
+    <button class="col h-100 borderGold  btn p-0 d-block @(Settings.Constants.SuitsBanker == WinnerResults ?  "winSameSuitBanker" : SameSuiteBanker)" @onclick=OnClickCallback>
+        <p class="smallHeader font-weight-bold">Same SUITS</p>
+        <div class="d-flex">
+            <p class="betAmount col p-0 ml-1 d-flex justify-content-start @(UserTotalBet_SuitsBanker != "0" ? "withBet" : "") ">@(UserTotalBet_SuitsBanker != "0" ? @UserTotalBet_SuitsBanker : "BET")</p>
+            @if (luckyViewModel.L9Suits != null)
+            {
+                <p class="payout col p-0 mr-1 d-flex justify-content-end @(UserTotalBet_SuitsBanker != "0" ? "withBet" : "") ">
+                    @(
+                        UserTotalBet_SuitsBanker != "0" ? SampleWinSuitsBanker : "x" + luckyViewModel.L9Suits.FixedPriceMultiplier.ToString("G29")
+                        )
+                </p>
+            }
+        </div>
+    </button>
+}
