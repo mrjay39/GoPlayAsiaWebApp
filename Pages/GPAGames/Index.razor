@@ -2,38 +2,14 @@
 @inject IModalService ModalService
 @using GoPlayAsiaWebApp.Controls.GameLinkHeader
 @using GoPlayAsiaWebApp.Controls.GameInfo
+@using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
+@using GoPlayAsiaWebApp.Pages.EGames.FishingGames
+@using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
 <PageTitle>GoPlayAsia: GoPlayAsia Games </PageTitle>
 
 <div id="cardGames" class="container-fluid p-0 marketing">
 
-    <div class="container pt-5">
-        <h2 class="text-white fw-bold mt-5">Game Categories</h2>
-        <h5 class="text-muted"> Navigating the World of Gaming Genres</h5>
-        <div id="link-header" class="gameOverflow-x">
-            <div class="row justify-content-center p-2">
-                <GameLinkHeader _gameHrefStr="GoPlayAsiaGames"
-                                _activeClassStr="active"
-                                _imgGameStr="./img/GPAGames/liveGames.png"
-                                _typeGameStr="Live" />
-
-                <GameLinkHeader _gameHrefStr="arcadeGames"
-                                _imgGameStr="./img/Arcade/GoRush_2.png"
-                                _typeGameStr="Arcade" />
-
-                <GameLinkHeader _gameHrefStr="slotGames"
-                                _imgGameStr="./img/SlotGames/SuperAce_2.png"
-                                _typeGameStr="Slots" />
-
-                <GameLinkHeader _gameHrefStr="cardGames"
-                                _imgGameStr="./img/CardGames/baccarat_2.png"
-                                _typeGameStr="Cards" />
-
-                <GameLinkHeader _gameHrefStr="fishingAndArcadeGames"
-                                _imgGameStr="./img/fishing/HappyFishing_2.png"
-                                _typeGameStr="Fishing" />
-            </div>
-        </div>
-    </div>
+    <GameLinkHeader />
 
     <div class="container">
         <h2 class="text-white fw-bold mt-5">GoPlayAsia Odyssey!</h2>
