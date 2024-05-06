@@ -1,0 +1,255 @@
+﻿.creditContainer {
+    max-width: 640px;
+    margin: 0 auto;
+
+}
+.containerControler {
+    height: 100%;
+}
+.mainContainer {
+ 
+}
+
+form {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav-link.active {
+    color: white;
+    background-color: #ff6a00;
+    font-weight: 600;
+}
+
+.nav-link {
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+h6.headerText {
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+    color: #440c0c;
+}
+
+.addCredit img, .overthecounterBtn img {
+
+    margin: 0;
+    padding: 0;
+}
+
+.addCredit {
+    text-align: center;
+}
+/*trasnsaction*/
+.transCon {
+    max-width: 640px;
+}
+
+.innerTransCon {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.innerTable {
+    background-color: #263142;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.rightContent {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.transHeader {
+    padding-top: 5px;
+    background-color: white;
+    color: black;
+    margin: 0 auto;
+}
+/*transaction*/
+h6.topUpMEssage {
+    font-size: 12px;
+    text-align: center;
+}
+
+.PaymentGateWayCon {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px;
+    height: 119px;
+}
+
+.PaymentGateWayConWid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px;
+    height: 119px;
+
+}
+
+
+
+.addCredit-submit {
+    width: 100%;
+    background-color: #07966a;
+    border: none;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    /* padding: 10px 0;*/
+}
+
+.widthdrawal-submit {
+    width: 100%;
+    background-color: #07966a;
+    border: none;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+.eyeContainer {
+    position: relative;
+}
+.pesoContainer {
+    position: relative;
+}
+.peso {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    transform: translate(-50% 0);
+    font-size: 25px;
+}
+.eye {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    transform: translate(-50% 0);
+    font-size: 25px;
+}
+
+/*Start DropDown Widthdraw*/
+.btn-secondary {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.dropdown-menu {
+    width: 100%;
+}
+
+.CashoutForm input {
+    width: 100%;
+    margin: 0 auto;
+}
+h1 {
+   text-decoration: underline;
+    color: #137ef1;
+   margin-left: 5px;
+    font-size: 15px;
+ /*   border: 1px solid white;*/
+    border-radius: 10px;
+   
+  
+}
+/*End DropDown Widthdraw*/
+@media screen and (max-width: 600px) {
+    .overthecounterBtn {
+        margin-bottom: 5px;
+    }
+
+}
+
+.voucherBtnFree {
+    border: none;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #254d64;
+}
+
+.voucTextFree {
+    color: #263142;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.voucTextLowFree {
+    display: flex;
+    color: #263142;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+.selBank-typeahead {
+    position: relative;
+    width: 100%;
+    border: 1px solid #bfbfbf;
+    border-radius: 5px;
+    background-color: white;
+}
+/*START VERIFIED INFORMATION DISPLAY*/
+.VeryfiedCon {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+}
+.VerifiedInformationText {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0;
+}
+/*END VERIFIED INFORMATION DISPLAY*/
+/*start icons withdraw*/
+.icon-withdraw img {
+
+    height: 70px;
+    width: 70px;
+}
+/*end icons withdraw*/
+@media screen and (max-width: 390px) {
+    .headerText {
+        font-size: 14px;
+    }
+}
+
+form {
+    background-color: white;
+    border-radius: 5px;
+
+    margin-top: 5px;
+}
+.form-control {
+    border-radius: 15px;
+}

@@ -1,0 +1,22 @@
+﻿.topupAmountContainer {
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+button {
+    margin: 3px;
+    color: white;
+    background-color: #810202;
+    border-radius: 4px;
+    font-weight: 600;
+    padding: 5px 10px !important;
+}
+button:hover {
+    color: gold;
+}
+
+@media screen and (max-width: 340px) {
+    button {
+        font-size: 12px;
+    }
+}

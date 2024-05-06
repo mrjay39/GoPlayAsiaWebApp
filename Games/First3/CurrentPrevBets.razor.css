@@ -1,0 +1,68 @@
+﻿/* CURRENT BETS*/
+.maxWidth {
+    max-width: 640px;
+    margin: auto;
+}
+
+tr {
+    padding: 2px 0;
+    border-bottom: 1px #242437 solid;
+}
+
+td {
+    line-height: normal;
+    font-size: 13px;
+    color: white;
+    font-weight: 600;
+
+
+}
+/* START CURRENT BETS*/
+table {
+  
+}
+
+a {
+    text-decoration: none;
+}
+
+.label { /*DEFAULT LABEL*/
+    line-height: normal;
+    font-size: 13px;
+    color: black;
+    font-weight: 600;
+    background-color: #b1a77c;
+    margin-top: 5px;
+    width: fit-content;
+    padding: 1px 4px;
+}
+
+.labelActive { /*ACTIVE LABEL*/
+    line-height: normal;
+    font-size: 14px;
+    color: black;
+    font-weight: 600;
+    background-color: #dabc33;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    border: 0px;
+    width: fit-content;
+    padding: 1px 4px 0px;
+}
+
+.winningAmountGreen {
+    color: #00c96b;
+}
+
+.losingAmountRed {
+    color: red;
+}
+
+.betsReturned {
+    color: yellow;
+}
+
+.defaultColor {
+    color: white;
+}
+/* END CURRENT BETS*/

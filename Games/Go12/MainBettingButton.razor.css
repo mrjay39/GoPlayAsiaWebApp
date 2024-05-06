@@ -1,0 +1,357 @@
+﻿
+
+/* #region RED */
+
+/* #region DEFAULT */
+.traingleRed {
+    border: none;
+    color: white;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    height: 93px;
+    position: relative;
+    background: rgb(113, 8, 8);
+    background: linear-gradient(180deg, rgba(134,3,3,1) 0%, rgba(234,48,48,1) 46%, rgba(134,3,3,1) 98%);
+}
+/* #endregion */
+
+/* #region ACTIVATED */
+.trainglebredActive {
+    border: none;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    height: 93px;
+    position: relative;
+    background: linear-gradient(335deg,black,red,black);
+    background-size: 180% 180%;
+    animation: gradient-animationRed 4s ease infinite;
+    color: white !important;
+}
+
+@keyframes gradient-animationRed {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* #endregion */
+/* #region DISABLED */
+.distraingleRed {
+    border: none;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    height: 93px;
+    position: relative;
+    color: white;
+    background-color: #c14b45;
+    pointer-events: none;
+}
+/* #endregion */
+/* #region WINNER */
+.winningNumberRed {
+    border: none;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    height: 93px;
+    position: relative;
+    background-color: #61d407;
+    color: black !important;
+    display: inline-block;
+    border-radius: 5px;
+    animation: blinkingBackgroundred 1s infinite;
+ 
+}
+
+@keyframes blinkingBackgroundred {
+    0% {
+        background-color: #808080;
+    }
+
+    100% {
+        background-color: red;
+    }
+}
+/* #endregion */
+
+
+/* #endregion */
+
+/* #region BLACK */
+
+/* #region DEFAULT */
+.traingleblack {
+    border: none;
+    color: white;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    height: 93px;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(71,71,71,1) 46%, rgba(0,0,0,1) 98%);
+}
+/* #endregion */
+
+/* #region ACTIVATED */
+.traingleblackActive {
+    border: none;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    height: 93px;
+    position: relative;
+    background: linear-gradient(335deg,#000000,#939393 ,#000000);
+    background-size: 180% 180%;
+    animation: gradient-animation 4s ease infinite;
+    color: black !important;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+/* #endregion */
+/* #region DISBALED */
+.distraingleblack {
+    border: none;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    height: 93px;
+    color: white;
+    background-color: grey;
+    pointer-events: none;
+}
+/* #endregion */
+/* #region WINNER */
+.winningNumberBlack {
+    border: none;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    height: 93px;
+    position: relative;
+    background-color: #61d407;
+    color: black !important;
+    display: inline-block;
+    border-radius: 5px;
+    animation: blinkingBackgroundblack 1s infinite;
+}
+
+@keyframes blinkingBackgroundblack {
+    0% {
+        background-color: #808080;
+    }
+
+    100% {
+        background-color: Black;
+        color: white;
+    }
+}
+/* #endregion */
+
+/* #endregion */
+
+
+
+
+
+.mainContainer {
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: #05520d;
+}
+
+
+.redTextMain {
+    font-weight: 600;
+    position: absolute;
+    top: 40%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.redText {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    transform: translate(50%, -50%);
+}
+/*start Disabled css*/
+.dismainContainer {
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: rgb(35, 35, 35);
+    position: relative
+}
+
+
+
+
+.redTextMain {
+    font-size: 19px;
+    font-weight: 600;
+    position: absolute;
+    top: 40%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    line-height: .6 !important;
+}
+
+.redText {
+    margin-top: 9px;
+    font-size: 13px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cancelled {
+    position: absolute;
+    color: red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cancelledText {
+    font-size: 22px;
+    margin: 0;
+    font-weight: 600;
+}
+/*End Disabled css*/
+
+
+/*TOKEN SHOW SELECTED*/
+.absuloteDiv {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+img.tokenImg {
+    height: 23px;
+    width: 45px;
+}
+
+.showSelectedToken {
+    position: relative;
+}
+
+.tokenText {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+.zIndex {
+    z-index: -1 !important;
+}
+.redRelative {
+    position: relative;
+}
+.g12TokenDisplay {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+/*animation Token main bet*/
+.blackIsWon {
+    position: absolute;
+    animation-name: blackIsWon;
+    animation-iteration-count: 2;
+    animation-duration: 1s;
+    left: 55%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+.delay1 {
+    animation-delay: .5s;
+}
+.delay2 {
+    animation-delay: 1.5s;
+}
+.delay3 {
+    animation-delay: 2s;
+}
+@keyframes blackIsWon {
+    from {
+        opacity: 1;
+        display: block;
+        left: 30%;
+        top: 20%;
+        transform: rotateY(-180deg);
+     
+    }
+
+    to {
+        opacity: 1;
+        display: block;
+        width: 44px;
+        top: -50%;
+        left: 80%;
+        transform: rotateY(360deg);
+     
+    }
+}
+.redIsWon {
+    position: absolute;
+    animation-name: redIsWon;
+    animation-iteration-count: 2 ;
+    animation-duration: 1.5s;
+    left: 55%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+
+@keyframes redIsWon {
+    from {
+        opacity: 1;
+        display: block;
+        left: 30%;
+        top: 20%;
+        transform: rotateY(180deg);
+        z-index:2;
+    }
+
+    to {
+        opacity: 1;
+        display: block;
+        width: 44px;
+        top: -50%;
+        left: -10%;
+        transform: rotateY(-180deg);
+        z-index: 2;
+    }
+}
+.winToken {
+ 
+    width:25px;
+    height: 25px;
+}
+/*animation Token main bet*/
+.hiddenText {
+    display:hidden;
+}

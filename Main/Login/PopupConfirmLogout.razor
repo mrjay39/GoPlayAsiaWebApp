@@ -1,0 +1,28 @@
+﻿
+
+
+
+<div class="warningIcon row justify-content-center">
+    <i class="bi bi-exclamation-circle-fill d-block" style="font-size:50px"></i>
+</div>
+<span class="d-block text-center">
+    You are currently logged in...
+</span>
+<span class="d-block text-center">Confirm logout?</span>
+<div class="btnContainer d-flex">
+    <button type="button" class="btnNo btn btn-warning mr-2" @onclick="() => Confirmation(false)">No</button>
+    <button type="button" class="btnYes btn btn-primary " @onclick="() => Confirmation(true)">Yes</button>
+</div>
+@code {
+    public bool Show { get; set; }
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string Class { get; set; } = "btn btn-danger";
+    [Parameter] public string Message { get; set; } = "Are you sure?";
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    public void Confirmation(bool value)
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok(value));
+    }
+
+}

@@ -1,0 +1,59 @@
+﻿@page "/gamerules/bigwin"
+@using GoplayasiaBlazor.Core.Global.Interface;
+@using GoPlayAsiaWebApp.Games.Shared
+@attribute [Authorize(Roles = "1")]
+@inject ICurrentUser icurrentUser
+<TopContent CreditsDisp="@icurrentUser.CreditsDisp" />
+<section>
+    <main class="container">
+        <h5 class="font-weight-bold mt-2">BIGWIN HOUSE RULES</h5>
+        <div class="">
+            <div class="containerVid">
+                <img class="responsive-iframe" src="/img/Bigwin-img.png">
+            </div>
+            <content class="">
+                <div class="d-flex justify-content-center mt-2">
+                    <a href="/games/bigwin" <button class="btn btn-primary text-center d-flex">Back To Game</button></a>
+                </div>
+                <h4 class="mt-5">BIG WIN</h4>
+
+                <p class="mt-2 ">
+                    Big Win is a five canister drop ball game with all canisters having letters A-Z. One ball will be dropped into each of the canisters to rest on one particular letter. Players will bet on all five letters. All winning combinations should be in exact order.  Example: ABCDE
+                </p>
+                <h4 class="">Game Mechanic</h4>
+                <ol>
+                    <ul>
+                        <li>Game: Letters Game</li>
+                        <li>Fixed Bet: Php20</li>
+                        <li>Open Bet:  5mins</li>
+                        <li>Lucky Pick: Players have the option to use computer generated numbers and amount to place their bets</li>
+                        <li>
+                            Grand Jackpot: Php25,000,000 (all five letters in exact order)
+                        </li>
+                        <li>Jackpot: Php1,000,000 (all 4 letters in exact order)</li>
+                        <li>Consolation: Php200 (all 3 letters in exact order)</li>
+                        <li>
+                           Grand Jackpot and Jackpot prizes will be divided among all winners
+                        </li>
+                        <li>
+                           Consolation Prize will be awarded individually to all winners
+                        </li>
+                        <li>
+                           In case of no winner certain percentage will be added to the next draw
+                        </li>
+                    </ul>
+
+
+                </ol>
+            </content>
+            <div class="d-flex justify-content-center pb-5">
+                <a href="/games/gigadraw" <button class="btn btn-primary text-center d-flex">Back To Bigwin Game</button></a>
+            </div>
+
+        </div>
+
+    </main>
+</section>
+@code {
+
+}

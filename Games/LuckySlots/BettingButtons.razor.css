@@ -1,0 +1,80 @@
+﻿.slot-btn {
+    height: 35px;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+.quick-btn span {
+    display: block;
+    height: 16px;
+    position: relative;
+    top: -2px;
+}
+/*=========== Dropdown Button ===========*/
+#bet-container .dropdown-toggle::after {
+    font-size: 18px;
+    position: relative;
+    text-align: right;
+    left: 10px
+}
+
+#bet-container .dropdown-item {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#bet-btn > span {
+    width: 40px;
+    height: 23px;
+    display: inline-flex;
+    position: relative;
+    background: url('./img/lucky-chip.png')right center no-repeat;
+    background-size: auto;
+    background-size: 100% 100%;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin: 0 5px;
+}
+#bet-dropdown .dropdown-menu.show > a {
+    background: url('./img/lucky-chip.png')center center no-repeat;
+    background-size: auto;
+    text-align: center;
+    background-size: 67% 90%;
+    margin-top: 2px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform .2s;
+}
+
+#bet-dropdown .dropdown-menu.show a:hover {
+    color: #e54304;
+    text-decoration: none;
+    background: url('./img/red-chip.png')center center no-repeat;
+    background-size: 67% 90%;
+    transform: scale(1.5);
+}
+
+#bet-container .dropdown-menu {
+    min-width: 5rem;
+    text-align:center;
+}
+#bet-dropdown .dropdown-menu.show {
+    min-width: 1rem;
+    right: 28px;
+}
+#bet-dropdown .dropdown-menu[x-placement^="bottom"], #bet-dropdown .dropdown-menu[x-placement^="left"], #bet-dropdown .dropdown-menu[x-placement^="right"], #bet-dropdown .dropdown-menu[x-placement^="top"] {
+    left: auto !important;
+}
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 375px) {
+    #bet-container .dropdown-toggle::after {
+        left: -2px
+    }
+    #bet-dropdown .dropdown-menu.show[b-i88fbyhc8c] {
+        right: 6px;
+    }
+}

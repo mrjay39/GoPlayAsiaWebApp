@@ -1,0 +1,19 @@
+﻿@if (LetterValue.Length > 0)
+{
+    <div class="marqueeNoDelay text-center mb-2">20 = <span class="animatedPayoutJack">&#8369;@JackpotPrize</span></div>
+}
+else
+{
+    <marquee scrollamount="5">MEGA JACKPOT: <span class="animated">&#8369;@JackpotPrize</span> <span class="ml-3">JACKPOT: &#8369;@MiniJackpotPrize</span><span class="ml-3">CONSOLATION: &#8369;@ConsolationPrize</span></marquee>
+}
+
+
+@code {
+    [Parameter] public String JackpotPrize { get; set; }
+
+    [Parameter] public String MiniJackpotPrize { get; set; }
+
+    [Parameter] public String ConsolationPrize { get; set; }
+
+    [Parameter] public String LetterValue { get; set; }
+}

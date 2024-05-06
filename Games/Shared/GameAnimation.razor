@@ -1,0 +1,14 @@
+﻿<div class="main-container">
+    <img class="animation" src="@GifSrc" />
+</div>
+
+@code {
+    [Parameter] public string GifSrc { get; set; } = "";
+}
+
+<script>
+    function funcAnimation() {
+        var imgSrc = document.querySelector('.animation').src;
+        document.querySelector('.animation').src = imgSrc;
+    }
+</script>

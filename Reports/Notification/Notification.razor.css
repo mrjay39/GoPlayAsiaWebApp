@@ -1,0 +1,35 @@
+﻿
+.tapRead {
+    padding: 5px 10px;
+}
+
+.seenMessage {
+    color: cadetblue;
+}
+
+.mesCon {
+    background-color: #263142;
+    border-radius: 5px;
+}
+
+.mainContainer {
+    max-width: 640px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+@media only screen and (max-width: 600px) {
+    .winDiff {
+        margin-top: 15px;
+    }
+
+    .lossDiff {
+        color: #cf2626;
+        margin-top: 15px;
+    }
+    .setCon {
+        width: 360px;
+        margin: 0 auto;
+        padding: 0;
+    }
+}

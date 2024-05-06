@@ -1,0 +1,264 @@
+﻿
+
+/* #region BOTH */
+.withBet {
+    visibility: hidden;
+}
+    p {
+        line-height: .9;
+    }
+
+    .borderGold {
+        border: 1px solid #6d6d6d;
+    }
+
+    .tieRelative {
+        position: relative;
+        padding-top: 3px;
+    }
+
+    .smallHeader {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .payout {
+        font-size: 15px !important;
+    }
+
+    .betAmount {
+        font-size: 11px;
+    }
+
+    .tokenSelectedBet {
+        position: relative;
+        height: 20px;
+        width: 40px;
+    }
+
+.selectedAmountToken {
+    position: absolute;
+    z-index: 1;
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    height: 100%;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 0;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+/* #endregion */
+
+/* #region PLAYER */
+
+/* #region DEFAULT */
+.reds2Player {
+    outline-offset: -2px;
+    border-radius: 5px;
+    color: white;
+    height: 60px;
+    margin: 2.5px;
+    outline: 2px solid #9e0707 !important;
+    background-color: #bd0b0b;
+    border: solid #f10000 2px;
+    box-shadow: 0px 10px 10px #b30b0b inset, 0px 5px 10px rgba(196, 16, 16, 0.63), 0px -10px 10px #ea1313 inset;
+}
+/* #endregion */
+
+    /* #region ACTIVATED */
+.reds2PlayerActivated {
+    color: black;
+    margin-right: 1px;
+    margin-bottom: 2.5px;
+    border-radius: 5px;
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+}
+    /* #endregion */
+
+    /* #region DISABLED */
+        .disReds2Player {
+            pointer-events: none;
+            background-color: gray;
+            color: white;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+        }
+    /* #endregion */
+
+    /* #region WINNER */
+        .winReds2Player {
+            margin-right: 2px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+            pointer-events: none;
+            margin: 1px;
+            animation: activeBet 1s infinite;
+        }
+        @keyframes activeBet {
+            from {
+                background-color: yellow;
+                color: black !important;
+            }
+
+            to {
+                background-color: rgb(69, 219, 18);
+                color: black !important;
+            }
+        }
+    /* #endregion */
+
+    /* #region TOKEN DISPLAY */
+        .additionaltokencontainer {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 1%;
+            left: 50%;
+            transform: translate(-50%, -25%);
+            animation-name: additionaltokenAnimation;
+            animation-duration: var(--animation);
+        }
+
+        @keyframes additionaltokenAnimation {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -145%;
+                left: 180%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 12%;
+                left: 32%;
+            }
+        }
+    /* #endregion */
+
+/* #endregion */
+
+/* #region BANKER */
+
+    /* #region DEFAULT */
+        .reds2Banker {
+            outline-offset: -2px;
+            border-radius: 5px;
+            color: white;
+            height: 60px;
+            margin: 2.5px;
+            outline: 2px solid #0515c9;
+            border: 2px solid #102ab7;
+            background-color: #0816b3;
+            box-shadow: 0px 10px 10px #0b179f inset, 0px 5px 10px rgba(22, 74, 232, 0.41), 0px -10px 10px #1225ff inset;
+        }
+    /* #endregion */
+
+    /* #region ACTIVATED */
+        .reds2BankerActivated {
+            height: 60px;
+            color: black;
+            margin: 2px;
+            border-radius: 5px;
+            background-color: rgb(69, 219, 18);
+            box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+        }
+    /* #endregion */
+
+    /* #region DISABLED */
+        .disReds2Banker {
+            pointer-events: none;
+            background-color: gray;
+            color: white;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+        }
+    /* #endregion */
+
+    /* #region WINNER */
+        .winReds2Banker {
+            margin-right: 2px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+            pointer-events: none;
+            animation: activeBet 1s infinite;
+        }
+    /* #endregion */
+
+    /* #region TOKEN DISPLAY */
+        .additionaltokencontainerBanker {
+            position: absolute;
+            bottom: 1%;
+            left: 50%;
+            transform: translate(-50%, -25%);
+            animation-name: additionaltokenAnimationBanker;
+            animation-duration: var(--animation);
+        }
+
+        @keyframes additionaltokenAnimationBanker {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -145%;
+                left: -20%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 13%;
+                left: 33%;
+            }
+        }
+    /* #endregion */
+
+/* #endregion */
+
+/* #region MOBILE */
+    @media only screen and (max-width: 600px) {
+
+        /* #region TOKEN ANIMATION (PLAYER) */
+        @keyframes additionaltokenAnimation {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -145%;
+                left: 175%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 13%;
+                left: 19%;
+            }
+        }
+        /* #endregion */
+
+        /* #region TOKEN ANIMATION (BANKER) */
+        @keyframes additionaltokenAnimationBanker {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -145%;
+                left: -30%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 14%;
+                left: 21%;
+            }
+        }
+        /* #endregion */
+    }
+/* #endregion */

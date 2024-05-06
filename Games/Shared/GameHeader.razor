@@ -1,0 +1,99 @@
+﻿@using GoplayasiaBlazor.Core.Global.Interface
+@using GoPlayAsiaWebApp.ViewModels
+@inject ICurrentUser iCurrentUser
+@inject GameHeaderViewModel gameHeaderViewModel
+
+<container>
+    <section class="main">
+
+        <!-- STREAM -->
+ 
+        <div class="videoContainer">
+            @if (Token != string.Empty)
+            {
+                //use webrtc
+                 <iframe src="https://stream.goplayasia.com/goplay/play.html?nc=12222022&id=@StreamId&mute=false&autoplay=true&token=@Token&playOrder=webrtc" frameborder="0" allowfullscreen allow="autoplay; fullscreen"></iframe>
+            }
+            <CountdownTimer timer="@RoundTimer" maxvalue="@MaxRoundTimer" RoundStatusString="@RoundStatusString" />
+            <GameAnimation GifSrc="@GifSrc" />
+        </div>
+
+
+        <!-- GAME HEADER -->
+        <div class="newGameHeaderContainer d-flex p-1">
+            <!-- MENU -->
+            <button class="col p-0 d-flex justify-content-center align-items-center">
+                <div class="dropdown p-0">
+                    <div class="menu-btn" data-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-bars" style="color: gold; font-size: 21px;"></i></div>
+                    <div class="dropdown-menu">
+                        <ul style="list-style-type: none;" class="p-0 m-0">
+                            <li><span class="userFullName text-light d-flex">@iCurrentUser.FullName</span></li>
+                            <li><span class="userFullName text-light d-flex">@iCurrentUser.MobileNumber</span></li>
+                            <li class="icon mt-3"><a class="dropdown-item" href="/lobby"><i class="bi bi-controller mr-2 mt-1"></i>Games</a></li>
+                            <li class="icon"><a class="dropdown-item" href="/bethistory"><i class="bi bi-clock-history mr-2"></i>History</a></li>
+                            <li class="icon"><a class="dropdown-item" href="/credit"><i class="bi bi-wallet mr-2"></i>Wallet</a></li>
+                            <li class="icon"><a class="dropdown-item" href="/setting"><i class="bi bi-incognito mr-2"></i>Settings</a></li>
+                            <li class="icon"><a class="dropdown-item" href="/gamerules" @onclick:preventDefault @onclick="popGamerules"><i class="bi bi-info-circle-fill mr-2"></i>Game Rules</a></li>
+                            <li class="icon"><a class="dropdown-item" @onclick:preventDefault @onclick="logout" href="/"><i class="bi bi-box-arrow-right mr-2"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </button>
+
+            <!-- CATEFORY -->
+            <button class="col p-0 d-flex justify-content-center align-items-center" disabled="@IsDisabledCategory">
+                <div class="dropdown p-0">
+                    <div class="menu-btn" data-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-layer-group" style="color: gold; font-size: 21px;"></i></div>
+                    <div class="dropdown-menu">
+                        <ul style="list-style-type: none;" class="p-0 m-0">
+                            <li class=" userFullName text-light d-flex font-weight-bolder justify-content-center align-items-center">PLAYER CATEGORY</li>
+
+                            @if (PlayerCategory != null)
+                            {
+                                
+                       
+                                switch (iCurrentUser.CategoryId)
+                                {
+                                    case 1:
+                                        cssvar = "activeStarter";
+                                        break;
+
+                                    case 2:
+                                        cssvar = "activeHr";
+                                        break;
+
+                                    case 3:
+                                        cssvar = "activeVip";
+                                        break;
+                                }
+                               
+                                <Virtualize Items="PlayerCategory" Context="_category">
+                                    <li class="icon"><a class="dropdown-item  d-flex justify-content-center p-0 @(_category.CategoryId == iCurrentUser.CategoryId ? @cssvar : "")" @onclick:preventDefault @onclick='(() => setPlayerCategory(_category.CategoryId))'>@_category.Category </a></li>
+                                </Virtualize>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </button>
+
+
+            <!-- TOKEN -->
+            <div class="col-6 p-0 d-flex justify-content-center align-items-center userToken mr-1">
+                <img src="/img/tokenLogoIcon.png" class="d-flex mr-1" style="height: 20px;" />
+                <p class="currentToken d-flex align-items-center m-0 text-light"><strong>@iCurrentUser.CreditsDisp</strong></p>
+            </div>
+
+            <!-- RECHARGE -->
+            <button class="col p-0 d-flex justify-content-center align-items-center" @onclick="onclick_recharge"> <img src="/img/cashinThunder.png" class="d-flex" style="height: 23px;" /></button>
+
+            <!-- LOBBY -->
+            <button class="col p-0 d-flex justify-content-center align-items-center" @onclick="onclick_Lobby"><i class="bi bi-house-door-fill d-flex justify-content-center mr-1" style=" font-size: 23px;"></i></button>
+        </div>
+    </section>
+</container>
+
+@code {
+    public string cssvar { get; set; } = "cssdef";
+
+
+}

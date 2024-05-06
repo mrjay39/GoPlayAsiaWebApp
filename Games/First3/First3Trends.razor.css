@@ -1,0 +1,292 @@
+﻿/* running odds */
+.v2-headings-prev {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #303030;
+    border-top: solid 2px white;
+    border-bottom: solid 2px white;
+    max-width: 640px;
+}
+.rodraw {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid white;
+    font-size: 20px;
+    color: white;
+    background: #7f6000;
+    justify-content: center;
+    align-content: center;
+    margin: 2px;
+
+}
+
+.rogold {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid white;
+    font-size: 20px;
+    color: white;
+    margin: 2px;
+    background-color: #ff2d2d;
+    justify-content: center;
+    align-content: center;
+}
+
+.rocancelled {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid white;
+    font-size: 20px;
+    color: white;
+    margin: 2px;
+    background: #808080;
+    justify-content: center;
+    align-content: center;
+}
+
+.rosilver {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid white;
+    font-size: 20px;
+    color: white;
+    margin: 2px;
+    background-color: #5275bb;
+    justify-content: center;
+    align-content: center;
+}
+
+/*.rodraw {
+    margin-top: 2px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background: #ff6a00;
+    padding: 8px 0 0 5px;
+    margin-bottom: 5px;
+}*/
+
+.romainCon {
+    max-width: 650px;
+    margin: 0 auto;
+    overflow: hidden;
+    overflow: auto;
+}
+
+.roinnerCon {
+    height: min-content;
+    max-width: 50px;
+    margin-right: 3px;
+    padding: 0;
+}
+
+
+/* fixed */
+
+.draw {
+    line-height: normal;
+    margin: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 9px;
+    color: black;
+    text-align: center;
+    background: #7f6000;
+    justify-content: center;
+    align-content: center;
+}
+
+.gold {
+    line-height: normal;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 9px;
+    color: black;
+    background-color: #eebc1d;
+    justify-content: center;
+    align-content: center;
+    margin: 2px;
+}
+
+.cancelled {
+    line-height: normal;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 9px;
+    color: black;
+    text-align: center;
+    background: #808080;
+    justify-content: center;
+    align-content: center;
+    margin: 2px;
+}
+
+.silver {
+    line-height: normal;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 9px;
+    color: white;
+    text-align: center;
+    background: #0b3cdc;
+    margin: 2px;
+    justify-content: center;
+    align-content: center;
+}
+
+body {
+    margin: 40px;
+    height: 480px;
+}
+
+.box {
+    background-color: lightgrey;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.wrapper {
+    width: 40px;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(5, 50px);
+    grid-auto-flow: column;
+}
+
+.mainCon {
+    max-width: 650px;
+    margin: 0 auto;
+    overflow: hidden;
+    overflow: auto;
+}
+
+
+.innerCon {
+    height: min-content;
+    max-width: 22px;
+}
+
+/*START LEGEND STYLE*/
+.legendLeft {
+    background-color: #0b3cdc;
+    color: white;
+    border-radius: 15px;
+    padding: 2px 8px;
+}
+
+.legendRight {
+    background-color: #67bbe7;
+    color: white;
+    border-radius: 15px;
+    margin: 0;
+    padding: 2px 8px;
+}
+
+.legendDraw {
+    background-color: #7f6000;
+    color: white;
+    border-radius: 15px;
+    margin: 0;
+    padding: 2px 15px;
+}
+
+.legendCancel {
+    background-color: #808080;
+    color: white;
+    border-radius: 15px;
+    margin: 0;
+    padding: 2px 8px;
+}
+
+.legend {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3px;
+    padding-left: 0px;
+}
+
+.trendHeader {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+h2.trendHeader {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+    /*padding: 0 0px;*/
+    font-weight: 600;
+}
+
+.trendFooter {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    padding-left: 0px;
+}
+
+h2.trendFooter {
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    margin-top: 5px;
+    padding: 5px;
+    padding-left : 0px;
+}
+
+/*END LEGEND STYLE*/
+
+@media screen and (max-width: 600px) {
+  
+}
+.newLegend {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 13px;
+}
+
+.trends {
+    background-color: #1fba78;
+    font-weight: 600;
+}
+
+.playerL {
+    background-color: #ffac00;
+    color: white;
+    font-weight: 600;
+}
+
+.bankerL {
+    background-color: #185adc;
+    color: white;
+    font-weight: 600;
+}
+
+.tieL {
+    background-color: #e64545;
+    font-weight: 600;
+    color: white;
+}
+
+.cancelledL {
+    background-color: grey;
+    font-weight: 600;
+}

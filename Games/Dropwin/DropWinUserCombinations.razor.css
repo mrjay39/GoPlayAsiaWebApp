@@ -1,0 +1,111 @@
+﻿.mainCon {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* START USER COMBINATION HEADING */
+.UserCombinationTableHeading {
+    font-size: 11px;
+    font-weight: 600;
+    color: #FFF;
+    background-color: #161bdc;
+    margin: 1px;
+    line-height: 14px;
+    padding: 4px 0;
+}
+
+.CombinationTopLabel {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 4px !important;
+    padding: 0 10px !important;
+}
+/* END USER COMBINATION HEADING */
+
+/* START PREVIOUS USER COMBINATION HEADING */
+.PreviousBorderTop {
+    border-top: 2px solid #FFF;
+    margin-top: 10px !important;
+}
+
+.PrevCombinationTopLabel {
+    font-size: 11px;
+}
+.PrevResultValue {
+    font-size: 15px;
+    text-transform: uppercase;
+}
+/* END PREVIOUS USER COMBINATION HEADING */
+/* GAME USER COMBINATION LIST */
+.ticketMainDiv {
+    margin: 0 auto;
+    padding: 0;
+    max-height: calc(24px * 5);
+    overflow: hidden;
+    overflow: auto;
+}
+.ticketMainDivMax {
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    overflow: auto;
+}
+.f2row, .f3row, .a4row {
+    margin: 1px;
+}
+
+.ticketCon {
+    display: flex;
+}
+
+.ticketNumf2 {
+    margin: 0 auto;
+    padding: 0;
+    font-weight: 600;
+    max-height: 52px;
+    border: white 1px solid;
+}
+
+.ticketNumf3 {
+    display: flex;
+    padding: 0;
+    font-weight: 600;
+    max-height: 52px;
+    border: white 1px solid;
+}
+
+.ticketNumA4 {
+    margin: 0 auto;
+    padding: 0;
+    font-weight: 600;
+    max-height: 52px;
+    border: white 1px solid;
+}
+
+.betAmo {
+    text-align: center;
+    margin: 0;
+    padding: 0 5px;
+    font-size: 14px;
+    text-align: center;
+    border: solid 1px white;
+    width: 45px;
+    min-width: 45px;
+    max-width: 45px;
+    max-height: 26px;
+    line-height: 24px;
+}
+
+.winningAmo {
+    text-align: center;
+    padding: 0 5px;
+    margin: 0;
+    font-weight: 600;
+    font-size: 12px;
+    border: solid 1px white;
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+}
+/*END GAME TICKET*/

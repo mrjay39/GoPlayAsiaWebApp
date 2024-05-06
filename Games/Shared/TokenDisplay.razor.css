@@ -1,0 +1,49 @@
+﻿.additionaltokencontainer {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -25%);
+    animation-name: additionaltokenAnimation;
+  
+}
+
+@keyframes additionaltokenAnimation {
+    from {
+        transform: rotateY(-360deg);
+        z-index: 1;
+        bottom: -200%;
+        left: 100%;
+    
+    }
+
+    to {
+        transform: rotateY(360deg);
+        z-index: 1;
+        bottom: 6%;
+        left: 29%;
+      
+    }
+}
+
+img.tokenSelectedBet {
+    position: relative;
+ 
+}
+.selectedAmountToken {
+    position: absolute;
+    z-index: 1;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+}
+p {
+    margin-bottom: 0 !important;
+}

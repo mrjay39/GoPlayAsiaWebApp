@@ -1,0 +1,66 @@
+﻿<div class="@cardCol ">
+        <div class="cardValue d-flex justify-content-center align-items-center font-weight-bolder" style="color: @cardColor">@cardValue</div>
+        <div class="d-flex justify-content-center align-items-center">
+            <img class="cardSuit " src="@imageStr" style="width: 10px; height:12px" />
+        </div>
+</div>
+
+
+
+
+@code {
+    [Parameter]
+    public string cardCol { get; set; } = "default";
+    [Parameter]
+    public string suite { get; set; }
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+    [Parameter]
+    public string cardValue { get; set; }
+    public string imageStr { get; set; }
+    public string cardColor { get; set; }
+
+
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        return;
+        suite = cardValue.Substring(0, 1);
+        switch (suite)
+        {
+            case "h":
+                imageStr = "img/heart.png";
+                cardColor = "red";
+                break;
+            case "d":
+                imageStr = "img/diamond.png";
+                cardColor = "red";
+                break;
+            case "s":
+                imageStr = "img/spade.png";
+                cardColor = "black";
+                break;
+            case "c":
+                imageStr = "img/club.png";
+                cardColor = "black";
+                break;
+      
+
+        }
+        switch (cardCol)
+        {
+         
+            case "active":
+                cardCol = "CurrentCardContainerActive";
+                break;
+            case "default":
+                cardCol = "CurrentCardContainer";
+                break;
+            case "win":
+                cardCol = "CurrentCardContainerWin";
+                break;
+        }
+    }
+ 
+}

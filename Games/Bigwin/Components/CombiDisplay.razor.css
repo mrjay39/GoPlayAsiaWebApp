@@ -1,0 +1,69 @@
+﻿/*start selected Combination PlaceHolder*/
+#placeHolderContainer {
+    position: relative;
+    top: -4px;
+}
+
+.selectedCombiPlaceHolder {
+    margin: 0px 8px;
+    position: relative;
+    top: -4px;
+}
+
+.selectedPlaceholder1 {
+    margin: 5px;
+    height: 43px;
+    width: 43px;
+    border-radius: 50%;
+    background: #FBED79;
+}
+
+.resultPlaceHolder {
+    margin: 3px;
+    height: 5px;
+    width: 55px;
+    border-radius: 50%;
+    background: rgb(255,178,106);
+    background: linear-gradient(180deg, rgba(255,178,106,1) 0%, rgba(185,124,67,1) 80%);
+}
+
+.selCombi1, .selCombi2, .selCombi3, .selCombi4 {
+    margin-top: 0px;
+    height: 43px;
+    width: 43px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid #F3D459;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.resCombi1, .resCombi2, .resCombi3, .resCombi4 {
+    margin-top: 3px;
+    height: 43px;
+    width: 43px;
+    background-color: limegreen;
+    border-radius: 50%;
+    border: 1px solid #3d0002;
+    font-size: 30px;
+    font-weight: 600;
+    color: #3d0002;
+}
+
+.blockContainer1, .blockContainer2, .blockContainer3, .blockContainer4 {
+    position: relative;
+}
+
+.traiangel {
+    position: absolute;
+    bottom: -13px;
+    left: -2px;
+}
+
+    .traiangel img {
+        margin-left: 5px;
+        margin-top: -12px;
+        width: 85%;
+    }
+
+/*end selected Combination PlaceHolder*/

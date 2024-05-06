@@ -1,0 +1,29 @@
+﻿
+<div class="warningIcon row justify-content-center">
+    <i class="bi bi-exclamation-circle-fill d-block" style="font-size:50px"></i>
+</div>
+
+<div class="btnCon row d-flex">
+    <button type="button" href="Credit" class="col btnAdd btn btn-warning" @onclick="() => AddCredit()">Add Credit</button>
+    <button type="button" class="col btnClose btn btn-primary" @onclick="() => Confirmation(true)">Cancel</button>
+</div>
+@inject NavigationManager NavigationManager;
+@Message
+@code {
+    public bool Show { get; set; }
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string Class { get; set; } = "";
+    [Parameter] public string Message { get; set; } = "";
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    public void AddCredit()
+    {
+        NavigationManager.NavigateTo("credit");
+        BlazoredModal.CloseAsync();
+    }
+    public void Confirmation(bool value)
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok(value));
+    }
+
+}

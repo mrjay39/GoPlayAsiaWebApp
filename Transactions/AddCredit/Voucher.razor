@@ -1,0 +1,19 @@
+﻿
+
+<section>
+    @if (activeVoucher is not null)
+    {
+        <a @onclick='(() => showApplicableVoucher())'>
+            <div class="voucherBtn form-group d-flex row mt-1 mb-2 p-2">
+                @*<div class="voucherBtn col"><i class="voucherIcon bi bi-ticket-perforated btn"> </i></div>*@
+             @*   <div class="voucText col d-flex align-items-center text-left">@activeVoucher.Code</div>*@
+                <div class="voucTextWhite  col d-flex align-items-center">@((MarkupString) @activeVoucher.Description)</div>
+                @*<i class="CaretRigth col-1 bi bi-chevron-right d-flex align-items-center justify-content-center"></i>*@
+            </div>
+        </a>
+     @*   <div class="voucherBtnFree d-flex row mt-1 p-2">
+            <div class="voucTextFree col text-left">Total Requested Topup</div>
+            <div class="voucTextLowFree col">@String.Format("{0:#,##0}",@Amount + @activeVoucher.Amount)</div>
+        </div>*@
+    }
+</section>

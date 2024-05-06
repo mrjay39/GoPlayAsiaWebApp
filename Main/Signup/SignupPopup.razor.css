@@ -1,0 +1,13 @@
+﻿
+.mainContainer {
+    background-color: white;
+    margin: 0 auto;
+    padding: 5px;
+    max-width: 360px;
+    border-radius: 5px;
+}
+.buttonCon {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+}

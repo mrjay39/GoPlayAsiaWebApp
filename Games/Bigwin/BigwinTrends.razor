@@ -1,0 +1,35 @@
+﻿@using System.Collections.ObjectModel
+@using static GoplayasiaBlazor.Models.Constants.Settings
+<h6 class="trendsHeader navbar text-center mb-0 p-0"><span class="col">GAME RESULTS</span></h6>
+@if (TrendsDisplay != null)
+{
+    <div id="bigWinResultsContainer" class="container trends-parent">
+        <div class="container-fluid p-0">
+            <Virtualize Items="TrendsDisplay" Context="_trends">
+                <div class="trends-child">
+                    <Virtualize Items="_trends.CurrentList" Context="_trenditems">
+                        <p class="@(_trenditems.RoundStatus == (int)RoundStatus.Cancelled ? "canceled":"")">
+                            <span>G# @_trenditems.TrendsNumberDisplay</span>
+                            <span class="@(_trenditems.RoundStatus == (int)RoundStatus.Cancelled ? "canceled":"no-display")">Cancelled</span>
+                            @if (_trenditems.NonCardsResultDisplay.Length >= 5)
+                            {
+                                <span>@_trenditems.NonCardsResultDisplay.Substring(0, 1)</span>
+                                <span>@_trenditems.NonCardsResultDisplay.Substring(1, 1)</span>
+                                <span>@_trenditems.NonCardsResultDisplay.Substring(2, 1)</span>
+                                <span>@_trenditems.NonCardsResultDisplay.Substring(3, 1)</span>
+                                <span>@_trenditems.NonCardsResultDisplay.Substring(4, 1)</span>
+                            }
+                        </p>
+                    </Virtualize>
+                </div>
+            </Virtualize>
+        </div>
+    </div>
+}
+
+<div class="betTrendsCon">
+    @if (RoundStatusString == "CANCELED")
+    {
+        <h6 class="cancelledGame mt-2 mb-2 font-weight-bold text-center">GAME CANCELLED, BETS RETURNED</h6>
+    }
+</div>

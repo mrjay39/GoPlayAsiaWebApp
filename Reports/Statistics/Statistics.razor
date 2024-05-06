@@ -1,0 +1,60 @@
+﻿@using GoplayasiaBlazor.Core.Global.Interface
+@inject ICurrentUser iCurrentUser
+@implements IAsyncDisposable
+
+<table class="StatisticMaincontainer row"> 
+    <thead class="header row w-100">
+        <tr class="headerContainer col">
+            <th class="status col">Current Token</th>
+            @if (_statisticsViewModel.Statistic != null)
+            {
+                <th class="currentTokenCon col">@_statisticsViewModel.Statistic.CurrentTokenString</th>
+            }
+            else
+            {
+                <th class="currentTokenCon col">@iCurrentUser.CreditsDisp</th>
+            }
+        </tr>
+    </thead>
+    <tbody class="statcon mt-3">
+        @if (_statisticsViewModel.Statistic != null)
+        {
+            <tr class="row text-center mt-1 p-0 text-light mr-0">
+                <td class="col ml-3">Total Deposit</td>
+                <td class="col">@_statisticsViewModel.Statistic.TotalDepositString</td>
+                <td class="col"></td>
+            </tr>
+            <tr class="row text-center mt-1 p-0 text-light mr-0">
+                <td class="col ml-3">Total Win</td>
+                <td class="col ml-2">@_statisticsViewModel.Statistic.TotalWinString</td>
+                <td class="col ml-2"></td>
+            </tr>
+            <tr class="row text-center mt-1 p-0 text-light mr-0">
+                <td class="col ml-3">Total Loss</td>
+                <td class="col ml-2"></td>
+                <td class="col ml-2">@_statisticsViewModel.Statistic.TotalLossString</td>
+            </tr>
+            <tr class="row text-center mt-1 p-0 text-light mr-0">
+                <td class="col ml-3">Total Withdrawal</td>
+                <td class="col"></td>
+                <td class="totalWithdraw col">@_statisticsViewModel.Statistic.TotalWithdrawalString</td>
+            </tr>
+            <tr class="row text-center mt-5 p-0 text-light mr-0">
+                <td class="col ml-3">Difference (Win-Loss)</td>
+                <td class="col"></td>
+                @if (@_statisticsViewModel.Statistic.DifferenceLabelColor == "Red")
+                {
+                    <td class="lossDiff col">@_statisticsViewModel.Statistic.DifferenceString</td>
+                }
+                else
+                {
+                    <td class="winDiff col">@_statisticsViewModel.Statistic.DifferenceString</td>
+                }
+            </tr>
+        }
+        else
+        {
+            <span>Loading </span>
+        }
+    </tbody>
+</table>

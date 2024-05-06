@@ -1,0 +1,35 @@
+﻿.mainContainer {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 640px;
+}
+
+.container {
+    padding: 5px !important;
+    max-width: 100%;
+    min-height: 100vh;
+    background: rgb(88,14,15);
+    background: linear-gradient(0deg, rgba(88,14,15,1) 62%, rgba(26,8,8,1) 98%);
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    background-color: #ff6a00;
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+
+.nav-tabs .nav-link {
+    color: white;
+}
+
+    .nav-tabs .nav-link:hover {
+        color: white;
+    }
+
+.maintab {
+    padding: 5px;
+    margin-top: 0;
+    width: 320px;
+    height: 100%;
+}

@@ -1,0 +1,287 @@
+﻿@page "/setting"
+@page "/verifystatus"
+@using GoPlayAsiaWebApp.Games.Shared
+@using GoplayasiaBlazor.Models
+@using GoPlayAsiaWebApp.Shared.Popup  
+@using Blazored.Typeahead
+
+@implements IAsyncDisposable
+@inject NavigationManager MyNavigationManager
+@attribute [Authorize(Roles = "1")]
+
+<TopContent CreditsDisp="@_settingsViewModel._icurrentUser.CreditsDisp" />
+
+<h4 class="text-center text-light mt-2">Settings</h4>
+@if (_settingsViewModel.UserInfo != null)
+{
+    <div hidden="@hideSettings" class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="text-center">
+
+                    <button class="nameHeader btn btn-link w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <i class="bi bi-person-circle bi-lg"></i>
+                        ACCOUNT INFORMATION
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label>User Name</label>
+                            <input class="form-control" type="text" value="@_settingsViewModel.UserInfo.Username" placeholder="User Name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input class="form-control" type="text" @bind-value="_settingsViewModel.UserInfo.EmailAddress" placeholder="Email Address" @oninput="onchange_email">
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile Number</label>
+                            <input class="form-control" type="text" value="@_settingsViewModel.UserInfo.MobileNumber" placeholder="09XXXXXXXXX" disabled>
+                        </div>
+
+                        <input class="w-100 @strDisBtnUpdateAcc" type="button" @onclick="UpdateAccount" value="Update Account" disabled="@disBtnUpdateAcc" />
+                        @*<input class="btn btn-danger text-light d-block w-100 mt-2" type="button" @onclick="DeactivateAccount" value="Deactivate Account"/>*@
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="text-center">
+
+                    <button class="nameHeader btn btn-link w-100" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="bi bi-info-circle-fill"></i>
+                        PROFILE INFORMATION
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input class="form-control" type="text" value="@_settingsViewModel.UserInfo.FirstName" placeholder="First Name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Middle Name</label>
+                            <input class="form-control" type="text" value="@_settingsViewModel.UserInfo.MiddleName" placeholder="Middle Name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input class="form-control" type="text" value="@_settingsViewModel.UserInfo.LastName" placeholder="Last Name" disabled>
+                        </div>
+                        <div class="bdayField form-group">
+                            <label>Birthdate (mm/dd/yyy)</label>
+                            <div class="form-group row m-0 mb-3">
+                                <input class="form-control col " type="number" value="@_settingsViewModel.UserInfo.DateOfBirth?.ToString("MM")" placeholder="MONTH (01-12)" disabled>
+                                <input class="form-control col mr-2 ml-2" type="number" value="@_settingsViewModel.UserInfo.DateOfBirth?.ToString("dd")" placeholder="DAY (01-31)" disabled>
+                                <input class="form-control col " type="number" value="@_settingsViewModel.UserInfo.DateOfBirth?.ToString("yyyy")" placeholder="YEAR" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Nature of Work</label>
+                            <BlazoredTypeahead SearchMethod="SearchNatureofwork" EnableDropDown="true" TItem="NatureOfWorkModel" TValue="NatureOfWorkModel" Value="selectedNatureofwork" ValueChanged="selectedNatureOfWorChanged" ValueExpression="@(() => selectedNatureofwork)" placeholder="SELECT NATURE OF WORK">
+                                <SelectedTemplate Context="NatureOfWorkId">
+                                    @{
+                                        var selectNatureofwork = LoadSelNatureOfWork(NatureOfWorkId.Id);
+
+                                        <text>@selectNatureofwork?.Name</text>
+                                    }
+                                </SelectedTemplate>
+                                <ResultTemplate Context="natureofwork">
+                                    @natureofwork.Name
+                                </ResultTemplate>
+                            </BlazoredTypeahead>
+                        </div>
+                        <!--
+                        <div class="form-group">
+                            <label>Specify (Other Nature of Work)</label>
+                            <input class="form-control" type="text" @bind-value="_settingsViewModel.UserInfo.OtherNatureOfWork" placeholder="Other Nature of Work" disabled="@disNatureofWork" @oninput="onchange_natureofwork">
+                        </div> 
+                        -->
+                        <div class="form-group">
+                            <label>Source of Income</label>
+                            <BlazoredTypeahead SearchMethod="SearchSourcofIncome" EnableDropDown="true" TItem="SourceOfIncomeModel" TValue="SourceOfIncomeModel" Value="selectedSourceofincome" ValueChanged="selectedSourceOfIncomeChanged" ValueExpression="@(() => selectedSourceofincome)" placeholder="SELECT SOURCE OF INCOMCE">
+                                <SelectedTemplate Context="SourceOfIncomeId">
+                                    @{
+                                        var selectSourceofincomce = LoadSelSourceOfIncome(SourceOfIncomeId.Id);
+
+                                        <text>@selectSourceofincomce?.Name</text>
+                                    }
+                                </SelectedTemplate>
+                                <ResultTemplate Context="sourceofincome">
+                                    @sourceofincome.Name
+                                </ResultTemplate>
+                            </BlazoredTypeahead>
+                        </div>
+                        <!--
+                        <div class="form-group">
+                            <label>Specify (Other Source of Income)</label>
+                            <input class="form-control" type="text" @bind-value="_settingsViewModel.UserInfo.OtherSourceOfIncome" placeholder="Other Source of Income" disabled="@disSourceofIncome" @oninput="onchange_sourceofincome">
+                        </div>
+                        <div class="form-group">
+                            <label>Place of Birth</label>
+                            <input class="form-control" type="text" @bind-value="_settingsViewModel.UserInfo.PlaceOfBirth" placeholder="Place of Birth" @oninput="onchange_birthpalce">
+                        </div>
+                        -->
+
+                        <input class="w-100 @strDisBtnUpdateProf" type="button" @onclick="UpdateProfile" value="Update Profile" disabled="@disBtnUpdateProf" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="text-center">
+
+                    <button class="nameHeader btn btn-link w-100" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        <i class="bi bi-eye"></i>
+                        PASSWORD
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label>Old Password</label>
+                            <input class="form-control" type="text" @bind-value="_settingsViewModel.OldPassword" placeholder="Old Password">
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input class="form-control" type="text" @bind-value="_settingsViewModel.NewPassword" placeholder="New Password">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm New Password</label>
+                            <input class="form-control" type="text" @bind-value="_settingsViewModel.ConfirmNewPassword" placeholder="Confirm New Password" @oninput="onchange_confirmpass">
+                            <span class="errorMessage" hidden="@hideConfirmPass">@msgConfirmPass</span>
+                        </div>
+
+                        <input class="btn btn-primary d-block w-100" type="button" @onclick="UpdatePassword" value="Update Password" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="text-center">
+                    <button class="nameHeader btn btn-link w-100" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        <i class="bi bi-person-bounding-box"></i>
+                        IDENTIFICATION
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseFour" class="collapse idHolder" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label>Profile Image</label>
+                            <img class="img-fluid" src="@_settingsViewModel.UserInfo.ProfileImageFullPath" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Government ID</label>
+                            <img class="img-fluid" src="@_settingsViewModel.UserInfo.GovernmentImageFullPath" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Identification Number</label>
+                            <input class="form-control" type="text" value="@_settingsViewModel.UserInfo.IdentificationNumber" placeholder="Old Password" disabled>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h2 class="mb-0 text-center">
+                    <button class="nameHeader btn btn-link text-light w-100" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" @onclick="logout">
+                        <i class="bi bi-box-arrow-right text-light"></i>
+                        LOGOUT
+                    </button>
+                </h2>
+            </div>
+        </div>
+
+    </div>
+    <!--START VERIFIED-->
+
+    <div hidden="@hideVerifiedStatus" class="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                @*<h2 class="text-center">
+
+                    <button class="nameHeader btn btn-link w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <i class="bi bi-person-circle bi-lg"></i>
+                        ACCOUNT INFORMATION
+                    </button>
+                </h2>*@
+            </div>
+
+            <div id="collapseOne" aria-labelledby="headingOne">
+                <div class="justify-content-center d-flex mb-0 mt-2">
+                    <h3 class="mb-0"> <i class="bi bi-check-circle-fill" style="color:#9bcc32; font-size:25px;"></i>Verified</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+
+                        @*      <input class="w-100 @strDisBtnUpdateAcc" type="button" @onclick="UpdateAccount" value="Update Account" disabled="@disBtnUpdateAcc"/>*@
+                        @*<input class="btn btn-danger text-light d-block w-100 mt-2" type="button" @onclick="DeactivateAccount" value="Deactivate Account"/>*@
+
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input class="form-control" type="text" value="@_settingsViewModel.UserInfo.FirstName" placeholder="First Name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Middle Name</label>
+                            <input class="form-control" type="text" value="@_settingsViewModel.UserInfo.MiddleName" placeholder="Middle Name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input class="form-control" type="text" value="@_settingsViewModel.UserInfo.LastName" placeholder="Last Name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile Number</label>
+                            <input class="form-control" type="text" value="@_settingsViewModel.UserInfo.MobileNumber" placeholder="09XXXXXXXXX" disabled>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- END VERIFIED-->
+}
+@code {
+    private async Task logout()
+    {
+        var parameters = new ModalParameters();
+        parameters.Add("Message", "Confirm Logout");
+        var popupConfirm = popupModal.Show<PopupLogout>("", parameters, new ModalOptions() { Class = "op-modal" });
+        ModalResult result = await popupConfirm.Result;
+        if (result.Data != null)
+        {
+            if ((bool)result.Data)
+            {
+                await _settingsViewModel.Logout();
+            }
+        }
+    }
+
+
+}
+<NavMenuBar />

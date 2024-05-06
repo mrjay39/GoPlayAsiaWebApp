@@ -1,0 +1,70 @@
+﻿
+@attribute [Authorize(Roles = "1")]
+@using GoplayasiaBlazor.Core.Services.Interface;
+@inject ITransactionService _transactionService;
+
+
+
+<section>
+    <div class="mainCon">
+        <div class="FlexCon ">
+
+            <i class="checkStatusIcon bi bi-check-circle-fill  align-items-center justify-content-center d-flex"></i>
+            <h4 class="text-center strong">Withdrawal Receipt</h4>
+           
+            @if (Transaction != null){
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Date&Time:</td>
+                            <td class="text-right">@Transaction.ConvertedDateCreated.ToString("MM/dd/yyy hh:mm tt")</td>
+                    </tr>
+                    <tr>
+                        <td>Reference Number:</td>
+                        <td class="text-right">@Transaction.ReferenceId</td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td class="text-right">
+                            @if (Transaction.Status == "1")
+                            {
+                                <span class="pendingStatus mr-1">Pending</span>
+                            }
+                            else if (Transaction.Status == "6")
+                            {
+                                <span class="FailedReqStatus mr-1">Failed</span>
+                            }
+                            else if (Transaction.Status == "2")
+                            {
+                                <span class="approvedStatus mr-1">Approved</span>
+                            }else if (Transaction.Status == "3")
+                            {
+                                <span class="approvedStatus mr-1">Declined</span>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Transaction Amount:</td>
+                            <td class="transAmo text-right">@amount</td>
+                    </tr>
+                </tbody>
+            </table>
+            }
+        </div>
+        <p class="transactionText text-center">Your withdrawal amount is being processed, kindly check for further updates via text message once approved/denied.</p>
+    </div>
+    <div class="conButton row d-flex align-items-center justify-content-center w-100 m-0 p-0">
+        <button class="WithdrawalStatus col btn btn-primary mt-1" @onclick="(() => Close())">Go to Lobby</button>
+    </div>
+</section>
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+   
+    void Close()
+    {
+     
+        BlazoredModal.CloseAsync();
+    }
+
+}

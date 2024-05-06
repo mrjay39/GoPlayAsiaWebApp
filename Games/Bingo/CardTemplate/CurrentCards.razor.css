@@ -1,0 +1,56 @@
+﻿
+.currDiv {
+  min-height:0;
+    max-height: 207px;
+    overflow: auto;
+ max-width: 640px;
+ margin: 0 auto
+}
+.CurrentCardContainer {
+    background-color: white;
+    border-radius: 3px;
+    height: 50px;
+    width: 40px;
+    margin: 1px;
+}
+.backgroundColor {
+    background-color: #441313;
+}
+.hooray {
+    color: #b6ff00;
+    font-weight: 600;
+} 
+.wating {
+
+}
+.betAmo {
+    color: white;
+    font-weight: 600;
+}
+.drawNumberHit {
+    background-color: white;
+    color: black;
+    border-radius: 3px;
+    padding: 1px;
+}
+.payoutColor {
+    color: gold;
+}
+/*.winBackground {
+    -webkit-animation: NAME-YOUR-ANIMATION 1s infinite;*/ /* Safari 4+ */
+    /*-moz-animation: NAME-YOUR-ANIMATION 1s infinite;*/ /* Fx 5+ */
+    /*-o-animation: NAME-YOUR-ANIMATION 1s infinite;*/ /* Opera 12+ */
+    /*animation: NAME-YOUR-ANIMATION 1s infinite;*/ /* IE 10+, Fx 29+ */
+    /*color: black !important;
+}
+@-webkit-keyframes NAME-YOUR-ANIMATION {
+    0%{
+        background-color: yellow;
+        border: 3px solid #e50000;
+    }
+
+    100% {
+        background-color: orange;
+        border: 3px solid red;
+    }
+}*/

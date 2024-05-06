@@ -1,0 +1,309 @@
+﻿
+.maincontainer {
+   padding-top: 5%;
+    min-height: 100vh;
+    background: rgb(88,14,15);
+    background: linear-gradient(0deg, rgba(88,14,15,1) 62%, rgba(26,8,8,1) 98%);
+}
+
+input {
+    border-radius: 5px;
+}
+h6 {
+    color: #dbb81e;
+    margin-bottom: 0;
+}
+.btn-color {
+    background-color: #05976a;
+    color: #fff;
+ 
+}
+
+
+.profile-image-pic {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.cardbody-color {
+   /* background-color: #101019;*/
+    padding: 48px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card-body {
+    /*-ms-flex: 1 1 auto;*/
+    /*flex: 1 1 auto;*/
+}
+
+a {
+    color: #05976a !important;
+}
+
+u {
+    color: #05976a !important;
+}
+
+.logo {
+    max-width: 350px;
+    width: 100%;
+}
+
+.cardWidth {
+    max-width: 550px;
+    margin: 0;
+}
+
+.card-body {
+    max-width: 400px;
+  margin: 0 auto;
+  padding: 5px 27px;
+}
+
+.logInField {
+    margin-bottom: -5px;
+}
+
+/* enable absolute positioning */
+.eye {
+    position: absolute;
+    top: 6%;
+    right: 1%;
+    transform: translate(-50% ,0);
+    font-size: 25px;
+}
+
+.eyeContainer {
+    position: relative;
+}
+
+
+.g-recaptcha-outer {
+    text-align: center;
+    border-radius: 0px;
+    background: #ffffff;
+    border-style: none;
+    border-color: #37474f;
+    border-width: 1px;
+    border-bottom-width: 2px;
+  
+}
+
+.g-recaptcha-inner {
+    width: 300px;
+    height: 80px;
+    overflow: hidden;
+    margin: 0 auto;
+
+}
+
+.g-recaptcha {
+    position: relative;
+    left: -2px;
+    top: -1px;
+}
+
+.logo-pagcor {
+    max-width: 200px;
+    margin-top: 5px;
+}
+/*Breathing*/
+
+.imgContainer {
+    position: relative;
+}
+.breath-light1 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 39%;
+    left: 25%;
+}
+.breath-light2 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 53%;
+    left: 20%;
+}
+.breath-light3 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 29%;
+    left: 33%;
+}
+.breath-light4 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 24%;
+    left: 41%;
+}
+.breath-light5 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 23%;
+    left: 49%;
+}
+.breath-light6 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 24%;
+    left: 56%;
+}
+.breath-light7 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 29%;
+    left: 64%;
+}
+.breath-light8 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 39%;
+    right: 25%;
+}
+.breath-light9 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 20px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 52%;
+    right: 20%;
+}
+@-webkit-keyframes breath {
+    0% {
+        opacity: 0.1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+
+@-o-keyframes breath {
+    0% {
+        opacity: 0.1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+
+@-moz-keyframes breath {
+    0% {
+        opacity: 0.1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+
+@keyframes breath {
+    0% {
+        opacity: 0.1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+/*Breathing*/

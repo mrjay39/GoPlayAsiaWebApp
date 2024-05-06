@@ -1,0 +1,97 @@
+﻿@page "/games/first3"
+@attribute [Authorize(Roles = "1")]
+@using GoplayasiaBlazor.Core.Helpers.Interface
+@using GoPlayAsiaWebApp.Games.First3.Components
+@using GoPlayAsiaWebApp.Games.Shared;
+@using GoplayasiaBlazor.Models.Constants
+@implements IDisposable
+@implements IAsyncDisposable
+
+
+<GameHeader StreamId="@first3ViewModel.StreamId"
+            RoundTimer="@first3ViewModel.RoundTimer"
+            RoundStatusString="@first3ViewModel.RoundStatusString"
+            RoundNumber="@first3ViewModel.RoundNumber"
+            TimerBackground="@first3ViewModel.RoundStatusColor"
+            GameResultString="@first3ViewModel.GameResultString"
+            ShowFlashing="@first3ViewModel.ShowFlashing"
+            CreditsDisp="@first3ViewModel._icurrentUser.CreditsDisp"
+            PlayerCategory="@first3ViewModel.PlayerCategory"
+            OnClickCallback="@(() => setGameChips())"
+            Token="@first3ViewModel.streamKey"
+            GifSrc="@first3ViewModel.f3gif"
+            IsDisabledCategory="false"
+            MaxRoundTimer="@(first3ViewModel.GameSetting != null ? first3ViewModel.GameSetting.BettingDuration : 0)" />
+
+@if (first3ViewModel.RoundStatusString == Settings.Constants.Open)
+{
+    <First3BettingButton RoundStatusString="@first3ViewModel.RoundStatusString"
+                     FixedPriceGoldTotalBets="@first3ViewModel.FixedPriceGoldTotalBets"
+                     FixedPriceSilverTotalBets="@first3ViewModel.FixedPriceSilverTotalBets"
+                     RunningOddsGoldTotalBets="@first3ViewModel.RunningOddsGoldTotalBets"
+                     RunningOddSilverTotalBets="@first3ViewModel.RunningOddSilverTotalBets"
+                     UserTotalBet_FixedPrizeGold="@first3ViewModel.UserTotalBet_FixedPrizeGold"
+                     UserTotalBet_FixedPrizeSilver="@first3ViewModel.UserTotalBet_FixedPrizeSilver"
+                     UserTotalBet_OddsGold="@first3ViewModel.UserTotalBet_OddsGold"
+                     UserTotalBet_OddsSilver="@first3ViewModel.UserTotalBet_OddsSilver"
+                     SampleWinFixedPrizeGold="@first3ViewModel.SampleWinFixedPrizeGold"
+                     SampleWinFixedPrizeSilver="@first3ViewModel.SampleWinFixedPrizeSilver"
+                     SampleWinOddsGold="@first3ViewModel.SampleWinOddsGold"
+                     SampleWinOddsSilver="@first3ViewModel.SampleWinOddsSilver"
+                     SampleWinDraw="@first3ViewModel.SampleWinDraw"
+                     IsPayoutWon_Gold="@first3ViewModel.IsPayoutWon_Gold"
+                     IsPayoutWon_Silver="@first3ViewModel.IsPayoutWon_Silver"
+                     IsOddsWon_Gold="@first3ViewModel.IsOddsWon_Gold"
+                     IsOddsWon_Silver="@first3ViewModel.IsOddsWon_Silver"
+                     IsRunningOddsCancelled="@first3ViewModel.IsRunningOddsCancelled"
+                     IsFixedPrizeCancelled="@first3ViewModel.IsFixedPrizeCancelled"
+                     FixedPriceGoldMultiplier="@first3ViewModel.FixedPriceGoldMultiplier"
+                     FixedPriceSilverMultipler="@first3ViewModel.FixedPriceSilverMultipler"
+                     RunningOddsGoldMultiplier="@first3ViewModel.RunningOddsGoldMultiplier"
+                     RunningOddSilverMultiplier="@first3ViewModel.RunningOddSilverMultiplier"
+                     IsFixedSilverEnabled="@first3ViewModel.IsFixedSilverEnabled"
+                     IsFixedGoldEnabled="@first3ViewModel.IsFixedGoldEnabled" />
+
+    @* <CurrentPrevBets F3UserBets="@first3ViewModel.F3UserBets" RoundStatusString="@first3ViewModel.RoundStatusString" F3PreviousBets="@first3ViewModel.F3PreviousBets" /> *@
+    <GameNumberTokenTotBet RoundNumber="@first3ViewModel.RoundNumber" TotalBets="@first3ViewModel.TotalBets" MinChipDisplay="@first3ViewModel.MinChip" MaxChipDisplay="@first3ViewModel.MaxChip" />
+    <First3Trends PayoutTrendsDisplay="@first3ViewModel.PayoutTrendsDisplay"
+              OddsTrendsDisplay="@first3ViewModel.OddsTrendsDisplay" />
+
+
+}
+else
+{
+    <First3BettingButton RoundStatusString="@first3ViewModel.RoundStatusString"
+                     FixedPriceGoldTotalBets="@first3ViewModel.FixedPriceGoldTotalBets"
+                     FixedPriceSilverTotalBets="@first3ViewModel.FixedPriceSilverTotalBets"
+                     RunningOddsGoldTotalBets="@first3ViewModel.RunningOddsGoldTotalBets"
+                     RunningOddSilverTotalBets="@first3ViewModel.RunningOddSilverTotalBets"
+                     UserTotalBet_FixedPrizeGold="@first3ViewModel.UserTotalBet_FixedPrizeGold"
+                     UserTotalBet_FixedPrizeSilver="@first3ViewModel.UserTotalBet_FixedPrizeSilver"
+                     UserTotalBet_OddsGold="@first3ViewModel.UserTotalBet_OddsGold"
+                     UserTotalBet_OddsSilver="@first3ViewModel.UserTotalBet_OddsSilver"
+                     SampleWinFixedPrizeGold="@first3ViewModel.SampleWinFixedPrizeGold"
+                     SampleWinFixedPrizeSilver="@first3ViewModel.SampleWinFixedPrizeSilver"
+                     SampleWinOddsGold="@first3ViewModel.SampleWinOddsGold"
+                     SampleWinOddsSilver="@first3ViewModel.SampleWinOddsSilver"
+                     SampleWinDraw="@first3ViewModel.SampleWinDraw"
+                     IsPayoutWon_Gold="@first3ViewModel.IsPayoutWon_Gold"
+                     IsPayoutWon_Silver="@first3ViewModel.IsPayoutWon_Silver"
+                     IsOddsWon_Gold="@first3ViewModel.IsOddsWon_Gold"
+                     IsOddsWon_Silver="@first3ViewModel.IsOddsWon_Silver"
+                     IsRunningOddsCancelled="@first3ViewModel.IsRunningOddsCancelled"
+                     IsFixedPrizeCancelled="@first3ViewModel.IsFixedPrizeCancelled"
+                     FixedPriceGoldMultiplier="@first3ViewModel.FixedPriceGoldMultiplier"
+                     FixedPriceSilverMultipler="@first3ViewModel.FixedPriceSilverMultipler"
+                     RunningOddsGoldMultiplier="@first3ViewModel.RunningOddsGoldMultiplier"
+                     RunningOddSilverMultiplier="@first3ViewModel.RunningOddSilverMultiplier"
+                     IsFixedSilverEnabled="@first3ViewModel.IsFixedSilverEnabled"
+                     IsFixedGoldEnabled="@first3ViewModel.IsFixedGoldEnabled" />
+
+    @* <CurrentPrevBets F3UserBets="@first3ViewModel.F3UserBets" RoundStatusString="@first3ViewModel.RoundStatusString" F3PreviousBets="@first3ViewModel.F3PreviousBets" /> *@
+    <GameNumberTokenTotBet RoundNumber="@first3ViewModel.RoundNumber" TotalBets="@first3ViewModel.TotalBets" MinChipDisplay="@first3ViewModel.MinChip" MaxChipDisplay="@first3ViewModel.MaxChip" />
+    <First3Trends PayoutTrendsDisplay="@first3ViewModel.PayoutTrendsDisplay"
+              OddsTrendsDisplay="@first3ViewModel.OddsTrendsDisplay" />
+
+
+}

@@ -1,0 +1,161 @@
+﻿/* CURRENT BETS*/
+#betResultContainer {
+    font-size: 15px;
+    padding: 0px 8px;
+}
+
+#betResultContainer > div > div {
+    padding-bottom: 1px;
+    align-items:center;
+    font-weight:bold;
+}
+
+.maxWidth {
+    max-width: 640px;
+    margin: auto;
+    max-height: 250px;
+}
+
+thead {
+    font-size: 12px;
+}
+
+tr {
+    padding: 2px 0;
+    border-bottom: 1px solid #6a2d2d;
+}
+
+td {
+    line-height: normal;
+    color: white;
+    font-size: 13px;
+}
+
+table#accordion.show {
+    position: inherit;
+    top: 0;
+    left: 0;
+    max-width: 0;
+    transform: translate(-50%, -50%);
+}
+/* START CURRENT BETS*/
+a {
+    text-decoration: none;
+}
+
+.winningAmountGreen {
+    color: #00c96b;
+}
+
+.losingAmountRed {
+    color: red;
+}
+
+.betsReturned {
+    color: yellow;
+}
+
+.defaultColor {
+    color: white;
+}
+/*============== Result Ball Color ==================*/
+.c-purple {
+    background: #860c7e
+}
+
+.c-green {
+    background: #3e6c08
+}
+
+.c-blue {
+    background: #0a4bc8
+}
+
+.c-red {
+    background: #b51414
+}
+
+/* ======== Start: Lucky Number Combination Properties =============*/
+
+.pick2-container, .pick3-container, .pick4-container {
+    border-bottom: 1px solid #6a2d2d;
+}
+
+.pick2-container div > span:last-child, .pick3-container div > span:last-child, .pick4-container div > span:last-child {
+    margin-left: 15px;
+}
+
+.numCombi {
+    margin-left: 5px;
+}
+
+.pick2-container div.numCombi > span, .pick3-container div.numCombi > span, .pick4-container div.numCombi > span {
+    width: 17px;
+    height: 17px;
+    margin: 3px 3px;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-flex;
+    font-weight: bold;
+    color: white;
+    outline: 2px solid #f4e7a2;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 375px) {
+    #betResultContainer > div > div > span:last-child {
+        position: relative;
+        left: 11px;
+        margin-left: 0;
+    }
+
+    #betResultContainer > div > div > span:first-child {
+        position: relative;
+        left: 1px;
+        font-size: 13px;
+    }
+}
+@media (min-width:640px) {
+    #betResultContainer {
+        font-size: 15px;
+        padding: 0px 8px;
+    }
+    .pick2-container div.numCombi > span, .pick3-container div.numCombi > span, .pick4-container div.numCombi > span {
+        width: 20px;
+        height: 20px;
+        font-size: 18px;
+    }
+    #betResultContainer > .pick4-container {
+        margin: 8px 0;
+        padding-bottom: 5px !important;
+    }
+    #betResultContainer > .pick4-container div.numCombi{
+        display: inline-flex;
+        justify-content: center;
+    }
+    #betResultContainer > .pick4-container > div > span:nth-child(1){
+        display: inline-flex;
+        justify-content: center;
+        font-size: 16px;
+        letter-spacing: 6px;
+    }
+    #betResultContainer > .pick4-container > div > span:nth-child(2) {
+        max-width: 25%;
+        text-align: right;
+        display: inline-flex;
+        justify-content: center;
+        font-size: 17px;
+        letter-spacing: 3px;
+    }
+    #betResultContainer > .pick4-container > div > span:last-child {
+        display: inline-flex;
+        justify-content: center;
+        letter-spacing: 2px;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}

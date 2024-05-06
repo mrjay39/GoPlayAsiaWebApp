@@ -1,0 +1,28 @@
+﻿@using GoplayasiaBlazor.Models.Constants
+@using GoPlayAsiaWebApp.ViewModels
+@using GoPlayAsiaWebApp.Games.Shared
+@inject First3ViewModel first3ViewModel;
+
+<!-- TRIO -->
+<button class="d-block col p-0 borderGold tieRelative @(Settings.Constants.Trio == WinnerResults ? "winTrioButton" : Trio)" @onclick=OnClickCallback disabled="@isDisabled">
+    <p class="font-weight-bold  font-weight-bold" style="font-size: 17px; letter-spacing: 2px; margin-top: -5px;">TRIO</p>
+
+    <div class="d-flex">
+        @if (first3ViewModel.F3Trio != null)
+        {
+            <p class="payout col p-0 mb-0 d-flex justify-content-center font-weight-bold  @(UserTotalBet_Trio != "0" ? "withBetF3" : "")  ">
+                @(UserTotalBet_Trio != "0" ? SampleWinTrio : "x" + first3ViewModel.F3Trio.FixedPriceMultiplier.ToString("G29"))
+            </p>
+        }
+    </div>
+
+    <!-- TOKEN DISPLAY -->
+    <TokenDisplay Amount="@UserTotalBet_Trio" />
+    @if (first3ViewModel.Token_Animation != "" && first3ViewModel.CurrentGameType == (int)Settings.F3SubBetTypes.Trio)
+    {
+        <div class="additionaltokencontainer" style="--animation: @first3ViewModel.Token_Animation">
+            <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+            <div class="selectedAmountToken">@first3ViewModel.BetAmount</div>
+        </div>
+    }
+</button>

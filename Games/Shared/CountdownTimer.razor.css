@@ -1,0 +1,29 @@
+﻿
+
+.main-container {
+    position: absolute;
+    bottom: 28px;
+    right: 23px;
+    z-index: 1000;
+}
+
+.txt {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    color: white;
+    font-weight: bolder;
+    bottom: -30%;
+    text-align: center;
+    font-size: 32px;
+    top: 17px;
+}
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,195 @@
+﻿section {
+    max-width: 640px;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav-link.active {
+    color: white;
+    background-color: #ff6a00;
+    font-weight: 600;
+}
+
+img.imgLogo {
+    height: 50px;
+}
+
+.nav-link {
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+h6.headerText {
+    text-decoration: none;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+}
+
+.addCredit img, .overthecounterBtn img {
+    height: 80px;
+    width: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+.addCredit {
+    text-align: center;
+}
+/*trasnsaction*/
+.transCon {
+    max-width: 640px;
+}
+
+.innerTransCon {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.innerTable {
+    background-color: #263142;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.rightContent {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.transHeader {
+    padding-top: 5px;
+    background-color: white;
+    color: black;
+    margin: 0 auto;
+}
+/*transaction*/
+h6.topUpMEssage {
+    background-color: #288187;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.overthecounterBtn {
+    background-color: red; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, #f476b3, #fad28c, #f6a317 );
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.PaymentGateWayCon {
+    background-color: #2298d4;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+i.voucherIcon {
+    color: orange;
+    font-size: 25px;
+}
+
+.voucherBtn {
+    border: none;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #213642;
+}
+
+.voucherBtnFree {
+    border: none;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #254d64;
+}
+
+.addCredit-submit {
+    width: 100%;
+    background-color: #07966a;
+    border: none;
+    padding: 10px 0;
+}
+.moneygold {
+    color: gold;
+    background-color: #07966a;
+    margin: auto, 1px, auto, 1px;
+}
+.voucTextWhite {
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.voucText {
+    color: orange;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.voucTextLow {
+    color: orange;
+    font-size: 11px;
+}
+
+.voucTextFree {
+    color: #263142;
+    font-size: 14px;
+    font-weight: 600;
+    color: orange;
+}
+
+.voucTextLowFree {
+    display: flex;
+    color: #263142;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: orange;
+}
+
+.CaretRigth {
+    color: white;
+    font-size: 20px;
+}
+/*GATEWAY*/
+/*GATEWAY*/
+@media screen and (max-width: 600px) {
+    .overthecounterBtn {
+        margin-bottom: 5px;
+    }
+
+    .creditContainer {
+        margin: 5px;
+    }
+}

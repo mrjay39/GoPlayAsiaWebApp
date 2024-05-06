@@ -1,0 +1,99 @@
+﻿<div class="currDiv mb-1">
+
+
+    <div class="d-flex backgroundColor winBackground">
+        @*     <div class="hooray col p-0 text-center">
+        <div class="drawNumberHit d-flex justify-content-center align-items-center">
+        <div class="col p-0" style="border-right: 1px solid black;">#30</div>
+        <div class="col p-0">P500</div>
+        </div>
+
+        <div class="drawNumberHit">x1000</div>
+        </div> *@
+        <div class="hooray col p-0 d-flex align-items-center justify-content-center">
+            JACKPOT
+        </div>
+        <div class="d-flex col p-0">
+            <CurrentEmptyCard cardValue="@cardValue1" suite="H" cardCol="win" />
+            <CurrentEmptyCard cardValue="@cardValue2" suite="S" cardCol="win" />
+            <CurrentEmptyCard cardValue="@cardValue3" suite="D" cardCol="win" />
+            <CurrentEmptyCard cardValue="@cardValue4" suite="C" cardCol="win" />
+            <CurrentEmptyCard cardValue="@cardValue5" suite="C" cardCol="win" />
+            <CurrentEmptyCard cardValue="@cardValue6" suite="C" cardCol="win" />
+        </div>
+
+        <div class="betAmo col p-0">
+            <div class="d-block " style="line-height: normal">
+                <div class="text-center">
+                    <i class="bi bi-people-fill d-flex justify-content-center" style="font-size: 13px; border-bottom: 1px solid gold;">&nbsp; 30 winners</i>
+                </div>
+                <div class="text-center payoutColor ">
+                    233,333.33
+                </div>
+            </div>
+        </div>
+    </div>
+@* 
+    <div class="d-flex backgroundColor ">
+        <div class="hooray col p-0 d-flex align-items-center justify-content-center">
+            HOORAY
+        </div>
+        <div class="d-flex col p-0">
+            <CurrentEmptyCard cardValue="12" suite="H" cardCol="@cardStatus" />
+            <CurrentEmptyCard cardValue="A" suite="S" cardCol="@cardStatus" />
+            <CurrentEmptyCard cardValue="Q" suite="D" cardCol="@cardStatus" />
+            <CurrentEmptyCard cardValue="K" suite="C" cardCol="@cardStatus" />
+            <CurrentEmptyCard cardValue="K" suite="C" cardCol="@cardStatus" />
+            <CurrentEmptyCard cardValue="K" suite="C" cardCol="@cardStatus" />
+
+        </div>
+        <div class="betAmo col p-0">
+            <div class="d-block " style="line-height: normal">
+                <div class="text-center">
+                    <div class=" d-flex justify-content-center" style="font-size: 13px; border-bottom: 1px solid gold;">500</div>
+                </div>
+                <div class="text-center payoutColor ">
+                   2,000.00
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex backgroundColor ">
+        <div class="hooray col p-0 d-flex align-items-center justify-content-center">
+            WAITING
+        </div>
+        <div class="d-flex col p-0">
+            <CurrentEmptyCard cardValue="12" suite="H" cardCol="@cardStatus" />
+            <CurrentEmptyCard cardValue="A" suite="S" cardCol="@cardStatus" />
+            <CurrentEmptyCard cardValue="Q" suite="D" cardCol="@cardStatus" />
+            <CurrentEmptyCard cardValue="K" suite="C" cardCol="@cardStatus" />
+            <CurrentEmptyCard cardValue="K" suite="C" cardCol="@cardStatus" />
+            <CurrentEmptyCard cardValue="K" suite="C" cardCol="@cardStatus" />
+        </div>
+        <div class="betAmo col p-0 d-flex align-items-center justify-content-center">
+            P-5
+        </div>
+    </div>
+ *@
+
+</div>
+
+
+@code {
+    [Parameter]
+    public string cardStatus { get; set; } = "default";
+
+    [Parameter]
+    public string cardValue1 { get; set; } = "";
+    [Parameter]
+    public string cardValue2 { get; set; } = "";
+    [Parameter]
+    public string cardValue3 { get; set; } = "";
+    [Parameter]
+    public string cardValue4 { get; set; } = "";
+    [Parameter]
+    public string cardValue5 { get; set; } = "";
+    [Parameter]
+    public string cardValue6 { get; set; } = "";
+}

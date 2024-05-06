@@ -1,0 +1,122 @@
+﻿@page "/gamerules/go12"
+@using GoplayasiaBlazor.Core.Global.Interface;
+@using GoPlayAsiaWebApp.Games.Shared
+@attribute [Authorize(Roles = "1")]
+@inject ICurrentUser icurrentUser
+<TopContent CreditsDisp="@icurrentUser.CreditsDisp" />
+<section>
+    <main class="container">
+        <h5 class="font-weight-bold mt-2">GO12 HOUSE RULES</h5>
+        <div class="">
+            <div class="containerVid">
+                <iframe class="responsive-iframe" src="https://www.youtube.com/embed/J5MdM0Zpqg0"></iframe>
+            </div>
+            <content class="">
+                    <div class="d-flex justify-content-center mt-2">
+                    <a href="/games/go12" <button class="btn btn-primary text-center d-flex">Back To Game</button></a>
+                </div>
+                <h4 class="mt-5">I. Minimum/MaximumBet Limit and Payout Odds</h4>
+                <p class="mt-2 font-weight-bold">A. REGULAR BET:</p>
+                <p class="mb-0">1.Min/Max Bet Per Player -  <strong> P100 / P1,000</strong></p>
+                <p class="mb-0">2.Maximum Bet Per Game <strong> P1,000 </strong></p>
+                <p class="mt-2 font-weight-bold">
+                    Note: Payout is equal to placed bet plus winnings.
+                </p>
+                <p class="mt-2 font-weight-bold">B. RUNNING ODDS BET:</p>
+                <p class="mb-0">Min/Max Bet Per Player -  <strong> P100 / P1,000</strong></p>
+                <p class="mb-0">Maximum Bet Per Game <strong> P10,000 </strong></p>
+                <p class="">3. Payout Odds <strong> 1.95: 1</strong></p>
+                <p class="">*Total bets less 5% commission divided by total winning bets</p>
+                <p class="mt-2">Notes: Bets shall be returned if</p>
+                <ol>
+                    <li> No bets on either hand, or </li>
+                    <li>Either hand prize pool is below 150%.</li>
+
+                </ol>
+                <h4 class="">II. The dealing procedure shall be as follow</h4>
+
+                <ol>
+                    <li>
+                        The Dealer shall observe and look through the Dealer's Dashboard
+                        (with attached camera) before and after the deal for instruction or
+                        guidance.
+                    </li>
+                    <li>
+                        Accepting of bets through remote gaming platform ensue when the
+                        status on the Dealer Dashboard reads "OPEN".
+                    </li>
+                    <li>
+                        Player bets on numbers 01 to 12 and/ or colors RED or BLACK on
+                        regular bet and/or running odds bet options respectively. Once the
+                        player clicks his/her choice/s, the bet amount option pop-up, enter
+                        preset chip denominations or manually key-in amount then click
+                        "PLACE BET," otherwise "CANCEL".
+                    </li>
+                    <li>
+                        A confirmation button shall appear for the player to confirm selected
+                        bet option and amount by clicking "Yes," otherwise "No".
+                    </li>
+                    <li>
+                        The system timerstarts until the allotted period for betting ends. System automatically disables all access for betting and changes the
+                        status to "CLOSED".
+                    </li>
+                    <li>
+                        At the conclusion of betting, the Dealer shall start with the dealing
+                        procedure in the following sequence:
+                        <ul>
+                            <li>a.) The Dealer shall pick up the ball inside the canister.</li>
+                            <li>
+                                b) Upon retrieval, the Dealer shall immediately drop the ball in
+                                any way inside the transparent funnel.
+                            </li>
+                            <li>
+                                c.) After checking the winning color and number, the Dealer shall
+                                declare I encode the winning outcome in the Dealer's Tablet
+                                for the Game Validator's confirmation.
+                            </li>
+                            <li>
+                                d.) After Dealer determinesthe game result, another validation
+                                of result shall be made by the Proponent remotely and on a
+                                separate module ("Validator"). Only after confirmation of the
+                                result, the winning bets shall be processed.
+                            </li>
+                            <li>
+                                e.) When the status on the Dealer Dashboard changes to
+                                "OPEN," Dealershall collect the cards on the lay-out and
+                                prepares for the next deal.
+                            </li>
+                            <li>
+                                f.) Dealershall perform this dealing cycle continuously during his
+                                stint on the table until he is relieved by another Dealer, the
+                                last deal indicator has been dealt, or the table needs to
+                                undergo maintenance.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        In case of system failure, malfunction, and/or error, the Gaming Operator
+                        has the right to declare any and all of the affected game/s and winning/s as
+                        invalid and void, and to recover from the account of the affected player
+                        any payments made as a result of said system failure, malfunction and/or
+                        errors without the need of consent from the said player.
+                    </li>
+                    <li>
+                        Bets can’t be cancelled once confirmed but can be increased within the
+                        duration of betting time.
+                    </li>
+                    <li>
+                        Philippine Peso Currency is converted into Token with a 1:1 ratio or value.
+                    </li>
+                </ol>
+            </content>
+            <div class="d-flex justify-content-center pb-5">
+                <a href="/games/go12" <button class="btn btn-primary text-center d-flex">Back To Go12 Game</button></a>
+            </div>
+
+        </div>
+
+    </main>
+</section>
+@code {
+
+}

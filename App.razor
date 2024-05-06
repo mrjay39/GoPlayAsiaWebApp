@@ -1,15 +1,50 @@
 ﻿@using GoPlayAsiaWebApp.Shared
-<CascadingBlazoredModal Position="ModalPosition.Middle" Size="ModalSize.Large">
-    <Router AppAssembly="@typeof(App).Assembly">
-        <Found Context="routeData">
-            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
-        </Found>
-        <NotFound>
-            <PageTitle>Not found</PageTitle>
-            <LayoutView Layout="@typeof(MainLayout)">
-                @* <p role="alert">Sorry, there's nothing at this address.</p> *@
-            </LayoutView>
-        </NotFound>
-    </Router>
-</CascadingBlazoredModal>
+
+@inject NavigationManager navMan
+
+
+<CascadingAuthenticationState>
+    <CascadingBlazoredModal ActivateFocusTrap="false" DisableBackgroundCancel="true" Size="ModalSize.Large" HideHeader="true" Position="ModalPosition.Middle" OverlayCustomClass="bg-modal-overlay" Class="gpabm-modal" AnimationType="ModalAnimationType.None">
+
+            <Router AppAssembly="@typeof(App).Assembly">
+                <Found Context="routeData">
+                    <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                        <Authorizing>
+                            <Authorizing></Authorizing>
+                        </Authorizing>
+                        <NotAuthorized>
+                            @*Sorry, unauthorized.*@
+                            @try
+                            {
+
+                                @if (true) { navMan.NavigateTo("/"); }
+                            }
+                            catch (Exception)
+                            {
+
+
+                            }
+                        </NotAuthorized>
+                    </AuthorizeRouteView>
+                    <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+                </Found>
+                <NotFound>
+                    @try
+                    {
+
+                        @if (true) { navMan.NavigateTo("/"); }
+                    }
+                    catch (Exception)
+                    {
+
+
+                    }
+                    @*<PageTitle>Not found</PageTitle>
+                    <LayoutView Layout="@typeof(MainLayout)">
+                    @if (true) { navMan.NavigateTo("/"); }
+                    </LayoutView>*@
+                </NotFound>
+            </Router>
+
+    </CascadingBlazoredModal>
+</CascadingAuthenticationState>

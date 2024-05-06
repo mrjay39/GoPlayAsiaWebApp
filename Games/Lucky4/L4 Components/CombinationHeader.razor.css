@@ -1,0 +1,244 @@
+﻿.img-container {
+    height: 71px;
+    width: 108px;
+    display: inline-block;
+}
+
+.img-container > img {
+    height: 100%;
+    width: 60%;
+    top: -15px;
+    position: relative;
+}
+
+.payoutDisplayTab {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.qpBtn {
+    background-color: gold;
+    font-weight: 600;
+    line-height: normal;
+    margin-right: 2px;
+}
+
+.qpCircle {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: white;
+    border: solid black 1px;
+    margin: 1px;
+}
+
+.lucky-circle {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    font-size: 14px;
+    color: white;
+    border-radius: 50%;
+    border: 2px solid #f4e7a2;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+    top: 2px;
+}
+
+.maroon {
+    background: #860c7e
+}
+
+.green {
+    background: #3e6c08
+}
+
+.blue {
+    background: #0a4bc8
+}
+
+.red {
+    background: #b51414
+}
+
+.blockContainer1 > div > div[b-ovcq668rvx] {
+}
+
+.multiplier {
+    color: white;
+    font-weight: bold;
+}
+
+.ez2Btn, .s3Btn, .l4Btn {
+    line-height: normal;
+    border-radius: 3px;
+}
+
+.luck4-bg, .pick2, .pick3 {
+    background: #f4e7a2 url('./img/luck-4.png') center center no-repeat;
+    background-size: 100% 100%;
+    border-radius: 5px;
+    padding: 5px 0;
+}
+.pick-label {
+    font-weight: bold;
+    position: relative;
+    top: 20px;
+    font-size: 12px;
+    padding-bottom: 3px;
+}
+
+#luck4-header {
+    height: 87px;
+    padding: 0px 19px;
+    align-items: center;
+}
+
+#luck4-header > div {
+    width: 33%;
+}
+
+    #luck4-header > div.img-container {
+        width: 30%;
+    }
+
+#luck4-header .pick2N3, #luck4-header .pick2, #luck4-header .pick3 {
+    background-size: 100% 100%;
+    border-radius: 5px;
+}
+
+.pick2 div > p, .pick3 div > p {
+    margin-top: 10px;
+    position: relative;
+    top: 64px;
+    font-size: 20px;
+    color: #2d2929;
+}
+
+/*Start Active Button*/
+.qpBtnActive {
+    border: 1px solid yellowgreen;
+}
+/*End Active Button*/
+/*Start Disabled*/
+.disEz2Btn {
+    background-color: grey;
+    font-weight: 600;
+    color: white;
+    line-height: normal;
+    margin-right: 2px;
+    pointer-events: none;
+    border-radius: 6px;
+}
+
+.disS3Btn {
+    background-color: grey;
+    font-weight: 600;
+    color: white;
+    line-height: normal;
+    margin-right: 2px;
+    pointer-events: none;
+    border-radius: 6px;
+}
+
+.disL4Btn {
+    background-color: grey;
+    font-weight: 600;
+    color: white;
+    line-height: normal;
+    margin-right: 2px;
+    pointer-events: none;
+    border-radius: 6px;
+}
+/*End Disabled*/
+/*Activated*/
+.ActivatedEz2Btn, .ActivatedEz3Btn, .Activatedl4Btn {
+    line-height: normal;
+    margin-right: 2px;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #1c1b1b;
+}
+.ActivatedEz2Btn{border: 4px solid #0d770a; animation:chipGreen 1s infinite;}
+.ActivatedEz3Btn{border: 4px solid rgb(161, 220, 255); animation:chipBlue 1s infinite;}
+.Activatedl4Btn{border: 4px solid #b51414; animation:chipRed 1s infinite;}
+@keyframes chipPurple {from {border: 4px solid #0d770a;} to {border: 4px solid #860c7e;box-sizing: border-box;}}
+@keyframes chipGreen {from {border: 4px solid #0d770a;} to {border: 4px solid #bdff07;box-sizing: border-box;}}
+@keyframes chipGold {from {border: 4px solid #0d770a;} to {border: 4px solid gold;box-sizing: border-box;}}
+@keyframes chipBlue {from {border: 4px solid #0d770a;} to {border: 4px solid rgb(161, 220, 255);box-sizing: border-box;}}
+@keyframes chipRed {from {border: 4px solid #0d770a;} to {border: 4px solid red;box-sizing: border-box;}}
+
+@media only screen and (max-width: 360px) {
+    .qpHeader, .ez2Header, .s3Header, .l4Header {
+        font-size: 15px;
+        line-height: normal;
+    }
+
+    .pick2N3 > p, .luck4-bg > p, .pick2 > p, .pick3 > p {
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 390px) {
+    .qpHeader, .ez2Header, .s3Header, .l4Header {
+        font-size: 15px;
+        line-height: normal;
+    }
+
+    .pick2N3 > p, .luck4-bg > p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .pick2 > p, .pick3 > p, .pick4 > p {
+        font-size: 15px;
+    }
+}
+
+@media (min-width:640px) {
+    .ez2Btn, .s3Btn, .pick2N3, .l4Btn {
+        width: 100%;
+    }
+
+    #luck4-header {
+        height: auto;
+    }
+
+    .img-container {
+        height: auto;
+    }
+
+        .img-container > img {
+            position: relative;
+            top: 0px;
+        }
+
+    #placeHolder-container {
+        height: auto;
+    }
+
+#placeHolder-container > div {
+    width: 70px;
+    height: 70px;
+    margin: 0px 5px;
+}
+
+    .pick2N3 > p, .luck4-bg > p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .pick2 > p, .pick3 > p {
+        font-size: 20px;
+    }
+}
+
+@media (min-width:480px) {
+}

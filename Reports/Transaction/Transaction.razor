@@ -1,0 +1,35 @@
+﻿@implements IAsyncDisposable
+<div class="transCon mb-1 p-2">
+    <table class="innerTransCon row">
+        <tr class="transHeader row w-100 text-center">
+            <th class="headerTrans col">TRANSACTION</th>
+            <th class="headerResult col">RESULT</th>
+        </tr>
+        @if (_mainCreditsViewModel.TransactionHistory != null)
+        {
+            <Virtualize Items="_mainCreditsViewModel.TransactionHistory" Context="_tranHistory">
+                @*@foreach (var _tranHistory in _mainCreditsViewModel.TransactionHistory)
+            {*@
+                <tr class="innerTable text-light p-2 row w-100">
+                    <td class="col-6 p-0">
+                        <div>@_tranHistory.Transaction</div>
+                        <div style="font-size: 14px;">@_tranHistory.ReferenceId</div>
+                        <div style="font-size: 14px;">@_tranHistory.TransactionId</div>
+                        <div class="p-0" style="font-size: 14px;" >@_tranHistory.DateCreatedFullString</div>
+                    </td>
+                    <td class="rightContent col-6 d-flex">
+                        <div>
+                            <div style="font-size: 14px;" class="ml-5">@_tranHistory.AmountDisplay</div>
+                            <div style="font-size: 14px;" class="ml-5">@_tranHistory.Status</div>
+                        </div>
+                    </td>
+                </tr>
+                @*}*@
+            </Virtualize>
+        }
+        else
+        {
+            @*<span>Loading</span>*@
+        }
+    </table>
+</div>

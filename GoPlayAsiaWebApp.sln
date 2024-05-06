@@ -5,6 +5,10 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoPlayAsiaWebApp", "GoPlayAsiaWebApp.csproj", "{F8338EAC-0672-4534-A118-0F5C5C82B0B8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoplayasiaSharedKernel", "GoplayasiaSharedKernel\GoplayasiaSharedKernel.csproj", "{36ADB607-33D2-472B-8F70-29034F1AB814}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoplayasiaCore", "GoplayasiaCore\GoplayasiaCore.csproj", "{BA13D70E-C576-42DE-BF12-C1BC3C2DAC5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{F8338EAC-0672-4534-A118-0F5C5C82B0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8338EAC-0672-4534-A118-0F5C5C82B0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8338EAC-0672-4534-A118-0F5C5C82B0B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36ADB607-33D2-472B-8F70-29034F1AB814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36ADB607-33D2-472B-8F70-29034F1AB814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36ADB607-33D2-472B-8F70-29034F1AB814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36ADB607-33D2-472B-8F70-29034F1AB814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA13D70E-C576-42DE-BF12-C1BC3C2DAC5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA13D70E-C576-42DE-BF12-C1BC3C2DAC5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA13D70E-C576-42DE-BF12-C1BC3C2DAC5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA13D70E-C576-42DE-BF12-C1BC3C2DAC5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

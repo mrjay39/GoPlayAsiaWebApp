@@ -1,0 +1,183 @@
+﻿#gameResultsContainer {
+    padding: 6px 3px 6px 3px;
+    max-height: 200px;
+    overflow-x: scroll;
+    white-space: nowrap
+}
+
+#gameResultsContainer > div {
+    width: 100%;
+    margin: 0 1px;
+}
+
+#gameResultsContainer > div > div {
+    width: 50%;
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: top;
+}
+
+#gameResultsContainer div > p {
+    font-size: 60%;
+    font-weight: bolder;
+    text-align: center;
+    padding: 2px 0;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #823434;
+}
+
+#gameResultsContainer h6 {
+    color: #fff;
+    background: #8e0000;
+    padding: 5px 0;
+}
+
+#gameResultsContainer h6 > span:first-child {
+    border-right: 3px solid #fd2b2b;
+}
+
+#gameResultsContainer {
+    padding: 0px 3px 6px 3px;
+    max-height: 200px;
+    overflow-x: scroll;
+    white-space: nowrap
+}
+
+#gameResultsContainer > div {
+    width: 100%;
+    margin: 0 1px;
+}
+
+#gameResultsContainer > div > div {
+    width: 33%;
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: top;
+}
+
+#gameResultsContainer div > p {
+    font-size: 60%;
+    font-weight: bolder;
+    text-align: start;
+    padding: 2px 0;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #542574;
+    display: flex;
+    align-items: center;
+}
+
+#gameResultsContainer h6 {
+    color: #fff;
+    background: #8e0000;
+    padding: 5px 0;
+}
+
+#gameResultsContainer p > span:first-child {
+    margin-right: 3px;
+    color: #fff;
+    width: 27px;
+    display: inline-block;
+}
+
+#gameResultsContainer p > span:not(:first-child) {
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+    padding: 9px;
+    border-radius: 3px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+   /* background-color: #d7d7d7;*/
+    font-size: 11px;
+}
+
+.trendsHeader > span:first-child {
+    padding: 5px 0;
+    background: #d9500e;
+    color: #fff;
+}
+
+.result-header {
+    background: linear-gradient(90deg, rgb(49, 19, 102) 0%, rgb(140, 9, 151) 39%, rgb(57, 4, 71) 100%);
+    color: #fff;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.result-header > h6 {
+    font-weight: bold;
+}
+
+.canceled {
+    background: url('./img/canceled.png') center left no-repeat;
+    background-size: 40px 30px;
+    min-height: 27.7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*========= Start Animals Properties ==============*/
+.animal-1 {background: url('./img/luckySlot-images/animal-1.png') center center no-repeat; background-size: 100% 100%;}
+.animal-2 {background: url('./img/luckySlot-images/animal-2.png') center center no-repeat; background-size: 100% 100%;}
+.animal-3 {background: url('./img/luckySlot-images/animal-3.png') center center no-repeat; background-size: 100% 100%;}
+.animal-4 {background: url('./img/luckySlot-images/animal-4.png') center center no-repeat; background-size: 100% 100%;}
+.animal-5 {background: url('./img/luckySlot-images/animal-5.png') center center no-repeat; background-size: 100% 100%;}
+
+/*========= Start GEMS Properties ==============*/
+.gem-1 {background: url('./img/luckySlot-images/gem-1.png') center center no-repeat; background-size: 100% 100%;}
+.gem-2 {background: url('./img/luckySlot-images/gem-2.png') center center no-repeat; background-size: 100% 100%;}
+.gem-3 {background: url('./img/luckySlot-images/gem-3.png') center center no-repeat; background-size: 100% 100%;}
+.gem-4 {background: url('./img/luckySlot-images/gem-4.png') center center no-repeat; background-size: 100% 100%;}
+.gem-5 {background: url('./img/luckySlot-images/gem-5.png') center center no-repeat; background-size: 100% 100%;}
+
+/*========= Start CARS Properties ==============*/
+.car-1 {background: url('./img/luckySlot-images/car-1.png') center center no-repeat; background-size: 100% 100%;}
+.car-2 {background: url('./img/luckySlot-images/car-2.png') center center no-repeat; background-size: 100% 100%;}
+.car-3 {background: url('./img/luckySlot-images/car-3.png') center center no-repeat; background-size: 100% 100%;}
+.car-4 {background: url('./img/luckySlot-images/car-4.png') center center no-repeat; background-size: 100% 100%;}
+.car-5 {background: url('./img/luckySlot-images/car-5.png') center center no-repeat; background-size: 100% 100%;}
+
+/*========= Start Fruits Properties ==============*/
+.fruit-1 {background: url('./img/luckySlot-images/fruit-1.png') center center no-repeat; background-size: 100% 100%;}
+.fruit-2 {background: url('./img/luckySlot-images/fruit-2.png') center center no-repeat; background-size: 100% 100%;}
+.fruit-3 {background: url('./img/luckySlot-images/fruit-3.png') center center no-repeat; background-size: 100% 100%;}
+.fruit-4 {background: url('./img/luckySlot-images/fruit-4.png') center center no-repeat; background-size: 100% 100%;}
+.fruit-5 {background: url('./img/luckySlot-images/fruit-5.png') center center no-repeat; background-size: 100% 100%;}
+
+/*========= Start Balls Properties ==============*/
+.ball-1 {background: url('./img/luckySlot-images/ball-1.png') center center no-repeat; background-size: 100% 100%;}
+.ball-2 {background: url('./img/luckySlot-images/ball-2.png') center center no-repeat; background-size: 100% 100%;}
+.ball-3 {background: url('./img/luckySlot-images/ball-3.png') center center no-repeat; background-size: 100% 100%;}
+.ball-4 {background: url('./img/luckySlot-images/ball-4.png') center center no-repeat; background-size: 100% 100%;}
+.ball-5 {background: url('./img/luckySlot-images/ball-5.png') center center no-repeat; background-size: 100% 100%;}
+
+@media screen and (max-width: 375px) {
+    #diceColor .red, .red, #diceColor .blue, .blue, #diceColor .green, .green {
+        width: 30%;
+        height: 45%;
+        margin: 2px;
+    }
+    #gameResultsContainer > div > div {
+        width: 57%;
+    }
+}
+
+@media (min-width:640px) {
+    #gameResultsContainer > div > div {
+        width: 32%;
+    }
+
+    #gameResultsContainer p > span:not(:first-child) {
+        margin: 2% 1.5%;
+    }
+
+    #gameResultsContainer div > p {
+        text-align: center;
+    }
+
+    .canceled {
+        min-height: 31.1px;
+    }
+}

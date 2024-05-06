@@ -1,0 +1,106 @@
+﻿
+
+/* #region LEGENDS */
+
+    .legend {
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+    .legendTrends {
+        background-color: #000000;
+        color: white;
+        border: 1px gold solid;
+        padding: 2px 8px;
+    }
+
+    .legendLeft {
+        background-color: #ff2d2d;
+        color: white;
+        border: 1px gold solid;
+        padding: 2px 8px;
+    }
+
+    .legendRight {
+        background-color: #5275bb;
+        color: white;
+        border: 1px gold solid;
+        margin: 0;
+        padding: 2px 8px;
+    }
+
+    .legendCancel {
+        background-color: #808080;
+        color: white;
+        border: 1px gold solid;
+        margin: 0;
+        padding: 2px 8px;
+    }
+
+
+/* #endregion */
+
+/* #region TRENDS DISPLAY */
+
+    .mainCon {
+        max-width: 650px;
+        margin: 0 auto;
+        overflow: hidden;
+        overflow: auto;
+    }
+
+.innerCon {
+    max-width: 31px;
+  
+    padding: 7px;
+}
+
+.heads {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    background-color: #ff2d2d;
+    margin-top: 1px;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.tails {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background: #5275bb;
+    margin-top: 1px;
+    justify-content: center;
+    align-content: center;
+    font-size: 10px;
+}
+
+.cancelled {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    background: #808080;
+    margin-top: 1px;
+    justify-content: center;
+    align-content: center;
+}
+/* #endregion */
+
+/* #region MOBILE */
+    @media screen and (max-width: 600px) {
+        .innerCon.col {
+            margin-right: 2px;
+        }
+    }
+/* #endregion */

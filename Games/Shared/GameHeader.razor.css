@@ -1,0 +1,299 @@
+﻿.main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.videoContainer {
+    max-width: 640px;
+    height: 360px;
+}
+
+    .videoContainer iframe {
+        width: 100%;
+    }
+
+.videoContainer {
+    position: relative;
+    padding-bottom: 56.25%;
+
+    height: 0;
+    overflow: hidden;
+}
+
+    .videoContainer iframe, .video-container object, .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+.play-btn {
+    background-color: #b6ff00;
+    border-radius: 5px;
+    border: none;
+}
+
+.stop-btn {
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+.menu-btn {
+   /* background: rgb(7,145,63);
+    background: linear-gradient(0deg, rgba(7,145,63,1) 19%, rgba(32,207,103,1) 53%, rgba(7,145,63,1) 78%);*/
+
+}
+
+.lobby-btn {
+    background: rgb(199,151,8);
+    background: linear-gradient(0deg, rgba(199,151,8,1) 19%, rgba(242,201,76,1) 53%, rgba(199,151,8,1) 78%);
+    border-radius: 5px;
+    color: black;
+    border: none;
+    font-weight: 600;
+    text-decoration: none;
+    width: 100%;
+ 
+}
+i {
+    font-size: 20px;
+    line-height: .5;
+    margin: 2px;
+}
+
+.gameNumberContainer h5 {
+    margin: 0 auto;
+    padding: 0;
+    font-weight: 600;
+}
+
+.timerFlasher {
+    padding: 5px;
+    width:max-content;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.fixeIcon {
+    width: 100%;
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.gameResultContainer {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.tokenContainer {
+ 
+    align-items: center;
+    right: 0;
+}
+
+.timerNotFlashing {
+    padding: 5px;
+  /*  border-radius: 5px;*/
+    white-space: nowrap;
+ 
+ 
+}
+.timerNotFlashing p {
+   font-size: 12px;
+   padding: 5px;
+ 
+}
+
+.timer {
+    text-align: center;
+    color: white;
+/*    font-size: 14px;*/
+    line-height:normal
+}
+
+p.timer {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.mainTimer {
+    height: 40px;
+}
+
+
+.currentToken strong {
+    color: white;
+    min-height: 0px;
+}
+
+.contaiiner {
+    margin: 0;
+    padding: 0;
+}
+
+.currentGameResult {
+    margin: 0;
+    height: 100%;
+}
+/*blinking*/
+.timerFlasher {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+.creditIcon {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*START MENU DROPDOWN*/
+
+/*END MENU DROPDOWN*/
+/*SAFARI*/
+/*@media (-webkit-max-device-pixel-ratio: 1) {
+  
+    .currentToken {
+        color: #d39b15;
+        font-size: 20px;
+    }
+}*/
+
+/* menu */
+.dropdown {
+    position: absolute;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.dropdown-menu {
+    width: 200px;
+    height: fit-content;
+    padding: 0;
+    background: linear-gradient( to top, white 0%, white 82%, rgb(21, 21, 21) 82%, rgb(21, 21, 21) 100% );
+}
+
+.h1 {
+    cursor: none;
+    line-height: 1.5;
+}
+
+.dropdown-menu li span.userFullName {
+    font-size: 14px;
+}
+.dropdown-item {
+    font-size: 16px;
+}
+.dropdown-menu ul li {
+    padding: 3px;
+    margin-left: 0px;
+    color: rgb(255, 255, 255);
+    /*font-weight: bold;*/
+    /*font-size: 16px;*/
+}
+
+    .dropdown-menu ul li a {
+      
+        margin-left: 0px;
+        color: rgb(84, 84, 84);
+    }
+
+        .dropdown-menu ul li a:hover {
+            background-color: rgb(243, 243, 243);
+            color: rgb(84, 84, 84);
+         
+            font-weight: bold;
+        }
+        .dropdown-menu ul li a active {
+            background-color: rgb(243, 243, 243);
+            color: yellow;
+            font-weight: bold;
+        }
+
+.icon {
+    cursor: pointer;
+}
+
+/*SMALL SCREEN*/
+@media only screen and (max-width: 600px) {
+    .currentGameNumber {
+        font-size: 15px;
+    }
+
+    p.timer {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .lobby-btn, .menu-btn {
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .timer {
+        padding: 0 3px;
+        text-align: center;
+        color: white;
+        font-size: 13px;
+        margin: 0;
+        width: 100%;
+    }
+
+
+
+    .currentToken {
+        color: #d39b15;
+        font-size: 16px;
+        margin-top: 2px !important;
+    }
+}
+  /*START NEW CSS*/
+.newGameHeaderContainer {
+    background-color: black;
+    height:30px;
+}
+.newGameHeaderContainer button {
+    border: none;
+    background-color: black;
+    color: gold;
+}
+.userToken {
+    border: solid 2px gold;
+    /*  border-style: dotted;
+    border: dotted 5px gold;*/
+    border-radius: 10px;
+    background-color: #780808;
+    line-height: normal;
+}
+
+
+
+/*CATERGORY CSS*/
+.activeStarter {
+    background-color: rgba(242,201,76,1);
+    color: white;
+}
+.activeHr {
+    background-color: rgba(242,201,76,1);
+    color: black;
+}
+.activeVip {
+    background-color: rgba(242,201,76,1);
+    color: black !important;
+}
+  /*--------------END NEW CSS*-----------------*/

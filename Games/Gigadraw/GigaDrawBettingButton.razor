@@ -1,0 +1,273 @@
+﻿@using GoPlayAsiaWebApp.ViewModels
+@using static GoplayasiaBlazor.Models.Constants.Settings
+@inject IToastService toastService;
+@inject GigadrawModel iGigadrawModel
+
+<section>
+    <div class="innerCon">
+        <div class="jacktopCon text-center">
+            <h2 class="jackpotPrize mt-2">JACKPOT:<span class="jackWinning ml-2">@iGigadrawModel.JackpotPrize</span></h2>
+            <h6 class="consolCon m-0">CONSOLATION:<span class="jackWinning ml-2">@iGigadrawModel.ConsolationPrize</span></h6>
+        </div>
+
+
+        @if (@iGigadrawModel.IsGameOpen)
+        {
+            <div class="ticketGameCon">
+                @if (UserBets != null)
+                {
+
+                    <div class="row m-0 p-0 align-items-center justify-content-center d-flex">
+                        <div class="gameResult mt-0 col align-items-center d-flex pl-1 pr-0">RESULT : <span class="gdResulColored ml-1">@GameResultString</span></div>
+                        <div class="totalBetsGd mt-0 col d-flex  align-items-center">Total Bets: @TotalBets </div>
+                    </div>
+                    <h6 class="text-center  font-weight-bold mb-0 mt-2 " style="font-size: 15px; color: white;">SELECTED BETS COMBINATIONS</h6>
+
+                    <div class="custom-grid-container">
+                        <div class="custom-grid-container">
+                            <div class="custom-grid-section">
+                                @foreach (var _userbets in UserBets)
+                                {
+                                    if (_userbets.BetStatus == (int)BetStatus.Win)
+                                    {
+
+                                        <div class="custom-grid-item" style="color:black; background-color:gold;font-weight: 600;">
+                                            @_userbets.BetValue
+                                        </div>
+                                    }
+                                    else if (_userbets.BetStatus == (int)BetStatus.Consolation)
+                                    {
+                                        <div class="custom-grid-item" style=" color:black; background-color: #00ff24; font-weight: 600;">
+                                            @_userbets.BetValue
+                                        </div>
+                                    }
+                                    else
+                                    {
+
+                                        <div class="custom-grid-item">
+                                            @_userbets.BetValue
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+            @if (@iGigadrawModel.IsLuckyPickEnabled)
+            {
+                <div class="luckyPickCon row d-flex mt-1">
+                    <button style="color: #bf9005; border: 2px solid #bf9005;" class="luckyx1 btn col font-weight-bolder @(iGigadrawModel.IsLuckyPick1 ? "btn-warning text-dark": "btn-light ")" @onclick='(() => SetLuckyPickBet(Constants.LuckyPick))'> LUCKY PICK</button>
+                    <button style="color: #bf9005; border: 2px solid #bf9005;" class="luckyx5 btn col  font-weight-bolder @(iGigadrawModel.IsLuckyPick5 ? "btn-warning text-dark": "btn-light  ")" @onclick='(() => SetLuckyPickBet(Constants.LuckyPickx5))'> LUCKY PICKX5</button>
+                    <button style="color: #bf9005; border: 2px solid #bf9005;" class="luckyx10 btn col font-weight-bolder @(iGigadrawModel.IsLuckyPick10 ? "btn-warning text-dark": "btn-light")" @onclick='(() => SetLuckyPickBet(Constants.LuckyPickx10))'> LUCKY PICK X10</button>
+                </div>
+            }
+            <div class="bettingInfo row text-light d-flex ">
+                <p class="AtoZ text-center col-4 p-0 d-flex">3 LETTERS (A-Z)</p>
+                <p class="zeroToNine col text-center p-0 d-flex">1 NUMBER</p>
+                <p class="amo col text-center d-flex p-0">BET</p>
+                <p class="totAmo col text-center d-flex p-0">TOTAL BET</p>
+            </div>
+            <div class="inputField row d-flex">
+                <span style="@cssInputBorder text-transform: uppercase; background-color: white; border-radius: 5px; height: 40px; font-size:22px; padding-left:5px; margin:2px;" class="col-4 text-center font-weight-bold d-flex justify-content-center align-items-center" @onclick="(() => setKeyMode(0))">
+                    @if (String.IsNullOrEmpty(iGigadrawModel.LetterValue))
+                    {
+                        <span style="font-size:12px; color: grey">INPUT LETTERS</span>
+                    }
+                    else
+                    {
+                        @iGigadrawModel.LetterValue
+                        ;
+                    }
+                    
+                    
+                </span>
+                <span style="@cssInputNumBetBorder text-transform: uppercase; background-color: white; border-radius: 5px; height: 40px; font-size:22px; padding-left:5px; margin:2px;" class="numericGiga col-3  d-flex justify-content-center align-items-center font-weight-bold" @onclick="(() => setKeyMode(1))">
+
+                    @if (String.IsNullOrEmpty(iGigadrawModel.NumberValueInput))
+                    {
+                        <span class="zeroToNinePlaceholder" style="font-size:17px; color: grey">0-9</span>
+                    }
+                    else
+                    {
+                        @iGigadrawModel.NumberValueInput;
+                    }
+                    
+                
+                </span>
+                <span @onclick='(() => DelKeyNum())' class="gigaNumericDelKey"><img style="width: 22px; height: 22px; background: none;" src="/img/x-button.png" /></span>
+                <label  class="disbaseValueGolCoin col-1 text-light d-flex align-items-center justify-content-center mr-2 ml-2 mb-1 "><img class="mt-1" src="/img/gold-chip-20.png" style="height: 40px; width: 40px;"></label>
+                <label style="height: 40px; background-color: white;" class="disTotalValue font-weight-bold col-3 text-dark p-0 justify-content-center align-items-center d-flex">@iGigadrawModel.BetAmount</label>
+            </div>
+            <div class="clear-BetCon row d-flex mt-2">
+                <button class="clearBtn bnt col p-2 mr-3" @onclick='(() => Clear())'>CLEAR</button>
+                <button @ref="btnbet" class="@cssBtnBetBorder @(iGigadrawModel.IsBetEnabled  ? "betBtn m-0" : "disbetBtn col") bnt col" @onclick='(() => BetOptionSelected(Constants.NormalPick))'>BET</button>
+            </div>
+            if (keymode == 0)
+            {
+                <p class="d-flex text-light mt-2 font-weight-bold" style="background-color: blue; padding: 1px 4px; border-radius: 15px; width:fit-content; margin: 0 auto; font-size:14px;">CHOOSE 3 LETTERS</p>
+                <div class="parent mt-2  mb-5">
+                    <button class="div1 btn" style="background-color: white; border: none;" @onclick="(() => setBet('A'))"> A</button>
+                    <button class="div2 btn" style="background-color: white; border: none;" @onclick="(() => setBet('B'))"> B</button>
+                    <button class="div3  btn" style="background-color: white;border: none;" @onclick="(() => setBet('C'))"> C</button>
+                    <button class="div4 btn" style="background-color: white; border: none;" @onclick="(() => setBet('D'))"> D</button>
+                    <button class="div5 btn" style="background-color: white; border: none;" @onclick="(() => setBet('E'))"> E</button>
+                    <button class="div6 btn" style="background-color: white; border: none;" @onclick="(() => setBet('F'))"> F</button>
+                    <button class="div7 btn" style="background-color: white;" @onclick="(() => setBet('G'))"> G</button>
+                    <button class="div8 btn" style="background-color: white;" @onclick="(() => setBet('H'))">H </button>
+                    <button class="div9 btn" style="background-color: white;" @onclick="(() => setBet('I'))"> I</button>
+                    <button class="div10 btn" style="background-color: white;" @onclick="(() => setBet('J'))"> J</button>
+                    <button class="div11 btn" style="background-color: white;" @onclick="(() => setBet('K'))">K </button>
+                    <button class="div12 btn" style="background-color: white;" @onclick="(() => setBet('L'))"> L</button>
+                    <button class="div13 btn" style="background-color: white;" @onclick="(() => setBet('M'))"> M</button>
+                    <button class="div14 btn" style="background-color: white;" @onclick="(() => setBet('N'))"> N</button>
+                    <button class="div15 btn" style="background-color: white;" @onclick="(() => setBet('O'))"> O</button>
+                    <button class="div16 btn" style="background-color: white;" @onclick="(() => setBet('P'))">P</button>
+                    <button class="div17 btn" style="background-color: white;" @onclick="(() => setBet('Q'))"> Q</button>
+                    <button class="div18 btn" style="background-color: white;" @onclick="(() => setBet('R'))"> R</button>
+                    <button class="div19 btn" style="background-color: white;" @onclick="(() => setBet('S'))"> S</button>
+                    <button class="div20 btn" style="background-color: white;" @onclick="(() => setBet('T'))"> T</button>
+                    <button class="div21 btn" style="background-color: white;" @onclick="(() => setBet('U'))">U </button>
+                    <button class="div22 btn" style="background-color: white;" @onclick="(() => setBet('V'))">V </button>
+                    <button class="div23 btn" style="background-color: white;" @onclick="(() => setBet('W'))"> W</button>
+                    <button class="div24 btn" style="background-color: white;" @onclick="(() => setBet('X'))"> X</button>
+                    <button class="div25 btn" style="background-color: white;" @onclick="(() => setBet('Y'))"> Y</button>
+                    <button class="div26 btn" style="background-color: white;" @onclick="(() => setBet('Z'))"> Z</button>
+                    <button class="div28 xButton btn" style="background-color: white;" @onclick='(() => DelKey())'><img src="/img/x-button.png" /> </button>
+                </div>
+            }
+            if (keymode == 1)
+            {
+                <p class="d-flex text-light mt-2 font-weight-bold" style="background-color: blue; padding: 1px 4px; border-radius: 15px; width:fit-content; margin: 0 auto; font-size:14px; max-width: 360px;">CHOOSE 1 NUMBER</p>
+                <div class="custom-keyboard-giga-number justify-content-center mt-2 mb-6">
+                <button class="div01 btn" @onclick="(() => setBetnum('1'))">1 </button>
+                <button class="div02 btn" @onclick="(() => setBetnum('2'))">2 </button>
+                <button class="div03 btn" @onclick="(() => setBetnum('3'))">3 </button>
+                <button class="div04 btn" @onclick="(() => setBetnum('4'))">4 </button>
+                <button class="div05 btn" @onclick="(() => setBetnum('5'))">5 </button>
+                <button class="div06 btn" @onclick="(() => setBetnum('6'))">6 </button>
+                <button class="div07 btn" @onclick="(() => setBetnum('7'))">7 </button>
+                <button class="div08 btn" @onclick="(() => setBetnum('8'))">8 </button>
+                <button class="div09 btn" @onclick="(() => setBetnum('9'))">9 </button>
+                <button class="div010 btn" @onclick="(() => setBetnum('0'))">0 </button>
+              @*  <button class="div011 btn xButton" @onclick='(() => DelKeyNum())'><img src="/img/x-button.png" /> </button>*@
+            </div>
+            }
+            <div class="ticketGameCon">
+                @if (UserPrevBets != null)
+                {
+
+                    <div class="row d-flex m-0 p-0 row mt-3" style="color: greenyellow;">
+                        <div class="gameResult Gameprev text-left mt-2 col pr-0 pl-0 mb-1 justify-content-center text-light align-items-center d-flex mr-1 ml-0" style="font-size:14px; border: none; margin-left: 5px; background: none; background: none; border: 1px solid white;">PREV BETS GAME#:@(PrevGameRound != null ? PrevGameRound.RoundNumber : "")<span class="gdResulColored"></span></div>
+                        @if (PrevGameRound != null)
+                        {
+                            <div class="totalBetsGd text-rigth mt-2 mb-1 col pl-0 pr-0 text-dark  justify-content-center align-items-center d-flex mr-0 ml-0" style="font-size:15px; border: none; background: none; background-color: white; color: black">RESULT:<span class="ml-1" style="color:red;">@(PrevGameRound.RoundStatus == (int)RoundStatus.Cancelled ? "CANCELLED" : (PrevGameRound != null ? PrevGameRound.WinningResult : ""))</span> </div>
+                        }
+
+                    </div>
+
+                    <div class="custom-grid-container">
+                        <div class="custom-grid-section">
+                            @foreach (var _prevuserbets in UserPrevBets)
+                            {
+                                if (_prevuserbets.BetStatus == (int)BetStatus.Win)
+                                {
+
+                                    <div class="custom-grid-item" style="color:black; background-color:gold; font-weight: 600;">
+                                        @_prevuserbets.BetValue
+                                    </div>
+                                }
+                                else if (_prevuserbets.BetStatus == (int)BetStatus.Consolation)
+                                {
+                                    <div class="custom-grid-item" style=" color:black; background-color: #00ff24; font-weight: 600;">
+                                        @_prevuserbets.BetValue
+                                    </div>
+                                }
+                                else
+                                {
+
+                                    <div class="custom-grid-item">
+                                        @_prevuserbets.BetValue
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            @*         <div class="disabledDiv">
+        <div class="row d-flex m-0 p-0">
+        <div class="gameResult text-center mt-2 col">RESULT: <span class="gdResulColored">@GameResultString</span></div>
+        <div class="totalBetsGd text-center mt-2 col">Total Bets: @TotalBets </div>
+        </div>
+        <div class="disluckyPickCon row d-flex mt-1">
+        <button class="disluckyx1 btn col"> LUCKY PICK</button>
+        <button class="disluckyx5 btn col"> LUCKY PICK X5 </button>
+        <button class="disluckyx10 btn col"> LUCKY PICK<span class="d-block">X10</span></button>
+        </div>
+        <div class="disbettingInfo row d-flex text-light d-flex mt-2">
+        <p class="disAtoZ col-4 text-center mr-2">3 LETTERS <span class="d-block">(A-Z)</span></p>
+        <p class="diszeroToNine col-2 text-center"><span class="d-block text-center d-flex">NUMBER (0-9)</span></p>
+        <p class="disamo col-3 text-center d-flex"><span class="d-block">FIXED AMOUNT</span></p>
+        <p class="distotAmo col-2 text-center d-flex">TOTAL AMOUNT</p>
+        </div>
+        <div class="disinputField row d-flex disabled">
+        <input class="col-4 text-center" placeholder="A-Z" />
+        <input class="col-2 text-center" placeholder="0-9" />
+        <label class="disbaseValue col-2 text-light d-flex align-items-center justify-content-center">@iGigadrawModel.BaseBetValue</label>
+        <label class="disTotalValue col text-light d-flex align-items-center justify-content-center p-0">@iGigadrawModel.BaseBetValue</label>
+        </div>
+        <div class="clear-BetCon row d-flex mt-2">
+        <button class="disclearBtn bnt col p-2 mr-3">CLEAR</button>
+        <button class="disbetBtn bnt col m-0 p-2">BET</button>
+        </div>
+        </div>*@
+            <div class="ticketGameCon">
+                @if (UserPrevBets != null)
+                {
+                    <div class="row m-0 p-0 align-items-center justify-content-center d-flex">
+                        <div class="gameResult mt-0 col align-items-center  d-flex pl-1 pr-0">RESULT : <span style="font-size: 20px; font-weight:600;line-height: normal" class="gdResulColored ml-1">@GameResultString</span></div>
+                        <div class="totalBetsGd mt-0 col d-flex  align-items-center">Total Bets: @TotalBets </div>
+                    </div>
+                    <h6 class="text-center  font-weight-bold mb-0 mt-2 " style="font-size: 15px; color: white;">SELECTED BETS COMBINATIONS</h6>
+                    <div class="custom-grid-container">
+                        <div class="custom-grid-section">
+                            @foreach (var _userbets in UserBets)
+                            {
+                                if (_userbets.BetStatus == (int)BetStatus.Win)
+                                {
+
+                                    <div class="custom-grid-item" style="color:black; background-color:gold; font-weight: 600;">
+                                        @_userbets.BetValue
+                                    </div>
+                                }
+                                else if (_userbets.BetStatus == (int)BetStatus.Consolation)
+                                {
+                                    <div class="custom-grid-item" style=" color:black; background-color: #00ff24; font-weight: 600;">
+                                        @_userbets.BetValue
+                                    </div>
+                                }
+                                else
+                                {
+
+                                    <div class="custom-grid-item">
+                                        @_userbets.BetValue
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>
+@code {
+    [Parameter]
+    public int TotalBets { get; set; }
+
+}

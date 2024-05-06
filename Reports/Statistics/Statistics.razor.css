@@ -1,0 +1,52 @@
+﻿.StatisticMaincontainer {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+tr.headerContainer {
+    background-color: white;
+}
+
+.header {
+    background-color: white;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.statcon {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.status, .winStatus {
+    padding: 5px 0;
+}
+
+.currentTokenCon {
+    padding: 5px 0;
+}
+
+.winDiff {
+    color: #4cff00;
+}
+
+.lossDiff {
+    color: #cf2626;
+}
+
+tbody.statcon {
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .winDiff {
+        margin-top: 15px;
+    }
+
+    .lossDiff {
+        color: #cf2626;
+        margin-top: 15px;
+    }
+}

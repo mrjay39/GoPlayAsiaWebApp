@@ -1,0 +1,56 @@
+﻿
+.mainCon {
+    padding: 10px;
+    max-width: 450px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+td { 
+    font-size: 12px;
+}
+.table {
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+.checkStatusIcon {
+    font-size: 60px;
+    color: #44ae70;
+}
+.failedStatusIcon {
+    font-size: 60px;
+    color: #c22828;
+}
+
+/*.transactionText {
+    font-size: 12px;
+}
+*/
+.strong {
+    font-weight: 600;
+    margin-top: 10px;
+}
+.pendingStatus {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #ff6a00;
+    color: white;
+}
+.approvedStatus {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #44ae70;
+    color: white;
+}
+.FailedReqStatus {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #c22828;
+    color: white;
+}
+
+.transAmo {
+    font-weight: 600;
+    font-size: 17px;
+}

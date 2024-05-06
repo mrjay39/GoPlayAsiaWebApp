@@ -1,0 +1,1079 @@
+﻿body {
+    background-color: #1c1c1c;
+}
+
+section {
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.mainBetContainer {
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: #05520d;
+}
+
+a:link {
+    text-decoration: none;
+    margin: 0 auto;
+}
+/*START TEXT CONTROL*/
+.g12Titleheader {
+    font-size: 12px;
+}
+.accumulatedBet, .multiflier, .bet, .roWinning {
+    font-weight: 400;
+    font-size: 14px;
+}
+/*END TEXT CONTROL*/
+.tokenSize {
+    max-height: 25px;
+    max-width: 44px;
+    position: relative;
+    margin: auto;
+   
+}
+
+
+.betContainer {
+    position: relative;
+    line-height: normal;
+    padding: 0;
+    color: white;
+    margin: 0 auto;
+    border: 1px solid #ffe599;
+}
+
+hr {
+    width: 90%;
+    border-top: 1px solid black;
+    margin: 0;
+}
+
+.border-box.withoutbet, .withbet {
+    border-radius: 0 !important;
+}
+
+.roBlackcon, .roRedcon {
+    border: 2px solid white;
+}
+
+    .roBlackcon a {
+        text-decoration: none;
+        color: white;
+    }
+
+.roRedcon {
+    background-color: #b30000;
+    color: white;
+}
+
+    .roRedcon a {
+        text-decoration: none;
+        color: white;
+    }
+
+
+.winning {
+    background-color: #313131;
+    border-radius: 5px;
+    color: gold;
+}
+
+.main {
+    max-width: 640px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.red button {
+    background-color: red;
+    color: white;
+    border-radius: 0 !important;
+}
+.redDisabled button {
+    background-color: #c14b45;
+    color: white;
+    border-radius: 0 !important;
+}
+
+
+.black button {
+    background-color: black;
+    color: white;
+    border-radius: 0 !important;
+}
+.blackDisabled button {
+    background-color: #636363;
+    color: white;
+    border-radius: 0 !important;
+}
+
+.disbetBtn {
+    background-color: grey;
+}
+
+.betContainer button {
+    font-size: 24px;
+    line-height: 17px;
+    padding: 10px 6px;
+    border: none;
+    display: block;
+    height: 60.97px;
+    font-weight: bold;
+    color: #ffe599;
+}
+
+.winning {
+    text-align: center;
+    font-weight: 600;
+}
+
+.border-box {
+    /*border: 4px solid rgb(141, 141, 141);*/
+}
+
+.bets {
+    font-weight: 600;
+    width: 100%;
+}
+
+.betBtn {
+    font-weight: 900;
+    line-height: normal;
+}
+
+
+.runningOdds {
+    margin-top: 1px;
+}
+
+
+
+.multiflier, .player, .winning, .bet {
+}
+
+.red {
+    font-weight: 600;
+    font-size: 23px;
+    height: 100%;
+}
+
+.black {
+    font-weight: 600;
+    font-size: 23px;
+    height: 100%;
+}
+
+/*ACTIVE BUTTON 1-12*/
+.numberActive {
+    color: black !important;
+    background-color: greenyellow !important;
+}
+
+.blackActive {
+    font-weight: 600;
+    font-size: 23px;
+    height: 100%;
+}
+/*ACTIVE BUTTON 1-12*/
+.roContainer {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+}
+
+.regContainer {
+    max-width: 640px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+/*START CLOSED/CANCELLED HERE*/
+
+.disabledDiv, .disroBlackcon, .disroRedcon {
+    /*    pointer-events: none;*/
+ /*   filter: grayscale(50%);*/
+}
+
+/*.disroRedcon {
+    filter:grayscale(50%);
+}
+
+.disroBlackcon {
+    filter: grayscale(50%);
+}*/
+
+.btn.betBtn {
+    background-color: #808080;
+    color: white;
+}
+
+
+.diswinning {
+    color: white;
+    background-color: #313131;
+    text-align: center;
+    font-weight: 600;
+}
+
+.winners {
+    background-color: #55d336 !important;
+}
+
+.rOwinners {
+    border: solid 5px #55d336 !important;
+}
+/*END CLOSED/CANCELLED HERE*/
+/*Start RunniOdds Container*/
+.disroRedcon, .disroBlackcon {
+    position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .Cancelverlay {
+        position: absolute;
+        color: red;
+        top: 30%;
+        left: 25%;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .betCancelled {
+        transform: rotate(-40deg);
+        font-size: 20px;
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        color: red;
+    }
+}
+
+.betCancelled {
+    transform: rotate(-40deg);
+    /* transform: translate(-50%, -50%);*/
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: red;
+}
+
+.cancelledRegular {
+    position: relative;
+}
+
+.regularbetCancelled {
+    transform: rotate(-40deg);
+    /* transform: translate(-50%, -50%);*/
+    margin: 0 auto;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: red;
+    font-size: 30px;
+    max-width: 240px;
+}
+
+.withbet {
+    
+    color: darkblue;
+}
+
+.withoutbet {
+    color: darkblue;
+}
+/*End RunniOdds Container*/
+/*.disbetBlackOddsContainer {
+    background-color: grey;
+    color: white;
+    position: relative;
+}
+
+.disbetRedOddsContainer {
+    color: white;
+    position: relative;
+    margin-right: 3px;
+}
+*/
+/*.betCancelled {
+    transform: rotate(-40deg);
+    font-size: 17px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    color: red;
+    height: 100%;
+}*/
+
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    .betContainer button {
+        font-size: 24px;
+        line-height: 20px;
+        padding: 6px 10px;
+        border: none;
+        display: block;
+        height: 60.97px;
+    }
+
+    .BET {
+        font-size: 14px;
+        margin-left: 2px;
+    }
+
+    .currentBets {
+        margin-left: 2px;
+        font-size: 14px;
+    }
+
+    .winning {
+        margin-left: 2px;
+    }
+}
+
+.bets {
+    text-align: center;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 360px) {
+
+    .bets {
+        text-align: left;
+    }
+}
+
+
+.RegularGame, .disrunningOdds,
+.runningOdds {
+    margin-top: 0;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+    /* Active */
+    .RegularGame .betContainer .v2-option .v2-label-type,
+    .runningOdds .betContainer .v2-option .v2-label-type {
+        width: 150px;
+        color: black;
+    }
+
+    .RegularGame .bankerBetContainer .v2-option .v2-label-type,
+    .runningOdds .bankerBetContainer .v2-option .v2-label-type {
+        width: 150px;
+        color: black;
+    }
+
+    /* Disabled */
+    .RegularGame .disbetPlayerRegContainer .v2-option .v2-label-type,
+    .disrunningOdds .disbetPlayerOddsContainer .v2-option .v2-label-type {
+        width: 150px;
+        color: #808080;
+    }
+
+    .RegularGame .disbetBankerRegContainer .v2-option .v2-label-type,
+    .disrunningOdds .disbankerBetContainer .v2-option .v2-label-type {
+        width: 150px;
+        color: #808080;
+    }
+
+.bankerBetContainer {
+    background-color: red;
+    color: white;
+}
+
+.disbetBankerRegContainer {
+    background-color: grey;
+    width: 480px;
+    color: white;
+    position: relative;
+    margin-right: 3px;
+}
+
+.disbetPlayerRegContainer {
+    background-color: grey;
+    width: 480px;
+    color: white;
+    position: relative;
+    margin-right: 3px;
+    margin: 0 auto;
+}
+
+.betContainer,
+.disbetPlayerRegContainer,
+.disbetPlayerOddsContainer {
+    /*  margin: 0px 3px 0 0 !important;*/
+}
+
+.v2-holder {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.winbetContainer {
+    border: 5px solid #61d918;
+}
+
+.v2-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 145px;
+    height: calc();
+    margin: 0 auto;
+}
+
+    .v2-option .v2-label {
+        font-size: 26px;
+        line-height: 30px;
+    }
+
+    .v2-option .v2-label-type {
+        background-color: #fff;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 16px;
+        text-align: center;
+    }
+
+    .v2-option .v2-label-bet {
+        font-size: 20px;
+        margin-top: 8px;
+    }
+
+.v2-details {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+    .v2-details .v2-win {
+        text-align: left;
+        padding-left: 2px !important;
+        font-size: 18px;
+    }
+
+    .v2-details .v2-multiplier {
+        text-align: right;
+        padding-right: 2px !important;
+    }
+
+.v2-details-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+    .v2-details-top .v2-totalbetsodds {
+        text-align: left;
+        padding-left: 5px !important;
+        font-size: 18px;
+    }
+
+.diamondblack {
+    clip-path: polygon(49.92% 0%, 99.34% 49.25%, 49.67% 99.59%, 0% 49.25%);
+    background-color: #22222e;
+}
+
+.diamondred {
+    clip-path: polygon(49.92% 0%, 99.34% 49.25%, 49.67% 99.59%, 0% 49.25%);
+    background-color: #d2d2d2;
+}
+/*Version 3 Css*/
+.disbetNumber {
+    border-radius: 0 !important;
+}
+
+.betNumber {
+    padding: 0;
+}
+
+.showSelectedToken {
+    position: relative;
+  /*  border: 1px solid #fff2cc;*/
+    height: 25px;
+    background-color: #2c7e10;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+    .showSelectedToken img {
+        max-height: 25px;
+        max-width: 44px;
+    }
+.showSelectedTokenWinRed {
+    position: relative;
+    background-color: rgb(69, 219, 18);
+    /*box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;*/
+    pointer-events: none;
+    animation: winRed 1s infinite;
+}
+
+@keyframes winRed {
+    from {
+        background-color: rgb(64,4,6);
+    }
+
+    to {
+        background-color: red;
+    }
+}
+.showSelectedTokenWin {
+    position: relative;
+    background-color: rgb(69, 219, 18);
+    /*box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;*/
+    pointer-events: none;
+    animation: winBlack 1s infinite;
+}
+
+@keyframes winBlack {
+    from {
+        background-color: #808080;
+    }
+
+    to {
+        background-color: Black;
+    }
+}
+
+
+.tokenText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-weight: bold;
+    font-size: 13px;
+}
+/*SEPARATOR*/
+marquee {
+    max-width: 640px;
+    margin: 0 auto;
+    background: rgb(64,4,6);
+    background: linear-gradient(90deg, rgba(64,4,6,1) 0%, rgba(158,12,17,1) 50%, rgba(64,4,6,1) 100%);
+}
+/*End Version 3 Css*/
+
+
+
+.block {
+    position: absolute;
+    animation-name: tokenAnimationEaseIn;
+    animation-duration: .6s;
+    bottom: -92%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+@keyframes tokenAnimationEaseIn {
+    from {
+        bottom: -120%;
+        opacity: 0;
+    }
+
+    to {
+        bottom: -92%;
+        opacity: 100%;
+    }
+}
+
+.none {
+    opacity: 0;
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    animation-name: closetokenAnimationEaseout;
+    animation-duration: .4s;
+}
+
+@keyframes closetokenAnimationEaseout {
+    from {
+        bottom: -92%;
+        opacity: 100%;
+    }
+
+    to {
+        bottom: -120%;
+        opacity: 0;
+    }
+}
+
+.tokenhide {
+    opacity: 0;
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    z-index: -1;
+    display: none;
+}
+/*button winning*/
+
+.winningNumberRed {
+    color: black !important;
+    display: inline-block;
+    animation: blinkingBackgroundred 1s infinite;
+}
+
+@keyframes blinkingBackgroundred {
+    0% {
+        background-color: yellow;
+    }
+
+    100% {
+        background-color: orange;
+    }
+}
+.winningNumberBlack {
+    color: white !important;
+    display: inline-block;
+    border-radius: 5px;
+    animation: blinkingBackground 1s infinite;
+}
+
+@keyframes blinkingBackground {
+
+    0% {
+        background-color: yellow;
+    }
+
+    100% {
+        background-color: orange;
+    }
+}
+/*button winning*/
+
+/*token animation after result*/
+.animationOut01 {
+    position: absolute;
+    animation-name: slideOut1;
+    animation-iteration-count: 2;
+    animation-duration: 1s;
+    left: 50%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+@keyframes slideOut1 {
+    from {
+        left: 30%;
+        top: -5%;
+        transform: rotateY(-180deg);
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        width: 44px;
+        top: -280%;
+        left: 250%;
+        transform: rotateY(360deg);
+        opacity: 1;
+        display: block;
+    }
+}
+.animationOut02 {
+    position: absolute;
+    animation-name: slideOut2;
+    animation-iteration-count: 2;
+    animation-duration: 1s;
+    left: 50%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+
+@keyframes slideOut2 {
+    from {
+        left: 30%;
+        top: -10%;
+        transform: rotateY(-180deg);
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        width: 44px;
+        top: -280%;
+        left: 190%;
+        transform: rotateY(360deg);
+        opacity: 1;
+        display: block;
+    }
+}
+.delay1 {
+    animation-delay: .5s;
+}
+.delay2 {
+    animation-delay: 1s;
+}
+.delay3 {
+    animation-delay: 1.5s;
+}
+.animationOut03 {
+    position: absolute;
+    animation-name: slideOut3;
+    animation-iteration-count: 2;
+    animation-duration: 1s;
+    left: 50%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+
+@keyframes slideOut3 {
+    from {
+        left: 30%;
+        top: -10%;
+        transform: rotateY(-180deg);
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        width: 44px;
+        top: -280%;
+        left: 70%;
+        transform: rotateY(360deg);
+        opacity: 1;
+        display: block;
+    }
+}
+.animationOut04 {
+    position: absolute;
+    animation-name: slideOut4;
+    animation-iteration-count: 2;
+    animation-duration: 1s;
+    left: 50%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+
+@keyframes slideOut4 {
+    from {
+        left: 30%;
+        top: -10%;
+        transform: rotateY(-180deg);
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        width: 44px;
+        top: -280%;
+        left: -10%;
+        transform: rotateY(360deg);
+        opacity: 1;
+        display: block;
+    }
+}
+.animationOut05 {
+    position: absolute;
+    animation-name: slideOut5;
+    animation-iteration-count:2;
+    animation-duration: 1s;
+    left: 50%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+
+@keyframes slideOut5 {
+    from {
+        left: 30%;
+        top: -10%;
+        transform: rotateY(-180deg);
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        width: 44px;
+        top: -280%;
+        left: -120%;
+        transform: rotateY(360deg);
+        opacity: 1;
+        display: block;
+    }
+}
+.animationOut06 {
+    position: absolute;
+    animation-name: slideOut6;
+    animation-iteration-count: 2;
+    animation-duration: 1s;
+    left: 50%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+
+@keyframes slideOut6 {
+    from {
+        left: 30%;
+        top: -10%;
+        transform: rotateY(-180deg);
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        width: 44px;
+        top: -280%;
+        left: -220%;
+        transform: rotateY(360deg);
+        opacity: 1;
+        display: block;
+    }
+}
+.winToken {
+    width: 35px;
+    height: 35px;
+    
+}
+
+/*12-7*/
+.animationOut12 {
+    position: absolute;
+    animation-name: slideOut12;
+    animation-iteration-count: 2;
+    animation-duration: 1s;
+    left: 50%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+
+@keyframes slideOut12{
+    from {
+        left: 30%;
+        top: -10%;
+        transform: rotateY(-180deg);
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        width: 44px;
+        top: -390%;
+        left: 270%;
+        transform: rotateY(360deg);
+        opacity: 1;
+        display: block;
+    }
+}
+.animationOut11 {
+    position: absolute;
+    animation-name: slideOut11;
+    animation-iteration-count: 2;
+    animation-duration: 1s;
+    left: 50%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+
+@keyframes slideOut11 {
+    from {
+        left: 30%;
+        top: -10%;
+        transform: rotateY(-180deg);
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        width: 44px;
+        top: -390%;
+        left: 190%;
+        transform: rotateY(360deg);
+        opacity: 1;
+        display: block;
+    }
+}
+.animationOut10 {
+    position: absolute;
+    animation-name: slideOut10;
+    animation-iteration-count: 2;
+    animation-duration: 1s;
+    left: 50%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+
+@keyframes slideOut10 {
+    from {
+        left: 30%;
+        top: -10%;
+        transform: rotateY(-180deg);
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        width: 44px;
+        top: -390%;
+        left: 70%;
+        transform: rotateY(360deg);
+        opacity: 1;
+        display: block;
+    }
+}
+.animationOut9 {
+    position: absolute;
+    animation-name: slideOut9;
+    animation-iteration-count: 2;
+    animation-duration: 1s;
+    left: 50%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+
+@keyframes slideOut9 {
+    from {
+        left: 30%;
+        top: -10%;
+        transform: rotateY(-180deg);
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        width: 44px;
+        top: -370%;
+        left: -15%;
+        transform: rotateY(360deg);
+        opacity: 1;
+        display: block;
+    }
+}
+.animationOut8 {
+    position: absolute;
+    animation-name: slideOut8;
+    animation-iteration-count: 2;
+    animation-duration: 1s;
+    left: 50%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+
+@keyframes slideOut8 {
+    from {
+        left: 30%;
+        top: -10%;
+        transform: rotateY(-180deg);
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        width: 44px;
+        top: -380%;
+        left: -120%;
+        transform: rotateY(360deg);
+        opacity: 1;
+        display: block;
+    }
+}
+.animationOut7 {
+    position: absolute;
+    animation-name: slideOut7;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    left: 50%;
+    top: 50%;
+    height: 25px;
+    width: 44px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    display: hidden;
+}
+
+@keyframes slideOut7 {
+    from {
+        left: 30%;
+        top: -10%;
+        transform: rotateY(-180deg);
+        opacity: 1;
+        display: block;
+    }
+
+    to {
+        width: 44px;
+        top: -380%;
+        left: -230%;
+        transform: rotateY(360deg);
+        opacity: 1;
+        display: block;
+    }
+}
+.winToken {
+    width: 35px;
+    height: 35px;
+}
+/*token animation after result*/

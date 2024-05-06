@@ -1,0 +1,24 @@
+﻿.cardValue {
+    font-size: 20px !important;
+    line-height: .8;
+    margin-top: 2px;
+}
+/*button {
+    height: 58px;
+    width: 46px;
+    border-radius: 6px;
+    background-color: white;
+}*/
+button {
+    height: 47px;
+    width: 38px;
+    border-radius: 6px;
+    background-color: white;
+}
+
+@media only screen and (max-width: 342px) {
+    button {
+        height: 45px;
+        width: 32px;
+    }
+}

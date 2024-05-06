@@ -1,0 +1,321 @@
+﻿
+
+/* #region BOTH */
+    .tieRelative {
+        position: relative;
+    }
+
+    .borderGold {
+        border: 1px solid #6d6d6d;
+    }
+
+    .tokenSelectedBet {
+        position: relative;
+        height: 20px;
+        width: 44px;
+    }
+
+.selectedAmountToken {
+    position: absolute;
+    z-index: 1;
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    line-height: normal;
+
+}
+
+    .cardResultsVertical {
+        margin: 1px;
+        line-height: normal;
+        font-size: 20px;
+        border-radius: 2px;
+        border: 1px solid white;
+        padding: 3px 6px;
+        max-width: 40px;
+        color: black;
+        background-color: white;
+    }
+
+    .totalBets {
+        color: yellow;
+    }
+
+    .totalResultValue {
+        background-color: red;
+        color: white;
+        height: 25px;
+        width: 25px;
+        font-size: 20px;
+        font-weight: 400;
+        border-radius: 50%;
+        border: 1px solid white;
+        line-height: normal;
+    }
+
+    .winnerTie {
+        background-color: #7f6000;
+        color: white;
+        margin-right: 1px;
+        margin-bottom: 2px;
+        border-radius: 5px;
+        pointer-events: none;
+    }
+/* #endregion */
+
+/* #region GOLD */
+
+    /* #region DEFAULT */
+        .goldButton {
+            outline: 2px solid #101019 !important;
+            outline-offset: -2px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ffac00;
+            color: rgb(74, 56, 1);
+            box-shadow: 0px 10px 10px rgb(252, 226, 145) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(122, 93, 4) inset;
+        }
+    /* #endregion */
+
+    /* #region ACTIVATED */
+.goldButtonActive {
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    color: black;
+    outline: 2px solid #51ff00 !important;
+    outline-offset: -2px;
+    border-radius: 5px;
+
+}
+    /* #endregion */
+
+    /* #region DISABLED */
+        .DisGoldButton {
+            pointer-events: none;
+            margin-left: 1px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+            color: white;
+            background-color: grey;
+        }
+    /* #endregion */
+
+    /* #region WINNER */
+/*.WinGoldButton {
+    background-color: rgb(69, 219, 18);
+    color: white;
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    color: white;
+    margin-right: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    pointer-events: none;
+}*/
+.WinGoldButton {
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    color: black;
+    margin-right: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    pointer-events: none;
+    animation: winGold 1s infinite;
+}
+
+@keyframes winGold {
+    from {
+        background-color: yellow;
+        border: 3px solid yellow;
+    }
+
+    to {
+        background-color: rgb(69, 219, 18);
+        border: 3px solid rgb(69, 219, 18);
+    }
+}
+    /* #endregion */
+
+    /* #region TOKEN DISPLAY */
+        .additionaltokencontainer {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translate(-50%, -25%);
+            animation-name: additionaltokenAnimation;
+            animation-duration: var(--animation);
+            animation-iteration-count: 1;
+        }
+
+        @keyframes additionaltokenAnimation {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -200%;
+                left: 110%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 8%;
+                left: 40%;
+            }
+        }
+    /* #endregion */
+
+/* #endregion */
+
+/* #region SILVER */
+
+    /* #region DEFAULT */
+        .silverButton {
+            outline: 2px solid #101019 !important;
+            outline-offset: -2px;
+            border-radius: 5px;
+            border: none;
+            background-color: #0b3cdc;
+            color: white;
+            box-shadow: 0px 10px 10px rgb(78, 170, 248) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(0, 8, 161) inset;
+        }
+    /* #endregion */
+
+    /* #region ACTIVATED */
+.silverButtonActive {
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    color: black;
+    outline: 2px solid #51ff00 !important;
+    outline-offset: -2px;
+    border-radius: 5px;
+}
+    /* #endregion */
+
+    /* #region DISABLED */
+        .DisSilverButton {
+            pointer-events: none;
+            margin-left: 1px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+            color: white;
+            background-color: grey;
+        }
+    /* #endregion */
+
+    /* #region WINNER */
+.WinSilverButton {
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    color: black;
+    margin-right: 1px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    pointer-events: none;
+    animation: winGold 1s infinite;
+}
+
+@keyframes winGold {
+    from {
+        background-color: yellow;
+        border: 3px solid yellow;
+    }
+
+    to {
+        background-color: rgb(69, 219, 18);
+        border: 3px solid rgb(69, 219, 18);
+    }
+}
+    /* #endregion */
+
+    /* #region TOKEN DISPLAY */
+        .additionaltokencontainerBanker {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translate(-50%, -25%);
+            animation-name: additionaltokenAnimationBanker;
+            animation-duration: var(--animation);
+            animation-iteration-count: 1;
+        }
+
+        @keyframes additionaltokenAnimationBanker {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -200%;
+                left: -30%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 10%;
+                left: 39%;
+            }
+        }
+    /* #endregion */
+
+/* #endregion */
+
+/* #region MOBILE */
+    @media only screen and (max-width: 600px) {
+
+        /* #region TOKEN ANIMATION (GOLD) */
+        @keyframes additionaltokenAnimation {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -200%;
+                left: 100%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 10%;
+                left: 33%;
+            }
+        }
+        /* #endregion */
+
+        /* #region TOKEN ANIMATION (SILVER) */
+        @keyframes additionaltokenAnimationBanker {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -200%;
+                left: -40%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 10%;
+                left: 32%;
+            }
+        }
+        /* #endregion */
+    }
+/* #endregion */
+.relativeDiv {
+    position: relative;
+}
+.tieResultText {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gold;
+    color: black;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: 600;
+    transform: translate(-50%, -50%);
+    opacity: 70%;
+}

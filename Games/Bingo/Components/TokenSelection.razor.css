@@ -1,0 +1,103 @@
+﻿.tokenContainer {
+    max-width: 640px;
+    margin: 0 auto;
+}
+.selected {
+    border-radius: 3px;
+    border: 1px solid gold;
+    color: white;
+    background-color: #dd620b;
+    margin: 0 8px;
+    line-height: 1.2;
+    font-size: 20px;
+    font-weight: bolder;
+}
+button {
+    border-radius: 3px;
+    border: 1px solid #dd620b;
+    background-color: #f6b26b;
+    color: red;
+    margin: 0 8px;
+    padding: 4px 0;
+    line-height: 1.2;
+    font-size: 20px;
+    font-weight: 600;
+}
+.patternDiv {
+    background-color: #fff2cc;
+    border: 1px solid #f9cb9c;
+    font-size: 14px;
+}
+.cardText {
+    color: black;
+    font-size: 10px;
+
+}
+.payoutText {
+  
+    font-weight: bolder;
+    color: red;
+    line-height: normal;
+    font-size: 15px;
+   /* border-top: 1px solid #1e1e1e;*/
+}
+.tokenContainer {
+  /*  max-width: 640px;
+    margin: 0 auto;*/
+}
+
+.jackpotImage {
+    /*position: relative;*/
+
+}
+.jackpotText {
+ border-top: 1px solid gold;
+ border-bottom: 1px solid gold;
+    color: gold;
+    font-weight: 800;
+    font-size: 18px;
+}
+/*.majorImage {
+    position: relative;
+}
+*/
+.majorText {
+    color: aquamarine;
+    /*position: absolute;*/
+
+}
+.majorHeader {
+    padding: 0 3px;
+    border-radius: 5px;
+    background-color: #01675d;
+    /*position: absolute;*/
+    color: aqua;
+    font-size: 11px;
+    width: max-content;
+}
+.jackpotHeader {
+    padding: 0 3px;
+    border-radius: 5px;
+    background-color: gold;
+    /*position: absolute;*/
+    color: #1d1501;
+    font-size: 11px;
+  
+}
+.cardNoText {
+    color: black;
+    line-height: .7;
+    font-size: 12px !important;
+    margin-bottom: 2px;
+}
+.currencyDiv {
+    background-color: #f3e8c5;
+    color: #101010;
+    border: 2px solid #f9cb9c;
+}
+
+@media only screen and (max-width: 342px) {
+    .cardNoText {
+        font-size: 8px !important;
+    }
+}

@@ -1,0 +1,18 @@
+﻿<div class="generator">
+    @if (String.IsNullOrEmpty(WinRate))
+    {
+        <p class="text-center glow">BET = PAYOUT</p>
+    }
+    else
+    {
+        <p class="text-center .glow">@WinRate</p>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string WinRate { get; set; } = "";
+
+    [Parameter]
+    public int SelectedChipAmount { get; set; } = 0;
+}

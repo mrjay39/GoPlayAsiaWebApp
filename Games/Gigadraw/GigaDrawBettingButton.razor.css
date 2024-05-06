@@ -1,0 +1,869 @@
+﻿section {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 640px;
+}
+
+.innerCon {
+    margin: 0;
+    padding: 0;
+}
+
+.gameResult {
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: white;
+    width: 200px;
+    margin: 0 auto;
+    font-weight: 600;
+    border: solid 1px white;
+    margin-right: 10px;
+}
+
+.gdResulColored {
+    color: #d69e2f;
+}
+
+
+.totalBetsGd {
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: white;
+    width: 200px;
+    margin: 0 auto;
+    font-weight: 600;
+    border: solid 1px white;
+}
+
+.jackpotPrize, .consolCon {
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    margin: 0;
+}
+
+span.jackWinning {
+    color: #ffb400;
+    font-weight: 600;
+}
+
+.luckyPickCon {
+    margin: 0;
+    padding: 0;
+}
+
+.luckyx1, .luckyx5, .luckyx10 {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    margin: 3px;
+}
+
+.luckyx1 {
+    background-color: /*#d69e2f *//*#da2b48*/;
+}
+
+    .luckyx1:focus {
+    
+    }
+
+.luckyx5 {
+    background-color:/* #2f75d7*/;
+}
+
+    .luckyx5:focus {
+      
+    }
+
+.luckyx10 {
+    background-color:/* #d69e2f*/;
+}
+
+    .luckyx10:focus {
+       
+    }
+
+.bettingInfo p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.bettingInfo p {
+    font-size: 12px;
+    margin: 0;
+    position: relative;
+    line-height: normal;
+}
+
+.AtoZ {
+    position: absolute;
+    top: 3px;
+    left: 13%;
+    transform: translate(-29%, -12%)
+}
+
+.zeroToNine {
+    position: absolute;
+    top: 3px;
+    left: 13%;
+    transform: translate(-29%, -10%)
+}
+
+.amo {
+    position: absolute;
+    top: 3px;
+    left: 16%;
+    transform: translate(-29%, -10%)
+}
+
+.totAmo {
+    position: absolute;
+    top: 3px;
+    left: 7%;
+    transform: translate(-25%, -10%)
+}
+
+
+.bettingInfo {
+    padding: 0 5px;
+    margin: 0;
+    position: relative;
+}
+
+.inputField {
+  position: relative;
+    margin: 0 auto;
+    padding: 0;
+}
+
+    .inputField input {
+        padding: 8px;
+        margin: 2px;
+        border-radius: 5px;
+        border: none;
+    }
+
+.betBtn {
+    border: none;
+    background-color: #2ad355;
+    color: #084224;
+    border-radius: 5px;
+    margin: 2px;
+    font-weight: 600;
+}
+
+.clearBtn {
+    border: none;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 5px;
+}
+
+.baseValue {
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.TotalValue {
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 2px;
+    padding-right: 0;
+}
+
+.amo {
+    padding-left: 7px;
+}
+/*CLOSE/DISABLED*/
+.disabledDiv {
+    pointer-events: none;
+}
+
+section {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 640px;
+}
+
+.innerCon {
+    margin: 0;
+    padding: 0;
+}
+
+
+span.jackWinning {
+    color: #ffb400;
+    font-weight: 600;
+}
+
+.disluckyPickCon {
+    margin: 0;
+    padding: 0;
+}
+
+.disluckyx1, .disluckyx5, .disluckyx10 {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 0 10px;
+    margin: 3px;
+}
+
+.disluckyx1 {
+    background-color: grey;
+}
+
+.disluckyx5 {
+    background-color: grey;
+}
+
+.disluckyx10 {
+    background-color: grey;
+}
+
+.disbettingInfo p {
+    font-size: 12px;
+    margin: 0;
+    position: relative;
+}
+
+.disAtoZ {
+    position: absolute;
+    top: 22%;
+    left: 10%;
+    transform: translate(-29%, -10%)
+}
+
+.diszeroToNine {
+    position: absolute;
+    top: 22%;
+    left: 3%;
+    transform: translate(-35%, -10%)
+}
+
+.disamo {
+    position: absolute;
+    top: 22%;
+    left: 5%;
+    transform: translate(-29%, -10%)
+}
+
+.distotAmo {
+    position: absolute;
+    top: 22%;
+    left: 2%;
+    transform: translate(-25%, -10%)
+}
+
+.disbettingInfo {
+    padding: 0 5px;
+    margin: 0;
+}
+
+.disinputField {
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+    .disinputField input {
+        padding: 8px;
+        margin: 2px;
+        border-radius: 5px;
+        border: none;
+    }
+
+.disbetBtn {
+    border: none;
+    background-color: #226c45;
+    color: white;
+    border-radius: 5px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 640px;
+}
+
+.innerCon {
+    margin: 0;
+    padding: 0;
+}
+
+.jackpotPrize, {
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.consolCon {
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+span.jackWinning {
+    color: #ffb400;
+    font-weight: 600;
+}
+
+.luckyPickCon {
+    margin: 0;
+    padding: 0;
+}
+
+.luckyx1, .luckyx5, .luckyx10 {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 0 10px;
+    margin: 3px;
+}
+
+.bettingInfo p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.bettingInfo {
+    padding: 0 5px;
+    margin: 0;
+}
+
+.inputField {
+    margin: 0 auto;
+    padding: 0;
+}
+
+    .inputField input {
+        padding: 8px;
+        margin: 2px;
+        border-radius: 5px;
+        border: none;
+    }
+
+
+.disclearBtn {
+    border: none;
+    background-color: #808080;
+    color: white;
+    border-radius: 5px;
+}
+
+.clear-BetCon {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.disbaseValue {
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.disTotalValue {
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 2px;
+    padding-right: 0;
+}
+
+.disamo {
+    padding-left: 10px;
+}
+
+/*CLOSE/DISABLED*/
+@media only screen and (max-width: 480px) {
+    .luckyx1, .luckyx5, .luckyx10 {
+        font-size: 12px;
+        padding: 8px 5px;
+    }
+}
+@media only screen and (min-width :481px) {
+    .luckyx1, .luckyx5, .luckyx10 {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+}
+@media only screen and (max-width:329px) {
+    .disTotalValue {
+        max-width: 70px;
+    }
+
+}
+    @media only screen and (max-width:347px) {
+        .zeroToNinePlaceholder {
+            margin-right: 10px;
+        }
+
+        .disTotalValue {
+            max-width: 75px;
+        }
+
+        .luckyx1, .luckyx5, .luckyx10 {
+            font-size: 11px;
+            padding: 8px 5px;
+        }
+
+        .grandjackpotPrize {
+            font-size: 20px;
+        }
+
+        .bwPlaceholder {
+            font-size: 11px;
+            margin-right: 15px;
+        }
+
+        .xClearBtn img {
+            height: 25px;
+            width: 25px;
+            margin-right: 1px;
+        }
+
+        .jackpotPrize {
+            font-size: 19px;
+        }
+
+        .AtoZ {
+            position: absolute;
+            top: 3px;
+            left: 12%;
+            transform: translate(-29%, -10%)
+        }
+
+        .zeroToNine {
+            position: absolute;
+            top: 3px;
+            left: 10%;
+            transform: translate(-29%, -10%)
+        }
+
+        .amo {
+            position: absolute;
+            top: 3px;
+            left: 16%;
+            transform: translate(-29%, -10%)
+        }
+
+        .totAmo {
+            position: absolute;
+            top: 3px;
+            left: 6%;
+            transform: translate(-25%, -10%)
+        }
+    }
+
+
+
+    .gigaNumericDelKey img {
+        position: absolute;
+        top:5%;
+        right: 5%;
+        transform: translate(-10%, -30%);
+    }
+
+
+
+    .gigaNumericDelKey {
+        position: absolute;
+        top: 36%;
+        right: 41%;
+        transform: translate(-50%, -50%);
+    }
+    /* Custom GRID for combination lists */
+    .custom-grid-container {
+        width: 100%;
+        overflow-x: scroll;
+        min-height: 0px;
+    }
+
+    .custom-grid-section {
+        --grid-item-height: 100px;
+        --grid-gap: 2px;
+        --scroll-bar-height: 10px;
+        display: flex;
+        gap: var(--grid-gap);
+        flex-direction: column;
+        min-height: 0px;
+        max-height: 125px;
+        /*   height: calc((var(--grid-item-height) * 2) + (var(--scroll-bar-height) - 86px));*/
+        flex-wrap: wrap;
+        width: fit-content;
+    }
+
+    .custom-grid-item {
+        color: black;
+        width: 70px;
+        height: 25px;
+        background: #fff;
+        border: 1px solid #FFF;
+        border-radius: 2px;
+        display: flex;
+        font-size: 16px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .custom-grid-container::-webkit-scrollbar {
+        width: 0;
+        height: 8px;
+    }
+
+    .custom-grid-container::-webkit-scrollbar-track {
+        background: #101019;
+    }
+
+    .custom-grid-container::-webkit-scrollbar-thumb {
+        background: red;
+    }
+
+        .custom-grid-container::-webkit-scrollbar-thumb:hover {
+            background: #d6d6e1;
+        }
+
+    /*start Custom key Giga*/
+    .custom-keyboard-giga-number {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+        .custom-keyboard-giga-number button {
+            border: none;
+            border-radius: 50%;
+            background-color: white;
+            font-size: 23px;
+            font-weight: 600;
+            padding: 0;
+            height: 50px;
+            width: 50px;
+            margin: 0 auto;
+        }
+    /*START CUSTOM KEY*/
+    .xButton {
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .div011 xButton {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate( -50%, -50%);
+        transform: none;
+    }
+
+    .div011 {
+        border-radius: 5px;
+    }
+
+        .div011 xButton img {
+            height: 29px;
+            width: 29px;
+        }
+
+
+    .div01 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .div02 {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .div03 {
+        grid-area: 1 / 3 / 2 / 4;
+    }
+
+    .div04 {
+        grid-area: 1 / 4 / 2 / 5;
+    }
+
+    .div05 {
+        grid-area: 1 / 5 / 2 / 6;
+    }
+
+    .div06 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .div07 {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .div08 {
+        grid-area: 2 / 3 / 3 / 4;
+    }
+
+    .div09 {
+        grid-area: 2 / 4 / 3 / 5;
+    }
+
+    .div010 {
+        grid-area: 2 / 5 / 3 / 6;
+    }
+
+    .div011 {
+        grid-area: 3 / 3 / 4 / 4;
+    }
+    /*End Custom key Giga*/
+    .xButton {
+        position: relative;
+    }
+
+    .div28 xButton {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate( -50%, -50%);
+        transform: none;
+    }
+
+        .div28 xButton img {
+            height: 29px;
+            width: 29px;
+        }
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        width: 100%;
+    }
+
+        .parent button {
+            border: none;
+            border-radius: 5px;
+        }
+
+    .div1 {
+        grid-area: 1 / 1 / 2 / 2;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+    .div2 {
+        grid-area: 1 / 2 / 2 / 3;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+    .div3 {
+        grid-area: 1 / 3 / 2 / 4;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div4 {
+        grid-area: 1 / 4 / 2 / 5;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div5 {
+        grid-area: 1 / 5 / 2 / 6;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div6 {
+        grid-area: 1 / 6 / 2 / 7;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div7 {
+        grid-area: 2 / 1 / 3 / 2;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div8 {
+        grid-area: 2 / 2 / 3 / 3;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div9 {
+        grid-area: 2 / 3 / 3 / 4;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div10 {
+        grid-area: 2 / 4 / 3 / 5;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div11 {
+        grid-area: 2 / 5 / 3 / 6;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div12 {
+        grid-area: 2 / 6 / 3 / 7;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div13 {
+        grid-area: 3 / 1 / 4 / 2;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div14 {
+        grid-area: 3 / 2 / 4 / 3;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div15 {
+        grid-area: 3 / 3 / 4 / 4;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div16 {
+        grid-area: 3 / 4 / 4 / 5;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div17 {
+        grid-area: 3 / 5 / 4 / 6;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div18 {
+        grid-area: 3 / 6 / 4 / 7;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div19 {
+        grid-area: 4 / 6 / 5 / 7;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div20 {
+        grid-area: 4 / 5 / 5 / 6;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div21 {
+        grid-area: 4 / 4 / 5 / 5;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div22 {
+        grid-area: 4 / 3 / 5 / 4;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div23 {
+        grid-area: 4 / 2 / 5 / 3;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div24 {
+        grid-area: 4 / 1 / 5 / 2;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div25 {
+        grid-area: 5 / 2 / 6 / 3;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+    .div26 {
+        grid-area: 5 / 3 / 6 / 4;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }
+
+
+    .div27 {
+        grid-area: 5 / 4 / 6 / 5;
+    }
+
+    .div28 {
+        grid-area: 5 / 4 / 6 / 6;
+        font-size: 23px;
+        font-weight: 600;
+        padding: 0;
+    }

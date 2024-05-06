@@ -1,0 +1,406 @@
+﻿/* ================ Bet Pop-up Container ============== */
+.betTokenContainer {
+    background-color: rgba(0,0,0,0.8);
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.bg-brown {
+    background: #512814;
+}
+/*START BET BUTTONS*/
+.resetButton, .clearButton {
+    padding: 3px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fefffe;
+    outline: 2px solid #ff0f0f !important;
+    background-color: #f20c0c;
+    box-shadow: 0px 10px 10px #c81a1a inset, 0px 5px 10px rgba(219, 8, 8, 0.53), 0px -10px 10px #bf0909 inset;
+}
+
+.betButton {
+    height: 100%;
+    width: 100%;
+    padding: .5px 12px;
+    border: none;
+    font-weight: 600;
+    border-radius: 5px;
+    animation: activeBet 1s infinite;
+    border: 2px solid #0d770a;
+}
+/*=========== Start: Button Changing Color Properties =============*/
+@keyframes activeBet {from {background-color: yellow;border: 4px solid #0d770a;} to {background-color: rgb(69, 219, 18);border: 4px solid #bdff07;box-sizing: border-box;}}
+/*=========== End: Button Changing Color Properties =============*/
+
+.betButton:active {
+    color: white;
+}
+
+#btn-container {
+    padding: 2px 0;
+    margin: 3px 0px;
+    font-size: 15px;
+}
+
+#btn-container > div {
+    height: 10%;
+    width: 28%;
+    margin: 1px 8.5px;
+}
+
+/*DISABLED BUTTONS*/
+.disBetButtonContainer {
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+
+.disResetButton {
+    pointer-events: none;
+    background: green !important;
+    box-shadow: none;
+    outline: 2px solid #064f06 !important;
+    color: white;
+    height: 100%;
+    width: 100%;
+    padding: .5px 12px;
+    border: none;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px solid #0e9b0a;
+}
+
+.disBetButton {
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+
+.disClearButton {
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+/*DISABLED BUTTONS*/
+/*END BET BUTTONS*/
+/*===================+++++++++END NEW CSS+++++++++++++===========*/
+/*===================++++++++++++++++++++++===========*/
+/*OLD CSS*/
+.main-container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.tokenSelection1 {
+    overflow: hidden;
+    overflow: auto;
+}
+
+.generatorDiv {
+    border: 1px solid #ffb400;
+    font-size: 11px;
+    color: white;
+}
+
+.selectNum {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #b18905;
+}
+
+.row1-4 {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.bRadius {
+    border-radius: 4px;
+    border: 1px solid #d1a925;
+    padding: 0 !important;
+}
+
+.clear, .bet {
+    color: white;
+    font-weight: bolder;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.chipCon {
+    margin: 2px;
+    border-radius: 3px;
+    height: 30px;
+    width: 50px;
+    font-weight: 600;
+    border: 2px solid #b18905;
+    font-size: 16px;
+    background-color: #635e4c;
+}
+
+.tokenSelected {
+    margin: 2px;
+    border-radius: 3px;
+    height: 30px;
+    width: 50px;
+    font-weight: 600;
+    border: 2px solid #b18905;
+    font-size: 20px;
+    background-color: #e0b32a;
+}
+
+.betValue {
+    color: white;
+}
+
+/*betNumberDisable*/
+.betNumberDisable {
+    pointer-events: none;
+    opacity: 50%;
+}
+
+.betNumberDisableBg {
+    background-color: grey !important;
+}
+
+.tokenContainerDisabled {
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+
+/**/
+
+/*START NEW UI CSS*/
+.mainCon1 {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 640px;
+}
+
+.selectionNumber {
+    line-height: normal;
+}
+
+.PlaceCombinationCon {
+    line-height: normal;
+}
+
+.currenBet, .showBetSelection, .betOption {
+    max-width: 640px;
+    margin: 0;
+    padding: 0;
+}
+
+.currenBet {
+    font-size: 13px;
+}
+
+.bg-grey {
+    background-color: #3e3e3e;
+    border-radius: 50px;
+    width: fit-content;
+    padding: 4px 7px 0 7px;
+}
+
+.selectionContainer {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.dots {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 3px;
+}
+
+.dots-grey {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #0c0c0c;
+    margin: 3px;
+}
+
+.NoBetsinnerSelected {
+    border-radius: 50%;
+    border: solid 5px #3e3e3e;
+    margin: 0 auto;
+    height: 55px;
+    width: 55px;
+    background-color: #3e3e3e;
+    font-size: 35px;
+}
+
+.innerSelected {
+    border-radius: 50%;
+    border: solid 3px #01d56f;
+    margin: 0 auto;
+    height: 55px;
+    width: 55px;
+    background-color: white;
+    font-size: 35px;
+}
+
+.DisabledinnerSelected {
+    border-radius: 50%;
+    border: solid 3px #aa2c31;
+    margin: 0 auto;
+    height: 45px;
+    width: 45px;
+    background-color: white;
+    font-size: 35px;
+}
+
+.showBetSelection {
+    margin: 0;
+    padding: 0;
+    background-color: #450003;
+}
+
+.eazy2 {
+    background-image: linear-gradient(#01d56f, #008045);
+}
+
+.swer3 {
+    background-image: linear-gradient(#2b6ee5, #02399b);
+}
+
+.lucky4 {
+    background-image: linear-gradient(#ffb400, #ff7e00);
+}
+
+.QuickPick {
+    background-color: white;
+    font-size: 12px;
+    padding: 0;
+    text-decoration: none !important;
+}
+
+.quickPickDisable {
+    line-height: normal;
+    padding: 3px;
+    margin: 2px;
+    color: white;
+    border: solid 3px #716f6f;
+    font-size: 12px;
+    font-weight: 400;
+    width: 20px;
+    filter: grayscale(100%);
+}
+
+/*start Quick Pick activated*/
+.quickPickActivated-1 {
+    padding: 3px;
+    margin: 2px;
+    color: white;
+    background-color: #0120af;
+    border: solid 3px black;
+    line-height: normal;
+    font-size: 12px;
+    font-weight: 400;
+    width: 20px;
+}
+
+.quickPickActivated-3 {
+    padding: 3px;
+    margin: 2px;
+    color: white;
+    background-color: #c70607;
+    border: solid 3px black;
+    line-height: normal;
+    border: solid 3px black;
+    font-size: 12px;
+    font-weight: 400;
+    width: 20px;
+}
+
+.quickPickActivated-5 {
+    padding: 3px;
+    margin: 2px;
+    color: white;
+    background-color: #dfb308;
+    border: solid 3px black;
+    line-height: normal;
+    font-size: 12px;
+    font-weight: 400;
+    width: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+/*end Quick Pick activated*/
+@media only screen and (max-width: 409px) {
+    .quickPickCon {
+        font-size: 11px;
+    }
+}
+
+.NoBetsinnerSelected {
+    border-radius: 50%;
+    border: solid 5px #3e3e3e;
+    margin: 0 auto;
+    height: 45px;
+    width: 45px;
+    background-color: #3e3e3e;
+    font-size: 35px;
+}
+/*START Disabled Tabs*/
+.quickPickDisabledParent {
+    pointer-events: none !important;
+    filter: grayscale(100%);
+    background-color: grey;
+    color: white;
+    padding: 0;
+    font-size: 11px;
+}
+
+.TabDisable {
+    pointer-events: none !important;
+    filter: grayscale(100%);
+    background-color: grey;
+    color: white;
+}
+
+.TabDisableBg {
+    background-color: grey !important;
+}
+
+.innerSelected {
+    border-radius: 50%;
+    border: solid 3px #01d56f;
+    margin: 0 auto;
+    height: 45px;
+    width: 45px;
+    background-color: white;
+    font-size: 35px;
+}
+
+@media (min-width:640px) {
+    #btn-container {
+        height: 58px;
+    }
+
+        #btn-container > div {
+            height: 100%;
+            width: 30%;
+            margin: 1px 8.5px;
+        }
+}

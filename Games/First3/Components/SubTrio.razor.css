@@ -1,0 +1,143 @@
+﻿
+
+.borderGold {
+    border: 1px solid #6d6d6d;
+}
+
+.tieRelative {
+    position: relative;
+}
+
+.payout {
+    font-size: 16px;
+}
+
+
+/* #region DEFAULT */
+    .trioButton {
+        outline: 2px solid #101019 !important;
+        outline-offset: -2px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(230, 69, 69);
+        color: white;
+        box-shadow: 0px 10px 10px rgb(255, 173, 173) inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(173, 12, 12) inset;
+    }
+/* #endregion */
+
+/* #region ACTIVATED */
+.trioButtonActivated {
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    color: black;
+    outline: 2px solid #51ff00 !important;
+    outline-offset: -2px;
+    border-radius: 5px;
+}
+/* #endregion */
+
+/* #region DISABLED */
+    .disTrioButton {
+
+        pointer-events: none;
+        background-color: gray;
+        color: white;
+        border: 1px solid rgb(90, 72, 26);
+        margin-right: 2px;
+        margin-bottom: 2px;
+        border-radius: 5px;
+    }
+/* #endregion */
+
+/* #region WINNER */
+.winTrioButton {
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    color: black;
+
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    pointer-events: none;
+    animation: win 1s infinite;
+}
+
+@keyframes win {
+    from {
+        background-color: yellow;
+        border: 3px solid yellow;
+    }
+
+    to {
+        background-color: rgb(69, 219, 18);
+        border: 3px solid rgb(69, 219, 18);
+    }
+}
+/* #endregion */
+
+/* #region TOKEN DISPLAY */
+    .additionaltokencontainer {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        animation-name: additionaltokenAnimation;
+        animation-duration: var(--animation);
+    }
+
+    @keyframes additionaltokenAnimation {
+        from {
+            transform: rotateY(-360deg);
+            z-index: 1;
+            bottom: -130%;
+            left: 37%;
+        }
+
+        to {
+            transform: rotateY(360deg);
+            z-index: 1;
+            bottom: 5%;
+            left: 37%;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        @keyframes additionaltokenAnimation {
+            from {
+                transform: rotateY(-360deg);
+                z-index: 1;
+                bottom: -150%;
+                left: 28%;
+            }
+
+            to {
+                transform: rotateY(360deg);
+                z-index: 1;
+                bottom: 5%;
+                left: 28%;
+            }
+        }
+    }
+
+.tokenSelectedBet {
+    position: relative;
+    height: 20px;
+    width: 44px;
+}
+
+    .selectedAmountToken {
+        position: absolute;
+        z-index: 1;
+        color: black;
+        font-size: 15px;
+        font-weight: 600;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+     
+    }
+    /* #endregion*/
+
+.withBetF3 {
+    visibility: hidden;
+}

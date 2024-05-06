@@ -1,0 +1,177 @@
+﻿.welcome-dice {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+.no-margin{
+    margin: 0 !important;
+}
+.model-image {
+    width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 2px;
+}
+.img-container {
+    width: 105px;
+    display: inline-block;
+}
+img.dice-img{
+    width: 65px;
+    height: 50px;
+    position:relative;
+}
+.up-font{
+    font-size: 13px;
+    font-weight: bold;
+}
+span.dice-icon{
+    display: inline-flex;
+    align-items: center;
+}
+i.dice-icon-1 {
+    width: 15px;
+    height: 15px;
+    margin: 0 3px;
+    display: inline-flex;
+    position: relative;
+    background: url('./img/dice/dice-4.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+i.dice-icon-2 {
+    width: 15px;
+    height: 15px;
+    margin: 0 3px;
+    display: inline-flex;
+    position: relative;
+    background: url('./img/dice/dice-4.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+i.dice-icon-3 {
+    width: 15px;
+    height: 15px;
+    margin: 0 3px;
+    display: inline-flex;
+    position: relative;
+    background: url('./img/dice/dice-4.png') center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.tap-btn > p > span{
+    font-size: 12px;
+}
+.diceNumberGameContainer {
+    background: #4d2801;
+    border: 2px solid #ecb307;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    padding-bottom: 3px;
+}
+#diceNoHeaderContainer {
+    background: #592f1e;
+}
+
+#diceNoHeaderContainer .hd2-round {
+    color: #fff;
+    min-width: 31%;
+    height: 25px;
+    margin: 0 5px !important;
+    border: 1px dashed #9a6c5a;
+    background: #2d2c2b;
+}
+.smallAndBig-btn{
+    font-size:12px;
+}
+.betNumber-btn {
+    font-size: 18px;
+}
+
+#smallBigOddEven-container .diceButton {
+    font-weight: bolder;
+    font-size: 11px;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-weight: bold;
+    margin: 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    outline-offset: -2px;
+    border-radius: 5px;
+    border: none;
+}
+
+#smallBigOddEven-container > div > div{
+    height: 60px;
+}
+#smallBigOddEven-container button{
+    min-width: 50px;
+    max-height: 68px;
+
+}
+
+#smallBigOddEven-container {
+    display: inline-flex;
+    justify-content: center;
+}
+#smallBigOddEven-container .diceButton {
+    color: #ffffff;
+    border: solid #85F96D 2px;
+    outline: 2px solid #35ea43;
+    background-color: #13841e;
+    box-shadow: 0px 10px 10px #0fb722 inset, 0px 5px 10px rgba(96, 155, 38, 0.47), 0px -10px 10px #15e830 inset;
+}
+#smallBigOddEven-container .diceButton:hover, #smallBigOddEven-container button.active {
+    color: #072b04;
+    border: solid #6CB317 2px;
+    outline: 2px solid #84fb5a;
+    background-color: #42c61d;
+    box-shadow: 0px 10px 10px #93ee54 inset, 0px 5px 10px rgba(187, 221, 21, 0.21), 0px -10px 10px #5eff30 inset;
+}
+
+#smallBigOddEven-container .diceButton:active, #smallBigOddEven-container .diceButton:focus {
+    color: #072b04;
+    border: solid #6CB317 2px;
+    outline: 2px solid #84fb5a;
+    background-color: #42c61d;
+    box-shadow: 0px 10px 10px #93ee54 inset, 0px 5px 10px rgba(187, 221, 21, 0.21), 0px -10px 10px #5eff30 inset;
+}
+
+@media screen and (max-width: 600px) {
+    .up-font{
+        font-size: 11px;
+    }
+}
+
+/* Start: Bet Dice Number Properties */
+#diceNumberContainer > div{
+    max-height: 81px;
+}
+
+@media screen and (max-width: 375px) {
+    .img-container{
+        width: 75px;
+        display: inline-block;
+    }
+}
+
+#closedBet #smallBigOddEven-container button.diceButton.win {
+    background-color: rgb(69, 219, 18);
+    box-shadow: 0px 10px 10px yellow inset, 0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(48, 165, 8) inset;
+    animation: win 1s infinite;
+    color: black;
+    border: 3px solid rgb(69, 219, 18);
+}
+
+@keyframes win {
+    from {
+        background-color: yellow;
+        border: 3px solid yellow;
+    }
+
+    to {
+        background-color: rgb(69, 219, 18);
+        border: 3px solid rgb(69, 219, 18);
+    }
+}

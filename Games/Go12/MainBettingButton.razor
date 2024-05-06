@@ -1,0 +1,145 @@
+﻿@using GoPlayAsiaWebApp.Games.Shared
+@using GoplayasiaBlazor.Models.Constants;
+@using GoPlayAsiaWebApp.ViewModels;
+@using static GoplayasiaBlazor.Models.Constants.Settings;
+    using GoPlayAsiaWebApp.ViewModels;
+@inject Go12ViewModel go12ViewModel;
+@inject IToastService toastService;
+
+@if (go12ViewModel.RoundStatusString == Constants.Open)
+{
+    <div class="mainContainer d-flex">
+
+        @if (BetValueDisplay == Settings.Constants.Red)
+        {
+            <!-- RED REGULAR -->
+            <button class="@(BetValue == Constants.FixedRed ? "trainglebredActive" : "traingleRed") col p-0 redRelative" href="" @onclick=OnClickCallback>
+                <!-- TOKEN DISPLAY -->
+                <div class="g12TokenDisplay">
+                    <TokenDisplay Amount="@UserTotalBet_FixedPrizeRed" />
+                </div>
+              
+                <!-- MULTIPLIER -->
+                <div class=" ">
+                    <p class="redTextMain d-flex text-center mt-2" style="font-size: 16px !important; line-height: .7">RED</p>
+                    @if (UserTotalBet_FixedPrizeRed != "0")
+                    {
+                        <p class="redText d-flex text-center fs-1 ">@(go12ViewModel.SampleWinFixedPrize_Red)</p>
+                    }
+                </div>
+
+            
+
+            </button>
+        }
+        else if (BetValueDisplay == Settings.Constants.Black)
+        {
+            <!-- BLACK REGULAR -->
+            <button class="@(BetValue == Constants.FixedBlack ? "traingleblackActive" : "traingleblack") col p-0 redRelative" href="" @onclick=OnClickCallback>
+                <!-- TOKEN DISPLAY -->
+                <div class="g12TokenDisplay">
+                    <TokenDisplay Amount="@UserTotalBet_FixedPrizeBlack" />
+
+                </div>
+                <!-- MULTIPLIER -->
+                <div class="">
+                    <p class="redTextMain d-flex text-center mt-2" style="font-size: 16px !important; line-height:.6">BLACK</p>
+                    @if (UserTotalBet_FixedPrizeBlack != "0")
+                    {
+                        <p class="redText d-flex text-center">@(go12ViewModel.SampleWinFixedPrize_Black)</p>
+
+                    }
+
+             
+                </div>
+
+             
+            </button>
+
+        }
+    </div>
+}
+else 
+{
+    <!--------------------------------------------------CLOSE BET-------------------------------------------------------->
+    <div class="dismainContainer d-flex">
+
+        @if (BetValueDisplay == Settings.Constants.Red)
+        {
+           
+                     <!-- TOKEN DISPLAY -->
+            @if (UserTotalBet_FixedPrizeRed != "0" && go12ViewModel.IsPayoutWon_Red)
+            {
+              
+                <div class="redIsWon">
+                    <TokenDisplay Amount="@UserTotalBet_FixedPrizeRed" />
+                </div>
+                <div class="redIsWon delay1">
+                    <TokenDisplay Amount="@UserTotalBet_FixedPrizeRed" />
+                </div>
+                <div class="redIsWon delay2">
+                    <TokenDisplay Amount="@UserTotalBet_FixedPrizeRed" />
+                </div>
+                <div class="redIsWon delay3">
+                    <TokenDisplay Amount="@UserTotalBet_FixedPrizeRed" />
+                </div>
+            }
+            else
+            {
+                <div class="g12TokenDisplay" style="z-index: 2 !important">
+                 
+                    <TokenDisplay Amount="@UserTotalBet_FixedPrizeRed" />
+                </div>
+            }
+            <!-- REGULAR RED -->
+            <div class="@(go12ViewModel.IsPayoutWon_Red ? "winningNumberRed" : "distraingleRed") col p-0">
+       
+
+                <h6 class="redTextMain d-flex text-center text-light mt-2" style="z-index: 1 !important;">RED</h6>
+                <h6 class="redText d-flex text-center text-light zIndex">@(go12ViewModel.SampleWinFixedPrize_Red)</h6>
+             
+            </div>
+        }
+        else if (BetValueDisplay == Settings.Constants.Black)
+        {
+                <!-- TOKEN DISPLAY -->
+            @if (UserTotalBet_FixedPrizeBlack != "0" && go12ViewModel.IsPayoutWon_Black)
+            {
+                <div class="blackIsWon">
+                    <TokenDisplay Amount="@UserTotalBet_FixedPrizeBlack" />
+                </div>
+                <div class="blackIsWon delay1">
+                    <TokenDisplay Amount="@UserTotalBet_FixedPrizeBlack" />
+                </div>
+                  <div class="blackIsWon delay2">
+                    <TokenDisplay Amount="@UserTotalBet_FixedPrizeBlack" />
+                </div>
+                <div class="blackIsWon delay3">
+                    <TokenDisplay Amount="@UserTotalBet_FixedPrizeBlack" />
+                </div>
+            }
+            else
+            {
+                <div class="g12TokenDisplay" style="z-index:2">
+                    <TokenDisplay Amount="@UserTotalBet_FixedPrizeBlack" />
+                </div>
+            }
+            <!-- REGULAR BLACK -->
+            <div class="@(go12ViewModel.IsPayoutWon_Black ? "winningNumberBlack" : "distraingleblack") col p-0">
+                <h6 class="redTextMain d-flex text-center text-light mt-2" style="  line-height: .6">BLACK</h6>
+                <h6 class="redText d-flex text-center text-light zIndex">@(go12ViewModel.SampleWinFixedPrize_Black)</h6>
+            
+            </div>
+        }
+
+        <!-- IF CANCELLED -->
+        @if (go12ViewModel.RoundStatusString == Constants.Cancelled)
+        {
+            <div class="cancelled">
+                <p class="cancelledText text-center">
+                    Cancelled Game Bets returned
+                </p>
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,254 @@
+﻿
+.code-input {
+    width: 100%;
+    display: flex;
+    justify-content: space-between
+}
+
+.code-input .my-input {
+    width: 44px;
+    height: 44px;
+    border-radius: 3px;
+    border: 0 solid transparent;
+    color: #222;
+    font-family: Helvetica Neue Regular;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    -moz-appearance: textfield !important;
+    -webkit-appearance: none;
+}
+
+/*Breathing*/
+.logo-pagcor {
+    max-width: 200px;
+    margin-top: 5px;
+}
+.imgContainer {
+    position: relative;
+}
+
+.breath-light1 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 39%;
+    left: 25%;
+}
+
+.breath-light2 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 53%;
+    left: 20%;
+}
+
+.breath-light3 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 29%;
+    left: 33%;
+}
+
+.breath-light4 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 24%;
+    left: 41%;
+}
+
+.breath-light5 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 23%;
+    left: 49%;
+}
+
+.breath-light6 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 24%;
+    left: 56%;
+}
+
+.breath-light7 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 29%;
+    left: 64%;
+}
+
+.breath-light8 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 30px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 39%;
+    right: 25%;
+}
+
+.breath-light9 {
+    position: absolute;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background: gold;
+    box-shadow: 0 0 20px 15px gold;
+    -webkit-animation: breath 1s;
+    animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    top: 52%;
+    right: 20%;
+}
+
+@-webkit-keyframes breath {
+    0% {
+        opacity: 0.1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+
+@-o-keyframes breath {
+    0% {
+        opacity: 0.1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+
+@-moz-keyframes breath {
+    0% {
+        opacity: 0.1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+
+@keyframes breath {
+    0% {
+        opacity: 0.1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+/*Breathing*/
+
+
+/*========== Validator Message ==============*/
+.validator-msg {
+    color: red;
+    position: relative;
+    background: #fff;
+    border-radius: .4em;
+    text-align: center;
+    padding: 5px;
+}
+.validator-msg:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #fff;
+    border-top: 0;
+    margin-left: -10px;
+    margin-top: -10px;
+}

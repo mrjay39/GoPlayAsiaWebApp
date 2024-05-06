@@ -1,0 +1,37 @@
+﻿.pop-container {
+    position: relative;
+}
+
+.popconfirm {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightblue;
+    width: 250px;
+    position: absolute;
+    top: -50px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.btnAdd {
+    border: none;
+    background-color: #ffb400;
+    margin-right: 5px;
+}
+
+.btnClose {
+    background-color: #ac2222;
+    border: none;
+}
+
+.btnCon {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    align-content: center;
+}
+
+.warningIcon {
+    color: red;
+}

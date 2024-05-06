@@ -1,0 +1,151 @@
+﻿.up-font {
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.tap-btn > p > span {
+    font-size: 12px;
+}
+.dice-width{
+    width: 20% !important;
+}
+.diceHeaderContainer {
+    position: relative;
+    left: -2px;
+}
+
+/* Start: Bet Dice Color Properties */
+#diceColor > div:first-child {
+    background: #F0A15C;
+    border: 2px solid #fb9d5a;
+    margin-bottom: 2px;
+}
+#diceColor .diceHeaderContainer {
+    width: 98%;
+    height: 23px;
+    background: #2d2c2b;
+    color: #fff;
+}
+#diceColor .green, #diceColor .blue, #diceColor .red,.yellow,.orange{
+    max-height: 30px;
+    max-width: 35px;
+}
+
+#diceColor .yellow,#betColorBtnContainer button.yellow {
+    border: 2px solid #FBE426;
+    background-color: #f0b80f;
+    box-shadow: 0px 10px 10px #d0ab19 inset, 0px 5px 10px rgba(138, 106, 9, 0.51), 0px -10px 10px #9d8113 inset;
+}
+
+#diceColor .blue,#betColorBtnContainer button.blue {
+    border: solid #0e45f0 2px;
+    outline-offset: -2px;
+    background-color: #1f58c6;
+    box-shadow: 0px 10px 10px #1e2ff7 inset, 0px 5px 10px rgb(24, 65, 187), 0px -10px 10px #0730aa inset;
+}
+
+#diceColor .red,#betColorBtnContainer button.red {
+    border: solid #fd2833 2px;
+    outline-offset: -2px;
+    background-color: #d91717;
+    box-shadow: 0px 10px 10px #ea2828 inset, 0px 5px 10px rgba(234, 87, 108, 0.21), 0px -10px 10px #cc080f inset;
+}
+#betColorBtnContainer button.orange {
+    border: solid #ff862e 2px;
+    outline-offset: -2px;
+    background-color: #e6730d;
+    box-shadow: 0px 10px 10px #c6640e inset, 0px 5px 10px rgb(142, 80, 24), 0px -10px 10px #cc6408 inset;
+
+}
+
+#betColorBtnContainer .diceButton {
+    color: #fff;
+    font-weight: bold !important;
+    transition: all 0.3s ease-out;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    outline-offset: -2px;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diceColorButton, .diceContainer {
+    width: 98%;
+    height: 50px;
+    margin: 0 auto;
+    transition: all 0.3s ease-out;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    color: #FFFFFF;
+    background: #cc7532;
+    border: solid 2px #fbc489;
+}
+
+/*#betColorBtnContainer {
+    height: 10%;
+    background: #000000c7;
+    border-radius: 8px;
+    max-width: 640px;
+    margin: 0 auto;
+}*/
+
+#betColorBtnContainer {
+    position: fixed;
+    animation-name: tokenAnimationEaseIn;
+    animation-duration: .6s;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20%;
+    max-width: 600px;
+    height: 10%;
+    background: #000000c7;
+    border-radius: 8px;
+    z-index: 1;
+}
+#betColorBtnContainer h6{font-weight: bold;}
+
+/*#betColorBtnContainer .diceButton:hover {
+    text-decoration: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: solid #68EA4E 2px;
+    outline: 2px solid #49ff23;
+    background-color: #1a7b0b;
+    box-shadow: 0px 10px 10px #37ee11 inset, 0px 5px 10px rgba(115, 215, 46, 0.3), 0px -10px 10px #0f2609;
+}
+#diceColor button.diceColorButton:hover, #diceColor button:focus, #diceButton-container button.focus {
+    border: 2px solid #44F02B;
+    background-color: #0d9b1d;
+    box-shadow: 0px 10px 10px #28e10d inset, 0px 5px 10px rgba(67, 215, 46, 0.3), 0px -10px 10px #e8a870;
+}*/
+
+@media screen and (max-width: 375px) {
+    .up-font {
+        font-size: 11px;
+        font-weight: bolder;
+    }
+    #diceColor .diceHeaderContaine{
+        width: 96.6%;
+    }
+    #betColorBtnContainer{
+        height:15%;
+    }
+}
