@@ -1,37 +1,14 @@
 ﻿@page "/arcadeGames"
 
 @using GoPlayAsiaWebApp.Controls.GameLinkHeader
+@using GoPlayAsiaWebApp.Pages.EGames.CardGames
+@using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
+@using GoPlayAsiaWebApp.Pages.GPAGames
 <PageTitle>GoPlayAsia: Arcade Games </PageTitle>
 
 <div id="cardGames" class="container-fluid p-0 marketing">
-    <div class="container pt-5">
-        <h2 class="text-white fw-bold mt-5">Game Categories</h2>
-        <h5 class="text-muted"> Navigating the World of Gaming Genres</h5>
-        <div id="link-header" class="gameOverflow-x">
-            <div class="row justify-content-center p-2">
-                <GameLinkHeader _gameHrefStr="GoPlayAsiaGames"
-                                _imgGameStr="./img/GPAGames/liveGames.png"
-                                _typeGameStr="Live" />
+    <GameLinkHeader />
 
-                <GameLinkHeader _gameHrefStr="arcadeGames"
-                                _activeClassStr="active"
-                                _imgGameStr="./img/Arcade/GoRush_2.png"
-                                _typeGameStr="Arcade" />
-
-                <GameLinkHeader _gameHrefStr="slotGames"
-                                _imgGameStr="./img/SlotGames/SuperAce_2.png"
-                                _typeGameStr="Slots" />
-
-                <GameLinkHeader _gameHrefStr="cardGames"
-                                _imgGameStr="./img/CardGames/baccarat_2.png"
-                                _typeGameStr="Cards" />
-
-                <GameLinkHeader _gameHrefStr="fishingAndArcadeGames"
-                                _imgGameStr="./img/fishing/HappyFishing_2.png"
-                                _typeGameStr="Fishing" />
-            </div>
-        </div>
-    </div>
     <div class="container">
         <h2 class="text-white fw-bold">Enjoyable and Dynamic games!</h2>
         <h5 class="text-muted">Begin rotating for your chance to win big!</h5>
