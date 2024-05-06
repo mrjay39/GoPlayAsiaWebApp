@@ -11,6 +11,16 @@
     #link-header.gameOverflow-x {
         overflow-x: inherit !important;
     }
+    #arcade-overflow.gameOverflow-x, #gpa-overflow.gameOverflow-x, #cardGames-overflow.gameOverflow-x {
+        overflow-x: inherit;
+        padding-bottom: 0 !important;
+    }
+
+    #arcade-overflow.gameOverflow-x > div, #gpa-overflow.gameOverflow-x > div, #cardGames-overflow.gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
 }
 @media screen and (max-width: 460px) {
     .gameOverflow-x{
