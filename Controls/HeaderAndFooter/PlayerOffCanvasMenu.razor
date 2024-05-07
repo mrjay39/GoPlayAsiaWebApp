@@ -83,7 +83,7 @@
     private async Task logout()
     {
         var parameters = new ModalParameters();
-        parameters.Add("Message", "Confirm Logout");
+        parameters.Add("Message", "Are you sure you want to logout?");
         var popupConfirm = popupModal.Show<PopupLogout>("", parameters, new ModalOptions() { Class = "op-modal" });
         ModalResult result = await popupConfirm.Result;
         if (result.Data != null)

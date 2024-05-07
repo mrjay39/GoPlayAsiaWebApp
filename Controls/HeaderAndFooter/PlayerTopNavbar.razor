@@ -1,4 +1,15 @@
-﻿<nav class="navbar top-navbar navbar-expand-lg fixed-top navbar-dark bg-black">
+﻿@inject GameHeaderViewModel gameHeaderViewModel
+@inject ICurrentUser iCurrentUser
+@using Blazored.Modal.Services;
+@using Blazored.Modal;
+@using GoPlayAsiaWebApp.Goplay.Shared.Popup;
+@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoplayasiaBlazor.Core.Global.Interface
+@using Microsoft.AspNetCore.Components;
+@using GoplayasiaBlazor.Models;
+@using System.Collections.ObjectModel;
+
+<nav class="navbar top-navbar navbar-expand-lg fixed-top navbar-dark bg-black">
     <div class="container">
         <button class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -69,7 +80,7 @@
                 <li class="nav-item dropdown userDropdown">
                     <a class="nav-link px-2 link-dark bg-black" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
                         <img class="img-fluid img w-25 px-2 me-2" src="./img/user-icon.png" />
-                        <span class="text-white fw-bold h5">Php 1,000,000.00</span>
+                        <span class="text-white fw-bold h5">Php @iCurrentUser.CreditsDisp</span>
                     </a>
 
                     @* <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
@@ -97,3 +108,16 @@
         }
     });
 </script>
+@code{
+    public string cssvar { get; set; } = "cssdef";
+    [Parameter] public string? CreditsDisp { get; set; }
+    [Parameter] public ObservableCollection<PlayerCategoryModel> PlayerCategory { get; set; }
+    [Parameter] public EventCallback<string> OnClickCallback { get; set; }
+    [Parameter]
+    public string Token { get; set; }
+    private async Task setPlayerCategory(int categoryId)
+    {
+        iCurrentUser.CategoryId = categoryId;
+        await OnClickCallback.InvokeAsync();
+    }
+}

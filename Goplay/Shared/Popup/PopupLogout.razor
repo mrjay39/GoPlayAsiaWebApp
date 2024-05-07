@@ -1,14 +1,11 @@
 ﻿
 <div class="container continer-fluid">
-    <div class="row justify-content-center margin-bottom-md">
-        <i class="bi bi-question-circle" style="font-size:2.5rem"></i>
+    <div class="row justify-content-center align-items-center margin-bottom-md">
+        <h6 class="mb-0 p-0 text-center"><span><i class="fa-regular fa-face-frown"></i></span> @Message</h6>
     </div>
-    <div class="text-center margin-bottom-md">
-        @Message
-    </div>
-    <div class="row justify-content-center mt-2 p-2"> 
-        <button type="button" class="col-4 btnNo btn btn-warning mr-2" @onclick="() => Confirmation(false)">No</button>
-        <button type="button" class=" col-4 btnYes btn btn-primary" @onclick="() => Confirmation(true)">Yes</button>
+    <div class="row justify-content-center mt-2 p-2">
+        <button type="button" class="col-4 btnNo btn btn-warning m-2" @onclick="() => Confirmation(false)">No</button>
+        <button type="button" class=" col-4 btnYes btn btn-primary m-2" @onclick="() => Confirmation(true)">Yes</button>
     </div>
 </div>
 @code {
@@ -20,6 +17,6 @@
 
     public void Confirmation(bool value)
     {
-         BlazoredModal.CloseAsync(ModalResult.Ok(value));
+        BlazoredModal.CloseAsync(ModalResult.Ok(value));
     }
 }
