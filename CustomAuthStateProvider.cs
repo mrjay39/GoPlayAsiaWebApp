@@ -29,6 +29,7 @@ namespace GoPlayAsiaWebApp
             {
 
                 cIdentity = new ClaimsIdentity();
+                _ICurrentUser.isLoggedIn = false;
             }
             else
             {
@@ -38,6 +39,7 @@ namespace GoPlayAsiaWebApp
                 cIdentity.AddClaim(new Claim("token", _ICurrentUser.Token));
                 cIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, _ICurrentUser.Id.ToString()));
                 cIdentity.AddClaim(new Claim(ClaimTypes.Role, _ICurrentUser.RoleType.ToString()));
+                _ICurrentUser.isLoggedIn = true;
             }
             var user = new ClaimsPrincipal(cIdentity);
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));
@@ -84,6 +86,7 @@ namespace GoPlayAsiaWebApp
                 var id = new ClaimsIdentity(cIdentity);
                 var user = new ClaimsPrincipal(id);
                 var state = new AuthenticationState(user);
+                _ICurrentUser.isLoggedIn = true;
                 NotifyAuthenticationStateChanged(Task.FromResult(state));
             }
             catch (Exception)
@@ -100,12 +103,14 @@ namespace GoPlayAsiaWebApp
             var cIdentity = new ClaimsIdentity();
             var user = new ClaimsPrincipal(cIdentity);
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));
+            _ICurrentUser.isLoggedIn = false;
             //await _sessionStorageService.RemoveItemAsync("token");
             //await _sessionStorageService.RemoveItemAsync(ClaimTypes.Name);
             //await _sessionStorageService.RemoveItemAsync(ClaimTypes.Email);
             //await _sessionStorageService.RemoveItemAsync(ClaimTypes.NameIdentifier);
 
         }
+
         #endregion
     }
 }
