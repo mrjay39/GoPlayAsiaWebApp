@@ -2,6 +2,7 @@
 using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.SignalR.Client;
 using Newtonsoft.Json;
 using static GoplayasiaBlazor.Models.Constants.Settings;
@@ -133,6 +134,8 @@ namespace GoplayasiaBlazor.Core.Global
             get; set;
         } = (int)PlayerCategory.Starter;
 
+        public bool isLoggedIn { get; set; }
+
         public DateTime? lastOTP { get; set; }
         public async Task updateSessionAsync()
         {
@@ -228,7 +231,7 @@ namespace GoplayasiaBlazor.Core.Global
                     result = Base64Decode(result);
                     return JsonConvert.DeserializeObject<CurrentUser>(result);
                 }
-                   
+
                 else return null;
             }
             catch (Exception)

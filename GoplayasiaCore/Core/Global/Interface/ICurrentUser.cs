@@ -34,5 +34,6 @@ namespace GoplayasiaBlazor.Core.Global.Interface
         void Update();
         Task updateSessionAsync();
         Task clearSessionAsync();
+        bool isLoggedIn { get; set; }
     }
 }

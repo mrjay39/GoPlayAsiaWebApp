@@ -3,7 +3,7 @@
 @using GoPlayAsiaWebApp.Pages.Profile
 @using GoPlayAsiaWebApp.Pages.Login.LogInModal
 @using GoplayasiaBlazor.Core.Global.Interface
-@inject AuthenticationStateProvider _authenticationStateProvider 
+@inject ICurrentUser _iCurrentUser
 
 <header class="container-fluid bg-black">
     <div class="container">
@@ -23,4 +23,12 @@
         </AuthorizeView>
     </div>
 </header>
+
+@code{
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        var isloggedin = _iCurrentUser.isLoggedIn;
+        return base.OnAfterRenderAsync(firstRender);
+    }
+}
 
