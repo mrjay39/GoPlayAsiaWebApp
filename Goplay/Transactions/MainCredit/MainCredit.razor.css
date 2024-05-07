@@ -1,9 +1,114 @@
-﻿.container {
+﻿body {
+    font-family: Open Sans,Oswald,Arial,sans-serif !important;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7em;
+    font-weight: 500;
+}
+
+.marketing {
+    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#101019 100%) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.nav-link:hover, .nav-link:focus {
+    border: none;
+}
+
+.nav-link.active {
+    border-width: 0px 0px 4px 0px;
+    border-color: #6e182c;
+    border-style: solid;
+}
+
+#transaction-tab-pane {
+    min-height: 20vh;
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+@media only screen and (min-width: 992px) {
+    .wallet-cardContainer {
+        width: 15rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .wallet-cardContainer {
+        width: 6.5rem;
+    }
+
+    .wallet-sub {
+        font-size: 13px;
+    }
+
+    .payment-select-wrapper {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .wallet-cardContainer {
+        width: 6.5rem;
+    }
+
+    .wallet-sub {
+        font-size: 13px;
+    }
+
+    .payment-select-wrapper {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .wallet-cardContainer {
+        width: 5.5rem;
+    }
+
+    .wallet-sub {
+        font-size: 13px;
+    }
+
+    .payment-select-wrapper {
+        font-size: 12px;
+    }
+
+    .card-title {
+        font-size: .95rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.container {
     padding: 5px !important;
     max-width: 100%;
     min-height: 100vh;
-    background: rgb(88,14,15);
-    background: linear-gradient(0deg, rgba(88,14,15,1) 62%, rgba(26,8,8,1) 98%);
 }
 
 section {
@@ -66,7 +171,7 @@ h6.headerText {
 .addCredit {
     text-align: center;
 }
-/*trasnsaction*/
+trasnsaction
 .transCon {
     max-width: 640px;
 }
@@ -95,7 +200,7 @@ h6.headerText {
     color: black;
     margin: 0 auto;
 }
-/*transaction*/
+transaction
 h6.topUpMEssage {
     background-color: #288187;
     padding: 10px;
@@ -103,7 +208,7 @@ h6.topUpMEssage {
 }
 
 .overthecounterBtn {
-    background-color: red; /* For browsers that do not support gradients */
+    background-color: red;  For browsers that do not support gradients 
     background-image: linear-gradient(to right, #f476b3, #fad28c, #f6a317 );
     padding: 20px;
     border-radius: 10px;
@@ -151,7 +256,7 @@ h6.topUpMEssage {
     font-size: 14px;
     color: #751e30;
     font-weight: bold;
-}
+}*/
 
 /*GATEWAY*/
 

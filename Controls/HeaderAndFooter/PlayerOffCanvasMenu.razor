@@ -1,4 +1,9 @@
-﻿<div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="settingOffCanvas" aria-labelledby="settingOffCanvasLabel">
+﻿@inject GameHeaderViewModel gameHeaderViewModel
+@using GoPlayAsiaWebApp.Goplay.Shared.Popup
+@using GoPlayAsiaWebApp.Goplay.ViewModels;
+
+
+<div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="settingOffCanvas" aria-labelledby="settingOffCanvasLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title text-white" id="settingOffCanvasLabel">Settings</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -23,13 +28,13 @@
             </a>
             </li> *@
             <li class="nav-item" data-bs-dismiss="offcanvas">
-                <a class="nav-link fw-bold" href="wallet">
+                <a class="nav-link fw-bold" href="credit">
                     <span><i class="fa-solid fa-credit-card"></i></span>
                     <span class="ms-3"> Widthdraw</span>
                 </a>
             </li>
             <li class="nav-item" data-bs-dismiss="offcanvas">
-                <a class="nav-link fw-bold" href="wallet">
+                <a class="nav-link fw-bold" href="credit">
                     <span><i class="fa-solid fa-money-bill-transfer"></i></span>
                     <span class="ms-3"> Cash-In / Deposit</span>
                 </a>
@@ -47,7 +52,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fw-bold" href="#">
+                <a class="nav-link fw-bold" @onclick:preventDefault @onclick="logout" href="/">
                     <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
                     <span class="ms-3"> Logout</span>
                 </a>
@@ -72,3 +77,21 @@
         </form>
     </div>
 </div>
+@code {
+    public string cssvar { get; set; } = "cssdef";
+    [CascadingParameter] public IModalService popupModal { get; set; }
+    private async Task logout()
+    {
+        var parameters = new ModalParameters();
+        parameters.Add("Message", "Confirm Logout");
+        var popupConfirm = popupModal.Show<PopupLogout>("", parameters, new ModalOptions() { Class = "op-modal" });
+        ModalResult result = await popupConfirm.Result;
+        if (result.Data != null)
+        {
+            if ((bool)result.Data)
+            {
+                await gameHeaderViewModel.Logout();
+            }
+        }
+    }
+}
