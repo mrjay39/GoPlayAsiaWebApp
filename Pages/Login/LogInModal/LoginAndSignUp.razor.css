@@ -4,6 +4,9 @@
     border-radius: 50%;
     background: #e10707;
 }
+.w-30{
+    min-width: 32rem;
+}
 .login-img {
     position: absolute;
     top: -66px;
