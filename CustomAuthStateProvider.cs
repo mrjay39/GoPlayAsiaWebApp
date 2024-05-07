@@ -106,6 +106,7 @@ namespace GoPlayAsiaWebApp
             //await _sessionStorageService.RemoveItemAsync(ClaimTypes.NameIdentifier);
 
         }
+
         #endregion
     }
 }

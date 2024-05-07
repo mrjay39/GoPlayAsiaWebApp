@@ -2,25 +2,25 @@
 @using GoPlayAsiaWebApp.Controls.HeaderAndFooter
 @using GoPlayAsiaWebApp.Pages.Profile
 @using GoPlayAsiaWebApp.Pages.Login.LogInModal
+@using GoplayasiaBlazor.Core.Global.Interface
+@inject AuthenticationStateProvider _authenticationStateProvider 
+
 <header class="container-fluid bg-black">
     <div class="container">
-        @*======== Guest Top NavBar ========*@
-        <GuestTopNavbar />
-
-        @*======== PLayer Top NavBar ========*@
-        @* <PlayerTopNavbar /> *@
-
+        <AuthorizeView>
+            <Authorized>
+                <PlayerTopNavbar />
+                <PlayerBottomNavbar />
+                <PlayerOffCanvasMenu />
+                <EditProfileOffCanvas />
+                <ChangePassword />
+                <AccountVerification />
+            </Authorized>
+            <NotAuthorized>
+                <GuestTopNavbar />
+                <GuesBottomNavbar />
+            </NotAuthorized>
+        </AuthorizeView>
     </div>
 </header>
 
-@*======== Guest Sticky NavBar Bottom ========*@
-@* <GuesBottomNavbar /> *@
-
-@*======== PLayer Sticky NavBar Bottom and OffCanvas Menu ========*@
-<PlayerBottomNavbar />
-<PlayerOffCanvasMenu/>
-<EditProfileOffCanvas />
-<ChangePassword />
-<AccountVerification />
-
-<LoginAndSignUp />
