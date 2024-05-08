@@ -2,9 +2,76 @@
 @page "/signup/{refkey}"
 
 @using GoplayasiaBlazor.Models
-@using GoPlayAsiaWebApp.Goplay.Shared.Popup  
+@using GoPlayAsiaWebApp.Goplay.Shared.Popup
 
-<div class="maincontainer">
+
+<div class="tab-pane" id="signUpPanel" role="tabpanel" aria-labelledby="signUpTab">
+
+    <!--========== START STEP 1 ==========-->
+    <form class="signin-form" hidden=@step1>
+        <div class="form-group mb-3">
+            <span class="eye bi bi-phone"></span>
+            <input @ref="txtMobile" type="tel" class="form-control font-weight-bolder" required maxlength="11" placeholder="Mobile No: 09XX XX XXXX" @bind-value="_signupViewModel.SignupDTO.MobileNumber" @oninput="onchange_MobileNumber">
+        </div>
+        <div class="text-center label valid-msge" hidden="@hideMobile">@msgMobile</div>
+
+        <div class="form-group mb-3">
+            <span class="eye bi bi-filetype-key"></span>
+            <input type="text" class="form-control font-weight-bolder" placeholder=" Affiliate Code (IF ANY)" @bind-value="_signupViewModel.SignupDTO.ReferralKey" @oninput="onchange_ReferralKey" @onfocusout="focusout_ReferralKey">
+        </div>
+
+        <div class="form-group">
+            <button type="button" class="form-control btn btn-warning rounded submit px-3 @submitClass" disabled="@disableSubmit" @onclick="ValidateStep1">Sign Up</button>
+        </div>
+
+        <div class="container-fluid p-0">
+            <div class="content">
+                <label class="checkbox-wrap checkbox-primary mb-0">
+                    <input class="font-weight-bolder" type="checkbox" @bind="@agreePolicy" @oninput="agreeCheckboxChanged">
+                    <span class="checkmark text-white">
+                        I agree to the
+                        <a href="@TermsAndConditionsUrl">Terms and Conditions </a>
+                        &
+                        <a href="@PrivacyPolicyUrl">Privacy Policy</a>
+                        and I am over 21 years of age.
+                    </span>
+                </label>
+            </div>
+        </div>
+    </form>
+
+    <!--========== START STEP 2 ==========-->
+    <form class="signin-form" hidden=@step2>
+        <div class="form-group mb-3">
+            <input @ref="txtUsername" type="text" class="form-control" required placeholder="Prefered Username" @bind-value="_signupViewModel.SignupDTO.Username" @oninput="onchange_Username">
+        </div>
+        <span class="text-center text-white label" hidden="@(@_signupViewModel.errUsername != "Ok"? false : true)">@_signupViewModel.errUsername</span>
+
+        <div class="form-group mb-3 position-relative">
+            <input type="@showpass" class="form-control form-control col-9" placeholder="Create Password" required @bind-value="_signupViewModel.SignupDTO.Password" @oninput="onchange_Password">
+            <span class="eye @showpassicon" @onclick="(() => ShowPassword(1))"></span>
+        </div>
+
+        <div class="form-group mb-3 position-relative">
+            <input type="@showpassConfirm" class="form-control form-control col-9" placeholder="Confirm Password" @bind-value="_signupViewModel.SignupDTO.ConfirmPassword" @oninput="onchange_ConfirmPassword">
+            <span class="eye @showpassiconConfirm" @onclick="(() => ShowPassword(2))"></span>
+        </div>
+        <span class="text-center label text-white" hidden="@(@_signupViewModel.errPass != "Ok"? false : true)">@_signupViewModel.errPass</span>
+
+        <div class="form-group">
+            <button type="button" class="form-control btn btn-warning rounded submit px-3 @submitClass" disabled="@disbaleLogin" @onclick="Register">Sign Up</button>
+        </div>
+    </form>
+    <div class="d-flex">
+        <p class="text-center w-100 mb-4 mt-3">
+            <span class="text-white">Already Registered?</span>
+            <a id="loginLink" class="active" data-bs-toggle="tab" href="#loginPanel" role="tab" aria-controls="loginPanel" aria-selected="true">&nbsp;Login Here</a>
+        </p>
+    </div>
+</div>
+
+
+@* <div class="tab-pane" hidden=@step2>
     <div class="innerCon row justify-content-center w-100 m-0">
         <div class="cardWidth">
             <div class="imgContainer d-flex justify-content-center">
@@ -49,7 +116,7 @@
                                     <span class="text-white"> & </span>
                                 </a>
                                 <a style="color:white; font-weight: 600" target="_blank" href="@PrivacyPolicyUrl">
-                                    <span  class="text-warning"> Privacy Policy</span>
+                                    <span class="text-warning"> Privacy Policy</span>
                                 </a>
                                 <p> <span>and I am over <b class="h5 text-warning">21</b> years of age.</span></p>
                             </div>
@@ -57,12 +124,6 @@
 
                         <!-- SIGN UP BUTTON -->
                         <div class="text-center pt-2"><button class="btn btn-color px-5 mb-3 w-100 font-weight-bolder @submitClass" disabled="@disableSubmit" @onclick="ValidateStep1">Sign Up</button></div>
-
-                        @* <div class="prevNext text-center">
-                        <div class="justify-content-center align-content-center mb-3 ">
-                        <input style="max-width: 240px;" class=" nextBtn col text-light @submitClass" type="button" disabled="@disableSubmit" @onclick="ValidateStep1" value="SIGN UP" />
-                        </div>
-                        </div> *@
 
                         <!-- LOGIN -->
                         <div class="col d-flex justify-content-center mt-1 mb-4">
@@ -80,6 +141,8 @@
                 </div>
             </div>
             <!-- END STEP 1 -->
+
+
             <!-- START STEP 2 -->
             <section hidden=@step2>
                 <div class="container">
@@ -126,7 +189,9 @@
                 </div>
             </section>
             <!-- END STEP 2 -->
+
+
         </div>
     </div>
 </div>
-
+ *@

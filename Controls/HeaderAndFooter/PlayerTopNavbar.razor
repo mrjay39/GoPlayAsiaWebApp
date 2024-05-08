@@ -57,13 +57,13 @@
                         <i class="fa-solid gpa-icon"></i> GOPLAYASIA
                     </a>
                     <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item link-light bg-black" href="#">Lucky 9</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="#">Lucky 4</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="#">First 3</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="#">Heads & Tails</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="#">Big Win</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="#">Go 12</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="#">Dice</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="/games/lucky9">Lucky 9</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="/games/lucky4">Lucky 4</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="/games/first3">First 3</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="/games/headstails">Heads & Tails</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="/games/bigwin">Big Win</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="/games/go12">Go 12</a></li>
+                        @* <li><a class="dropdown-item link-light bg-black" href="#">Dice</a></li> *@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -79,7 +79,7 @@
                 </li>
                 <li class="nav-item dropdown userDropdown">
                     <a class="nav-link px-2 link-dark bg-black" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
-                        <img class="img-fluid img w-25 px-2 me-2" src="./img/user-icon.png" />
+                        <img class="img-fluid img w-25 px-2" src="./img/user-icon.png" /> <i class="fa-solid fa-angle-down"></i> &nbsp;
                         <span class="text-white fw-bold h5">Php @iCurrentUser.CreditsDisp</span>
                     </a>
 

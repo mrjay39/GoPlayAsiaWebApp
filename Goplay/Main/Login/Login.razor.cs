@@ -274,7 +274,7 @@ namespace GoPlayAsiaWebApp.Goplay.Main.Login
                                 if (_iCurrentUser.ToppedUp || _iCurrentUser.Verified != 0)
                                 {
 
-                                    _navigationManager.NavigateTo("/lobby");
+                                    _navigationManager.NavigateTo("/home");
                                 }
                                 else
                                 {
@@ -365,7 +365,7 @@ namespace GoPlayAsiaWebApp.Goplay.Main.Login
                     if (_iCurrentUser.ToppedUp || _iCurrentUser.Verified != 0)
                     {
 
-                        _navigationManager.NavigateTo("/lobby");
+                        _navigationManager.NavigateTo("/home");
                     }
                     else
                     {

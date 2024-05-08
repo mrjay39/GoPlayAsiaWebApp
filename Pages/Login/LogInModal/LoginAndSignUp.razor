@@ -1,5 +1,6 @@
-﻿@* <AgeConfirmationModal /> *@
-<div class="w-30">
+﻿@using GoPlayAsiaWebApp.Goplay.Main.Signup
+@* <AgeConfirmationModal /> *@
+<div id="logInForm" class="w-30">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="container p-0">
             <div class="modal-content modal-bg border-bottom-4">
@@ -24,9 +25,9 @@
                             
                         </ul>
                         <div class="tab-content pt-4" id="tab-content">
-
                             <LoginForm />
-                            <SignUpForm />
+                            <Signup/>
+                            @* <SignUpForm /> *@
                             <ForgotPassword />
                         </div>
                     </div>
@@ -36,7 +37,7 @@
     </div>
 </div>
 
-@* <script>
+<script>
     $(document).ready(function () {
         $('#signUpTab, #ageConfirmationBtn, #signUpLink').click(function (e) {
             e.preventDefault();
@@ -69,4 +70,4 @@
             $('#loginTab').addClass('active');
         });
     });
-</script> *@
+</script>

@@ -4,9 +4,8 @@
     border-radius: 50%;
     background: #e10707;
 }
-.w-30{
-    min-width: 32rem;
-}
+.w-30{min-width: 32rem;}
+
 .login-img {
     position: absolute;
     top: -66px;
@@ -70,5 +69,8 @@
     }
     #logInForm div.modal-dialog {
         margin: 0;
+    }
+    .w-30 {
+        min-width: 20rem;
     }
 }

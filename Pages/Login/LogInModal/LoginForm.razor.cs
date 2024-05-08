@@ -273,7 +273,7 @@ public partial class LoginForm
                             if (_iCurrentUser.ToppedUp || _iCurrentUser.Verified != 0)
                             {
 
-                                _navigationManager.NavigateTo("/lobby");
+                                _navigationManager.NavigateTo("/home");
                             }
                             else
                             {
@@ -364,7 +364,7 @@ public partial class LoginForm
                 if (_iCurrentUser.ToppedUp || _iCurrentUser.Verified != 0)
                 {
 
-                    _navigationManager.NavigateTo("/lobby");
+                    _navigationManager.NavigateTo("/home");
                 }
                 else
                 {

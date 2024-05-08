@@ -255,7 +255,7 @@ public class SignUpViewModel
             switch (valpass)
             {
                 case 1:
-                    errorMsg = "Password and confirm password do not match";
+                    errorMsg = "Password and confirm password did not match";
                     break;
                 case 2:
                     errorMsg = "Password cannot be empty and must be at least 8 characters";

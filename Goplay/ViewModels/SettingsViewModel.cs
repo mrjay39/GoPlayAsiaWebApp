@@ -350,7 +350,7 @@ namespace GoPlayAsiaWebApp.Goplay.ViewModels
                 switch (valpass)
                 {
                     case 1:
-                        _toastService.ShowError("New password and confirm password do not match");
+                        _toastService.ShowError("New password and confirm password did not match");
                         break;
                     case 2:
                         _toastService.ShowError("New password cannot be empty and must be at least 8 characters");

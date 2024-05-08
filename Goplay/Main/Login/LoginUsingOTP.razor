@@ -14,7 +14,7 @@
 
 
 
-<div class="maincontainer">
+<div class="maincontainer mt-5 pt-4">
     <div class="innerCon row justify-content-center w-100 m-0">
         <div class="cardWidth">
             <div class="imgContainer d-flex justify-content-center">
@@ -34,7 +34,7 @@
             {
                 <EditForm Model="@_loginOPT" OnValidSubmit="@createOTP" autocomplete="stopdoingthat">
                     <DataAnnotationsValidator />
-                    <div class="container mt-5 mb-5 pt-4 pb-4">
+                    <div class="container mt-2 mb-5 pt-4 pb-4">
                         <div class="container-fluid text-center mb-2">
                             <p class="h4 mb-0 text-white fw-bold"><b>What's your mobile number?</b></p>
                             <p class="text-white">We'll send a code to your mobile number.</p>
@@ -45,7 +45,7 @@
                             <p class="validator-msg">Invalid mobile number format. Please enter a valid 11-digit mobile number.</p>
                         }
                         <ValidationSummary />
-                        <button class="btn btn-success col fw-bold">Login</button>
+                        <button class="btn btn-success col-12 fw-bold">Login</button>
                     </div>
                 </EditForm>
             }
@@ -291,7 +291,7 @@
             if (_iCurrentUser.ToppedUp || _iCurrentUser.Verified != 0)
             {
 
-                _navigationManager.NavigateTo("/lobby");
+                _navigationManager.NavigateTo("/home");
             }
             else
             {

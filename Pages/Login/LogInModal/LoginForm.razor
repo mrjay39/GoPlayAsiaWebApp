@@ -1,41 +1,54 @@
-﻿@*===============================Login Form ==================================== *@
+﻿@using GoPlayAsiaWebApp.Goplay.Main.Login
+@*===============================Login Form ==================================== *@
 <div class="tab-pane active" id="loginPanel" role="tabpanel" aria-labelledby="loginTab">
     <EditForm Model="@loginDTO" OnValidSubmit="@Authenticate" autocomplete="stopdoingthat" class="signin-form">
         <DataAnnotationsValidator />
 
         <div class="form-group mb-3">
-            <label class="label text-white" for="username">Username</label>
-            <input id="username" type="text" class="form-control" placeholder="Username" required="" @bind-value="loginDTO.Username">
+            <input id="username" type="text" class="form-control" placeholder="Type your Username" required="" @bind-value="loginDTO.Username">
         </div>
         <div class="form-group mb-3">
-            <label class="label text-white" for="password">Password</label>
-            <input id="password" type="password" class="form-control" placeholder="Password" required="" @bind-value="loginDTO.Password">
+            <input id="password" type="password" class="form-control" placeholder="Type your Password" required="" @bind-value="loginDTO.Password">
         </div>
         <div class="form-group">
             <button type="submit" class="form-control btn btn-warning rounded submit px-3">Sign In</button>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid p-0">
             <div class="content">
                 <label class="checkbox-wrap checkbox-primary mb-0">
                     <input type="checkbox" checked="">
                     <span class="checkmark text-white">Remember Me</span>
                 </label>
             </div>
+            <div class="fle justify-content-xl-center align-items-center text-light text-center mt-3">
+                <button @onclick="LoginOTP" class="text-light btn bg-transparent border-0 p-0">
+                    <span class="text-warning fw-bold"><i class="bi bi-chat-left-dots"></i> &nbsp;Login with Verification Code</span>
+                </button>
+            </div>
             <div class="content text-center">
-                <ul class="nav justify-content-center pt-3" role="tablist">
+                <ul class="nav justify-content-center" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a id="forgotPassTab" class="" data-bs-toggle="tab" href="#forgotPassPanel" role="tab" aria-controls="forgotPasswordForm" aria-selected="false" style="cursor: pointer;">Forgot Password</a>
+                        <a id="forgotPassTab" class="text-decoration-none" data-bs-toggle="tab" href="#forgotPassPanel" role="tab" aria-controls="forgotPasswordForm" aria-selected="false" style="cursor: pointer;">Forgot Password</a>
                     </li>
                 </ul>
             </div>
         </div>
         <ValidationSummary />
     </EditForm>
+    
     <div class="d-flex">
         <p class="text-center w-100 mb-4 mt-3">
             <span class="text-white">Not a member?</span>
             @* <a id="signUpLink" class="" href="#signUpPanel" style="cursor: pointer;">&nbsp;Sign Up</a> *@
-            <a id="signUpLink" class="" href="/signup" style="cursor: pointer;">&nbsp;Sign Up</a>
+            <a id="signUpLink" class="text-decoration-none" href="/signup" style="cursor: pointer;">&nbsp;Sign Up</a>
         </p>
     </div>
 </div>
+@code {
+    [CascadingParameter] public IModalService popupLoadingModal { get; set; }
+
+    private void LoginOTP()
+    {
+        var refPopup = popupLoadingModal.Show<LoginUsingOTP>("");
+    }
+}
