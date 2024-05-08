@@ -54,6 +54,17 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 480px) {
+    #logInForm div.login-bg {
+        display: none;
+    }
+    #logInForm div.modal-dialog {
+        margin: 0;
+    }
+    .w-30 {
+        min-width: 22rem;
+    }
+}
 @media screen and (max-width: 414px) {
     #logInForm div.login-bg {
         display: none;
@@ -61,8 +72,22 @@
     #logInForm div.modal-dialog {
         margin: 0;
     }
+    .w-30 {
+        min-width: 22rem;
+    }
 }
 
+@media screen and (max-width: 390px) {
+    #logInForm div.login-bg {
+        display: none;
+    }
+    #logInForm div.modal-dialog {
+        margin: 0;
+    }
+    .w-30 {
+        min-width: 20rem;
+    }
+}
 @media screen and (max-width: 320px) {
     #logInForm div.login-bg {
         display: none;
