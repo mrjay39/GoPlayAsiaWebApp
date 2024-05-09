@@ -1,5 +1,11 @@
 ﻿@using GoPlayAsiaWebApp.Controls.GameInfo
+@using GoPlayAsiaWebApp.Pages.Login.LogInModal
+@using System.Security.Claims
+@using GoPlayAsiaWebApp.Controls.MostPlayedGames
+@inject AuthenticationStateProvider AuthenticationStateProvider
 @inject IModalService ModalService
+@inject NavigationManager _navigationManager
+
 <div class="card m-1 p-0 border-dark game-tile" style="background-color: inherit; border-color: none;">
     <div class="container-fluid p-0 bg-img">
         <img src="@_imgStr" class="card-img-top featGames-bg basketBall" @onclick="ToggleActive" alt="@_titleStr">
@@ -8,7 +14,7 @@
         <div class="content">
             <div class="subtitle"><h4 class="text-white fw-bold">@_titleStr</h4></div>
             <div class="button button-playNow">
-                <a class="btn btn-warning m-1" href="@_gameInfoHrefStr">
+                <a class="btn btn-warning m-1" href="@_gameInfoHrefStr" @onclick="OpenGameLink">
                     <span>Play Now</span>
                     <div class="arrow">
                         <span></span>
@@ -18,31 +24,26 @@
                 </a>
             </div>
             <div class="button button-gameInfo">
-                <button id="@_idStr" class="btn btn-dark m-1" href="@_gameInfoHrefStr" @onclick="() => ShowModal(_idStr)">Game Info</button>
+                <button id="@_idStr" class="btn btn-dark m-1" @onclick="() => ShowModal(_idStr)">Game Info</button>
             </div>
         </div>
     </div>
 </div>
 @code {
-    public GPATile()
-    {
-        _idStr = "";
-        _imgStr = "";
-        _titleStr = "";
-        _gameInfoHrefStr = "";
-        _tryoutsHrefStr = "";
-    }
 
-    [Parameter] public string _idStr { get; set; }
-    [Parameter] public string _imgStr { get; set; }
-    [Parameter] public string _titleStr { get; set; }
-    [Parameter] public string _gameInfoHrefStr { get; set; }
-    [Parameter] public string _tryoutsHrefStr { get; set; }
+    [Parameter] public string _idStr { get; set; } = string.Empty;
+    [Parameter] public string _imgStr { get; set; } = string.Empty;
+    [Parameter] public string _titleStr { get; set; } = string.Empty;
+    [Parameter] public string _gameInfoHrefStr { get; set; } = string.Empty;
+    [Parameter] public string _tryoutsHrefStr { get; set; } = string.Empty;
 
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
+    private ClaimsPrincipal user;
 
     public void ShowModal(string _idStr)
     {
+
         ModalService.Show<GameInfoModal>(new ModalParameters { { "GameId", _idStr } });
     }
 
@@ -62,5 +63,21 @@
             };
             var timer = new Timer(timerCallback, null, 4000, Timeout.Infinite);
         }
+    }
+
+    //this function when the user not login using game option in the mostplayedgames
+    private async void OpenGameLink()
+    {
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User; 
+        if (!user.Identity.IsAuthenticated)
+        {
+            var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
+        }
+        else
+        {
+            _navigationManager.NavigateTo(_gameInfoHrefStr);
+        }
+       
     }
 }
