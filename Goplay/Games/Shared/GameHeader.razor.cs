@@ -58,7 +58,7 @@ namespace GoPlayAsiaWebApp.Goplay.Games.Shared
         }
         private async Task onclick_Lobby()
         {
-            _navigationManager.NavigateTo("/lobby");
+            _navigationManager.NavigateTo("/home");
         }
 
         #region UNUSED
