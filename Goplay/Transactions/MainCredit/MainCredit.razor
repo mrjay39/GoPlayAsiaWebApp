@@ -12,8 +12,8 @@
 @attribute [Authorize(Roles = "1")]
 
 <PageTitle>GoPlayAsia: User's Wallet</PageTitle>
-<div class="container-fluid marketing pt-5">
-    <TopContent CreditsDisp="@_mainCreditsViewModel._icurrentUser.CreditsDisp" />
+<div class="container-fluid marketing pt-5 mt-5">
+    @* <TopContent CreditsDisp="@_mainCreditsViewModel._icurrentUser.CreditsDisp" /> *@
     @if (_mainCreditsViewModel.UserParentDtl != null)
     {
         <div class="row pt-3 pb-3">

@@ -1,8 +1,9 @@
 ﻿@page "/games/headstails"
 @attribute [Authorize(Roles = "1")]
+@layout GPALayout
+@using GoPlayAsiaWebApp.Shared
 @using GoplayasiaBlazor.Core.Helpers.Interface
 @using GoPlayAsiaWebApp.Goplay.Games.Shared;
-@using GoPlayAsiaWebApp.Goplay.ViewModels;
 @using GoPlayAsiaWebApp.Goplay.ViewModels;
 @implements IDisposable
 @implements IAsyncDisposable

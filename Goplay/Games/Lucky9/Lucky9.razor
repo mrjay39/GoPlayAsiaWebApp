@@ -1,12 +1,14 @@
 ﻿@page "/games/lucky9"
 @attribute [Authorize(Roles = "1")]
+@using GoPlayAsiaWebApp.Shared
 @using GoplayasiaBlazor.Core.Helpers.Interface
 @using GoPlayAsiaWebApp.Goplay.Games.Lucky9.Components
 @using GoPlayAsiaWebApp.Goplay.Games.Shared
 @using GoplayasiaBlazor.Models.Constants
+@layout GPALayout
 @implements IDisposable
 @implements IAsyncDisposable
-<div class="container-fluid p-0" style="background: #0b310a; height: 100vh;">
+<div class="container-fluid p-0" style="height: 100vh;">
 <GameHeader StreamId="@luckyViewModel.StreamId"
             RoundTimer="@luckyViewModel.RoundTimer"
             RoundStatusString="@luckyViewModel.RoundStatusString"
@@ -21,7 +23,7 @@
             GifSrc="@luckyViewModel.L9gif"
             IsDisabledCategory="false"
             MaxRoundTimer="@(luckyViewModel.GameSetting != null ? luckyViewModel.GameSetting.BettingDuration  : 0)" />
-    <div id="lucky9" class="mainContainer row d-block pl-1 pr-1" style="line-height: normal; background: #0b310a !important;">
+    <div id="lucky9" class="mainContainer row d-block pl-1 pr-1" style="line-height: normal;">
     @if (luckyViewModel.RoundStatusString == Settings.Constants.Open)
     {
         <Lucky9BettingButton RoundStatusString="@luckyViewModel.RoundStatusString"

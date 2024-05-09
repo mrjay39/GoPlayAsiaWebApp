@@ -14,44 +14,4 @@
         overflow-x: inherit;
         padding-bottom: 0 !important;
     }
-
-    #gpa-overflow.gameOverflow-x > div {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        justify-content: inherit !important;
-    }
-}
-@media screen and (max-width: 460px) {
-    .gameOverflow-x {
-        overflow-x: auto;
-    }
-
-    .gameOverflow-x > div {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        justify-content: inherit !important;
-    }
-}
-@media screen and (max-width: 414px) {
-    .gameOverflow-x {
-        overflow-x: auto;
-    }
-
-    .gameOverflow-x > div {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        justify-content: inherit !important;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .gameOverflow-x {
-        overflow-x: auto;
-    }
-
-    .gameOverflow-x > div {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        justify-content: inherit !important;
-    }
 }

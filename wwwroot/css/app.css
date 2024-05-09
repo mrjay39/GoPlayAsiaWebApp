@@ -1,6 +1,12 @@
 html, body {
     font-family: Open Sans,Oswald,Arial,sans-serif !important;
 }
+main {
+    background-image: url(../img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#101019 100%) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height:100vh;
+}
 
 h1:focus {
     outline: none;
@@ -153,56 +159,19 @@ code {
     #feat-games.gameOverflow-x, #link-header.gameOverflow-x, #arcade.gameOverflow-x {
         overflow-x: inherit !important;
     }
-
-    .gameOverflow-x {
-        overflow-x: auto;
-        padding-bottom: 0 !important;
-        scrollbar-width: thin;
-    }
-
-        .gameOverflow-x > div {
-            display: flex !important;
-            flex-wrap: nowrap !important;
-            justify-content: inherit !important;
-        }
 }
 
-@media screen and (max-width: 460px) {
-    .gameOverflow-x {
-        overflow-x: auto;
-    }
-
-        .gameOverflow-x > div {
-            display: flex !important;
-            flex-wrap: nowrap !important;
-            justify-content: inherit !important;
-        }
+.gameOverflow-x {
+    overflow-x: auto;
+    padding-bottom: 0 !important;
+    scrollbar-width: thin;
 }
 
-@media screen and (max-width: 414px) {
-    .gameOverflow-x {
-        overflow-x: auto;
-    }
-
-        .gameOverflow-x > div {
-            display: flex !important;
-            flex-wrap: nowrap !important;
-            justify-content: inherit !important;
-        }
+.gameOverflow-x > div {
+    display: inline-flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: inherit !important;
 }
-
-@media screen and (max-width: 320px) {
-    .gameOverflow-x {
-        overflow-x: auto;
-    }
-
-        .gameOverflow-x > div {
-            display: flex !important;
-            flex-wrap: nowrap !important;
-            justify-content: inherit !important;
-        }
-}
-
 
 /*START GLOBAL CARD CSS*/
 .btn.cardDiv {

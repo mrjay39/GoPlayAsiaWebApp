@@ -1,6 +1,6 @@
 ﻿<div class="link-header p-0 m-2">
     <a href="@_gameHrefStr" class="text-black text-decoration-none" style="width: 12rem;">
-        <div class="bg-warning text-center p-1 m-1 rounded-3 @_activeClassStr">
+        <div id="@_idStr" class="bg-warning text-center p-1 m-1 rounded-3 @_activeClassStr">
             <img src="@_imgGameStr" class="img-fluid w-100 mb-1" alt="GoPlayAsia">
             <h6 class="text-uppercase fw-bold">@_typeGameStr</h6>
         </div>
@@ -16,4 +16,6 @@
     public string _typeGameStr { get; set; }
     [Parameter]
     public string _activeClassStr { get; set; }
+    [Parameter]
+    public string _idStr { get; set; }
 }

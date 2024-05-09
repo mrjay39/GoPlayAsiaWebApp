@@ -14,36 +14,11 @@
     }
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 987px) {
     .link-header {
         width: 9rem;
     }
     h6{
-        font-size: 11px;
-    }
-    #linkHeader.col {
-        flex: 1 0 0%;
-        margin: 3px;
-    }
-}
-@media screen and (max-width: 414px) {
-    .link-header {
-        width: 9rem;
-    }
-    h6{
-        font-size: 11px;
-    }
-    #linkHeader.col {
-        flex: 1 0 0%;
-        margin: 3px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .link-header {
-        width: 9rem;
-    }
-    h6 {
         font-size: 11px;
     }
     #linkHeader.col {

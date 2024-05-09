@@ -203,10 +203,10 @@
         visibility: hidden !important;
     }
 
-        .navbar-expand-lg #settingOffCanvas.offcanvas.show {
-            visibility: visible !important;
-            z-index: 1045;
-        }
+    .navbar-expand-lg #settingOffCanvas.offcanvas.show {
+        visibility: visible !important;
+        z-index: 1045;
+    }
 
     .navbar-expand-lg #settingOffCanvas .offcanvas-body {
         flex-grow: 1;
@@ -234,13 +234,16 @@
         width: 100%;
     }
 
-        .navbar-expand-lg #settingOffCanvas .nav-item .nav-link:hover {
-            background-color: rgba(255,255,255,0.1);
-            color: gold;
-        }
+    .navbar-expand-lg #settingOffCanvas .nav-item .nav-link:hover {
+        background-color: rgba(255,255,255,0.1);
+        color: gold;
+    }
 
     .navbar-expand-lg #settingOffCanvas .nav-item:last-of-type {
         padding-bottom: 0rem;
+    }
+    #navBarBottom{
+        width: 40rem;
     }
 }
 

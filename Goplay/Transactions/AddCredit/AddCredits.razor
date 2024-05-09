@@ -3,7 +3,6 @@
     <h4 class="text-center mt-2 mb-0 text-dark">Add Credits</h4>
     <p class="text-center text-dark mb-1">select your payment method</p>
 
-
     <!-- MENU -->
     <div class="d-flex optionBtn">
         @if (_mainCreditsViewModel.CashInSettings.PaymentGateway)
@@ -36,14 +35,14 @@
 
     <!-- CASH IN FORM -->
     <!-- UPAY -->
-    <form hidden="@hideUBAddCredit">
+    @* <form hidden="@hideUBAddCredit"> *@
+    <form>
 
         <!-- DEFAULT AMOUNT -->
         <TopupDefaultAmount OnClickCallback="@(() => UpdateState())"/>
 
         <!-- AMOUNT -->
-        <div class="form-group pesoContainer">
-            <span class="peso">&#8369;</span>
+        <div class="form-group pesoContainer mb-3">
             <input class="form-control pl-4 input-lg" type="number" placeholder="Input Other Amount (@($"{String.Format("{0:#,##0.#}", _mainCreditsViewModel.TopupMinAmount)} - {String.Format("{0:#,##0.#}", _mainCreditsViewModel.TopupMaxAmount)}"))" @bind-value="_mainCreditsViewModel.TopupUBAmount" onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
         </div>
 
@@ -54,7 +53,7 @@
         }
 
         <!-- SUBMIT BUTTON -->
-        <input class="addCredit-submit btn btn-primary mb-2" type="button" @onclick="RequestTopupUBCredit" value="Submit" />
+        <input class="addCredit-submit btn mb-2" type="button" @onclick="RequestTopupUBCredit" value="Submit" />
     </form>
 
     <!-- OVER THE COUNTER -->
