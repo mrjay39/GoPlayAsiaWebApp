@@ -109,7 +109,7 @@
                             <a href="" @onclick:preventDefault @onclick='(() => SelectBetType("01"))'>
                                 <div class="border-box @(@Number_01_UserBet != "0" ? "withbet" : "withoutbet")">
                                     <div class="d-flex align-items-center justify-content-center ">
-                                        <div class="betNumber col">
+                                        <div class="betNumber col w-100">
                                             <button class="betBtn @(go12ViewModel.BetCombinationValue == Settings.Constants.One ? "numberActive" : "") col" @onclick='(() => SelectBetType("01"))'>
                                                 1
                                                 <div class="tokenSize mt-1">
@@ -384,7 +384,7 @@
                         <div class="@(@IsWon_12 ? "winners" : "") border-box">
                             <div class="d-flex align-items-center">
                                 <div class="disbetNumber col">
-                                    <button class="col betBtn">12</button>
+                                    <button class="col betBtn w-100">12</button>
                                 </div>
                             </div>
                         </div>
@@ -422,7 +422,7 @@
                     <div class="betContainer col-2">
                         <div class="@(@IsWon_11 ? "winners" : "") border-box">
                             <div class="d-flex align-items-center">
-                                <div class="betNumber col">
+                                <div class="betNumber col w-100">
                                     <button class="btn betBtn col">11</button>
                                 </div>
                             </div>
@@ -462,7 +462,7 @@
                     <div class="betContainer col-2">
                         <div class="@(@IsWon_10 ? "winners" : "") border-box">
                             <div class="d-flex align-items-center">
-                                <div class="betNumber col">
+                                <div class="betNumber col w-100">
                                     <button class="btn betBtn col">10</button>
                                 </div>
                             </div>
@@ -502,7 +502,7 @@
                     <div class="betContainer col-2">
                         <div class="@(@IsWon_9 ? "winners" : "") border-box">
                             <div class="d-flex align-items-center">
-                                <div class="betNumber col">
+                                <div class="betNumber col w-100">
                                     <button class="btn betBtn col">9</button>
                                 </div>
                             </div>
@@ -543,7 +543,7 @@
                     <div class="betContainer col-2">
                         <div class="@(@IsWon_8 ? "winners" : "") border-box">
                             <div class="d-flex align-items-center">
-                                <div class="betNumber col">
+                                <div class="betNumber col w-100">
                                     <button class="btn betBtn col">8</button>
                                 </div>
                             </div>
@@ -583,7 +583,7 @@
                     <div class="betContainer col-2">
                         <div class="@(@IsWon_7 ? "winners" : "") border-box">
                             <div class="d-flex align-items-center">
-                                <div class="betNumber col">
+                                <div class="betNumber col w-100">
                                     <button class="btn betBtn col">7</button>
                                 </div>
                             </div>
@@ -756,7 +756,7 @@ else @if ((@RoundStatusString == Constants.Closed || @RoundStatusString == Const
                     <div class="border-box">
                         <div class="d-flex align-items-center">
                             <div class="betNumber col">
-                                <button class="col betBtn @(IsWon_1 ? "winningNumberBlack" : "")">
+                                <button class="col betBtn w-100 @(IsWon_1 ? "winningNumberBlack" : "")">
                                     1
                                     <div class="  @(IsWon_1 ? "animationOut01 " : "")">
                                         <div class="tokenSize mt-1">
@@ -821,7 +821,7 @@ else @if ((@RoundStatusString == Constants.Closed || @RoundStatusString == Const
                     <div class="border-box">
                         <div class="d-flex align-items-center">
                             <div class="betNumber col">
-                                <button class="col betBtn @(IsWon_2 ? "winningNumberBlack" : "")">
+                                <button class="col betBtn w-100 @(IsWon_2 ? "winningNumberBlack" : "")">
                                     2
                                     <div class="  @(IsWon_2 ? "animationOut02" : "")">
                                         <div class="tokenSize mt-1">
@@ -894,7 +894,7 @@ else @if ((@RoundStatusString == Constants.Closed || @RoundStatusString == Const
                     <div class="border-box">
                         <div class="d-flex align-items-center">
                             <div class="betNumber col">
-                                <button class="col betBtn @(IsWon_3 ? "winningNumberBlack" : "")">
+                                <button class="col betBtn w-100 @(IsWon_3 ? "winningNumberBlack" : "")">
                                     3
                                     <div class="  @(IsWon_3 ? "animationOut03" : "")">
                                         <div class="tokenSize mt-1">
@@ -958,7 +958,7 @@ else @if ((@RoundStatusString == Constants.Closed || @RoundStatusString == Const
                     <div class="border-box">
                         <div class="d-flex align-items-center">
                             <div class="betNumber col">
-                                <button class="col betBtn @(IsWon_4 ? "winningNumberBlack" : "")">
+                                <button class="col betBtn w-100 @(IsWon_4 ? "winningNumberBlack" : "")">
                                     4
                                     <div class="  @(IsWon_4 ? "animationOut04" : "")">
                                         <div class="tokenSize mt-1">
@@ -1017,7 +1017,7 @@ else @if ((@RoundStatusString == Constants.Closed || @RoundStatusString == Const
                     <div class="border-box">
                         <div class="d-flex align-items-center">
                             <div class="betNumber col">
-                                <button class="col betBtn @(IsWon_5 ? "winningNumberBlack" : "")">
+                                <button class="col betBtn w-100 @(IsWon_5 ? "winningNumberBlack" : "")">
                                     5
                                     <div class="  @(IsWon_5 ? "animationOut05" : "")">
                                         <div class="tokenSize mt-1">
@@ -1082,7 +1082,7 @@ else @if ((@RoundStatusString == Constants.Closed || @RoundStatusString == Const
                     <div class="border-box">
                         <div class="d-flex align-items-center">
                             <div class="betNumber col">
-                                <button class="col betBtn @(IsWon_6 ? "winningNumberBlack" : "")">
+                                <button class="col betBtn w-100 @(IsWon_6 ? "winningNumberBlack" : "")">
                                     6
                                     <div class="  @(IsWon_6 ? "animationOut06" : "")">
                                         <div class="tokenSize mt-1">
@@ -1143,7 +1143,7 @@ else @if ((@RoundStatusString == Constants.Closed || @RoundStatusString == Const
                     <div class="border-box">
                         <div class="d-flex align-items-center">
                             <div class="disbetNumber col p-0">
-                                <button class="col betBtn @(IsWon_12 ? "winningNumberBlack" : "")">
+                                <button class="col betBtn w-100 @(IsWon_12 ? "winningNumberBlack" : "")">
                                     12
                                     <div class="  @(IsWon_12 ? "animationOut12" : "")">
                                         <div class="tokenSize mt-1">
@@ -1208,7 +1208,7 @@ else @if ((@RoundStatusString == Constants.Closed || @RoundStatusString == Const
                     <div class="border-box">
                         <div class="d-flex align-items-center">
                             <div class="betNumber col">
-                                <button class="col betBtn @(IsWon_11 ? "winningNumberBlack" : "")">
+                                <button class="col betBtn w-100 @(IsWon_11 ? "winningNumberBlack" : "")">
                                     11
                                     <div class="  @(IsWon_11 ? "animationOut11" : "")">
                                         <div class="tokenSize mt-1">
@@ -1268,7 +1268,7 @@ else @if ((@RoundStatusString == Constants.Closed || @RoundStatusString == Const
                     <div class="border-box">
                         <div class="d-flex align-items-center">
                             <div class="betNumber col">
-                                <button class="col betBtn @(IsWon_10 ? "winningNumberBlack" : "")">
+                                <button class="col betBtn w-100 @(IsWon_10 ? "winningNumberBlack" : "")">
                                     10
                                     <div class="  @(IsWon_10 ? "animationOut10" : "")">
                                         <div class="tokenSize mt-1">
@@ -1329,7 +1329,7 @@ else @if ((@RoundStatusString == Constants.Closed || @RoundStatusString == Const
                     <div class="border-box">
                         <div class="d-flex align-items-center">
                             <div class="betNumber col">
-                                <button class="col betBtn @(IsWon_9 ? "winningNumberBlack" : "")">
+                                <button class="col betBtn w-100 @(IsWon_9 ? "winningNumberBlack" : "")">
                                     9
                                     <div class="  @(IsWon_9 ? "animationOut9" : "")">
                                         <div class="tokenSize mt-1">
@@ -1388,7 +1388,7 @@ else @if ((@RoundStatusString == Constants.Closed || @RoundStatusString == Const
                     <div class="border-box">
                         <div class="d-flex align-items-center">
                             <div class="betNumber col">
-                                <button class="col betBtn @(IsWon_8 ? "winningNumberBlack" : "")">
+                                <button class="col betBtn w-100 @(IsWon_8 ? "winningNumberBlack" : "")">
                                     8
                                     <div class="  @(IsWon_8 ? "animationOut8" : "")">
                                         <div class="tokenSize mt-1">
@@ -1447,7 +1447,7 @@ else @if ((@RoundStatusString == Constants.Closed || @RoundStatusString == Const
                     <div class="border-box">
                         <div class="d-flex align-items-center">
                             <div class="betNumber col">
-                                <button class="col betBtn @(IsWon_7 ? "winningNumberBlack" : "")">
+                                <button class="col betBtn w-100 @(IsWon_7 ? "winningNumberBlack" : "")">
                                     7
                                     <div class="  @(IsWon_7 ? "animationOut7" : "")">
                                         <div class="tokenSize mt-1">

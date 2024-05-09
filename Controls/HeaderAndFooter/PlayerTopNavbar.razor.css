@@ -114,6 +114,9 @@
 .navbar-brand {
     font-size: 1.1rem;
 }
+.img-logo{
+    width: 17%;
+}
 #user-image{
     display: none;
 }
