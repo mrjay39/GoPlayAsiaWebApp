@@ -114,6 +114,9 @@
 .navbar-brand {
     font-size: 1.1rem;
 }
+#user-image{
+    display: none;
+}
 
 .bi {
     display: inline-block;
@@ -326,6 +329,30 @@
     .align-items {
         align-items: normal;
     }
+    /*Start: Toggler header*/
+    #gpa-toggler {
+        padding: 0;
+        left: 0;
+    }
+    #gpa-logo > .logo {
+        max-height: 35px;
+    }
+    #gpa-logo {
+        margin-left: 5.5rem;
+        z-index: 2;
+        position: relative;
+    }
+    #user-image {
+        position: absolute;
+        display: inline-flex;
+        width: 22%;
+        right: 0;
+        z-index: 3;
+        align-items: center;
+        color: #9f9e9e;
+        text-decoration: none;
+    }
+    /*End: Toggler header*/
 }
 
 @media screen and (max-width: 320px) {
@@ -380,4 +407,32 @@
     .align-items {
         align-items: normal;
     }
+    .container.no-padding{
+        padding: 0;
+    }
+
+    /*Start: Toggler header*/
+    #gpa-toggler{
+        padding: 0;
+        left: 0;
+    }
+    #gpa-logo > .logo {
+        max-height: 26px;
+    }
+    #gpa-logo {
+        margin-left: 5.5rem;
+        z-index: 2;
+        position: relative;
+    }
+    #user-image {
+        position: absolute;
+        display: inline-flex;
+        width: 25%;
+        right: 0;
+        z-index: 3;
+        align-items: center;
+        color: #9f9e9e;
+        text-decoration: none;
+    }
+    /*End: Toggler header*/
 }

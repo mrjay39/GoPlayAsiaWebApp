@@ -10,13 +10,19 @@
 @using System.Collections.ObjectModel;
 
 <nav class="navbar top-navbar navbar-expand-lg fixed-top navbar-dark bg-black">
-    <div class="container">
-        <button class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a href="home" class="navbar-brand gpa-navbar-brand d-flex align-items-center col-md-2 mb-2 mb-md-0 text-dark text-decoration-none">
-            <img src="./img/gpa-logo.png" class="img-fluid logo" alt="GoPlayAsia">
-        </a>
+    <div class="container no-padding">
+        <div class="row d-flex align-items-center">
+            <button id="gpa-toggler" class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a id="gpa-logo" href="home" class="navbar-brand gpa-navbar-brand d-flex align-items-center text-dark text-decoration-none">
+                <img src="./img/gpa-logo.png" class="img-fluid logo" alt="GoPlayAsia">
+            </a>
+            <a id="user-image" class="bg-black" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
+                <img class="img-fluid img w-100 p-0" src="./img/user-icon.png" /> <i class="fa-solid fa-angle-down"></i> &nbsp;
+                @* <span class="text-white fw-bold h5">Php @iCurrentUser.CreditsDisp</span> *@
+            </a>
+        </div>
         @* <a class="text-center btn" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
         <img class="img-fluid img w-25 px-2 me-2" src="./img/user-icon.png" />
         <span class="text-white fw-bold">100,000.00</span>
@@ -108,7 +114,7 @@
         }
     });
 </script>
-@code{
+@code {
     public string cssvar { get; set; } = "cssdef";
     [Parameter] public string? CreditsDisp { get; set; }
     [Parameter] public ObservableCollection<PlayerCategoryModel> PlayerCategory { get; set; }

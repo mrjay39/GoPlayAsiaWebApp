@@ -50,7 +50,7 @@
             </div>
         </div>
 
-
+        @*================ Start: User Profile ================*@
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h2 class="text-center">
@@ -61,7 +61,6 @@
                     </button>
                 </h2>
             </div>
-
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
                     <form>
@@ -137,8 +136,9 @@
                 </div>
             </div>
         </div>
+        @*================ End: User Profile ================*@
 
-
+        @*================ Start: Change Password ================*@
         <div class="card">
             <div class="card-header" id="headingThree">
                 <h2 class="text-center">
@@ -172,7 +172,9 @@
                 </div>
             </div>
         </div>
+        @*================ End: Change Password ================*@
 
+        @*================ Start: Submitted Identification Card ================*@
         <div class="card">
             <div class="card-header" id="headingFour">
                 <h2 class="text-center">
@@ -204,6 +206,7 @@
                 </div>
             </div>
         </div>
+        @*================ End: Submitted Identification Card ================*@
 
 
         <div class="card">
@@ -218,8 +221,8 @@
         </div>
 
     </div>
-    <!--START VERIFIED-->
-
+    
+    @*================ Start: Account Verification ================*@
     <div hidden="@hideVerifiedStatus" class="accordion">
         <div class="card">
             <div class="card-header" id="headingOne">
@@ -264,7 +267,7 @@
         </div>
 
     </div>
-    <!-- END VERIFIED-->
+    @*================ End: Account Verification ================*@
 }
 @code {
     private async Task logout()
