@@ -1327,6 +1327,10 @@ public abstract class BaseViewModel
             await _iaccountService.Logout();
             _navigationManager.NavigateTo("/");
             _toastService.ShowInfo("You have been logged out...");
+
+            //it reload the page to reflect updated authentication state
+            _navigationManager.NavigateTo(_navigationManager.Uri, forceLoad: true);
+
         }
         catch (Exception)
         {
