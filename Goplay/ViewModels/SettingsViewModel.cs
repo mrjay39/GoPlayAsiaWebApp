@@ -81,8 +81,9 @@ namespace GoPlayAsiaWebApp.Goplay.ViewModels
         #endregion
 
         #region Life cycle methods
-        public SettingsViewModel(IAccountService accountService, IToastService toastService, ICurrentUser currentUser, IModalService popupModal, NavigationManager navigationManager, IAccountService iaccountService, AuthenticationStateProvider AuthenticationStateProvider)
+        public SettingsViewModel(IAccountService accountService, IToastService toastService, ICurrentUser currentUser, IModalService popupModal, NavigationManager navigationManager, IAccountService iaccountService, AuthenticationStateProvider AuthenticationStateProvider, IConfiguration config)
         {
+            _config = config;
             _toastService = toastService;
             _icurrentUser = currentUser;
             _popupModal = popupModal;
