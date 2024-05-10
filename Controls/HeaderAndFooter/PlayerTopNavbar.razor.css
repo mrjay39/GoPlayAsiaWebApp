@@ -103,7 +103,8 @@
 }
 
 .navbar-brand.gpa-navbar-brand {
-    margin-left: 5.5rem;
+    margin-left: 0;
+    padding-right: 2rem;
 }
 
 .top-row {
