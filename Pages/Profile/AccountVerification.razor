@@ -1,6 +1,7 @@
-﻿<div class="offcanvas offcanvas-end text-white" tabindex="-1" id="account-verification" aria-labelledby="account-verificationLabel">
+﻿@using GoPlayAsiaWebApp.Goplay.Main.Settings
+<div class="offcanvas offcanvas-end text-white" tabindex="-1" id="account-verification" aria-labelledby="account-verificationLabel">
     <form action="" data-bs-scroll="true" tabindex="-1" class="overflow-auto">
-        <div class="offcanvas-header">
+        @* <div class="offcanvas-header">
             <div class="container p-2">
                 <div class="row align-items-center">
                     <div class="col">
@@ -30,9 +31,10 @@
                 </div>
                 <hr class="m-0">
             </div>
-        </div>
+        </div> *@
         <div class="offcanvas-body p-0">
-            <div class="container p-3">
+            <SettingsView />
+            @* <div class="container p-3">
                 <p>
                     <label class="text-muted" for="birthDate"><i class="fa-regular fa-calendar-days"></i> Birth Date</label><br>
                     <input id="birthDate" type="date" placeholder="Month / Day / Year" class="form-check border border-1 rounded-3 w-100" />
@@ -43,7 +45,6 @@
                         <option selected>Select Nationality</option>
                         <option value="Filipino">Filipino</option>
                     </select>
-                   @*  <input type="text" value="" id="nationality" placeholder="Type your nationality (e.g. Filipino)" class="form-check border border-1 rounded-3 w-100" required> *@
                 </p>
                 <p>
                     <label class="text-muted" for="eMailAddress"><i class="fa-regular fa-envelope"></i> Email Address</label><br>
@@ -86,12 +87,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container">
                 <div class="col-12">
                     <button href="#" class="btn col-12 btn-gpa">Submit Verification</button>
                 </div>
-            </div>
+            </div> *@
         </div>
     </form>
 </div>

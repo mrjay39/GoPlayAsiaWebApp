@@ -1,16 +1,16 @@
-﻿<div class="offcanvas offcanvas-end text-white" tabindex="-1" id="edit-profile" aria-labelledby="edit-profileLabel">
-    <form action="" data-bs-scroll="true" tabindex="-1" class="overflow-auto">
+﻿@using GoPlayAsiaWebApp.Goplay.Main.Settings
+<div class="offcanvas offcanvas-end text-white" tabindex="-1" id="edit-profile" aria-labelledby="edit-profileLabel">
         <div class="offcanvas-header">
             <div class="container p-2">
-                <div class="row align-items-center">
+                <div class="row align-items-center pb-2">
                     <div class="col">
-                        <h5 class="offcanvas-title text-center">Update Profile</h5>
+                        <h5 class="offcanvas-title text-center">Player's Profile</h5>
                     </div>
                     <div class="col-2">
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                 </div>
-                <div class="row">
+                @* <div class="row">
                     <div class="col position-relative">
                         <div class="offcanvas-title" id="edit-profileLabel position-relative">
                             <img src="img/user-profile.png" class="card-img-top img-fluid rounded-circle w-25">
@@ -26,16 +26,17 @@
                             <span class="h5 fw-bold">Juan Dela Cruz </span><br>
                             <span class="h5 fw-bold font-12">+63 987 654 3210</span><br>
                             <span class="text-muted font-12">Status :</span>
-                            @* <span class="font-12"><i class="fa-regular fa-face-sad-tear text-warning"></i> Not Verified</span> *@
+                            <span class="font-12"><i class="fa-regular fa-face-sad-tear text-warning"></i> Not Verified</span>
                             <span class="font-12"><i class="fa-regular fa-circle-check text-success"></i>&nbsp; Fully Verified</span>
                         </p>
                     </div>
-                </div>
+                </div> *@
                 <hr class="m-0">
             </div>
         </div>
         <div class="offcanvas-body p-0">
-            <div class="container p-3">
+            <SettingsView />
+            @* <div class="container p-3">
                 <p>
                     <span class="text-muted"><i class="fa-regular fa-calendar-days"></i> Birth Date</span><br>
                     <input id="birthdate" type="date" />
@@ -93,9 +94,8 @@
                 <div class="col-12">
                     <button href="#" class="btn col-12 btn-gpa">Update Information</button>
                 </div>
-            </div>
+            </div> *@
         </div>
-    </form>
 </div>
 @code {
     [CascadingParameter] public IModalService Modal { get; set; } = default!;

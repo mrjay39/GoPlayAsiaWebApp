@@ -80,6 +80,30 @@ a, .btn-link {
     content: "An error has occurred."
 }
 
+.blazored-typeahead__results {
+    background: rgb(40, 40, 40) !important;
+    border: 1px solid #4b4a4a !important;
+}
+.blazored-typeahead__result,
+.blazored-typeahead__notfound,
+.blazored-typeahead__results-help-template,
+.blazored-typeahead__results-header,
+.blazored-typeahead__results-footer {
+    border: 1px solid #4b4a4a !important;
+}
+.blazored-typeahead__active-item,
+.blazored-typeahead__result:hover,
+.blazored-typeahead__result:focus,
+.blazored-typeahead__selected-item,
+.blazored-typeahead__input-icon:hover {
+    background-color: rgb(238, 160, 11) !important;
+    color: black !important;
+    border: 1px solid #4b4a4a !important;
+}
+.blazored-typeahead {
+    border: 1px solid #4b4a4a !important;
+}
+
 .loading-progress {
     /*position: relative;
     display: block;
