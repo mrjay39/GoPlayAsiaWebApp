@@ -18,7 +18,7 @@
             </p>
             <p>
                 @* <a class="btn btn-lg btn-warning btn-mobile" href="#">Play Now</a> *@
-                <a href="@_hrefStr" class="btn btn-warning play-btn">
+                <a href="@_hrefStr" class="btn btn-warning play-btn" @onclick="OpenGameLink">
                     <span class="fw-bold">Play Now</span>
                     <div class="arrow">
                         <span></span>
@@ -47,4 +47,21 @@
     public string _contentStr3 {get; set;}
     [Parameter]
     public string _hrefStr {get; set;}
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
+    private ClaimsPrincipal user;
+
+    private bool isActive = false;
+
+    //this function when the user not login using game option in the mostplayedgames
+    private async void OpenGameLink()
+    {
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        if (!user.Identity.IsAuthenticated)
+        {
+            var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
+        }
+    }
 }
