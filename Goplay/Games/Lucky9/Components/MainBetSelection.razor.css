@@ -78,7 +78,7 @@
 .cardResultsVertical {
     width: 100%;
     max-width: 46px;
-    margin: 2px;
+    margin: 1.5px;
     line-height: normal;
     font-size: 20px;
     border-radius: 2px;
@@ -90,7 +90,7 @@
 
 .horizontalCard {
     margin-top: -5px;
-    margin-right: 1.23%;
+    margin-right: 6.23%;
     display: flex;
     justify-content: center;
     line-height: normal;
@@ -135,6 +135,8 @@
 }
 
 .horizontalCardBlankBanker {
+    width: 100%;
+    max-width: 46px;
     margin-top: 1px;
     display: flex;
     justify-content: center;
