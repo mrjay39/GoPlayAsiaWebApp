@@ -1,4 +1,11 @@
-﻿<div class="carousel-item @_classNameStr">
+﻿@using GoPlayAsiaWebApp.Controls.GameInfo
+@using GoPlayAsiaWebApp.Pages.Login.LogInModal
+@using System.Security.Claims
+@using GoPlayAsiaWebApp.Controls.MostPlayedGames
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IModalService ModalService
+@inject NavigationManager _navigationManager
+<div class="carousel-item @_classNameStr">
     <div class="text-end carousel-fade"><img src="@_imgStr" class="img-fluid img-mobile" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" /></div>
     <div class="container">
         <div class="carousel-caption carousel-fade text-start content-mobile">
