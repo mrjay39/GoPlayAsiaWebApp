@@ -274,6 +274,37 @@
     .align-items {
         align-items: center;
     }
+    /*Start: Toggler header*/
+    #gpa-toggler {
+        padding: 0;
+        left: 0;
+    }
+
+    #gpa-logo > .logo {
+        max-height: 35px;
+    }
+
+    #gpa-logo {
+        margin-left: 5.5rem;
+        z-index: 2;
+        position: relative;
+    }
+
+    #user-image {
+        position: absolute;
+        display: inline-flex;
+        width: 168px;
+        right: 45px;
+        z-index: 3;
+        align-items: center;
+        color: #9f9e9e;
+        text-decoration: none;
+    }
+    .player-chips{
+        display: inline-flex;
+        font-size: 12px;
+    }
+    /*End: Toggler header*/
 }
 
 @media screen and (max-width: 460px) {
@@ -355,6 +386,9 @@
         align-items: center;
         color: #9f9e9e;
         text-decoration: none;
+    }
+    .player-chips {
+        display: none;
     }
     /*End: Toggler header*/
 }

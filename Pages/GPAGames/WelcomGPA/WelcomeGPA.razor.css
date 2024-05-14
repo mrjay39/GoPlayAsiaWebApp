@@ -1,1 +1,10 @@
-﻿
+﻿@media only screen and (min-width: 992px) {
+    .gpa-width{
+        width: 75%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .gpa-width {
+        width: 100%;
+    }
+}
