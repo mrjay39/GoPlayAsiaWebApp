@@ -376,15 +376,15 @@ p {
         width: 7px;
     }
 
-    #lucky9 .cardResultsPlayerContainer {
+    #lucky9 .cardResultsPlayerContainer.left-0 {
         position: relative;
-        left: 5px;
+        left: 0px;
+    }
+    #lucky9 .cardResultsPlayerContainer.right-4 {
+        position: relative;
+        right: -4px;
     }
 
-    #lucky9 .cardResultsPlayerContainer {
-        position: relative;
-        left: 5px;
-    }
 
     #lucky9 .cardResultsBankerContainer {
         position: relative;

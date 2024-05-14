@@ -54,7 +54,7 @@
 
             <!-- CARD DISPLAY -->
             <div class="mt-1">
-                <div class="cardResultsPlayerContainer justify-content-center align-items-center d-flex">
+                <div class="cardResultsPlayerContainer text-end align-items-center justify-content-center d-flex w-100 right-4">
                     @if (@luckyViewModel.GameResult.ValACard3 != String.Empty && @luckyViewModel.GameResult.ValACard3 != "NA" && @luckyViewModel.GameResult.ValACard3 is not null)
                     {
                         <div class="horizontalCard">
@@ -188,7 +188,7 @@ else if (BetValueDisplay == Settings.Constants.Banker)
 
             <!-- CARD DISPLAY -->
             <div class="mt-1">
-                <div class="cardResultsBankerContainer  justify-content-center align-items-center d-flex">
+                <div class="cardResultsPlayerContainer text-start align-items-center d-flex w-100 left-0">
                         @if (@luckyViewModel.GameResult.ValBCard1 != String.Empty && @luckyViewModel.GameResult.ValBCard1 != "NA" && @luckyViewModel.GameResult.ValBCard1 is not null)
                         {
                             <div class="col cardResultsVertical">

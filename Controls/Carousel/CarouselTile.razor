@@ -11,14 +11,14 @@
             </p>
             <p>
                 @* <a class="btn btn-lg btn-warning btn-mobile" href="#">Play Now</a> *@
-                <button class="btn btn-warning play-btn">
+                <a href="@_hrefStr" class="btn btn-warning play-btn">
                     <span class="fw-bold">Play Now</span>
                     <div class="arrow">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
-                </button>
+                </a>
             </p>
         </div>
     </div>
@@ -38,4 +38,6 @@
     public string _contentStr2 {get; set;}
     [Parameter]
     public string _contentStr3 {get; set;}
+    [Parameter]
+    public string _hrefStr {get; set;}
 }

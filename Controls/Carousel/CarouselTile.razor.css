@@ -81,8 +81,8 @@
         }
 
         #goPlayAsia-carousel .content-mobile {
-            width: 200px;
-            top: -16px;
+            width: 250px;
+            top: 47px;
             font-size: 14px;
             margin-left: -20px;
         }
@@ -101,41 +101,41 @@
         }
 }
 /*================ Start: Button PLay Animation ==================*/
-button.play-btn {
+a.play-btn {
     position: relative;
     width: 115px;
 }
 
-    button.play-btn > span {
-        margin-left: -10px;
-    }
+a.play-btn > span {
+    margin-left: -10px;
+}
 
 .arrow {
     position: absolute;
-    top: 42%;
-    left: 65%;
+    top: 43%;
+    left: 57%;
     transform: translate(-50%, -50%) rotate(-90deg);
     cursor: pointer;
 }
 
-    .arrow span {
-        display: block;
-        width: 15px;
-        height: 15px;
-        border-bottom: 5px solid white;
-        border-right: 5px solid white;
-        transform: rotate(45deg);
-        margin: -10px;
-        animation: animate 2s infinite;
-    }
+.arrow span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
 
-        .arrow span:nth-child(2) {
-            animation-delay: -0.2s;
-        }
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
 
-        .arrow span:nth-child(3) {
-            animation-delay: -0.4s;
-        }
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+}
 
 @keyframes animate {
     0% {
