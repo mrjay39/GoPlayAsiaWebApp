@@ -2,12 +2,13 @@
 @using GoPlayAsiaWebApp.Pages.Login.LogInModal
 <nav class="navbar top-navbar navbar-expand-lg fixed-top navbar-dark bg-black">
     <div class="container">
-        <button class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button id="gpa-toggler" class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a href="home" class="navbar-brand gpa-navbar-brand d-flex align-items-center col-md-2 mb-2 mb-md-0 text-dark text-decoration-none">
+        <a id="gpa-logo" href="home" class="navbar-brand gpa-navbar-brand d-flex align-items-center col-md-2 mb-2 mb-md-0 text-dark text-decoration-none">
             <img src="./img/gpa-logo.png" class="img-fluid logo" alt="GoPlayAsia">
         </a>
+        <button type="button" class="btn btn-outline-warning fw-bold me-2 toggler-login-btn" @onclick="loginSignup">Login</button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items w-100">
                 <li class="nav-item">

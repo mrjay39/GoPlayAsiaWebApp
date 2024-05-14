@@ -216,13 +216,16 @@
         width: 100%;
     }
 
-        .navbar-expand-lg #settingOffCanvas .nav-item .nav-link:hover {
-            background-color: rgba(255,255,255,0.1);
-            color: gold;
-        }
+    .navbar-expand-lg #settingOffCanvas .nav-item .nav-link:hover {
+        background-color: rgba(255,255,255,0.1);
+        color: gold;
+    }
 
     .navbar-expand-lg #settingOffCanvas .nav-item:last-of-type {
         padding-bottom: 0rem;
+    }
+    .toggler-login-btn{
+        display: none;
     }
 }
 
@@ -325,6 +328,22 @@
     .align-items {
         align-items: normal;
     }
+    /*Start: Toggler header*/
+    #gpa-toggler {
+        padding: 0;
+        left: 0;
+    }
+
+    #gpa-logo > .logo {
+        max-height: 35px;
+    }
+
+    #gpa-logo {
+        margin-left: 2.5rem;
+        z-index: 2;
+        position: relative;
+    }
+    /*End: Toggler header*/
 }
 
 @media screen and (max-width: 320px) {
@@ -379,4 +398,21 @@
     .align-items {
         align-items: normal;
     }
+
+    /*Start: Toggler header*/
+    #gpa-toggler {
+        padding: 0;
+        left: 0;
+    }
+
+    #gpa-logo > .logo {
+        max-height: 35px;
+    }
+
+    #gpa-logo {
+        margin-left: 2.5rem;
+        z-index: 2;
+        position: relative;
+    }
+    /*End: Toggler header*/
 }
