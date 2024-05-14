@@ -1,4 +1,5 @@
 ﻿@page "/games/bingo"
+@attribute [Authorize(Roles = "1")]
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @inject BingoViewModel _iBingoViewModel
 @using GoPlayAsiaWebApp.Goplay.Games.Bingo.Components

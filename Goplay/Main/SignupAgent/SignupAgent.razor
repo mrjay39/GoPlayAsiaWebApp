@@ -1,6 +1,6 @@
 ﻿@page "/agentsignup/{refkey}"
 @page "/agentsignup"
-
+@attribute [Authorize(Roles = "1")]
 @using GoplayasiaBlazor.Models
 @using GoPlayAsiaWebApp.Goplay.Shared.Popup  
 @using Blazored.Typeahead
