@@ -3,51 +3,89 @@
 @attribute [Authorize(Roles = "1")]
 @implements IAsyncDisposable
 
-<TopContent CreditsDisp="@_notificationViewModel._icurrentUser.CreditsDisp" />
-<h3 class="d-flex justify-content-center text-light mt-2">NOTIFICATIONS</h3>
-<h5 class="tapRead d-flex justify-content-center text-light mt-2"><a href="" @onclick:preventDefault @onclick='(() => _notificationViewModel.MarkAllAsRead())'>Tap to mark all as read</a></h5>
-<div class="mainContainer mt-3">
-    <div class="text-light">
+@* <TopContent CreditsDisp="@_notificationViewModel._icurrentUser.CreditsDisp" /> *@
+<PageTitle>GoPlayAsia: Notification</PageTitle>
+<div class="container marketing pt-5 mt-5">
+    <div class="container-fluid pt-3 mt-3 pb-3 bg-white rounded-3 width-50">
+        <h3 class="d-flex justify-content-center text-dark mt-2">NOTIFICATIONS</h3>
+        <h5 class="tapRead d-flex justify-content-center text-light mt-2">
 
+            <a class="text-dark btn" @onclick:preventDefault @onclick='(() => _notificationViewModel.MarkAllAsRead())'>
+                <i class="fa-regular fa-hand-point-up"></i>
+                <span class="text-dark" for="markAll">Tap to mark all as read</span>
+            </a>
+        </h5>
         @if (_notificationViewModel.Notifications != null)
         {
             @* @foreach (var _notification in _notificationViewModel.Notifications)
         {*@
             <Virtualize Items="_notificationViewModel.Notifications" Context="_notification">
-                <div class="setCon">
-                    @_notification.Date
-                    @foreach (var _notiflist in _notification.NotificationsList)
-                    {
-                        <div class="mesCon row text-center p-1 mt-1 text-light">
+                <div class="container-fluid">
+                    <p class="fw-bold">@_notification.Date</p>
+                </div>
+
+                @foreach (var _notiflist in _notification.NotificationsList)
+                {
+                    <div class="container-fluid">
+                        <ul class="messages-list mb-0 p-2 ">
                             @if (!_notiflist.Seen)
                             {
-                                <div class="col ml-2 seenMessage">
+                               @*  <div class="col ml-2 seenMessage">
                                     <a href="" @onclick:preventDefault @onclick='(() => _notificationViewModel.SeeNotification(_notiflist.Id))'>
-                                        <div>@_notiflist.Subject</div>
-                                        <div>@_notiflist.Message</div>
-                                        <div>@_notiflist.DateSent</div>
-                                        <div><a href="" @onclick:preventDefault @onclick='(() => _notificationViewModel.SeeNotification(_notiflist.Id))'>Tap to mark as read</a></div>
+                                        <div class="subject">@_notiflist.Subject</div>
+                                        <div class="message">@_notiflist.Message</div>
+                                        <div class="dateSent">@_notiflist.DateSent</div>
+                                        <div class="markAsUnread"><a href="" @onclick:preventDefault @onclick='(() => _notificationViewModel.SeeNotification(_notiflist.Id))'>Tap to mark as read</a></div>
                                     </a>
-                                </div>
+                                </div> *@
+                                <li class="unread">
+                                    <a href="" @onclick:preventDefault @onclick='(() => _notificationViewModel.SeeNotification(_notiflist.Id))'>
+                                        <div class="header d-flex">
+                                            <div class="col title text-start">
+                                                <input class="form-check-input" type="checkbox" id="checkbox_1" @onclick:preventDefault @onclick='(() => _notificationViewModel.SeeNotification(_notiflist.Id))'>
+                                                <label class="form-check-label ms-1" for="checkbox_1">Mark as read</label>
+                                            </div>
+                                            <div class="col text-end">
+                                                <span class="date"><span class="fa fa-paper-clip"></span> @_notiflist.DateSent</span>
+                                            </div>
+                                        </div>
+                                        <div class="col title text-start">
+                                            <span class="subject">@_notiflist.Subject</span>
+                                        </div>
+                                        <div class="">
+                                            <p class="message">@_notiflist.Message</p>
+                                        </div>
+                                    </a>
+                                </li>
                             }
                             else
                             {
-                                <div class="col">
-                                    <div>@_notiflist.Subject</div>
-                                    <div>@_notiflist.Message</div>
-                                    <div>@_notiflist.DateSent</div>
-                                </div>
+                                @* <div class="col unread">
+                                    <div class="subject">@_notiflist.Subject</div>
+                                    <div class="message">@_notiflist.Message</div>
+                                    <div class="dateSent">@_notiflist.DateSent</div>
+                                </div> *@
+                                <li class="seenMessage">
+                                    <a>
+                                        <div class="header d-flex">
+                                            <div class="col title text-start">
+                                                <span class="subject">@_notiflist.Subject</span>
+                                            </div>
+                                            <div class="col text-end">
+                                                <span class="date"><span class="fa fa-paper-clip"></span> @_notiflist.DateSent</span>
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <p class="message">@_notiflist.Message</p>
+                                        </div>
+                                    </a>
+                                </li>
                             }
-                        </div>
-                    }
-                </div>
+                        </ul>
+                    </div>
+                }
             </Virtualize>
             @*}*@
         }
     </div>
 </div>
-<NavMenuBar />
-
-@code {
-
-}

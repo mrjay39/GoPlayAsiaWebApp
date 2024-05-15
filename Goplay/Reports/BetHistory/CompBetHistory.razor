@@ -1,19 +1,20 @@
 @using static GoplayasiaBlazor.Models.Constants.Settings
-<table class="maincontainer d-block ">
-    <thead class="header text-center row">
-        <tr class="row headerContainer">
-            <th class="status col-4">BET</th>
-            <th class="status col">GAME RESULT</th>
-            <th class="winStatusContainer col">WIN/LOSS</th>
-        </tr>
-    </thead>
-    <tbody class="tableCon row" style="padding-bottom: 30px;">
+<table class="maincontainer d-block rounded-3 mt-3">
+    
+    <tbody class="tableCon container bg-white rounded-3" style="padding-bottom: 30px;">
+        <thead class="row p-0 justify-content-center">
+            <tr class="d-flex headerContainer">
+            <th class="status col text-center">BET</th>
+            <th class="status col text-center">GAME RESULT</th>
+            <th class="winStatusContainer col text-center">WIN/LOSS</th>
+            </tr>
+        </thead>
         @if (_compBetHistoryViewModel.GameRounds != null)
         {
             <Virtualize Items="_compBetHistoryViewModel.GameRounds" Context="_gameround">
                 @*@foreach (var _gameround in _compBetHistoryViewModel.GameRounds)
             {*@
-                <tr class="beHistoryBg row text-center mt-1 text-light mr-0">
+                <tr class="beHistoryBg row text-center mt-1 text-dark mr-0">
                     <td class="col m-0 p-0">
                         <div>@_gameround.GameTypeName</div>
                         <div>@_gameround.DateCreatedString</div>

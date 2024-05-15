@@ -13,17 +13,17 @@
             <li class="nav-item dropdown">
             </li>
             <li class="nav-item position-relative" data-bs-dismiss="offcanvas">
-                <a class="nav-link fw-bold" href="setting">
+                <a class="nav-link fw-bold btn" data-bs-toggle="offcanvas" data-bs-target="#edit-profile" aria-controls="edit-profile">
                     <span><i class="fa-solid fa-user"></i></span>
                     <span class="ms-3"> Profile</span>
                 </a>
-               @*  <a class="nav-link fw-bold" aria-current="page" href="/User'sProfile">
-                    <span><i class="fa-solid fa-user"></i></span>
-                    <span class="ms-3"> Profile</span>
+                @*  <a class="nav-link fw-bold" aria-current="page" href="/User'sProfile">
+                <span><i class="fa-solid fa-user"></i></span>
+                <span class="ms-3"> Profile</span>
                 </a> *@
-                <span data-bs-toggle="offcanvas" data-bs-target="#account-verification" aria-controls="account-verification" class="position-absolute top-0 start-30 badge bg-danger p-2 text-decoration-none btn border-0">
+                @* <span data-bs-toggle="offcanvas" data-bs-target="#account-verification" aria-controls="account-verification" class="position-absolute top-0 start-30 badge bg-danger p-2 text-decoration-none btn border-0">
                     Verify Now!
-                </span>
+                </span> *@
             </li>
             @* <li class="nav-item">
             <a class="nav-link fw-bold" href="#">
@@ -34,7 +34,7 @@
             <li class="nav-item" data-bs-dismiss="offcanvas">
                 <a class="nav-link fw-bold" href="/Credit/withdraw">
                     <span><i class="fa-solid fa-credit-card"></i></span>
-                    <span class="ms-3"> Widthdraw</span>
+                    <span class="ms-3"> Withdraw/Cashout</span>
                 </a>
             </li>
             <li class="nav-item" data-bs-dismiss="offcanvas">
@@ -46,11 +46,11 @@
             <li class="nav-item" data-bs-dismiss="offcanvas">
                 <a class="nav-link fw-bold" href="/notification">
                     <span><i class="fa-solid fa-envelope"></i></span>
-                    <span class="ms-3"> Inbox</span>
+                    <span class="ms-3"> Notification</span>
                 </a>
             </li>
             <li class="nav-item" data-bs-dismiss="offcanvas">
-                <a class="nav-link fw-bold btn border-0" data-bs-toggle="offcanvas" data-bs-target="#change-password" aria-controls="change-password">
+                <a id="change-password-link" class="nav-link fw-bold btn border-0" data-bs-toggle="offcanvas" data-bs-target="#change-password" aria-controls="change-password">
                     <span><i class="fa-solid fa-lock"></i></span>
                     <span class="ms-3"> Change Password</span>
                 </a>
@@ -75,12 +75,22 @@
             </ul>
             </li> *@
         </ul>
-        <form class="d-flex mt-3" role="search">
+        @* <form class="d-flex mt-3" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-success" type="submit">Search</button>
-        </form>
+        </form> *@
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('[data-bs-target="#edit-profile"]').on('click', function () {
+            $('#edit-profile.offcanvas.show #change-password-form').addClass('hide');
+        });
+        $('[data-bs-target="#change-password"]').on('click', function () {
+            $('#change-password.offcanvas.show #edit-profile-form').addClass('hide');
+        });
+    });
+</script>
 @code {
     public string cssvar { get; set; } = "cssdef";
     [CascadingParameter] public IModalService popupModal { get; set; }

@@ -1,4 +1,4 @@
-html, body {
+﻿html, body {
     font-family: Open Sans,Oswald,Arial,sans-serif !important;
 }
 main {
@@ -41,7 +41,10 @@ a, .btn-link {
 .validation-message {
     color: red;
 }
-
+.blazored-toast-container.position-bottomcenter {
+    z-index: 99999 !important;
+    bottom: 40% !important;
+}
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
@@ -78,6 +81,30 @@ a, .btn-link {
 
 .blazor-error-boundary::after {
     content: "An error has occurred."
+}
+
+.blazored-typeahead__results {
+    background: rgb(40, 40, 40) !important;
+    border: 1px solid #4b4a4a !important;
+}
+.blazored-typeahead__result,
+.blazored-typeahead__notfound,
+.blazored-typeahead__results-help-template,
+.blazored-typeahead__results-header,
+.blazored-typeahead__results-footer {
+    border: 1px solid #4b4a4a !important;
+}
+.blazored-typeahead__active-item,
+.blazored-typeahead__result:hover,
+.blazored-typeahead__result:focus,
+.blazored-typeahead__selected-item,
+.blazored-typeahead__input-icon:hover {
+    background-color: rgb(238, 160, 11) !important;
+    color: black !important;
+    border: 1px solid #4b4a4a !important;
+}
+.blazored-typeahead {
+    border: 1px solid #4b4a4a !important;
 }
 
 .loading-progress {
@@ -339,7 +366,7 @@ p {
 }*/
 /*================== End: Token Animation Display Properties ==============================*/
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 380px) {
 
     #lucky9 .btn.cardDiv {
         max-width: 35px;
@@ -352,15 +379,15 @@ p {
         width: 7px;
     }
 
-    #lucky9 .cardResultsPlayerContainer {
+    #lucky9 .cardResultsPlayerContainer.left-0 {
         position: relative;
-        left: 5px;
+        left: 0px;
+    }
+    #lucky9 .cardResultsPlayerContainer.right-4 {
+        position: relative;
+        right: -4px;
     }
 
-    #lucky9 .cardResultsPlayerContainer {
-        position: relative;
-        left: 5px;
-    }
 
     #lucky9 .cardResultsBankerContainer {
         position: relative;

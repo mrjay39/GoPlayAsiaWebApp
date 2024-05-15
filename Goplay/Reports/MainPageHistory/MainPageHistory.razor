@@ -3,38 +3,42 @@
 @using GoPlayAsiaWebApp.Goplay.Reports.BetHistory
 @using GoPlayAsiaWebApp.Goplay.Reports.Statistics
 @using GoPlayAsiaWebApp.Goplay.ViewModels;
-@using GoPlayAsiaWebApp.Goplay.ViewModels
 @implements IAsyncDisposable
 @inject MainPageHistoryViewModel _mainPageHistoryViewModel;
 @attribute [Authorize(Roles = "1")]
 
 <div class="container">
-    <TopContent CreditsDisp="@_mainPageHistoryViewModel._icurrentUser.CreditsDisp" />
-    <div class="mainContainer mt-3 ">
-        <nav class="container-fluid p-0">
-            <ul class="nav nav-tabs nav-fill mb-3" id="ex1" role="tablist">
-                <li class="betHisBtn nav-item" role="presentation">
-                    <a @onclick:preventDefault @onclick="@SetBetHistoryVisible" 
-                       class="nav-link @ActiveHistory"
-                       id="ex2-tab-1"
-                       data-mdb-toggle="tab"
-                       role="tab"
-                       aria-controls="BetHistory"
-                       aria-selected="true">BET HISTORY</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a @onclick:preventDefault @onclick="@SetStatisticsVisible" class="nav-link @ActiveStatistics"
-                       id="ex2-tab-2"
-                       data-mdb-toggle="tab"
-                       href="Statistics"
-                       role="tab"
-                       aria-controls="Statistics"
-                       aria-selected="false">STATISTICS</a>
-                </li>
-            </ul>
-            <!-- Tabs navs -->
-        </nav>
+    @* <TopContent CreditsDisp="@_mainPageHistoryViewModel._icurrentUser.CreditsDisp" /> *@
+    @*============== Start: Game and Statistic Tab Icon ===========*@
+    <div id="wallet-headerIcon" class="container p-0 mb-2">
+        <ul class="nav nav-tabs border-0 justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a @onclick:preventDefault @onclick="@SetBetHistoryVisible" class="nav-link p-0 active bg-transparent border-0" id="gameHistory-tab" data-bs-toggle="tab" data-bs-target="#gameHistory-tab-pane" role="tab" aria-controls="BetHistory" aria-selected="true">
+                    <div class="card border-0 text-center p-0 m-2 gameHistory-cardContainer bg-transparent">
+                        <div class="icon-link icon-link-hover text-decoration-none">
+                            <img class="img-fluid img" src="/img/game-history-icon.png" style="width: 3rem;" />
+                            <div class="card-body p-0">
+                                <h6 class="card-title text-white mb-0 mt-2 fw-bold">Game History</h6>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a @onclick:preventDefault @onclick="@SetStatisticsVisible" class="nav-link p-0 bg-transparent border-0" id="statistic-tab" data-bs-toggle="tab" data-bs-target="#statistic-tab-pane" type="button" role="tab" aria-controls="statistic-tab-pane" aria-selected="false">
+                    <div class="card border-0 text-center p-0 m-2 wallet-cardContainer bg-transparent">
+                        <div class="icon-link icon-link-hover text-decoration-none">
+                            <img class="img-fluid img" src="/img/statistic-icon.png" style="width: 3rem;" />
+                            <div class="card-body p-0">
+                                <h6 class="card-title text-white mb-0 mt-2 fw-bold">Statistic</h6>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
+    @*============== End: Game and Statistic Tab Icon ===========*@
 
     @if(@HistoryVisible){
         <CompBetHistory />
@@ -42,8 +46,6 @@
         <Statistics/>
     }
 </div>
-<NavMenuBar/>
-
 @code {
     public Boolean HistoryVisible = true;
     public Boolean StatisticsVisible = false;

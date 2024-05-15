@@ -1,15 +1,25 @@
-﻿.mainContainer {
+﻿#wallet-headerIcon{
+    padding-top: 100px !important;
+}
+#gameHistory-tab, #statistic-tab{
+    cursor: pointer;
+}
+#gameHistory-tab.active, #statistic-tab.active {
+    border-bottom: 2px solid #ff6a00 !important;
+}
+
+
+/*.mainContainer {
     margin: 0 auto;
     padding: 0;
     max-width: 640px;
 }
-
 .container {
     padding: 5px !important;
     max-width: 100%;
     min-height: 100vh;
-    background: rgb(88,14,15);
-    background: linear-gradient(0deg, rgba(88,14,15,1) 62%, rgba(26,8,8,1) 98%);
+    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#000 100%) !important;
+    background-repeat: repeat;
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
@@ -33,3 +43,4 @@
     width: 320px;
     height: 100%;
 }
+*/

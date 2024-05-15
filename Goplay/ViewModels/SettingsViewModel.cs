@@ -320,7 +320,7 @@ namespace GoPlayAsiaWebApp.Goplay.ViewModels
             if (!string.IsNullOrEmpty(NewPassword) && !string.IsNullOrEmpty(confirmpass))
             {
                 if (NewPassword != confirmpass)
-                    errorMsg = "Passwords do not match";
+                    errorMsg = "Passwords did not match";
             }
             return errorMsg;
         }
