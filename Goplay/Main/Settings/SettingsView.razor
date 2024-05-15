@@ -10,7 +10,7 @@
 @inject NavigationManager MyNavigationManager
 @attribute [Authorize(Roles = "1")]
 
-<TopContent CreditsDisp="@_settingsViewModel._icurrentUser.CreditsDisp" />
+@* <TopContent CreditsDisp="@_settingsViewModel._icurrentUser.CreditsDisp" /> *@
 
 @if (_settingsViewModel.UserInfo != null)
 {
@@ -102,17 +102,17 @@
         <div id="changePassword-container" class="container p-3">
             <p>
                 <span class="text-muted"><i class="fa-solid fa-unlock"></i> Old Password</span><br>
-                <input type="password" @bind-value="_settingsViewModel.OldPassword" placeholder="xxxxxxxxx" id="oldPassword" class="form-check border border-1 rounded-3 w-100" required>
+                <input type="password" @bind-value="_settingsViewModel.OldPassword" id="oldPassword" class="form-check border border-1 rounded-3 w-100" required>
                 <label class="btn border-0" for="oldPassword"></label>
             </p>
             <p>
                 <span class="text-muted"><i class="fa-solid fa-lock"></i> New Password</span><br>
-                <input type="password" minlength="6" @bind-value="_settingsViewModel.NewPassword" placeholder="xxxxxxxxx" id="newPassword" class="form-check border border-1 rounded-3 w-100" required>
+                <input type="password" minlength="6" @bind-value="_settingsViewModel.NewPassword" id="newPassword" class="form-check border border-1 rounded-3 w-100" required>
                 <label class="btn border-0" for="newPassword"></label>
             </p>
             <p>
                 <span class="text-muted"><i class="fa-solid fa-lock"></i> Confirmed New Password</span><br>
-                <input type="password" minlength="6" @bind-value="_settingsViewModel.ConfirmNewPassword" @oninput="onchange_confirmpass" placeholder="xxxxxxxxx" id="confirmedNewPassword" class="form-check border border-1 rounded-3 w-100" required>
+                <input type="password" minlength="6" @bind-value="_settingsViewModel.ConfirmNewPassword" @oninput="onchange_confirmpass" id="confirmedNewPassword" class="form-check border border-1 rounded-3 w-100" required>
                 <label class="btn border-0" for="confirmedNewPassword"></label>
                 <span class="errorMessage" hidden="@hideConfirmPass">@msgConfirmPass</span>
             </p>
