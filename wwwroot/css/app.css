@@ -1,4 +1,4 @@
-html, body {
+﻿html, body {
     font-family: Open Sans,Oswald,Arial,sans-serif !important;
 }
 main {
@@ -390,4 +390,8 @@ p {
         position: relative;
         right: 5px;
     }
+}
+
+﻿.blazored-toast-container {
+    z-index: 999999;
 }
