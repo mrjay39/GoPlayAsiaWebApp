@@ -53,6 +53,7 @@ public partial class LoginForm
     public bool islogginin = false;
     public string Buildnumber = string.Empty;
     private static Func<string, Task> ChangeParaContentActionAsync;
+    public bool agreeToTerms { get; set; } = false;
     #endregion
 
     private async Task LocalChangeParaContentValueAsync(string func)
@@ -63,6 +64,7 @@ public partial class LoginForm
     #region Lifecycle Method
     protected override async Task OnInitializedAsync()
     {
+
         editContext = new(loginDTO);
         var authState = await authenticationStateTask;
         var user = authState.User;
@@ -179,6 +181,11 @@ public partial class LoginForm
     {
         try
         {
+            if (!agreeToTerms)
+            {
+                toastService.ShowError("Please agree to the Terms of use and Privacy Policy");
+                return;
+            }
             var browser = await JSRuntime.InvokeAsync<string>(identifier: "identifyWebBrowser");
             await FullScreen();
             var isApple = await CheckifApple();

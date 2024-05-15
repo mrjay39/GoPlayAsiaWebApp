@@ -54,6 +54,7 @@ namespace GoPlayAsiaWebApp.Goplay.Main.Login
         public bool islogginin = false;
         public string Buildnumber = string.Empty;
         private static Func<string, Task> ChangeParaContentActionAsync;
+        private bool agreedToTerms { get; set; } = false;
         #endregion
 
         private async Task LocalChangeParaContentValueAsync(string func)
@@ -180,6 +181,12 @@ namespace GoPlayAsiaWebApp.Goplay.Main.Login
         {
             try
             {
+                if (!agreedToTerms)
+                {
+                    toastService.ShowInfo("Please agree to the Terms of use and Privacy policy");
+                    return;
+                }
+
                 var browser = await JSRuntime.InvokeAsync<string>(identifier: "identifyWebBrowser");
                 await FullScreen();
                 var isApple = await CheckifApple();

@@ -9,6 +9,7 @@
 
 ul.messages-list > li.unread {
     font-weight: bold;
+    color: #000;
 }
 ul.messages-list > li.seenMessage {
     font-weight: normal;
