@@ -2,7 +2,7 @@
 @inject ICurrentUser iCurrentUser
 @implements IAsyncDisposable
 
-<table class="StatisticMaincontainer row"> 
+<table class="StatisticMaincontainer row bg-white pb-4 pt-3 mt-3 rounded-3">
     <thead class="header row w-100">
         <tr class="headerContainer col">
             <th class="status col">Current Token</th>
@@ -19,27 +19,27 @@
     <tbody class="statcon mt-3">
         @if (_statisticsViewModel.Statistic != null)
         {
-            <tr class="row text-center mt-1 p-0 text-light mr-0">
+            <tr class="row text-center mt-1 p-0 text-dark mr-0">
                 <td class="col ml-3">Total Deposit</td>
                 <td class="col">@_statisticsViewModel.Statistic.TotalDepositString</td>
                 <td class="col"></td>
             </tr>
-            <tr class="row text-center mt-1 p-0 text-light mr-0">
+            <tr class="row text-center mt-1 p-0 text-dark mr-0">
                 <td class="col ml-3">Total Win</td>
                 <td class="col ml-2">@_statisticsViewModel.Statistic.TotalWinString</td>
                 <td class="col ml-2"></td>
             </tr>
-            <tr class="row text-center mt-1 p-0 text-light mr-0">
+            <tr class="row text-center mt-1 p-0 text-dark mr-0">
                 <td class="col ml-3">Total Loss</td>
                 <td class="col ml-2"></td>
                 <td class="col ml-2">@_statisticsViewModel.Statistic.TotalLossString</td>
             </tr>
-            <tr class="row text-center mt-1 p-0 text-light mr-0">
+            <tr class="row text-center mt-1 p-0 text-dark mr-0">
                 <td class="col ml-3">Total Withdrawal</td>
                 <td class="col"></td>
                 <td class="totalWithdraw col">@_statisticsViewModel.Statistic.TotalWithdrawalString</td>
             </tr>
-            <tr class="row text-center mt-5 p-0 text-light mr-0">
+            <tr class="row text-center mt-5 p-0 text-dark mr-0">
                 <td class="col ml-3">Difference (Win-Loss)</td>
                 <td class="col"></td>
                 @if (@_statisticsViewModel.Statistic.DifferenceLabelColor == "Red")
