@@ -15,6 +15,9 @@
 .poker-card {
     background: url('./img/poker-cards.svg') center center no-repeat;
 }
+.gpa-token {
+    background: url('./img/tokenIcon.png') center center no-repeat;
+}
 
 .gpa-icon {
     background: url('./img/gpa-icon.svg') center center no-repeat;
@@ -36,7 +39,7 @@
     background: url('./img/lottery.svg') center center no-repeat;
 }
 
-.poker-card, .gpa-icon, .explore-icon, .featured-icon, .lottery, .home-icon {
+.poker-card, .gpa-icon, .explore-icon, .featured-icon, .lottery, .home-icon, .gpa-token {
     background-size: 100% 100% !important;
     top: 0;
     margin-right: 4px;
