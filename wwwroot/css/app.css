@@ -41,7 +41,10 @@ a, .btn-link {
 .validation-message {
     color: red;
 }
-
+.blazored-toast-container.position-bottomcenter {
+    z-index: 99999 !important;
+    bottom: 40% !important;
+}
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
@@ -390,8 +393,4 @@ p {
         position: relative;
         right: 5px;
     }
-}
-
-﻿.blazored-toast-container {
-    z-index: 999999;
 }
