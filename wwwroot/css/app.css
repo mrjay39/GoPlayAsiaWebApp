@@ -363,7 +363,7 @@ p {
 }*/
 /*================== End: Token Animation Display Properties ==============================*/
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 380px) {
 
     #lucky9 .btn.cardDiv {
         max-width: 35px;

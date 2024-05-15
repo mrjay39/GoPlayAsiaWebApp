@@ -9,6 +9,7 @@
 
 .borderGold {
     border: 1px solid #6d6d6d;
+    position: relative;
 }
 
 .payout {
@@ -90,14 +91,14 @@
 
 .horizontalCard {
     margin-top: -5px;
-    margin-right: 6.23%;
+    margin-right:9px;
     display: flex;
     justify-content: center;
     line-height: normal;
     font-size: 20px;
     border-radius: 2px;
     border: 1px solid white;
-    padding: 3px 4px;
+    padding: 3px 7px;
     color: black;
     background-color: white;
     max-width: fit-content;
@@ -105,29 +106,29 @@
 }
 
 .horizontalCardBlank {
-    margin-left: -1px;
+    width: 42px;
     margin-top: 1px;
     display: flex;
     justify-content: center;
     line-height: normal;
     font-size: 20px;
     border-radius: 2px;
-    margin-right: 6%;
-    margin-top: 10px;
     background-color: white;
     transform: rotate(-1turn);
+    margin-top: 10px;
+    margin-right: 11px;
 }
 
 .horizontalCardBanker {
     margin-top: -5px;
-    margin-left: 1.23%;
+    margin-left: 5%;
     display: flex;
     justify-content: center;
     line-height: normal;
     font-size: 20px;
     border-radius: 2px;
     border: 1px solid white;
-    padding: 3px 4px;
+    padding: 3px 8px;
     color: black;
     background-color: white;
     max-width: fit-content;
@@ -136,7 +137,7 @@
 
 .horizontalCardBlankBanker {
     width: 100%;
-    max-width: 46px;
+    max-width: 42px;
     margin-top: 1px;
     display: flex;
     justify-content: center;
@@ -145,7 +146,7 @@
     border-radius: 2px;
     background-color: white;
     transform: rotate(-1turn);
-    margin-left: 6.5%;
+    margin-left: 5%;
     margin-top: 10px;
 }
 
@@ -343,12 +344,6 @@
 /* #endregion */
 
 /* #region MOBILE */
-@media only screen and (min-width: 640px) {
-    .win-msg {
-        left: 40%;
-        top: 65%;
-    }
-}
 
 @media only screen and (max-width: 640px) {
 
@@ -388,13 +383,10 @@
     }
     /* #endregion */
 
-    .win-msg {
-        top: 67%;
-        left: 36%;
-    }
+ 
 }
 
-@media only screen and (max-width: 409px) {
+/*@media only screen and (max-width: 409px) {
     .EmptyCardResults {
         max-width: 40px;
     }
@@ -403,16 +395,18 @@
         top: 67%;
         left: 27%;
     }
-}
+}*/
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 380px) {
     .horizontalCardBlankBanker, .EmptyCardResults {
         max-width: 30px;
+     
     }
 
     .horizontalCard, .cardResultsVertical, .btn.cardDiv {
         max-width: 35px;
         max-height: 45px;
+        padding: 3px 7px;
     }
     .bankerCardCenter {
         position: relative;
@@ -423,15 +417,22 @@
         right: -1px;
     }
 
-    .win-msg {
+ /*   .win-msg {
         top: 67%;
         left: 25%;
-    }
+    }*/
 
     .totalResultValue {
         height: 20px;
         width: 20px;
         right: 6px;
     }
+}
+
+.win-msg {
+    position: absolute;
+    top: 87%;
+    left: 36%;
+    transform: translate(-30%,-50%)
 }
 /* #endregion */

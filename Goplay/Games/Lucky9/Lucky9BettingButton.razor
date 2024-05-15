@@ -5,8 +5,8 @@
 @inject IToastService toastService;
 <marquee class="text-light d-flex justify-content-center font-weight-bolder" style="font-size: 15px; padding: 3px 0; height:20px;">WELCOME TO LUCKY9 CARD GAME!</marquee>
 
-<div class="mainContainer row d-block" style="line-height: normal;">
-    <div class="col row1 p-0 d-flex text-light @(RoundStatusString == Settings.Constants.Open ? "h-85" : "h-125") ">
+<div class="mainContainer mr-1 " style="line-height: normal;">
+    <div class="col row1  p-0 d-flex text-light @(RoundStatusString == Settings.Constants.Open ? "h-85" : "h-125") ">
 
         <!-- PLAYER REGULAR -->
         <MainBetSelection BetValueDisplay="@Settings.Constants.Player" ShowTotalBets="@luckyViewModel.ShowTotalBets"

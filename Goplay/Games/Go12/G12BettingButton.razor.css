@@ -43,6 +43,7 @@ a:link {
     color: white;
     margin: 0 auto;
     border: 1px solid #ffe599;
+ 
 }
 
 hr {
@@ -123,6 +124,7 @@ hr {
     height: 60.97px;
     font-weight: bold;
     color: #ffe599;
+    width:100%;
 }
 
 .winning {
@@ -1077,3 +1079,26 @@ marquee {
     height: 35px;
 }
 /*token animation after result*/
+@media only screen and (max-width: 360px)  {
+    .block {
+        position: absolute;
+        animation-name: tokenAnimationEaseIn;
+        animation-duration: .6s;
+        bottom: -52%;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    @keyframes tokenAnimationEaseIn {
+        from {
+            bottom: -120%;
+            opacity: 0;
+        }
+
+        to {
+            bottom: -52%;
+            opacity: 100%;
+        }
+    }
+}
