@@ -246,6 +246,9 @@
     #gpa-toggler {
         display:inherit;
     }
+    .loginAndSignUp{
+        display: none;
+    }
     /* Toggler header adjustments */
     #gpa-toggler {
         padding: 0;

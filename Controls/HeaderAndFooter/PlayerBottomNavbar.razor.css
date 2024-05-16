@@ -11,6 +11,10 @@
     background: url('./img/GPA-btm-icon.svg') center center no-repeat;
 }
 
+.home-btm-icon {
+    background: url('./img/Home-btm-icon.svg') center center no-repeat;
+}
+
 .slot-btm-icon {
     background: url('./img/slot-btm-icon.svg') center center no-repeat;
 }
@@ -43,7 +47,7 @@
     background: url('./img/setting-btm-icon.svg') center center no-repeat;
 }
 
-.gpa-btm-icon, .slot-btm-icon, .card-btm-icon, .fishing-btm-icon, .arcade-btm-icon, .history-btm-icon, .wallet-btm-icon, .inbox-btm-icon, .setting-btm-icon {
+.home-btm-icon,.gpa-btm-icon, .slot-btm-icon, .card-btm-icon, .fishing-btm-icon, .arcade-btm-icon, .history-btm-icon, .wallet-btm-icon, .inbox-btm-icon, .setting-btm-icon {
     background-size: 100% 100% !important;
     top: 0;
 }
