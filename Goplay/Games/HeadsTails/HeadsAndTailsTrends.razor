@@ -10,18 +10,22 @@
 @if (PayoutTrendsDisplay != null)
 {
     <div class="mainCon row flex-nowrap mt-1">
-        <Virtualize Items="PayoutTrendsDisplay" Context="_trends">
+        @foreach (var _trends in PayoutTrendsDisplay)
+        {
             @if (_trends.CurrentList.ToList().Count > 0)
             {
                 <div class="innerCon " style="margin-top: -8px; margin-left: 10px;">
-                    <Virtualize Items="_trends.CurrentList" Context="_trenditems">
+                    @*       <Virtualize Items="_trends.CurrentList" Context="_trenditems"> *@
+                    @foreach (var _trenditems in _trends.CurrentList)
+                    {
                         <div class="row d-flex justify-content-center @_trenditems.TrendsResultColor">
                             @_trenditems.RoundNumber
                         </div>
-                    </Virtualize>
+                        @*   </Virtualize> *@
+                    }
                 </div>
             }
-        </Virtualize>
+        }
     </div>
 }
 @code {

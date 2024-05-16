@@ -1,4 +1,9 @@
-﻿<div class="card m-1 p-0 border-dark game-tile">
+﻿@using System.Security.Claims
+@using GoPlayAsiaWebApp.Pages.Login.LogInModal
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager _navigationManager
+
+<div class="card m-1 p-0 border-dark game-tile">
     <div class="container-fluid p-0 bg-img">
         <img src="@_imgStr" class="card-img-top featGames-bg basketBall" @onclick="ToggleActive">
     </div>
@@ -6,7 +11,7 @@
         <div class="content">
             <div class="subtitle"><h3 class="text-white fw-bold">@_titleStr</h3></div>
             <div class="button button-playNow">
-                <a class="btn btn-warning m-1" href="@_tryoutsHrefStr">
+                <a class="btn btn-warning m-1" href="@_tryoutsHrefStr" @onclick="OpenGameLink">
                     <span>Play Now</span>
                     <div class="arrow">
                         <span></span>
@@ -27,6 +32,9 @@
     [Parameter] public string? _gameInfoHrefStr { get; set; }
     [Parameter] public string? _tryoutsHrefStr { get; set; }
 
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
+    private ClaimsPrincipal user;
     private bool isActive = false;
 
     private void ToggleActive()
@@ -42,5 +50,20 @@
             };
             var timer = new Timer(timerCallback, null, 4000, Timeout.Infinite);
         }
+    }
+
+    private async void OpenGameLink()
+    {
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        if (!user.Identity.IsAuthenticated)
+        {
+            var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
+        }
+        else
+        {
+            _navigationManager.NavigateTo(_gameInfoHrefStr);
+        }
+
     }
 }
