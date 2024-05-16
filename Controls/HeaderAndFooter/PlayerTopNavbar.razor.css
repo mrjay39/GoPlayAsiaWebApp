@@ -119,8 +119,8 @@
 .navbar-brand {
     font-size: 1.1rem;
 }
-.img-logo{
-    width: 17%;
+.img-logo {
+    width: 65px;
 }
 #user-image{
     display: none;
@@ -191,6 +191,10 @@
     top: inherit;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 
 @media (min-width: 992px) {
     .navbar-expand-lg #settingOffCanvas.offcanvas {
@@ -245,6 +249,16 @@
     }
 }
 @media only screen and (max-width: 991px) {
+    .loginAndSignUp, .userDropdown {
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .align-items {
+        align-items: flex-start;
+    }
+
     /*Start: Toggler header*/
     #gpa-toggler {
         padding: 0;
@@ -258,7 +272,7 @@
     }
 
     #gpa-logo {
-        margin-left: 3.5rem;
+        margin-left: 3rem;
         z-index: 2;
         position: relative;
         justify-content: center;
@@ -267,8 +281,8 @@
     #user-image {
         position: absolute;
         display: inline-flex;
-        width: 210px;
-        right: -9px;
+        width: 59px;
+        right: 150px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
@@ -284,13 +298,15 @@
 
 @media only screen and (max-width: 768px) {
     .loginAndSignUp, .userDropdown {
-        margin-left: 8rem;
+        margin-left: 0;
         margin-top: 10px;
+        text-align: center;
     }
 
     .align-items {
-        align-items: center;
+        align-items: flex-start;
     }
+
     /*Start: Toggler header*/
     #gpa-toggler {
         padding: 0;
@@ -304,7 +320,7 @@
     }
 
     #gpa-logo {
-        margin-left: 3.5rem;
+        margin-left: 3rem;
         z-index: 2;
         position: relative;
         justify-content: center;
@@ -313,8 +329,8 @@
     #user-image {
         position: absolute;
         display: inline-flex;
-        width: 210px;
-        right: -9px;
+        width: 59px;
+        right: 150px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
@@ -329,12 +345,16 @@
 }
 
 @media (max-width: 641px) {
-
-    .nav-scrollable {
-        display: block;
-        height: calc(100vh - 3.5rem);
-        overflow-y: auto;
+    .loginAndSignUp, .userDropdown {
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
     }
+
+    .align-items {
+        align-items: flex-start;
+    }
+
     /*Start: Toggler header*/
     #gpa-toggler {
         padding: 0;
@@ -348,7 +368,7 @@
     }
 
     #gpa-logo {
-        margin-left: 3.5rem;
+        margin-left: 3rem;
         z-index: 2;
         position: relative;
         justify-content: center;
@@ -357,8 +377,8 @@
     #user-image {
         position: absolute;
         display: inline-flex;
-        width: 210px;
-        right: -9px;
+        width: 59px;
+        right: 150px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
@@ -374,13 +394,15 @@
 
 @media only screen and (max-width: 600px) {
     .loginAndSignUp, .userDropdown {
-        margin-left: 356px;
+        margin-left: 0;
         margin-top: 10px;
+        text-align: center;
     }
 
     .align-items {
-        align-items: center;
+        align-items: flex-start;
     }
+
     /*Start: Toggler header*/
     #gpa-toggler {
         padding: 0;
@@ -394,7 +416,7 @@
     }
 
     #gpa-logo {
-        margin-left: 3.5rem;
+        margin-left: 3rem;
         z-index: 2;
         position: relative;
         justify-content: center;
@@ -403,8 +425,8 @@
     #user-image {
         position: absolute;
         display: inline-flex;
-        width: 210px;
-        right: -9px;
+        width: 59px;
+        right: 150px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
@@ -433,18 +455,26 @@
         height: 20px;
         top: -2px;
         margin-right: 15px;
+        position: relative;
+        display: inline-block;
     }
 
-    #navbarSupportedContent .gpa-icon, #navbarSupportedContent .explore-icon, #navbarSupportedContent .home-icon {
+    #navbarSupportedContent .gpa-icon,
+    #navbarSupportedContent .explore-icon,
+    #navbarSupportedContent .home-icon {
         width: 20px;
         height: 20px;
         margin-right: 15px;
+        position: relative;
+        display: inline-block;
     }
 
     #navbarSupportedContent .featured-icon {
         width: 25px;
         height: 25px;
         margin-right: 12px;
+        position: relative;
+        display: inline-block;
     }
 
     #navbarSupportedContent .dropdown-menu.show li > a {
@@ -475,7 +505,7 @@
     .align-items {
         align-items: normal;
     }
-    /*Start: Toggler header*/
+    /* Start: Toggler header */
     #gpa-toggler {
         padding: 0;
         left: 0;
@@ -497,8 +527,8 @@
     #user-image {
         position: absolute;
         display: inline-flex;
-        width: 210px;
-        right: -9px;
+        width: 59px;
+        right: 148px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
@@ -509,12 +539,13 @@
         display: inline-flex;
         padding: 5px;
     }
-    /*End: Toggler header*/
+    /* End: Toggler header */
 }
+
 
 @media screen and (max-width: 320px) {
     .loginAndSignUp, .userDropdown {
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     #navbarSupportedContent li.nav-item {
@@ -529,7 +560,8 @@
         margin-right: 15px;
     }
 
-    #navbarSupportedContent .gpa-icon, #navbarSupportedContent .explore-icon {
+    #navbarSupportedContent .gpa-icon,
+    #navbarSupportedContent .explore-icon {
         width: 25px;
         height: 25px;
         margin-right: 15px;
@@ -548,6 +580,10 @@
     }
 
     .loginAndSignUp {
+        text-align: center;
+    }
+
+    .userDropdown {
         text-align: center;
     }
 
@@ -591,8 +627,8 @@
     #user-image {
         position: absolute;
         display: inline-flex;
-        width: 64%;
-        right: -9px;
+        width: 59px;
+        right: 125px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
