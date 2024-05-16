@@ -15,6 +15,7 @@ using Microsoft.JSInterop;
 using static GoplayasiaBlazor.Models.Constants.Settings;
 using System.ComponentModel;
 using System.Reflection;
+using Blazored.Toast.Configuration;
 
 namespace GoPlayAsiaWebApp.Pages.Login.LogInModal;
 
@@ -181,9 +182,13 @@ public partial class LoginForm
     {
         try
         {
+         
             if (!agreeToTerms)
             {
-                toastService.ShowError("Please agree to the Terms of use and Privacy Policy");
+                toastService.ShowError("Please agree to the Terms of use and Privacy Policy", settings =>
+                {
+                    settings.Position = ToastPosition.BottomCenter;
+                });
                 return;
             }
             var browser = await JSRuntime.InvokeAsync<string>(identifier: "identifyWebBrowser");
