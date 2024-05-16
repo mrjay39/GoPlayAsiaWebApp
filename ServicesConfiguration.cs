@@ -12,6 +12,7 @@ using Blazored.SessionStorage;
 using Blazored.Toast;
 using Blazored.Modal;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
+using GoplayasiaCore.Core.Services;
 
 namespace GoPlayAsiaWebApp
 {
@@ -45,7 +46,7 @@ namespace GoPlayAsiaWebApp
             services.AddScoped<HeadsAndTailsViewModel>();
             services.AddScoped<DiceViewModel>();
             services.AddScoped<BingoViewModel>();
-
+           
 
             services.AddBlazoredModal();
             services.AddSingleton(new MapperConfiguration(mapper =>
@@ -68,6 +69,7 @@ namespace GoPlayAsiaWebApp
             services.AddScoped<ITransactionService, TransactionService>();
             services.AddScoped<IPromotionService, PromotionService>();
             services.AddTransient<ReCaptchaClass>();
+            services.AddSingleton<GlobalStateService>();
 
 
             //Helpders
