@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoPlayAsiaWebApp", "GoPlayA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoplayasiaSharedKernel", "GoplayasiaSharedKernel\GoplayasiaSharedKernel.csproj", "{36ADB607-33D2-472B-8F70-29034F1AB814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoplayasiaCore", "GoplayasiaCore\GoplayasiaCore.csproj", "{BA13D70E-C576-42DE-BF12-C1BC3C2DAC5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoplayasiaCore", "GoplayasiaCore\GoplayasiaCore.csproj", "{BA13D70E-C576-42DE-BF12-C1BC3C2DAC5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

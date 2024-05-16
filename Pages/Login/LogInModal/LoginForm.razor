@@ -11,10 +11,11 @@
             <input id="password" type="password" class="form-control" placeholder="Type your Password" required="" @bind-value="loginDTO.Password">
         </div>
         <div class="form-group">
-            <button type="submit" class="form-control btn btn-warning rounded submit px-3" "@(agreeToTerms ? "" : "disabled")">Sign In</button>
+            <button type="submit" class="form-control btn btn-warning rounded submit px-3" data-bs-toggle="offcanvas" data-bs-target="#offCanvasTermsOfUse " aria-controls="offCanvasTermsOfUse" "@(agreeToTerms ? "" : "disabled")">Sign In</button>
         </div>
         <div class="container-fluid p-0">
-            <div class="content text-center">
+            <OffCanvasTermsAndCondition />
+            @* <div class="content text-center">
                 <div class="agree text-light" style="font-size: 12px; margin-bottom: 3px;">
                     <input class="font-weight-bolder" type="checkbox" id="login-checkbox" @bind-value="agreeToTerms">
                     <label for="login-checkbox">I agree to the </label>
@@ -27,7 +28,7 @@
                     </a>
                     <span>and I am over <b class="h6 text-warning">21</b> years of age.</span>
                 </div>
-            </div>
+            </div> *@
             <div class="fle justify-content-xl-center align-items-center text-light text-center mt-3">          
                 <button @onclick="LoginOTP" class="text-light btn bg-transparent border-0 p-0" >
                     <span class="text-warning fw-bold"><i class="bi bi-chat-left-dots"></i> &nbsp;Login with Verification Code</span>
