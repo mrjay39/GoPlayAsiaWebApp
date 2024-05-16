@@ -69,12 +69,12 @@
 </div>
 
 <!-- Chat Icon -->
-<div class="chat-icon" onclick="toggleChat()">
+@* <div class="chat-icon" onclick="toggleChat()">
     <img src="./img/chat-icon-2.gif" class="img-fluid w-100" alt="Chat Icon">
-</div>
+</div> *@
 
 <!-- Chat Form -->
-<div class="chat-popup" id="chatPopup">
+@* <div class="chat-popup" id="chatPopup">
     <div class="chat-header">
         <span class="chat-close" onclick="toggleChat()">&times;</span>
         <h2>Chat Support</h2>
@@ -83,7 +83,7 @@
         <!-- Your chat form content goes here -->
         <p>Welcome to our chat support! How can we assist you today?</p>
     </div>
-</div>
+</div> *@
 <script>
     function scrollToTop(event) {
         event.preventDefault();
@@ -101,8 +101,8 @@
         }
     }
 
-    function toggleChat() {
-        var chatPopup = document.getElementById('chatPopup');
-        chatPopup.style.display = (chatPopup.style.display === 'none' || chatPopup.style.display === '') ? 'block' : 'none';
-    }
+    //function toggleChat() {
+      //  var chatPopup = document.getElementById('chatPopup');
+      // chatPopup.style.display = (chatPopup.style.display === 'none' || chatPopup.style.display === '') ? 'block' : 'none';
+    //}
 </script>
