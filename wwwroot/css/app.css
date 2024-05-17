@@ -182,8 +182,8 @@ code {
 }
 
 /*================== Start: Thumbnail change into one line ==============*/
-@media only screen and (min-width: 992px) {
-    #feat-games.gameOverflow-x, #link-header.gameOverflow-x, #arcade.gameOverflow-x {
+@media only screen and (min-width: 1081px) {
+    #feat-games.gameOverflow-x, #mostPlayedGames.gameOverflow-x, #link-header.gameOverflow-x, #arcade.gameOverflow-x {
         overflow-x: inherit !important;
     }
 }

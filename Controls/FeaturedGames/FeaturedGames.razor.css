@@ -1,20 +1,28 @@
 ﻿/*================== Start: Thumbnail change into one line ==============*/
-@media only screen and (min-width: 992px) {
-    #feat-games.gameOverflow-x, #link-header.gameOverflow-x, #arcade.gameOverflow-x {
-        overflow-x: inherit !important;
-    }
+@media only screen and (max-width:1080px) {
 
+    #feat-games.gameOverflow-x, #link-header.gameOverflow-x, #arcade.gameOverflow-x {
+        overflow-x: auto;
+    }
+}
+@media only screen and (min-width:1081px) {
+
+    #feat-games.gameOverflow-x, #link-header.gameOverflow-x, #arcade.gameOverflow-x {
+        overflow-x: inherit;
+    }
+}
+@media only screen and (min-width: 992px) {
     .gameOverflow-x {
         overflow-x: auto;
         padding-bottom: 0 !important;
         scrollbar-width: thin;
     }
 
-        .gameOverflow-x > div {
-            display: flex !important;
-            flex-wrap: nowrap !important;
-            justify-content: inherit !important;
-        }
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
 }
 
 @media screen and (max-width: 460px) {
@@ -22,11 +30,11 @@
         overflow-x: auto;
     }
 
-        .gameOverflow-x > div {
-            display: flex !important;
-            flex-wrap: nowrap !important;
-            justify-content: inherit !important;
-        }
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
 }
 
 @media screen and (max-width: 414px) {
@@ -34,11 +42,11 @@
         overflow-x: auto;
     }
 
-        .gameOverflow-x > div {
-            display: flex !important;
-            flex-wrap: nowrap !important;
-            justify-content: inherit !important;
-        }
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -46,9 +54,9 @@
         overflow-x: auto;
     }
 
-        .gameOverflow-x > div {
-            display: flex !important;
-            flex-wrap: nowrap !important;
-            justify-content: inherit !important;
-        }
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
 }

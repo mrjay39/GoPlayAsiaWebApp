@@ -36,9 +36,9 @@
 }
 
 .casino {
-    top: -9px;
-    left: 16px;
-    width: 200px;
+    top: 0px;
+    left: 28px;
+    width: 187px;
 }
 
 .lottery {
@@ -95,9 +95,9 @@
     }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1080px) {
     .gameOverflow-x {
-        overflow-x: inherit;
+        overflow-x: auto;
         padding-bottom: 0 !important;
         scrollbar-width: thin;
     }
