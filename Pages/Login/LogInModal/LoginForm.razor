@@ -1,7 +1,7 @@
 ﻿@using GoPlayAsiaWebApp.Goplay.Main.Login
 @*===============================Login Form ==================================== *@
 <div class="tab-pane active" id="loginPanel" role="tabpanel" aria-labelledby="loginTab">
-    <EditForm Model="@loginDTO" OnValidSubmit="@Authenticate" autocomplete="stopdoingthat" class="signin-form">
+    <EditForm Model="@loginDTO" OnValidSubmit="@ValidateAgreement" autocomplete="stopdoingthat" class="signin-form">
         <DataAnnotationsValidator />
 
         <div class="form-group mb-3">
@@ -11,13 +11,16 @@
             <input id="password" type="password" class="form-control" placeholder="Type your Password" required="" @bind-value="loginDTO.Password">
         </div>
         <div class="form-group">
-            <button  class="form-control btn btn-warning rounded submit px-3"  >Sign In</button>
+            <button type="submit" class="form-control btn btn-warning rounded submit px-3">Sign In</button>
         </div>
         <div class="container-fluid p-0">
-            <OffCanvasTermsAndCondition />
-    
-            <div class="fle justify-content-xl-center align-items-center text-light text-center mt-3">          
-                <button @onclick="LoginOTP" class="text-light btn bg-transparent border-0 p-0" >
+            @if (agreeToTerms)
+            {
+                <OffCanvasTermsAndCondition AgreeEvent="AgreeToTerms" />
+            }
+
+            <div class="fle justify-content-xl-center align-items-center text-light text-center mt-3">
+                <button @onclick="LoginOTP" class="text-light btn bg-transparent border-0 p-0">
                     <span class="text-warning fw-bold"><i class="bi bi-chat-left-dots"></i> &nbsp;Login with Verification Code</span>
                 </button>
             </div>
@@ -41,6 +44,24 @@
 </div>
 @code {
     [CascadingParameter] public IModalService popupLoadingModal { get; set; }
+
+    private async Task AgreeToTerms(bool value)
+    {
+        agreeToTerms = value;
+        if (agreeToTerms)
+        {
+            await Authenticate();
+        }
+        else
+        {
+            StateHasChanged();
+        }
+    }
+
+    private void ValidateAgreement()
+    {
+        agreeToTerms = true;
+    }
 
     private void LoginOTP()
     {

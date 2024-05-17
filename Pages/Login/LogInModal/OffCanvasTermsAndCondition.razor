@@ -1,5 +1,5 @@
 ﻿
-<div class="offcanvas offcanvas-bottom bg-transparent" tabindex="-1">
+<div class=" offcanvas-bottom bg-transparent" tabindex="-1">
     <div class="offcanvas-body small p-2 text-center bg-white rounded-3">
         <div class="offcanvas-header text-center p-1">
             <p class="container offcanvas-title fw-bold text-center" id="offCanvasTermsOfUseLabel"></p>
@@ -14,10 +14,17 @@
             <a href="https://docs.goplayasia.com/pp.html">Privacy Policy</a>
         </p>
         <p class="mb-3">
-            <button class="btn gpa-btn w-100">I Agree</button>
+            <button class="btn gpa-btn w-100" @onclick="(() => AgreeToTerms(true))">I Agree</button>
         </p>
         <p>
-            <button class="btn bg-white w-100 gpa-border">Cancel</button>
+            <button class="btn bg-white w-100 gpa-border" @onclick="(() => AgreeToTerms(false))">Cancel</button>
         </p>
     </div>
 </div>
+@code{
+    [Parameter] public EventCallback<bool> AgreeEvent { get; set; }
+
+    private void AgreeToTerms(bool value){
+        AgreeEvent.InvokeAsync(value);
+    }
+}
