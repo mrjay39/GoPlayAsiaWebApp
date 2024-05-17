@@ -182,14 +182,14 @@ code {
 }
 
 /*================== Start: Thumbnail change into one line ==============*/
-@media only screen and (min-width: 1081px) {
+/*@media only screen and (min-width: 1081px) {
     #feat-games.gameOverflow-x, #mostPlayedGames.gameOverflow-x, #link-header.gameOverflow-x, #arcade.gameOverflow-x {
-        overflow-x: inherit !important;
+        overflow-x: o;
     }
-}
+}*/
 
 .gameOverflow-x {
-    overflow-x: auto;
+    overflow-x: auto !important;
     padding-bottom: 0 !important;
     scrollbar-width: thin;
 }
