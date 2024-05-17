@@ -8,16 +8,14 @@
     margin: 0 auto;
 }
 
-h5, h6, h4 {
-    color: #c69f1e;
-}
 
 h4 {
     text-decoration: underline;
 }
-
-p, li, td {
-    color: #ceb876;
+.gpa-btn {
+    background: #6e182c;
+    font-weight: bold;
+    color: #fff;
 }
 
 iframe {
@@ -48,5 +46,5 @@ ol {
 
 td, th {
     padding: 5px;
-    border: 1px solid #ceb876;
+    border: 1px solid #808080;
 }

@@ -3,19 +3,16 @@
 @using GoPlayAsiaWebApp.Goplay.Games.Shared;
 @attribute [Authorize(Roles = "1")]
 @inject ICurrentUser icurrentUser
-<TopContent CreditsDisp="@icurrentUser.CreditsDisp" />
+@* <TopContent CreditsDisp="@icurrentUser.CreditsDisp" /> *@
 <section>
-    <main class="container">
-        <h5 class="font-weight-bold mt-2">FIRST 3 HOUSE RULES</h5>
+    <main class="container pt-4 mt-5">
+        <h5 class="font-weight-bold mt-2 text-white">FIRST 3 HOUSE RULES</h5>
         <div class="">
             <div class="containerVid">
                 <iframe class="responsive-iframe" src="https://www.youtube.com/embed/RAXEnTni2Ak"></iframe>
             </div>
-            <content class="">
-                    <div class="d-flex justify-content-center mt-2">
-                    <a href="/games/first3" <button class="btn btn-primary text-center d-flex">Back To Game</button></a>
-                </div>
-                <h4 class="mt-5">I. Ranking of</h4>
+            <div class="container bg-white text-dark pb-2">
+                <h4 class="pt-2">I. Ranking of</h4>
                 <p class="mt-2 font-weight-bold">
                     The ranks of the cards from highest to lowest are as follows:
                     ➢ A, K, Q, J, 10, 9, 8, 7, 6, 5, 4, 3, 2
@@ -114,73 +111,73 @@
                         indicating outcomes and their corresponding decisions are as
                         follows:
                     </li>
-                    <table style=" border: 1px solid #ceb876; color: #ceb876">
-                        <tr style=" border: 1px solid #ceb876;">
-                            <th style=" border: 1px solid #ceb876;">OUTCOME</th>
-                            <th class="d-flex justify-content-center" style=" border: 1px solid #ceb876;">DECISION</th>
+                    <table>
+                        <tr>
+                            <th>OUTCOME</th>
+                            <th class="d-flex justify-content-center">DECISION</th>
 
                         </tr>
-                        <tr style=" border: 1px solid #ceb876;">
-                            <td style="; border: 1px solid #ceb876;">Trio</td>
-                            <td style=" border: 1px solid #ceb876;">
+                        <tr>
+                            <td>Trio</td>
+                            <td>
                                 If both sides have a trio, the higher trio
                                 combination wins
                             </td>
 
                         </tr>
-                        <tr style=" border: 1px solid #ceb876;">
-                            <td style=" border: 1px solid #ceb876;">Pair</td>
-                            <td style=" border: 1px solid #ceb876;">
+                        <tr>
+                            <td>Pair</td>
+                            <td>
                                 If two sides have a pair each, the higher pair
                                 value win
                             </td>
 
                         </tr>
-                        <tr style=" border: 1px solid #ceb876;">
-                            <td style=" border: 1px solid #ceb876;">Same Pair</td>
-                            <td style=" border: 1px solid #ceb876;">
+                        <tr>
+                            <td>Same Pair</td>
+                            <td>
                                 If two sides have the same pair value, the
                                 remaining card with a higher “kicker” card value
                                 win
                             </td>
 
                         </tr>
-                        <tr style=" border: 1px solid #ceb876;">
-                            <td style=" border: 1px solid #ceb876;">No Pair</td>
-                            <td style=" border: 1px solid #ceb876;">
+                        <tr>
+                            <td>No Pair</td>
+                            <td>
                                 If either side has no pair, the one with a highest “first” value among  three cards wins
                             </td>
                         </tr>
-                        <tr style=" border: 1px solid #ceb876;">
-                            <td style=" border: 1px solid #ceb876;">
+                        <tr>
+                            <td>
                                 No Pair, Same
                                 1st Card
                             </td>
-                            <td style=" border: 1px solid #ceb876;">
+                            <td>
                                 If either side has no pair or have same highest “first” card value, the side with the next higher “second” card value wins
                             </td>
                         </tr>
-                        <tr style=" border: 1px solid #ceb876;">
-                            <td style=" border: 1px solid #ceb876;">
+                        <tr>
+                            <td>
                                 No Pair, Same
                                 1st And
                                 2nd Cards
                             </td>
-                            <td style=" border: 1px solid #ceb876;">
+                            <td>
                                 If either side has no pair or the highest “first” and
                                 next higher “second” cards have the same value, the side with a higher value for the third card
                                 “kicker” wins
                             </td>
                         </tr>
-                        <tr style=" border: 1px solid #ceb876;">
-                            <td style=" border: 1px solid #ceb876;">
+                        <tr>
+                            <td>
                                 Tie
                             </td>
-                            <td style=" border: 1px solid #ceb876;">
+                            <td>
                                 If both sides have the same total value cards, a
                                 tie is declared
                             </td>
-                        </tr>1
+                        </tr>
                     </table>
 
                     <li>
@@ -228,9 +225,9 @@
                         or value.
                     </li>
                 </ol>
-            </content>
-            <div class="d-flex justify-content-center pb-5">
-                <a href="/games/firts3" <button class="btn btn-primary text-center d-flex">Back To First3 Game</button></a>
+            </div>
+            <div class="d-flex justify-content-center pb-5 mt-3">
+                <a href="/games/firts3" class="btn gpa-btn">Back To First3 Game</a>
             </div>
 
         </div>

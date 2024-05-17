@@ -3,15 +3,11 @@
 @using GoPlayAsiaWebApp.Goplay.Games.Shared;
 @attribute [Authorize(Roles = "1")]
 @inject ICurrentUser icurrentUser
-<TopContent CreditsDisp="@icurrentUser.CreditsDisp" />
 <section>
-    <main class="container">
-        <h5 class="font-weight-bold mt-2">HEADS OR TAILS HOUSE RULES</h5>
+    <main class="container pt-4 mt-5">
+        <h5 class="font-weight-bold mt-2 text-light">HEADS OR TAILS HOUSE RULES</h5>
         <div class="">
-            <content class="">
-                <div class="d-flex justify-content-center mt-2">
-                    <a href="/games/headstails" <button class="btn btn-primary text-center d-flex">Back To Game</button></a>
-                </div>
+            <div class="container bg-white text-dark pb-2 pt-4">
                 <h4 class="mt-5 mb-2">I. Minimum/MaximumBet Limit and Payout Odds</h4>
                 <table class="w-100 text-center">
                     <tr>
@@ -57,11 +53,8 @@
                     </li>
                     <li>In case of discrepancy or malfunction in the conduct of the game, all bets and games shall be voided.</li>
                     <li>1=195%</li>
-
                 </ol>
-
                 <h4 class="">Dealing Procedures</h4>
-
                 <ol>
                     <li>The Dealer shall look at the Dealer's Dashboard (with attached camera) before and after the deal for instruction or guidance.</li>
                     <li>Accepting of bets through remote gaming platform ensue when the status on the Dealer Dashboard reads "OPEN".</li>
@@ -82,17 +75,12 @@
                     <li>In case of system failure, malfunction, and/or error, the Gaming Operator has the right to declare any and all of the affected game/s and winning/s as invalid and void, and to recover from the account of the affected player any payments made as a result of said system failure, malfunction and/or errors without the need of consent from the said player. This clause shall not be considered to be excluding liability for anything which it would be unlawful to exclude under applicable law.</li>
                     <li>Bets can’t be cancelled once confirmed but can be increased within the duration of betting time.</li>
                     <li>Philippine Peso Currency is converted into Token with a 1:1 ratio or value.</li>
-
-
                 </ol>
-            </content>
-            <div class="d-flex justify-content-center pb-5">
-                <a href="/games/headstails" <button class="btn btn-primary text-center d-flex">Back To Game</button></a>
-
             </div>
-
+            <div class="d-flex justify-content-center pb-5 mt-3">
+                <a href="/games/headstails" class="btn gpa-btn">Back to the Game</a>
+            </div>
         </div>
-
     </main>
 </section>
 @code {

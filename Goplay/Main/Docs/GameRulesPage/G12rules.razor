@@ -3,19 +3,15 @@
 @using GoPlayAsiaWebApp.Goplay.Games.Shared;
 @attribute [Authorize(Roles = "1")]
 @inject ICurrentUser icurrentUser
-<TopContent CreditsDisp="@icurrentUser.CreditsDisp" />
 <section>
-    <main class="container">
-        <h5 class="font-weight-bold mt-2">GO12 HOUSE RULES</h5>
+    <main class="container pt-4 mt-5">
+        <h5 class="font-weight-bold mt-2 text-light">GO12 HOUSE RULES</h5>
         <div class="">
             <div class="containerVid">
                 <iframe class="responsive-iframe" src="https://www.youtube.com/embed/J5MdM0Zpqg0"></iframe>
             </div>
-            <content class="">
-                    <div class="d-flex justify-content-center mt-2">
-                    <a href="/games/go12" <button class="btn btn-primary text-center d-flex">Back To Game</button></a>
-                </div>
-                <h4 class="mt-5">I. Minimum/MaximumBet Limit and Payout Odds</h4>
+            <div class="container bg-white text-dark pt-2 pb-2">
+                <h4>I. Minimum/MaximumBet Limit and Payout Odds</h4>
                 <p class="mt-2 font-weight-bold">A. REGULAR BET:</p>
                 <p class="mb-0">1.Min/Max Bet Per Player -  <strong> P100 / P1,000</strong></p>
                 <p class="mb-0">2.Maximum Bet Per Game <strong> P1,000 </strong></p>
@@ -35,7 +31,7 @@
                 </ol>
                 <h4 class="">II. The dealing procedure shall be as follow</h4>
 
-                <ol>
+                <ul>
                     <li>
                         The Dealer shall observe and look through the Dealer's Dashboard
                         (with attached camera) before and after the deal for instruction or
@@ -107,10 +103,10 @@
                     <li>
                         Philippine Peso Currency is converted into Token with a 1:1 ratio or value.
                     </li>
-                </ol>
-            </content>
-            <div class="d-flex justify-content-center pb-5">
-                <a href="/games/go12" <button class="btn btn-primary text-center d-flex">Back To Go12 Game</button></a>
+                </ul>
+            </div>
+            <div class="d-flex justify-content-center pb-5 mt-3">
+                <a href="/games/go12" class="btn gpa-btn">Back To Go12 Game</a>
             </div>
 
         </div>

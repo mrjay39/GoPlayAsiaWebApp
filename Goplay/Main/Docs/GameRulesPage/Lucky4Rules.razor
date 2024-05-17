@@ -3,18 +3,14 @@
 @using GoPlayAsiaWebApp.Goplay.Games.Shared;
 @attribute [Authorize(Roles = "1")]
 @inject ICurrentUser icurrentUser
-<TopContent CreditsDisp="@icurrentUser.CreditsDisp" />
 <section>
-    <main class="container">
-        <h5 class="font-weight-bold mt-2">LUCKY 4 HOUSE RULES</h5>
+    <main class="container pt-4 mt-5">
+        <h5 class="font-weight-bold mt-2 text-light">LUCKY 4 HOUSE RULES</h5>
         <div class="">
             @*            <div class="containerVid">
             <iframe class="responsive-iframe" src="https://www.youtube.com/embed/04TIzvX36lc"></iframe>
             </div>*@
-            <content class="">
-                <div class="d-flex justify-content-center mt-2">
-                    <a href="/games/Lucky4" <button class="btn btn-primary text-center d-flex">Back To Game</button></a>
-                </div>
+            <div class="container bg-white text-dark pb-2 pt-4">
                 <h4 class="mt-5">I. Minimum/MaximumBet Limit and Payout Odds</h4>
                 <table class="w-100 text-center">
                     <tr>
@@ -126,12 +122,10 @@
                     <li>Player wins if the result drawn in Canister 1-4 is in exact order.</li>
 
                 </ol>
-            </content>
-            <div class="d-flex justify-content-center pb-5">
-                <a href="/games/lucky4" <button class="btn btn-primary text-center d-flex">Back To Game</button></a>
-
             </div>
-
+            <div class="d-flex justify-content-center pb-5 mt-3">
+                <a href="/games/lucky4" class="btn gpa-btn">Back To Lucky4 Game</a>
+            </div>
         </div>
 
     </main>
