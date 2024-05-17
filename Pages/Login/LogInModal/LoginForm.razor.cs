@@ -16,7 +16,6 @@ using static GoplayasiaBlazor.Models.Constants.Settings;
 using System.ComponentModel;
 using System.Reflection;
 using Blazored.Toast.Configuration;
-using GoplayasiaCore.Core.Services;
 
 namespace GoPlayAsiaWebApp.Pages.Login.LogInModal;
 
@@ -35,7 +34,6 @@ public partial class LoginForm
     [Inject] public IJSRuntime JSRuntime { get; set; }
     [Inject] public static IJSRuntime JSRuntimePWA { get; set; }
     [Inject] IModalService ModalService { get; set; }
-    [Inject] GlobalStateService GlobalState { get; set; }
     [Parameter] public string _gameInfoHrefStr { get; set; } = string.Empty;
     #endregion
 
@@ -384,9 +382,7 @@ public partial class LoginForm
 
                 if (_iCurrentUser.ToppedUp || _iCurrentUser.Verified != 0)
                 {
-                    _gameInfoHrefStr = GlobalState.GameInfoHref;
-                    //_navigationManager.NavigateTo("/home");
-                    _navigationManager.NavigateTo(_gameInfoHrefStr);
+                    _navigationManager.NavigateTo("/home");
                 }
                 else
                 {

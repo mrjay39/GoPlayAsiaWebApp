@@ -12,7 +12,7 @@ using Blazored.SessionStorage;
 using Blazored.Toast;
 using Blazored.Modal;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
-using GoplayasiaCore.Core.Services;
+
 
 namespace GoPlayAsiaWebApp
 {
@@ -69,7 +69,6 @@ namespace GoPlayAsiaWebApp
             services.AddScoped<ITransactionService, TransactionService>();
             services.AddScoped<IPromotionService, PromotionService>();
             services.AddTransient<ReCaptchaClass>();
-            services.AddSingleton<GlobalStateService>();
 
 
             //Helpders

@@ -5,8 +5,7 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject IModalService ModalService
 @inject NavigationManager _navigationManager
-@using GoplayasiaCore.Core.Services
-@inject GlobalStateService GlobalState
+
 
 <div class="card m-1 p-0 border-dark game-tile" style="background-color: inherit; border-color: none;">
     <div class="container-fluid p-0 bg-img">
@@ -76,7 +75,6 @@
 
         if (!user.Identity.IsAuthenticated)
         {
-            GlobalState.GameInfoHref = _gameInfoHrefStr; // Set the global string
             var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
         }
         else
