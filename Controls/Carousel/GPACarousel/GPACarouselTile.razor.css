@@ -1,4 +1,9 @@
-﻿@media only screen and (min-width: 600px) {
+﻿.play-btn {
+    position: relative;
+    top: 29px;
+}
+
+@media only screen and (min-width: 600px) {
     .carousel-fade img.img-desktop{
         padding-top: 5rem;
     }
