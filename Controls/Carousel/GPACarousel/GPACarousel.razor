@@ -1,4 +1,4 @@
-﻿<div id="goPlayAsia-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+﻿<div id="goPlayAsia-carousel" class="carousel slide carousel-fade" data-bs-touch="true" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#goPlayAsia-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#goPlayAsia-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -9,39 +9,39 @@
     </div>
     <div class="carousel-inner">
         <GPACarouselTile _desktopImgStr="./img/carousel/GPA/d_first3.png"
-                      _classNameStr="active bg-first3"
-                      _hrefStr="games/first3"
-                      _gameNameStr="First 3"
-                      _headerStr="Lucky 9"
-                      _mobileImgStr="./img/carousel/GPA/m_first3.png" />
+                         _classNameStr="active"
+                         _hrefStr="games/first3"
+                         _gameNameStr="First 3"
+                         _headerStr="Lucky 9"
+                         _mobileImgStr="./img/carousel/GPA/m_first3.png" />
 
         <GPACarouselTile _desktopImgStr="./img/carousel/GPA/d_lucky9.png"
-                      _classNameStr="bg-lucky9"
-                      _hrefStr="games/lucky9"
-                      _gameNameStr="Card Games"
-                      _headerStr="First 3"
+                         _classNameStr="bg-lucky9"
+                         _hrefStr="games/lucky9"
+                         _gameNameStr="Card Games"
+                         _headerStr="First 3"
                          _mobileImgStr="./img/carousel/GPA/m_lucky9.png" />
 
         <GPACarouselTile _desktopImgStr="./img/carousel/GPA/d_lucky4.png"
-                      _hrefStr="games/lucky4"
-                      _classNameStr="bg-lucky4"
-                      _gameNameStr="Coin Games"
-                      _headerStr="Lucky 4"
-                      _mobileImgStr="./img/carousel/GPA/m_lucky4.png" />
-                      
+                         _hrefStr="games/lucky4"
+                         _classNameStr="bg-lucky4"
+                         _gameNameStr="Coin Games"
+                         _headerStr="Lucky 4"
+                         _mobileImgStr="./img/carousel/GPA/m_lucky4.png" />
+
         <GPACarouselTile _desktopImgStr="./img/carousel/GPA/d_headsAndTails.png"
-                      _hrefStr="games/headstails"
-                      _classNameStr="bg-headsAndTails"
-                      _gameNameStr="Heads & Tails"
-                      _headerStr="Heads & Tails"
-                      _mobileImgStr="./img/carousel/GPA/m_headsAndTails.png" />
-        
+                         _hrefStr="games/headstails"
+                         _classNameStr="bg-headsAndTails"
+                         _gameNameStr="Heads & Tails"
+                         _headerStr="Heads & Tails"
+                         _mobileImgStr="./img/carousel/GPA/m_headsAndTails.png" />
+
         <GPACarouselTile _desktopImgStr="./img/carousel/GPA/d_go12.png"
-                      _hrefStr="games/headstails"
-                      _classNameStr="bg-go12"
-                      _gameNameStr="GO 12"
-                      _headerStr="Go 12"
-                      _mobileImgStr="./img/carousel/GPA/m_go12.png" />
+                         _hrefStr="games/headstails"
+                         _classNameStr="bg-go12"
+                         _gameNameStr="GO 12"
+                         _headerStr="Go 12"
+                         _mobileImgStr="./img/carousel/GPA/m_go12.png" />
 
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#goPlayAsia-carousel" data-bs-slide="prev">
@@ -53,3 +53,14 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+<script>
+    $(document).ready(function () {
+        function nextSlide() {
+            setTimeout(function () {
+                document.querySelector('.carousel-control-next').click();
+                nextSlide();
+            }, 5000);
+        }
+        nextSlide();
+    });
+</script>
