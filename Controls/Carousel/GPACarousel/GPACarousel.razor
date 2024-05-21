@@ -38,7 +38,7 @@
                          _mobileImgStr="./img/carousel/GPA/m_headsAndTails.png" />
 
         <GPACarouselTile _desktopImgStr="./img/carousel/GPA/d_go12.png"
-                         _hrefStr="games/headstails"
+                         _hrefStr="games/go12"
                          _classNameStr="bg-go12"
                          _gameNameStr="GO 12"
                          _headerStr="Go 12"
@@ -63,12 +63,8 @@
 </div>
 <script>
     $(document).ready(function () {
-        function nextSlide() {
-            setTimeout(function () {
-                document.querySelector('.carousel-control-next').click();
-                nextSlide();
-            }, 5000);
-        }
-        nextSlide();
+        setTimeout(function () {
+            document.querySelector('.carousel-control-next').click();
+        }, 5000);
     });
 </script>

@@ -47,3 +47,14 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+<script>
+    $(document).ready(function () {
+        function nextSlide() {
+            setTimeout(function () {
+                document.querySelector('.carousel-control-next').click();
+                nextSlide();
+            }, 5000);
+        }
+        nextSlide();
+    });
+</script>
