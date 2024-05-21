@@ -1,5 +1,6 @@
 ﻿@page "/GoPlayAsiaGames"
 @inject IModalService ModalService
+@using GoPlayAsiaWebApp.Controls.Carousel.GPACarousel
 @using GoPlayAsiaWebApp.Controls.GameLinkHeader
 @using GoPlayAsiaWebApp.Controls.GameInfo
 @using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
@@ -8,6 +9,7 @@
 <PageTitle>GoPlayAsia: GoPlayAsia Games </PageTitle>
 
 <div id="cardGames" class="container-fluid p-0 marketing">
+    <GPACarousel />
 
     <GameLinkHeader />
 

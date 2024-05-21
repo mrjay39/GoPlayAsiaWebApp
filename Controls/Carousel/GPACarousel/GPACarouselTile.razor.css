@@ -1,0 +1,17 @@
+﻿@media only screen and (min-width: 600px) {
+    .carousel-fade img.img-desktop{
+        padding-top: 5rem;
+    }
+    .carousel-fade img.img-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .carousel-fade img.img-mobile{
+        padding-top: 4rem;
+    }
+    .carousel-fade img.img-desktop {
+        display: none;
+    }
+}
