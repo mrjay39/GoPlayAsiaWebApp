@@ -304,7 +304,7 @@
 }
 .tieResultText {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left:50%;
     height: 80px;
     width: 80px;
@@ -317,5 +317,5 @@
     font-size: 22px;
     font-weight: 600;
     transform: translate(-50%, -50%);
-    opacity: 70%;
+   
 }

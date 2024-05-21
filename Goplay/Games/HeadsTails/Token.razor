@@ -114,10 +114,10 @@
             </div>
         </div>
 
-        <button class="w-100 d-flex justify-content-center mr-2 @(isDisabled ? "disnewBetBtn" : "newBetBtn")" @onclick="(()=> SubmitBet())" disabled="@isDisabled">
+        <button class="w-100 mr-2 d-flex justify-content-center  @(isDisabled ? "disnewBetBtn" : "newBetBtn")" @onclick="(()=> SubmitBet())" disabled="@isDisabled">
             <div>BET</div>
         </button>
-        <button class="newBackBtn col-2 d-flex justify-content-center" @onclick="(()=> CloseDiv())">
+        <button class="newBackBtn col-3 d-flex justify-content-center" @onclick="(()=> CloseDiv())">
             <div>X</div>
         </button>
 
