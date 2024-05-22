@@ -1,5 +1,6 @@
 ﻿@page "/arcadeGames"
 
+@using GoPlayAsiaWebApp.Controls.Carousel.ArcadeCarousel
 @using GoPlayAsiaWebApp.Controls.GameLinkHeader
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
@@ -7,6 +8,8 @@
 <PageTitle>GoPlayAsia: Arcade Games </PageTitle>
 
 <div id="cardGames" class="container-fluid p-0 marketing">
+    <ArcadeCarousel />
+
     <GameLinkHeader />
 
     <div class="container mt-4">
