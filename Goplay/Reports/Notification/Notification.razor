@@ -10,10 +10,10 @@
         <h3 class="d-flex justify-content-center text-dark mt-2">NOTIFICATIONS</h3>
         <h5 class="tapRead d-flex justify-content-center text-light mt-2">
 
-            <a class="text-dark btn" @onclick:preventDefault @onclick='(() => _notificationViewModel.MarkAllAsRead())'>
+            @* <a class="text-dark btn" @onclick:preventDefault @onclick='(() => _notificationViewModel.MarkAllAsRead())'>
                 <i class="fa-regular fa-hand-point-up"></i>
                 <span class="text-dark" for="markAll">Tap to mark all as read</span>
-            </a>
+            </a> *@
         </h5>
         @if (_notificationViewModel.Notifications != null)
         {
