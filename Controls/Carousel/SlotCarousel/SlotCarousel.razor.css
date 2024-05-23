@@ -1,8 +1,8 @@
 ﻿#slot-carousel .carousel-indicators > button {
-    width: 15px !important;
+    width: 10px !important;
     display: inline-flex;
     border-radius: 50%;
-    height: 15px !important;
+    height: 10px !important;
     position: relative;
     top: 43px;
 }
