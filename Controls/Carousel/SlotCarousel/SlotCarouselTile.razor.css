@@ -1,6 +1,7 @@
 ﻿.play-btn-container {
     position: relative;
     top: 29px;
+    z-index: 3;
 }
 /*================ Start: Button PLay Animation ==================*/
 a.play-btn {

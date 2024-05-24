@@ -1,4 +1,7 @@
-﻿#card-carousel .carousel-indicators > button {
+﻿#card-carousel .carousel-indicators {
+    z-index: 1;
+}
+#card-carousel .carousel-indicators > button {
     width: 10px !important;
     display: inline-flex;
     border-radius: 50%;
