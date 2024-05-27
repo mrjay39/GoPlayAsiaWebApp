@@ -58,10 +58,6 @@ a.play-btn {
 /*================ End: Button PLay Animation ==================*/
 
 @media only screen and (min-width: 600px) {
-    .carousel-fade img.img-desktop {
-        padding-top: 5rem;
-    }
-
     .carousel-fade img.img-mobile {
         display: none;
     }
@@ -78,7 +74,7 @@ a.play-btn {
 
 @media screen and (max-width: 599px) {
     .carousel-fade img.img-mobile {
-        padding-top: 4rem;
+        padding-top: 1.5rem;
     }
 
     .carousel-fade img.img-desktop {

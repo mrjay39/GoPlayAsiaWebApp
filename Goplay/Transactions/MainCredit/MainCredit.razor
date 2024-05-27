@@ -12,12 +12,12 @@
 @attribute [Authorize(Roles = "1")]
 
 <PageTitle>GoPlayAsia: User's Wallet</PageTitle>
-<div class="container-fluid marketing pt-5 mt-5">
+<div class="container-fluid marketing pt-4">
     @* <TopContent CreditsDisp="@_mainCreditsViewModel._icurrentUser.CreditsDisp" /> *@
     @if (_mainCreditsViewModel.UserParentDtl != null)
     {
         <div class="row pt-3 pb-3">
-            <div class="container-fluid pt-4 pb-5 bg-white mt-4 rounded-3 justify-content-center" style="width: 48rem;">
+            <div class="container-fluid pt-2 bg-white mt-4 rounded-3 justify-content-center" style="width: 48rem;">
 
                 <div id="wallet-headerIcon" class="container-fluid p-0 mb-5">
                     <ul class="nav nav-tabs border-0 justify-content-center" id="myTab" role="tablist">

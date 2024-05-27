@@ -7,6 +7,9 @@ main {
     background-repeat: no-repeat;
     min-height: 100vh;
 }
+header{
+    height: 50px;
+}
 
 h1:focus {
     outline: none;
