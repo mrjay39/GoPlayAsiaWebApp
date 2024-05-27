@@ -49,7 +49,7 @@
 
 .arcade {
     top: 22px;
-    left: -2px;
+    left: -24px;
     width: 222px;
 }
 
@@ -60,6 +60,8 @@
 }
 .card-text {
     color: #676767;
+    font-size: 14px;
+    min-height: 4.5rem;
 }
 /*============ Start: Hover Effect =================*/
 .card{
@@ -70,6 +72,7 @@
     cursor: pointer;
     transition: all .5s ease-in-out;
     background: #ebe6e6;
+    max-height: 11rem;
 }
 .content {
     transition: all .5s ease-in-out;
