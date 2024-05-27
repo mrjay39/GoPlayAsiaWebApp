@@ -16,10 +16,15 @@
     border-radius: 10px;
     border-width: 5px;
 }
+.subtitle {
+    min-height: 70px;
+    align-items: center;
+    display: inline-flex;
+}
 
-    .game-tile .bg-img > img {
-        border-radius: 0;
-    }
+.game-tile .bg-img > img {
+    border-radius: 0;
+}
 
 .info {
     width: 100%;
@@ -53,9 +58,6 @@
     .game-tile h3 {
         font-size: 15px;
     }
-    .arrow {
-        top: 48% !important;
-    }
 }
 @media screen and (max-width: 414px) {
     .game-tile {
@@ -63,9 +65,6 @@
     }
     .game-tile h3 {
         font-size: 15px;
-    }
-    .arrow {
-        top: 48% !important;
     }
 }
 
@@ -81,9 +80,6 @@
     .game-tile h3 {
         font-size: 15px;
     }
-    .arrow {
-        top: 48% !important;
-    }
 }
 
 /*================ Start: Button PLay Animation ==================*/
@@ -98,7 +94,7 @@ a.play-btn > span {
 
 .arrow {
     position: absolute;
-    top: 50%;
+    top: 56%;
     left: 55%;
     transform: translate(-50%, -50%) rotate(-90deg);
     cursor: pointer;

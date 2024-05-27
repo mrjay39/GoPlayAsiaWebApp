@@ -16,10 +16,15 @@
     border-radius: 10px;
     border-width: 5px;
 }
+.subtitle {
+    min-height: 70px;
+    align-items: center;
+    display: inline-flex;
+}
 
-    .game-tile .bg-img > img {
-        border-radius: 0;
-    }
+.game-tile .bg-img > img {
+    border-radius: 0;
+}
 
 .info {
     width: 100%;
@@ -51,12 +56,8 @@
         width: 9rem;
     }
 
-        .game-tile h3 {
-            font-size: 15px;
-        }
-
-    .arrow {
-        top: 48% !important;
+    .game-tile h3 {
+        font-size: 15px;
     }
 }
 
@@ -65,12 +66,8 @@
         width: 9rem;
     }
 
-        .game-tile h3 {
-            font-size: 15px;
-        }
-
-    .arrow {
-        top: 48% !important;
+    .game-tile h3 {
+        font-size: 15px;
     }
 }
 
@@ -80,17 +77,13 @@
         margin: 8px !important;
     }
 
-        .game-tile .btn {
-            font-size: 12px;
-            font-weight: bold;
-        }
+    .game-tile .btn {
+        font-size: 12px;
+        font-weight: bold;
+    }
 
-        .game-tile h3 {
-            font-size: 15px;
-        }
-
-    .arrow {
-        top: 48% !important;
+    .game-tile h3 {
+        font-size: 15px;
     }
 }
 
@@ -106,7 +99,7 @@ a.play-btn {
 
 .arrow {
     position: absolute;
-    top: 50%;
+    top: 57%;
     left: 55%;
     transform: translate(-50%, -50%) rotate(-90deg);
     cursor: pointer;
