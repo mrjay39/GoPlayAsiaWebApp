@@ -15,7 +15,7 @@
             <button id="gpa-toggler" class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a id="gpa-logo" href="home" class="navbar-brand p-1 gpa-navbar-brand d-flex align-items-center text-dark text-decoration-none">
+            <a id="gpa-logo" href="home" class="navbar-brand p-1 gpa-navbar-brand d-flex align-items-center text-dark text-decoration-none home">
                 <img src="./img/gpa-logo.png" class="img-fluid logo" alt="GoPlayAsia">
             </a>
             <a id="user-image" class="bg-black" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items w-100">
                 <li class="nav-item">
-                    <a href="home" class="nav-link px-2 link-dark">
+                    <a href="home" class="nav-link px-2 link-dark home">
                         <i class="fa-solid home-icon"></i> HOME
                     </a>
                 </li>
@@ -112,6 +112,15 @@
         if (!isClickInsideNavbar && navbarCollapse.classList.contains('show')) {
             navbarToggler.click();
         }
+
+        $('#navbarSupportedContent a, #gpa-logo').click(function (e) {
+            $('#navBarBottom a').removeClass('active');
+
+            if ($(this).hasClass('home') || $(this).attr('id') === 'gpa-logo') {
+                $('#navBarBottom .home').addClass('active');
+            }
+        });
+
     });
 </script>
 @code {

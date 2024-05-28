@@ -32,18 +32,18 @@
             </a>
             </li> *@
             <li class="nav-item" data-bs-dismiss="offcanvas">
-                <a class="nav-link fw-bold" href="/Credit/withdraw">
+                <a class="nav-link fw-bold cashOut" href="/Credit/withdraw">
                     <span><i class="fa-solid fa-credit-card"></i></span>
                     <span class="ms-3"> Withdraw/Cashout</span>
                 </a>
             </li>
-            <li class="nav-item" data-bs-dismiss="offcanvas">
+            <li class="nav-item cashIn" data-bs-dismiss="offcanvas">
                 <a class="nav-link fw-bold" href="credit">
                     <span><i class="fa-solid fa-money-bill-transfer"></i></span>
                     <span class="ms-3"> Cash-In / Deposit</span>
                 </a>
             </li>
-            <li class="nav-item" data-bs-dismiss="offcanvas">
+            <li class="nav-item notification" data-bs-dismiss="offcanvas">
                 <a class="nav-link fw-bold" href="/notification">
                     <span><i class="fa-solid fa-envelope"></i></span>
                     <span class="ms-3"> Notification</span>
@@ -88,6 +88,16 @@
         });
         $('[data-bs-target="#change-password"]').on('click', function () {
             $('#change-password.offcanvas.show #edit-profile-form').addClass('hide');
+        });
+
+        $('#settingOffCanvas .notification, #settingOffCanvas .cashIn, #settingOffCanvas .cashOut').click(function (e) {
+            $('#navBarBottom a').removeClass('active');
+
+            if ($(this).hasClass('notification')) {
+                $('#navBarBottom .notification').addClass('active');
+            } else {
+                $('#navBarBottom .wallet').addClass('active');
+            }
         });
     });
 </script>
