@@ -22,7 +22,7 @@
                 <div id="wallet-headerIcon" class="container-fluid p-0 mb-5">
                     <ul class="nav nav-tabs border-0 justify-content-center" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                        <a class="nav-link p-0 @activeaddcredit" id="cashIn-tab" data-bs-toggle="tab" data-bs-target="#cashIn-tab-pane"  role="tab" aria-controls="cashIn-tab-pane" aria-selected="true">
+                        <a class="nav-link p-0 @activeaddcredit cashIn" id="cashIn-tab" data-bs-toggle="tab" data-bs-target="#cashIn-tab-pane"  role="tab" aria-controls="cashIn-tab-pane" aria-selected="true">
                                 <div class="card border-0 text-center p-0 wallet-cardContainer">
                                     <div class="icon-link icon-link-hover text-decoration-none">
                                         <img class="img-fluid img" src="/img/cash-in.png" style="width: 3rem;" />
@@ -34,7 +34,7 @@
                             </a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link p-0 @activewithdraw" id="cashOut-tab" @onclick:preventDefault @onclick='(() => getUserInfo())' data-bs-toggle="tab" data-bs-target="#cashOut-tab-pane" role="tab" aria-controls="cashOut-tab-pane" aria-selected="false">
+                            <a class="nav-link p-0 @activewithdraw cashOut" id="cashOut-tab" @onclick:preventDefault @onclick='(() => getUserInfo())' data-bs-toggle="tab" data-bs-target="#cashOut-tab-pane" role="tab" aria-controls="cashOut-tab-pane" aria-selected="false">
                                 <div class="card border-0 text-center p-0 wallet-cardContainer">
                                     <div class="icon-link icon-link-hover text-decoration-none">
                                         <img class="img-fluid img" src="/img/cash-out.png" style="width: 3rem;" />

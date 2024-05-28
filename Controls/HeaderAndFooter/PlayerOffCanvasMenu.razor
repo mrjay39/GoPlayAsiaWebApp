@@ -92,11 +92,20 @@
 
         $('#settingOffCanvas .notification, #settingOffCanvas .cashIn, #settingOffCanvas .cashOut').click(function (e) {
             $('#navBarBottom a').removeClass('active');
+            $('#wallet-headerIcon a').removeClass('active');
 
+            // Handle navBarBottom active class
             if ($(this).hasClass('notification')) {
                 $('#navBarBottom .notification').addClass('active');
             } else {
                 $('#navBarBottom .wallet').addClass('active');
+            }
+
+            // Handle wallet-headerIcon active class
+            if ($(this).hasClass('cashIn')) {
+                $('#wallet-headerIcon a.cashIn').addClass('active');
+            } else if ($(this).hasClass('cashOut')) {
+                $('#wallet-headerIcon a.cashOut').addClass('active');
             }
         });
     });
