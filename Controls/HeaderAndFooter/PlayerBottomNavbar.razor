@@ -32,7 +32,7 @@
                 <span class="text-uppercase small">Notification</span>
             </div>
         </a>
-        <a class="navbar-brand text-center text-muted" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
+        <a id="settings" class="navbar-brand text-center text-muted" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
             <div class="icon">
                 <i class="fa-solid setting-btm-icon"></i>
             </div>
@@ -40,5 +40,15 @@
                 <span class="text-uppercase small">Setting</span>
             </div>
         </a>
-    </div>    
+    </div>
 </nav>
+<script>
+    $(document).ready(function () {
+        $('#navBarBottom a').click(function (e) {
+            if ($(this).attr('id') !== 'settings') {
+                $('#navBarBottom a').removeClass('active');
+                $(this).addClass('active');
+            }
+        });
+    });
+</script>

@@ -42,3 +42,12 @@
         </a>
     </div>
 </nav>
+<script>
+    $(document).ready(function () {
+        $('#navBarBottom a').click(function (e) {
+            $('#navBarBottom a').removeClass('active');
+            $(this).addClass('active');
+        });
+
+    });
+</script>
