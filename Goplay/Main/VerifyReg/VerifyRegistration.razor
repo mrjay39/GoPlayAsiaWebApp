@@ -53,7 +53,7 @@
                                     <InputFile OnChange="@LoadProfileImage" capture="user" id="profcameraupload" class="sr-only" accept="image/*" />
                                 </div>
                                 <div class="col text-center">
-                                    <label for="proffileupload" class="form-label btn border-0 p-0 text-dark"><span class="nextBtn p-2"><i class="fa-solid fa-camera"></i> From Camera</span></label>
+                                    <label for="proffileupload" class="form-label btn border-0 p-0 text-dark"><span class="nextBtn p-2"><i class="fa-solid fa-camera"></i> Use Camera</span></label>
                                     <InputFile OnChange="@LoadProfileImage" class="sr-only" id="proffileupload" accept="image/*" />
                                 </div>
                             </div>
@@ -66,14 +66,15 @@
                         }
                     </div>
 
-                <div class="prevNext d-flex mt-4 align-items-center">
-                    <div class="col pl-0">
-                        <a href="/credit/withdraw" class="nextBtn col text-decoration-none btn">
-                            <span>Back to Wallet</span>
-                        </a>
-                    </div>
-                    <div class="col pl-0 text-end">
-                        <input class="nextBtn col" type="button" @onclick="ValidateStep1" value="NEXT" />
+                    <div class="prevNext d-flex mt-4 align-items-center">
+                        <div class="col pl-0">
+                            <a href="/credit/withdraw" class="nextBtn col text-decoration-none btn">
+                                <span>Back to Wallet</span>
+                            </a>
+                        </div>
+                        <div class="col pl-0 text-end">
+                            <input class="nextBtn col" type="button" @onclick="ValidateStep1" value="NEXT" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,7 +147,7 @@
                     <p class="font-weight-bold titleHolder">Region <span class="text-danger fw-bold">*</span></p>
                     <input class="form-control" type="text" disabled value="@SignupDTO.CurrentRegion">
                 </div>
-                <!-- PREVIOUS & NEXT BUTTON -->
+                @* <======= PREVIOUS & NEXT BUTTON =======*@
                 <div class="prevNext d-flex mt-4">
                     <div class="col pl-0">
                         <input class="nextBtn col" type="button" @onclick="ShowStep1" value="BACK" />
@@ -166,11 +167,14 @@
             <DataAnnotationsValidator />
             <div class="Step3 box" hidden="@step3">
                 <div class="main">
-                    <h4 class="text-center font-weight-bold mb-4" style="color: #e5e2e2;; ">VERIFICATION</h4>
-                    <h5>ACCOUNT INFORMATION (PROFILE)</h5>
+                    <h5 class="text-center">ACCOUNT INFORMATION(PROFILE)</h5>
                 </div>
-                <div class="form-group m-0">
-                    <p class="font-weight-bold titleHolder">Nature of Work*</p>
+                <div class="form-group">
+                    <p class="text-muted">Last Name<span class="text-danger">*</span></p>
+                    <input class="form-control" type="text" placeholder="Last Name" @bind-value="SignupDTO.LastName">
+                </div>
+                <div class="form-group mt-2">
+                    <p class="text-muted">Nature of Work<span class="text-danger">*</span></p>
                     <div class="form-group" style="background-color: white; border-radius: 5px;">
                         <BlazoredTypeahead SearchMethod="SearchNatureofwork" EnableDropDown="true" TItem="NatureOfWorkModel" TValue="NatureOfWorkModel" Value="selectedNatureofwork" ValueChanged="selectedNatureOfWorChanged" ValueExpression="@(() => selectedNatureofwork)" placeholder="SELECT NATURE OF WORK">
                             <SelectedTemplate Context="NatureOfWorkId">
@@ -187,15 +191,15 @@
                     </div>
                 </div>
                 <div hidden="@hideOtherNatureOfWOrk">
-                    <div class="form-group m-0">
+                    <div class="form-group mt-2">
                         <p class="font-weight-bold titleHolder">Specify</p>
                         <div>
                             <input class="form-control" type="text" placeholder="Other Nature of Work" @bind-value="@SignupDTO.OtherNatureOfWork" aria-label="default input example">
                         </div>
                     </div>
                 </div>
-                <div class="form-group m-0">
-                    <p class="font-weight-bold titleHolder">Source of Income*</p>
+                <div class="form-group mt-2">
+                    <p class="text-muted">Source of Income<span class="text-danger">*</span></p>
                     <div class="form-group" style="background-color: white; border-radius: 5px;">
                         <BlazoredTypeahead SearchMethod="SearchSourcofIncome" EnableDropDown="true" TItem="SourceOfIncomeModel" TValue="SourceOfIncomeModel" Value="selectedSourceofincome" ValueChanged="selectedSourceOfIncomeChanged" ValueExpression="@(() => selectedSourceofincome)" placeholder="SELECT SOURCE OF INCOMCE">
                             <SelectedTemplate Context="SourceOfIncomeId">
@@ -212,47 +216,60 @@
                     </div>
                 </div>
                 <div hidden="@hideOtherSourceOfIncome">
-                    <div class="form-group m-0">
+                    <div class="form-group mt-2">
                         <p class="font-weight-bold titleHolder">Specify</p>
                         <div>
                             <input class="form-control" type="text" placeholder="Other Source of Income" @bind-value="@SignupDTO.OtherSourceOfIncome" aria-label="default input example">
                         </div>
                     </div>
                 </div>
-                <!-- GOVERNMENT ID -->
-                <div class="form-group m-0">
-                    <p class="font-weight-bold titleHolder">Upload Government ID*</p>
-                    <div class="govId mb-2 img-fluid">
-                        <div class="justify-content-center uploadCameraBtn">
-                            <label for="govcameraupload" class="input-label  mb-0"><i class="bi bi-camera-fill mr-1 "></i> Use Camera</label>
-                            <InputFile accept="image/*" OnChange="@LoadIDImage" capture="environment" id="govcameraupload" class="sr-only" />
-                            <label for="govfileupload" class="input-label  mb-0"><i class="bi bi-image-fill mr-1"></i>From Library</label>
-                            <InputFile accept="image/*" OnChange="@LoadIDImage" id="govfileupload" class="sr-only" />
-                            @if (progressid != null)
-                            {
-                                <div>
-                                    <progress value="@progressid.UploadedBytes" max="@progressid.Size"></progress>@progressid.UploadedPercentage.ToString("")%
-                                    @*(@FormatBytes(progressid.UploadedBytes) / @FormatBytes(progressid.Size))*@
-                                </div>
-                            }
-                        </div>
+                @* <====== GOVERNMENT ID ======*@
+                <div class="container p-0 border rounded-3 mb-3">
+                    <p class="text-muted">Upload Government ID<span class="text-danger">*</span></p>
+                    <p>
+                        <span class="text-primary btn view-selfie" @onclick="@(() => Modal.Show<SampleUploadValidID>("Selfie with valid ID"))"><i class="fa-solid fa-eye"></i> View sample</span>
+                    </p>
+                    <div class="container-fluid">
                         @if (!string.IsNullOrEmpty(IDImageUri))
                         {
-                            <img src="@IDImageUri" class="w-100 h-100" />
+                            <div class="container-fluid mb-2">
+                                <img src="@IDImageUri" class="img w-100 img-fluid mb-3" />
+                            </div>
                         }
+                        <div class="d-flex">
+                            <div class="col text-center">
+                                <label for="govfileupload" class="form-label btn border-0 p-0 text-dark"><span class="nextBtn p-2"><i class="fa-regular fa-image"></i> From File</span></label>
+                                <InputFile accept="image/*" OnChange="@LoadIDImage" id="govfileupload" class="sr-only" />
+                            </div>
+                            <div class="col text-center">
+                                <label for="govcameraupload" class="form-label btn border-0 p-0 text-dark"><span class="nextBtn p-2"><i class="fa-solid fa-camera"></i> Use Camera</span></label>
+                                <InputFile OnChange="@LoadIDImage" id="govcameraupload" capture="environment" accept="image/*" class="sr-only" />
+                            </div>
+                        </div>
                     </div>
+
+                    @if (progressid != null)
+                    {
+                        <div class="d-flex align-items-center justify-content-center">
+                            <progress class="p-0" value="@progressid.UploadedBytes" max="@progressid.Size"></progress>
+                            <span class="text-dark m-0 p-0">@progressid.UploadedPercentage.ToString("")%</span>
+                            @*(@FormatBytes(progressid.UploadedBytes) / @FormatBytes(progressid.Size))*@
+                        </div>
+                    }
                 </div>
 
                 <div class="form-group m-0">
-                    <p class="font-weight-bold titleHolder">Government ID Number*</p>
+                    <p class="text-muted">Government ID Number<span class="text-danger">*</span></p>
                     <input class="form-control" type="text" placeholder="Government ID Number" @bind-value="SignupDTO.IdentificationNumber">
                 </div>
-                <div class="prevNext d-flex mt-4 pb-2">
+
+                @* <======= PREVIOUS & NEXT BUTTON =======*@
+                <div class="prevNext d-flex mt-4">
                     <div class="col pl-0">
-                        <input class="LoginPage" type="button" @onclick="ShowStep2" value="< BACK" />
+                        <input class="nextBtn col" type="button" @onclick="ShowStep2" value="BACK" />
                     </div>
                     <div>
-                        <input class="nextBtn" type="button" @onclick="ValidateStep3" value="SUBMIT" />
+                        <input class="nextBtn col" type="button" @onclick="ValidateStep3" value="NEXT" />
                     </div>
                 </div>
             </div>
