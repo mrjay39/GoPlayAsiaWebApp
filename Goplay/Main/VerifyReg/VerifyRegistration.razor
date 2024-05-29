@@ -38,9 +38,13 @@
                     <p><span class="text-muted">Selfie with Valid ID<span class="text-danger">*</span></span></p>
                     <div class="container p-0 border rounded-3 mb-3">
                         <p>
-                            <span class="text-primary btn view-selfie" @onclick="@(() => Modal.Show<SampleUploadSelfieWithID>("Selfie with valid ID"))"><i class="fa-solid fa-eye"></i> view sample</span>
+                            <span class="text-primary btn view-selfie" @onclick="@(() => Modal.Show<SampleUploadSelfieWithID>("Selfie with valid ID"))"><i class="fa-solid fa-eye"></i> View sample</span>
                         </p>
                         <div class="d-flex">
+                            @if (!string.IsNullOrEmpty(ProfileImageUri))
+                            {
+                                <img src="@ProfileImageUri" class="w-100 h-100" />
+                            }
                             <div class="col text-center">
                                 <label for="profcameraupload" class="form-label btn border-0 p-0 text-dark"><span><i class="fa-regular fa-image"></i> From File</span></label>
                                 <InputFile OnChange="@LoadProfileImage" capture="user" id="profcameraupload" class="sr-only" accept="image/*" />
@@ -163,6 +167,15 @@
                     <p class="font-weight-bold titleHolder">Region*</p>
                     <input class="form-control" type="text" disabled value="@SignupDTO.CurrentRegion">
                 </div>
+                <!-- PREVIOUS & NEXT BUTTON -->
+                <div class="prevNext d-flex mt-4">
+                    <div class="col pl-0">
+                        <input class="LoginPage" type="button" @onclick="ShowStep1" value="< BACK" />
+                    </div>
+                    <div>
+                        <input class="nextBtn col" type="button" @onclick="ValidateStep2" value="NEXT" />
+                    </div>
+                </div>
             </div>
             <ValidationSummary />
         </EditForm>
@@ -244,7 +257,10 @@
                                 </div>
                             }
                         </div>
-                        <img src="@IDImageUri" class="w-100 h-100" />
+                        @if (!string.IsNullOrEmpty(IDImageUri))
+                        {
+                            <img src="@IDImageUri" class="w-100 h-100" />
+                        }
                     </div>
                 </div>
 

@@ -49,9 +49,10 @@ public partial class VerifyRegistration
     private bool step2 { get; set; } = true;
     private bool step3 { get; set; } = true;
 
-    private string? ProfileImageUri = "/img/verify-profile.jpg";
-    private string? IDImageUri = "/img/verify-government.jpg";
-
+    //private string? ProfileImageUri = "/img/verify-profile.jpg";
+    //private string? IDImageUri = "/img/verify-government.jpg";
+    private string? ProfileImageUri = "";
+    private string? IDImageUri = "";
 
     [Parameter]
     public IEnumerable<CityModel> CityList { get; set; }
