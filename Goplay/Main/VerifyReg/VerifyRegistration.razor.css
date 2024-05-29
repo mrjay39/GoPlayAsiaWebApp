@@ -148,7 +148,7 @@ h5 {
 }
 
 .profilePic img, .govId img {
-    width: 100%; /* or any custom size */
+    width: 100%;
     height: 100%;
     object-fit: contain;
     overflow: auto;
@@ -218,7 +218,10 @@ input::placeholder { /* Internet Explorer 10-11 */
     /*font-weight: 400;*/
 }
 
-@media {
+@media screen and (max-width: 360px) {
+    .nextBtn{
+        font-size: 13px;
+    }
 }
 
 .innerContainer {

@@ -6,7 +6,7 @@
 @using GoplayasiaBlazor.Models
 @using GoPlayAsiaWebApp.Goplay.Shared.Popup
 
-<section class="container-fluid pt-5 mt-2">
+<section class="container-fluid pt-5">
     <div class="transparentBox">
 
         @*=========== Start: Step 1 Account Verification ===========*@
@@ -40,18 +40,22 @@
                         <p>
                             <span class="text-primary btn view-selfie" @onclick="@(() => Modal.Show<SampleUploadSelfieWithID>("Selfie with valid ID"))"><i class="fa-solid fa-eye"></i> View sample</span>
                         </p>
-                        <div class="d-flex">
+                        <div class="container-fluid">
                             @if (!string.IsNullOrEmpty(ProfileImageUri))
                             {
-                                <img src="@ProfileImageUri" class="w-100 h-100" />
+                                <div class="container-fluid mb-2">
+                                    <img src="@ProfileImageUri" class="img w-100 img-fluid mb-3" />
+                                </div>
                             }
-                            <div class="col text-center">
-                                <label for="profcameraupload" class="form-label btn border-0 p-0 text-dark"><span><i class="fa-regular fa-image"></i> From File</span></label>
-                                <InputFile OnChange="@LoadProfileImage" capture="user" id="profcameraupload" class="sr-only" accept="image/*" />
-                            </div>
-                            <div class="col text-center">
-                                <label for="proffileupload" class="form-label btn border-0 p-0 text-dark"><span><i class="fa-solid fa-camera"></i> From Camera</span></label>
-                                <InputFile OnChange="@LoadProfileImage" class="sr-only" id="proffileupload" accept="image/*" />
+                            <div class="d-flex">
+                                <div class="col text-center">
+                                    <label for="profcameraupload" class="form-label btn border-0 p-0 text-dark"><span class="nextBtn p-2"><i class="fa-regular fa-image"></i> From File</span></label>
+                                    <InputFile OnChange="@LoadProfileImage" capture="user" id="profcameraupload" class="sr-only" accept="image/*" />
+                                </div>
+                                <div class="col text-center">
+                                    <label for="proffileupload" class="form-label btn border-0 p-0 text-dark"><span class="nextBtn p-2"><i class="fa-solid fa-camera"></i> From Camera</span></label>
+                                    <InputFile OnChange="@LoadProfileImage" class="sr-only" id="proffileupload" accept="image/*" />
+                                </div>
                             </div>
                         </div>
                         @if (progress != null)
@@ -62,39 +66,14 @@
                         }
                     </div>
 
-                    <!-- PROFILE IMAGE -->
-                    @*  <div class="form-group">
-                    <p class="font-weight-bold titleHolder">Upload Profile Photo*</p>
-                    <div class="profilePic mb-2 img-fluid">
-                    <img src="@ProfileImageUri" class="w-100 h-100" />
-                    <div class="justify-content-center uploadCameraBtn">
-                    <div class="d-flex">
-                    <label for="profcameraupload" class=" input-label  mr-1 mb-0"><i class="bi bi-camera-fill mr-1"></i>Use Camera</label>
-                    <InputFile accept="image/*" OnChange="@LoadProfileImage" capture="user" id="profcameraupload" class="sr-only" />
-                    <label for="proffileupload" class="input-label mb-0 "><i class="bi bi-image-fill mr-1"></i>From Library</label>
-                    <InputFile accept="image/*" OnChange="@LoadProfileImage" id="proffileupload" class="sr-only" />
-                    </div>
-                    @if (progress != null)
-                    {
-                    <div>
-                    <progress class="p-0" value="@progress.UploadedBytes" max="@progress.Size"></progress><span class="text-light m-0 p-0">@progress.UploadedPercentage.ToString("")%</span>
-                    </div>
-                    }
-                    </div>
-                    </div>
-                    </div> *@
-                </div>
-
-                <!-- NEXT BUTTON -->
-                <div class="prevNext d-block justify-content-center align-content-center mb-3 p-0">
-                    <div class="d-flex col justify-content-center align-content-center mb-3">
-                        <input class="nextBtn col-8" type="button" @onclick="ValidateStep1" value="NEXT" />
-                    </div>
-                    <div class="align-content-center d-flex  text-center">
-                        <a href="/credit/withdraw" class="backLoginPage" style="margin: 0 auto; color:#6e182c; ">
-                            <i class="fa-solid fa-arrow-left"></i>
-                            <span>Back to Wallet Page</span>
+                <div class="prevNext d-flex mt-4 align-items-center">
+                    <div class="col pl-0">
+                        <a href="/credit/withdraw" class="nextBtn col text-decoration-none btn">
+                            <span>Back to Wallet</span>
                         </a>
+                    </div>
+                    <div class="col pl-0 text-end">
+                        <input class="nextBtn col" type="button" @onclick="ValidateStep1" value="NEXT" />
                     </div>
                 </div>
             </div>
@@ -120,11 +99,11 @@
                     <input class="form-control" type="text" placeholder="PLACE OF BIRTH" @bind-value="SignupDTO.PlaceOfBirth">
                 </div>
                 <div class="form-group m-0">
-                    <p class="font-weight-bold titleHolder">Gender*</p>
+                    <p class="font-weight-bold titleHolder">Gender <span class="text-danger fw-bold">*</span></p>
                     <GenderSelect @bind-Item="@SignupDTO.Gender" />
                 </div>
                 <div class="form-group mt-2 mb-1">
-                    <p class="font-weight-bold titleHolder">Nationality*</p>
+                    <p class="font-weight-bold titleHolder">Nationality <span class="text-danger fw-bold">*</span></p>
                     <div class="form-group" style="background-color: white; border-radius: 5px;">
                         <BlazoredTypeahead SearchMethod="SearchNationality" @bind-Value="selectedNationality" placeholder="Select Nationality">
                             <SelectedTemplate Context="NationalityId">
@@ -138,11 +117,11 @@
                 </div>
                 <h6 class="text-muted mt-3">CURRENT ADDRESS</h6>
                 <div class="form-group m-0">
-                    <p class="font-weight-bold titleHolder">Home Address*</p>
+                    <p class="font-weight-bold titleHolder">Home Address <span class="text-danger fw-bold">*</span></p>
                     <input class="form-control" type="text" placeholder="Home Address" @bind-value="SignupDTO.CurrentStreet">
                 </div>
                 <div class="form-group m-0">
-                    <p class="font-weight-bold titleHolder">City/Municipality*</p>
+                    <p class="font-weight-bold titleHolder">City/Municipality <span class="text-danger fw-bold">*</span></p>
                     <div class="citySelector mt-1" style="background-color: white; border-radius: 5px;">
                         <BlazoredTypeahead SearchMethod="SearchCity" TItem="CityModel" TValue="CityModel" Value="selectedCurrCity" ValueChanged="selectedCurrCityChanged" ValueExpression="@(() => selectedCurrCity)" placeholder="Select Current City">
                             @*@bind-Value="selectedCurrCity"*@
@@ -160,17 +139,17 @@
                     </div>
                 </div>
                 <div class="form-group m-0">
-                    <p class="font-weight-bold titleHolder">Province*</p>
+                    <p class="font-weight-bold titleHolder">Province <span class="text-danger fw-bold">*</span></p>
                     <input class="form-control" type="text" disabled value="@SignupDTO.CurrentProvince">
                 </div>
                 <div class="form-group m-0">
-                    <p class="font-weight-bold titleHolder">Region*</p>
+                    <p class="font-weight-bold titleHolder">Region <span class="text-danger fw-bold">*</span></p>
                     <input class="form-control" type="text" disabled value="@SignupDTO.CurrentRegion">
                 </div>
                 <!-- PREVIOUS & NEXT BUTTON -->
                 <div class="prevNext d-flex mt-4">
                     <div class="col pl-0">
-                        <input class="LoginPage" type="button" @onclick="ShowStep1" value="< BACK" />
+                        <input class="nextBtn col" type="button" @onclick="ShowStep1" value="BACK" />
                     </div>
                     <div>
                         <input class="nextBtn col" type="button" @onclick="ValidateStep2" value="NEXT" />

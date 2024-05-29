@@ -96,6 +96,7 @@ a, .btn-link {
 .blazored-typeahead__results-header,
 .blazored-typeahead__results-footer {
     border: 1px solid #bfbfbf !important;
+    color: #ffffff;
 }
 .blazored-typeahead__active-item,
 .blazored-typeahead__result:hover,
