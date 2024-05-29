@@ -26,6 +26,8 @@ public partial class Withdraw
 
     #region Injected Services
     [Inject] MainCreditViewModel _mainCreditsViewModel { get; set; }
+    [Parameter]
+    public UserDTO UserInfo { get; set; }
     [CascadingParameter] public IModalService popupModal { get; set; }
 
 

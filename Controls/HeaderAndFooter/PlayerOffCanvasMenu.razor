@@ -1,7 +1,8 @@
 ﻿@inject GameHeaderViewModel gameHeaderViewModel
 @using GoPlayAsiaWebApp.Goplay.Shared.Popup
 @using GoPlayAsiaWebApp.Goplay.ViewModels;
-
+@using GoplayasiaBlazor.Core.Global.Interface
+@inject ICurrentUser _iCurrentUser
 
 <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="settingOffCanvas" aria-labelledby="settingOffCanvasLabel">
     <div class="offcanvas-header">
@@ -22,15 +23,27 @@
                 <span class="ms-3"> Profile</span>
                 </a> *@
                 @* <span data-bs-toggle="offcanvas" data-bs-target="#account-verification" aria-controls="account-verification" class="position-absolute top-0 start-30 badge bg-danger p-2 text-decoration-none btn border-0">
-                    Verify Now!
+                Verify Now!
                 </span> *@
-                <span class="position-absolute top-0 start-25 badge bg-success p-2 text-decoration-none btn border-0">
-                    Verified
-                </span>
-                <a href="VerifyReg" class="position-absolute top-0 start-30 badge bg-danger p-2 text-decoration-none btn border-0">
-                    Verify Now!
-                </a>
-                
+                @if (_iCurrentUser.Verified == 1)
+                {
+                    <span class="position-absolute top-0 start-25 badge bg-success p-2 text-decoration-none btn border-0">
+                        Verified
+                    </span>
+                }
+                else if (_iCurrentUser.Verified == 0)
+                {
+                    <a href="VerifyReg" class="position-absolute top-0 start-30 badge bg-danger p-2 text-decoration-none btn border-0">
+                        Verify Now!
+                    </a>
+                }
+                else if (_iCurrentUser.Verified == 2)
+                {
+                    <a href="VerifyReg" class="position-absolute top-0 start-30 badge bg-warning p-2 text-decoration-none btn border-0">
+                        Pending
+                    </a>
+                }
+
             </li>
             @* <li class="nav-item">
             <a class="nav-link fw-bold" href="#">
@@ -83,8 +96,8 @@
             </li> *@
         </ul>
         @* <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-success" type="submit">Search</button>
         </form> *@
     </div>
 </div>

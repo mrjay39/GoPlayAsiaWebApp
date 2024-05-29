@@ -390,6 +390,7 @@ public class MainCreditViewModel : BaseViewModel
                 corporationSettings.MaximumWithdrawRequest.Value :
                 450000;
             //  }
+            await CallInvoke();
         }
         else
         {
@@ -442,7 +443,6 @@ public class MainCreditViewModel : BaseViewModel
 
         #endregion
 
-        await CallInvoke();
         //popupRes.Close();
     }
     public async Task GetTransactionsByUserId()
