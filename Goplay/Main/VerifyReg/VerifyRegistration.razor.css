@@ -1,6 +1,7 @@
 ﻿section {
     background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#000 100%) !important;
     background-size: auto;
+    min-height: 51rem;
     background-repeat: repeat;
 }
 .Step1, .Step2, .Step3, .Step4, .Step5, .Step6 {
