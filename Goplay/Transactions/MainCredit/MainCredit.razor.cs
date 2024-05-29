@@ -18,14 +18,26 @@ public partial class MainCredit
     #endregion
 
     #region Local Methods
-    private async Task getUserInfo()
+    private async Task getUserInfo(int? tran)
     {
+        activetransaction = "";
+        activewithdraw = "";
+        activeaddcredit = "";
+        if (tran == 1)
+        {
+            activeaddcredit = "active";
+        }else if (tran == 2)
+        {
+            activewithdraw = "active";
+        }
         await _mainCreditsViewModel.GetUserInfo();
 
     }
     private async Task GetTransactionsByUserId()
     {
-
+        activetransaction = "active";
+        activewithdraw = "";
+        activeaddcredit = "";
         await _mainCreditsViewModel.GetTransactionsByUserId();
 
     }
@@ -47,6 +59,7 @@ public partial class MainCredit
             {
                 activeaddcredit = "active";
             }
+            StateHasChanged();
         }
 
     }
