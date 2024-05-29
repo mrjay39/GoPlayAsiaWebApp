@@ -61,17 +61,24 @@
                 </div>
 
                 <div class="tab-content" id="myTabContent">
-
-                    <div class="tab-pane fade @activeaddcredit" id="cashIn-tab-pane" role="tabpanel" aria-labelledby="cashIn-tab" tabindex="0">
-                        <AddCredits />
-                    </div>
-
-                    <div class="tab-pane fade @activewithdraw" id="cashOut-tab-pane" role="tabpanel" aria-labelledby="cashOut-tab" tabindex="0">
-                        <Withdraw UserInfo="@_mainCreditsViewModel.UserInfo"/>
-                    </div>
-                    <div class="tab-pane fade p-0  @activetransaction" id="transaction-tab-pane" role="tabpanel" aria-labelledby="transaction-tab" tabindex="0">
-                        <Transaction />
-                    </div>
+                    @if (@activeaddcredit == "active")
+                    {
+                        <div class="tab-pane fade  show active" id="cashIn-tab-pane" role="tabpanel" aria-labelledby="cashIn-tab" tabindex="0">
+                            <AddCredits />
+                        </div>
+                    }
+                    @if (@activewithdraw == "active")
+                    {
+                        <div class="tab-pane fade show active" id="cashOut-tab-pane" role="tabpanel" aria-labelledby="cashOut-tab" tabindex="0">
+                            <Withdraw UserInfo="@_mainCreditsViewModel.UserInfo" />
+                        </div>
+                    }
+                    @if (@activetransaction == "active")
+                    {
+                        <div class="tab-pane fade show active" id="transaction-tab-pane" role="tabpanel" aria-labelledby="transaction-tab" tabindex="0">
+                            <Transaction />
+                        </div>
+                    }
                 </div>
             </div>
         </div>
