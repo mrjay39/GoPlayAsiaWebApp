@@ -117,6 +117,9 @@ h5 {
     margin-bottom: 20px;
     font-size: 16px;
 }
+img.max-height-280{
+    max-height: 280px;
+}
 
 .dateOfBirth {
     width: 100%;

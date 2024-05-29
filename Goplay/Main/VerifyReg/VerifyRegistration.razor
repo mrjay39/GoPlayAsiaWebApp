@@ -44,7 +44,7 @@
                             @if (!string.IsNullOrEmpty(ProfileImageUri))
                             {
                                 <div class="container-fluid mb-2">
-                                    <img src="@ProfileImageUri" class="img w-100 img-fluid mb-3" />
+                                    <img src="@ProfileImageUri" class="img w-100 img-fluid mb-3 max-height-280" />
                                 </div>
                             }
                             <div class="d-flex">
@@ -233,7 +233,7 @@
                         @if (!string.IsNullOrEmpty(IDImageUri))
                         {
                             <div class="container-fluid mb-2">
-                                <img src="@IDImageUri" class="img w-100 img-fluid mb-3" />
+                                <img src="@IDImageUri" class="img w-100 img-fluid mb-3 max-height-280" />
                             </div>
                         }
                         <div class="d-flex">
