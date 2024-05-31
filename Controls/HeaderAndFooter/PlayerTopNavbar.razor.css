@@ -254,6 +254,10 @@
 
     .navbar-expand-lg .navbar-nav {
         align-items: center;
+        justify-content: center;
+    }
+    #gpa-logo{
+        display: none !important;
     }
 }
 @media only screen and (max-width: 991px) {
@@ -287,6 +291,9 @@
         z-index: 2;
         position: relative;
         justify-content: center;
+    }
+    #d-gpa-logo{
+        display: none !important;
     }
 
     #user-image {
