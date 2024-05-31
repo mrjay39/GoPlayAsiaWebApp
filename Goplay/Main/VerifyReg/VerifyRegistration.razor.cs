@@ -471,7 +471,7 @@ public partial class VerifyRegistration
     }
     private async Task ValidateStep3()
     {
-        refpopuLoadingpModal = popupModal.Show<PopupLoading>("");
+        //refpopuLoadingpModal = popupModal.Show<PopupLoading>("");
         bool valStep3 = await _verifyRegistrationViewModel.Step3Validation(SignupDTO);
         if (valStep3)
         {

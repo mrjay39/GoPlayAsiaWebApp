@@ -285,7 +285,7 @@
         position: absolute;
         display: inline-flex;
         width: 59px;
-        right: 150px;
+        right: 160px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
@@ -531,11 +531,14 @@
         position: absolute;
         display: inline-flex;
         width: 59px;
-        right: 148px;
+        right: 160px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
         text-decoration: none;
+    }
+    #user-image > img {
+        height: 25px;
     }
 
     .player-chips {
@@ -631,11 +634,14 @@
         position: absolute;
         display: inline-flex;
         width: 59px;
-        right: 125px;
+        right: 140px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
         text-decoration: none;
+    }
+    #user-image > img{
+        height: 25px;
     }
 
     .player-chips {
