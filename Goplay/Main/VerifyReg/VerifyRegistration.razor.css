@@ -158,10 +158,6 @@ img.max-height-280{
     overflow: hidden;
 }
 
-.form-check-input {
-    border: 2px solid;
-}
-
 input.permanentBox[type=checkbox] {
     transform: scale(2);
 }
@@ -219,6 +215,20 @@ input::placeholder { /* Internet Explorer 10-11 */
     padding: 3px;
     border-radius: 3px;
     /*font-weight: 400;*/
+}
+
+.hidden{
+    display: none;
+}
+
+#permanentAddress.form-check-input:focus {
+    box-shadow:inherit;
+}
+
+@media screen and (min-width: 600px) {
+    section{
+        min-height:58rem;
+    }
 }
 
 @media screen and (max-width: 360px) {

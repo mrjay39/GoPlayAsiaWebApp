@@ -6,15 +6,15 @@
 @using GoplayasiaBlazor.Models
 @using GoPlayAsiaWebApp.Goplay.Shared.Popup
 
-<section class="container-fluid pt-5">
-    <div class="transparentBox">
+<section class="container-fluid pt-5 pb-4">
+    <div class="transparentBox container-fluid">
 
         @*=========== Start: Step 1 Account Verification ===========*@
         <EditForm Model="@SignupDTO" OnValidSubmit="@ValidateStep1" autocomplete="off">
             <DataAnnotationsValidator />
             <div class="Step1 box" hidden="@step1">
                 <div class="main">
-                    <h5 class="mb-1 text-center">VERIFICATION</h5>
+                    <h5 class="text-center mt-2 mb-2">VERIFICATION</h5>
                     <div class="form-group m-0">
                         <p class="text-muted">First Name<span class="text-danger">*</span></p>
                         <input class="form-control mt-0" type="text" placeholder="First Name" @bind-value="SignupDTO.FirstName">
@@ -87,7 +87,7 @@
             <DataAnnotationsValidator />
             <div class="Step2 box" hidden="@step2">
                 <div class="main">
-                    <h5 class="text-center">ACCOUNT INFORMATION</h5>
+                    <h5 class="text-center mt-2 mb-2">ACCOUNT INFORMATION</h5>
                 </div>
                 <h6 class="text-light">PERSONAL INFO</h6>
                 <div class="form-group m-0">
@@ -116,6 +116,8 @@
                         </BlazoredTypeahead>
                     </div>
                 </div>
+
+                @*============= Current Address Field =============*@
                 <h6 class="text-muted mt-3">CURRENT ADDRESS</h6>
                 <div class="form-group m-0">
                     <p class="font-weight-bold titleHolder">Home Address <span class="text-danger fw-bold">*</span></p>
@@ -143,9 +145,48 @@
                     <p class="font-weight-bold titleHolder">Province <span class="text-danger fw-bold">*</span></p>
                     <input class="form-control" type="text" disabled value="@SignupDTO.CurrentProvince">
                 </div>
-                <div class="form-group m-0">
+                <div class="form-group mb-3">
                     <p class="font-weight-bold titleHolder">Region <span class="text-danger fw-bold">*</span></p>
                     <input class="form-control" type="text" disabled value="@SignupDTO.CurrentRegion">
+                </div>
+
+                @*============= Permanent Address Field =============*@
+                <h6 class="text-muted mt-3">PERMANENT ADDRESS</h6>
+                <div class="form-group mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="permanentAddress">
+                    <label class="form-check-label btn p-0" for="permanentAddress">Same as Current Address</label>
+                </div>
+                <div class="permanentAddContainer">
+                    <div class="form-group m-0">
+                        <p class="font-weight-bold titleHolder">Home Address <span class="text-danger fw-bold">*</span></p>
+                        <input class="form-control" type="text" placeholder="Home Address" @bind-value="SignupDTO.CurrentStreet">
+                    </div>
+                    <div class="form-group m-0">
+                        <p class="font-weight-bold titleHolder">City/Municipality <span class="text-danger fw-bold">*</span></p>
+                        <div class="citySelector mt-1" style="background-color: white; border-radius: 5px;">
+                            <BlazoredTypeahead SearchMethod="SearchCity" TItem="CityModel" TValue="CityModel" Value="selectedCurrCity" ValueChanged="selectedCurrCityChanged" ValueExpression="@(() => selectedCurrCity)" placeholder="Select Current City">
+                                @*@bind-Value="selectedCurrCity"*@
+                                <SelectedTemplate Context="CurrentCityId">
+                                    @{
+                                        var selectCurrCity = LoadSelCurrCity(CurrentCityId.Id);
+
+                                        <text>@selectCurrCity?.Name</text>
+                                    }
+                                </SelectedTemplate>
+                                <ResultTemplate Context="currentcity">
+                                    @currentcity.Name
+                                </ResultTemplate>
+                            </BlazoredTypeahead>
+                        </div>
+                    </div>
+                    <div class="form-group m-0">
+                        <p class="font-weight-bold titleHolder">Province <span class="text-danger fw-bold">*</span></p>
+                        <input class="form-control" type="text" disabled value="@SignupDTO.CurrentProvince">
+                    </div>
+                    <div class="form-group m-0">
+                        <p class="font-weight-bold titleHolder">Region <span class="text-danger fw-bold">*</span></p>
+                        <input class="form-control" type="text" disabled value="@SignupDTO.CurrentRegion">
+                    </div>
                 </div>
                 @* <======= PREVIOUS & NEXT BUTTON =======*@
                 <div class="prevNext d-flex mt-4">
@@ -167,7 +208,7 @@
             <DataAnnotationsValidator />
             <div class="Step3 box" hidden="@step3">
                 <div class="main">
-                    <h5 class="text-center">ACCOUNT INFORMATION(PROFILE)</h5>
+                    <h5 class="text-center mt-2 mb-2">ACCOUNT INFORMATION(PROFILE)</h5>
                 </div>
                 <div class="form-group mt-2">
                     <p class="text-muted">Nature of Work<span class="text-danger">*</span></p>
@@ -277,3 +318,14 @@
 @code {
     [CascadingParameter] public IModalService Modal { get; set; } = default!;
 }
+ <script>
+        $(document).ready(function() {
+            $('#permanentAddress').on('change', function() {
+                if ($(this).is(':checked')) {
+                    $('.permanentAddContainer').addClass('hidden');
+                } else {
+                    $('.permanentAddContainer').removeClass('hidden');
+                }
+            });
+        });
+    </script>

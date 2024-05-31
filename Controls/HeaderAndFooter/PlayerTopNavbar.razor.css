@@ -240,6 +240,10 @@
     .navbar-expand-lg #settingOffCanvas .nav-item:last-of-type {
         padding-bottom: 0rem;
     }
+
+    .navbar-expand-lg .navbar-nav {
+        align-items: center;
+    }
 }
 
 @media only screen and (max-width:1024px) {
