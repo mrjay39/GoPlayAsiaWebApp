@@ -13,7 +13,7 @@
         <div class="carousel-caption carousel-fade text-center content-mobile">
             <p class="play-btn-container">
                 @* <a class="btn btn-lg btn-warning btn-mobile" href="#">Play Now</a> *@
-                <a href="@_hrefStr" class="btn btn-warning play-btn" @onclick="OpenGameLink">
+                <a class="btn btn-warning play-btn" @onclick="OpenGameLink">
                     <span class="fw-bold">Play Now</span>
                     <div class="arrow">
                         <span></span>
@@ -49,6 +49,10 @@
         if (!user.Identity.IsAuthenticated)
         {
             var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
+        }
+        else
+        {
+            _navigationManager.NavigateTo(_hrefStr);
         }
     }
 }

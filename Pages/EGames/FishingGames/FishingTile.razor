@@ -11,7 +11,7 @@
         <div class="content">
             <div class="subtitle"><h3 class="text-white fw-bold">@_titleStr</h3></div>
             <div class="button button-playNow">
-                <a class="btn btn-warning m-1" href="@_tryoutsHrefStr" @onclick="OpenGameLink">
+                <a class="btn btn-warning m-1" @onclick="OpenGameLink">
                     <span>Play Now</span>
                     <div class="arrow">
                         <span></span>
@@ -63,7 +63,7 @@
         }
         else
         {
-            _navigationManager.NavigateTo(_gameInfoHrefStr);
+            _navigationManager.NavigateTo(_tryoutsHrefStr);
         }
 
     }
