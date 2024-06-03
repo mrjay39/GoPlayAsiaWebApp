@@ -34,14 +34,16 @@
                 }
                 else if (_iCurrentUser.Verified == 0)
                 {
-                    <a href="VerifyReg" class="position-absolute top-0 start-30 badge bg-danger p-2 text-decoration-none btn border-0">
-                        Verify Now!
+                    <a href="VerifyReg" class="position-absolute top-0 start-30 badge bg-danger p-1 text-decoration-none btn border-0 verifying-container">
+                        <i class="fa-solid fa-file-circle-question"></i>
+                        <span>Verify Now!</span>
                     </a>
                 }
                 else if (_iCurrentUser.Verified == 2)
                 {
-                    <a href="VerifyReg" class="position-absolute top-0 start-30 badge bg-warning p-2 text-decoration-none btn border-0">
-                        Pending
+                    <a href="VerifyReg" class="position-absolute top-0 start-30 badge bg-warning p-1 text-decoration-none btn border-0 pending-container text-dark">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Pending</span>
                     </a>
                 }
 
