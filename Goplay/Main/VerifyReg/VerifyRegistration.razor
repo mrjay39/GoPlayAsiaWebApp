@@ -50,11 +50,11 @@
                             <div class="d-flex">
                                 <div class="col text-center">
                                     <label for="profcameraupload" class="form-label btn border-0 p-0 text-dark"><span class="nextBtn p-2"><i class="fa-regular fa-image"></i> From File</span></label>
-                                    <InputFile OnChange="@LoadProfileImage" capture="user" id="profcameraupload" class="sr-only" accept="image/*" />
+                                    <InputFile OnChange="@LoadProfileImage"  id="profcameraupload" class="sr-only" accept="image/*" />
                                 </div>
                                 <div class="col text-center">
                                     <label for="proffileupload" class="form-label btn border-0 p-0 text-dark"><span class="nextBtn p-2"><i class="fa-solid fa-camera"></i> Use Camera</span></label>
-                                    <InputFile OnChange="@LoadProfileImage" class="sr-only" id="proffileupload" accept="image/*" />
+                                    <InputFile OnChange="@LoadProfileImage" capture="user"  class="sr-only" id="proffileupload" accept="image/*" />
                                 </div>
                             </div>
                         </div>
