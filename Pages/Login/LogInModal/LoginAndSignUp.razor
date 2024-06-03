@@ -55,37 +55,3 @@
         _currentComponent = comp;
     }
 }
-@* <script>
-    $(document).ready(function () {
-        $('#signUpTab, #ageConfirmationBtn, #signUpLink').click(function (e) {
-            e.preventDefault();
-            $('#loginTab, #forgotPassTab').removeClass('active');
-            $('#loginPanel, #forgotPassPanel').removeClass('active show');
-            $('#signUpTab').addClass('active');
-            $('#signUpPanel').addClass('active show');
-        });
-
-        $('#loginTab, #loginLink').click(function (e) {
-            e.preventDefault();
-            $('#signUpTab, #forgotPassTab').removeClass('active');
-            $('#signUpPanel, #forgotPassPanel').removeClass('active show');
-            $('#loginTab').addClass('active');
-            $('#loginPanel').addClass('active show');
-        });
-
-        $('#forgotPassPanel').click(function (e) {
-            e.preventDefault();
-            $('#signUpTab, #loginTab').removeClass('active');
-            $('#signUpPanel, #loginPanel').removeClass('active show');
-            $('#forgotPassTab').addClass('active');
-            $('#forgotPassPanel').addClass('active show');
-        });
-
-        $('#logInForm').on('hidden.bs.modal', function (e) {
-            $('#loginTab, #signUpTab, #forgotPassTab').removeClass('active');
-            $('#signUpPanel, #forgotPassPanel').removeClass('active show');
-            $('#loginPanel').addClass('active show');
-            $('#loginTab').addClass('active');
-        });
-    }); 
-</script>*@
