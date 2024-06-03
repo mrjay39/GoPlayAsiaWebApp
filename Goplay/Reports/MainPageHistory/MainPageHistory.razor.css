@@ -1,7 +1,4 @@
-﻿#wallet-headerIcon{
-    padding-top: 50px !important;
-}
-#gameHistory-tab, #statistic-tab{
+﻿#gameHistory-tab, #statistic-tab{
     cursor: pointer;
 }
 #gameHistory-tab.active, #statistic-tab.active {

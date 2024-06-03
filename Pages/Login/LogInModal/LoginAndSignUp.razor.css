@@ -19,8 +19,8 @@
 }
 .modal-bg {
     background-image: url(./img/bg-middle.png),linear-gradient(180deg,#281728 20%,rgba(132,31,53,1) 60%,#101019 100%) !important;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: repeat;
 }
 .font-80{
     font-size: 80px;

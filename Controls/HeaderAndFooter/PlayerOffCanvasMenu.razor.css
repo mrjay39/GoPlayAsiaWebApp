@@ -3,7 +3,17 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+.status-container {
+    display: inline-flex;
+    align-items: center;
+    top: 5px;
+}
+.status-verified {
+    font-size: 18px;
+    font-weight: bold;
+    color: #17fd17;
+    margin-right: 5px;
+}
 .start-25 {
     left: 25%;
 }

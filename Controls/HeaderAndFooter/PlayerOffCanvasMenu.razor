@@ -27,8 +27,9 @@
                 </span> *@
                 @if (_iCurrentUser.Verified == 1)
                 {
-                    <span class="position-absolute top-0 start-25 badge bg-success p-2 text-decoration-none btn border-0">
-                        Verified
+                    <span class="position-absolute status-container start-25 badge">
+                        <span><i class="fa-solid fa-circle-check status-verified"></i></span>
+                        <span>Verified</span>
                     </span>
                 }
                 else if (_iCurrentUser.Verified == 0)
