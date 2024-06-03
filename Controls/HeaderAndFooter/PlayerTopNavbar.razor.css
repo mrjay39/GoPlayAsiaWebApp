@@ -120,7 +120,7 @@
     font-size: 1.1rem;
 }
 .img-logo {
-    width: 65px;
+    width: 55px;
 }
 #user-image{
     display: none;
@@ -195,7 +195,18 @@
     box-sizing: border-box;
 }
 
+@media only screen and (max-width:1024px) {
 
+    .loginAndSignUp, .userDropdown {
+        margin: 10px auto 10px !important;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .player-chips {
+        font-size: 15px;
+    }
+}
 @media (min-width: 992px) {
     .navbar-expand-lg #settingOffCanvas.offcanvas {
         visibility: hidden !important;
@@ -240,12 +251,13 @@
     .navbar-expand-lg #settingOffCanvas .nav-item:last-of-type {
         padding-bottom: 0rem;
     }
-}
 
-@media only screen and (max-width:1024px) {
-
-    .loginAndSignUp, .userDropdown {
-        margin: 10px auto 10px !important;
+    .navbar-expand-lg .navbar-nav {
+        align-items: center;
+        justify-content: center;
+    }
+    #gpa-logo{
+        display: none !important;
     }
 }
 @media only screen and (max-width: 991px) {
@@ -280,12 +292,15 @@
         position: relative;
         justify-content: center;
     }
+    #d-gpa-logo{
+        display: none !important;
+    }
 
     #user-image {
         position: absolute;
         display: inline-flex;
         width: 59px;
-        right: 150px;
+        right: 160px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
@@ -531,11 +546,14 @@
         position: absolute;
         display: inline-flex;
         width: 59px;
-        right: 148px;
+        right: 140px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
         text-decoration: none;
+    }
+    #user-image > img {
+        height: 25px;
     }
 
     .player-chips {
@@ -631,11 +649,14 @@
         position: absolute;
         display: inline-flex;
         width: 59px;
-        right: 125px;
+        right: 140px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
         text-decoration: none;
+    }
+    #user-image > img{
+        height: 25px;
     }
 
     .player-chips {

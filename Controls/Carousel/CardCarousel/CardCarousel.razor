@@ -1,0 +1,54 @@
+﻿<div id="card-carousel" class="carousel slide carousel-fade" data-bs-touch="true" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#card-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#card-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#card-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#card-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#card-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#card-carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        @*  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button> *@
+    </div>
+    <div class="carousel-inner">
+        <img src="C:\Users\Jay\AppData\Local\Temp\d8pfb25s.bmp" />
+        <CardCarouselTile _desktopImgStr="./img/carousel/Cards/d_tongitsGo.png"
+                         _classNameStr="active"
+                          _mobileImgStr="./img/carousel/Cards/m_tongitsGo.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/199?showGame=true" />
+
+        <CardCarouselTile _desktopImgStr="./img/carousel/Cards/d_blackJack.png"
+                          _mobileImgStr="./img/carousel/Cards/m_blackJack.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/219?showGame=true" />
+
+        <CardCarouselTile _desktopImgStr="./img/carousel/Cards/d_baccarat.png"
+                          _mobileImgStr="./img/carousel/Cards/m_baccarat.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/152?showGame=true" />
+
+        <CardCarouselTile _desktopImgStr="./img/carousel/Cards/d_ak47.png"
+                          _mobileImgStr="./img/carousel/Cards/m_ak47.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/75?showGame=true" />
+
+        <CardCarouselTile _desktopImgStr="./img/carousel/Cards/d_studPoker.png"
+                          _mobileImgStr="./img/carousel/Cards/m_studPoker.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/231?showGame=true" />
+                         
+        <CardCarouselTile _desktopImgStr="./img/carousel/Cards/d_ludoQuick.png"
+                          _mobileImgStr="./img/carousel/Cards/m_ludoQuick.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/163?showGame=true" />
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#card-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#card-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            document.querySelector('.carousel-control-next').click();
+        }, 5000);
+    });
+</script>

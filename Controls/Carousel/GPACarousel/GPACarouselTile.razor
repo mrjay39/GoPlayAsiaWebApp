@@ -1,0 +1,59 @@
+﻿@using GoPlayAsiaWebApp.Controls.GameInfo
+@using GoPlayAsiaWebApp.Pages.Login.LogInModal
+@using System.Security.Claims
+@using GoPlayAsiaWebApp.Controls.MostPlayedGames
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IModalService ModalService
+@inject NavigationManager _navigationManager
+<div class="carousel-item @_classNameStr">
+    <div class="text-center carousel-fade">
+        <img src="@_desktopImgStr" class="img-fluid img-desktop" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" />
+        <img src="@_mobileImgStr" class="img-fluid img-mobile" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" />
+    </div>
+    <div class="container">
+        <div class="carousel-caption carousel-fade text-center content-mobile">
+            <p class="play-btn-container">
+                @* <a class="btn btn-lg btn-warning btn-mobile" href="#">Play Now</a> *@
+                <a href="@_hrefStr" class="btn btn-warning play-btn" @onclick="OpenGameLink">
+                    <span class="fw-bold">Play Now</span>
+                    <div class="arrow">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public string _desktopImgStr { get; set; }
+    [Parameter]
+    public string _mobileImgStr { get; set; }
+    [Parameter]
+    public string _classNameStr { get; set; }
+    [Parameter]
+    public string _gameNameStr { get; set; }
+    [Parameter]
+    public string _headerStr { get; set; }
+    [Parameter]
+    public string _hrefStr { get; set; }
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
+    private ClaimsPrincipal user;
+
+    private bool isActive = false;
+
+    //this function when the user not login using game option in the mostplayedgames
+    private async void OpenGameLink()
+    {
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        if (!user.Identity.IsAuthenticated)
+        {
+            var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
+        }
+    }
+}

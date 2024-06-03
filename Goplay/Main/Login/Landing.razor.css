@@ -1,8 +1,8 @@
 ﻿section {
-    height: 100vh;
-    padding-bottom: 50px;
-    background: rgb(88,14,15);
-    background: linear-gradient(0deg, rgba(88,14,15,1) 62%, rgba(26,8,8,1) 98%);
+    background-image: url(/img/bg-middle.png),linear-gradient(180deg,#281728 20%,rgba(132,31,53,1) 60%,#101019 100%) !important;
+    background-size: auto;
+    background-repeat: repeat;
+    min-height: 100vh;
 }
 .container {
    
@@ -1776,7 +1776,7 @@
 }
 
 .verifiedText {
-    color: #e2a533;
+    color: #ffef02;
     font-weight: 600;
     font-size: 20px;
 }

@@ -1,0 +1,11 @@
+﻿#arcade-carousel .carousel-indicators{
+    z-index: 1;
+}
+#arcade-carousel .carousel-indicators > button {
+    width: 10px !important;
+    display: inline-flex;
+    border-radius: 50%;
+    height: 10px !important;
+    position: relative;
+    top: 43px;
+}

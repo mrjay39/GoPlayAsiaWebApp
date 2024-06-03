@@ -1,10 +1,13 @@
 ﻿@page "/fishingAndArcadeGames"
+@using GoPlayAsiaWebApp.Controls.Carousel.FishingCarousel
 @using GoPlayAsiaWebApp.Controls.GameLinkHeader
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames
 @using GoPlayAsiaWebApp.Pages.GPAGames
 <PageTitle>GoPlayAsia: Fishing and Arcade Games </PageTitle>
 
 <div id="fishingGames" class="container-fluid p-0 marketing">
+    <FishingCarousel />
+
     <GameLinkHeader />
 
     <div class="container">

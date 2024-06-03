@@ -35,6 +35,9 @@ public partial class LoginForm
     [Inject] public static IJSRuntime JSRuntimePWA { get; set; }
     [Inject] IModalService ModalService { get; set; }
     [Parameter] public string _gameInfoHrefStr { get; set; } = string.Empty;
+
+    [Parameter]
+    public EventCallback<int> OnForgotPassword { get; set; }
     #endregion
 
 
@@ -222,10 +225,12 @@ public partial class LoginForm
                     refpopuLoadingpModal.Close();
                     toastService.ShowError("Login failed. Try again later");
                     islogginin = false;
+                    agreeToTerms = false;
                     return;
                 }
                 if (!response.Success)
                 {
+                    agreeToTerms = false;
                     if (response.Message.Contains("logged in to another device"))
                     {
 

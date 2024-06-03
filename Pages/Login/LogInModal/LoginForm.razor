@@ -27,7 +27,7 @@
             <div class="content text-center">
                 <ul class="nav justify-content-center" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a id="forgotPassTab" class="text-decoration-none" data-bs-toggle="tab" href="#forgotPassPanel" role="tab" aria-controls="forgotPasswordForm" aria-selected="false" style="cursor: pointer;">Forgot Password</a>
+                        <a id="forgotPassTab" class="text-decoration-none" data-bs-toggle="tab" @onclick:preventDefault @onclick='(() => callForgotPassword(3))' role="tab" aria-controls="forgotPasswordForm" aria-selected="false" style="cursor: pointer;">Forgot Password</a>
                     </li>
                 </ul>
             </div>
@@ -44,6 +44,15 @@
 </div>
 @code {
     [CascadingParameter] public IModalService popupLoadingModal { get; set; }
+
+    private async Task callForgotPassword(int comp)
+    {
+        if (OnForgotPassword.HasDelegate)
+        {
+            await OnForgotPassword.InvokeAsync(3); // Example int value
+        }
+        
+    }
 
     private async Task AgreeToTerms(bool value)
     {

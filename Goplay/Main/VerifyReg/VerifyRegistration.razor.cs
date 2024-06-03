@@ -49,9 +49,10 @@ public partial class VerifyRegistration
     private bool step2 { get; set; } = true;
     private bool step3 { get; set; } = true;
 
-    private string? ProfileImageUri = "/img/verify-profile.jpg";
-    private string? IDImageUri = "/img/verify-government.jpg";
-
+    //private string? ProfileImageUri = "/img/verify-profile.jpg";
+    //private string? IDImageUri = "/img/verify-government.jpg";
+    private string? ProfileImageUri = "";
+    private string? IDImageUri = "";
 
     [Parameter]
     public IEnumerable<CityModel> CityList { get; set; }
@@ -254,7 +255,7 @@ public partial class VerifyRegistration
         step2 = true;
         step3 = true;
     }
-    private async Task ValdiateStep1()
+    private async Task ValidateStep1()
     {
         refpopuLoadingpModal = popupModal.Show<PopupLoading>("");
         bool valStep1 = await _verifyRegistrationViewModel.Step1Validation(SignupDTO);
@@ -470,7 +471,7 @@ public partial class VerifyRegistration
     }
     private async Task ValidateStep3()
     {
-        refpopuLoadingpModal = popupModal.Show<PopupLoading>("");
+        //refpopuLoadingpModal = popupModal.Show<PopupLoading>("");
         bool valStep3 = await _verifyRegistrationViewModel.Step3Validation(SignupDTO);
         if (valStep3)
         {

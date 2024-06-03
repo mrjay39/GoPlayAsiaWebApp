@@ -1,4 +1,10 @@
-﻿.Step1, .Step2, .Step3, .Step4, .Step5, .Step6 {
+﻿section {
+    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#000 100%) !important;
+    background-size: auto;
+    min-height: 51rem;
+    background-repeat: repeat;
+}
+.Step1, .Step2, .Step3, .Step4, .Step5, .Step6 {
     max-width: 640px;
     margin: 0 auto;
     padding: 10px;
@@ -14,9 +20,9 @@
 
 .titleHolder {
     height: 18px;
-    color: #e6b90c;
+    color: #5d5d5d;
     font-weight: 400;
-    margin-bottom: 0;
+    margin-bottom: 3px;
     font-size: 14px;
 }
 
@@ -56,23 +62,21 @@ p {
 .form-control {
     margin-bottom: 8px;
     border-radius: 5px;
-    height: 31px;
-    border: 1px solid #380c16;
 }
 
 .nextBtn {
-    background-color: #e6a50c;
+    background: #6e182c;
     color: white;
     padding: 10px 20px;
     border: none;
-    font-weight: 400;
+    font-weight: bold;
     border-radius: 3px;
     margin-right: 0;
 }
 
 .LoginPage {
     text-decoration: underline;
-    color: #f7b700;
+    color: #6e182c;
     padding: 0;
     font-weight: 400;
     border: none;
@@ -108,10 +112,13 @@ p {
 }
 
 h5 {
-    color: #f7b700;
+    color: #6e182c;
     font-weight: 600;
     margin-bottom: 20px;
     font-size: 16px;
+}
+img.max-height-280{
+    max-height: 280px;
 }
 
 .dateOfBirth {
@@ -120,14 +127,8 @@ h5 {
     font-size: 16px;
 }
 
-.container-fluid {
-    background-color: #120307;
-    min-height: 100vh;
-    padding: 10px 20px 20px 20px;
-}
-
 .transparentBox {
-    background-color: #491320;
+    background-color: #fff;
     border-radius: 15px;
     padding: 0;
     max-width: 640px;
@@ -149,16 +150,12 @@ h5 {
 
 }
 
-    .profilePic img, .govId img {
-        width: 100%; /* or any custom size */
-        height: 100%;
-        object-fit: contain;
-        overflow: auto;
-        overflow: hidden;
-    }
-
-.form-check-input {
-    border: 2px solid;
+.profilePic img, .govId img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    overflow: auto;
+    overflow: hidden;
 }
 
 input.permanentBox[type=checkbox] {
@@ -201,7 +198,7 @@ input.permanentBox2[type=checkbox] {
 }
 
 input::placeholder { /* Internet Explorer 10-11 */
-    color: #380c16;
+    color: #6c757d;
     /*   font-weight: 600;*/
 }
 
@@ -220,7 +217,24 @@ input::placeholder { /* Internet Explorer 10-11 */
     /*font-weight: 400;*/
 }
 
-@media {
+.hidden{
+    display: none;
+}
+
+#permanentAddress.form-check-input:focus {
+    box-shadow:inherit;
+}
+
+@media screen and (min-width: 600px) {
+    section{
+        min-height:58rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .nextBtn{
+        font-size: 13px;
+    }
 }
 
 .innerContainer {

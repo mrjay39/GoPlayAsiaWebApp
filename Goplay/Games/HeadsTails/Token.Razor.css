@@ -60,6 +60,7 @@ img.selectedToken {
     font-size: 18px;
     font-weight: 600;
     animation: activeBet 1s infinite;
+    margin-right: 7px;
 }
 
 @keyframes activeBet {
@@ -80,6 +81,7 @@ img.selectedToken {
     border-radius: 50px;
     font-size: 18px;
     font-weight: 600;
+    margin-right: 7px;
 }
 
 .newBackBtn {

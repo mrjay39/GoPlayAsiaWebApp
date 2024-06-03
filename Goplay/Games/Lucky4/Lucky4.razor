@@ -8,7 +8,8 @@
 
 @implements IAsyncDisposable
 
-<GameHeader StreamId="@iLucky4Model.StreamId"
+<div class="container-fluid p-0" style="min-height: 100vh;">
+    <GameHeader StreamId="@iLucky4Model.StreamId"
             RoundTimer="@iLucky4Model.RoundTimer"
             RoundStatusString="@iLucky4Model.RoundStatusString"
             RoundNumber="@iLucky4Model.RoundNumber"
@@ -43,4 +44,5 @@
     <CurrentPrevBets L4UserBets="@iLucky4Model.UserBets" RoundStatusString="@iLucky4Model.RoundStatusString" L4PreviousBets="@iLucky4Model.PreviousBets" CurrView="@iLucky4Model.CurrView" />
 
     <Lucky4Trends TrendsDisplay="@iLucky4Model.TrendsDisplay" RoundStatusString="@iLucky4Model.RoundStatusString" GameResultString="@iLucky4Model.GameResult" />
+</div>
 </div>

@@ -1,7 +1,8 @@
 ﻿@inject GameHeaderViewModel gameHeaderViewModel
 @using GoPlayAsiaWebApp.Goplay.Shared.Popup
 @using GoPlayAsiaWebApp.Goplay.ViewModels;
-
+@using GoplayasiaBlazor.Core.Global.Interface
+@inject ICurrentUser _iCurrentUser
 
 <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="settingOffCanvas" aria-labelledby="settingOffCanvasLabel">
     <div class="offcanvas-header">
@@ -22,8 +23,28 @@
                 <span class="ms-3"> Profile</span>
                 </a> *@
                 @* <span data-bs-toggle="offcanvas" data-bs-target="#account-verification" aria-controls="account-verification" class="position-absolute top-0 start-30 badge bg-danger p-2 text-decoration-none btn border-0">
-                    Verify Now!
+                Verify Now!
                 </span> *@
+                @if (_iCurrentUser.Verified == 1)
+                {
+                    <span class="position-absolute status-container start-25 badge">
+                        <span><i class="fa-solid fa-circle-check status-verified"></i></span>
+                        <span>Verified</span>
+                    </span>
+                }
+                else if (_iCurrentUser.Verified == 0)
+                {
+                    <a href="VerifyReg" class="position-absolute top-0 start-30 badge bg-danger p-2 text-decoration-none btn border-0">
+                        Verify Now!
+                    </a>
+                }
+                else if (_iCurrentUser.Verified == 2)
+                {
+                    <a href="VerifyReg" class="position-absolute top-0 start-30 badge bg-warning p-2 text-decoration-none btn border-0">
+                        Pending
+                    </a>
+                }
+
             </li>
             @* <li class="nav-item">
             <a class="nav-link fw-bold" href="#">
@@ -31,19 +52,20 @@
             <span class="ms-3"> VIP Level</span>
             </a>
             </li> *@
-            <li class="nav-item" data-bs-dismiss="offcanvas">
-                <a class="nav-link fw-bold" href="/Credit/withdraw">
-                    <span><i class="fa-solid fa-credit-card"></i></span>
-                    <span class="ms-3"> Withdraw/Cashout</span>
-                </a>
-            </li>
-            <li class="nav-item" data-bs-dismiss="offcanvas">
-                <a class="nav-link fw-bold" href="credit">
+            <li class="nav-item cashIn" data-bs-dismiss="offcanvas">
+                <a class="nav-link fw-bold cashIn" href="Credit">
                     <span><i class="fa-solid fa-money-bill-transfer"></i></span>
-                    <span class="ms-3"> Cash-In / Deposit</span>
+                    <span class="ms-3"> Cash-In</span>
                 </a>
             </li>
             <li class="nav-item" data-bs-dismiss="offcanvas">
+                <a class="nav-link fw-bold cashOut" href="/Credit/withdraw">
+                    <span><i class="fa-solid fa-credit-card"></i></span>
+                    <span class="ms-3"> Cashout</span>
+                </a>
+            </li>
+
+            <li class="nav-item notification" data-bs-dismiss="offcanvas">
                 <a class="nav-link fw-bold" href="/notification">
                     <span><i class="fa-solid fa-envelope"></i></span>
                     <span class="ms-3"> Notification</span>
@@ -76,8 +98,8 @@
             </li> *@
         </ul>
         @* <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-success" type="submit">Search</button>
         </form> *@
     </div>
 </div>
@@ -89,6 +111,33 @@
         $('[data-bs-target="#change-password"]').on('click', function () {
             $('#change-password.offcanvas.show #edit-profile-form').addClass('hide');
         });
+
+        $('#settingOffCanvas .notification, #settingOffCanvas .cashIn, #settingOffCanvas .cashOut').click(function (e) {
+            $('#navBarBottom a').removeClass('active');
+            $('#wallet-headerIcon a').removeClass('active');
+
+            // Handle navBarBottom active class
+            if ($(this).hasClass('notification')) {
+                $('#navBarBottom .notification').addClass('active');
+            } else {
+                $('#navBarBottom .wallet').addClass('active');
+            }
+
+            // Handle wallet-headerIcon active class
+            if ($(this).hasClass('cashIn')) {
+                $('#wallet-headerIcon a.cashIn').addClass('active');
+            } else if ($(this).hasClass('cashOut')) {
+                $('#wallet-headerIcon a.cashOut').addClass('active');
+            }
+        });
+
+        // // Force to Reload the Page
+        // document.querySelectorAll('a.cashIn, a.cashOut').forEach(link => {
+        //     link.addEventListener('click', function (event) {
+        //         event.preventDefault();
+        //         window.location.href = this.href;
+        //     });
+        // });
     });
 </script>
 @code {

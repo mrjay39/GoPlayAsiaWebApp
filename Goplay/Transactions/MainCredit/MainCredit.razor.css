@@ -8,8 +8,9 @@
 
 .marketing {
     background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#101019 100%) !important;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: auto;
+    background-repeat: repeat;
+    min-height: 58rem;
 }
 
 .nav-link:hover, .nav-link:focus {
@@ -34,7 +35,7 @@
     }
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 991px) {
     .wallet-cardContainer {
         width: 6.5rem;
     }
@@ -48,21 +49,7 @@
     }
 }
 
-@media screen and (max-width: 414px) {
-    .wallet-cardContainer {
-        width: 6.5rem;
-    }
-
-    .wallet-sub {
-        font-size: 13px;
-    }
-
-    .payment-select-wrapper {
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 360px) {
     .wallet-cardContainer {
         width: 5.5rem;
     }

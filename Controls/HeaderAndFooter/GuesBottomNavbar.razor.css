@@ -49,25 +49,43 @@
     display: inline-block;
     position: relative;
 }
+#navBarBottom  a.active{
+    color: gold !important;
+}
 
 .gpa-btm-icon {
     background: url('./img/GPA-btm-icon.svg') center center no-repeat;
+}
+#navBarBottom a.active .gpa-btm-icon {
+    background: url('./img/GPA-btm-icon-active.svg') center center no-repeat;
 }
 
 .slot-btm-icon {
     background: url('./img/slot-btm-icon.svg') center center no-repeat;
 }
+#navBarBottom a.active .slot-btm-icon {
+    background: url('./img/slot-btm-icon-active.svg') center center no-repeat !important;
+}
 
 .card-btm-icon {
     background: url('./img/card-btm-icon.svg') center center no-repeat;
+}
+#navBarBottom a.active .card-btm-icon {
+    background: url('./img/card-btm-icon-active.svg') center center no-repeat;
 }
 
 .fishing-btm-icon {
     background: url('./img/fishing-btm-icon.svg') center center no-repeat;
 }
+#navBarBottom a.active .fishing-btm-icon {
+    background: url('./img/fishing-btm-icon-active.svg') center center no-repeat !important;
+}
 
 .arcade-btm-icon {
     background: url('./img/arcade-btm-icon.svg') center center no-repeat;
+}
+#navBarBottom a.active .arcade-btm-icon {
+    background: url('./img/arcade-btm-icon-active.svg') center center no-repeat !important;
 }
 
 .history-btm-icon {
@@ -85,8 +103,12 @@
 .setting-btm-icon {
     background: url('./img/setting-btm-icon.svg') center center no-repeat;
 }
+#navBarBottom a:focus .setting-btm-icon {
+    background: url('./img/setting-btm-icon-active.svg') center center no-repeat !important;
+}
 
-.gpa-btm-icon, .slot-btm-icon, .card-btm-icon, .fishing-btm-icon, .arcade-btm-icon, .history-btm-icon, .wallet-btm-icon, .inbox-btm-icon, .setting-btm-icon {
+.gpa-btm-icon, .slot-btm-icon, .card-btm-icon, .fishing-btm-icon, .arcade-btm-icon, .history-btm-icon, .wallet-btm-icon, .inbox-btm-icon, .setting-btm-icon,
+#navBarBottom a.active .slot-btm-icon, #navBarBottom a.active .card-btm-icon, #navBarBottom a.active .arcade-btm-icon, #navBarBottom a.active .gpa-btm-icon, #navBarBottom a.active .fishing-btm-icon {
     background-size: 100% 100% !important;
     top: 0;
 }

@@ -1,0 +1,54 @@
+﻿<div id="fishing-carousel" class="carousel slide carousel-fade" data-bs-touch="true" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#fishing-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#fishing-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#fishing-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#fishing-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#fishing-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#fishing-carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        @*  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button> *@
+    </div>
+    <div class="carousel-inner">
+        <img src="C:\Users\Jay\AppData\Local\Temp\d8pfb25s.bmp" />
+        <FishingCarouselTile _desktopImgStr="./img/carousel/Fishing/d_happyFishing.png"
+                         _classNameStr="active"
+                             _mobileImgStr="./img/carousel/Fishing/m_happyFishing.png"
+                            _hrefStr="https://jiligames.com/PlusIntro/82?showGame=true" />
+
+        <FishingCarouselTile _desktopImgStr="./img/carousel/Fishing/d_megaFishing.png"
+                          _mobileImgStr="./img/carousel/Fishing/m_megaFishing.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/74?showGame=true" />
+
+        <FishingCarouselTile _desktopImgStr="./img/carousel/Fishing/d_dragonTreasure.png"
+                             _mobileImgStr="./img/carousel/Fishing/m_dragonTreasure.png"
+                             _hrefStr="https://jiligames.com/PlusIntro/46?showGame=true" />
+
+        <FishingCarouselTile _desktopImgStr="./img/carousel/Fishing/d_crazyHunter.png"
+                             _mobileImgStr="./img/carousel/Fishing/m_crazyHunter.png"
+                             _hrefStr="https://jiligames.com/PlusIntro/92?showGame=true" />
+
+        <FishingCarouselTile _desktopImgStr="./img/carousel/Slot/d_superAce.png"
+                             _mobileImgStr="./img/carousel/Fishing/m_royalFishing.png"
+                             _hrefStr="https://jiligames.com/PlusIntro/1?showGame=true" />
+                         
+        <FishingCarouselTile _desktopImgStr="./img/carousel/Fishing/d_secretTreasure.png"
+                             _mobileImgStr="./img/carousel/Fishing/m_secretTreasure.png"
+                             _hrefStr="https://jiligames.com/PlusIntro/78?showGame=true" />
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#fishing-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#fishing-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            document.querySelector('.carousel-control-next').click();
+        }, 5000);
+    });
+</script>

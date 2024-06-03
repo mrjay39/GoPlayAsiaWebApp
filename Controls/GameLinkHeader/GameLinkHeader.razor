@@ -1,6 +1,6 @@
-﻿<div class="container pt-5">
-    <h2 class="text-white fw-bold mt-5">Game Categories</h2>
-    <h5 class="text-muted"> Navigating the World of Gaming Genres</h5>
+﻿<div class="container pt-4">
+    <h2 class="text-white fw-bold mt-3">Game Categories</h2>
+    <h6 class="text-muted"> Navigating the World of Gaming Genres</h6>
     <div id="link-header" class="pb-2 gameOverflow-x">
         <div class="row justify-content-center">
             <GameLinkHeaderTile _gameHrefStr="GoPlayAsiaGames"
@@ -30,3 +30,11 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('#link-header a').click(function (e) {
+            $('#navBarBottom a').removeClass('active');
+
+        });
+    });
+</script>

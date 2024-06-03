@@ -1,0 +1,54 @@
+﻿<div id="slot-carousel" class="carousel slide carousel-fade" data-bs-touch="true" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#slot-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#slot-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#slot-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#slot-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#slot-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#slot-carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        @*  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button> *@
+    </div>
+    <div class="carousel-inner">
+        <img src="C:\Users\Jay\AppData\Local\Temp\d8pfb25s.bmp" />
+        <SlotCarouselTile _desktopImgStr="./img/carousel/Slot/d_monkeyFortune.png"
+                         _classNameStr="active"
+                          _mobileImgStr="./img/carousel/Slot/m_monkeyFortune.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/303?showGame=true" />
+
+        <SlotCarouselTile _desktopImgStr="./img/carousel/Slot/d_devilFire.png"
+                          _mobileImgStr="./img/carousel/Slot/m_devilFire.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/193?showGame=true" />
+
+        <SlotCarouselTile _desktopImgStr="./img/carousel/Slot/d_samba.png"
+                          _mobileImgStr="./img/carousel/Slot/m_samba.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/136?showGame=true" />
+
+        <SlotCarouselTile _desktopImgStr="./img/carousel/Slot/d_thorx.png"
+                          _mobileImgStr="./img/carousel/Slot/m_thorx.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/130?showGame=true" />
+
+        <SlotCarouselTile _desktopImgStr="./img/carousel/Slot/d_superAce.png"
+                          _mobileImgStr="./img/carousel/Slot/m_superAce.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/49?showGame=true" />
+                         
+        <SlotCarouselTile _desktopImgStr="./img/carousel/Slot/d_superRion.png"
+                          _mobileImgStr="./img/carousel/Slot/m_superRion.png"
+                          _hrefStr="https://jiligames.com/PlusIntro/100?showGame=true" />
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#slot-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#slot-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            document.querySelector('.carousel-control-next').click();
+        }, 5000);
+    });
+</script>

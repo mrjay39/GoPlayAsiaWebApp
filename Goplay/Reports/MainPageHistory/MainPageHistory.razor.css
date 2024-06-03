@@ -1,11 +1,14 @@
-﻿#wallet-headerIcon{
-    padding-top: 100px !important;
-}
-#gameHistory-tab, #statistic-tab{
+﻿#gameHistory-tab, #statistic-tab{
     cursor: pointer;
 }
 #gameHistory-tab.active, #statistic-tab.active {
     border-bottom: 2px solid #ff6a00 !important;
+}
+.marketing {
+    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#101019 100%) !important;
+    background-size: auto;
+    background-repeat: no-repeat;
+    min-height: 51rem;
 }
 
 

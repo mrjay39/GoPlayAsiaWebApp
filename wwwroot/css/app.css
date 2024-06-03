@@ -2,10 +2,13 @@
     font-family: Open Sans,Oswald,Arial,sans-serif !important;
 }
 main {
-    background-image: url(../img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#101019 100%) !important;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height:100vh;
+    background-image: url(/img/bg-middle.png),linear-gradient(180deg,#281728 20%,rgba(132,31,53,1) 60%,#101019 100%) !important;
+    background-size: auto;
+    background-repeat: repeat;
+    min-height: auto;
+}
+header{
+    height: 50px;
 }
 
 h1:focus {
@@ -85,14 +88,15 @@ a, .btn-link {
 
 .blazored-typeahead__results {
     background: rgb(40, 40, 40) !important;
-    border: 1px solid #4b4a4a !important;
+    border: 1px solid #bfbfbf !important;
 }
 .blazored-typeahead__result,
 .blazored-typeahead__notfound,
 .blazored-typeahead__results-help-template,
 .blazored-typeahead__results-header,
 .blazored-typeahead__results-footer {
-    border: 1px solid #4b4a4a !important;
+    border: 1px solid #bfbfbf !important;
+    color: #ffffff;
 }
 .blazored-typeahead__active-item,
 .blazored-typeahead__result:hover,
@@ -101,10 +105,10 @@ a, .btn-link {
 .blazored-typeahead__input-icon:hover {
     background-color: rgb(238, 160, 11) !important;
     color: black !important;
-    border: 1px solid #4b4a4a !important;
+    border: 1px solid #bfbfbf !important;
 }
 .blazored-typeahead {
-    border: 1px solid #4b4a4a !important;
+    border: 1px solid #bfbfbf !important;
 }
 
 .loading-progress {
@@ -182,14 +186,14 @@ code {
 }
 
 /*================== Start: Thumbnail change into one line ==============*/
-@media only screen and (min-width: 1081px) {
+/*@media only screen and (min-width: 1081px) {
     #feat-games.gameOverflow-x, #mostPlayedGames.gameOverflow-x, #link-header.gameOverflow-x, #arcade.gameOverflow-x {
-        overflow-x: inherit !important;
+        overflow-x: o;
     }
-}
+}*/
 
 .gameOverflow-x {
-    overflow-x: auto;
+    overflow-x: auto !important;
     padding-bottom: 0 !important;
     scrollbar-width: thin;
 }

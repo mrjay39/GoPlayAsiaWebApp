@@ -7,7 +7,8 @@
 @implements IAsyncDisposable
 
 
-<GameHeader StreamId="@go12Model.StreamId"
+<div class="container-fluid p-0" style="min-height: 100vh;">
+    <GameHeader StreamId="@go12Model.StreamId"
             RoundTimer="@go12Model.RoundTimer"
             RoundStatusString="@go12Model.RoundStatusString"
             RoundNumber="@go12Model.RoundNumber"
@@ -97,6 +98,7 @@
 <Go12Trends PayoutTrendsDisplay="@go12Model.PayoutTrendsDisplay"
             OddsTrendsDisplay="@go12Model.OddsTrendsDisplay" />
             <div class="pb-5 mb-3"></div>
+</div>
 @code {
 
 }
