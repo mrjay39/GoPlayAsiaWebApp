@@ -12,23 +12,33 @@
                     <div class="col p-2">
                         <ul class="nav nav-tabs justify-content-center pt-3" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="loginTab" data-bs-toggle="tab" href="#loginPanel" role="tab" aria-controls="loginPanel" aria-selected="true">
+                                <a class="nav-link active" id="loginTab" data-bs-toggle="tab" href="#loginPanel" role="tab" aria-controls="loginPanel" aria-selected="true" @onclick:preventDefault @onclick='(() => setComponent(1))'>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                     <span>Login</span>
                                 </a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="signUpTab" data-bs-toggle="tab" href="#signUpPanel" role="tab" aria-controls="signUpPanel" aria-selected="false">
+                                <a class="nav-link" id="signUpTab" data-bs-toggle="tab" href="#signUpPanel" role="tab" aria-controls="signUpPanel" aria-selected="false"
+                                @onclick:preventDefault @onclick='(() => setComponent(2))'>
                                     <i class="fa-solid fa-user-plus"></i>
                                     <span>Sign Up</span>
                                 </a>
                             </li>
-                            
+
                         </ul>
                         <div class="tab-content pt-4" id="tab-content">
-                            <LoginForm />
-                            <Signup/>
-                            <ForgotPassword />
+                            @if (_currentComponent == 1)
+                            {
+                                <LoginForm OnForgotPassword="setComponent" />
+                            }
+                            @if (_currentComponent == 2)
+                            {
+                                <Signup />
+                            }
+                            @if (_currentComponent == 3)
+                            {
+                                <ForgotPassword  />
+                            }
                             @* <SignUpForm /> *@
                         </div>
                     </div>
@@ -37,8 +47,15 @@
         </div>
     </div>
 </div>
+@code {
+    public int _currentComponent { get; set; } = 1;
 
-<script>
+    public void setComponent(int comp)
+    {
+        _currentComponent = comp;
+    }
+}
+@* <script>
     $(document).ready(function () {
         $('#signUpTab, #ageConfirmationBtn, #signUpLink').click(function (e) {
             e.preventDefault();
@@ -63,12 +80,12 @@
             $('#forgotPassTab').addClass('active');
             $('#forgotPassPanel').addClass('active show');
         });
-        
+
         $('#logInForm').on('hidden.bs.modal', function (e) {
             $('#loginTab, #signUpTab, #forgotPassTab').removeClass('active');
             $('#signUpPanel, #forgotPassPanel').removeClass('active show');
             $('#loginPanel').addClass('active show');
             $('#loginTab').addClass('active');
         });
-    });
-</script>
+    }); 
+</script>*@
