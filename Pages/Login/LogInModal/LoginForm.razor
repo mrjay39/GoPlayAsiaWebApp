@@ -34,13 +34,6 @@
         </div>
         <ValidationSummary />
     </EditForm>
-    <div class="d-flex">
-        <p class="text-center w-100 mb-4 mt-3">
-            <span class="text-white">Not a member?</span>
-            @* <a id="signUpLink" class="" href="#signUpPanel" style="cursor: pointer;">&nbsp;Sign Up</a> *@
-            <a id="signUpLink" class="text-decoration-none" href="/signup" style="cursor: pointer;">&nbsp;Sign Up</a>
-        </p>
-    </div>
 </div>
 @code {
     [CascadingParameter] public IModalService popupLoadingModal { get; set; }
