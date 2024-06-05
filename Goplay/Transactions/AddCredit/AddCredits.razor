@@ -36,7 +36,7 @@
     <!-- CASH IN FORM -->
     <!-- UPAY -->
     @* <form hidden="@hideUBAddCredit"> *@
-    <form>
+    <form hidden ="@hideUBAddCredit">
 
         <!-- DEFAULT AMOUNT -->
         <TopupDefaultAmount OnClickCallback="@(() => UpdateState())"/>
@@ -45,6 +45,7 @@
         <div class="form-group pesoContainer mb-3">
             <input class="form-control pl-4 input-lg" type="number" placeholder="Input Other Amount (@($"{String.Format("{0:#,##0.#}", _mainCreditsViewModel.TopupMinAmount)} - {String.Format("{0:#,##0.#}", _mainCreditsViewModel.TopupMaxAmount)}"))" @bind-value="_mainCreditsViewModel.TopupUBAmount" onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
         </div>
+
 
         <!-- APPLICABLE VOUCHER -->
         @if (_mainCreditsViewModel.activeVoucher is not null)
