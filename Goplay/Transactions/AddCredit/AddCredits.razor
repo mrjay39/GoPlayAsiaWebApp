@@ -33,59 +33,48 @@
         } *@
     </div>
 
-    <!-- CASH IN FORM -->
-    <!-- UPAY -->
+    @*============= CASH IN FORM =============*@
     @* <form hidden="@hideUBAddCredit"> *@
     <form hidden ="@hideUBAddCredit">
 
-        <!-- DEFAULT AMOUNT -->
+        @*============= DEFAULT AMOUNT =============*@
         <TopupDefaultAmount OnClickCallback="@(() => UpdateState())"/>
-
-        <!-- AMOUNT -->
         <div class="form-group pesoContainer mb-3">
             <input class="form-control pl-4 input-lg" type="number" placeholder="Input Other Amount (@($"{String.Format("{0:#,##0.#}", _mainCreditsViewModel.TopupMinAmount)} - {String.Format("{0:#,##0.#}", _mainCreditsViewModel.TopupMaxAmount)}"))" @bind-value="_mainCreditsViewModel.TopupUBAmount" onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
         </div>
 
-
-        <!-- APPLICABLE VOUCHER -->
+        @*============= APPLICABLE VOUCHER =============*@
         @if (_mainCreditsViewModel.activeVoucher is not null)
         {
             <Voucher activeVoucher=_mainCreditsViewModel.activeVoucher Amount=@(_mainCreditsViewModel.TopupUBAmount is null ? 0 : _mainCreditsViewModel.TopupUBAmount.Value) />
         }
-
-        <!-- SUBMIT BUTTON -->
         <input class="addCredit-submit btn mb-2" type="button" @onclick="RequestTopupUBCredit" value="Submit" />
     </form>
 
-    <!-- OVER THE COUNTER -->
+    @*============= Start: OVER THE COUNTER =============*@
     <form hidden="@hideAddCredit">
 
-        <!-- DEFAULT AMOUNT -->
         <TopupDefaultAmount OnClickCallback="@(() => UpdateState())"/>
-
-        <!-- AGENT USERNAME -->
         <div class="form-group">
             <input class="form-control" type="text" aria-describedby="emailHelp" placeholder="AgentXXX" value="@_mainCreditsViewModel.UserParentDtl.Username" disabled />
         </div>
 
-        <!-- AMOUNT -->
         <div class="form-group pesoContainer mt-3 inner-addon left-addon">
             <span class="peso">&#8369;</span>
             <input autocomplete="stopdoingthat" class="form-control pl-4 input-lg  " type="number" placeholder="Input Other Amount (500-10,000)" @bind-value="_mainCreditsViewModel.TopupAmount" onfocus="this.select()"
                    maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
         </div>
 
-        <!-- APPLICABLE VOUCHER -->
         @if (_mainCreditsViewModel.activeVoucher is not null)
         {
             <Voucher activeVoucher=_mainCreditsViewModel.activeVoucher Amount=_mainCreditsViewModel.TopupAmount />
         }
 
-        <!-- SUBMIT BUTTON -->
         <input class="addCredit-submit btn btn-primary mb-2" type="button" @onclick="RequestTopupCredit" value="Submit" />
     </form>
+    @*============= End: OVER THE COUNTER =============*@
 
-    <!-- GOPLAY ASIA GCASH -->
+    @*============= Start: GOPLAY ASIA GCASH =============*@
     @if (_mainCreditsViewModel.CashInSettings.GoplayAsia)
     {
         <form hidden="@hideAddCreditGPA">
@@ -97,7 +86,6 @@
                 <h6 class="text-center text-light m-2">Minimum: &#8369;@String.Format("{0:#,##0.#}", @_mainCreditsViewModel.TopupMinAmountDisplay) - Maximum: &#8369;@String.Format("{0:#,##0.#}",@_mainCreditsViewModel.TopupMaxAmount)</h6>
             </div>
 
-            <!-- AMOUNT -->
             <div class="form-group pesoContainer">
                 <span class="peso">&#8369;</span>
                 <input autocomplete="stopdoingthat" class="form-control pl-4 input-lg" type="number" placeholder="Enter Amount (500-10,000)" @bind-value="_mainCreditsViewModel.TopupAmountGPA" onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
@@ -109,15 +97,12 @@
                 <input class="form-control" type="@showpass" placeholder="Password" @bind-value="_mainCreditsViewModel.TopupPasswordGPA" />
             </div> -->
 
-            <!-- APPLICABLE VOUCHER -->
             @if (_mainCreditsViewModel.activeVoucher is not null)
             {
                 <Voucher activeVoucher=_mainCreditsViewModel.activeVoucher Amount=_mainCreditsViewModel.TopupAmountGPA />
             }
-
-            <!-- SUBMIT BUTTON -->
             <input class="addCredit-submit btn btn-primary" type="button" value="Submit" @onclick="RequestTopupGPACredit" />
         </form>
     }
-
+    @*============= End: GOPLAY ASIA GCASH =============*@
 </div>
