@@ -14,7 +14,7 @@
         @*============== Start: Game and Statistic Tab Icon ===========*@
         <div id="wallet-headerIcon" class="container p-0 mb-2 mt-4">
             <ul class="nav nav-tabs border-0 justify-content-center pt-2" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
+                <li class="nav-item m-2" role="presentation">
                     <a @onclick:preventDefault @onclick="@SetBetHistoryVisible" class="nav-link p-0 active bg-transparent border-0" id="gameHistory-tab" data-bs-toggle="tab" data-bs-target="#gameHistory-tab-pane" role="tab" aria-controls="BetHistory" aria-selected="true">
                         <div class="card border-0 text-center p-0 m-2 gameHistory-cardContainer bg-transparent">
                             <div class="icon-link icon-link-hover text-decoration-none">
@@ -26,7 +26,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="nav-item" role="presentation">
+                <li class="nav-item m-2" role="presentation">
                     <a @onclick:preventDefault @onclick="@SetStatisticsVisible" class="nav-link p-0 bg-transparent border-0" id="statistic-tab" data-bs-toggle="tab" data-bs-target="#statistic-tab-pane" type="button" role="tab" aria-controls="statistic-tab-pane" aria-selected="false">
                         <div class="card border-0 text-center p-0 m-2 wallet-cardContainer bg-transparent">
                             <div class="icon-link icon-link-hover text-decoration-none">
