@@ -6,7 +6,7 @@
 /*================ Start: Button PLay Animation ==================*/
 a.play-btn {
     position: relative;
-    width: 115px;
+    width: 140px;
 }
 
     a.play-btn > span {
@@ -63,7 +63,6 @@ a.play-btn {
     }
 
     .play-btn-container > .play-btn {
-        width: 30%;
         height: 50px;
         font-size: 1.5rem;
         align-items: center;
