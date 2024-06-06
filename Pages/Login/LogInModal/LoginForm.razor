@@ -11,7 +11,7 @@
             <input id="password" type="password" class="form-control" placeholder="Type your Password" required="" @bind-value="loginDTO.Password">
         </div>
         <div class="form-group">
-            <button type="submit" class="form-control btn btn-warning rounded submit px-3">Sign In</button>
+            <button id="signIn" type="submit" class="form-control btn btn-warning rounded submit px-3">Sign In</button>
         </div>
         <div class="container-fluid p-0">
             @if (agreeToTerms)
@@ -19,7 +19,7 @@
                 <OffCanvasTermsAndCondition AgreeEvent="AgreeToTerms" />
             }
 
-            <div class="fle justify-content-xl-center align-items-center text-light text-center mt-3">
+            <div class="flex justify-content-xl-center align-items-center text-light text-center mt-3">
                 <button @onclick="LoginOTP" class="text-light btn bg-transparent border-0 p-0">
                     <span class="text-warning fw-bold"><i class="bi bi-chat-left-dots"></i> &nbsp;Login with Verification Code</span>
                 </button>
@@ -35,6 +35,7 @@
         <ValidationSummary />
     </EditForm>
 </div>
+
 @code {
     [CascadingParameter] public IModalService popupLoadingModal { get; set; }
 

@@ -16,10 +16,18 @@
         </p>
     </div>
 </div>
+@* <script>
+    $(document).ready(function () {
+        $('#signIn').on('click', function () {
+            $('#termsOfUseOffCanvas').addClass('show');
+        });
+    });
+</script> *@
 @code{
     [Parameter] public EventCallback<bool> AgreeEvent { get; set; }
 
     private void AgreeToTerms(bool value){
         AgreeEvent.InvokeAsync(value);
+        
     }
 }
