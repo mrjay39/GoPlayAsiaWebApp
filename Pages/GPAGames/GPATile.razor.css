@@ -45,6 +45,19 @@
     align-items: center;
     text-align: center;
 }
+@media only screen and (min-width: 992px) {
+    .gameOverflow-x {
+        overflow-x: inherit;
+        padding-bottom: 0 !important;
+        scrollbar-width: thin;
+    }
+
+        .gameOverflow-x > div {
+            display: inline-flex !important;
+            flex-wrap: nowrap !important;
+            justify-content: inherit !important;
+        }
+}
 
 @media screen and (max-width: 460px) {
     .game-tile {

@@ -8,11 +8,14 @@
     background: #101019;
 }
 @media only screen and (min-width: 992px) {
-    #link-header.gameOverflow-x {
-        overflow-x: inherit !important;
-    }
-    #gpa-overflow.gameOverflow-x {
-        overflow-x: inherit;
+    .gameOverflow-x {
+        overflow-x: auto;
         padding-bottom: 0 !important;
+    }
+
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
     }
 }

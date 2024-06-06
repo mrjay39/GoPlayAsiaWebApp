@@ -184,12 +184,12 @@ button.play-btn > span {
 
 @media only screen and (min-width: 992px) {
     .gameOverflow-x {
-        overflow-x: auto;
+        overflow-x: inherit;
         padding-bottom: 0 !important;
     }
 
     .gameOverflow-x > div {
-        display: flex !important;
+        display: inline-flex !important;
         flex-wrap: nowrap !important;
         justify-content: inherit !important;
     }

@@ -10,7 +10,15 @@
 
 
 @media only screen and (min-width: 992px) {
-    #gpa-odyssey.gameOverflow-x, #arcade-odyssey.gameOverflow-x {
-        overflow-x: inherit !important;
+    .gameOverflow-x {
+        overflow-x: auto;
+        padding-bottom: 0 !important;
+    }
+
+    .gameOverflow-x > div {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
     }
 }
+
