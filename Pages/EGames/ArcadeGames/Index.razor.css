@@ -15,7 +15,7 @@
     }
 
     .gameOverflow-x > div {
-        display: flex !important;
+        display: inline-flex !important;
         flex-wrap: nowrap !important;
         justify-content: inherit !important;
     }
