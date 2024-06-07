@@ -69,7 +69,7 @@ public partial class VerifyRegistration
     private CityModel? selectedPermProv;
     private CityModel? selectedPermProvOld;
     private string PermanentStreetOldVal = "";
-    private bool isChecked { get; set; } = true;
+    private bool isChecked { get; set; } = false;
     private bool hidePermanentAdd = true;
 
     private NatureOfWorkModel? selectedNatureofwork;
@@ -311,6 +311,73 @@ public partial class VerifyRegistration
             SignupDTO.CurrentProvince = null;
             SignupDTO.CurrentRegion = null;
         }
+    }
+    private async Task CheckboxChanged(ChangeEventArgs e)
+    {
+        // get the checkbox state
+        bool value = (bool)e.Value;
+        if (value)
+        {
+            if (selectedCurrCity is null)
+            {
+                SignupDTO.PermanentCityId = null;
+                SignupDTO.PermanentProvince = "";
+                SignupDTO.PermanentRegion = "";
+                SignupDTO.PermanentStreet = "";
+                isChecked = false;
+            }
+            else
+            {
+                hidePermanentAdd = true;
+            }
+        }
+        else
+        {
+            hidePermanentAdd = false;
+            selectedPermCity = selectedPermProvOld;
+            if (selectedPermCity is null)
+            {
+                SignupDTO.PermanentCityId = null;
+                SignupDTO.PermanentProvince = "";
+                SignupDTO.PermanentRegion = "";
+                SignupDTO.PermanentStreet = "";
+            }
+            else
+            {
+                SignupDTO.PermanentCityId = selectedPermProvOld.Id;
+                SignupDTO.PermanentProvince = selectedPermProvOld.Province.Name;
+                SignupDTO.PermanentRegion = selectedPermProvOld.Region.Name;
+                SignupDTO.PermanentStreet = PermanentStreetOldVal;
+            }
+        }
+        SignupDTO.AddressAreSame = value;
+    }
+    private CityModel LoadSelPermCity(int? id) => CityList.FirstOrDefault(p => p.Id == id);
+    private async Task selectedPermCityChanged(CityModel result)
+    {
+        selectedPermCity = result;
+        if (selectedPermCity is not null)
+        {
+            refpopuLoadingpModal = popupModal.Show<PopupLoading>("");
+            selectedPermProv = await iConstantService.GetParentsOfCity(result.Id);
+            selectedPermProvOld = await iConstantService.GetParentsOfCity(result.Id);
+            refpopuLoadingpModal.Close();
+
+            SignupDTO.PermanentCityId = selectedPermCity.Id;
+            SignupDTO.PermanentProvince = selectedPermProv.Province.Name;
+            SignupDTO.PermanentRegion = selectedPermProv.Region.Name;
+        }
+        else
+        {
+            SignupDTO.PermanentCityId = null;
+            SignupDTO.PermanentProvince = null;
+            SignupDTO.PermanentRegion = null;
+        }
+    }
+    private void onchangePermStreet(ChangeEventArgs e)
+    {
+        var value = e.Value;
+        PermanentStreetOldVal = value.ToString();
     }
     private async Task ShowStep2()
     {
