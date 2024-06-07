@@ -1,0 +1,34 @@
+﻿<div id="ageAgreement" class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-bg border-bottom-4">
+        <div class="modal-header p-2" id="ageConfirmModalLabel">
+            <img src="./img/Pagcor-21-black.png" class="img-fluid">
+        </div>
+        <div class="modal-body text-center text-dark">
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="row text-center must-21 align-items-center text-dark">
+                    <p class="text-white">
+                        <span class="d-block w-100 fw-bold position-relative top-23">YOU MUST</span>
+                        <span class="d-block w-100 fw-bold font-80">21</span>
+                    </p>
+                </div>
+            </div>
+            <div class="d-block mt-3">
+                <p class="fw-bold">YEARS OLD AND ABOVE TO REGISTER</p>
+            </div>
+            <div class="container pt-2">
+                <button class="btn gpa-btn fw-bold" @onclick="Agree">Yes, I'm 21 or Older'</button>
+            </div>
+        </div>
+        <div class="modal-footer text-dark">
+            <p style="text-align: center;">GoPlayAsia Remote Gaming Site is approved and regulated by Philippine Amusement and Gaming Corporation. 2022-2025</p>
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter] public EventCallback OnAgree { get; set; }
+
+    private void Agree()
+    {
+        OnAgree.InvokeAsync();
+    }
+}
