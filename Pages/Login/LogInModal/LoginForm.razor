@@ -13,24 +13,25 @@
         <div class="form-group">
             <button id="signIn" type="submit" class="form-control btn btn-warning rounded submit px-3">Sign In</button>
         </div>
-        <div class="container-fluid p-0">
-                <OffCanvasTermsAndCondition AgreeEvent="AgreeToTerms" agreeToTerms="agreeToTerms" />
-
-            <div class="flex justify-content-xl-center align-items-center text-light text-center mt-3">
-                <button @onclick="LoginOTP" class="text-light btn bg-transparent border-0 p-0">
-                    <span class="text-warning fw-bold"><i class="bi bi-chat-left-dots"></i> &nbsp;Login with Verification Code</span>
-                </button>
-            </div>
-            <div class="content text-center">
-                <ul class="nav justify-content-center" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <a id="forgotPassTab" class="text-decoration-none" data-bs-toggle="tab" @onclick:preventDefault @onclick='(() => callForgotPassword(3))' role="tab" aria-controls="forgotPasswordForm" aria-selected="false" style="cursor: pointer;">Forgot Password</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+       
         <ValidationSummary />
     </EditForm>
+    <div class="container-fluid p-0">
+        <OffCanvasTermsAndCondition AgreeEvent="AgreeToTerms" agreeToTerms="agreeToTerms" />
+
+        <div class="flex justify-content-xl-center align-items-center text-light text-center mt-3">
+            <button @onclick="LoginOTP" class="text-light btn bg-transparent border-0 p-0">
+                <span class="text-warning fw-bold"><i class="bi bi-chat-left-dots"></i> &nbsp;Login with Verification Code</span>
+            </button>
+        </div>
+        <div class="content text-center">
+            <ul class="nav justify-content-center" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a id="forgotPassTab" class="text-decoration-none" data-bs-toggle="tab" @onclick:preventDefault @onclick='(() => callForgotPassword(3))' role="tab" aria-controls="forgotPasswordForm" aria-selected="false" style="cursor: pointer;">Forgot Password</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 @code {
@@ -48,13 +49,9 @@
     {
         
         agreeToTerms = value;
-        if (agreeToTerms)
+        if (value)
         {
             await Authenticate();
-        }
-        else
-        {
-            StateHasChanged();
         }
     }
 
