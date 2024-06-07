@@ -1,5 +1,5 @@
 ﻿
-<div class="offcanvas offcanvas-bottom show bg-transparent" tabindex="-1" id="termsOfUseOffCanvas">
+<div class="offcanvas offcanvas-bottom bg-transparent @(agreeToTerms == true ? "show" : "")" tabindex="-1" id="termsOfUseOffCanvas">
     <div class="offcanvas-body small p-2 text-center bg-white rounded-3">
         <h1 class="mb-4 pt-5"><i class="fa-solid fa-circle-exclamation  text-danger fw-bold warning-icon"></i></h1>
         <p class="small mb-5 terms-text">
@@ -16,17 +16,12 @@
         </p>
     </div>
 </div>
-@* <script>
-    $(document).ready(function () {
-        $('#signIn').on('click', function () {
-            $('#termsOfUseOffCanvas').addClass('show');
-        });
-    });
-</script> *@
 @code{
     [Parameter] public EventCallback<bool> AgreeEvent { get; set; }
+    [Parameter] public bool agreeToTerms { get; set; } = false;
 
     private void AgreeToTerms(bool value){
+        agreeToTerms = value;
         AgreeEvent.InvokeAsync(value);
         
     }

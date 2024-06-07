@@ -14,10 +14,7 @@
             <button id="signIn" type="submit" class="form-control btn btn-warning rounded submit px-3">Sign In</button>
         </div>
         <div class="container-fluid p-0">
-            @if (agreeToTerms)
-            {
-                <OffCanvasTermsAndCondition AgreeEvent="AgreeToTerms" />
-            }
+                <OffCanvasTermsAndCondition AgreeEvent="AgreeToTerms" agreeToTerms="agreeToTerms" />
 
             <div class="flex justify-content-xl-center align-items-center text-light text-center mt-3">
                 <button @onclick="LoginOTP" class="text-light btn bg-transparent border-0 p-0">
@@ -45,11 +42,11 @@
         {
             await OnForgotPassword.InvokeAsync(3); // Example int value
         }
-        
     }
 
     private async Task AgreeToTerms(bool value)
     {
+        
         agreeToTerms = value;
         if (agreeToTerms)
         {
