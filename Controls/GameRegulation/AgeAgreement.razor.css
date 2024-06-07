@@ -20,6 +20,9 @@
     border-radius: 50%;
     height: 150px;
 }
+.text-14{
+    font-size: 14px;
+}
 .gpa-btn {
     background: #6e182c;
     color: #ffffff;
