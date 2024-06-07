@@ -153,22 +153,22 @@
                 @*============= Permanent Address Field =============*@
                 <h6 class="text-muted mt-3">PERMANENT ADDRESS</h6>
                 <div class="form-group mb-2">
-                    <input class="form-check-input" type="checkbox" value="" id="permanentAddress">
+                    <input class="form-check-input" type="checkbox" id="permanentAddress" data-toggle="toggle" @bind="@isChecked" @oninput="CheckboxChanged">
                     <label class="form-check-label btn p-0" for="permanentAddress">Same as Current Address</label>
                 </div>
                 <div class="permanentAddContainer">
                     <div class="form-group m-0">
                         <p class="font-weight-bold titleHolder">Home Address <span class="text-danger fw-bold">*</span></p>
-                        <input class="form-control" type="text" placeholder="Home Address" @bind-value="SignupDTO.CurrentStreet">
+                        <input class="form-control" type="text" placeholder="Home Address" @bind-value="SignupDTO.PermanentStreet">
                     </div>
                     <div class="form-group m-0">
                         <p class="font-weight-bold titleHolder">City/Municipality <span class="text-danger fw-bold">*</span></p>
                         <div class="citySelector mt-1" style="background-color: white; border-radius: 5px;">
-                            <BlazoredTypeahead SearchMethod="SearchCity" TItem="CityModel" TValue="CityModel" Value="selectedCurrCity" ValueChanged="selectedCurrCityChanged" ValueExpression="@(() => selectedCurrCity)" placeholder="Select Current City">
+                            <BlazoredTypeahead SearchMethod="SearchCity" TItem="CityModel" TValue="CityModel" Value="selectedPermCity" ValueChanged="selectedPermCityChanged" ValueExpression="@(() => selectedPermCity)" placeholder="Select Permanent City">
                                 @*@bind-Value="selectedCurrCity"*@
                                 <SelectedTemplate Context="CurrentCityId">
                                     @{
-                                        var selectCurrCity = LoadSelCurrCity(CurrentCityId.Id);
+                                        var selectCurrCity = LoadSelPermCity(CurrentCityId.Id);
 
                                         <text>@selectCurrCity?.Name</text>
                                     }
@@ -181,11 +181,11 @@
                     </div>
                     <div class="form-group m-0">
                         <p class="font-weight-bold titleHolder">Province <span class="text-danger fw-bold">*</span></p>
-                        <input class="form-control" type="text" disabled value="@SignupDTO.CurrentProvince">
+                        <input class="form-control" type="text" disabled value="@SignupDTO.PermanentProvince">
                     </div>
                     <div class="form-group m-0">
                         <p class="font-weight-bold titleHolder">Region <span class="text-danger fw-bold">*</span></p>
-                        <input class="form-control" type="text" disabled value="@SignupDTO.CurrentRegion">
+                        <input class="form-control" type="text" disabled value="@SignupDTO.PermanentRegion">
                     </div>
                 </div>
                 @* <======= PREVIOUS & NEXT BUTTON =======*@
