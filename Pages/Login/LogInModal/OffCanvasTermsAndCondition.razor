@@ -1,18 +1,26 @@
 ﻿<div class="offcanvas offcanvas-bottom bg-transparent @(agreeToTerms ? "show" : "")" tabindex="-1" id="termsOfUseOffCanvas">
-    <div class="offcanvas-body small p-2 text-center bg-white rounded-3">
-        <h1 class="mb-4 pt-5"><i class="fa-solid fa-circle-exclamation text-danger fw-bold warning-icon"></i></h1>
-        <p class="small mb-5 terms-text">
-            <span>You need to agree to the </span>
-            <a href="https://docs.goplayasia.com/toc.html">Terms of use</a>
-            <span> and </span>
-            <a href="https://docs.goplayasia.com/pp.html">Privacy Policy</a>
-        </p>
-        <p class="mb-3">
-            <button class="btn gpa-btn w-100" @onclick="(() => AgreeToTerms(true))">I Agree</button>
-        </p>
-        <p>
-            <button class="btn bg-white w-100 gpa-border" @onclick="(() => AgreeToTerms(false))">Cancel</button>
-        </p>
+    <div class="row align-items-center offcanvas-body small p-2 text-center bg-white rounded-3">
+        <div class="container">
+            <div class="row">
+                <h1 class="mb-4 mt-2 pt-2"><i class="fa-solid fa-circle-exclamation text-danger fw-bold warning-icon"></i></h1>
+                <div class="container">
+                    <p class="small mb-5 terms-text">
+                        <span>You need to agree to the </span>
+                        <a href="https://docs.goplayasia.com/toc.html">Terms of use</a>
+                        <span> and </span>
+                        <a href="https://docs.goplayasia.com/pp.html">Privacy Policy</a>
+                    </p>
+                </div>
+                <div class="container">
+                    <p class="mb-3">
+                        <button class="btn gpa-btn w-100" @onclick="(() => AgreeToTerms(true))">I Agree</button>
+                    </p>
+                    <p>
+                        <button class="btn bg-white w-100 gpa-border" @onclick="(() => AgreeToTerms(false))">Cancel</button>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

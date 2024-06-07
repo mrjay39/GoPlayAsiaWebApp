@@ -1,5 +1,5 @@
 ﻿.terms-text{
-    font-size: 13px !important;
+    font-size: 14px !important;
 }
 .warning-icon{
     font-size:50px;
@@ -13,29 +13,32 @@
     border: 1px solid #6e182c;
     color: #6e182c;
 }
-.offcanvas.show {
-    height: 250px !important;
+.offcanvas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0;
     z-index: 1050;
-    visibility: visible;
-}
-.offcanvas-body {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1050;
-    width: 85%;
-    height: 385px;
+    visibility: hidden;
+    transition: height 0.3s ease, visibility 0.3s ease;
+    overflow: hidden;
 }
 
-/* Media query for desktop view */
-@media (min-width: 768px) {
-    .offcanvas-body {
-        width: 30%;
-    }
+.offcanvas.show {
+    height: 100%;
+    visibility: visible;
 }
-@media (max-width: 320px) {
-    .offcanvas-body {
-        width: 100%;
-    }
+
+.offcanvas-body {
+    background: white;
+    z-index: 1050;
+    width: 85%;
+    max-width: 500px;
+    max-height: 45vh;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    transition: height 0.3s ease, transform 0.3s ease;
+    position: relative;
 }
