@@ -1,10 +1,12 @@
 ﻿@attribute [Authorize(Roles = "1")]
 @page "/VerifyReg"
-
+@* @inject IJSRuntime JSRuntime
+@using Microsoft.JSInterop *@
 @using Blazored.Typeahead
 @using GoPlayAsiaWebApp.Pages.Profile
 @using GoplayasiaBlazor.Models
 @using GoPlayAsiaWebApp.Goplay.Shared.Popup
+
 
 <section class="container-fluid pt-5 pb-4">
     <div class="transparentBox container-fluid">
@@ -17,15 +19,15 @@
                     <h5 class="text-center mt-2 mb-2">VERIFICATION</h5>
                     <div class="form-group m-0">
                         <p class="text-muted">First Name<span class="text-danger">*</span></p>
-                        <input class="form-control mt-0" type="text" placeholder="First Name" @bind-value="SignupDTO.FirstName">
+                        <input class="form-control mt-0" type="text" placeholder="Input Your First Name Here" autofocus @bind-value="SignupDTO.FirstName">
                     </div>
                     <div class="form-group">
                         <p class="text-muted">Middle Name</p>
-                        <input class="form-control" type="text" placeholder="Midde Name" @bind-value="SignupDTO.MiddleName">
+                        <input class="form-control" type="text" placeholder="Input Your Middle Name Here" @bind-value="SignupDTO.MiddleName">
                     </div>
                     <div class="form-group">
                         <p class="text-muted">Last Name<span class="text-danger">*</span></p>
-                        <input class="form-control" type="text" placeholder="Last Name" @bind-value="SignupDTO.LastName">
+                        <input class="form-control" type="text" placeholder="Input Your Last Name Here" @bind-value="SignupDTO.LastName">
                     </div>
                     <div class="form-group mb-2">
                         <p class="text-muted">Date of Birth (mm/dd/yyyy)<span class="text-danger">*</span></p>
@@ -92,7 +94,7 @@
                 <h6 class="text-light">PERSONAL INFO</h6>
                 <div class="form-group m-0">
                     <p class="font-weight-bold titleHolder">Email Address</p>
-                    <input class="form-control" type="email" placeholder="Email Address(Optional)" @bind-value="SignupDTO.EmailAddress" @oninput="onchange_txtEmail">
+                    <input class="form-control" type="email" placeholder="Input Your Email Address(Optional)" autofocus @bind-value="SignupDTO.EmailAddress" @oninput="onchange_txtEmail">
                     <span class="errorMessage" hidden="@(@_verifyRegistrationViewModel.errEmail != "Ok"? false : true)">@_verifyRegistrationViewModel.errEmail</span>
                 </div>
                 <div class="form-group m-0">
@@ -121,7 +123,7 @@
                 <h6 class="text-muted mt-3">CURRENT ADDRESS</h6>
                 <div class="form-group m-0">
                     <p class="font-weight-bold titleHolder">Home Address <span class="text-danger fw-bold">*</span></p>
-                    <input class="form-control" type="text" placeholder="Home Address" @bind-value="SignupDTO.CurrentStreet">
+                    <input class="form-control" type="text" placeholder="Input Your Home Address" @bind-value="SignupDTO.CurrentStreet">
                 </div>
                 <div class="form-group m-0">
                     <p class="font-weight-bold titleHolder">City/Municipality <span class="text-danger fw-bold">*</span></p>
@@ -158,7 +160,7 @@
                 </div>
                 <div class="permanentAddContainer">
                     <div class="form-group m-0">
-                        <p class="font-weight-bold titleHolder">Home Address <span class="text-danger fw-bold">*</span></p>
+                        <p class="font-weight-bold titleHolder">Input Your Permanent Address <span class="text-danger fw-bold">*</span></p>
                         <input class="form-control" type="text" placeholder="Home Address" @bind-value="SignupDTO.PermanentStreet">
                     </div>
                     <div class="form-group m-0">
@@ -328,4 +330,4 @@
                 }
             });
         });
-    </script>
+</script>
