@@ -1,7 +1,7 @@
 ﻿@attribute [Authorize(Roles = "1")]
 @page "/VerifyReg"
-@* @inject IJSRuntime JSRuntime
-@using Microsoft.JSInterop *@
+@inject IJSRuntime JSRuntime
+@using Microsoft.JSInterop
 @using Blazored.Typeahead
 @using GoPlayAsiaWebApp.Pages.Profile
 @using GoplayasiaBlazor.Models
@@ -319,6 +319,11 @@
 </section>
 @code {
     [CascadingParameter] public IModalService Modal { get; set; } = default!;
+
+    private void scrollToTop()
+    {
+        JSRuntime.InvokeVoidAsync("window.scrollTo", 0, 0);
+    }
 }
  <script>
         $(document).ready(function() {
@@ -329,5 +334,6 @@
                     $('.permanentAddContainer').removeClass('hidden');
                 }
             });
+
         });
 </script>

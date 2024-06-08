@@ -254,6 +254,7 @@ public partial class VerifyRegistration
         step1 = false;
         step2 = true;
         step3 = true;
+        scrollToTop();
     }
     private async Task ValidateStep1()
     {
@@ -262,6 +263,7 @@ public partial class VerifyRegistration
         if (valStep1)
         {
             ShowStep2();
+            scrollToTop();
         }
         refpopuLoadingpModal.Close();
     }
@@ -384,6 +386,7 @@ public partial class VerifyRegistration
         step1 = true;
         step2 = false;
         step3 = true;
+        scrollToTop();
     }
     private async Task ValidateStep2()
     {
@@ -402,6 +405,7 @@ public partial class VerifyRegistration
         if (valStep2)
         {
             ShowStep3();
+            scrollToTop();
         }
         refpopuLoadingpModal.Close();
     }
