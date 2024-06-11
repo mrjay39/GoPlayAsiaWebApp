@@ -1,12 +1,10 @@
 ﻿#ageAgreement {
-    position: absolute;
+    position: fixed;
     z-index: 100;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 90%;
-    min-width: 300px;
-    width: 30%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -22,6 +20,9 @@
 }
 .text-14{
     font-size: 14px;
+}
+.gpa-text {
+    color: #6e182c;
 }
 .gpa-btn {
     background: #6e182c;
@@ -50,4 +51,16 @@
 
 .border-bottom-4 {
     border-bottom: 4px solid #6e182c;
+}
+@media screen and (min-width: 992px) {
+    #ageAgreement {
+        width: 20%;
+        min-width: 300px;
+    }
+}
+@media screen and (max-width: 991px) {
+    #ageAgreement {
+        width: 30%;
+        min-width: 280px;
+    }
 }
