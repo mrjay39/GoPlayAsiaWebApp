@@ -3,7 +3,19 @@
     margin: 0 auto;
     padding: 0;
 }
-
+.fa-solid {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    position: relative;
+}
+.gpa-token {
+    background: url('./img/tokenIcon.png') center center no-repeat;
+    background-size: 100% 100% !important;
+    top: 0;
+    margin-right: 4px;
+    margin-left: 5px;
+}
 tr.headerContainer {
     background-color: white;
 }
