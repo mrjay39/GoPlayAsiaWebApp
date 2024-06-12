@@ -13,18 +13,21 @@ ul.messages-list > li {
     padding-bottom: 5px;
 }
 
-ul.messages-list > li.unread {
-    font-weight: bold;
-    color: #000;
-}
-ul.messages-list > li.seenMessage {
+ul.messages-list > li.seenMessage a {
     font-weight: normal;
+    color: #454545;
+}
+ul.messages-list > li.unread a {
+    font-weight: bold;
+    color: #333333;
 }
 
 ul.messages-list > li a {
-    color: #5b5b5b;
     text-decoration: none;
     cursor: pointer;
+}
+.notification-header {
+    background: #6e182c;
 }
 .header{
     font-size: 12px;
