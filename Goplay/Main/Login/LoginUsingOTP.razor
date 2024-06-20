@@ -1,4 +1,4 @@
-﻿@page "/loginviaotp"
+﻿@* @page "/loginviaotp" *@
 @using GoplayasiaBlazor.Core.Global.Interface
 @using GoplayasiaBlazor.Core.Services.Interface
 @using GoplayasiaBlazor.DTOs.DTOOut
@@ -155,7 +155,7 @@
             await _refcode1.FocusAsync();
             _currFocusedCode = 1;
         };
-        
+
     }
     private async Task onCodeChange(ChangeEventArgs val)
     {
@@ -247,12 +247,17 @@
             {
                 if (response.Message.Contains("logged in to another device"))
                 {
-
+                    toastService.ShowError(response.Message);
                     await _accountService.ForceLogoutUser(response.Id, response.User.Username);
                     await Task.Delay(1000); 
                     refpopuLoadingpModal.Close();
 
                     return;
+                }
+                else
+                {
+                    toastService.ShowError(response.Message);
+                    refpopuLoadingpModal.Close();
                 }
 
             }

@@ -2,6 +2,8 @@
 using Blazored.Modal;
 using Microsoft.AspNetCore.Components;
 using GoplayasiaBlazor.Core.Global.Interface;
+using System.Diagnostics.Metrics;
+using System.Net;
 
 namespace GoPlayAsiaWebApp.Goplay.Shared.Popup;
 
@@ -17,6 +19,7 @@ public partial class PopupEmailVerify
     private string OTP { get; set; } = "";
     public bool errorCode { get; set; } = false;
     public string errorMsg { get; set; } = "";
+    public string msgForemailsent { get; set; } = "";
     #endregion
 
     #region Lifecycle Methods
@@ -39,6 +42,7 @@ public partial class PopupEmailVerify
         {
             errorCode = false;
             errorMsg = "Verification Code cannot be empty and must be exactly 6 characters in length";
+            popupRes.Close();
             return;
         }
 
@@ -48,6 +52,7 @@ public partial class PopupEmailVerify
         {
             errorCode = false;
             errorMsg = "An error occured while attempting to verify email address. Please try again later";
+            popupRes.Close();
             return;
         }
         else
@@ -65,16 +70,24 @@ public partial class PopupEmailVerify
     public async Task RequestNewCode()
     {
         var popupRes = popupModal.Show<PopupLoading>("");
-
-
-        var codeSent = await _accountService.RequestCode(EmailAddress, _currentUser.Id);
-        popupRes.Close();
-        if (string.IsNullOrEmpty(codeSent))
+        string codeSent;
+        if (!string.IsNullOrEmpty(_currentUser.EmailAddress))
         {
-            errorMsg = "An error occured while sending code. Request for a new one";
-            errorCode = false;
-            return;
+            codeSent = await _accountService.RequestCode(_currentUser.EmailAddress, _currentUser.Id);
+            msgForemailsent = "Enter the Code sent to your current Email Address";
         }
+        else
+        {
+            codeSent = await _accountService.RequestCode(EmailAddress, _currentUser.Id);
+            msgForemailsent = "Enter the Code sent to your new Email Address";
+        }
+        popupRes.Close();
+        //if (string.IsNullOrEmpty(codeSent))
+        //{
+        //    errorMsg = "An error occured while sending code. Request for a new one";
+        //    errorCode = false;
+        //    return;
+        //}
         Code = codeSent;
 
     }
