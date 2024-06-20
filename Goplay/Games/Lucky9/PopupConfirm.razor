@@ -1,17 +1,17 @@
 ﻿
-<div class="container">
-    <div class="row justify-content-center margin-bottom-md">
-       @* <i class="warningIcon bi bi-question-circle" style="font-size:50px"></i>*@
-    </div>
-    <div class="row justify-content-center  margin-bottom-md">
-        @Message
-    </div>
-    <div class="row justify-content-center mt-2">
-        <button type="button" class="btnNo btn btn-warning mr-2" @onclick="() => Confirmation(false)">NO</button>
-        <button type="button" class="btnYes btn btn-primary" @onclick="() => Confirmation(true)">YES</button>
+<div class="container-fluid">
+    <div class="container text-center">
+        <h3 class="text-center">@Message</h3>
+        <div class="d-flex justify-content-center mt-2">
+            <div class="col">
+                <button type="button" class="btnNo btn btn-warning mr-2" @onclick="() => Confirmation(false)">NO</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btnYes btn btn-primary" @onclick="() => Confirmation(true)">YES</button>
+            </div>
+        </div>
     </div>
 </div>
-
 @code {
     public bool Show { get; set; }
     [Parameter] public string Title { get; set; } = "";

@@ -13,6 +13,8 @@
     <button type="button" class="btnNo btn btn-warning mr-2" @onclick="() => Confirmation(false)">No</button>
     <button type="button" class="btnYes btn btn-primary " @onclick="() => Confirmation(true)">Yes</button>
 </div>
+
+
 @code {
     public bool Show { get; set; }
     [Parameter] public string Title { get; set; } = "";

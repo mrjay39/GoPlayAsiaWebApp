@@ -155,7 +155,7 @@ namespace GoPlayAsiaWebApp.Goplay.ViewModels
 
             if (UserInfo.EmailAddress.ToLower() != _icurrentUser.EmailAddress.ToLower())
             {
-                var pop = _popupModal.Show<PopupConfirm>("Continue to change email address?", new ModalOptions() { Class = "op-modal", HideHeader = false });
+                var pop = _popupModal.Show<PopupConfirm>("Update email address", new ModalOptions() { Class = "op-modal", HideHeader = false });
                 var result = await pop.Result;
                 if (!(bool)result.Data)
                 {
