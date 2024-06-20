@@ -165,7 +165,7 @@ namespace GoPlayAsiaWebApp.Goplay.ViewModels
 
             var parameters = new ModalParameters();
             parameters.Add("EmailAddress", UserInfo.EmailAddress);
-            var popupCode = _popupModal.Show<PopupEmailVerify>("", parameters, new ModalOptions() { Class = "op-modal" });
+            var popupCode = _popupModal.Show<PopupEmailVerify>("", parameters, new ModalOptions() { Class = "op-modal", HideHeader = false });
             var resCode = await popupCode.Result;
             if (!(bool)resCode.Data)
             {

@@ -300,7 +300,7 @@ namespace GoplayasiaBlazor.Core.Services
                 else
                     return await _httpClientHelper.GetAsync<string>($"Account/SendCode/{emailAddress}", string.Empty);
             }
-            catch
+            catch(Exception ex)
             {
                 return string.Empty;
             }
