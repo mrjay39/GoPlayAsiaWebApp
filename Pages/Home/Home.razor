@@ -39,4 +39,31 @@
 
     </div>
     <GameRegulation />
+    @if (showAgeAgreement)
+    {
+        <AgeAgreement OnAgree="HandleAgeAgreement" />
+    }
 </div>
+@code {
+    private bool showAgeAgreement = true;
+
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var agreed = await JSRuntime.InvokeAsync<bool>("localStorage.getItem", "agreedToTerms");
+
+        if (agreed)
+        {
+            showAgeAgreement = false;
+        }
+    }
+
+    private async Task HandleAgeAgreement()
+    {
+        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "agreedToTerms", true);
+        showAgeAgreement = false;
+        StateHasChanged();
+    }
+}

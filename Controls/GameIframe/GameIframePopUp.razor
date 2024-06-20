@@ -1,0 +1,27 @@
+﻿@using GoPlayAsiaWebApp.Pages.GPAGames
+@inject NavigationManager _navigationManager
+@inject IModalService ModalService
+
+
+<div id="gamePopUp" class="modal-dialog modal-dialog-centered fixed-centered">
+    <div class="modal-content modal-bg border-bottom-4 bg-transparent">
+        <div class="modal-header p-2" id="gamePopUpModalLabel">
+            <button type="button" class="btn-close" @onclick="Close">
+                <i class="fa-regular close-icon"></i>
+            </button>
+        </div>
+        <div class="modal-body text-center text-dark p-0">
+            <iframe src="https://jiligames.com/PlusIntro/49?showGame=true" title="GoPlayAsia Game">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+
+    private async Task Close() => await BlazoredModal.CloseAsync();
+    private async Task Cancel() => await BlazoredModal.CancelAsync();
+
+}

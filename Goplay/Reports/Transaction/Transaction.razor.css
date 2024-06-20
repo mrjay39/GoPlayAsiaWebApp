@@ -15,6 +15,16 @@ form {
     background-color: #ff6a00;
     font-weight: 600;
 }
+tr:first-child {
+    background-color: #6e182c !important;
+    color: #ffffff;
+}
+tr:nth-child(odd) {
+    background-color: #efefef;
+}
+tr:nth-child(even) {
+    background-color: #dcdcdc;
+}
 
 img.imgLogo {
     height: 50px;
@@ -66,7 +76,6 @@ h6.headerText {
 }
 
 .innerTable {
-    background-color: #262626;
     margin: 2px;
     border-radius: 5px;
 }

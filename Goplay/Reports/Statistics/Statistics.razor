@@ -8,7 +8,12 @@
             <th class="status col">Current Token</th>
             @if (_statisticsViewModel.Statistic != null)
             {
-                <th class="currentTokenCon col">@_statisticsViewModel.Statistic.CurrentTokenString</th>
+                <th class="currentTokenCon col">
+                    <div class="d-flex align-items-center">
+                        <i class="fa-solid gpa-token"></i>
+                        <b>@_statisticsViewModel.Statistic.CurrentTokenString</b>
+                    </div>
+                </th>
             }
             else
             {

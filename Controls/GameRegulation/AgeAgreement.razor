@@ -1,0 +1,38 @@
+﻿<div id="ageAgreement" class="modal-dialog modal-dialog-centered fixed-centered">
+    <div class="modal-content modal-bg border-bottom-4">
+        <div class="modal-header p-2" id="ageConfirmModalLabel">
+            <img src="./img/Pagcor-21-black.png" class="img-fluid">
+        </div>
+        <div class="modal-body text-center text-dark">
+            <h3 class="fw-bold gpa-text">NOTICE</h3>
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <p>By entering this website, you acknowledge and confirm that:</p>
+                    <div class="d-flex text-center justify-content-center">
+                        <ol class="text-14">
+                            <li class="text-start">You are 21 years of age or older.</li>
+                            <li class="text-start">
+                                You agree to our
+                                <a href="https://docs.goplayasia.com/toc.html" class="text-decoration-none">Terms of Use.</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="container pt-2">
+                <button class="btn gpa-btn fw-bold" @onclick="Agree">Yes, I'm 21 or Older'</button>
+            </div>
+        </div>
+        <div class="modal-footer text-dark">
+            <p style="text-align: center;">GoPlayAsia Remote Gaming Site is approved and regulated by Philippine Amusement and Gaming Corporation. 2022-2025</p>
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter] public EventCallback OnAgree { get; set; }
+
+    private void Agree()
+    {
+        OnAgree.InvokeAsync();
+    }
+}

@@ -1,7 +1,9 @@
 ﻿@using System.Security.Claims
+@using GoPlayAsiaWebApp.Controls.GameIframe
 @using GoPlayAsiaWebApp.Pages.Login.LogInModal
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager _navigationManager
+@inject IModalService ModalService
 
 <div class="card m-1 p-0 border-dark game-tile">
     <div class="container-fluid p-0 bg-img">
@@ -11,14 +13,14 @@
         <div class="content">
             <div class="subtitle"><h3 class="text-white fw-bold">@_titleStr</h3></div>
             <div class="button button-playNow">
-                <a class="btn btn-warning m-1"  @onclick="OpenGameLink">
+                <button class="btn btn-warning m-1"  @onclick="OpenGameLink">
                     <span>Play Now</span>
                     <div class="arrow">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
-                </a>
+                </button>
             </div>
             <div class="button button-gameInfo">
                 <a class="btn btn-dark m-1" href="@_gameInfoHrefStr">Game Info</a>
@@ -27,6 +29,7 @@
     </div>
 </div>
 @code {
+    [Parameter] public string _idStr { get; set; } = string.Empty;
     [Parameter] public string? _imgStr { get; set; }
     [Parameter] public string? _titleStr { get; set; }
     [Parameter] public string? _gameInfoHrefStr { get; set; }
@@ -37,7 +40,6 @@
     private ClaimsPrincipal user;
 
     private bool isActive = false;
-
     private void ToggleActive()
     {
         isActive = !isActive;
@@ -64,6 +66,13 @@
         else
         {
             _navigationManager.NavigateTo(_tryoutsHrefStr);
+
+
+            // Show the GameIframePopUp component with the TryoutsHref parameter
+            //var parameters = new ModalParameters();
+            //parameters.Add(nameof(GameIframePopUp.TryoutsHref), _tryoutsHrefStr);
+            //var gameIframePopup = popuLoadingpModal.Show<GameIframePopUp>("", parameters);
+
         }
 
     }

@@ -10,17 +10,19 @@
             <Virtualize Items="_mainCreditsViewModel.TransactionHistory" Context="_tranHistory">
                 @*@foreach (var _tranHistory in _mainCreditsViewModel.TransactionHistory)
             {*@
-                <tr class="innerTable text-light p-2 row w-100">
-                    <td class="col-6 p-0">
+                <tr class="innerTable p-2 row w-100">
+                    <td class="col p-0">
                         <div>@_tranHistory.Transaction</div>
                         <div style="font-size: 14px;">@_tranHistory.ReferenceId</div>
                         <div style="font-size: 14px;">@_tranHistory.TransactionId</div>
-                        <div class="p-0" style="font-size: 14px;" >@_tranHistory.DateCreatedFullString</div>
+                        <div class="p-0" style="font-size: 14px;">@_tranHistory.DateCreatedFullString</div>
                     </td>
-                    <td class="rightContent col-6 d-flex justify-content-center">
+                    <td class="rightContent col d-flex justify-content-center">
                         <div>
                             <div style="font-size: 14px;" class="ml-5">@_tranHistory.AmountDisplay</div>
-                            <div style="font-size: 14px;" class="ml-5">@_tranHistory.Status</div>
+                            <div style="font-size: 14px;" class="ml-5">
+                                <b>@_tranHistory.Status</b>
+                            </div>
                         </div>
                     </td>
                 </tr>
