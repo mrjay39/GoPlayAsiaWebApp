@@ -1,21 +1,18 @@
 ﻿@using GoplayasiaBlazor.Core.Services.Interface
 @inject IAccountService _accountService
 
-<div class="container">
-
+<div class="main">
     <div class="message ">
         <div>
-            <p>Enter the Code sent to your Email Address <span class="text-danger fw-bold">*</span></p>
+            <p>@msgForemailsent <span class="text-danger fw-bold">*</span></p>
             <span class="errorMessage" hidden="@errorCode">@errorMsg</span>
         </div>
     </div>
-    <div class="mb-3">
-        <input class="form-control mb-2" type="text" placeholder="OTP" @bind-value="@OTP" required maxlength="20" />
-    </div>
+    <input maxlength="20" class="form-control mb-2" type="text" placeholder="OTP" bind-value="@OTP" required />
     <div class="row d-flex mb-2">
         <button type="button" class="text-primary bg-transparent border-0 text-end" @onclick="() => ReqNewCode()">Request New Code</button>
     </div>
-
+    
     <div class="row d-flex">
         <button type="button" class="btn btn-warning col m-1" @onclick="() => Validate()">Validate</button>
         <button type="button" class="btn btn-secondary col m-1" @onclick="() => CancelVerification()">Cancel Verification</button>

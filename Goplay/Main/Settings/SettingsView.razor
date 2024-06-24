@@ -39,8 +39,8 @@
             </p>
             <p class="mb-2">
                 <span class="text-muted"><i class="fa-regular fa-envelope"></i> Email Address</span><br>
-                <input type="email" @bind-value="_settingsViewModel.UserInfo.EmailAddress" @oninput="onchange_email" id="email" class="">
-                <label class="btn border-0" for="email"><span><i class="fa-solid fa-pen-to-square text-primary"></i></span></label>
+                <input type="email" @bind-value="_settingsViewModel.UserInfo.EmailAddress" @oninput="onchange_email" class="">
+                <label class="btn border-0"><span><i class="fa-solid fa-pen-to-square text-primary"></i></span></label>
             </p>
             <div class="container p-0 mb-3">
                 <label class="text-muted"><i class="fa-solid fa-person-digging"></i> Nature of Work</label>
@@ -86,7 +86,7 @@
                 <input class="form-control" type="text" value="@_settingsViewModel.UserInfo.IdentificationNumber" placeholder="ID Number" disabled>
             </div>
 
-            <div class="col-12">
+            <div class="col-12" data-bs-dismiss="offcanvas">
                 <input class="btn btn-gpa w-100 @strDisBtnUpdateAcc" type="button" @onclick="UpdateAccount" value="Update Account" disabled="@disBtnUpdateAcc" />
                 <input class="btn btn-gpa w-100 @strDisBtnUpdateProf" type="button" @onclick="UpdateProfile" value="Update Profile" disabled="@disBtnUpdateProf" />
                 @* <button @onclick="UpdateAccount" disabled="@disBtnUpdateAcc" class="btn col-12 btn-gpa btn-accnt mb-2 @strDisBtnUpdateAcc">Update Account</button> *@

@@ -38,7 +38,7 @@ public partial class PopupEmailVerify
     public async Task Validate()
     {
         var popupRes = popupModal.Show<PopupLoading>("");
-        if (string.IsNullOrEmpty(Code) || Code.Length != 6)
+        if (string.IsNullOrEmpty(OTP) || Code.Length != 6)
         {
             errorCode = false;
             errorMsg = "Verification Code cannot be empty and must be exactly 6 characters in length";
@@ -46,7 +46,7 @@ public partial class PopupEmailVerify
             return;
         }
 
-        var verifyEmail = await _accountService.VerifyCode(EmailAddress, Code, _currentUser.Id);
+        var verifyEmail = await _accountService.VerifyCode(EmailAddress, OTP, _currentUser.Id);
 
         if (!verifyEmail)
         {

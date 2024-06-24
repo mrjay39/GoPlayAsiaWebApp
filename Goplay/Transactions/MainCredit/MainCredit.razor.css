@@ -12,9 +12,12 @@
     background-repeat: repeat;
     min-height: 58rem;
 }
+li > a.nav-link{
+    cursor: pointer;
+}
 
 .nav-link:hover, .nav-link:focus {
-    border: none;
+    border: none !important;
 }
 
 .nav-link.active {
