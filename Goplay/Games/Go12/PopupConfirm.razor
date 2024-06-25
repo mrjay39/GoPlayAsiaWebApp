@@ -1,14 +1,15 @@
 ﻿
-<div class="container">
-    <div class="row justify-content-center margin-bottom-md">
-       @* <i class="bi bi-question-circle" style="font-size:80px;"></i>*@
-    </div>
-    <div class="row justify-content-center margin-bottom-md">
-        @Message
-    </div>
-    <div class="d-flex justify-content-center mt-2">
-        <button type="button" class="btnNo col btn btn-warning " @onclick="() => Confirmation(false)">No</button>
-        <button type="button" class="btnYes col  btn btn-primary" @onclick="() => Confirmation(true)">Yes</button>
+<div class="container-fluid">
+    <div class="container text-center">
+        <h4 class="text-center mb-4">@Message</h4>
+        <div class="d-flex justify-content-center mt-2">
+            <div class="col">
+                <button type="button" class="btnNo btn btn-warning mr-2" @onclick="() => Confirmation(false)">NO</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btnYes btn btn-primary" @onclick="() => Confirmation(true)">YES</button>
+            </div>
+        </div>
     </div>
 </div>
 
