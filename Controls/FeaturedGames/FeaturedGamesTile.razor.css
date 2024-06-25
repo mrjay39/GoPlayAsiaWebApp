@@ -4,21 +4,31 @@
     background-size: cover;
 }
 
-.bg-casino {
+.bg_casino {
     height: 190px;
     background: url('./img/featuredGames/bg-casino.jpg') center center no-repeat;
     background-size: cover;
 }
 
-.bg-lottery {
+.bg_lottery {
     height: 190px;
     background: url('./img/featuredGames/bg-lottery.jpg') center center no-repeat;
     background-size: cover;
 }
-
-.bg-GPA {
+.bg_sports {
     height: 190px;
-    background: url('./img/featuredGames/bg-GPA.jpg') center center no-repeat;
+    background: url('./img/featuredGames/bg-court.png') center center no-repeat;
+    background-size: cover;
+}
+
+.bg_gpa {
+    height: 190px;
+    background: url('./img/featuredGames/bg_black_casino.jpg') center center no-repeat;
+    background-size: cover;
+}
+.bg_arcade {
+    height: 190px;
+    background: url('./img/featuredGames/bg-arcade.jpg') center center no-repeat;
     background-size: cover;
 }
 

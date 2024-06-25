@@ -1,6 +1,6 @@
 ﻿<div class="card p-0" style="width: 12rem; margin: 0 15px !important;">
     <a class="text-decoration-none" href="@_hrefStr">
-        <div class="container-fluid p-0 bg-GPA">
+        <div class="container-fluid p-0 @_img_background">
             <img src="@_imgStr" class="card-img-top featGames-bg @_imgClassName">
         </div>
         <div class="card-body pt-0 bg-black">
@@ -16,6 +16,8 @@
 @code{
     [Parameter]
     public string _imgStr {get; set;}
+    [Parameter]
+    public string _img_background {get; set;}
     [Parameter]
     public string _imgClassName { get; set; }
     [Parameter]
