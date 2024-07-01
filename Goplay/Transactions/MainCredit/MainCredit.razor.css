@@ -14,10 +14,11 @@
 }
 li > a.nav-link{
     cursor: pointer;
+    border: 1px transparent;
 }
 
 .nav-link:hover, .nav-link:focus {
-    border: none !important;
+    border: 1px transparent;
 }
 
 .nav-link.active {
