@@ -66,6 +66,7 @@
 
 .mainCon {
     max-width: 650px;
+    max-height: 130px;
     margin: 0 auto;
     overflow: hidden;
     overflow: auto;
@@ -81,9 +82,12 @@
     margin: 2px;
     border-radius: 50%;
     padding: 8px;
+    font-size: 10px;
+    align-items: center;
+    justify-content: center;
 }
-.playerTrends{background-color: #0816b3;}
-.bankerTrends{background-color: #bd0b0b;}
+.bankerTrends{background-color: #0816b3;}
+.playerTrends{background-color: #bd0b0b;}
 .tieTrends{background-color: #e6b82b;}
 .canceledTrends{background-color: #494646;}
 
@@ -111,7 +115,7 @@
     }
 
     .arrow {
-        top: 52% !important;
+        top: 61% !important;
     }
     .trends-font {
         font-size: 13px;
@@ -128,7 +132,7 @@
     }
 
     .arrow {
-        top: 52% !important;
+        top: 61% !important;
     }
     .trends-font {
         font-size: 13px;
@@ -151,7 +155,7 @@
     }
 
     .arrow {
-        top: 52% !important;
+        top: 61% !important;
     }
     .trends-font {
         font-size: 12.5px;
@@ -170,7 +174,7 @@ a.play-btn {
 
 .arrow {
     position: absolute;
-    top: 52%;
+    top: 61%;
     left: 52%;
     transform: translate(-50%, -50%) rotate(-90deg);
     cursor: pointer;

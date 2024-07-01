@@ -6,6 +6,9 @@
     <div class="info @(isActive ? "active" : "")">
         <div class="content">
             <div class="button button-playNow">
+                <div class="container">
+                    <h4 class="text-light mb-4">@_gamePromptStr</h4>
+                </div>
                 <a class="btn btn-warning m-1" href="@_gamePlayHrefStr">
                     <span>Play Now</span>
                     <div class="arrow">
@@ -35,22 +38,22 @@
                         <div class="mainCon container flex-nowrap">
                             <div class="innerCon col p-0 ">
                                 <div class="row">
-                                    <span class="playerTrends"></span>
-                                    <span class="playerTrends"></span>
-                                    <span class="playerTrends"></span>
-                                    <span class="playerTrends"></span>
-                                    <span class="playerTrends"></span>
-                                    <span class="bankerTrends"></span>
-                                    <span class="bankerTrends"></span>
-                                    <span class="bankerTrends"></span>
-                                    <span class="bankerTrends"></span>
-                                    <span class="bankerTrends"></span>
-                                    <span class="bankerTrends"></span>
-                                    <span class="bankerTrends"></span>
-                                    <span class="bankerTrends"></span>
-                                    <span class="bankerTrends"></span>
-                                    <span class="tieTrends"></span>
-                                    <span class="canceledTrends"></span>
+                                    <span class="playerTrends text-white">P</span>
+                                    <span class="playerTrends text-white">P</span>
+                                    <span class="playerTrends text-white">P</span>
+                                    <span class="playerTrends text-white">P</span>
+                                    <span class="playerTrends text-white">P</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="tieTrends text-white">T</span>
+                                    <span class="canceledTrends text-white">C</span>
                                 </div>
                             </div>
                         </div>
@@ -64,6 +67,7 @@
     [Parameter] public string _imgStr { get; set; } = string.Empty;
     [Parameter] public string _tableNumberStr { get; set; } = string.Empty;
     [Parameter] public string _gamePlayHrefStr { get; set; } = string.Empty;
+    [Parameter] public string _gamePromptStr { get; set; } = string.Empty;
     private bool isActive = false;
 
     private void ToggleActive()
