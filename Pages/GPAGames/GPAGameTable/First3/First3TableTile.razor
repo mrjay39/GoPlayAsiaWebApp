@@ -1,0 +1,108 @@
+﻿<div class="card m-1 p-0 border-dark game-tile" style="background-color: inherit; border-color: none;">
+    <div class="container-fluid p-0 bg-img">
+        <img src="@_imgStr" class="card-img-top featGames-bg basketBall">
+        @* <img src="https://betm.co/wp-content/uploads/2024/01/card-dealer-dealing-cards.jpg" class="card-img-top featGames-bg basketBall"> *@
+    </div>
+    <div class="info @(isActive ? "active" : "")">
+        <div class="content">
+            <div class="button button-playNow">
+                <div class="container">
+                    <h4 class="text-light mb-4">@_gamePromptStr</h4>
+                </div>
+                <a class="btn btn-warning m-1" href="@_gamePlayHrefStr">
+                    <span>Play Now</span>
+                    <div class="arrow">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="subtitle mt-2">
+        <h5 class="text-white fw-bold">
+            <span class="ms-3">@_tableNumberStr</span>
+        </h5>
+        <div class="container p-0 pt-2">
+            <div class="row">
+                <div class="container">
+                    <p class="text-light text-center trends-font">
+                        <span><span class="bg-player rounded-circle p-2"></span> Player</span>
+                        <span><span class="bg-banker rounded-circle p-2"></span>Banker</span>
+                        <span><span class="bg-tie rounded-circle p-2"></span>Tie</span>
+                        <span><span class="bg-canceled rounded-circle p-2"></span>Canceled</span>
+                    </p>
+                    <h6 class="text-light mt-2"><span class="ms-3">Game Trends</span></h6>
+                    <div class="d-flex">
+                        <div class="mainCon container flex-nowrap">
+                            <div class="innerCon col p-0 ">
+                                <div class="row">
+                                    <span class="playerTrends text-white">P</span>
+                                    <span class="playerTrends text-white">P</span>
+                                    <span class="playerTrends text-white">P</span>
+                                    <span class="playerTrends text-white">P</span>
+                                    <span class="playerTrends text-white">P</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="bankerTrends text-white">B</span>
+                                    <span class="tieTrends text-white">T</span>
+                                    <span class="canceledTrends text-white">C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter] public string _imgStr { get; set; } = string.Empty;
+    [Parameter] public string _tableNumberStr { get; set; } = string.Empty;
+    [Parameter] public string _gamePlayHrefStr { get; set; } = string.Empty;
+    [Parameter] public string _gamePromptStr { get; set; } = string.Empty;
+    private bool isActive = false;
+
+    private void ToggleActive()
+    {
+        isActive = !isActive;
+        if (isActive)
+        {
+            // Start a timer to remove the active class after 20 seconds
+            TimerCallback timerCallback = state =>
+            {
+                isActive = false;
+                StateHasChanged(); // Notify Blazor that the state has changed
+            };
+            var timer = new Timer(timerCallback, null, 4000, Timeout.Infinite);
+        }
+    }
+}
+
+
+
+
+
+
+
+@* <div class="col">
+    <h6 class="fw-bold text-dark text-start">Table 1</h6>
+    <img src="https://betm.co/wp-content/uploads/2024/01/card-dealer-dealing-cards.jpg" class="img img-fluid w-100 p-1">
+    <div class="button button-playNow">
+        <a href="games/lucky9" class="text-decoration-none btn btn-warning play-btn p-1">
+            <span>Play Now</span>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </a>
+    </div>
+</div> *@

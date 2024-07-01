@@ -1,0 +1,23 @@
+﻿.marketing {
+    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#000 100%) !important;
+    background-size: auto;
+    background-repeat: repeat;
+}
+
+.footer {
+    background: #101019;
+}
+
+
+@media only screen and (min-width: 992px) {
+    .gameOverflow-x {
+        overflow-x: auto;
+        padding-bottom: 0 !important;
+    }
+
+    .gameOverflow-x > div {
+        display: inline-flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: inherit !important;
+    }
+}
