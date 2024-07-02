@@ -258,12 +258,25 @@ public class SignUpViewModel
                     errorMsg = "Password and confirm password did not match";
                     break;
                 case 2:
-                    errorMsg = "Password cannot be empty and must be at least 8 characters";
+                    errorMsg = "Password must be at least 8 characters long";
                     break;
                 case 3:
                     errorMsg = "Password cannot contain spaces";
                     break;
+                case 4:
+                    errorMsg = "Password must contain at least one lowercase letter";
+                    break;
+                case 5:
+                    errorMsg = "Password must contain at least one uppercase letter";
+                    break;
+                case 6:
+                    errorMsg = "Password must contain at least one digit";
+                    break;
+                case 7:
+                    errorMsg = "Password must contain at least one special character";
+                    break;
                 default:
+                    errorMsg = "Unknown error occurred";
                     break;
             }
         }

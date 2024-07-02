@@ -10,6 +10,7 @@ using GoplayasiaBlazor.Models;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using Microsoft.AspNetCore.Components;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
+using GoplayasiaBlazor.Core.Helpers;
 
 namespace GoPlayAsiaWebApp.Goplay.Main.Settings;
 
@@ -249,7 +250,11 @@ public partial class SettingsView
     private async Task onchange_confirmpass(ChangeEventArgs e)
     {
         var value = (string)e.Value;
+
+       
+
         string valPass = await _settingsViewModel.PasswordMatchChecker(value);
+
         msgConfirmPass = valPass;
         if (valPass != "Ok")
         {

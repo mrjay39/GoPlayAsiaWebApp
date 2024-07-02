@@ -42,7 +42,7 @@ public partial class PopupSMS
         }
         else
         {
-            errorOTMMSG = "Invalid OTP Code entered, please try again...;";
+            errorOTMMSG = "Invalid OTP Code entered, please try again";
             errorOTP = false;
         }
         popupRes.Close();

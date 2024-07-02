@@ -286,7 +286,6 @@ public partial class Signup
         if (value.Length == 0)
         {
             _signupViewModel.errUsername = "Username is required";
-
             disbaleLogin = true;
             submitClass = "disSubmit";
         }
@@ -297,51 +296,14 @@ public partial class Signup
         }
         else
         {
-            if (!string.IsNullOrEmpty(_signupViewModel.SignupDTO.Password) &&
-            !string.IsNullOrEmpty(_signupViewModel.SignupDTO.ConfirmPassword))
-            {
-                disbaleLogin = false;
-                submitClass = "";
-            }
-            else
-            {
-                disbaleLogin = true;
-                submitClass = "disSubmit";
-            }
+            UpdateLoginState();
         }
     }
+
     private async Task onchange_Password(ChangeEventArgs e)
     {
         var value = (string)e.Value;
         string valPass = await _signupViewModel.ValidatePassword(value, _signupViewModel.SignupDTO.ConfirmPassword);
-        //msgPassword = valPass;
-        _signupViewModel.errPass = valPass;
-        if (value.Length == 0)
-        {
-            disbaleLogin = true;
-            submitClass = "disSubmit";
-        }
-        else
-        {
-            if (
-            !string.IsNullOrEmpty(_signupViewModel.SignupDTO.Username) &&
-            !string.IsNullOrEmpty(_signupViewModel.SignupDTO.ConfirmPassword))
-            {
-                disbaleLogin = false;
-                submitClass = "";
-            }
-            else
-            {
-                disbaleLogin = true;
-                submitClass = "disSubmit";
-            }
-        }
-    }
-    private async Task onchange_ConfirmPassword(ChangeEventArgs e)
-    {
-        var value = (string)e.Value;
-        string valPass = await _signupViewModel.ValidatePassword(_signupViewModel.SignupDTO.Password, value);
-        //msgPassword = valPass;
         _signupViewModel.errPass = valPass;
 
         if (value.Length == 0)
@@ -349,25 +311,47 @@ public partial class Signup
             disbaleLogin = true;
             submitClass = "disSubmit";
         }
-        else if (@_signupViewModel.errPass != "Ok")
+        else
+        {
+            UpdateLoginState();
+        }
+    }
+
+    private async Task onchange_ConfirmPassword(ChangeEventArgs e)
+    {
+        var value = (string)e.Value;
+        string valPass = await _signupViewModel.ValidatePassword(_signupViewModel.SignupDTO.Password, value);
+        _signupViewModel.errPass = valPass;
+
+        if (value.Length == 0)
+        {
+            disbaleLogin = true;
+            submitClass = "disSubmit";
+        }
+        else if (_signupViewModel.errPass != "Ok")
         {
             disbaleLogin = true;
             submitClass = "disSubmit";
         }
         else
         {
-            if (
-            !string.IsNullOrEmpty(_signupViewModel.SignupDTO.Username) &&
-            !string.IsNullOrEmpty(_signupViewModel.SignupDTO.Password))
-            {
-                disbaleLogin = false;
-                submitClass = "";
-            }
-            else
-            {
-                disbaleLogin = true;
-                submitClass = "disSubmit";
-            }
+            UpdateLoginState();
+        }
+    }
+
+    private void UpdateLoginState()
+    {
+        if (!string.IsNullOrEmpty(_signupViewModel.SignupDTO.Username) &&
+            !string.IsNullOrEmpty(_signupViewModel.SignupDTO.Password) &&
+            !string.IsNullOrEmpty(_signupViewModel.SignupDTO.ConfirmPassword))
+        {
+            disbaleLogin = false;
+            submitClass = "";
+        }
+        else
+        {
+            disbaleLogin = true;
+            submitClass = "disSubmit";
         }
     }
     #endregion

@@ -10,6 +10,7 @@ using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
+using System.Threading.Tasks;
 
 namespace GoPlayAsiaWebApp.Goplay.ViewModels
 {
@@ -165,7 +166,7 @@ namespace GoPlayAsiaWebApp.Goplay.ViewModels
 
             var parameters = new ModalParameters();
             parameters.Add("EmailAddress", UserInfo.EmailAddress);
-            var popupCode = _popupModal.Show<PopupEmailVerify>("", parameters, new ModalOptions() { Class = "op-modal", HideHeader = false });
+            var popupCode = _popupModal.Show<PopupEmailVerify>("", parameters, new ModalOptions() { Class = "op-modal", HideHeader = false, DisableBackgroundCancel = true });
             var resCode = await popupCode.Result;
             if (!(bool)resCode.Data)
             {
@@ -321,6 +322,12 @@ namespace GoPlayAsiaWebApp.Goplay.ViewModels
             {
                 if (NewPassword != confirmpass)
                     errorMsg = "Passwords did not match";
+            }
+
+            var valPassRes = await ValidatorHelper.ValidatePassword(NewPassword, confirmpass);
+            if (valPassRes != 0)
+            {
+                errorMsg = "Password inputs cannot be empty, cannot contain spaces, must match, must be at least 8 characters long, and must include a combination of uppercase letters, lowercase letters, digits, and special characters.";
             }
             return errorMsg;
         }

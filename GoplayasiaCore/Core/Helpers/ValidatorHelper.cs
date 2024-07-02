@@ -38,10 +38,18 @@ namespace GoplayasiaBlazor.Core.Helpers
             {
                 if (string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword) || password != confirmPassword)
                     return 1;
-                if ( password.Length < 8)
+                if (password.Length < 8)
                     return 2;
                 if (password.Contains(" ") || confirmPassword.Contains(" "))
                     return 3;
+                if (!password.Any(char.IsLower))
+                    return 4;
+                if (!password.Any(char.IsUpper))
+                    return 5;
+                if (!password.Any(char.IsDigit))
+                    return 6;
+                if (!Regex.IsMatch(password, @"[!@#$%^&*(),.?""{}|<>]"))
+                    return 7;
                 return 0;
             }
             catch

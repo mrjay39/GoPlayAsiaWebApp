@@ -8,7 +8,7 @@
             <span class="errorMessage" hidden="@errorCode">@errorMsg</span>
         </div>
     </div>
-    <input maxlength="20" class="form-control mb-2" type="text" placeholder="OTP" bind-value="@OTP" required />
+    <input maxlength="20" class="form-control mb-2" type="text" placeholder="OTP" @bind-value="@OTP" required />
     <div class="row d-flex mb-2">
         <button type="button" class="text-primary bg-transparent border-0 text-end" @onclick="() => ReqNewCode()">Request New Code</button>
     </div>

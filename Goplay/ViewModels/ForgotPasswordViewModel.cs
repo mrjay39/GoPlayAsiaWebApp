@@ -199,7 +199,7 @@ public class ForgotPasswordViewModel
         var valPassRes = await ValidatorHelper.ValidatePassword(NewPassword, ConfirmNewPassword);
         if (valPassRes != 0)
         {
-            _toastService.ShowError("Password inputs cannot be empty, cannot contain spaces, must match and must be at least 8 characters");
+            _toastService.ShowError("Password inputs cannot be empty, cannot contain spaces, must match, must be at least 8 characters long, and must include a combination of uppercase letters, lowercase letters, digits, and special characters.");
             return;
         }
         var popupRes = _popupModal.Show<PopupLoading>("");

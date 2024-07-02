@@ -15,8 +15,8 @@ public partial class PopupEmailVerify
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [CascadingParameter] public IModalService popupModal { get; set; }
     [Parameter] public string? EmailAddress { get; set; }
-    public string Code { get; private set; } = "";
-    private string OTP { get; set; } = "";
+
+    private string OTP { get; set; } = string.Empty;
     public bool errorCode { get; set; } = false;
     public string errorMsg { get; set; } = "";
     public string msgForemailsent { get; set; } = "";
@@ -38,7 +38,7 @@ public partial class PopupEmailVerify
     public async Task Validate()
     {
         var popupRes = popupModal.Show<PopupLoading>("");
-        if (string.IsNullOrEmpty(OTP) || Code.Length != 6)
+        if (string.IsNullOrEmpty(OTP) || OTP.Length != 6)
         {
             errorCode = false;
             errorMsg = "Verification Code cannot be empty and must be exactly 6 characters in length";
@@ -88,7 +88,7 @@ public partial class PopupEmailVerify
         //    errorCode = false;
         //    return;
         //}
-        Code = codeSent;
+        //Code = codeSent;
 
     }
     #endregion
