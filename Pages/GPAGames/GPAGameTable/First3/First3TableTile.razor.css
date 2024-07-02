@@ -17,10 +17,10 @@
     border-width: 5px;
 }
 
-.game-tile .bg-img > img {
-    border-radius: 0;
-    height: 140px;
-}
+    .game-tile .bg-img > img {
+        border-radius: 0;
+        height: 140px;
+    }
 
 .info {
     width: 100%;
@@ -46,23 +46,41 @@
     align-items: center;
     text-align: center;
 }
-.trends-font{
+
+.trends-font {
     display: inline-flex;
     align-items: center;
+    opacity: .85;
 }
-.trends-font > span{
-    display: inline-flex;
-    align-items: center;
-    margin: 0 3px;
+
+    .trends-font > span {
+        display: inline-flex;
+        align-items: center;
+        font-size: 12px;
+        margin: 0 4px;
+        justify-content: center;
+    }
+
+        .trends-font > span > span {
+            display: inline-flex;
+            height: 15px;
+        }
+
+.bg-player {
+    background: #db091d;
 }
-.trends-font > span > span{
-    display: inline-flex;
-    height: 15px;
+
+.bg-banker {
+    background: #040ed9;
 }
-.bg-player{background: #db091d;}
-.bg-banker{background: #040ed9;}
-.bg-tie{background: #f1b904;}
-.bg-canceled{background: #4f565b;}
+
+.bg-tie {
+    background: #f1b904;
+}
+
+.bg-canceled {
+    background: #4f565b;
+}
 
 .mainCon {
     max-width: 650px;
@@ -71,10 +89,12 @@
     overflow: hidden;
     overflow: auto;
 }
+
 .innerCon {
     height: min-content;
     max-width: 20px;
 }
+
 .playerTrends, .bankerTrends, .tieTrends, .canceledTrends {
     display: inline-flex;
     width: 10px;
@@ -86,10 +106,22 @@
     align-items: center;
     justify-content: center;
 }
-.bankerTrends{background-color: #0816b3;}
-.playerTrends{background-color: #bd0b0b;}
-.tieTrends{background-color: #e6b82b;}
-.canceledTrends{background-color: #494646;}
+
+.bankerTrends {
+    background-color: #0816b3;
+}
+
+.playerTrends {
+    background-color: #bd0b0b;
+}
+
+.tieTrends {
+    background-color: #e6b82b;
+}
+
+.canceledTrends {
+    background-color: #494646;
+}
 
 @media only screen and (min-width: 992px) {
     .gameOverflow-x {
@@ -98,11 +130,11 @@
         scrollbar-width: thin;
     }
 
-    .gameOverflow-x > div {
-        display: inline-flex !important;
-        flex-wrap: nowrap !important;
-        justify-content: inherit !important;
-    }
+        .gameOverflow-x > div {
+            display: inline-flex !important;
+            flex-wrap: nowrap !important;
+            justify-content: inherit !important;
+        }
 }
 
 @media screen and (max-width: 460px) {
@@ -110,15 +142,16 @@
         width: 16rem;
     }
 
-    .game-tile h3 {
-        font-size: 15px;
-    }
+        .game-tile h3 {
+            font-size: 15px;
+        }
 
     .arrow {
-        top: 61% !important;
+        top: 62% !important;
     }
+
     .trends-font {
-        font-size: 13px;
+        font-size: 11px;
     }
 }
 
@@ -127,15 +160,16 @@
         width: 16rem;
     }
 
-    .game-tile h3 {
-        font-size: 15px;
-    }
+        .game-tile h3 {
+            font-size: 15px;
+        }
 
     .arrow {
-        top: 61% !important;
+        top: 62% !important;
     }
+
     .trends-font {
-        font-size: 13px;
+        font-size: 11px;
     }
 }
 
@@ -145,20 +179,21 @@
         margin: 3px !important;
     }
 
-    .game-tile .btn {
-        font-size: 12px;
-        font-weight: bold;
-    }
+        .game-tile .btn {
+            font-size: 12px;
+            font-weight: bold;
+        }
 
-    .game-tile h3 {
-        font-size: 15px;
-    }
+        .game-tile h3 {
+            font-size: 15px;
+        }
 
     .arrow {
-        top: 61% !important;
+        top: 62% !important;
     }
+
     .trends-font {
-        font-size: 12.5px;
+        font-size: 11px;
     }
 }
 
@@ -174,7 +209,7 @@ a.play-btn {
 
 .arrow {
     position: absolute;
-    top: 61%;
+    top: 62%;
     left: 52%;
     transform: translate(-50%, -50%) rotate(-90deg);
     cursor: pointer;

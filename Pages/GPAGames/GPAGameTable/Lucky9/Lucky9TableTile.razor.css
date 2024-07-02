@@ -46,14 +46,17 @@
     align-items: center;
     text-align: center;
 }
-.trends-font{
+.trends-font {
     display: inline-flex;
     align-items: center;
+    opacity: .85;
 }
 .trends-font > span{
     display: inline-flex;
     align-items: center;
-    margin: 0 3px;
+    font-size: 12px;
+    margin: 0 4px;
+    justify-content: center;
 }
 .trends-font > span > span{
     display: inline-flex;
@@ -115,10 +118,10 @@
     }
 
     .arrow {
-        top: 61% !important;
+        top: 62% !important;
     }
     .trends-font {
-        font-size: 13px;
+        font-size: 11px;
     }
 }
 
@@ -132,10 +135,10 @@
     }
 
     .arrow {
-        top: 61% !important;
+        top: 62% !important;
     }
     .trends-font {
-        font-size: 13px;
+        font-size: 11px;
     }
 }
 
@@ -155,10 +158,10 @@
     }
 
     .arrow {
-        top: 61% !important;
+        top: 62% !important;
     }
     .trends-font {
-        font-size: 12.5px;
+        font-size: 11px;
     }
 }
 
@@ -174,7 +177,7 @@ a.play-btn {
 
 .arrow {
     position: absolute;
-    top: 61%;
+    top: 62%;
     left: 52%;
     transform: translate(-50%, -50%) rotate(-90deg);
     cursor: pointer;

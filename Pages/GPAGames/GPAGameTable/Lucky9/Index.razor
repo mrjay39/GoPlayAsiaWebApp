@@ -1,9 +1,10 @@
 ﻿@page "/Lucky9Table"
+@using GoPlayAsiaWebApp.Controls.GameLinkHeader
 
-<div id="lucky9Tables" class="container-fluid p-0 pt-5 pb-4 marketing">
+<div id="lucky9Tables" class="container-fluid p-0 pb-4 marketing">
     <div class="container pt-4">
         <h2 class="text-white fw-bold mt-4">Choose the Perfect Table</h2>
-        <h5 class="text-muted">Your Perfect Spot Awaits!</h5>
+        <h6 class="text-muted">Your Perfect Spot Awaits!</h6>
         <div id="gpa-overflow" class="pb-2 gameOverflow-x">
             <div class="justify-content-center p-2">
                 <Lucky9TableTile 
@@ -20,7 +21,14 @@
             </div>
         </div>
     </div>
+
+    <GameLinkHeader />
 </div>
+
+
+
+
+
 @* <div class="offcanvas offcanvas-bottom bg-transparent" tabindex="-1" id="sample" aria-labelledby="sampleLabel">
     <div class="container offcanvas-body small p-2 pt-0 text-center bg-white rounded-3">
         <div class="row rounded-3">
