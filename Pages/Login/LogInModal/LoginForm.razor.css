@@ -1,1 +1,12 @@
-﻿
+﻿/* enable absolute positioning */
+.eye {
+    position: absolute;
+    top: 6%;
+    right: 1%;
+    transform: translate(-50%,0);
+    font-size: 25px;
+}
+
+.eyeContainer {
+    position: relative;
+}

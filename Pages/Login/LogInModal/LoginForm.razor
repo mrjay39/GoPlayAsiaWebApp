@@ -8,8 +8,10 @@
         <div class="form-group mb-3">
             <input id="username" type="text" class="form-control" placeholder="Type your Username" required="" @bind-value="loginDTO.Username">
         </div>
-        <div class="form-group mb-3">
-            <input id="password" type="password" class="form-control" placeholder="Type your Password" required="" @bind-value="loginDTO.Password">
+        <div class="form-group mb-3 eyeContainer">
+            <input type="@showpass" class="form-control font-weight-bolder" id="password" placeholder="Type your Password" @bind-value="loginDTO.Password" required>
+            <span class="eye @showpassicon" @onclick="ShowPassword"></span>
+            @* <input id="password" type="password" class="form-control" placeholder="Type your Password" required="" @bind-value="loginDTO.Password"> *@
         </div>
         <div class="form-group">
             <button id="signIn" type="submit" class="form-control btn btn-warning rounded submit px-3">Sign In</button>
