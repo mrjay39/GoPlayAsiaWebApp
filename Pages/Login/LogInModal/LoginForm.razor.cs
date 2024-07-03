@@ -192,14 +192,14 @@ public partial class LoginForm
         try
         {
          
-            if (!agreeToTerms)
-            {
-                toastService.ShowError("Please agree to the Terms of use and Privacy Policy", settings =>
-                {
-                    settings.Position = ToastPosition.BottomCenter;
-                });
-                return;
-            }
+            //if (!agreeToTerms)
+            //{
+            //    toastService.ShowError("Please agree to the Terms of use and Privacy Policy", settings =>
+            //    {
+            //        settings.Position = ToastPosition.BottomCenter;
+            //    });
+            //    return;
+            //}
             var browser = await JSRuntime.InvokeAsync<string>(identifier: "identifyWebBrowser");
             await FullScreen();
             var isApple = await CheckifApple();
