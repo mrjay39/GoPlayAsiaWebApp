@@ -16,15 +16,19 @@
         <div class="form-group">
             <button id="signIn" type="submit" class="form-control btn btn-warning rounded submit px-3">Sign In</button>
         </div>
-       
+
         <ValidationSummary />
     </EditForm>
     <div class="container-fluid p-0">
         <OffCanvasTermsAndCondition AgreeEvent="AgreeToTerms" agreeToTerms="agreeToTerms" />
 
         <div class="flex justify-content-xl-center align-items-center text-light text-center mt-3">
-            <button @onclick="LoginOTP" class="text-light btn bg-transparent border-0 p-0">
-                <span class="text-warning fw-bold"><i class="bi bi-chat-left-dots"></i> &nbsp;Login with Verification Code</span>
+            <p>Login with</p>
+            <button id="otp" @onclick="LoginOTP" class="text-light btn bg-transparent border-0">
+                <span class="text-warning fw-bold"><i class="bi otp"></i> &nbsp; OT P</span>
+            </button>
+            <button id="biometric" @onclick="LoginBiometric" class="text-light btn bg-transparent border-0" data-bs-dismiss="modal-dialog" aria-label="Close">
+                <span class="text-warning fw-bold"><i class="fa-solid fingerprint"></i>&nbsp; Biometric</span>
             </button>
         </div>
         <div class="content text-center">
@@ -50,7 +54,7 @@
 
     private async Task AgreeToTerms(bool value)
     {
-        
+
         agreeToTerms = value;
         if (value)
         {
@@ -66,5 +70,10 @@
     private void LoginOTP()
     {
         var refPopup = popupLoadingModal.Show<LoginUsingOTP>("");
+    }
+    
+    void LoginBiometric()
+    {
+        ModalService.Show<BiometricLogin>("");
     }
 }

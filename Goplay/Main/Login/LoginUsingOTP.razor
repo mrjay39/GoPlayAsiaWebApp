@@ -17,7 +17,7 @@
 <div class="maincontainer mt-5 pt-4 rounded-3">
     <div class="innerCon row justify-content-center w-100 m-0">
         <div class="cardWidth">
-            <div class="imgContainer d-flex justify-content-center">
+            @* <div class="imgContainer d-flex justify-content-center">
                 <img class=" img-fluid" src="/img/header-img.png" />
                 <div class="breath-light1"></div>
                 <div class="breath-light2"></div>
@@ -28,13 +28,16 @@
                 <div class="breath-light7"></div>
                 <div class="breath-light8"></div>
                 <div class="breath-light9"></div>
+            </div> *@
+            <div class="d-flex justify-content-center">
+                <img src="img/gpa-logo-2.png" class="img img-fluid w-50">
             </div>
 
             @if (_viewState == 1)
             {
                 <EditForm Model="@_loginOPT" OnValidSubmit="@createOTP" autocomplete="stopdoingthat">
                     <DataAnnotationsValidator />
-                    <div class="container mt-2 mb-5 pt-4 pb-4">
+                    <div class="container mt-2 mb-3 pt-4 pb-4">
                         <div class="container-fluid text-center mb-2">
                             <p class="h4 mb-0 text-white fw-bold"><b>What's your mobile number?</b></p>
                             <p class="text-white">We'll send a code to your mobile number.</p>

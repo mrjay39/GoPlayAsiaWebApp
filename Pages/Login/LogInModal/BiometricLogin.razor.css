@@ -1,0 +1,25 @@
+﻿.maincontainer {
+    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#281728 20%,rgba(132,31,53,1) 60%,#101019 100%) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cardWidth {
+    max-width: 550px;
+    margin: 0;
+}
+
+.logo-pagcor {
+    max-width: 200px;
+    margin-top: 5px;
+}
+img.w-20 {
+    width: 20%;
+}
+
+.imgContainer {
+    position: relative;
+}
+.border-bottom-4{
+    border-bottom: 4px solid gold;
+}
