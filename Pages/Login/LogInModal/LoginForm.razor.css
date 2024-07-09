@@ -10,3 +10,22 @@
 .eyeContainer {
     position: relative;
 }
+#biometric > span, #otp > span {
+    display: inline-flex;
+}
+#biometric .fingerprint {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: relative;
+    background-size: 100% 100% !important;
+    background: url('img/fp_gold.svg')no-repeat;
+}
+#otp .otp {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: relative;
+    background-size: 100% 100% !important;
+    background: url('img/otp_gold.svg')no-repeat;
+}

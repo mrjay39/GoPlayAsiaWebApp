@@ -26,6 +26,9 @@
     -moz-appearance: textfield !important;
     -webkit-appearance: none;
 }
+.border-bottom-4 {
+    border-bottom: 4px solid gold;
+}
 
 /*Breathing*/
 .logo-pagcor {

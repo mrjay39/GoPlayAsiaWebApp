@@ -1,0 +1,69 @@
+﻿.maincontainer {
+    background-image: url(./img/bg-middle.png),linear-gradient(180deg,#281728 20%,rgba(132,31,53,1) 60%,#101019 100%) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cardWidth {
+    max-width: 550px;
+    margin: 0;
+}
+
+.logo-pagcor {
+    max-width: 200px;
+    margin-top: 5px;
+}
+
+.imgContainer {
+    position: relative;
+}
+.border-bottom-4{
+    border-bottom: 4px solid gold;
+}
+/*========= Biometric Animation ==========*/
+/*.fingerprint {
+    background-image: url('img/fp_play.svg');
+    animation-duration: 1500ms;
+    animation-timing-function: steps(18);
+    animation-fill-mode: forwards;
+    width: 154px;
+    height: 214px;
+    background-repeat: no-repeat;
+}
+
+.fingerprint.play {
+    animation-name: biometricAnimation;
+}
+
+@keyframes biometricAnimation {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: -2772px 0px;
+    }
+}*/
+
+
+
+@keyframes biometricAnimation {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -918px 0px;
+  }
+}
+.fingerprint {
+    width: 51px;
+    height: 71px;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(18);
+    background-image: url('img/fp_play_2.svg');
+    animation-duration: 1500ms;
+    background-repeat: no-repeat;
+}
+.fingerprint.play {
+    animation-name: biometricAnimation;
+}

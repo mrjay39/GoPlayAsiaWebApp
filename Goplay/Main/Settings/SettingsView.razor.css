@@ -17,6 +17,9 @@
     background: transparent;
     border: 1px solid #4b4a4a;
 }
+.pointer-cursor{
+    cursor: pointer;
+}
 
 .change-img > span {
     width: 30px;
