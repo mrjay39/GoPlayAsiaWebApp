@@ -10,97 +10,48 @@
     <div id="link-header" class="pb-2 gameOverflow-x">
         <div class="row justify-content-center">
 
-            <div @onclick="@(e => ToggleSelection("1"))" class="link-header p-0 m-2 @GetSelectionClass("1")">
-                <div class="text-warning btn p-0" style="width: 12rem;">
-                    <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
-                        @if (IsSelected("1"))
-                        {
-                            <span class="selected-icon"><i class="fa-regular fa-circle-check"></i></span>
-                        }
-                        <img src="./img/providersLogo/pragmatic.png" class="img-fluid w-100" alt="GoPlayAsia">
-                        <h6 class="text-uppercase fw-bold mb-0">Pragmatic</h6>
+            @foreach (var provider in providers)
+            {
+                <div @onclick="@(e => ToggleSelection(provider.Key))" class="link-header p-0 m-2 @GetSelectionClass(provider.Key)">
+                    <div class="text-warning btn p-0" style="width: 12rem;">
+                        <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
+                            @if (provider.Value)
+                            {
+                                <span class="selected-icon"><i class="fa-regular fa-circle-check"></i></span>
+                            }
+                            <img src="./img/providersLogo/@GetProviderImage(provider.Key)" class="img-fluid w-100" alt="GoPlayAsia">
+                            <h6 class="text-uppercase fw-bold mb-0">@GetProviderName(provider.Key)</h6>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div @onclick="@(e => ToggleSelection("2"))" class="link-header p-0 m-2 @GetSelectionClass("2")">
-                <div class="text-warning btn p-0" style="width: 12rem;">
-                    <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
-                        @if (IsSelected("2"))
-                        {
-                            <span class="selected-icon"><i class="fa-regular fa-circle-check"></i></span>
-                        }
-                        <img src="./img/providersLogo/evolution.png" class="img-fluid w-100" alt="GoPlayAsia">
-                        <h6 class="text-uppercase fw-bold mb-0">Evolution</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div @onclick="@(e => ToggleSelection("3"))" class="link-header p-0 m-2 @GetSelectionClass("3")">
-                <div class="text-warning btn p-0" style="width: 12rem;">
-                    <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
-                        @if (IsSelected("3"))
-                        {
-                            <span class="selected-icon"><i class="fa-regular fa-circle-check"></i></span>
-                        }
-                        <img src="./img/providersLogo/SAGaming.png" class="img-fluid w-100" alt="GoPlayAsia">
-                        <h6 class="text-uppercase fw-bold mb-0">SA Gaming</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div @onclick="@(e => ToggleSelection("4"))" class="link-header p-0 m-2 @GetSelectionClass("4")">
-                <div class="text-warning btn p-0" style="width: 12rem;">
-                    <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
-                        @if (IsSelected("4"))
-                        {
-                            <span class="selected-icon"><i class="fa-regular fa-circle-check"></i></span>
-                        }
-                        <img src="./img/providersLogo/aviatrix.png" class="img-fluid w-100" alt="GoPlayAsia">
-                        <h6 class="text-uppercase fw-bold mb-0">Aviatrix</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div @onclick="@(e => ToggleSelection("5"))" class="link-header p-0 m-2 @GetSelectionClass("5")">
-                <div class="text-warning btn p-0" style="width: 12rem;">
-                    <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
-                        @if (IsSelected("5"))
-                        {
-                            <span class="selected-icon"><i class="fa-regular fa-circle-check"></i></span>
-                        }
-                        <img src="./img/providersLogo/jili.png" class="img-fluid w-100" alt="GoPlayAsia">
-                        <h6 class="text-uppercase fw-bold mb-0">Jili</h6>
-                    </div>
-                </div>
-            </div>
+            }
 
         </div>
     </div>
 </div>
 
-@if (selectedProviders.Any())
+@if (providers.Any(p => p.Value))
 {
     <div>
-        @foreach (var provider in selectedProviders)
+        @foreach (var provider in providers.Where(p => p.Value))
         {
-            if (provider == "1")
+            if (provider.Key == "1")
             {
                 <LiveCasino />
             }
-            else if (provider == "2")
+            else if (provider.Key == "2")
             {
                 <CardGames />
             }
-            else if (provider == "3")
+            else if (provider.Key == "3")
             {
                 <ArcadeGames />
             }
-            else if (provider == "4")
+            else if (provider.Key == "4")
             {
                 <FishingGames />
             }
-            else if (provider == "5")
+            else if (provider.Key == "5")
             {
                 <SlotsGames />
             }
@@ -109,27 +60,53 @@
 }
 
 @code {
-    private List<string> selectedProviders = new List<string> { "1", "2", "3", "4", "5" }; // All selected by default
+    private Dictionary<string, bool> providers = new Dictionary<string, bool>
+    {
+        { "1", true },
+        { "2", true },
+        { "3", true },
+        { "4", true },
+        { "5", true }
+    };
 
     private void ToggleSelection(string provider)
     {
-        if (IsSelected(provider))
-        {
-            selectedProviders.Remove(provider);
-        }
-        else
-        {
-            selectedProviders.Add(provider);
-        }
+        providers[provider] = !providers[provider];
     }
 
     private bool IsSelected(string provider)
     {
-        return selectedProviders.Contains(provider);
+        return providers[provider];
     }
 
     private string GetSelectionClass(string provider)
     {
         return IsSelected(provider) ? "selected" : "";
+    }
+
+    private string GetProviderName(string provider)
+    {
+        return provider switch
+        {
+            "1" => "Pragmatic",
+            "2" => "Evolution",
+            "3" => "SA Gaming",
+            "4" => "Aviatrix",
+            "5" => "Jili",
+            _ => ""
+        };
+    }
+
+    private string GetProviderImage(string provider)
+    {
+        return provider switch
+        {
+            "1" => "pragmatic.png",
+            "2" => "evolution.png",
+            "3" => "SAGaming.png",
+            "4" => "aviatrix.png",
+            "5" => "jili.png",
+            _ => ""
+        };
     }
 }
