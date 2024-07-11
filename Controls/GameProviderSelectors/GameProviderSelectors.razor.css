@@ -1,0 +1,54 @@
+﻿.link-header{
+    display: inline-flex;
+}
+.selected-icon {
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    width: 17px;
+    height: 17px;
+    font-weight: bold;
+    font-size: 20px;
+    color: gold;
+    background: black;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 992px) {
+    .gameOverflow-x {
+        overflow-x: inherit;
+    }
+}
+#linkHeader.col {
+    flex: inherit;
+    width: 10rem;
+    margin: 10px;
+}
+
+.active {
+    border-bottom: 10px solid #ffffff;
+}
+.bg-provider {
+    background: #373634;
+}
+
+@media only screen and (min-width: 992px) {
+    .link-header {
+        width: 13rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .link-header {
+        width: 9rem;
+    }
+
+
+    #linkHeader.col {
+        flex: 1 0 0%;
+        margin: 3px;
+    }
+}
