@@ -33,6 +33,7 @@
 }
 .bg-provider {
     background: #373634;
+    border: 2px solid #525050;
 }
 
 @media only screen and (min-width: 992px) {

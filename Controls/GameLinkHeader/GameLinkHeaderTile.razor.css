@@ -3,9 +3,15 @@
     width: 10rem;
     margin: 10px;
 }
-
+#link-header > a{
+    color: gold;
+    font-size: 13px;
+}
+.bg-linkHeader {
+    background: #373634;
+}
 .active {
-    border-bottom: 10px solid #ffffff;
+    border-bottom: 5px solid gold;
 }
 
 @media only screen and (min-width: 992px) {
@@ -17,9 +23,6 @@
 @media screen and (max-width: 991px) {
     .link-header {
         width: 9rem;
-    }
-    h6{
-        font-size: 11px;
     }
     #linkHeader.col {
         flex: 1 0 0%;
