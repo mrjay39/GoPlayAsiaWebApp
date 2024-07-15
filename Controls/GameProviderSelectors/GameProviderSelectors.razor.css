@@ -53,3 +53,8 @@
         margin: 3px;
     }
 }
+@media screen and (max-width: 600px) {
+    h5{
+        font-size: 15px;
+    }
+}
