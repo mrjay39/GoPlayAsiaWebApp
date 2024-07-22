@@ -3,6 +3,7 @@
 @using GoPlayAsiaWebApp.Controls.Carousel.ArcadeCarousel
 @using GoPlayAsiaWebApp.Controls.GameLinkHeader
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames
+@using GoPlayAsiaWebApp.Pages.EGames.CardGames.Evolution
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
 @using GoPlayAsiaWebApp.Pages.GPAGames
 <PageTitle>GoPlayAsia: Arcade Games </PageTitle>
@@ -83,7 +84,7 @@
         </div>
     </div>
 
-    <div class="container">
+    @* <div class="container">
         <h2 class="text-white fw-bold mt-5">Exciting Table Games!</h2>
         <h5 class="text-muted">Bet now while the table's hot!</h5>
         <div id="cardGames-overflow" class="pb-2 gameOverflow-x">
@@ -108,7 +109,10 @@
 
             </div>
         </div>
-    </div>
+    </div> *@
+
+    <MostPLayedGameEvolution />
+    <EvolutionCardGame />
 
     <div class="container pb-4">
             <h2 class="text-white fw-bold mt-5">Live Casino</h2>

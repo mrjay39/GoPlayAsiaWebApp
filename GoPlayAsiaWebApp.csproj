@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\EGames\CardGames\MostPLayedGameEvolution.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazored.Modal" Version="7.3.1" />
     <PackageReference Include="Blazored.SessionStorage" Version="2.4.0" />
     <PackageReference Include="Blazored.Typeahead" Version="4.7.0" />
@@ -81,6 +85,7 @@
     <None Include="Goplay\Transactions\Withdraw\DefaultAmount.razor" />
     <None Include="Goplay\Transactions\Withdraw\Withdraw.razor" />
     <None Include="Goplay\Transactions\Withdraw\WithdrawalStatus.razor" />
+    <None Include="Pages\EGames\CardGames\Evolution\MostPLayedGameEvolution.razor" />
     <None Include="wwwroot\css\bootstrap-icons\1-circle-fill.svg" />
     <None Include="wwwroot\css\bootstrap-icons\1-circle.svg" />
     <None Include="wwwroot\css\bootstrap-icons\1-square-fill.svg" />
