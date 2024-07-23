@@ -4,7 +4,7 @@
     margin: 10px;
 }
 #link-header > a{
-    color: gold;
+    color: #688fcf;
     font-size: 13px;
 }
 .bg-linkHeader {
@@ -12,10 +12,22 @@
 }
 .active {
     border-bottom: 5px solid gold;
+    color: gold !important;
+}
+.text-uppercase {
+    font-size: 13px;
+
 }
 
-@media only screen and (min-width: 992px) {
-    .link-header {
+.activeIcon {
+    filter: grayscale(0%)
+}
+.deactiveIcon {
+    filter: grayscale(100%)
+}
+
+    @media only screen and (min-width: 992px) {
+        .link-header {
         width: 13rem;
     }
 }
