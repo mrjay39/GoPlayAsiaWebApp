@@ -13,7 +13,7 @@
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
 @using GoPlayAsiaWebApp.Pages.EGames.SlotGames
 @using GoPlayAsiaWebApp.Pages.GPAGames.WelcomGPA
-@inject LobbyViewModel lobbyViewModel;
+@inject LobbyViewModel lobbyViewModel
 
 <PageTitle>GoPlayAsia: Home</PageTitle>
 
@@ -28,7 +28,9 @@
 
         <FeaturedGames />
 
-        <GameProviderSelectors />
+        <CascadingValue Value="@lobbyViewModel.LiveGameList">
+            <GameProviderSelectors />
+        </CascadingValue>
 
         <WelcomeGPA />
 
@@ -39,6 +41,7 @@
         <AgeAgreement OnAgree="HandleAgeAgreement" />
     }
 </div>
+
 @code {
     private bool showAgeAgreement = true;
 
@@ -55,7 +58,7 @@
             showAgeAgreement = false;
         }
 
-        await lobbyViewModel.GetListGames("Evolution", "all");
+        await lobbyViewModel.GetListGames();
     }
 
     private async Task HandleAgeAgreement()

@@ -218,6 +218,19 @@
             public const string PendingBets = "Pending";
             #endregion
 
+            #region GAME PROVIDER
+            public const string BigTimeGaming = "Big Time Gaming";
+            public const string Evolution = "Evolution";
+            public const string NetEnt = "NetEnt";
+            public const string RedTiger = "Red Tiger";
+            #endregion
+
+            #region eGAMES GAMETYPE
+            public const string egamesAll = "all";
+            public const string egamesLive = "Live";
+            public const string egamesRng = "Rng";
+            public const string egamesSlots = "Slots";
+            #endregion
 
         }
 

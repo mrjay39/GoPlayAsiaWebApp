@@ -1,8 +1,10 @@
-﻿@using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
+﻿@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames
 @using GoPlayAsiaWebApp.Pages.EGames.FishingGames
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
 @using GoPlayAsiaWebApp.Pages.EGames.SlotGames
+@using GoplayasiaSharedKernel.DTOs.DTOIn
 
 <div class="container pt-4">
     <h2 class="text-white fw-bold mt-3">Game Providers</h2>
@@ -60,6 +62,8 @@
 }
 
 @code {
+    [CascadingParameter] public List<EvolutionGamesDTO> LiveGameList { get; set; }
+
     private Dictionary<string, bool> providers = new Dictionary<string, bool>
     {
         { "1", true },

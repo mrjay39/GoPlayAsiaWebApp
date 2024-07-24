@@ -9,12 +9,14 @@ using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using System;
+using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoPlayAsiaWebApp.Goplay.ViewModels;
 
 public class LobbyViewModel : BaseViewModel
 {
-    public List<EvolutionGamesDTO> GameList = new List<EvolutionGamesDTO>();
+    public List<EvolutionGamesDTO> LiveGameList { get; set; }
+
 
     public LobbyViewModel(ICurrentUser icurrentUser, IConfiguration iconfig, IGameRoundService igameRoundService, NavigationManager navigationManager, IAccountService iaccountService, IToastService toastService, AuthenticationStateProvider AuthenticationStateProvider, IConstantService constantService, IEGamesService iegamesservice)
 
@@ -48,19 +50,19 @@ public class LobbyViewModel : BaseViewModel
         }
     }
 
-    public async Task GetListGames(string gameProvider, string gameType)
+    public async Task GetListGames()
     {
         try
         {
-            GameList = await _iegamesservice.GetGames(gameProvider, gameType);
-            if (GameList == null)
+            var evoGameList = await _iegamesservice.GetGames(Constants.Evolution, Constants.egamesAll);
+            if (evoGameList == null)
             {
                 _toastService.ShowError("No games found.");
                 return;
             }
-            else if (GameList != null)
+            else if (evoGameList != null)
             {
-				await CallInvoke();
+                LiveGameList = evoGameList.Where(a => a.GameVertical == "Live").ToList();
             }
 
 		}
