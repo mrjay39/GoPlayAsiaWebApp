@@ -1,9 +1,11 @@
 ﻿@using GoPlayAsiaWebApp.Goplay.ViewModels
-@using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
+@* @using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames
 @using GoPlayAsiaWebApp.Pages.EGames.FishingGames
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
 @using GoPlayAsiaWebApp.Pages.EGames.SlotGames
+ *@
+@using GoPlayAsiaWebApp.Pages.EGames.GamesList
 @using GoplayasiaSharedKernel.DTOs.DTOIn
 
 <div class="container pt-4">
@@ -39,29 +41,40 @@
         {
             if (provider.Key == "1")
             {
-                <LiveCasino />
+                //<LiveCasino />
+                <GamesList _title="Live Casino" _description="Your Seat Awaits: Dive into Live Casino Bliss" />
+             
             }
             else if (provider.Key == "2")
             {
-                <CardGames />
+                //<CardGames />
+                <GamesList _title="Top Table Games!" _description="Bet now while the table's hot!" />
+                
             }
             else if (provider.Key == "3")
             {
-                <ArcadeGames />
+                //<ArcadeGames />
+                <GamesList _title="Enjoyable and Dynamic games!" _description="Begin rotating for your chance to win big!" />
+                               
             }
             else if (provider.Key == "4")
             {
-                <FishingGames />
+                //<FishingGames />
+                <GamesList _title="Fun and Exciting Games" _description="Discover fun in our Fishing Games!" />
+                
             }
             else if (provider.Key == "5")
             {
-                <SlotsGames />
+                //<SlotsGames />
+                <GamesList _title="Spin & Win Adventure" _description="Discover endless fun with our Slot Games!" />
+                
             }
         }
     </div>
 }
 
 @code {
+    
     [CascadingParameter] public List<EvolutionGamesDTO> LiveGameList { get; set; }
 
     private Dictionary<string, bool> providers = new Dictionary<string, bool>

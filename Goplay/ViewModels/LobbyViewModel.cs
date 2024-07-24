@@ -54,7 +54,7 @@ public class LobbyViewModel : BaseViewModel
     {
         try
         {
-            var evoGameList = await _iegamesservice.GetGames(Constants.Evolution, Constants.egamesAll);
+            var evoGameList = await _iegamesservice.GetGames(Constants.egamesAll, Constants.egamesAll);
             if (evoGameList == null)
             {
                 _toastService.ShowError("No games found.");
