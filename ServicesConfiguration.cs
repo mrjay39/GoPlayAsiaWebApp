@@ -12,6 +12,8 @@ using Blazored.SessionStorage;
 using Blazored.Toast;
 using Blazored.Modal;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
+using GoplayasiaCore.Core.Services.Interface;
+using GoplayasiaCore.Core.Services;
 
 
 namespace GoPlayAsiaWebApp
@@ -59,7 +61,8 @@ namespace GoPlayAsiaWebApp
             services.AddScoped<IGameSettingService, GameSettingService>();
             services.AddScoped<IDiceGameRoundService, DiceGameRoundService>();
             services.AddScoped<IBingoGameRoundService, BingoGameRoundService>();
-            services.AddAuthorizationCore();
+			services.AddScoped<IEGamesService, EGamesService>();
+			services.AddAuthorizationCore();
 
 
             //Services
