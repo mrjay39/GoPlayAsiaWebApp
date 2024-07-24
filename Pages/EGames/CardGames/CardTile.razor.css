@@ -53,15 +53,19 @@
 
 @media screen and (max-width: 460px) {
     .game-tile {
-        width: 9rem;
+        width: 6rem;
     }
     .game-tile h3 {
         font-size: 15px;
     }
+    .game-tile .btn {
+        font-size: 10px;
+        font-weight: bold;
+    }
 }
 @media screen and (max-width: 414px) {
     .game-tile {
-        width: 9rem;
+        width: 6rem;
     }
     .game-tile h3 {
         font-size: 15px;
@@ -70,11 +74,11 @@
 
 @media screen and (max-width: 320px) {
     .game-tile {
-        width: 8rem;
+        width: 6rem;
         margin: 8px !important;
     }
     .game-tile .btn {
-        font-size: 12px;
+        font-size: 10px;
         font-weight: bold;
     }
     .game-tile h3 {

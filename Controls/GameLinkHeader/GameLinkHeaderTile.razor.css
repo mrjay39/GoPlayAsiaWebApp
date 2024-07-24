@@ -8,7 +8,8 @@
     font-size: 13px;
 }
 .bg-linkHeader {
-    background: #4a5c7a;
+    background: #525964;
+    color: #bfcdd7;
 }
 .active {
     border-bottom: 5px solid gold;
