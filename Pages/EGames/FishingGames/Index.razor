@@ -1,9 +1,13 @@
 ﻿@page "/fishingAndArcadeGames"
 @using GoPlayAsiaWebApp.Controls.Carousel.FishingCarousel
 @using GoPlayAsiaWebApp.Controls.GameLinkHeader
+@using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames.Evolution
+@using GoPlayAsiaWebApp.Pages.EGames.GamesList
 @using GoPlayAsiaWebApp.Pages.GPAGames
+@using static GoplayasiaBlazor.Models.Constants.Settings
+@inject LobbyViewModel lobbyViewModel
 <PageTitle>GoPlayAsia: Fishing and Arcade Games </PageTitle>
 
 <div id="fishingGames" class="container-fluid p-0 marketing">
@@ -62,6 +66,12 @@
         <h5 class="text-muted">Discover fun in our Fishing Games!</h5>
         <div class="pb-4 gameOverflow-x">
             <div class="row justify-content-center p-2">
+              @*@foreach (var item in lobbyViewModel.AllGameList.Where(a => a.GameVertical == Constants.egamesLive))
+                {
+                    <GamesListTile _imgStr="@item.FileName"
+                                 _titleStr="@item.TableName" />
+                }*@
+
                 <FishingTile _imgStr="./img/fishing/JackpotFishing.png"
                              _titleStr="Jackpot Fishing"
                              _tryoutsHrefStr="https://wbgame-demo.jiligames.com/fish3/index.html?ssoKey=1b1dfbc4d7c607b459396fecbe0b715139f9917e&lang=en-US&demo=true&be=moc.semagilij.a-ipabewbw&gameId=32&loginFrom=wb-gaming&gs=moc.semagilij.omed-tols&domain_platform=moc.gnidnawcs.df-tolsbw-tau&domain_gs=semagilij&be=moc.semagilij.a-ipabewbw&apiId=6" />
@@ -97,7 +107,7 @@
                              _titleStr="Dragon Treasure" />
 
                 <FishingTile _imgStr="./img/fishing/DragonFortune.png"
-                             _titleStr="Dragon Fortune" />
+                             _titleStr="Dragon Fortune" /> 
             </div>
         </div>
     </div>

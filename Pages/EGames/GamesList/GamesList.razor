@@ -6,7 +6,7 @@
     <div id="liveCasino" class="pb-4 gameOverflow-x">
         <div class="row justify-content-center p-2">
 
-            @foreach (var item in GameList)
+            @foreach (var item in GameList.Where(a => a.GameVertical == _filter))
             {
                 <GamesListTile _imgStr="@item.FileName"
                            _titleStr="@item.TableName" />
@@ -19,6 +19,6 @@
 @code {
     [Parameter] public string _title { get; set; }
     [Parameter] public string _description { get; set; }
-
+    [Parameter] public string _filter{ get; set; }
     [CascadingParameter] public List<EvolutionGamesDTO> GameList { get; set; }
 }

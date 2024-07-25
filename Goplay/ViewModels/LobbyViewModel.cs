@@ -15,7 +15,7 @@ namespace GoPlayAsiaWebApp.Goplay.ViewModels;
 
 public class LobbyViewModel : BaseViewModel
 {
-    public List<EvolutionGamesDTO> LiveGameList { get; set; }
+    public List<EvolutionGamesDTO> AllGameList { get; set; }
 
 
     public LobbyViewModel(ICurrentUser icurrentUser, IConfiguration iconfig, IGameRoundService igameRoundService, NavigationManager navigationManager, IAccountService iaccountService, IToastService toastService, AuthenticationStateProvider AuthenticationStateProvider, IConstantService constantService, IEGamesService iegamesservice)
@@ -54,15 +54,11 @@ public class LobbyViewModel : BaseViewModel
     {
         try
         {
-            var evoGameList = await _iegamesservice.GetGames(Constants.egamesAll, Constants.egamesAll);
-            if (evoGameList == null)
+            AllGameList  = await _iegamesservice.GetGames(Constants.egamesAll, Constants.egamesAll);
+            if (AllGameList == null)
             {
                 _toastService.ShowError("No games found.");
                 return;
-            }
-            else if (evoGameList != null)
-            {
-                LiveGameList = evoGameList.Where(a => a.GameVertical == "Live").ToList();
             }
 
 		}
