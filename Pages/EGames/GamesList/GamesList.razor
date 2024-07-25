@@ -1,0 +1,24 @@
+﻿@using GoplayasiaSharedKernel.DTOs.DTOIn
+
+<div class="container">
+    <h2 class="text-white fw-bold mt-5">@_title</h2>
+    <h5 class="text-muted">@_description</h5>
+    <div id="liveCasino" class="pb-4 gameOverflow-x">
+        <div class="row justify-content-center p-2">
+
+            @foreach (var item in GameList)
+            {
+                <GamesListTile _imgStr="@item.FileName"
+                           _titleStr="@item.TableName" />
+            }
+
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string _title { get; set; }
+    [Parameter] public string _description { get; set; }
+
+    [CascadingParameter] public List<EvolutionGamesDTO> GameList { get; set; }
+}

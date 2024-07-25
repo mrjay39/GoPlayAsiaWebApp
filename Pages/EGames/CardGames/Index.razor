@@ -1,10 +1,13 @@
 ﻿@page "/cardGames"
 @using GoPlayAsiaWebApp.Controls.Carousel.CardCarousel
 @using GoPlayAsiaWebApp.Controls.GameLinkHeader
+@using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.EGames.FishingGames
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames.Evolution
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
 @using GoPlayAsiaWebApp.Pages.GPAGames
+@inject LobbyViewModel lobbyViewModel
+
 <PageTitle>GoPlayAsia: Card Games </PageTitle>
 
 <div id="cardGames" class="container-fluid p-0 marketing">
@@ -38,14 +41,14 @@
                          _gameInfoHrefStr="games/go12" />
 
                 @* <GPATile _imgStr="./img/GPAGames/L4.png"
-                         _idStr="lucky4"
-                         _titleStr="Lucky 4"
-                         _gameInfoHrefStr="games/lucky4" /> *@
+                _idStr="lucky4"
+                _titleStr="Lucky 4"
+                _gameInfoHrefStr="games/lucky4" /> *@
 
                 @* <GPATile _imgStr="./img/GPAGames/BW.png"
-                         _idStr="bigWin"
-                         _titleStr="Big Win"
-                         _gameInfoHrefStr="games/bigwin" /> *@
+                _idStr="bigWin"
+                _titleStr="Big Win"
+                _gameInfoHrefStr="games/bigwin" /> *@
 
                 @*  <GPATile _imgStr="./img/GPAGames/new-dice.png"
                 _idStr="diceGame"
@@ -63,52 +66,19 @@
     <EvolutionCardGame />
 
     <div class="container">
-            <h2 class="text-white fw-bold mt-5">Live Casino</h2>
-            <h5 class="text-muted">Your Seat Awaits: Dive into Live Casino Bliss</h5>
-            <div class="pb-2 gameOverflow-x">
-                <div class="justify-content-center">
-                    <LiveCasinoTile _imgStr="./img/LiveGames/baccarat_a.png"
-                              _titleStr="Baccarat A" />
-                              
-                    <LiveCasinoTile _imgStr="./img/LiveGames/teenPatti.png"
-                              _titleStr="Teen Patti" />
-                              
-                    <LiveCasinoTile _imgStr="./img/LiveGames/blackJack.png"
-                              _titleStr="Black Jack" />
-                              
-                    <LiveCasinoTile _imgStr="./img/LiveGames/BlackjackdaSorte.png"
-                                    _titleStr="Blackjack da Sorte" />
-                              
-                    <LiveCasinoTile _imgStr="./img/LiveGames/32Cards.png"
-                              _titleStr="32 Cards" />
-                              
-                    <LiveCasinoTile _imgStr="./img/LiveGames/casinoHoldEm.png"
-                                    _titleStr="Casino Hold'em" />
-                              
-                    <LiveCasinoTile _imgStr="./img/LiveGames/speedRoulette.png"
-                                _titleStr="Speed Roulette" />
-                                
-                    <LiveCasinoTile _imgStr="./img/LiveGames/cricketRoulette.png"
-                                    _titleStr="Cricket Roulette" />
-                                
-                    <LiveCasinoTile _imgStr="./img/LiveGames/threeCardPoker.png"
-                                    _titleStr="Three Card Poker" />
-                                    
-                    <LiveCasinoTile _imgStr="./img/LiveGames/andarBahar.png"
-                                    _titleStr="Andar Bahar" />
-                                    
-                    <LiveCasinoTile _imgStr="./img/LiveGames/betOnNumbers.png"
-                                    _titleStr="Bet on Numbers" />
-
-                    <LiveCasinoTile _imgStr="./img/LiveGames/baccarat_b.png"
-                                    _titleStr="Baccarat B" />
-                                    
-                    <LiveCasinoTile _imgStr="./img/LiveGames/sicbo.png"
-                                    _titleStr="Sic Bo" />
-                </div>
+        <h2 class="text-white fw-bold mt-5">Live Casino</h2>
+        <h5 class="text-muted">Your Seat Awaits: Dive into Live Casino Bliss</h5>
+        <div class="pb-2 gameOverflow-x">
+            <div class="justify-content-center">
+                @foreach (var item in lobbyViewModel.LiveGameList)
+                {
+                    <LiveCasinoTile _imgStr="@item.FileName"
+                                    _titleStr="@item.TableName" />
+                }
             </div>
         </div>
-    
+    </div>
+
     <div class="container pb-4">
         <h2 class="text-white fw-bold mt-5">Fun and Exciting Games</h2>
         <h5 class="text-muted">Discover fun in our Fishing Games!</h5>
@@ -159,3 +129,9 @@
         $("#card-linkHeader").addClass("active");
     });
 </script>
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        //await lobbyViewModel.GetListGames();
+    }
+}

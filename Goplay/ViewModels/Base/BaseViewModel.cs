@@ -12,6 +12,7 @@ using static GoplayasiaBlazor.Models.Constants.Settings;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using AutoMapper;
 using Microsoft.AspNetCore.Components.Authorization;
+using GoplayasiaCore.Core.Services.Interface;
 
 
 namespace GoPlayAsiaWebApp.Goplay.ViewModels.Base;
@@ -46,6 +47,7 @@ public abstract class BaseViewModel
     public NavigationManager _navigationManager;
     public AuthenticationStateProvider _AuthenticationStateProvider;
     public IConstantService _constantService;
+    public IEGamesService _iegamesservice;
     #endregion
 
     #region Player Bets

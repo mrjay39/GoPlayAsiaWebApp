@@ -3,11 +3,15 @@
 @using GoPlayAsiaWebApp.Controls.Carousel.GPACarousel
 @using GoPlayAsiaWebApp.Controls.GameLinkHeader
 @using GoPlayAsiaWebApp.Controls.GameInfo
+@using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames.Evolution
 @using GoPlayAsiaWebApp.Pages.EGames.FishingGames
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
+@using GoplayasiaSharedKernel.DTOs.DTOIn
+@inject LobbyViewModel lobbyViewModel
+
 <PageTitle>GoPlayAsia: GoPlayAsia Games </PageTitle>
 
 <div id="cardGames" class="container-fluid p-0 marketing">
@@ -70,44 +74,11 @@
         <h5 class="text-muted">Your Seat Awaits: Dive into Live Casino Bliss</h5>
         <div class="pb-4 gameOverflow-x">
             <div class="row justify-content-center p-2">
-                <LiveCasinoTile _imgStr="./img/LiveGames/baccarat_a.png"
-                                _titleStr="Baccarat A" />
-
-                <LiveCasinoTile _imgStr="./img/LiveGames/teenPatti.png"
-                                _titleStr="Teen Patti" />
-
-                <LiveCasinoTile _imgStr="./img/LiveGames/blackJack.png"
-                                _titleStr="Black Jack" />
-
-                <LiveCasinoTile _imgStr="./img/LiveGames/BlackjackdaSorte.png"
-                                _titleStr="Blackjack da Sorte" />
-
-                <LiveCasinoTile _imgStr="./img/LiveGames/32Cards.png"
-                                _titleStr="32 Cards" />
-
-                <LiveCasinoTile _imgStr="./img/LiveGames/casinoHoldEm.png"
-                                _titleStr="Casino Hold'em" />
-
-                <LiveCasinoTile _imgStr="./img/LiveGames/speedRoulette.png"
-                                _titleStr="Speed Roulette" />
-
-                <LiveCasinoTile _imgStr="./img/LiveGames/cricketRoulette.png"
-                                _titleStr="Cricket Roulette" />
-
-                <LiveCasinoTile _imgStr="./img/LiveGames/threeCardPoker.png"
-                                _titleStr="Three Card Poker" />
-
-                <LiveCasinoTile _imgStr="./img/LiveGames/andarBahar.png"
-                                _titleStr="Andar Bahar" />
-
-                <LiveCasinoTile _imgStr="./img/LiveGames/betOnNumbers.png"
-                                _titleStr="Bet on Numbers" />
-
-                <LiveCasinoTile _imgStr="./img/LiveGames/baccarat_b.png"
-                                _titleStr="Baccarat B" />
-
-                <LiveCasinoTile _imgStr="./img/LiveGames/sicbo.png"
-                                _titleStr="Sic Bo" />
+                @foreach (var item in lobbyViewModel.LiveGameList)
+                {
+                    <LiveCasinoTile _imgStr="@item.FileName"
+                                _titleStr="@item.TableName" />
+                }
             </div>
         </div>
     </div>
@@ -184,8 +155,14 @@
 </div>
 @code {
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
     private GameInfoModal modal = new GameInfoModal(); // Initialize here
     private string _activeClassSt = "active";
+
+    protected override async Task OnInitializedAsync()
+    {
+        //await lobbyViewModel.GetListGames();
+    }
 
     private void ShowModal(string _idStr)
     {
