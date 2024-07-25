@@ -1,8 +1,13 @@
-﻿@using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
+﻿@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames
 @using GoPlayAsiaWebApp.Pages.EGames.FishingGames
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
 @using GoPlayAsiaWebApp.Pages.EGames.SlotGames
+
+@using GoPlayAsiaWebApp.Pages.EGames.GamesList
+@using GoplayasiaSharedKernel.DTOs.DTOIn
+@using static GoplayasiaBlazor.Models.Constants.Settings
 
 <div class="container pt-4">
     <h2 class="text-white fw-bold mt-3">Game Providers</h2>
@@ -37,29 +42,42 @@
         {
             if (provider.Key == "1")
             {
-                <LiveCasino />
+                //<LiveCasino />
+                <GamesList _title="@Constants.CasinoGameTitle" _description="@Constants.CasinoGameDescription" _filter="@Constants.egamesLive"/>
+             
             }
             else if (provider.Key == "2")
             {
-                <CardGames />
+                //<CardGames />
+                <GamesList _title="@Constants.CardGameTitle" _description="@Constants.CardGameDescription" _filter="@Constants.egamesRng" />
+                
             }
             else if (provider.Key == "3")
             {
                 <ArcadeGames />
+                //<GamesList _title="@Constants.ArcadeGameTitle" _description="@Constants.ArcadeGameDescription" _filter="@Constants.egamesLive" />
+                               
             }
             else if (provider.Key == "4")
             {
                 <FishingGames />
+                //<GamesList _title="@Constants.FishingGameTitle" _description="@Constants.FishingGameDescription" _filter="@Constants.egamesLive" />
+                
             }
             else if (provider.Key == "5")
             {
-                <SlotsGames />
+                //<SlotsGames />
+                <GamesList _title="@Constants.SlotsGameTitle" _description="@Constants.SlotsGameDescription" _filter="@Constants.egamesSlots" />
+                
             }
         }
     </div>
 }
 
 @code {
+    
+    [CascadingParameter] public List<EvolutionGamesDTO> LiveGameList { get; set; }
+
     private Dictionary<string, bool> providers = new Dictionary<string, bool>
     {
         { "1", true },

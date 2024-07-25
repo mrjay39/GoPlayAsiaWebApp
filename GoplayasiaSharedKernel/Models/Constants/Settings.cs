@@ -218,6 +218,41 @@
             public const string PendingBets = "Pending";
             #endregion
 
+            #region GAME PROVIDER
+            public const string BigTimeGaming = "Big Time Gaming";
+            public const string Evolution = "Evolution";
+            public const string NetEnt = "NetEnt";
+            public const string RedTiger = "Red Tiger";
+            #endregion
+
+            #region eGAMES GAMETYPE
+            public const string egamesAll = "all";
+            public const string egamesLive = "Live";
+            public const string egamesRng = "Rng";
+            public const string egamesSlots = "Slots";
+            #endregion
+
+            #region Game Title and Description
+            //Casino
+            public const string CasinoGameTitle = "Live Casino";
+            public const string CasinoGameDescription = "Your Seat Awaits: Dive into Live Casino Bliss";
+
+            //Card
+            public const string CardGameTitle = "Top Table Games!";
+            public const string CardGameDescription = "Bet now while the table's hot!";
+
+            //Arcade
+            public const string ArcadeGameTitle = "Enjoyable and Dynamic games!";
+            public const string ArcadeDescription = "Begin rotating for your chance to win big!";
+
+            //Fishing
+            public const string FishingGameTitle = "Fun and Exciting Games";
+            public const string FishingDescription = "Discover fun in our Fishing Games!";
+
+            //Slots
+            public const string SlotsGameTitle = "Spin & Win Adventure";
+            public const string SlotsGameDescription = "Discover endless fun with our Slot Games!";
+            #endregion
 
         }
 

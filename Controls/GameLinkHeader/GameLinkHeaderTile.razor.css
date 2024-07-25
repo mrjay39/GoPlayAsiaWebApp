@@ -4,25 +4,40 @@
     margin: 10px;
 }
 #link-header > a{
-    color: gold;
+    color: #688fcf;
     font-size: 13px;
 }
 .bg-linkHeader {
-    background: #373634;
+    background: #525964;
+    color: #bfcdd7;
 }
 .active {
     border-bottom: 5px solid gold;
+    color: gold !important;
+}
+.text-uppercase {
+    font-size: 13px;
+
 }
 
-@media only screen and (min-width: 992px) {
-    .link-header {
+.active > .deactiveIcon {
+    filter: grayscale(0%);
+    height: 80px !important
+}
+.deactiveIcon {
+    filter: grayscale(100%);
+    height: 80px !important
+}
+
+    @media only screen and (min-width: 992px) {
+        .link-header {
         width: 13rem;
     }
 }
 
 @media screen and (max-width: 991px) {
     .link-header {
-        width: 9rem;
+        width: 7rem;
     }
     #linkHeader.col {
         flex: 1 0 0%;

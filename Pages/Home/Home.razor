@@ -6,12 +6,15 @@
 @using GoPlayAsiaWebApp.Controls.GameRegulation
 @using GoPlayAsiaWebApp.Controls.MostPlayedGames
 @using GoPlayAsiaWebApp.Controls.Carousel
+@using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames
+@using GoPlayAsiaWebApp.Pages.EGames.GamesList
 @using GoPlayAsiaWebApp.Pages.EGames.FishingGames
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
 @using GoPlayAsiaWebApp.Pages.EGames.SlotGames
 @using GoPlayAsiaWebApp.Pages.GPAGames.WelcomGPA
+@inject LobbyViewModel lobbyViewModel
 
 <PageTitle>GoPlayAsia: Home</PageTitle>
 
@@ -26,7 +29,9 @@
 
         <FeaturedGames />
 
-        <GameProviderSelectors />
+        <CascadingValue Value="@lobbyViewModel.AllGameList">
+            <GameProviderSelectors />
+        </CascadingValue>
 
         <WelcomeGPA />
 
@@ -37,7 +42,10 @@
         <AgeAgreement OnAgree="HandleAgeAgreement" />
     }
 </div>
+
 @code {
+
+
     private bool showAgeAgreement = true;
 
     [Inject]
@@ -52,6 +60,8 @@
         {
             showAgeAgreement = false;
         }
+
+        await lobbyViewModel.GetListGames();
     }
 
     private async Task HandleAgeAgreement()
