@@ -35,7 +35,7 @@
 
 @media screen and (max-width: 991px) {
     .link-header {
-        width: 9rem;
+        width: 7rem;
     }
     #linkHeader.col {
         flex: 1 0 0%;

@@ -24,6 +24,15 @@
         justify-content: inherit !important;
     }
 }
+@media screen and (max-width: 600px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+}
 
 @media screen and (max-width: 460px) {
     .gameOverflow-x {

@@ -20,17 +20,14 @@
                     </div>
                 </a>
             </div>
-            <div class="button button-gameInfo">
-                <a class="btn btn-dark m-1" href="@_gameInfoHrefStr">Game Info</a>
-            </div>
         </div>
     </div>
 </div>
 @code {
     [Parameter] public string? _imgStr { get; set; }
     [Parameter] public string? _titleStr { get; set; }
-    [Parameter] public string? _gameInfoHrefStr { get; set; }
     [Parameter] public string? _tryoutsHrefStr { get; set; }
+    
 
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
