@@ -1,0 +1,33 @@
+﻿@page "/bookmark"
+@inject IJSRuntime JSRuntime
+<script>
+    window.scrollToElement = (selector) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth'
+            });
+            element.focus();
+        }
+    };
+</script>
+
+<h3>Bookmark Sample</h3>
+
+<a style="color: white"  @onclick='() => ScrollToBookmark("bookmark1")'>Go to Bookmark 1</a>
+<a style="color: white" @onclick='() => ScrollToBookmark("bookmark2")'>Go to Bookmark 2</a>
+
+<div style="margin-top: 1000px;" id="bookmark1">
+    <input type="text" id="input1" placeholder="Focus on Bookmark 1" />
+</div>
+
+<div style="margin-top: 1000px;" id="bookmark2">
+    <input type="text" id="input2" placeholder="Focus on Bookmark 2" />
+</div>
+
+@code {
+    private async Task ScrollToBookmark(string elementId)
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToElement", $"#{elementId}");
+    }
+}
