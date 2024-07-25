@@ -5,8 +5,10 @@
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames.Evolution
+@using GoPlayAsiaWebApp.Pages.EGames.GamesList
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
 @using GoPlayAsiaWebApp.Pages.GPAGames
+@using static GoplayasiaBlazor.Models.Constants.Settings
 @inject LobbyViewModel lobbyViewModel
 
 <PageTitle>GoPlayAsia: Arcade Games </PageTitle>
@@ -68,6 +70,12 @@
         <h5 class="text-muted">Begin rotating for your chance to win big!</h5>
         <div id="arcade-overflow" class="pb-2 gameOverflow-x">
             <div class="justify-content-center p-2">
+               @*   @foreach (var item in lobbyViewModel.AllGameList.Where(a => a.GameVertical == Constants.egamesLive))
+                {
+                    <GamesListTile _imgStr="@item.FileName"
+                                _titleStr="@item.TableName" />
+                } *@
+
                 <ArcadeTile _imgStr="./img/Arcade/Mines.png"
                             _titleStr="Mines" />
 
@@ -81,7 +89,7 @@
                             _titleStr="Tower" />
 
                 <ArcadeTile _imgStr="./img/Arcade/CrazyPusher.png"
-                            _titleStr="Crazy Pusher" />
+                            _titleStr="Crazy Pusher" /> 
 
             </div>
         </div>
@@ -122,7 +130,7 @@
         <h5 class="text-muted">Your Seat Awaits: Dive into Live Casino Bliss</h5>
         <div id="liveCasino-overflow" class="pb-2 gameOverflow-x">
             <div class="justify-content-center p-2">
-                @foreach (var item in lobbyViewModel.LiveGameList)
+                @foreach (var item in lobbyViewModel.AllGameList.Where(a => a.GameVertical == Constants.egamesLive))
                 {
                     <LiveCasinoTile _imgStr="@item.FileName"
                                     _titleStr="@item.TableName" />

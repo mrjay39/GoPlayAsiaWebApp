@@ -10,6 +10,7 @@
 @using GoPlayAsiaWebApp.Pages.EGames.FishingGames
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
 @using GoplayasiaSharedKernel.DTOs.DTOIn
+@using static GoplayasiaBlazor.Models.Constants.Settings
 @inject LobbyViewModel lobbyViewModel
 
 <PageTitle>GoPlayAsia: GoPlayAsia Games </PageTitle>
@@ -74,7 +75,7 @@
         <h5 class="text-muted">Your Seat Awaits: Dive into Live Casino Bliss</h5>
         <div class="pb-4 gameOverflow-x">
             <div class="row justify-content-center p-2">
-                @foreach (var item in lobbyViewModel.LiveGameList)
+                @foreach (var item in lobbyViewModel.AllGameList.Where(a => a.GameVertical == Constants.egamesLive))
                 {
                     <LiveCasinoTile _imgStr="@item.FileName"
                                 _titleStr="@item.TableName" />

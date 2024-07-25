@@ -4,8 +4,10 @@
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.EGames.FishingGames
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames.Evolution
+@using GoPlayAsiaWebApp.Pages.EGames.GamesList
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
 @using GoPlayAsiaWebApp.Pages.GPAGames
+@using static GoplayasiaBlazor.Models.Constants.Settings
 @inject LobbyViewModel lobbyViewModel
 
 <PageTitle>GoPlayAsia: Card Games </PageTitle>
@@ -70,9 +72,9 @@
         <h5 class="text-muted">Your Seat Awaits: Dive into Live Casino Bliss</h5>
         <div class="pb-2 gameOverflow-x">
             <div class="justify-content-center">
-                @foreach (var item in lobbyViewModel.LiveGameList)
+                @foreach (var item in lobbyViewModel.AllGameList.Where(a => a.GameVertical == Constants.egamesLive))
                 {
-                    <LiveCasinoTile _imgStr="@item.FileName"
+                    <GamesListTile _imgStr="@item.FileName"
                                     _titleStr="@item.TableName" />
                 }
             </div>
@@ -84,6 +86,12 @@
         <h5 class="text-muted">Discover fun in our Fishing Games!</h5>
         <div class="pb-2 gameOverflow-x">
             <div class="justify-content-center">
+               @*   @foreach (var item in lobbyViewModel.AllGameList.Where(a => a.GameVertical == Constants.egamesLive))
+                {
+                    <GamesListTile _imgStr="@item.FileName"
+                                 _titleStr="@item.TableName" />
+                } *@
+
                 <FishingTile _imgStr="./img/fishing/JackpotFishing.png"
                              _titleStr="Jackpot Fishing"
                              _tryoutsHrefStr="https://wbgame-demo.jiligames.com/fish3/index.html?ssoKey=1b1dfbc4d7c607b459396fecbe0b715139f9917e&lang=en-US&demo=true&be=moc.semagilij.a-ipabewbw&gameId=32&loginFrom=wb-gaming&gs=moc.semagilij.omed-tols&domain_platform=moc.gnidnawcs.df-tolsbw-tau&domain_gs=semagilij&be=moc.semagilij.a-ipabewbw&apiId=6" />

@@ -1,12 +1,13 @@
 ﻿@using GoPlayAsiaWebApp.Goplay.ViewModels
-@* @using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
+@using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
 @using GoPlayAsiaWebApp.Pages.EGames.CardGames
 @using GoPlayAsiaWebApp.Pages.EGames.FishingGames
 @using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
 @using GoPlayAsiaWebApp.Pages.EGames.SlotGames
- *@
+
 @using GoPlayAsiaWebApp.Pages.EGames.GamesList
 @using GoplayasiaSharedKernel.DTOs.DTOIn
+@using static GoplayasiaBlazor.Models.Constants.Settings
 
 <div class="container pt-4">
     <h2 class="text-white fw-bold mt-3">Game Providers</h2>
@@ -42,31 +43,31 @@
             if (provider.Key == "1")
             {
                 //<LiveCasino />
-                <GamesList _title="Live Casino" _description="Your Seat Awaits: Dive into Live Casino Bliss" />
+                <GamesList _title="@Constants.CasinoGameTitle" _description="@Constants.CasinoGameDescription" _filter="@Constants.egamesLive"/>
              
             }
             else if (provider.Key == "2")
             {
                 //<CardGames />
-                <GamesList _title="Top Table Games!" _description="Bet now while the table's hot!" />
+                <GamesList _title="@Constants.CardGameTitle" _description="@Constants.CardGameDescription" _filter="@Constants.egamesRng" />
                 
             }
             else if (provider.Key == "3")
             {
-                //<ArcadeGames />
-                <GamesList _title="Enjoyable and Dynamic games!" _description="Begin rotating for your chance to win big!" />
+                <ArcadeGames />
+                //<GamesList _title="@Constants.ArcadeGameTitle" _description="@Constants.ArcadeGameDescription" _filter="@Constants.egamesLive" />
                                
             }
             else if (provider.Key == "4")
             {
-                //<FishingGames />
-                <GamesList _title="Fun and Exciting Games" _description="Discover fun in our Fishing Games!" />
+                <FishingGames />
+                //<GamesList _title="@Constants.FishingGameTitle" _description="@Constants.FishingGameDescription" _filter="@Constants.egamesLive" />
                 
             }
             else if (provider.Key == "5")
             {
                 //<SlotsGames />
-                <GamesList _title="Spin & Win Adventure" _description="Discover endless fun with our Slot Games!" />
+                <GamesList _title="@Constants.SlotsGameTitle" _description="@Constants.SlotsGameDescription" _filter="@Constants.egamesSlots" />
                 
             }
         }
