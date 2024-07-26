@@ -4,27 +4,27 @@
     <div id="link-header" class="pb-2 gameOverflow-x">
         <div class="row justify-content-center">
        
-            <GameLinkHeaderTile _gameHrefStr="GoPlayAsiaGames"
+            <GameLinkHeaderTile _gameHrefStr="#liveGames"
                             _idStr="gpa-linkHeader"
                                 _imgGameStr="./img/gameCategory/liveWebp.webp"
                             _typeGameStr="Live" />
 
-            <GameLinkHeaderTile _gameHrefStr="arcadeGames"
+            <GameLinkHeaderTile _gameHrefStr="#arcadeGames"
                             _idStr="arcade-linkHeader"
                                 _imgGameStr="./img/gameCategory/arcade.webp"
-                            _typeGameStr="Arcade" />
+                            _typeGameStr="arcade" />
 
-            <GameLinkHeaderTile _gameHrefStr="slotGames"
+            <GameLinkHeaderTile _gameHrefStr="#slotGames"
                             _idStr="slots-linkHeader"
                                 _imgGameStr="./img/gameCategory/slot.gif"
                             _typeGameStr="Slots" />
 
-            <GameLinkHeaderTile _gameHrefStr="cardGames"
+            <GameLinkHeaderTile _gameHrefStr="#cardGames"
                             _idStr="card-linkHeader"
                                 _imgGameStr="./img/gameCategory/card.webp"
                             _typeGameStr="Cards" />
 
-            <GameLinkHeaderTile _gameHrefStr="fishingAndArcadeGames"
+            <GameLinkHeaderTile _gameHrefStr="#fishingGames"
                             _idStr="fishing-linkHeader"
                                 _imgGameStr="./img/gameCategory/fish.gif"
                             _typeGameStr="Fishing" />
@@ -37,5 +37,12 @@
             $('#navBarBottom a').removeClass('active');
 
         });
+
+        $('#link-header > a').click(function (event) {
+            var targetSelector = $(this).attr('href');
+            $('#liveGames, #slotGames, #cardGames, #arcadeGames, #fishingGames').removeClass('pt-5');
+            $(targetSelector).addClass('pt-5');
+        });
+       
     });
 </script>

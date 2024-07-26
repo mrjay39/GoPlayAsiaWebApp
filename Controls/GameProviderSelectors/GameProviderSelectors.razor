@@ -37,19 +37,19 @@
 
 @if (providers.Any(p => p.Value))
 {
-    <div>
+    <div id="gameList">
         @foreach (var provider in providers.Where(p => p.Value))
         {
             if (provider.Key == "1")
             {
                 //<LiveCasino />
-                <GamesList _title="@Constants.CasinoGameTitle" _description="@Constants.CasinoGameDescription" _filter="@Constants.egamesLive"/>
+                <GamesList _idStr="liveGames" _title="@Constants.CasinoGameTitle" _description="@Constants.CasinoGameDescription" _filter="@Constants.egamesLive" />
              
             }
             else if (provider.Key == "2")
             {
                 //<CardGames />
-                <GamesList _title="@Constants.CardGameTitle" _description="@Constants.CardGameDescription" _filter="@Constants.egamesRng" />
+                <GamesList _idStr="cardGames" _title="@Constants.CardGameTitle" _description="@Constants.CardGameDescription" _filter="@Constants.egamesRng" />
                 
             }
             else if (provider.Key == "3")
@@ -67,7 +67,7 @@
             else if (provider.Key == "5")
             {
                 //<SlotsGames />
-                <GamesList _title="@Constants.SlotsGameTitle" _description="@Constants.SlotsGameDescription" _filter="@Constants.egamesSlots" />
+                <GamesList _idStr="slotGames" _title="@Constants.SlotsGameTitle" _description="@Constants.SlotsGameDescription" _filter="@Constants.egamesSlots" />
                 
             }
         }
