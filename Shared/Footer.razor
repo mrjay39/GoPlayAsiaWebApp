@@ -15,12 +15,12 @@
 
             <div id="featuredGamesFooter" class="card px-2 bg-transparent">
                 <h5>Featured Games</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="GoPlayAsiaGames" class="nav-link p-0 text-muted">Live Games</a></li>
-                    <li class="nav-item mb-2"><a href="slotGames" class="nav-link p-0 text-muted">Slot Games</a></li>
-                    <li class="nav-item mb-2"><a href="cardGames" class="nav-link p-0 text-muted">Card Games</a></li>
-                    <li class="nav-item mb-2"><a href="fishingAndArcadeGames" class="nav-link p-0 text-muted">Fishing Games</a></li>
-                    <li class="nav-item mb-2"><a href="arcadeGames" class="nav-link p-0 text-muted">Arcade Games</a></li>
+                <ul id="footer-gameLink" class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#liveGames" class="nav-link p-0 text-muted">Live Games</a></li>
+                    <li class="nav-item mb-2"><a href="#slotGames" class="nav-link p-0 text-muted">Slot Games</a></li>
+                    <li class="nav-item mb-2"><a href="#cardGames" class="nav-link p-0 text-muted">Card Games</a></li>
+                    <li class="nav-item mb-2"><a href="#fishingGames" class="nav-link p-0 text-muted">Fishing Games</a></li>
+                    <li class="nav-item mb-2"><a href="#arcadeGames" class="nav-link p-0 text-muted">Arcade Games</a></li>
                 </ul>
             </div>
             
@@ -100,6 +100,12 @@
                 }, 15);
         }
     }
+
+    $('#footer-gameLink li > a').click(function (event) {
+        var targetSelector = $(this).attr('href');
+        $('#liveGames, #slotGames, #cardGames, #arcadeGames, #fishingGames').removeClass('pt-5');
+        $(targetSelector).addClass('pt-5');
+    });
 
     //function toggleChat() {
       //  var chatPopup = document.getElementById('chatPopup');

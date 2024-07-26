@@ -1,6 +1,6 @@
 ﻿<nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-bottom-navbar">
     <div id="navBarBottom" class="container">
-        <a href="GoPlayAsiaGames" class="navbar-brand text-center text-muted home">
+        <a href="#liveGames" class="navbar-brand text-center text-muted home">
             <div class="icon">
                 <i class="fa-solid gpa-btm-icon"></i>
             </div>
@@ -8,7 +8,7 @@
                 <span class="text-uppercase small">Live</span>
             </div>
         </a>
-        <a href="slotGames" class="navbar-brand text-center text-muted">
+        <a href="#slotGames" class="navbar-brand text-center text-muted">
             <div class="icon">
                 <i class="fa-solid slot-btm-icon"></i>
             </div>
@@ -16,7 +16,7 @@
                 <span class="text-uppercase small">Slots</span>
             </div>
         </a>
-        <a href="cardGames" class="navbar-brand text-center text-muted">
+        <a href="#cardGames" class="navbar-brand text-center text-muted">
             <div class="icon">
                 <i class="fa-solid card-btm-icon"></i>
             </div>
@@ -24,7 +24,7 @@
                 <span class="text-uppercase small">Cards</span>
             </div>
         </a>
-        <a href="fishingAndArcadeGames" class="navbar-brand text-center text-muted">
+        <a href="#fishingGames" class="navbar-brand text-center text-muted">
             <div class="icon">
                 <i class="fa-solid fishing-btm-icon"></i>
             </div>
@@ -32,7 +32,7 @@
                 <span class="text-uppercase small">Fishing</span>
             </div>
         </a>
-        <a href="arcadeGames" class="navbar-brand text-center text-muted">
+        <a href="#arcadeGames" class="navbar-brand text-center text-muted">
             <div class="icon">
                 <i class="fa-solid arcade-btm-icon"></i>
             </div>
@@ -47,6 +47,12 @@
         $('#navBarBottom a').click(function (e) {
             $('#navBarBottom a').removeClass('active');
             $(this).addClass('active');
+        });
+
+        $('#navBarBottom > a').click(function (event) {
+            var targetSelector = $(this).attr('href');
+            $('#liveGames, #slotGames, #cardGames, #arcadeGames, #fishingGames').removeClass('pt-5');
+            $(targetSelector).addClass('pt-5');
         });
 
     });
