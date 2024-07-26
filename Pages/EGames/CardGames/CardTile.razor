@@ -4,10 +4,12 @@
 @inject NavigationManager _navigationManager
 
 <div class="card m-1 p-0 border-dark game-tile">
-    <div class="container-fluid p-0 bg-img">
-        <img src="@_imgStr" class="card-img-top featGames-bg basketBall" @onclick="ToggleActive">
-    </div>
-    <div class="info @(isActive ? "active" : "")">
+    <a class="img-border" @onclick="OpenGameLink">
+        <div class="container-fluid p-0 bg-img">
+            <img src="@_imgStr" class="card-img-top featGames-bg basketBall" @onclick="ToggleActive">
+        </div>
+    </a>
+    @* <div class="info @(isActive ? "active" : "")">
         <div class="content">
             <div class="subtitle"><h3 class="text-white fw-bold">@_titleStr</h3></div>
             <div class="button button-playNow">
@@ -21,13 +23,13 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> *@
 </div>
 @code {
     [Parameter] public string? _imgStr { get; set; }
     [Parameter] public string? _titleStr { get; set; }
     [Parameter] public string? _tryoutsHrefStr { get; set; }
-    
+
 
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [CascadingParameter] public IModalService popuLoadingpModal { get; set; }

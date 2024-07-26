@@ -38,7 +38,22 @@
     display: none;
 }
 
-.card:hover > .info, .card > .info.active {
+.img-border, .img-border img {
+    transition: .5s ease;
+}
+
+.img-border:hover {
+    box-shadow: 0 0 0 4px #ffd800;
+    transition: .5s ease;
+    border-radius: 10px;
+}
+
+.img-border img:hover {
+    transition: .5s ease;
+    border-radius: 10px;
+}
+
+/*.card:hover > .info, .card > .info.active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -49,7 +64,7 @@
     -ms-flex-align: center;
     align-items: center;
     text-align: center;
-}
+}*/
 
 @media screen and (max-width: 460px) {
     .game-tile {
