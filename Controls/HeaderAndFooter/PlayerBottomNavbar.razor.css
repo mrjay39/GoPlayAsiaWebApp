@@ -216,7 +216,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 1030;
+    z-index: 100;
 }
 /*============== End: Sticky NavBar Bottom ==========*/
 

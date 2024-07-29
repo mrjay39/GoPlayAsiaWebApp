@@ -185,6 +185,9 @@
 #navbarSupportedContent .dropdown-menu {
     top: inherit;
 }
+#fixed-top.fixed-top {
+    z-index: 100;
+}
 
 * {
     box-sizing: border-box;

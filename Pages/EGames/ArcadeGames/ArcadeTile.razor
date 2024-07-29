@@ -11,21 +11,6 @@
             <img src="@_imgStr" class="card-img-top featGames-bg basketBall" @onclick="ToggleActive">
         </div>
     </a>
-   @*  <div class="info @(isActive ? "active" : "")">
-        <div class="content">
-            <div class="subtitle"><h3 class="text-white fw-bold">@_titleStr</h3></div>
-            <div class="button button-playNow">
-                <button class="btn btn-warning m-1" @onclick="OpenGameLink">
-                    <span>Play Now</span>
-                    <div class="arrow">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </button>
-            </div>
-        </div>
-    </div> *@
 </div>
 @code {
     [Parameter] public string _idStr { get; set; } = string.Empty;
@@ -57,6 +42,7 @@
     private async void OpenGameLink()
     {
         var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+
         var user = authenticationState.User;
         if (!user.Identity.IsAuthenticated)
         {
