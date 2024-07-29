@@ -5,13 +5,14 @@
     <h5 class="text-muted">@_description</h5>
     <div class="pb-4 gameOverflow-x">
         <div class="row justify-content-center p-2">
-
-            @foreach (var item in GameList.Where(a => a.GameVertical == _filter))
+            @if (GameList != null)
             {
-                <GamesListTile _imgStr="@item.FileName"
-                           _titleStr="@item.TableName" />
+                @foreach (var item in GameList.Where(a => a.GameVertical == _filter))
+                {
+                    <GamesListTile _imgStr="@item.FileName"
+                                   _titleStr="@item.TableName" />
+                }
             }
-
         </div>
     </div>
 </div>
@@ -19,7 +20,7 @@
 @code {
     [Parameter] public string _title { get; set; }
     [Parameter] public string _description { get; set; }
-    [Parameter] public string _filter{ get; set; }
-    [Parameter] public string _idStr{ get; set; }
+    [Parameter] public string _filter { get; set; }
+    [Parameter] public string _idStr { get; set; }
     [CascadingParameter] public List<EvolutionGamesDTO> GameList { get; set; }
 }
