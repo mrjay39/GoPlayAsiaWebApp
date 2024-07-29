@@ -43,6 +43,14 @@
             $('#liveGames, #slotGames, #cardGames, #arcadeGames, #fishingGames').removeClass('pt-5');
             $(targetSelector).addClass('pt-5');
         });
+        
+        $('.link-header .bg-linkHeader').click(function () {
+            $('.bg-linkHeader').removeClass('active');
+            $(this).addClass('active'); 
+            var container = $(this).closest('.link-header');
+            container.parent().prepend(container);
+        });
+        
        
     });
 </script>
