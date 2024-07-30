@@ -6,6 +6,9 @@
     .gameOverflow-x {
         overflow-x: inherit;
     }
+    #link-header.sticky {
+        top: 65px;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -15,14 +18,23 @@
     h5 {
         font-size: 14px;
     }
+    #link-header.sticky{
+        top: 40px;
+    }
+}
+#link-header {
+    background-image: radial-gradient(circle, rgb(20 20 20 / 82%), rgb(40 40 40 / 67%), rgba(53, 53, 53, 0.9));
+    backdrop-filter: blur(3px);
 }
 
-#link-header.sticky > .centered{
+#link-header.sticky > .centered, #link-header {
     justify-content: center !important;
+}
+#link-header {
+    transition: margin-top 0.3s ease-in-out;
 }
 #link-header.sticky {
     position: fixed;
-    top: 67px;
     left: 0;
     width: 100%;
     z-index: 1000;

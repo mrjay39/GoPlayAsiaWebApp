@@ -20,15 +20,18 @@
 
 <Carousel />
 
-<div class="container-fluid marketing">
+<div class="container-fluid marketing p-0">
 
     <div class="container">
-        <GameLinkHeader />
+
+        <AuthorizeView>
+            <Authorized>
+                <GameLinkHeader />
+            </Authorized>
+        </AuthorizeView>
+        
         <MostPlayedGames />
         <FeaturedGames />
-   
-
-   
 
         <CascadingValue Value="@lobbyViewModel.AllGameList">
             <GameProviderSelectors />
@@ -48,7 +51,6 @@
 
 
     private bool showAgeAgreement = true;
-
     [Inject]
     public IJSRuntime JSRuntime { get; set; }
 

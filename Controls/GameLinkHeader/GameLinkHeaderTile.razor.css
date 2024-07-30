@@ -31,7 +31,7 @@
     height: 80px !important;
 }
 
-#link-header.sticky .deactiveIcon {
+#link-header.sticky .deactiveIcon, #link-header .deactiveIcon {
     height: 45px !important;
     position: relative;
 }
@@ -46,19 +46,16 @@
 }
 
 @media only screen and (min-width: 992px) {
-    .link-header, #link-header.sticky .link-header {
+    #link-header .link-header, #link-header.sticky .link-header {
         width: 10rem;
     }
-    #link-header.sticky .deactiveIcon {
+    #link-header.sticky .deactiveIcon, #link-header .deactiveIcon {
         height: 65px !important;
     }
 }
 
 @media screen and (max-width: 991px) {
-    .link-header {
-        width: 7rem;
-    }
-    #link-header.sticky .link-header {
+    #link-header.sticky .link-header,#link-header .link-header {
         width: 4rem;
     }
     #linkHeader.col {
@@ -67,13 +64,13 @@
     }
 }
 @media screen and (max-width: 360px) {
-    #link-header.sticky .link-header {
+    #link-header.sticky .link-header, #link-header .link-header {
         width: 3.5rem;
     }
     #link-header.sticky h6.text-uppercase {
         font-size: 11px;
     }
-    #link-header.sticky .deactiveIcon {
+    #link-header.sticky .deactiveIcon, #link-header .deactiveIcon {
         height: 30px !important;
     }
 

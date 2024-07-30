@@ -1,7 +1,7 @@
-﻿<div id="headerContainer" class="container pt-4">
+﻿<div id="headerContainer" class="row pt-4">
     <h2 class="text-white fw-bold mt-3">Game Categories</h2>
     <h5 class="text-muted"> Navigating the World of Gaming Genres</h5>
-    <div id="link-header" class="pb-2 gameOverflow-x">
+    <div id="link-header" class="p-0 gameOverflow-x">
         <div class="row container-fluid justify-content-center centered">
        
             <GameLinkHeaderTile _gameHrefStr="#liveGames"
@@ -40,7 +40,7 @@
 
         $('#link-header > a').click(function (event) {
             var targetSelector = $(this).attr('href');
-            $('#liveGames, #slotGames, #cardGames, #arcadeGames, #fishingGames').removeClass('pt-8');
+            $('#liveGames, #slotGames, #cardGames, #arcadeGames, #fishingGames').removeClass('pt-8 pt-5');
             $(targetSelector).addClass('pt-8');
         });
         
@@ -49,20 +49,26 @@
             $(this).addClass('active');
         });
 
+        @*===== Sticky Category =====*@
         var $linkHeader = $('#link-header');
-        var $headerContainer = $('#headerContainer');
+        var $headerContainer = $('h5.text-muted');
         var containerTop = $headerContainer.offset().top;
+        var headerHeight = $linkHeader.outerHeight();
+
+        $linkHeader.before('<div class="sticky-placeholder"></div>');
+        var $stickyPlaceholder = $('.sticky-placeholder');
 
         $(window).on('scroll', function () {
             var scrollTop = $(this).scrollTop();
 
             if (scrollTop >= containerTop) {
                 $linkHeader.addClass('sticky');
+                $stickyPlaceholder.css('height', headerHeight + 'px');
             } else {
                 $linkHeader.removeClass('sticky');
+                $stickyPlaceholder.css('height', '0');
             }
         });
-        
        
     });
 </script>
