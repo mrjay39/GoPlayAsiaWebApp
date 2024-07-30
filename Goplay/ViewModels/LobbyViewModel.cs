@@ -30,7 +30,11 @@ public class LobbyViewModel : BaseViewModel
         _AuthenticationStateProvider = AuthenticationStateProvider;
         _constantService = constantService;
         _iegamesservice = iegamesservice;
-        ValidateUser();
+        if (icurrentUser.Username != null)
+        {
+
+            ValidateUser();
+        }
 
     }
 
