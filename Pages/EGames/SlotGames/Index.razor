@@ -66,10 +66,10 @@
         <h5 class="text-muted">Discover endless fun with our Slot Games!</h5>
         <div class="pb-4 gameOverflow-x">
             <div class="row justify-content-center p-2">
-                @foreach (var item in lobbyViewModel.AllGameList.Where(a => a.GameVertical == Constants.egamesLive))
+                @foreach (var item in lobbyViewModel.AllGameList.Where(a => a.Category == Constants.egamesLive))
                 {
-                    <SlotTiles _imgStr="@item.FileName"
-                                 _titleStr="@item.TableName" />
+                    <SlotTiles _imgStr="@item.Filename"
+                                 _titleStr="@item.Description" />
                 }
 
                 @* <SlotTiles _imgStr="./img/SlotGames/samba.png"
@@ -218,10 +218,10 @@
         <h5 class="text-muted">Discover fun in our Fishing Games!</h5>
         <div class="pb-4 gameOverflow-x">
             <div class="row justify-content-center p-2">
-                @foreach (var item in lobbyViewModel.AllGameList.Where(a => a.GameVertical == Constants.egamesLive))
+                @foreach (var item in lobbyViewModel.AllGameList.Where(a => a.Category == Constants.egamesLive))
                 {
-                    <FishingTile _imgStr="@item.FileName"
-                                 _titleStr="@item.TableName" />
+                    <FishingTile _imgStr="@item.Filename"
+                                 _titleStr="@item.Description" />
                 }
 
                 @* <FishingTile _imgStr="./img/fishing/JackpotFishing.png"

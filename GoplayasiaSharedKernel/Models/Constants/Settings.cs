@@ -228,8 +228,10 @@
             #region eGAMES GAMETYPE
             public const string egamesAll = "all";
             public const string egamesLive = "Live";
-            public const string egamesRng = "Rng";
+            public const string egamesRng = "Arcade";
             public const string egamesSlots = "Slots";
+            public const string egamesCards = "Cards";
+            public const string egamesFishing = "Fishing";
             #endregion
 
             #region Game Title and Description

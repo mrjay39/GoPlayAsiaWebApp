@@ -1,6 +1,7 @@
 ﻿using Blazored.Toast.Services;
 using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Services.Interface;
+using GoplayasiaBlazor.DTOs.eGames;
 using GoplayasiaBlazor.Models;
 using GoplayasiaCore.Core.Services;
 using GoplayasiaCore.Core.Services.Interface;
@@ -15,7 +16,7 @@ namespace GoPlayAsiaWebApp.Goplay.ViewModels;
 
 public class LobbyViewModel : BaseViewModel
 {
-    public List<EvolutionGamesDTO> AllGameList { get; set; }
+    public List<eGamesListDTO> AllGameList { get; set; }
 
 
     public LobbyViewModel(ICurrentUser icurrentUser, IConfiguration iconfig, IGameRoundService igameRoundService, NavigationManager navigationManager, IAccountService iaccountService, IToastService toastService, AuthenticationStateProvider AuthenticationStateProvider, IConstantService constantService, IEGamesService iegamesservice)

@@ -15,6 +15,7 @@ using GoplayasiaCore.Core.Services.Interface;
 using GoplayasiaBlazor.Core.Global;
 using GoplayasiaBlazor.DTOs.Bingo;
 using GoplayasiaBlazor.Dtos.DTOIn.Profile;
+using GoplayasiaBlazor.DTOs.eGames;
 
 namespace GoplayasiaCore.Core.Services
 {
@@ -35,11 +36,11 @@ namespace GoplayasiaCore.Core.Services
 			_modal = Modal;
 			_toastService = toastService;
 		}
-		public async Task<List<EvolutionGamesDTO>> GetGames(string gameProvider, string gameType)
+		public async Task<List<eGamesListDTO>> GetGames(string gameProvider, string gameType)
 		{
 			try
 			{
-				var result = await _httpClientHelper.GetAsync<List<EvolutionGamesDTO>>($"eGames/listgames/{gameProvider}/{gameType}", _currentUser.Token);
+				var result = await _httpClientHelper.GetAsync<List<eGamesListDTO>>($"eGames/listgames/{gameProvider}/{gameType}", _currentUser.Token);
                 if (result == null)
 					throw new Exception();
 				return result;

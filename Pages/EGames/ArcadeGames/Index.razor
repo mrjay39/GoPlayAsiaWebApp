@@ -104,10 +104,10 @@
         <h5 class="text-muted">Your Seat Awaits: Dive into Live Casino Bliss</h5>
         <div id="liveCasino-overflow" class="pb-2 gameOverflow-x">
             <div class="justify-content-center p-2">
-                @foreach (var item in lobbyViewModel.AllGameList.Where(a => a.GameVertical == Constants.egamesLive))
+                @foreach (var item in lobbyViewModel.AllGameList.Where(a => a.Category == Constants.egamesLive))
                 {
-                    <LiveCasinoTile _imgStr="@item.FileName"
-                                    _titleStr="@item.TableName" />
+                    <LiveCasinoTile _imgStr="@item.Filename"
+                                    _titleStr="@item.Description" />
                 }
             </div>
         </div>
