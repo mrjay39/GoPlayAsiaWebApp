@@ -13,6 +13,10 @@
 .active {
     color: gold !important;
 }
+.active > h6.text-uppercase{
+    padding-bottom: 3px;
+    border-bottom: 2px solid gold;
+}
 .text-uppercase {
     font-size: 13px;
 
