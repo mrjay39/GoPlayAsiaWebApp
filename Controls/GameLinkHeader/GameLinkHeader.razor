@@ -40,7 +40,7 @@
 
         $('#link-header > a').click(function (event) {
             var targetSelector = $(this).attr('href');
-            $('#liveGames, #slotGames, #cardGames, #arcadeGames, #fishingGames').removeClass('pt-8');
+            $('#liveGames, #slotGames, #cardGames, #arcadeGames, #fishingGames').removeClass('pt-8 pt-5');
             $(targetSelector).addClass('pt-8');
         });
         
@@ -51,7 +51,7 @@
 
         @*===== Sticky Category =====*@
         var $linkHeader = $('#link-header');
-        var $headerContainer = $('#link-header');
+        var $headerContainer = $('h5.text-muted');
         var containerTop = $headerContainer.offset().top;
         var headerHeight = $linkHeader.outerHeight();
 
@@ -69,7 +69,6 @@
                 $stickyPlaceholder.css('height', '0');
             }
         });
-        
        
     });
 </script>
