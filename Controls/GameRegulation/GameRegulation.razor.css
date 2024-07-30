@@ -1,2 +1,34 @@
-﻿body {
+﻿.card {
+    border: none;
 }
+.text-sm-start {
+    font-size: 10px;
+}
+.content {
+    padding-top: 5px;
+}
+.img-fluid {
+    margin: 0 auto;
+    width: 150px !important;
+    display: flex;
+    justify-content: center;
+}
+.titleHeader {
+    font-size: 11px !important;
+}
+.KeepItFunIcons {
+    max-width: 40px;
+}
+/*MEDIA QUERY*/
+@media only screen and (max-width: 360px) {
+    .img-fluid {
+        margin: 0 auto;
+        width: 80px !important;
+        display: flex;
+        justify-content: center;
+    }
+    .text-sm-start {
+        font-size: 10px;
+    }
+}
+/*MEDIA QUERY*/
