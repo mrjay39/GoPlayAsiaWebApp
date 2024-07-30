@@ -1,4 +1,7 @@
-﻿@media screen and (max-width: 600px) {
+﻿.pt-8 {
+    padding-top: 8rem;
+}
+@media screen and (max-width: 600px) {
     h2 {
         font-size: 20px;
     }

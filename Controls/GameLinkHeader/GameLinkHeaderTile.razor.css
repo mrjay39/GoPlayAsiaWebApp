@@ -8,11 +8,9 @@
     font-size: 13px;
 }
 .bg-linkHeader {
-    background: #525964;
     color: #bfcdd7;
 }
 .active {
-    border-bottom: 5px solid gold;
     color: gold !important;
 }
 .text-uppercase {
@@ -29,6 +27,20 @@
     height: 80px !important;
 }
 
+#link-header.sticky .deactiveIcon {
+    height: 45px !important;
+    position: relative;
+}
+#link-header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 @media only screen and (min-width: 992px) {
     .link-header {
     width: 13rem;
@@ -38,6 +50,9 @@
 @media screen and (max-width: 991px) {
     .link-header {
         width: 7rem;
+    }
+    #link-header.sticky .link-header {
+        width: 4rem;
     }
     #linkHeader.col {
         flex: 1 0 0%;
