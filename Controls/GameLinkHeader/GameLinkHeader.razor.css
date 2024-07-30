@@ -7,7 +7,7 @@
         overflow-x: inherit;
     }
     #link-header.sticky {
-        top: 65px;
+        top: 70px;
     }
 }
 
@@ -18,8 +18,8 @@
     h5 {
         font-size: 14px;
     }
-    #link-header.sticky{
-        top: 40px;
+    #link-header.sticky {
+        top: 42px;
     }
 }
 #link-header {
