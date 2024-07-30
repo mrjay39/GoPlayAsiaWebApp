@@ -66,12 +66,15 @@
         margin: 3px;
     }
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 360px) {
     #link-header.sticky .link-header {
-        width: 3rem;
+        width: 3.5rem;
     }
     #link-header.sticky h6.text-uppercase {
         font-size: 11px;
+    }
+    #link-header.sticky .deactiveIcon {
+        height: 30px !important;
     }
 
 }
