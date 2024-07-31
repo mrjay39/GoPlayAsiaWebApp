@@ -1,8 +1,7 @@
-﻿<div id="link-header" class="link-header p-1 m-1">
+﻿<div class="col">
     <a id="@_idStr" href="@_gameHrefStr" class="text-decoration-none" style="width: 12rem;">
-        <div class="bg-linkHeader text-center  rounded-3 @_activeClassStr">
-            <img  src="@_imgGameStr" class=" img-fluid mb-1 @(_activeClassStr == "active"  ? "activeIcon" : "deactiveIcon")" alt="GoPlayAsia">
-
+        <div class="bg-linkHeader text-center  rounded-3 @_activeClassStr d-flex justify-content-center align-items-center">
+            <div class="img img-fluid mb-1 @_imgGameStr @(_activeClassStr == "active"  ? "activeIcon" : "deactiveIcon")"></div>
             <h6 class="text-uppercase fw-bold mb-1 mt-1 header-title">@_typeGameStr</h6>
         </div>
     </a>

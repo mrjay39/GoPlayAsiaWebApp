@@ -15,24 +15,45 @@
 }
 .active > h6.text-uppercase{
     padding-bottom: 3px;
-    border-bottom: 2px solid gold;
 }
 .text-uppercase {
     font-size: 13px;
 
 }
+h6.text-uppercase{
+    position: absolute;
+    font-size: 11px;
+    top: 25px;
+}
+
+.deactiveIcon {
+    filter: grayscale(100%);
+    height: 80px !important;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    background-size: contain !important;
+}
+div.liveGames {background: url(./img/gameCategory/live.png) center center no-repeat;}
+div.arcadeGames {background: url(./img/gameCategory/arcade.png) center center no-repeat;}
+div.cardGames {background: url(./img/gameCategory/card.png) center center no-repeat;}
+div.slotGames {background: url(./img/gameCategory/slot.png) center center no-repeat;}
+div.gpaGames {background: url(./img/GPA-btm-icon.svg) center center no-repeat;}
+
 
 .active > .deactiveIcon {
     filter: grayscale(0%);
     height: 80px !important
 }
-.deactiveIcon {
-    filter: grayscale(100%);
-    height: 80px !important;
-}
+.active > div.liveGames.deactiveIcon { background: url(./img/gameCategory/liveWebp.webp) center center no-repeat; background-size:cover;}
+.active > div.arcadeGames.deactiveIcon { background: url(./img/gameCategory/arcade.webp) center center no-repeat; background-size:cover;}
+.active > div.cardGames.deactiveIcon { background: url(./img/gameCategory/card.webp) center center no-repeat; background-size:cover;}
+.active > div.slotGames.deactiveIcon { background: url(./img/gameCategory/slot.gif) center center no-repeat; background-size:cover;}
+.active > div.gpaGames.deactiveIcon { background: url(./img/gameCategory/arcade.webp) center center no-repeat; background-size:cover;}
+
 
 #link-header.sticky .deactiveIcon, #link-header .deactiveIcon {
-    height: 45px !important;
+    height: 30px !important;
     position: relative;
 }
 #link-header.sticky {

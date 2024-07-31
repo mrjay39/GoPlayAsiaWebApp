@@ -1,34 +1,35 @@
 ﻿<div id="headerContainer" class="row pt-4">
-    <h2 class="text-white fw-bold mt-3">Game Categories</h2>
+    <h2 class="text-white fw-bold mt-3 base">Game Categories</h2>
     <h5 class="text-muted"> Navigating the World of Gaming Genres</h5>
     <div id="link-header" class="p-0 gameOverflow-x">
-        <div class="row container-fluid justify-content-center centered">
+        <div class="row p-0 d-flex container-fluid justify-content-center centered m-auto">
+
+            <GameLinkHeaderTile _gameHrefStr="#gpaGames"
+                                _idStr="fishing-linkHeader"
+                                _imgGameStr="gpaGames"
+                                _typeGameStr="Specialty" />
        
             <GameLinkHeaderTile _gameHrefStr="#liveGames"
                             _idStr="gpa-linkHeader"
-                                _imgGameStr="./img/gameCategory/liveWebp.webp"
+                                _imgGameStr="liveGames"
                             _typeGameStr="Live" />
 
             <GameLinkHeaderTile _gameHrefStr="#arcadeGames"
                             _idStr="arcade-linkHeader"
-                                _imgGameStr="./img/gameCategory/arcade.webp"
+                                _imgGameStr="arcadeGames"
                             _typeGameStr="arcade" />
 
             <GameLinkHeaderTile _gameHrefStr="#slotGames"
                             _idStr="slots-linkHeader"
-                                _imgGameStr="./img/gameCategory/slot.gif"
+                                _imgGameStr="slotGames"
                             _typeGameStr="Slots" />
 
             <GameLinkHeaderTile _gameHrefStr="#cardGames"
                             _idStr="card-linkHeader"
-                                _imgGameStr="./img/gameCategory/card.webp"
+                                _imgGameStr="cardGames"
                             _typeGameStr="Cards" />
-
-            <GameLinkHeaderTile _gameHrefStr="#fishingGames"
-                            _idStr="fishing-linkHeader"
-                                _imgGameStr="./img/gameCategory/fish.gif"
-                            _typeGameStr="Fishing" />
         </div>
+
     </div>
 </div>
 <script>
@@ -38,20 +39,20 @@
 
         });
 
-        $('#link-header > a').click(function (event) {
+        $('#link-header a').click(function (event) {
             var targetSelector = $(this).attr('href');
-            $('#liveGames, #slotGames, #cardGames, #arcadeGames, #fishingGames').removeClass('pt-8 pt-5');
+            $('#liveGames, #slotGames, #cardGames, #arcadeGames, #gpaGames').removeClass('pt-8 pt-5');
             $(targetSelector).addClass('pt-8');
         });
         
-        $('.link-header .bg-linkHeader').click(function () {
+        $('#link-header .bg-linkHeader').click(function () {
             $('.bg-linkHeader').removeClass('active');
             $(this).addClass('active');
         });
 
         @*===== Sticky Category =====*@
         var $linkHeader = $('#link-header');
-        var $headerContainer = $('h5.text-muted');
+        var $headerContainer = $('h2.base');
         var containerTop = $headerContainer.offset().top;
         var headerHeight = $linkHeader.outerHeight();
 
