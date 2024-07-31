@@ -2,32 +2,32 @@
     <h2 class="text-white fw-bold mt-3 base">Game Categories</h2>
     <h5 class="text-muted"> Navigating the World of Gaming Genres</h5>
     <div id="link-header" class="p-0 gameOverflow-x">
-        <div class="row d-flex container-fluid justify-content-center centered m-auto">
+        <div class="row p-0 d-flex container-fluid justify-content-center centered m-auto">
+
+            <GameLinkHeaderTile _gameHrefStr="#gpaGames"
+                                _idStr="fishing-linkHeader"
+                                _imgGameStr="gpaGames"
+                                _typeGameStr="Specialty" />
        
             <GameLinkHeaderTile _gameHrefStr="#liveGames"
                             _idStr="gpa-linkHeader"
-                                _imgGameStr="./img/GPA-btm-icon.svg"
+                                _imgGameStr="liveGames"
                             _typeGameStr="Live" />
 
             <GameLinkHeaderTile _gameHrefStr="#arcadeGames"
                             _idStr="arcade-linkHeader"
-                                _imgGameStr="./img/arcade-btm-icon.svg"
+                                _imgGameStr="arcadeGames"
                             _typeGameStr="arcade" />
 
             <GameLinkHeaderTile _gameHrefStr="#slotGames"
                             _idStr="slots-linkHeader"
-                                _imgGameStr="./img/slot-btm-icon.svg"
+                                _imgGameStr="slotGames"
                             _typeGameStr="Slots" />
 
             <GameLinkHeaderTile _gameHrefStr="#cardGames"
                             _idStr="card-linkHeader"
-                                _imgGameStr="./img/card-btm-icon.svg"
+                                _imgGameStr="cardGames"
                             _typeGameStr="Cards" />
-
-            <GameLinkHeaderTile _gameHrefStr="#fishingGames"
-                            _idStr="fishing-linkHeader"
-                                _imgGameStr="./img/fishing-btm-icon.svg"
-                            _typeGameStr="Fishing" />
         </div>
 
     </div>
@@ -41,7 +41,7 @@
 
         $('#link-header a').click(function (event) {
             var targetSelector = $(this).attr('href');
-            $('#liveGames, #slotGames, #cardGames, #arcadeGames, #fishingGames').removeClass('pt-8 pt-5');
+            $('#liveGames, #slotGames, #cardGames, #arcadeGames, #gpaGames').removeClass('pt-8 pt-5');
             $(targetSelector).addClass('pt-8');
         });
         
