@@ -16,40 +16,43 @@ using GoplayasiaBlazor.Core.Global;
 using GoplayasiaBlazor.DTOs.Bingo;
 using GoplayasiaBlazor.Dtos.DTOIn.Profile;
 using GoplayasiaBlazor.DTOs.eGames;
+using GoplayasiaBlazor.Dtos.DTOOut;
+using GoplayasiaBlazor.Dtos.Base;
+using GoplayasiaSharedKernel.DTOs.eGames;
 
 namespace GoplayasiaCore.Core.Services
 {
-	public class EGamesService : IEGamesService
-	{
-		private readonly IHTTPClientHelper _httpClientHelper;
-		private readonly ICurrentUser _currentUser;
-		private readonly IMapper _mapper;
-		public IModalService _modal { get; set; } = default!;
+    public class EGamesService : IEGamesService
+    {
+        private readonly IHTTPClientHelper _httpClientHelper;
+        private readonly ICurrentUser _currentUser;
+        private readonly IMapper _mapper;
+        public IModalService _modal { get; set; } = default!;
 
-		private readonly IToastService _toastService;
+        private readonly IToastService _toastService;
 
-		public IModalReference _globalPopup { get; set; }
-		public EGamesService(IHTTPClientHelper httpClientHelper, ICurrentUser currentUser, IModalService Modal, IToastService toastService)
-		{
-			_httpClientHelper = httpClientHelper;
-			_currentUser = currentUser;
-			_modal = Modal;
-			_toastService = toastService;
-		}
-		public async Task<List<eGamesListDTO>> GetGames(string gameProvider, string gameType)
-		{
-			try
-			{
-				var result = await _httpClientHelper.GetAsync<List<eGamesListDTO>>($"eGames/listgames/{gameProvider}/{gameType}", _currentUser.Token);
+        public IModalReference _globalPopup { get; set; }
+        public EGamesService(IHTTPClientHelper httpClientHelper, ICurrentUser currentUser, IModalService Modal, IToastService toastService)
+        {
+            _httpClientHelper = httpClientHelper;
+            _currentUser = currentUser;
+            _modal = Modal;
+            _toastService = toastService;
+        }
+        public async Task<List<eGamesListDTO>> GetGames(string gameProvider, string gameType)
+        {
+            try
+            {
+                var result = await _httpClientHelper.GetAsync<List<eGamesListDTO>>($"eGames/listgames/{gameProvider}/{gameType}", _currentUser.Token);
                 if (result == null)
-					throw new Exception();
-				return result;
-			}
-			catch (Exception ex)
-			{
-				return null;
-			}
-		}
+                    throw new Exception();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
         public async Task<List<eGamesListDTO>> ListPlayerGames(string gameProvider, string gameType)
         {
@@ -62,6 +65,20 @@ namespace GoplayasiaCore.Core.Services
             }
             catch (Exception ex)
             {
+                return null;
+            }
+        }
+
+        public async Task<GameLaunchRespDTO> LaunchGame(eGamesListDTO game)
+        {
+            try
+            {
+                var response = await _httpClientHelper.PostAsync<GameLaunchRespDTO>("eGames/launchEgame", _currentUser.Token, game );
+                return response;
+            }
+            catch (Exception ex)
+            {
+                _toastService.ShowError($"Error: {ex.Message}");
                 return null;
             }
         }

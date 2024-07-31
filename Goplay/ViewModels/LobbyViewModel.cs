@@ -6,6 +6,7 @@ using GoplayasiaBlazor.Models;
 using GoplayasiaCore.Core.Services;
 using GoplayasiaCore.Core.Services.Interface;
 using GoplayasiaSharedKernel.DTOs.DTOIn;
+using GoplayasiaSharedKernel.DTOs.eGames;
 using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -63,6 +64,7 @@ public class LobbyViewModel : BaseViewModel
             if (string.IsNullOrEmpty(_icurrentUser.Token))
             {
                 AllGameList = await _iegamesservice.GetGames(Constants.egamesAll, Constants.egamesAll);
+                
             }
             else
             {
@@ -74,4 +76,21 @@ public class LobbyViewModel : BaseViewModel
             //Console.WriteLine(ex);
         }
     }
+
+
+    public async Task<GameLaunchRespDTO> LaunchGame(eGamesListDTO game)
+    {
+        try
+        {
+            var response = await _iegamesservice.LaunchGame(game);
+            return response;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+
+
 }

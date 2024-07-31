@@ -1,24 +1,29 @@
 ﻿@using System.Security.Claims
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager _navigationManager
+@inject LobbyViewModel lobbyViewModel
+@using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.Login.LogInModal
+@using GoplayasiaBlazor.DTOs.eGames
 
 <div class="card m-1 p-0 border-dark game-tile">
     <a class="img-border" @onclick="OpenGameLink">
         <div class="container-fluid p-0 bg-img">
-            <img src="@_imgStr" class="card-img-top" @onclick="ToggleActive">
+            <img src="@Game.Filename" class="card-img-top" @onclick="ToggleActive">
         </div>
     </a>
 </div>
 @code {
-    [Parameter] public string? _imgStr { get; set; }
-    [Parameter] public string? _titleStr { get; set; }
+    // [Parameter] public string? _imgStr { get; set; }
+    // [Parameter] public string? _titleStr { get; set; }
     [Parameter] public string? _gameInfoHrefStr { get; set; }
-    [Parameter] public string? _tryoutsHrefStr { get; set; }
+    // [Parameter] public string? _tryoutsHrefStr { get; set; }
 
-    [Parameter] public string? _gameId { get; set; }
-    [Parameter] public string? _provider { get; set; }
-    [Parameter] public string? _code { get; set; }
+    // [Parameter] public string? _gameId { get; set; }
+    // [Parameter] public string? _provider { get; set; }
+    // [Parameter] public string? _code { get; set; }
+
+    [Parameter] public eGamesListDTO Game { get; set; }
 
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
@@ -51,7 +56,8 @@
         }
         else
         {
-            _navigationManager.NavigateTo(_gameInfoHrefStr);
+            //_navigationManager.NavigateTo(_gameInfoHrefStr);
+            var gamelink = await lobbyViewModel.LaunchGame(Game);
         }
 
     }
