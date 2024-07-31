@@ -12,5 +12,6 @@ namespace GoplayasiaCore.Core.Services.Interface
 	public interface IEGamesService
 	{
         Task<List<eGamesListDTO>> GetGames(string gameProvider, string gameType);
+        Task<List<eGamesListDTO>> ListPlayerGames(string gameProvider, string gameType);
     }
 }

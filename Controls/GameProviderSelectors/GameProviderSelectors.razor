@@ -6,6 +6,7 @@
 @using GoPlayAsiaWebApp.Pages.EGames.SlotGames
 
 @using GoPlayAsiaWebApp.Pages.EGames.GamesList
+@using GoplayasiaBlazor.DTOs.eGames
 @using GoplayasiaSharedKernel.DTOs.DTOIn
 @using static GoplayasiaBlazor.Models.Constants.Settings
 
@@ -61,7 +62,7 @@
             else if (provider.Key == "4")
             {
                 <FishingGames />
-                //<GamesList _title="@Constants.FishingGameTitle" _description="@Constants.FishingGameDescription" _filter="@Constants.egamesLive" />
+                //<GamesList _title="@Constants.FishingGameTitle" _description="@Constants.FishingGameDescription" _filter="@Constants.egamesFishing" />
                 
             }
             else if (provider.Key == "5")
@@ -76,7 +77,7 @@
 
 @code {
     
-    [CascadingParameter] public List<EvolutionGamesDTO> LiveGameList { get; set; }
+    [CascadingParameter] public List<eGamesListDTO> LiveGameList { get; set; }
 
     private Dictionary<string, bool> providers = new Dictionary<string, bool>
     {

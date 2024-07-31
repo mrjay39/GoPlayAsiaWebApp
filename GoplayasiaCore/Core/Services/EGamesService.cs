@@ -50,5 +50,20 @@ namespace GoplayasiaCore.Core.Services
 				return null;
 			}
 		}
-	}
+
+        public async Task<List<eGamesListDTO>> ListPlayerGames(string gameProvider, string gameType)
+        {
+            try
+            {
+                var result = await _httpClientHelper.GetAsync<List<eGamesListDTO>>($"eGames/listPlayerGames/{gameProvider}/{gameType}", _currentUser.Token);
+                if (result == null)
+                    throw new Exception();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+    }
 }

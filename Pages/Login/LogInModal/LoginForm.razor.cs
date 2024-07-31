@@ -16,6 +16,7 @@ using static GoplayasiaBlazor.Models.Constants.Settings;
 using System.ComponentModel;
 using System.Reflection;
 using Blazored.Toast.Configuration;
+using GoPlayAsiaWebApp.Goplay.ViewModels;
 
 namespace GoPlayAsiaWebApp.Pages.Login.LogInModal;
 
@@ -34,6 +35,8 @@ public partial class LoginForm
     [Inject] public IJSRuntime JSRuntime { get; set; }
     [Inject] public static IJSRuntime JSRuntimePWA { get; set; }
     [Inject] IModalService ModalService { get; set; }
+    [Inject]
+    LobbyViewModel _lobbyViewModel { get; set; }
     [Parameter] public string _gameInfoHrefStr { get; set; } = string.Empty;
 
     [Parameter]
@@ -291,6 +294,7 @@ public partial class LoginForm
                             _iCurrentUser.HoldCredits = response.User.HoldCredits;
                             _iCurrentUser.isApple = isApple;
                             await _iCurrentUser.updateSessionAsync();
+                            _lobbyViewModel.GetListGames();
 
                             await ((CustomAuthStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated();
                             if (_iCurrentUser.ToppedUp || _iCurrentUser.Verified != 0)
@@ -352,6 +356,8 @@ public partial class LoginForm
                 _iCurrentUser.TourWalletShown = false;
                 _iCurrentUser.HoldCredits = response.User.HoldCredits;
                 _iCurrentUser.isApple = isApple;
+                _lobbyViewModel.GetListGames();
+
                 if (!_iCurrentUser.MobileNumberValidated && 1 == 0)
                 {
 

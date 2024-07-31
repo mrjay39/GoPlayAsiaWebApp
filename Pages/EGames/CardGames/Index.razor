@@ -75,7 +75,10 @@
                 @foreach (var item in lobbyViewModel.AllGameList.Where(a => a.Category == Constants.egamesLive))
                 {
                     <GamesListTile _imgStr="@item.Filename"
-                                    _titleStr="@item.Description" />
+                                   _titleStr="@item.Description"
+                                   _gameId="@item.GameId"
+                                   _provider="@item.Provider"
+                                   _code="@item.Code" />
                 }
             </div>
         </div>
