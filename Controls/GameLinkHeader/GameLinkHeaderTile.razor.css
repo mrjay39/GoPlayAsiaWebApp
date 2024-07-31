@@ -71,7 +71,7 @@ div.gpaGames {background: url(./img/GPA-btm-icon.svg) center center no-repeat;}
         width: 10rem;
     }
     #link-header.sticky .deactiveIcon, #link-header .deactiveIcon {
-        height: 65px !important;
+        height: 30px !important;
     }
 }
 
@@ -82,6 +82,9 @@ div.gpaGames {background: url(./img/GPA-btm-icon.svg) center center no-repeat;}
     #linkHeader.col {
         flex: 1 0 0%;
         margin: 3px;
+    }
+    #link-header.sticky .deactiveIcon, #link-header .deactiveIcon {
+        height: 30px !important;
     }
 }
 @media screen and (max-width: 360px) {
