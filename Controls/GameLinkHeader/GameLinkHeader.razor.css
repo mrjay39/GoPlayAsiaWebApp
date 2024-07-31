@@ -6,8 +6,9 @@
     .gameOverflow-x {
         overflow-x: inherit;
     }
-    #link-header.sticky {
-        top: 70px;
+    #link-header, #link-header.sticky {
+        height: 76px;
+        top: 72px;
     }
 }
 
@@ -18,14 +19,18 @@
     h5 {
         font-size: 14px;
     }
-    #link-header.sticky {
+    #link-header, #link-header.sticky {
+        height: 50px;
         top: 68px;
+    }
+    #link-header div.col > a{
+        position: relative;
+        top: -8px;
     }
 }
 #link-header {
     background-image: radial-gradient(circle, rgb(20 20 20 / 75%), rgb(40 40 40 / 75%), rgba(53, 53, 53, 0.8));
     backdrop-filter: blur(1px);
-    height: 47px;
 }
 
 #link-header.sticky > .centered, #link-header {
