@@ -16,6 +16,10 @@
     [Parameter] public string? _gameInfoHrefStr { get; set; }
     [Parameter] public string? _tryoutsHrefStr { get; set; }
 
+    [Parameter] public string? _gameId { get; set; }
+    [Parameter] public string? _provider { get; set; }
+    [Parameter] public string? _code { get; set; }
+
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
     private ClaimsPrincipal user;
