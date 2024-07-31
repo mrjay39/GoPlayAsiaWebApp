@@ -23,7 +23,7 @@
 h6.text-uppercase{
     position: absolute;
     font-size: 11px;
-    top: 33px;
+    top: 30px;
 }
 
 .deactiveIcon {
@@ -91,6 +91,10 @@ div.gpaGames {background: url(./img/GPA-btm-icon.svg) center center no-repeat;}
     }
     #link-header.sticky .deactiveIcon, #link-header .deactiveIcon {
         height: 30px !important;
+    }
+    #link-header div.col > a {
+        position: relative;
+        top: -8px;
     }
 }
 @media screen and (max-width: 360px) {
