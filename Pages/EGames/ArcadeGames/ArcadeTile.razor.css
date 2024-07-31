@@ -46,11 +46,11 @@
     display: none;
 }
 
-.img-border, .img-border img {
+.game-tile {
     transition: .5s ease;
 }
 
-.img-border:hover {
+.game-tile:hover {
     box-shadow: 0 0 0 4px #ffd800;
     transition: .5s ease;
     border-radius: 10px;
