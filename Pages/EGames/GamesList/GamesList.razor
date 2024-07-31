@@ -10,11 +10,13 @@
             {
                 @foreach (var item in GameList.Where(a => a.Category == _filter))
                 {
-                    <GamesListTile _imgStr="@item.Filename"
+                    @* <GamesListTile _imgStr="@item.Filename"
                                    _titleStr="@item.Description"
                                    _gameId="@item.GameId"
                                    _provider="@item.Provider"
-                                   _code="@item.Code"/>
+                                   _code="@item.Code"/> *@
+
+                    <GamesListTile Game="item" />
                 }
             }
         </div>
@@ -26,5 +28,6 @@
     [Parameter] public string _description { get; set; }
     [Parameter] public string _filter { get; set; }
     [Parameter] public string _idStr { get; set; }
+
     [CascadingParameter] public List<eGamesListDTO> GameList { get; set; }
 }

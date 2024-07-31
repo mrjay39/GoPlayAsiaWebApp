@@ -248,11 +248,11 @@
             public const string ArcadeDescription = "Begin rotating for your chance to win big!";
 
             //Fishing
-            public const string FishingGameTitle = "Fun and Exciting Games";
+            public const string FishingGameTitle = "FISHING";
             public const string FishingDescription = "Discover fun in our Fishing Games!";
 
             //Slots
-            public const string SlotsGameTitle = "Spin & Win Adventure";
+            public const string SlotsGameTitle = "SLOTS";
             public const string SlotsGameDescription = "Discover endless fun with our Slot Games!";
             #endregion
 

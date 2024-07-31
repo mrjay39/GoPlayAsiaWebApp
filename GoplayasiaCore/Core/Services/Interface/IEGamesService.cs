@@ -1,6 +1,8 @@
-﻿using GoplayasiaBlazor.Dtos.DTOIn;
+﻿using GoplayasiaBlazor.Dtos.Base;
+using GoplayasiaBlazor.Dtos.DTOIn;
 using GoplayasiaBlazor.DTOs.eGames;
 using GoplayasiaSharedKernel.DTOs.DTOIn;
+using GoplayasiaSharedKernel.DTOs.eGames;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +15,6 @@ namespace GoplayasiaCore.Core.Services.Interface
 	{
         Task<List<eGamesListDTO>> GetGames(string gameProvider, string gameType);
         Task<List<eGamesListDTO>> ListPlayerGames(string gameProvider, string gameType);
+        Task<GameLaunchRespDTO> LaunchGame(eGamesListDTO game);
     }
 }
