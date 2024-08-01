@@ -9,5 +9,6 @@
         public string Filename { get; set; }
         public string Code { get; set; }
         public int Rank { get; set; }
+        public string Mode { get; set; }
     }
 }
