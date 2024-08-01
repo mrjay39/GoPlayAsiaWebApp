@@ -17,6 +17,8 @@ namespace GoPlayAsiaWebApp.Goplay.ViewModels;
 
 public class LobbyViewModel : BaseViewModel
 {
+    public string egameUrl { get; set; } = string.Empty;
+
     public List<eGamesListDTO> AllGameList { get; set; }
     public List<eGamesListDTO> AllListPlayerGames { get; set; }
 
@@ -79,16 +81,17 @@ public class LobbyViewModel : BaseViewModel
     }
 
 
-    public async Task<GameLaunchRespDTO> LaunchGame(eGamesListDTO game)
+    public async Task LaunchGame(eGamesListDTO game)
     {
         try
         {
-            var response = await _iegamesservice.LaunchGame(game);
-            return response;
+            var result = await _iegamesservice.LaunchGame(game);
+            if(result != null)
+            egameUrl = result.launchURL;
         }
         catch (Exception ex)
         {
-            return null;
+            egameUrl = string.Empty;
         }
     }
 

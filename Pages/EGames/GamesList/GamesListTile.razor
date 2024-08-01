@@ -55,9 +55,9 @@
             var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
         }
         else
-        {
-            //_navigationManager.NavigateTo(_gameInfoHrefStr);
-            var gamelink = await lobbyViewModel.LaunchGame(Game);
+        {           
+            await lobbyViewModel.LaunchGame(Game);
+            _navigationManager.NavigateTo("play");
         }
 
     }
