@@ -49,7 +49,7 @@ div.gpaGames {background: url(./img/GPA-btm-icon.svg) center center no-repeat;}
 .active > div.arcadeGames.deactiveIcon { background: url(./img/gameCategory/arcade.webp) center center no-repeat; background-size:cover;}
 .active > div.cardGames.deactiveIcon { background: url(./img/gameCategory/card.webp) center center no-repeat; background-size:cover;}
 .active > div.slotGames.deactiveIcon { background: url(./img/gameCategory/slot.gif) center center no-repeat; background-size:cover;}
-.active > div.gpaGames.deactiveIcon { background: url(./img/GPA-btm-icon_active.gif) center center no-repeat; background-size:cover;}
+.active > div.gpaGames.deactiveIcon { background: url(./img/GPA-btm-icon_active_2.svg) center center no-repeat; background-size:cover; animation-play-state:running;}
 
 
 #link-header.sticky .deactiveIcon, #link-header .deactiveIcon {
