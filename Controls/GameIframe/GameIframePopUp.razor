@@ -4,6 +4,7 @@
 @inject NavigationManager _navigationManager
 @inject IModalService ModalService
 @inject LobbyViewModel lobbyViewModel
+@inject IJSRuntime JSRuntime
 
 <div id="gameContainer" class="container">
     <div id="gamePopUp" class="modal-dialog modal-dialog-centered fixed-centered">
@@ -27,9 +28,10 @@
 @code {
     [Parameter]
     public string gameUrl { get; set; } = string.Empty;
-    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
-    private async Task Close() => await BlazoredModal.CloseAsync();
-    private async Task Cancel() => await BlazoredModal.CancelAsync();
+    private async Task Close()
+    {
+        await JSRuntime.InvokeVoidAsync("history.back");
+    }
     protected override Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
