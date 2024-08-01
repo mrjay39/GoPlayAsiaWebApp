@@ -5,20 +5,22 @@
 @inject IModalService ModalService
 @inject LobbyViewModel lobbyViewModel
 
-<div id="gamePopUp" class="modal-dialog modal-dialog-centered fixed-centered">
-    <div class="modal-content modal-bg border-bottom-4 bg-transparent">
-        <div class="modal-header p-2" id="gamePopUpModalLabel">
-            <button type="button" class="btn-close" @onclick="Close">
-                <i class="fa-regular close-icon"></i>
-            </button>
+<div id="gameContainer" class="container">
+    <div id="gamePopUp" class="modal-dialog modal-dialog-centered fixed-centered">
+        <div class="modal-content modal-bg border-bottom-4 bg-transparent">
+            @if (!string.IsNullOrEmpty(gameUrl))
+            {
+                <div class="modal-body text-center text-dark p-0">
+                    <div class="modal-header p-2" id="gamePopUpModalLabel">
+                        <button type="button" class="btn-close" @onclick="Close">
+                            <i class="fa-regular close-icon"></i>
+                        </button>
+                    </div>
+                    <iframe src="@gameUrl" title="GoPlayAsia Game">
+                    </iframe>
+                </div>
+            }
         </div>
-        @if (!string.IsNullOrEmpty(gameUrl))
-        {
-            <div class="modal-body text-center text-dark p-0">
-                <iframe src="@gameUrl" title="GoPlayAsia Game">
-            </iframe>
-        </div>
-        }
     </div>
 </div>
 
