@@ -17,7 +17,7 @@
                             <i class="fa-regular close-icon"></i>
                         </button>
                     </div>
-                    <iframe src="@gameUrl" title="GoPlayAsia Game">
+                    <iframe id="myIframe" src="@gameUrl" title="GoPlayAsia Game">
                     </iframe>
                 </div>
             }
@@ -42,3 +42,29 @@
         return base.OnAfterRenderAsync(firstRender);
     }
 }
+<script>
+    $(document).ready(function () {
+        function adjustIframe() {
+            if ($(window).width() >= 992) { // Desktop view
+                $('#myIframe, #gamePopUp').css({
+                    'width': '85%',
+                    'height': '100vh'
+                });
+            } else if ($(window).width() >= 991) { // Tablet view
+                $('#myIframe, #gamePopUp').css({
+                    'width': '100%',
+                    'height': '100vh'
+                });
+            } else { // Mobile view
+                $('#myIframe, #gamePopUp').css({
+                    'width': '100%',
+                    'height': '100vh'
+                });
+            }
+        }
+        adjustIframe();
+        $(window).resize(function () {
+            adjustIframe();
+        });
+    });
+</script>

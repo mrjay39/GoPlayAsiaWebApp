@@ -14,7 +14,6 @@
         top: 72px;
     }
 }
-
 @media screen and (max-width: 991px) {
     h2{
         font-size: 20px;
@@ -24,11 +23,17 @@
     }
     #link-header, #link-header.sticky {
         height: 50px;
-        top: 68px;
+        top: 48px;
     }
     #link-header div.col > a{
         position: relative;
         top: -8px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    #link-header, #link-header.sticky {
+        top: 40px;
     }
 }
 #link-header {
