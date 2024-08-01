@@ -6,6 +6,7 @@
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.Login.LogInModal
 @using GoplayasiaBlazor.DTOs.eGames
+@using GoplayasiaSharedKernel.DTOs.eGames.Enum
 
 <div class="card m-1 p-0 border-dark game-tile">
     <a class="img-border" @onclick="OpenGameLink">
@@ -24,6 +25,8 @@
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
     private ClaimsPrincipal user;
+    [Parameter]
+    public string PlayMode { get; set; } = GameMode.real_money.ToString();
 
     private bool isActive = false;
 
@@ -48,21 +51,22 @@
         try
         {
 
-     
-        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        var user = authenticationState.User;
-        if (!user.Identity.IsAuthenticated)
-        {
-            var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
-        }
-        else        
-        {  
-            popupRef = popupModal.Show<PopupLoading>("");
-            await lobbyViewModel.LaunchGame(Game);
-            popupRef.Close();
-            _navigationManager.NavigateTo("play");
 
-        }
+            var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authenticationState.User;
+            if (!user.Identity.IsAuthenticated)
+            {
+                var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
+            }
+            else
+            {
+                Game.Mode = PlayMode;
+                popupRef = popupModal.Show<PopupLoading>("");
+                await lobbyViewModel.LaunchGame(Game);
+                popupRef.Close();
+                _navigationManager.NavigateTo("play");
+
+            }
         }
         catch (Exception)
         {
