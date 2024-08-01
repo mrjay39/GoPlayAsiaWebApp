@@ -1,7 +1,10 @@
 ﻿h6{
     font-size: 14px;
 }
-
+#headerContainer.container{
+    padding-left: 8px;
+    padding-right: 8px;
+}
 @media only screen and (min-width: 992px) {
     .gameOverflow-x {
         overflow-x: inherit;
