@@ -1,4 +1,13 @@
-﻿/*================== Start: Thumbnail change into one line ==============*/
+﻿#feat-games.pt-8 {
+    padding-top: 8rem;
+}
+
+#feat-games.container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/*================== Start: Thumbnail change into one line ==============*/
 @media only screen and (max-width:1080px) {
 
     #feat-games.gameOverflow-x, #link-header.gameOverflow-x, #arcade.gameOverflow-x {

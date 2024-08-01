@@ -8,11 +8,13 @@
 <div class="card m-1 p-0 border-dark game-tile">
     <a @onclick="OpenGameLink" class="img-border" >
         <div class="container-fluid p-0 bg-img">
-            <img src="@_imgStr" class="card-img-top featGames-bg basketBall" @onclick="ToggleActive">
+            <img src="@_imgStr" class="card-img-top featGames-bg @aspectRatio basketBall" @onclick="ToggleActive">
         </div>
     </a>
 </div>
+
 @code {
+    [Parameter] public string aspectRatio { get; set; } = "";
     [Parameter] public string _idStr { get; set; } = string.Empty;
     [Parameter] public string? _imgStr { get; set; }
     [Parameter] public string? _titleStr { get; set; }

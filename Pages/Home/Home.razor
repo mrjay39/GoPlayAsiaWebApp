@@ -22,12 +22,11 @@
 
 <div class="container-fluid marketing p-0">
 
-    <div class="container">
+    <div id="hp-8" class="container-fluid">
 
         <GameLinkHeader />
-        <MostPlayedGames />
         <FeaturedGames />
-
+        <MostPlayedGames />
       <CascadingValue Value="@lobbyViewModel.AllGameList">
             <GameProviderSelectors />
         </CascadingValue>
@@ -63,6 +62,7 @@
         }
 
         await lobbyViewModel.GetListGames();
+
     }
 
     private async Task HandleAgeAgreement()

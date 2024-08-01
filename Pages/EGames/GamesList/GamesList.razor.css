@@ -1,5 +1,9 @@
 ﻿.pt-8 {
-    padding-top: 8rem;
+    padding-top: 5rem;
+}
+#gameList > #liveGames, #gameList > #cardGames, #gameList > #arcadeGames, #gameList > #slotGames {
+    padding-left: 0px;
+    padding-right: 0px;
 }
 @media screen and (max-width: 600px) {
     h2 {

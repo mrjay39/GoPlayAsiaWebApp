@@ -23,7 +23,7 @@
 h6.text-uppercase{
     position: absolute;
     font-size: 11px;
-    top: 25px;
+    top: 30px;
 }
 
 .deactiveIcon {
@@ -49,7 +49,7 @@ div.gpaGames {background: url(./img/GPA-btm-icon.svg) center center no-repeat;}
 .active > div.arcadeGames.deactiveIcon { background: url(./img/gameCategory/arcade.webp) center center no-repeat; background-size:cover;}
 .active > div.cardGames.deactiveIcon { background: url(./img/gameCategory/card.webp) center center no-repeat; background-size:cover;}
 .active > div.slotGames.deactiveIcon { background: url(./img/gameCategory/slot.gif) center center no-repeat; background-size:cover;}
-.active > div.gpaGames.deactiveIcon { background: url(./img/gameCategory/arcade.webp) center center no-repeat; background-size:cover;}
+.active > div.gpaGames.deactiveIcon { background: url(./img/GPA-btm-icon_active_2.svg) center center no-repeat; background-size:cover; animation-play-state:running;}
 
 
 #link-header.sticky .deactiveIcon, #link-header .deactiveIcon {
@@ -71,7 +71,13 @@ div.gpaGames {background: url(./img/GPA-btm-icon.svg) center center no-repeat;}
         width: 10rem;
     }
     #link-header.sticky .deactiveIcon, #link-header .deactiveIcon {
-        height: 65px !important;
+        height: 45px !important;
+    }
+    h6.text-uppercase {
+        top: 52px;
+    }
+    #link-header.sticky .col-xl-2 {
+        width: 11.444% !important;
     }
 }
 
@@ -82,6 +88,13 @@ div.gpaGames {background: url(./img/GPA-btm-icon.svg) center center no-repeat;}
     #linkHeader.col {
         flex: 1 0 0%;
         margin: 3px;
+    }
+    #link-header.sticky .deactiveIcon, #link-header .deactiveIcon {
+        height: 30px !important;
+    }
+    #link-header div.col > a {
+        position: relative;
+        top: -8px;
     }
 }
 @media screen and (max-width: 360px) {

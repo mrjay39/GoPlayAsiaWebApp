@@ -9,14 +9,24 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
+.Sqr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%;
+    background-color: black;
+  
+}
 .game-tile {
     width: 12rem;
     cursor: pointer;
     border-radius: 10px;
     border-width: 5px;
+    background-color: black;
 }
 .game-tile .bg-img > img{
     border-radius: 0;
+
 }
 .subtitle {
     min-height: 70px;
@@ -36,11 +46,11 @@
     display: none;
 }
 
-.img-border, .img-border img {
+.game-tile {
     transition: .5s ease;
 }
 
-.img-border:hover {
+.game-tile:hover {
     box-shadow: 0 0 0 4px #ffd800;
     transition: .5s ease;
     border-radius: 10px;
