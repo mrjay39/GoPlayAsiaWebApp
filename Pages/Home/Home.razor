@@ -54,6 +54,7 @@
     protected override async Task OnInitializedAsync()
     {
 
+        lobbyViewModel.Notify += OnNotify;
         var agreedItem = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "agreedToTerms");
         bool agreed = !string.IsNullOrEmpty(agreedItem) && bool.Parse(agreedItem);
         if (agreed)
@@ -69,5 +70,9 @@
         await JSRuntime.InvokeVoidAsync("localStorage.setItem", "agreedToTerms", true);
         showAgeAgreement = false;
         StateHasChanged();
+    }
+    public async void OnNotify()
+    {
+        await InvokeAsync(() => StateHasChanged());
     }
 }

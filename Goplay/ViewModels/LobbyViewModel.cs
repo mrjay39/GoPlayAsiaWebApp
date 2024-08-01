@@ -68,6 +68,7 @@ public class LobbyViewModel : BaseViewModel
             {
                 AllGameList = await _iegamesservice.ListPlayerGames(Constants.egamesAll, Constants.egamesAll);
             }
+            await CallInvoke();
         }
         catch (Exception ex)
         {
