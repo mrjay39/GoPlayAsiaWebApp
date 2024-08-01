@@ -1,8 +1,9 @@
-﻿@page "/popUpGame"
+﻿@page "/play"
+@using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.GPAGames
 @inject NavigationManager _navigationManager
 @inject IModalService ModalService
-
+@inject LobbyViewModel lobbyViewModel
 
 <div id="gamePopUp" class="modal-dialog modal-dialog-centered fixed-centered">
     <div class="modal-content modal-bg border-bottom-4 bg-transparent">
@@ -11,16 +12,29 @@
                 <i class="fa-regular close-icon"></i>
             </button>
         </div>
-        <div class="modal-body text-center text-dark p-0">
-            <iframe src="http://localhost:5127/games/headstails" title="GoPlayAsia Game">
+        @if (!string.IsNullOrEmpty(gameUrl))
+        {
+            <div class="modal-body text-center text-dark p-0">
+                <iframe src="@gameUrl" title="GoPlayAsia Game">
             </iframe>
         </div>
+        }
     </div>
 </div>
 
 @code {
+    [Parameter]
+    public string gameUrl { get; set; } = string.Empty;
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     private async Task Close() => await BlazoredModal.CloseAsync();
     private async Task Cancel() => await BlazoredModal.CancelAsync();
-
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            gameUrl = lobbyViewModel.egameUrl;
+            StateHasChanged();
+        }
+        return base.OnAfterRenderAsync(firstRender);
+    }
 }
