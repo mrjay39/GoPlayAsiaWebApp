@@ -14,3 +14,9 @@
         font-size: 14px;
     }
 }
+
+#offcanvasBottom {
+    background-image: radial-gradient(circle, rgb(63 63 63 / 34%), rgb(37 36 36 / 34%), rgb(53 53 53 / 50%));
+    backdrop-filter: blur(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

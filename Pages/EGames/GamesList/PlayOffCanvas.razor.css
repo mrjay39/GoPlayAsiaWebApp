@@ -1,0 +1,34 @@
+﻿.show {
+    visibility: visible !important;
+}
+div.bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100vh 40vh;
+    background-repeat: no-repeat;
+    opacity: .30;
+    z-index: 0;
+}
+
+.live-play-btn, .live-play-btn > img {
+    height: 55px;
+    align-items: center;
+    display: inline-flex;
+}
+.live-play-btn:focus {
+   box-shadow: 0 0 0 2px #fbecd6, 0 0 0 1px #ffdbaf;
+}
+.demo-play-btn {
+    color: #000000;
+    background-color: #f9f3a7;
+    border: 3px solid #f1ea85;
+}
+
+@media screen and (min-width: 992px) {
+    #playOffCanvas {
+        display: none !important;
+    }
+}

@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Controls\GameIframe\PlayOffCanvas.razor" />
     <Content Remove="Pages\EGames\CardGames\MostPLayedGameEvolution.razor" />
   </ItemGroup>
 
@@ -44,6 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Pages\EGames\GamesList\PlayOffCanvas.razor" />
     <None Include="Goplay\Main\Docs\GameRules.razor" />
     <None Include="Goplay\Main\Docs\GameRulesPage\Bigwinrules.razor" />
     <None Include="Goplay\Main\Docs\GameRulesPage\Dwrules.razor" />
@@ -2126,6 +2128,14 @@
   <ItemGroup>
     <ProjectReference Include="GoplayasiaCore\GoplayasiaCore.csproj" />
     <ProjectReference Include="GoplayasiaSharedKernel\GoplayasiaSharedKernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Controls\GameIframe\PlayOffCanvas.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Controls\GameIframe\PlayOffCanvas.razor" />
   </ItemGroup>
 
 </Project>

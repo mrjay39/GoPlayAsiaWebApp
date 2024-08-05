@@ -11,10 +11,10 @@
                 @foreach (var item in GameList.Where(a => a.Category == _filter))
                 {
                     @* <GamesListTile _imgStr="@item.Filename"
-                                   _titleStr="@item.Description"
-                                   _gameId="@item.GameId"
-                                   _provider="@item.Provider"
-                                   _code="@item.Code"/> *@
+            _titleStr="@item.Description"
+            _gameId="@item.GameId"
+            _provider="@item.Provider"
+            _code="@item.Code"/> *@
 
                     <GamesListTile Game="item" />
                 }

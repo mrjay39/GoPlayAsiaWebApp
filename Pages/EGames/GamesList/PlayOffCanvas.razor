@@ -1,0 +1,44 @@
+﻿
+<div id="playOffCanvas" data-bs-scroll="true" class="offcanvas offcanvas-bottom bg-dark @(IsVisible ? "show" : "")" tabindex="-1" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header" style="z-index:1">
+        @* <a class="offcanvas-title btn p-0 text-muted" id="offcanvasBottomLabel"><i class="fa-solid fa-heart"></i></a>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button> *@
+    </div>
+
+    <AuthorizeView>
+            <Authorized>
+                @*===========  Buttons after Login ===========*@
+                <div class="offcanvas-body small" style="z-index:1">
+                    <div class="d-block text-center p-2">
+                        <button class="btn live-play-btn border-0">
+                            <img src="./img/play.png" class="img img-fluid">
+                        </button>
+                    </div> <div class="d-block text-center p-2">
+                        <button class="btn demo-play-btn ms-2">Fun Play</button>
+                    </div>
+                </div>
+            </Authorized>
+            <NotAuthorized>
+                @*===========  Buttons Before Login ===========*@
+                <div class="offcanvas-body small" style="z-index:1">
+                    <div class="d-block text-center p-2">
+                        <button class="btn live-play-btn border-0 text-white">
+                            <img src="./img/login.png" class="img img-fluid">
+                        </button>
+                    </div> <div class="d-block text-center p-2">
+                        <button class="btn demo-play-btn ms-2"><i class="fa-solid fa-play"></i> Demo Play</button>
+                    </div>
+                </div>
+            </NotAuthorized>
+
+        </AuthorizeView>
+    <div class="bg-image" style="background-image: url('@ImageUrl')"></div>
+</div>
+
+
+
+@code {
+    [Parameter] public string _title { get; set; }
+    [Parameter] public bool IsVisible { get; set; }
+    [Parameter] public string ImageUrl { get; set; }
+}}
