@@ -22,13 +22,20 @@ div.bg-image {
    box-shadow: 0 0 0 2px #fbecd6, 0 0 0 1px #ffdbaf;
 }
 .demo-play-btn {
-    color: #000000;
-    background-color: #f9f3a7;
-    border: 3px solid #f1ea85;
+    color: #ffffff;
+    background-color: #4b4b4b;
+    border: 3px solid #e9ce04;
 }
 
 @media screen and (min-width: 992px) {
-    #playOffCanvas {
+    #playOffCanvas .bg-image {
         display: none !important;
+    }
+
+    #playOffCanvas {
+    background-image: url(./img/bg-middle.png), linear-gradient(180deg, #000 20%, rgb(10, 10, 10) 60%, #101019 100%) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top: 2px solid #393939;
     }
 }
