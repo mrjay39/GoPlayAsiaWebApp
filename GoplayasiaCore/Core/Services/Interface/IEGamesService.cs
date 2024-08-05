@@ -16,5 +16,6 @@ namespace GoplayasiaCore.Core.Services.Interface
         Task<List<eGamesListDTO>> GetGames(string gameProvider, string gameType);
         Task<List<eGamesListDTO>> ListPlayerGames(string gameProvider, string gameType);
         Task<GameLaunchRespDTO> LaunchGame(eGamesListDTO game);
+        Task<GameLaunchRespDTO> LaunchDemoGame(eGamesListDTO game, string mode);
     }
 }

@@ -1,4 +1,4 @@
-﻿
+﻿@page "/popup-play-for-fun"
 <div id="playOffCanvas" data-bs-scroll="true" class="offcanvas offcanvas-bottom bg-dark @(IsVisible ? "show" : "")" tabindex="-1" aria-labelledby="offcanvasBottomLabel">
     <div class="offcanvas-header" style="z-index:1">
         @* <a class="offcanvas-title btn p-0 text-muted" id="offcanvasBottomLabel"><i class="fa-solid fa-heart"></i></a>
@@ -6,33 +6,38 @@
     </div>
 
     <AuthorizeView>
-            <Authorized>
-                @*===========  Buttons after Login ===========*@
-                <div class="offcanvas-body small" style="z-index:1">
-                    <div class="d-block text-center p-2">
-                        <button class="btn live-play-btn border-0">
-                            <img src="./img/play.png" class="img img-fluid">
-                        </button>
-                    </div> <div class="d-block text-center p-2">
-                        <button class="btn demo-play-btn ms-2">Fun Play</button>
+        <Authorized>
+            @*===========  Buttons after Login ===========*@
+            <div class="offcanvas-body small" style="z-index:1">
+                <div class="d-block text-center p-2">
+                    <button class="btn live-play-btn border-0" @onclick="RealMoney">
+                        <img src="./img/play.png" class="img img-fluid">
+                    </button>
+                </div> <div class="d-block text-center p-2">
+                    <button class="btn demo-play-btn ms-2" @onclick="FunPlay">Fun Play</button>
+                </div>
+            </div>
+        </Authorized>
+        <NotAuthorized>
+            @*===========  Buttons Before Login ===========*@
+            <div class="container-fluid" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <div class="container text-center">
+                    <h4 class="text-center">Playing for fun</h4>
+                    <p>This is a play for fun version of the game. Winnings cannot be cashed out. Login to play for real money.</p>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="col">
+                            <button type="button" class="btnPlayForFun btn btn-primary mr-2" @onclick="PlayForFun">Play For Fun</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btnSignUp btn btn-outline-primary" @onclick="SignUp">Sign up</button>
+                        </div>
                     </div>
                 </div>
-            </Authorized>
-            <NotAuthorized>
-                @*===========  Buttons Before Login ===========*@
-                <div class="offcanvas-body small" style="z-index:1">
-                    <div class="d-block text-center p-2">
-                        <button class="btn live-play-btn border-0 text-white">
-                            <img src="./img/login.png" class="img img-fluid">
-                        </button>
-                    </div> <div class="d-block text-center p-2">
-                        <button class="btn demo-play-btn ms-2">Demo Play</button>
-                    </div>
-                </div>
-            </NotAuthorized>
+            </div>
+        </NotAuthorized>
 
-        </AuthorizeView>
-    <div class="bg-image" style="background-image: url('@ImageUrl')"></div>
+    </AuthorizeView>
+     <div class="bg-image" style="background-image: url('@ImageUrl')"></div> 
 </div>
 
 
@@ -41,4 +46,27 @@
     [Parameter] public string _title { get; set; }
     [Parameter] public bool IsVisible { get; set; }
     [Parameter] public string ImageUrl { get; set; }
-}}
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    private void RealMoney()
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok("RealMoney"));
+    }
+
+    private void FunPlay()
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok("FunPlay"));
+    }
+
+    private void PlayForFun()
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok("PlayForFun"));
+    }
+
+    private void SignUp()
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok("SignUp"));
+    }
+
+   
+}
