@@ -90,7 +90,14 @@
 
     private void ToggleSelection(string provider)
     {
-        providers[provider] = !providers[provider];
+        // Deselect all providers
+        foreach (var key in providers.Keys.ToList())
+        {
+            providers[key] = false;
+        }
+
+        // Select the clicked provider
+        providers[provider] = true;
     }
 
     private bool IsSelected(string provider)
