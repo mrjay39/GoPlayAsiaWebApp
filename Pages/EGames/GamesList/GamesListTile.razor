@@ -26,8 +26,9 @@
     [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
     private ClaimsPrincipal user;
     [Parameter]
-    public string PlayMode { get; set; } = GameMode.real_money.ToString();
-
+    public string PlayRealMode { get; set; } = GameMode.real_money.ToString();
+    public string PlayDemoMode { get; set; } = GameMode.demo.ToString();
+    public string PlayFunMode { get; set; } = GameMode.play_for_fun.ToString();
     private bool isActive = false;
     private bool isCanvasVisible = false;
     private string gameImageUrl;
@@ -52,40 +53,72 @@
         IModalReference popupRef;
         try
         {
-
-
             var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
             var user = authenticationState.User;
             if (!user.Identity.IsAuthenticated)
             {
-                @*=========== PlayOffCanvas ===========*@
                 gameImageUrl = Game.Filename;
                 var parameters = new ModalParameters
                 {
                     { "IsVisible", true },
                     { "ImageUrl", gameImageUrl }
                 };
-                var modalRef = popuLoadingpModal.Show<PlayOffCanvas>("PlayOffCanvas", parameters);
-
-                var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
+                var modal = popuLoadingpModal.Show<PlayOffCanvas>("PlayOffCanvas", parameters);
+                if (modal != null)
+                {
+                    var result = await modal.Result;
+                    if (!result.Cancelled)
+                    {
+                        var action = result.Data as string;
+                        if (action == "PlayForFun")
+                        {
+                            Game.Mode = PlayDemoMode;
+                            popupRef = popupModal.Show<PopupLoading>("");
+                            await lobbyViewModel.LaunchDemoGame(Game, PlayDemoMode);
+                            _navigationManager.NavigateTo("play");
+                        }
+                        else if (action == "SignUp")
+                        {
+                            popuLoadingpModal.Show<LoginAndSignUp>("");
+                        }
+                    }
+                }
             }
             else
             {
-
                 gameImageUrl = Game.Filename;
                 var parameters = new ModalParameters
                 {
                     { "IsVisible", true },
                     { "ImageUrl", gameImageUrl }
                 };
-                var modalRef = popuLoadingpModal.Show<PlayOffCanvas>("PlayOffCanvas", parameters);
+                var modal = popuLoadingpModal.Show<PlayOffCanvas>("PlayOffCanvas", parameters);
+                if (modal != null)
+                {
+                    var result = await modal.Result;
+                    if (!result.Cancelled)
+                    {
+                        var action = result.Data as string;
+                        if (action == "RealMoney")
+                        {
+                            Game.Mode = PlayRealMode;
+                            popupRef = popupModal.Show<PopupLoading>("");
+                            await lobbyViewModel.LaunchGame(Game);
+                            popupRef.Close();
+                            _navigationManager.NavigateTo("play");
+                        }
+                        else if (action == "FunPlay")
+                        {
+                            Game.Mode = PlayFunMode;
+                            popupRef = popupModal.Show<PopupLoading>("");
+                            await lobbyViewModel.LaunchDemoGame(Game, PlayFunMode);
+                            popupRef.Close();
+                            _navigationManager.NavigateTo("play");
+                        }
+                    }
+                }
 
-
-                Game.Mode = PlayMode;
-                popupRef = popupModal.Show<PopupLoading>("");
-                await lobbyViewModel.LaunchGame(Game);
-                popupRef.Close();
-                _navigationManager.NavigateTo("play");
+               
             }
         }
         catch (Exception)

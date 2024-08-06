@@ -82,5 +82,18 @@ namespace GoplayasiaCore.Core.Services
                 return null;
             }
         }
+
+        public async Task<GameLaunchRespDTO> LaunchDemoGame(eGamesListDTO game, string mode)
+        {
+            try
+            {
+                var response = await _httpClientHelper.PostAsync<GameLaunchRespDTO>("eGames/launchDemoEgame", string.Empty, game);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

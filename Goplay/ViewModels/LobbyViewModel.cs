@@ -95,6 +95,20 @@ public class LobbyViewModel : BaseViewModel
         }
     }
 
+    public async Task LaunchDemoGame(eGamesListDTO game, string demo)
+    {
+        try
+        {
+            var result = await _iegamesservice.LaunchDemoGame(game, game.Mode);
+            if (result != null)
+                egameUrl = result.launchURL;
+        }
+        catch (Exception ex)
+        {
+            egameUrl = string.Empty;
+        }
+    }
+
 
 
 }
