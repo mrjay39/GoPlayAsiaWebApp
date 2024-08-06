@@ -12,7 +12,7 @@
     color: gold;
     background: black;
     border-radius: 50%;
-    display: inline-flex;
+    display: none;
     align-items: center;
     justify-content: center;
 }
@@ -20,11 +20,7 @@
     padding-left: 0px;
     padding-right: 0px;
 }
-@media only screen and (min-width: 992px) {
-    .gameOverflow-x {
-        overflow-x: inherit;
-    }
-}
+
 #linkHeader.col {
     flex: inherit;
     width: 10rem;
@@ -34,12 +30,24 @@
 .active {
     border-bottom: 10px solid #ffffff;
 }
+.selected > div > .bg-provider {
+    background: gold;
+    border: 2px solid #525050;
+}
+.selected > .text-mute {
+    color: #212121;
+}
+.text-muted {
+    color: #808080;
+}
 .bg-provider {
     background: #373634;
     border: 2px solid #525050;
 }
-
 @media only screen and (min-width: 992px) {
+    .gameOverflow-x {
+        overflow-x: inherit;
+    }
     .link-header {
         width: 13rem;
     }
