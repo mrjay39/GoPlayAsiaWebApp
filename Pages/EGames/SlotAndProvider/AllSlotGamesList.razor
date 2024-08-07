@@ -1,0 +1,22 @@
+﻿@page "/AllSlotGames"
+@using GoPlayAsiaWebApp.Controls.GameSlotProvider
+@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoPlayAsiaWebApp.Pages.EGames
+@using GoPlayAsiaWebApp.Pages.EGames.GamesList.GameSlotList
+@using GoPlayAsiaWebApp.Pages.EGames.SlotAndProvider
+@inject LobbyViewModel lobbyViewModel
+<PageTitle>GoPlayAsia: Slot Games</PageTitle>
+
+
+
+<div class="container-fluid marketing">
+
+    <div id="hp-8" class="container-fluid pt-4">
+        @if (lobbyViewModel.AllGameList != null)
+        {
+            <CascadingValue Value="@lobbyViewModel.AllGameList">
+                <GameProviderSlots />
+            </CascadingValue>
+        }
+    </div>
+</div>

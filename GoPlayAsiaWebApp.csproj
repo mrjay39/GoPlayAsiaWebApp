@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Content Remove="Controls\GameIframe\PlayOffCanvas.razor" />
+    <Content Remove="Controls\GameProviderSelectors\GameProviderSlots.razor" />
     <Content Remove="Pages\EGames\CardGames\MostPLayedGameEvolution.razor" />
   </ItemGroup>
 
@@ -45,6 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Controls\GameSlotProvider\GameProviderSlots.razor" />
     <None Include="Pages\EGames\GamesList\PlayOffCanvas.razor" />
     <None Include="Goplay\Main\Docs\GameRules.razor" />
     <None Include="Goplay\Main\Docs\GameRulesPage\Bigwinrules.razor" />
