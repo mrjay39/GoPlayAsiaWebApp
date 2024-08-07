@@ -54,6 +54,7 @@
 @media screen and (max-width: 991px) {
     .link-header {
         width: 6rem;
+        height: 5rem;
     }
 
 
@@ -64,7 +65,7 @@
 }
 @media screen and (max-width: 600px) {
     h6, h5{
-        font-size: 14px;
+        font-size: 9px;
     }
     h2{
         font-size: 20px;
