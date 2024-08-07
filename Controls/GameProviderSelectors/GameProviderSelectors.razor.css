@@ -31,31 +31,29 @@
     border-bottom: 10px solid #ffffff;
 }
 .selected > div > .bg-provider {
-    background: gold;
-    border: 2px solid #525050;
+    border-bottom: 4px solid gold;
+    border-radius: 0px !important;
+    color: gold;
 }
 .selected > .text-mute {
     color: #212121;
 }
-.text-muted {
-    color: #808080;
-}
-.bg-provider {
-    background: #373634;
-    border: 2px solid #525050;
+.text-mute {
+    color: #8e8e8e;
 }
 @media only screen and (min-width: 992px) {
     .gameOverflow-x {
         overflow-x: inherit;
     }
     .link-header {
-        width: 13rem;
+        width: 12rem;
+        display: inline;
     }
 }
 
 @media screen and (max-width: 991px) {
     .link-header {
-        width: 7rem;
+        width: 6rem;
     }
 
 

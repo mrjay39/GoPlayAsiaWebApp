@@ -19,14 +19,14 @@
             @foreach (var provider in providers)
             {
                 <div @onclick="@(e => ToggleSelection(provider.Key))" class="link-header p-0 m-2 @GetSelectionClass(provider.Key)">
-                    <div class="text-mute btn p-0" style="width: 12rem;">
+                    <div class="text-mute btn p-0" style="width: 6rem;">
                         <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
                             @if (provider.Value)
                             {
                                 <span class="selected-icon"><i class="fa-regular fa-circle-check"></i></span>
                             }
-                            <img src="./img/providersLogo/@GetProviderImage(provider.Key)" class="img-fluid w-100" alt="GoPlayAsia">
-                            <h6 class="text-uppercase fw-bold mb-0">@GetProviderName(provider.Key)</h6>
+                            <img src="./img/providersLogo/@GetProviderImage(provider.Key)" class="img-fluid w-100" style="">
+                            <h6 class="text-uppercase fw-bold mb-0">@provider.Key</h6>
                         </div>
                     </div>
                 </div>
@@ -36,102 +36,48 @@
     </div>
 </div>
 
-@if (providers.Any(p => p.Value))
-{
-    <div id="gameList">
-        @foreach (var provider in providers.Where(p => p.Value))
-        {
-            if (provider.Key == "1")
-            {
-                //<LiveCasino />
-                <GamesList _idStr="liveGames" _title="@Constants.CasinoGameTitle" _description="@Constants.CasinoGameDescription" _filter="@Constants.egamesLive" />
-             
-            }
-            else if (provider.Key == "2")
-            {
-                //<CardGames />
-                <GamesList _idStr="cardGames" _title="@Constants.CardGameTitle" _description="@Constants.CardGameDescription" _filter="@Constants.egamesRng" />
-                
-            }
-            else if (provider.Key == "3")
-            {
-                <ArcadeGames />
-                //<GamesList _title="@Constants.ArcadeGameTitle" _description="@Constants.ArcadeGameDescription" _filter="@Constants.egamesLive" />
-                               
-            }
-            else if (provider.Key == "4")
-            {
-                <FishingGames />
-                //<GamesList _title="@Constants.FishingGameTitle" _description="@Constants.FishingGameDescription" _filter="@Constants.egamesFishing" />
-                
-            }
-            else if (provider.Key == "5")
-            {
-                //<SlotsGames />
-                <GamesList _idStr="slotGames" _title="@Constants.SlotsGameTitle" _description="@Constants.SlotsGameDescription" _filter="@Constants.egamesSlots" />
-                
-            }
-        }
-    </div>
-}
-
+<GamesList _idStr="liveGames" _title="@Constants.CasinoGameTitle" _description="@Constants.CasinoGameDescription" _filter="@Constants.egamesLive" _provider="@activeProvider" />
+<GamesList _idStr="slotGames" _title="@Constants.SlotsGameTitle" _description="@Constants.SlotsGameDescription" _filter="@Constants.egamesSlots" _provider="@activeProvider" />
+<GamesList _idStr="arcadeGames" _title="@Constants.ArcadeGameTitle" _description="@Constants.ArcadeDescription" _filter="@Constants.egamesRng" _provider="@activeProvider" />
+<GamesList _idStr="cardGames" _title="@Constants.CardGameTitle" _description="@Constants.CardGameDescription" _filter="@Constants.egamesCards" _provider="@activeProvider"  />
 @code {
-    
-    [CascadingParameter] public List<eGamesListDTO> LiveGameList { get; set; }
 
     private Dictionary<string, bool> providers = new Dictionary<string, bool>
     {
-        { "1", false },
-        { "2", false },
-        { "3", false },
-        { "4", false },
-        { "5", false }
+        { "See All", true },
+        { "Pragmatic", false },
+        { "Evolution", false },
+        { "NetEnt", false },
+        { "Red Tiger", false },
+        { "Big Time Gaming", false }
     };
 
+    // Track which filter is currently active
+    private string activeProvider = "All"; // "all" means "See All"
     private void ToggleSelection(string provider)
     {
-        // Deselect all providers
         foreach (var key in providers.Keys.ToList())
         {
             providers[key] = false;
         }
-
-        // Select the clicked provider
         providers[provider] = true;
+        activeProvider = provider;
     }
-
-    private bool IsSelected(string provider)
-    {
-        return providers[provider];
-    }
-
     private string GetSelectionClass(string provider)
     {
-        return IsSelected(provider) ? "selected" : "";
-    }
-
-    private string GetProviderName(string provider)
-    {
-        return provider switch
-        {
-            "1" => "Pragmatic",
-            "2" => "Evolution",
-            "3" => "SA Gaming",
-            "4" => "Aviatrix",
-            "5" => "Jili",
-            _ => ""
-        };
+        return providers[provider] ? "selected" : "";
     }
 
     private string GetProviderImage(string provider)
     {
         return provider switch
         {
-            "1" => "pragmatic.png",
-            "2" => "evolution.png",
-            "3" => "SAGaming.png",
-            "4" => "aviatrix.png",
-            "5" => "jili.png",
+            "See All" => "provider-all.png",
+            "Pragmatic" => "pragmatic.png",
+            "Evolution" => "evolution.png",
+            "NetEnt" => "netent.png",
+            "Red Tiger" => "redTiger.png",
+            "Big Time Gaming" => "bigTime.png",
             _ => ""
         };
     }

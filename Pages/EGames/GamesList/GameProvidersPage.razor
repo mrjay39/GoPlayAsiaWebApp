@@ -1,0 +1,26 @@
+﻿@page "/GameProviders"
+@using GoPlayAsiaWebApp.Controls.GameProviderSelectors
+@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoPlayAsiaWebApp.Pages.EGames
+@using GoPlayAsiaWebApp.Pages.EGames.GamesList
+@inject LobbyViewModel lobbyViewModel
+<PageTitle>GoPlayAsia: Game Providers</PageTitle>
+
+
+
+<div class="container-fluid marketing">
+
+    <div id="hp-8" class="container-fluid pt-4">
+        @if (lobbyViewModel.AllGameList != null)
+        {
+            <CascadingValue Value="@lobbyViewModel.AllGameList">
+                <GameProviderSelectors />
+            </CascadingValue>
+        }
+    </div>
+</div>
+
+@code {
+
+
+}

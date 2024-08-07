@@ -1,4 +1,5 @@
 ﻿@using GoPlayAsiaWebApp.Pages.GPAGames
+@using GoPlayAsiaWebApp.Pages.EGames.SlotAndProvider
 
 <div class="container p-0 text-center">
     <h2 class="text-white fw-bold pt-3">Specialty Games</h2>
@@ -43,6 +44,17 @@
                      _idStr="go12"
                      _titleStr="Go 12"
                      _gameInfoHrefStr="games/go12" />
+
+        </div>
+        <div class="row justify-content-center p-2">
+
+            <ProviderAndSlotTile _imgStr="./img/img-provider.png"
+                     _playHrefStr="GameProviders" />
+
+
+            @*=========== Slots Icon ===========*@
+            <ProviderAndSlotTile _imgStr="./img/img-slots.png"
+                     _playHrefStr="slots" />
         </div>
     </div>
 </div>

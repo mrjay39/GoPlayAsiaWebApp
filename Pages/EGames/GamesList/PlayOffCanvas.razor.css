@@ -26,6 +26,9 @@ div.bg-image {
     background-color: #4b4b4b;
     border: 3px solid #e9ce04;
 }
+.font-12{
+    font-size: 12px;
+}
 
 @media screen and (min-width: 992px) {
     #playOffCanvas .bg-image {
@@ -33,9 +36,6 @@ div.bg-image {
     }
 
     #playOffCanvas {
-    background-image: url(./img/bg-middle.png), linear-gradient(180deg, #000 20%, rgb(10, 10, 10) 60%, #101019 100%) !important;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-top: 2px solid #393939;
+    background: white;
     }
 }
