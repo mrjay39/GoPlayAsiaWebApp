@@ -19,19 +19,14 @@
 
     [Parameter] public string? _gameInfoHrefStr { get; set; }
     [CascadingParameter] public IModalService popupModal { get; set; }
-
     [Parameter] public eGamesListDTO Game { get; set; }
-
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
     private ClaimsPrincipal user;
-    [Parameter]
-    public string PlayRealMode { get; set; } = GameMode.real_money.ToString();
-    public string PlayDemoMode { get; set; } = GameMode.demo.ToString();
-    public string PlayFunMode { get; set; } = GameMode.play_for_fun.ToString();
     private bool isActive = false;
     private bool isCanvasVisible = false;
     private string gameImageUrl;
+    private string gameCategory;
 
     private void ToggleActive()
     {
@@ -61,7 +56,9 @@
                 var parameters = new ModalParameters
                 {
                     { "IsVisible", true },
-                    { "ImageUrl", gameImageUrl }
+                    { "ImageUrl", gameImageUrl },
+                    { "Category", Game.Category }
+
                 };
                 var modal = popuLoadingpModal.Show<PlayOffCanvas>("PlayOffCanvas", parameters);
                 if (modal != null)
@@ -69,17 +66,16 @@
                     var result = await modal.Result;
                     if (!result.Cancelled)
                     {
-                        var action = result.Data as string;
-                        if (action == "PlayForFun")
-                        {
-                            Game.Mode = PlayDemoMode;
-                            popupRef = popupModal.Show<PopupLoading>("");
-                            await lobbyViewModel.LaunchDemoGame(Game, PlayDemoMode);
-                            _navigationManager.NavigateTo("play");
-                        }
-                        else if (action == "SignUp")
+                        if (result.Data == "signUp")
                         {
                             popuLoadingpModal.Show<LoginAndSignUp>("");
+                        }
+                        else
+                        {
+                            Game.Mode = result.Data.ToString();
+                            popupRef = popupModal.Show<PopupLoading>("");
+                            await lobbyViewModel.LaunchGameMode(Game, result.Data.ToString());
+                            _navigationManager.NavigateTo("play");
                         }
                     }
                 }
@@ -98,27 +94,12 @@
                     var result = await modal.Result;
                     if (!result.Cancelled)
                     {
-                        var action = result.Data as string;
-                        if (action == "RealMoney")
-                        {
-                            Game.Mode = PlayRealMode;
-                            popupRef = popupModal.Show<PopupLoading>("");
-                            await lobbyViewModel.LaunchGame(Game);
-                            popupRef.Close();
-                            _navigationManager.NavigateTo("play");
-                        }
-                        else if (action == "FunPlay")
-                        {
-                            Game.Mode = PlayFunMode;
-                            popupRef = popupModal.Show<PopupLoading>("");
-                            await lobbyViewModel.LaunchDemoGame(Game, PlayFunMode);
-                            popupRef.Close();
-                            _navigationManager.NavigateTo("play");
-                        }
+                        Game.Mode = result.Data.ToString();
+                        popupRef = popupModal.Show<PopupLoading>("");
+                        await lobbyViewModel.LaunchGame(Game);
+                        _navigationManager.NavigateTo("play");
                     }
                 }
-
-               
             }
         }
         catch (Exception)
