@@ -23,14 +23,13 @@
     <div id="hp-8" class="container-fluid">
 
         <MostPlayedGames />
-        @if (@lobbyViewModel.AllGameList != null)
+        <WelcomeGPA />
+        @* @if (@lobbyViewModel.AllGameList != null)
         {
             <CascadingValue Value="@lobbyViewModel.AllGameList">
                 <GameProviderSelectors />
             </CascadingValue>
-        }
-        <WelcomeGPA />
-
+        } *@
     </div>
     <GameRegulation />
     @if (showAgeAgreement)
