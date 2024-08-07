@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace GoplayasiaCore.Core.Services.Interface
 {
-	public interface IEGamesService
-	{
+    public interface IEGamesService
+    {
         Task<List<eGamesListDTO>> GetGames(string gameProvider, string gameType);
         Task<List<eGamesListDTO>> ListPlayerGames(string gameProvider, string gameType);
         Task<GameLaunchRespDTO> LaunchGame(eGamesListDTO game);
-        Task<GameLaunchRespDTO> LaunchDemoGame(eGamesListDTO game, string mode);
+        Task<GameLaunchRespDTO> LaunchGameMode(eGamesListDTO game, string mode);
     }
 }

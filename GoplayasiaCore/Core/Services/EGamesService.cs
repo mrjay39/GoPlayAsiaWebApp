@@ -73,7 +73,7 @@ namespace GoplayasiaCore.Core.Services
         {
             try
             {
-                var response = await _httpClientHelper.PostAsync<GameLaunchRespDTO>("eGames/launchEgame", _currentUser.Token, game );
+                var response = await _httpClientHelper.PostAsync<GameLaunchRespDTO>("eGames/launchEgame", _currentUser.Token, game);
                 return response;
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace GoplayasiaCore.Core.Services
             }
         }
 
-        public async Task<GameLaunchRespDTO> LaunchDemoGame(eGamesListDTO game, string mode)
+        public async Task<GameLaunchRespDTO> LaunchGameMode(eGamesListDTO game, string mode)
         {
             try
             {

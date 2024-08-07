@@ -66,7 +66,7 @@ public class LobbyViewModel : BaseViewModel
             if (string.IsNullOrEmpty(_icurrentUser.Token))
             {
                 AllGameList = await _iegamesservice.GetGames(Constants.egamesAll, Constants.egamesAll);
-                
+
             }
             else
             {
@@ -86,8 +86,8 @@ public class LobbyViewModel : BaseViewModel
         try
         {
             var result = await _iegamesservice.LaunchGame(game);
-            if(result != null)
-            egameUrl = result.launchURL;
+            if (result != null)
+                egameUrl = result.launchURL;
         }
         catch (Exception ex)
         {
@@ -95,11 +95,11 @@ public class LobbyViewModel : BaseViewModel
         }
     }
 
-    public async Task LaunchDemoGame(eGamesListDTO game, string demo)
+    public async Task LaunchGameMode(eGamesListDTO game, string demo)
     {
         try
         {
-            var result = await _iegamesservice.LaunchDemoGame(game, game.Mode);
+            var result = await _iegamesservice.LaunchGameMode(game, demo);
             if (result != null)
                 egameUrl = result.launchURL;
         }
