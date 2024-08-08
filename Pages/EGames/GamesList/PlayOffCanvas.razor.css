@@ -17,7 +17,7 @@ div.bg-image {
 }
 
 .live-play-btn, .live-play-btn > img {
-    height: 55px;
+    height: 65px;
     align-items: center;
     display: inline-flex;
 }
@@ -25,9 +25,9 @@ div.bg-image {
    box-shadow: 0 0 0 2px #fbecd6, 0 0 0 1px #ffdbaf;
 }
 .demo-play-btn {
-    color: #ffffff;
-    background-color: #4b4b4b;
-    border: 3px solid #e9ce04;
+    color: #000000;
+    background-color: #fbf5f5;
+    border: 3px solid #33cccc;
 }
 .font-12{
     font-size: 12px;
