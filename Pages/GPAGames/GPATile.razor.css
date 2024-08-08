@@ -61,7 +61,7 @@
 
 @media screen and (max-width: 460px) {
     .game-tile {
-        width: 6rem;
+        width: 7.2rem;
     }
     .game-tile h3 {
         font-size: 15px;
@@ -76,7 +76,7 @@
 }
 @media screen and (max-width: 414px) {
     .game-tile {
-        width: 6rem;
+        width: 7.2rem;
     }
     .game-tile h3 {
         font-size: 15px;
@@ -84,11 +84,15 @@
     .arrow {
         top: 48% !important;
     }
+    .m-2{
+        margin-right: 17px !important;
+        margin-left: 17px !important;
+    }
 }
 
 @media screen and (max-width: 320px) {
     .game-tile {
-        width: 6rem;
+        width: 7.2rem;
         margin: 8px !important;
     }
 
@@ -101,6 +105,10 @@
     }
     .arrow {
         top: 48% !important;
+    }
+    .m-2 {
+        margin-right: 12px !important;
+        margin-left: 12px !important;
     }
 }
 

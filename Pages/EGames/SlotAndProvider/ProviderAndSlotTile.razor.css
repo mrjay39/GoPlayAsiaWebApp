@@ -56,7 +56,7 @@
 
 @media screen and (max-width: 460px) {
     .game-tile {
-        width: 6rem;
+        width: 7.2rem;
     }
 
         .game-tile h3 {
@@ -75,28 +75,36 @@
 
 @media screen and (max-width: 414px) {
     .game-tile {
-        width: 6rem;
+        width: 7.2rem;
     }
 
-        .game-tile h3 {
-            font-size: 10px;
-        }
+    .game-tile h3 {
+        font-size: 10px;
+    }
+    .m-2 {
+        margin-right: 17px !important;
+        margin-left: 17px !important;
+    }
 }
 
 @media screen and (max-width: 320px) {
     .game-tile {
-        width: 6rem;
+        width: 7.2rem;
         margin: 8px !important;
     }
 
-        .game-tile .btn {
-            font-size: 10px;
-            font-weight: bold;
-        }
+    .game-tile .btn {
+        font-size: 10px;
+        font-weight: bold;
+    }
 
-        .game-tile h3 {
-            font-size: 10px;
-        }
+    .game-tile h3 {
+        font-size: 10px;
+    }
+    .m-2 {
+        margin-right: 12px !important;
+        margin-left: 12px !important;
+    }
 }
 
 /*================ Start: Button PLay Animation ==================*/
