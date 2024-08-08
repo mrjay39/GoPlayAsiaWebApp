@@ -33,12 +33,18 @@
                         <div class="col m-2">
                             @if (Category != "Live")
                             {
-                                <button type="button" class="btnPlayForFun btn btn-warning mr-2" @onclick="(() => SelectMode(GameMode.demo.ToString()))">Play For Fun</button>
+                                @* <button type="button" class="btnPlayForFun btn btn-warning mr-2" @onclick="(() => SelectMode(GameMode.demo.ToString()))">Play For Fun</button> *@
+                                <button class="btn demo-play-btn border-0 p-0" @onclick="(() => SelectMode(GameMode.demo.ToString()))">
+                                    <img src="./img/funPlay.gif" class="img img-fluid">
+                                </button>
                             }
                         </div>
                         <div class="col m-2">
-                            <button class="btn signup-btn border-0 ms-2" @onclick="SignUp">
+                            @* <button class="btn signup-btn border-0 ms-2" @onclick="SignUp">
                                 <img src="./img/signup-btn.gif" class="img img-fluid">
+                            </button> *@
+                            <button class="btn btnPlayForFun btn-warning border-0 ms-2" @onclick="SignUp">
+                                Sign Up
                             </button>
                         </div>
                     </div>
