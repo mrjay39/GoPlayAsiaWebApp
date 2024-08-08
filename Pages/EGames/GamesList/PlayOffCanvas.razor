@@ -11,7 +11,7 @@
                     </button>
                 </div>
                 <div class="d-block text-center p-2">
-                    <button class="btn live-play-btn border-0 ms-2" @onclick="(() => SelectMode(GameMode.play_for_fun.ToString()))">
+                    <button class="btn demo-play-btn border-0 ms-2" @onclick="(() => SelectMode(GameMode.play_for_fun.ToString()))">
                         <img src="./img/funPlay.gif" class="img img-fluid">
                     </button>
                 </div>
@@ -34,7 +34,9 @@
                             }
                         </div>
                         <div class="col m-2">
-                            <button type="button" class="btnSignUp btn btn-outline-warning text-dark" @onclick="SignUp">Sign up</button>
+                            <button class="btn signup-btn border-0 ms-2" @onclick="SignUp">
+                                <img src="./img/signup-btn.gif" class="img img-fluid">
+                            </button>
                         </div>
                     </div>
                 </div>

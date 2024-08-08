@@ -24,10 +24,10 @@ div.bg-image {
 .live-play-btn:focus {
    box-shadow: 0 0 0 2px #fbecd6, 0 0 0 1px #ffdbaf;
 }
-.demo-play-btn {
-    color: #000000;
-    background-color: #fbf5f5;
-    border: 3px solid #33cccc;
+.demo-play-btn > img, .signup-btn > img {
+    height: 55px;
+    align-items: center;
+    display: inline-flex;
 }
 .font-12{
     font-size: 12px;

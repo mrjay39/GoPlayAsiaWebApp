@@ -75,15 +75,25 @@
 
 @media screen and (max-width: 414px) {
     .game-tile {
-        width: 7.2rem;
+        width: 9.5rem;
+    }
+    .game-tile h3 {
+        font-size: 15px;
     }
 
-    .game-tile h3 {
-        font-size: 10px;
+    .arrow {
+        top: 48% !important;
     }
-    .m-2 {
+
+    .m-1 {
         margin-right: 17px !important;
         margin-left: 17px !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .game-tile {
+        width: 7.2rem;
     }
 }
 
@@ -101,7 +111,7 @@
     .game-tile h3 {
         font-size: 10px;
     }
-    .m-2 {
+    .m-1 {
         margin-right: 12px !important;
         margin-left: 12px !important;
     }
