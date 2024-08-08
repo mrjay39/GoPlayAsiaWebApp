@@ -7,11 +7,13 @@
             <div class="offcanvas-body small" style="z-index:1">
                 <div class="d-block text-center p-2">
                     <button class="btn live-play-btn border-0" @onclick="(() => SelectMode(GameMode.real_money.ToString()))">
-                        <img src="./img/play.png" class="img img-fluid">
+                        <img src="./img/play-btn.gif" class="img img-fluid">
                     </button>
                 </div>
                 <div class="d-block text-center p-2">
-                    <button class="btn demo-play-btn ms-2" @onclick="(() => SelectMode(GameMode.play_for_fun.ToString()))">Fun Play</button>
+                    <button class="btn live-play-btn border-0 ms-2" @onclick="(() => SelectMode(GameMode.play_for_fun.ToString()))">
+                        <img src="./img/funPlay.gif" class="img img-fluid">
+                    </button>
                 </div>
             </div>
             <div class="bg-image" style="background-image: url('@ImageUrl')"></div>

@@ -36,11 +36,12 @@
     private Dictionary<string, bool> providers = new Dictionary<string, bool>
     {
         { "All", true },
-        { "Pragmatic", false },
-        { "Evolution", false },
         { "NetEnt", false },
         { "Red Tiger", false },
-        { "Big Time Gaming", false }
+        { "Big Time Gaming", false },
+        { "Pragmatic", false },
+        { "Evolution", false }
+        
     };
 
     // Track which filter is currently active
@@ -64,11 +65,11 @@
         return provider switch
         {
             "All" => "provider-all.png",
-            "Pragmatic" => "pragmatic.png",
-            "Evolution" => "evolution.png",
             "NetEnt" => "netent.png",
             "Red Tiger" => "redTiger.png",
             "Big Time Gaming" => "bigTime.png",
+            "Pragmatic" => "pragmatic.png",
+            "Evolution" => "evolution.png",
             _ => ""
         };
     }
