@@ -398,3 +398,8 @@ p {
         right: 5px;
     }
 }
+/*=========== iframe Properties ============*/
+body.phone .loader-frame-container iframe, body.tablet .loader-frame-container iframe {
+    height: 95% !important;
+    width: 100%;
+}
