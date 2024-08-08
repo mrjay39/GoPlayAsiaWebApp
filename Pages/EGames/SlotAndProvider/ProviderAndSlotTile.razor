@@ -38,15 +38,15 @@
 
     private async void OpenGameLink()
     {
-        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        var user = authenticationState.User;
-        if (!user.Identity.IsAuthenticated)
-        {
+        // var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        // var user = authenticationState.User;
+        // if (!user.Identity.IsAuthenticated)
+        // {
             _navigationManager.NavigateTo(_playHrefStr);
-        }
-        else
-        {
-            _navigationManager.NavigateTo(_playHrefStr);
-        }
+        // }
+        // else
+        // {
+        //     _navigationManager.NavigateTo(_playHrefStr);
+        // }
     }
 }
