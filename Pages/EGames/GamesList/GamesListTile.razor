@@ -86,7 +86,8 @@
                 var parameters = new ModalParameters
                 {
                     { "IsVisible", true },
-                    { "ImageUrl", gameImageUrl }
+                    { "ImageUrl", gameImageUrl },
+                     { "Category", Game.Category }
                 };
                 var modal = popuLoadingpModal.Show<PlayOffCanvas>("PlayOffCanvas", parameters);
                 if (modal != null)
