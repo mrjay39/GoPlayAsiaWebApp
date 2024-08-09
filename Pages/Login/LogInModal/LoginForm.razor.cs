@@ -294,7 +294,7 @@ public partial class LoginForm
                             _iCurrentUser.HoldCredits = response.User.HoldCredits;
                             _iCurrentUser.isApple = isApple;
                             await _iCurrentUser.updateSessionAsync();
-                            _lobbyViewModel.GetListGames();
+                            //_lobbyViewModel.GetListGames();
 
                             await ((CustomAuthStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated();
                             if (_iCurrentUser.ToppedUp || _iCurrentUser.Verified != 0)
@@ -356,7 +356,7 @@ public partial class LoginForm
                 _iCurrentUser.TourWalletShown = false;
                 _iCurrentUser.HoldCredits = response.User.HoldCredits;
                 _iCurrentUser.isApple = isApple;
-                _lobbyViewModel.GetListGames();
+                //_lobbyViewModel.GetListGames();
 
                 if (!_iCurrentUser.MobileNumberValidated && 1 == 0)
                 {

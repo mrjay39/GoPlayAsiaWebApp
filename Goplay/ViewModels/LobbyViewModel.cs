@@ -7,6 +7,7 @@ using GoplayasiaCore.Core.Services;
 using GoplayasiaCore.Core.Services.Interface;
 using GoplayasiaSharedKernel.DTOs.DTOIn;
 using GoplayasiaSharedKernel.DTOs.eGames;
+using GoplayasiaSharedKernel.Models.eGames;
 using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -21,7 +22,7 @@ public class LobbyViewModel : BaseViewModel
 
     public List<eGamesListDTO> AllGameList { get; set; }
     public List<eGamesListDTO> AllListPlayerGames { get; set; }
-
+    public List<GameProviders> gameProviders { get; private set; }
 
     public LobbyViewModel(ICurrentUser icurrentUser, IConfiguration iconfig, IGameRoundService igameRoundService, NavigationManager navigationManager, IAccountService iaccountService, IToastService toastService, AuthenticationStateProvider AuthenticationStateProvider, IConstantService constantService, IEGamesService iegamesservice)
 
@@ -72,6 +73,56 @@ public class LobbyViewModel : BaseViewModel
             {
                 AllGameList = await _iegamesservice.ListPlayerGames(Constants.egamesAll, Constants.egamesAll);
             }
+
+            //get all list of provders with slots
+            GameProviders newGameProvider = new GameProviders();
+            gameProviders = new List<GameProviders>();
+            var distinctProviders = AllGameList.Select(x => x.Provider).Distinct().ToList();
+            newGameProvider.Name = "All";
+            newGameProvider.ImageUrl = "provider-all.png";
+            newGameProvider.SortKey = 1;
+            newGameProvider.LiveCount = AllGameList.Count(x => x.Category == Constants.egamesLive );
+            newGameProvider.ArcadeCount = AllGameList.Count(x => x.Category == Constants.egamesRng);
+            newGameProvider.SlotsCount = AllGameList.Count(x => x.Category == Constants.egamesSlots );
+            newGameProvider.CardCount = AllGameList.Count(x => x.Category == Constants.egamesCards);
+            newGameProvider.FishingCount = AllGameList.Count(x => x.Category == Constants.egamesFishing);
+            gameProviders.Add(newGameProvider);
+
+            foreach (var provider in distinctProviders)
+            {
+                newGameProvider = new GameProviders();
+                newGameProvider.Name = provider;
+                switch (provider)
+                {
+                    case "NetEnt":
+                        newGameProvider.ImageUrl = "netent.png";
+                        newGameProvider.SortKey = 4;
+                        break;
+                    case "Red Tiger":
+                        newGameProvider.ImageUrl = "redTiger.png";
+                        newGameProvider.SortKey = 6;
+                        break;
+                    case "Big Time Gaming":
+                        newGameProvider.ImageUrl = "bigTime.png";
+                        newGameProvider.SortKey = 5;
+                        break;
+                    case "Pragmatic":
+                        newGameProvider.ImageUrl = "pragmatic.png";
+                        newGameProvider.SortKey = 3;
+                        break;
+                    case "Evolution":
+                        newGameProvider.ImageUrl = "evolution.png";
+                        newGameProvider.SortKey = 2;
+                        break;
+                }
+                newGameProvider.LiveCount = AllGameList.Count(x => x.Category == Constants.egamesLive && x.Provider == provider);
+                newGameProvider.ArcadeCount = AllGameList.Count(x => x.Category == Constants.egamesRng && x.Provider == provider);
+                newGameProvider.SlotsCount = AllGameList.Count(x => x.Category == Constants.egamesSlots && x.Provider == provider);
+                newGameProvider.CardCount = AllGameList.Count(x => x.Category == Constants.egamesCards && x.Provider == provider);
+                newGameProvider.FishingCount = AllGameList.Count(x => x.Category == Constants.egamesFishing && x.Provider == provider);
+                gameProviders.Add(newGameProvider);
+            }
+            gameProviders.OrderBy(x => x.SortKey);
             await CallInvoke();
         }
         catch (Exception ex)
@@ -79,6 +130,7 @@ public class LobbyViewModel : BaseViewModel
             //Console.WriteLine(ex);
         }
     }
+
 
 
     public async Task LaunchGame(eGamesListDTO game)
