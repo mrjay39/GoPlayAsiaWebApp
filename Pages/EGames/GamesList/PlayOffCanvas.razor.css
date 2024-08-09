@@ -24,8 +24,13 @@ div.bg-image {
 .live-play-btn:focus {
    box-shadow: 0 0 0 2px #fbecd6, 0 0 0 1px #ffdbaf;
 }
-.demo-play-btn > img, .signup-btn > img {
-    height: 55px;
+.demo-play-btn > img {
+    height: 65px;
+    align-items: center;
+    display: inline-flex;
+}
+.signup-btn > img {
+    height: 65px;
     align-items: center;
     display: inline-flex;
 }

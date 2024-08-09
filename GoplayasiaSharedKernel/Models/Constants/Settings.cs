@@ -240,11 +240,11 @@
             public const string CasinoGameDescription = "Your Seat Awaits: Dive into Live Casino Bliss";
 
             //Card
-            public const string CardGameTitle = "Top Table Games!";
+            public const string CardGameTitle = "Card Games!";
             public const string CardGameDescription = "Bet now while the table's hot!";
 
             //Arcade
-            public const string ArcadeGameTitle = "Enjoyable and Dynamic games!";
+            public const string ArcadeGameTitle = "Arcade Games";
             public const string ArcadeDescription = "Begin rotating for your chance to win big!";
 
             //Fishing
@@ -252,7 +252,7 @@
             public const string FishingDescription = "Discover fun in our Fishing Games!";
 
             //Slots
-            public const string SlotsGameTitle = "SLOTS";
+            public const string SlotsGameTitle = "SLot Games";
             public const string SlotsGameDescription = "Discover endless fun with our Slot Games!";
             #endregion
 

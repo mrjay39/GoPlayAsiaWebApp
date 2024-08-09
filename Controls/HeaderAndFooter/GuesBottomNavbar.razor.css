@@ -49,7 +49,7 @@
     display: inline-block;
     position: relative;
 }
-#navBarBottom  a.active{
+#navBarBottom a.active {
     color: gold !important;
 }
 
@@ -59,7 +59,12 @@
 #navBarBottom a.active .gpa-btm-icon {
     background: url('./img/GPA-btm-icon-active.svg') center center no-repeat;
 }
-
+.home-btm-icon {
+    background: url('./img/Home-btm-icon.svg') center center no-repeat;
+}
+#navBarBottom a.active .home-btm-icon {
+    background: url('./img/Home-btm-icon-active.svg') center center no-repeat;
+}
 .slot-btm-icon {
     background: url('./img/slot-btm-icon.svg') center center no-repeat;
 }
@@ -107,7 +112,7 @@
     background: url('./img/setting-btm-icon-active.svg') center center no-repeat !important;
 }
 
-.gpa-btm-icon, .slot-btm-icon, .card-btm-icon, .fishing-btm-icon, .arcade-btm-icon, .history-btm-icon, .wallet-btm-icon, .inbox-btm-icon, .setting-btm-icon,
+.home-btm-icon, .gpa-btm-icon, .slot-btm-icon, .card-btm-icon, .fishing-btm-icon, .arcade-btm-icon, .history-btm-icon, .wallet-btm-icon, .inbox-btm-icon, .setting-btm-icon,
 #navBarBottom a.active .slot-btm-icon, #navBarBottom a.active .card-btm-icon, #navBarBottom a.active .arcade-btm-icon, #navBarBottom a.active .gpa-btm-icon, #navBarBottom a.active .fishing-btm-icon {
     background-size: 100% 100% !important;
     top: 0;

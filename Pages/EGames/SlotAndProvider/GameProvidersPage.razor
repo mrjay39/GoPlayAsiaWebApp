@@ -1,5 +1,6 @@
 ﻿@page "/GameProviders"
 @using GoPlayAsiaWebApp.Controls.GameProviderSelectors
+@using GoPlayAsiaWebApp.Controls.HeaderAndFooter
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.EGames
 @using GoPlayAsiaWebApp.Pages.EGames.GamesList
@@ -19,3 +20,8 @@
         }
     </div>
 </div>
+<AuthorizeView>
+    <NotAuthorized>
+        <GuesBottomNavbar />
+    </NotAuthorized>
+</AuthorizeView>
