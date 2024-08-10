@@ -28,9 +28,9 @@
                     <h4 class="text-center mt-2">
                         <b>Playing for fun</b>
                     </h4>
-                    <p class="font-12">This is a play for fun version of the game. Winnings cannot be cashed out. Login to play for real money.</p>
+                    <p class="font-12 mb-2">This is a play for fun version of the game. Winnings cannot be cashed out. Login to play for real money.</p>
                     <div class="container">
-                        <div class="col m-2">
+                        <div class="col">
                             @if (Category != "Live")
                             {
                                 @* <button type="button" class="btnPlayForFun btn btn-warning mr-2" @onclick="(() => SelectMode(GameMode.demo.ToString()))">Play For Fun</button> *@
@@ -39,13 +39,13 @@
                                 </button>
                             }
                         </div>
-                        <div class="col m-2">
-                            @* <button class="btn signup-btn border-0 ms-2" @onclick="SignUp">
+                        <div class="col">
+                            <button class="btn signup-btn border-0" @onclick="SignUp">
                                 <img src="./img/sign-up.gif" class="img img-fluid">
-                            </button> *@
-                            <button class="btn btnPlayForFun btn-warning border-0 ms-2" @onclick="SignUp">
-                                Sign Up
                             </button>
+                            @* <button class="btn btnPlayForFun btn-warning border-0 ms-2" @onclick="SignUp">
+                                Sign Up
+                            </button> *@
                         </div>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ div.bg-image {
 }
 
 .live-play-btn, .live-play-btn > img {
-    height: 65px;
+    height: 50px;
     align-items: center;
     display: inline-flex;
 }
@@ -25,12 +25,12 @@ div.bg-image {
    box-shadow: 0 0 0 2px #fbecd6, 0 0 0 1px #ffdbaf;
 }
 .demo-play-btn > img {
-    height: 65px;
+    height: 50px;
     align-items: center;
     display: inline-flex;
 }
 .signup-btn > img {
-    height: 65px;
+    height: 50px;
     align-items: center;
     display: inline-flex;
 }
