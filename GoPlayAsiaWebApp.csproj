@@ -2140,4 +2140,10 @@
     <_ContentIncludedByDefault Remove="Controls\GameIframe\PlayOffCanvas.razor" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Controls\GameIframe\GameIframeDemo.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
 </Project>
