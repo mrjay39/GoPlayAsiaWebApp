@@ -28,10 +28,13 @@
             @*===========  Buttons Before Login ===========*@
             <div class="container">
                 <div class="container text-center">
-                    <h4 class="text-center mt-2">
-                        <b>Playing for fun</b>
-                    </h4>
-                    <p class="font-12 mb-2">This is a play for fun version of the game. Winnings cannot be cashed out. Login to play for real money.</p>
+                    @if (Category != "Live")
+                    {
+                        <h4 class="text-center mt-2">
+                            <b>Playing for fun</b>
+                        </h4>
+                        <p class="font-12 mb-2">This is a play for fun version of the game. Winnings cannot be cashed out. Login to play for real money.</p>
+                    }
                     <div class="container">
                         <div class="col">
                             @if (Category != "Live")
