@@ -22,6 +22,7 @@
     [Parameter] public eGamesListDTO Game { get; set; }
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
+    IModalReference popupRef;
     private ClaimsPrincipal user;
     private bool isActive = false;
     private bool isCanvasVisible = false;
@@ -45,7 +46,7 @@
 
     private async void OpenGameLink()
     {
-        IModalReference popupRef;
+ 
         try
         {
             var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
@@ -84,17 +85,17 @@
             {
                 if (Game.Category == "Live")
                 {
-                    GameCategory();
+                    LaunchGame();
                 }
                 else
                 {
                     gameImageUrl = Game.Filename;
                     var parameters = new ModalParameters
-                {
-                    { "IsVisible", true },
-                    { "ImageUrl", gameImageUrl },
-                     { "Category", Game.Category }
-                };
+                     {
+                            { "IsVisible", true },
+                            { "ImageUrl", gameImageUrl },
+                             { "Category", Game.Category }
+                     };
                     var modal = popuLoadingpModal.Show<PlayOffCanvas>("PlayOffCanvas", parameters);
                     if (modal != null)
                     {
@@ -102,8 +103,8 @@
                         if (!result.Cancelled)
                         {
                             Game.Mode = result.Data.ToString();
-                            popupRef = popupModal.Show<PopupLoading>("");
-                            GameCategory();
+                            
+                            LaunchGame();
                         }
                     }
                 }
@@ -114,8 +115,9 @@
         {
         }
     }
-    private async void GameCategory()
+    private async void LaunchGame()
     {
+        popupRef = popupModal.Show<PopupLoading>("");
         await lobbyViewModel.LaunchGame(Game);
         _navigationManager.NavigateTo("play");
     }
