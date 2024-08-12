@@ -77,7 +77,7 @@
 @media screen and (max-width: 320px) {
     .game-tile {
         width: 6rem;
-        margin: 8px !important;
+        margin: 8px 15px !important;
     }
 
     .game-tile .btn {

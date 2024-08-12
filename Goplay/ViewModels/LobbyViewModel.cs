@@ -20,6 +20,7 @@ public class LobbyViewModel : BaseViewModel
 {
     public string egameUrl { get; set; } = string.Empty;
 
+    public List<eGamesListDTO> OriginalAllGameList { get; set; }
     public List<eGamesListDTO> AllGameList { get; set; }
     public List<eGamesListDTO> AllListPlayerGames { get; set; }
     public List<GameProviders> gameProviders { get; private set; }
@@ -67,13 +68,13 @@ public class LobbyViewModel : BaseViewModel
             if (string.IsNullOrEmpty(_icurrentUser.Token))
             {
                 AllGameList = await _iegamesservice.GetGames(Constants.egamesAll, Constants.egamesAll);
-
+              
             }
             else
             {
                 AllGameList = await _iegamesservice.ListPlayerGames(Constants.egamesAll, Constants.egamesAll);
             }
-
+            OriginalAllGameList = new List<eGamesListDTO>(AllGameList);
             //get all list of provders with slots
             GameProviders newGameProvider = new GameProviders();
             gameProviders = new List<GameProviders>();
@@ -131,7 +132,18 @@ public class LobbyViewModel : BaseViewModel
         }
     }
 
-
+    public async Task FilterGames(string searchKey)
+    {
+        AllGameList = new List<eGamesListDTO>(OriginalAllGameList);
+        if (!string.IsNullOrEmpty(searchKey))
+        {
+            AllGameList = AllGameList.Where(item =>
+                          item.Description.IndexOf(searchKey, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                          item.Provider.IndexOf(searchKey, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                          item.Category.IndexOf(searchKey, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+        }
+        await CallInvoke();
+    }
 
     public async Task LaunchGame(eGamesListDTO game)
     {

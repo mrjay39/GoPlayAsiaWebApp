@@ -1,0 +1,36 @@
+﻿@using GoPlayAsiaWebApp.Goplay.ViewModels
+@inject LobbyViewModel _lobbyviewModel
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-md-9">
+            <h2 class="text-white fw-bold mt-1 text-start">@_titleStr</h2>
+            <h5 class="text-muted text-start">@_subTitleStr</h5>
+        </div>
+        <div class="col-md-3">
+            <div id="searchForm" class="d-flex" role="search">
+                <input @bind="searchText" @oninput="HandleInput" class="form-control bg-dark text-white border-0 col-12" type="search" placeholder="Search your game" aria-label="Search">
+                <span class="position-relative rounded-1 r-40">
+                    <button class="btn text-muted" @onclick="ClearSearch"><i class="@(searchText.Length > 0 ? "fa fa-trash" : "fa fa-magnifying-glass")"></i></button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter] public string _titleStr { get; set; }
+    [Parameter]public string _subTitleStr { get; set; }
+    public string searchText { get; set; } = "";
+    private async Task HandleInput(ChangeEventArgs e)
+    {
+        searchText = e.Value.ToString();
+        await _lobbyviewModel.FilterGames(searchText);
+    }
+    private async Task ClearSearch()
+    {
+        if (searchText.Length > 0)
+        {
+            searchText = "";
+        }
+        await _lobbyviewModel.FilterGames(searchText);
+    }
+}

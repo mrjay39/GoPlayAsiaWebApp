@@ -1,4 +1,5 @@
 ﻿@using GoPlayAsiaWebApp.Controls.HeaderAndFooter
+@using GoPlayAsiaWebApp.Controls.SearchField
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.EGames.GamesList.GameSlotList
 @using GoplayasiaBlazor.DTOs.eGames
@@ -7,8 +8,11 @@
 @inject LobbyViewModel _lobbyViewModel;
 
 <div class="container p-0 mt-2 text-center">
-    <h2 class="text-white fw-bold mt-1">Game Providers</h2>
-    <h5 class="text-muted">Choose Your Preferred Game Provider</h5>
+
+    <SearchField _titleStr="Game Providers"
+                 _subTitleStr="Choose Your Preferred Game Provider"
+    />
+
     <div id="link-header" class="pb-2 gameOverflow-x">
         <div class="row justify-content-center">
             @if(_lobbyViewModel.gameProviders != null){   
@@ -56,6 +60,4 @@
         var selected = _lobbyViewModel.gameProviders.Where(x => x.Name == provider).Select(x => x.Selected).SingleOrDefault();
         return selected ? "selected" : "";
     }
-
-   
 }
