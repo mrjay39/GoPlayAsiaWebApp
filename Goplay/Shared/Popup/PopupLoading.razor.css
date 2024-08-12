@@ -186,11 +186,14 @@ span {
 
 .authCon {
     max-width: 640px;
-    margin: 0 auto;
     padding: 0;
     color: white;
     display: block;
-    justify-content: center;
     text-align: center;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 195px;
+    box-sizing: border-box; 
 }
