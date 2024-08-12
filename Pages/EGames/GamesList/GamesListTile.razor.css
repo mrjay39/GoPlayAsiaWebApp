@@ -66,7 +66,10 @@
 
 @media screen and (max-width: 414px) {
     .game-tile {
-        width: 6rem;
+        width: 5.8rem;
+    }
+    .card.m-1{
+        margin:.10rem !important
     }
 
     .game-tile h3 {
@@ -76,8 +79,7 @@
 
 @media screen and (max-width: 320px) {
     .game-tile {
-        width: 6rem;
-        margin: 8px 15px !important;
+        width: 5rem;
     }
 
     .game-tile .btn {
