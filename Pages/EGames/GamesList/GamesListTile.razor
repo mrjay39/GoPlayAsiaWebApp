@@ -75,36 +75,48 @@
                             Game.Mode = result.Data.ToString();
                             popupRef = popupModal.Show<PopupLoading>("");
                             await lobbyViewModel.LaunchGameMode(Game, result.Data.ToString());
-                            _navigationManager.NavigateTo("play");
+                            _navigationManager.NavigateTo("playdemo");
                         }
                     }
                 }
             }
             else
             {
-                gameImageUrl = Game.Filename;
-                var parameters = new ModalParameters
+                if (Game.Category == "Live")
+                {
+                    GameCategory();
+                }
+                else
+                {
+                    gameImageUrl = Game.Filename;
+                    var parameters = new ModalParameters
                 {
                     { "IsVisible", true },
                     { "ImageUrl", gameImageUrl },
                      { "Category", Game.Category }
                 };
-                var modal = popuLoadingpModal.Show<PlayOffCanvas>("PlayOffCanvas", parameters);
-                if (modal != null)
-                {
-                    var result = await modal.Result;
-                    if (!result.Cancelled)
+                    var modal = popuLoadingpModal.Show<PlayOffCanvas>("PlayOffCanvas", parameters);
+                    if (modal != null)
                     {
-                        Game.Mode = result.Data.ToString();
-                        popupRef = popupModal.Show<PopupLoading>("");
-                        await lobbyViewModel.LaunchGame(Game);
-                        _navigationManager.NavigateTo("play");
+                        var result = await modal.Result;
+                        if (!result.Cancelled)
+                        {
+                            Game.Mode = result.Data.ToString();
+                            popupRef = popupModal.Show<PopupLoading>("");
+                            GameCategory();
+                        }
                     }
                 }
+
             }
         }
         catch (Exception)
         {
         }
+    }
+    private async void GameCategory()
+    {
+        await lobbyViewModel.LaunchGame(Game);
+        _navigationManager.NavigateTo("play");
     }
 }

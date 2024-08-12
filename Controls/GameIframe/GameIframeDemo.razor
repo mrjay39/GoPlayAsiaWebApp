@@ -1,4 +1,4 @@
-﻿@page "/play"
+﻿@page "/playdemo"
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Goplay.Shared.Popup
 @using GoPlayAsiaWebApp.Pages.GPAGames
@@ -6,8 +6,6 @@
 @inject IModalService ModalService
 @inject LobbyViewModel lobbyViewModel
 @inject IJSRuntime JSRuntime
-@attribute [Authorize(Roles = "1")]
-
 <div id="gameContainer" class="container">
     <div id="gamePopUp" class="modal-dialog modal-dialog-centered fixed-centered">
         <div class="modal-content modal-bg border-bottom-4 bg-transparent">
