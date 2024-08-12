@@ -5,10 +5,12 @@
     align-items: center;
     justify-content: center;
 }
-#gameContainer.container{
-    padding-left: 8px;
-    padding-right:8px;
-}
+
+    #gameContainer.container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
 #gamePopUp {
     display: inline-flex;
     position: fixed;
@@ -46,12 +48,14 @@ iframe {
     background: #6e182c;
     color: #ffffff;
 }
+
 #gamePopUpModalLabel .btn-close {
     opacity: inherit;
     z-index: 2;
     position: relative;
     top: 0px;
 }
+
 #gamePopUp .modal-header {
     background: #3e3c3c;
     height: 40px;
@@ -59,19 +63,24 @@ iframe {
     display: inline-flex;
     width: 100%;
 }
+
 .btn-header {
     height: 40px;
     position: relative;
 }
+
 button.text-demo {
     color: #bec4ca;
 }
+
 button.text-live {
     color: #ff3a3a;
 }
-button.text-live:focus, button.text-demo:focus{
-    box-shadow: none;
-}
+
+    button.text-live:focus, button.text-demo:focus {
+        box-shadow: none;
+    }
+
 .close-icon {
     width: 30px;
     height: 30px;
@@ -114,6 +123,14 @@ button.text-live:focus, button.text-demo:focus{
         width: 100%;
         min-width: 100%;
     }
+
+        #gamePopUp .modal-body {
+            width: 85%;
+        }
+
+    #myIframe {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -121,10 +138,16 @@ button.text-live:focus, button.text-demo:focus{
         width: 100%;
         min-width: 100%;
     }
+
     #gamePopUp .btn-hide {
         display: none !important;
     }
-    #gamePopUp .modal-header{
-        background:#212020 !important;
+
+    #gamePopUp .modal-header {
+        background: #212020 !important;
+    }
+
+    #gamePopUp .modal-body, #myIframe {
+        width: 100%;
     }
 }
