@@ -46,6 +46,9 @@
 .text-mute {
     color: #8e8e8e;
 }
+.r-40 {
+    right: 40px;
+}
 
 @media only screen and (min-width: 992px) {
     .gameOverflow-x {

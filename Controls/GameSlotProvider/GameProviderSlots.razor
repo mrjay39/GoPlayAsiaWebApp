@@ -7,8 +7,22 @@
 @inject LobbyViewModel _lobbyViewModel;
 
 <div class="container p-0 mt-2 text-center">
-    <h2 class="text-white fw-bold mt-1">Game Providers</h2>
-    <h5 class="text-muted">Choose Your Preferred Game Provider</h5>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-9">
+                <h2 class="text-white fw-bold mt-1 text-start">Game Providers</h2>
+                <h5 class="text-muted text-start">Choose Your Preferred Game Provider</h5>
+            </div>
+            <div class="col-md-3">
+                <form id="searchForm" class="d-flex" role="search">
+                    <input @bind="searchText" @bind:event="oninput" class="form-control bg-dark text-white border-0 col-12" type="search" placeholder="Search your game" aria-label="Search">
+                    <span class="position-relative rounded-1 r-40">
+                        <button class="btn text-muted" type="submit"><i class="@(searchText.Length > 0 ? "fa fa-trash" : "fa fa-magnifying-glass")"></i></button>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </div>
     <div id="link-header" class="pb-2 gameOverflow-x">
         <div class="row justify-content-center">
             @if(_lobbyViewModel.gameProviders != null){   
@@ -57,5 +71,12 @@
         return selected ? "selected" : "";
     }
 
-   
+    private string searchText = "";
+    private void ClearSearch()
+    {
+        if (searchText.Length > 0)
+        {
+            searchText = "";
+        }
+    }
 }

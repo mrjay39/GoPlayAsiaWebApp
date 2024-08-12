@@ -43,16 +43,21 @@
     transition: .5s ease;
 }
 
-    .img-border:hover {
-        box-shadow: 0 0 0 4px #ffd800;
-        transition: .5s ease;
-        border-radius: 10px;
-    }
+.img-border:hover {
+    box-shadow: 0 0 0 4px #ffd800;
+    transition: .5s ease;
+    border-radius: 10px;
+}
 
-    .img-border img:hover {
-        transition: .5s ease;
-        border-radius: 10px;
+.img-border img:hover {
+    transition: .5s ease;
+    border-radius: 10px;
+}
+@media only screen and (min-width: 992px) {
+    .m-1 {
+        margin: 1rem !important;
     }
+}
 
 @media screen and (max-width: 460px) {
     .game-tile {

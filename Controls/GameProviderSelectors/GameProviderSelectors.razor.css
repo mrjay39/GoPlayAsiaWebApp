@@ -26,7 +26,12 @@
     width: 10rem;
     margin: 10px;
 }
+#searchForm > input{
 
+}
+.r-40 {
+    right: 40px;
+}
 .active {
     border-bottom: 10px solid #ffffff;
 }
