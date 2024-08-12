@@ -1,3 +1,12 @@
 ﻿.r-40 {
     right: 40px;
 }
+@media screen and (max-width: 600px) {
+    h6, h5 {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
