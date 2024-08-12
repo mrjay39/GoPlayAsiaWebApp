@@ -133,4 +133,8 @@ button.text-live:focus, button.text-demo:focus{
     #gamePopUp .modal-header{
         background:#212020 !important;
     }
+
+    #gamePopUp .modal-body,#myIframe {
+        width: 100%;
+    }
 }
