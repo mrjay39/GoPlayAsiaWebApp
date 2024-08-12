@@ -4,25 +4,27 @@
     <AuthorizeView>
         <Authorized>
             @*===========  Buttons after Login ===========*@
-            <div class="offcanvas-body small" style="z-index:1">
-                @if (Category != "Live")
-                {
-                    <div class="d-block text-center p-2">
-                        <button class="btn live-play-btn border-0" @onclick="(() => SelectMode(GameMode.real_money.ToString()))">
-                            <img src="./img/play-btn.gif" class="img img-fluid">
-                        </button>
-                    </div>
-                }
-                <div class="d-block text-center p-2">
+            <div class="container d-flex align-items-center h-100">
+                <div class="offcanvas-body small" style="z-index:1">
                     @if (Category != "Live")
                     {
-                        <button class="btn demo-play-btn border-0 ms-2" @onclick="(() => SelectMode(GameMode.play_for_fun.ToString()))">
-                            <img src="./img/funPlay.gif" class="img img-fluid">
-                        </button>
+                        <div class="d-block text-center p-2">
+                            <button class="btn live-play-btn border-0" @onclick="(() => SelectMode(GameMode.real_money.ToString()))">
+                                <img src="./img/play-btn.gif" class="img img-fluid">
+                            </button>
+                        </div>
                     }
+                    <div class="d-block text-center p-2">
+                        @if (Category != "Live")
+                        {
+                            <button class="btn demo-play-btn border-0 ms-2" @onclick="(() => SelectMode(GameMode.play_for_fun.ToString()))">
+                                <img src="./img/funPlay.gif" class="img img-fluid">
+                            </button>
+                        }
+                    </div>
                 </div>
+                <div class="bg-image" style="background-image: url('@ImageUrl')"></div>
             </div>
-            <div class="bg-image" style="background-image: url('@ImageUrl')"></div>
         </Authorized>
         <NotAuthorized>
             @*===========  Buttons Before Login ===========*@
@@ -47,8 +49,8 @@
                         </div>
                         <div class="col m-2">
                             <button class="btn signup-btn border-0" @onclick="SignUp">
-                            <img src="./img/sign-up.gif" class="img img-fluid">
-                            </button> 
+                                <img src="./img/sign-up.gif" class="img img-fluid">
+                            </button>
                         </div>
                     </div>
                 </div>
