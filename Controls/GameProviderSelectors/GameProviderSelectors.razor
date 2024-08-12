@@ -10,6 +10,7 @@
 @using GoplayasiaBlazor.DTOs.eGames
 @using GoplayasiaSharedKernel.DTOs.DTOIn
 @using static GoplayasiaBlazor.Models.Constants.Settings
+@inject LobbyViewModel _lobbyViewModel;
 
 <div class="container p-0 mt-2 text-center">
 
@@ -19,23 +20,24 @@
 
     <div id="link-header" class="pb-2 gameOverflow-x">
         <div class="row justify-content-center">
-
-            @foreach (var provider in providers)
+            @if(_lobbyViewModel.gameProviders != null)
             {
-                <div @onclick="@(e => ToggleSelection(provider.Key))" class="link-header p-0 m-2 @GetSelectionClass(provider.Key)">
-                    <div class="text-mute btn p-0" style="width: 6rem;">
-                        <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
-                            @if (provider.Value)
-                            {
-                                <span class="selected-icon"><i class="fa-regular fa-circle-check"></i></span>
-                            }
-                            <img src="./img/providersLogo/@GetProviderImage(provider.Key)" class="img-fluid w-100 mb-1" style="">
-                            <h6 class="text-uppercase fw-bold mb-0">@provider.Key</h6>
+                @foreach (var provider in _lobbyViewModel.gameProviders)
+                {
+                    <div @onclick="@(e => ToggleSelection(provider.Name))" class="link-header p-0 m-2 @GetSelectionClass(provider.Name)">
+                        <div class="text-mute btn p-0" style="width: 6rem;">
+                            <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
+                                @if (provider.Selected)
+                                {
+                                    <span class="selected-icon"><i class="fa-regular fa-circle-check"></i></span>
+                                }
+                                <img src="./img/providersLogo/@provider.ImageUrl" class="img-fluid w-100 mb-1" style="">
+                                <h6 class="text-uppercase fw-bold mb-0">@provider.Name</h6>
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
             }
-
         </div>
     </div>
 </div>
@@ -45,44 +47,19 @@
 <GamesList _idStr="arcadeGames" _title="@Constants.ArcadeGameTitle" _description="@Constants.ArcadeDescription" _filter="@Constants.egamesRng" _provider="@activeProvider" />
 <GamesList _idStr="cardGames" _title="@Constants.CardGameTitle" _description="@Constants.CardGameDescription" _filter="@Constants.egamesCards" _provider="@activeProvider" />
 @code {
-
-    private Dictionary<string, bool> providers = new Dictionary<string, bool>
-    {
-        { "All", true },
-        { "Pragmatic", false },
-        { "Evolution", false },
-        { "NetEnt", false },
-        { "Red Tiger", false },
-        { "Big Time Gaming", false }
-    };
-
-    // Track which filter is currently active
     private string activeProvider = "All";
     private void ToggleSelection(string provider)
     {
-        foreach (var key in providers.Keys.ToList())
-        {
-            providers[key] = false;
-        }
-        providers[provider] = true;
+        _lobbyViewModel.gameProviders.ForEach(x => x.Selected = false);
+        _lobbyViewModel.gameProviders.Where(x => x.Name == provider)
+             .ToList()
+             .ForEach(x => x.Selected = true);
+
         activeProvider = provider;
     }
     private string GetSelectionClass(string provider)
     {
-        return providers[provider] ? "selected" : "";
-    }
-
-    private string GetProviderImage(string provider)
-    {
-        return provider switch
-        {
-            "All" => "provider-all.png",
-            "Pragmatic" => "pragmatic.png",
-            "Evolution" => "evolution.png",
-            "NetEnt" => "netent.png",
-            "Red Tiger" => "redTiger.png",
-            "Big Time Gaming" => "bigTime.png",
-            _ => ""
-        };
+        var selected = _lobbyViewModel.gameProviders.Where(x => x.Name == provider).Select(x => x.Selected).SingleOrDefault();
+        return selected ? "selected" : "";
     }
 }
