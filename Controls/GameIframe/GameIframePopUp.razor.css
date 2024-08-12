@@ -114,6 +114,12 @@ button.text-live:focus, button.text-demo:focus{
         width: 100%;
         min-width: 100%;
     }
+    #gamePopUp .modal-body {
+        width: 85%;
+    }
+    #myIframe {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 991px) {
