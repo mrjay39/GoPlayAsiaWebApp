@@ -5,6 +5,8 @@
 @using GoPlayAsiaWebApp.Pages.EGames
 @using GoPlayAsiaWebApp.Pages.EGames.GamesList
 @inject LobbyViewModel lobbyViewModel
+@implements IDisposable;
+
 <PageTitle>GoPlayAsia: Game Providers</PageTitle>
 
 
@@ -24,3 +26,17 @@
         <GuesBottomNavbar />
     </NotAuthorized>
 </AuthorizeView>
+@code{
+    protected override async Task OnInitializedAsync()
+    {
+        lobbyViewModel.Notify += OnNotify;
+    }
+    public async void OnNotify()
+    {
+        await InvokeAsync(() => StateHasChanged());
+    }
+    public void Dispose()
+    {
+        lobbyViewModel.Notify -= OnNotify;
+    }
+}
