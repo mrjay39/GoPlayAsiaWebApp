@@ -252,7 +252,7 @@
             public const string FishingDescription = "Discover fun in our Fishing Games!";
 
             //Slots
-            public const string SlotsGameTitle = "SLot Games";
+            public const string SlotsGameTitle = "Slot Games";
             public const string SlotsGameDescription = "Discover endless fun with our Slot Games!";
             #endregion
 

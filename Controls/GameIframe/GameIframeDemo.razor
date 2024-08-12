@@ -51,11 +51,20 @@
     {
         if (firstRender)
         {
-            popupRef = popupModal.Show<PopupLoading>("");
-            gameUrl = lobbyViewModel.egameUrl;
-            StateHasChanged();
-            Task.Delay(1000);
-            popupRef.Close();
+            if (string.IsNullOrEmpty(lobbyViewModel.egameUrl))
+            {
+                _navigationManager.NavigateTo("/");
+                popupRef.Close();
+            }
+            else
+            {
+                popupRef = popupModal.Show<PopupLoading>("");
+                gameUrl = lobbyViewModel.egameUrl;
+                StateHasChanged();
+                Task.Delay(1000);
+                popupRef.Close();
+            }
+
         }
         return base.OnAfterRenderAsync(firstRender);
     }
