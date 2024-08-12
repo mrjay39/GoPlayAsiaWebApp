@@ -2,11 +2,13 @@
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Goplay.Shared.Popup
 @using GoPlayAsiaWebApp.Pages.GPAGames
+@using GoPlayAsiaWebApp.Shared
 @inject NavigationManager _navigationManager
 @inject IModalService ModalService
 @inject LobbyViewModel lobbyViewModel
 @inject IJSRuntime JSRuntime
 @attribute [Authorize(Roles = "1")]
+@layout GPALayout
 
 <div id="gameContainer" class="container">
     <div id="gamePopUp" class="modal-dialog modal-dialog-centered fixed-centered">
