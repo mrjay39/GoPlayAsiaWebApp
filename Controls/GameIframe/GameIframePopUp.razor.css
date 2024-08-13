@@ -81,7 +81,7 @@ button.text-live:focus, button.text-demo:focus{
     z-index: 1;
     position: absolute;
     right: 4px;
-    top: 5px;
+    top: 46px;
 }
 
 .modal-bg {
