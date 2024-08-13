@@ -20,3 +20,18 @@
         }
     </div>
 </div>
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await lobbyViewModel.GetListGames();
+        lobbyViewModel.Notify += OnNotify;
+    }
+    public async void OnNotify()
+    {
+        await InvokeAsync(() => StateHasChanged());
+    }
+    public void Dispose()
+    {
+        lobbyViewModel.Notify -= OnNotify;
+    }
+}
