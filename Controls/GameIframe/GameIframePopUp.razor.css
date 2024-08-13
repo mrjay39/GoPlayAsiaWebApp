@@ -81,7 +81,7 @@ button.text-live:focus, button.text-demo:focus{
     color: white;
     position: absolute;
     right: 4px;
-    top: 0px;
+    top: 5px;
     justify-content: center;
     align-items: center;
 }

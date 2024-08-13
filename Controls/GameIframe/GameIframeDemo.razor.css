@@ -90,7 +90,7 @@ button.text-live {
     position: absolute;
     color: white;
     right: 4px;
-    top: 0px;
+    top: 5px;
     justify-content: center;
     align-items: center;
 }
