@@ -53,6 +53,12 @@
             var user = authenticationState.User;
             if (!user.Identity.IsAuthenticated)
             {
+                if (Game.Category == "Live")
+                {
+                    popuLoadingpModal.Show<LoginAndSignUp>("");
+                    return;
+                }
+
                 gameImageUrl = Game.Filename;
                 var parameters = new ModalParameters
                 {

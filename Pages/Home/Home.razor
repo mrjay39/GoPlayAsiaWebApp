@@ -27,16 +27,20 @@
         <WelcomeGPA />
         @* @if (@lobbyViewModel.AllGameList != null)
         {
-            <CascadingValue Value="@lobbyViewModel.AllGameList">
-                <GameProviderSelectors />
-            </CascadingValue>
+        <CascadingValue Value="@lobbyViewModel.AllGameList">
+        <GameProviderSelectors />
+        </CascadingValue>
         } *@
     </div>
     <GameRegulation />
-    @if (showAgeAgreement)
-    {
-        <AgeAgreement OnAgree="HandleAgeAgreement" />
-    }
+    <AuthorizeView>
+        <NotAuthorized>
+            @if (showAgeAgreement)
+            {
+                <AgeAgreement OnAgree="HandleAgeAgreement" />
+            }
+        </NotAuthorized>
+    </AuthorizeView>
 </div>
 
 @code {
