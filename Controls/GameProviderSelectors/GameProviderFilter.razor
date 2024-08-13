@@ -13,7 +13,7 @@
     <SearchField _titleStr="Game Providers"
                  _subTitleStr="Choose Your Preferred Game Provider" />
 
-    <div id="link-header" class="pb-2 gameOverflow-x">
+    <div id="link-header" class="pb-2 gameOverflow-x text-start">
         <div class="d-flex justify-content-center">
             @if (_lobbyViewModel.gameProviders != null)
             {
@@ -28,12 +28,10 @@
                     provider.FishingCount > 0 && gameType == Constants.egamesFishing
                     )
                     {
-                        <div @onclick="@(e => ToggleSelection(provider.Name))" class="link-header p-0 @GetSelectionClass(provider.Name)
-                                                ">
+                        <div @onclick="@(e => ToggleSelection(provider.Name))" class="link-header p-0 @GetSelectionClass(provider.Name)">
                             <div class="text-mute btn p-0" style="width: 6rem;">
                                 <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
                                     <img src="./img/providersLogo/@provider.ImageUrl" class="img-fluid w-100 mb-1" style="">
-                                    <h6 class="text-uppercase fw-bold mb-0">@provider.Name</h6>
                                 </div>
                             </div>
                         </div>

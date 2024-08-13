@@ -15,4 +15,7 @@
     h2 {
         font-size: 20px;
     }
+    .mb-pd-0{
+        padding: 0;
+    }
 }
