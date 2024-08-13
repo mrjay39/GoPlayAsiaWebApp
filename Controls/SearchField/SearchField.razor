@@ -7,8 +7,8 @@
             @* <h5 class="text-muted text-start">@_subTitleStr</h5> *@
         </div>
         <div class="col-md-3 ms-2">
-            <div id="searchForm" class="d-flex" role="search">
-                <input @bind="searchText" @oninput="HandleInput" class="form-control bg-dark text-white border-0 col-12" type="search" placeholder="Search your game" aria-label="Search">
+            <div id="searchForm" class="d-flex align-items-center" role="search">
+                <input @bind="searchText" @oninput="HandleInput" class="form-control bg-dark text-white border-0 col-12 h-100" type="search" placeholder="Search your game" aria-label="Search">
                 <span class="position-relative rounded-1 r-40">
                     <button class="btn text-muted" @onclick="ClearSearch"><i class="@(searchText.Length > 0 ? "fa fa-trash" : "fa fa-magnifying-glass")"></i></button>
                 </span>
