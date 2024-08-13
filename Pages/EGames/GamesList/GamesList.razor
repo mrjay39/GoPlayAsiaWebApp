@@ -13,7 +13,7 @@
                         <div class="col text-end">
                             <a class="btn border-0 bg-transparent text-light fw-bold">
                                 <h5 class="mb-0">
-                                    <a href="/GameProviders/More/@_filter">
+                                    <a href="/GameProviders/More/@_filter/@_provider" class="text-decoration-none text-light">
                                     <i class="fa-solid fa-angles-left"></i>See All<i class="fa-solid fa-angles-right"></i>
                                     </a>
                                 </h5>
@@ -31,14 +31,14 @@
                     if (_provider == "All")
                     {
 
-                        @foreach (var item in GameList.Where(a => a.Category == _filter))
+                        @foreach (var item in GameList.Where(a => a.Category == _filter).Take(10))
                         {
                             <GamesListTile Game="item" />
                         }
                     }
                     else
                     {
-                        @foreach (var item in GameList.Where(a => a.Category == _filter && a.Provider == _provider))
+                        @foreach (var item in GameList.Where(a => a.Category == _filter && a.Provider == _provider).Take(10))
                         {
                             <GamesListTile Game="item" />
                         }

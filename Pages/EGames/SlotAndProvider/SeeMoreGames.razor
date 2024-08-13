@@ -1,4 +1,4 @@
-﻿@page "/GameProviders/More/{gameType}"
+﻿@page "/GameProviders/More/{gameType}/{activeProvider}"
 @using GoPlayAsiaWebApp.Goplay.Shared.Popup
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.EGames
@@ -12,10 +12,11 @@
 <div class="container-fluid marketing">
 
     <div id="hp-8" class="container-fluid pt-4">
-        @if (lobbyViewModel.AllGameList != null && !string.IsNullOrEmpty(gameType) )
+
+        @if (lobbyViewModel.AllGameList != null && !string.IsNullOrEmpty(gameType) && !string.IsNullOrEmpty(activeProvider))
         {
             <CascadingValue Value="@lobbyViewModel.AllGameList">
-                <GameProviderFilter gameType="@gameType" />
+                <GameProviderFilter gameType="@gameType" activeProvider="@activeProvider" />
             </CascadingValue>
         }
     </div>
@@ -23,6 +24,9 @@
 @code {
     [Parameter]
     public string gameType { get; set; }
+    [Parameter]
+    public string activeProvider { get; set; }
+
     [CascadingParameter]
     public IModalService popupModal { get; set; }
     protected override async Task OnInitializedAsync()

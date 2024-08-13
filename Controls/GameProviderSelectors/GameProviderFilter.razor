@@ -57,7 +57,8 @@
     [Parameter]
     public string gameType { get; set; }
     public int gameCount { get; set; } = 0;
-    private string activeProvider = "All";
+    [Parameter]
+    public string activeProvider { get; set; } = "All";
     protected override Task OnParametersSetAsync()
     {
         return base.OnParametersSetAsync();
