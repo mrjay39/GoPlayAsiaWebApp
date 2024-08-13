@@ -20,6 +20,9 @@
     padding-left: 0px;
     padding-right: 0px;
 }
+#link-header  .link-header{
+    margin: 0px 5px;
+}
 
 #linkHeader.col {
     flex: inherit;

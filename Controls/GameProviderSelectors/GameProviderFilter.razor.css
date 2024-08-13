@@ -28,6 +28,9 @@
     width: 10rem;
     margin: 10px;
 }
+#link-header .link-header {
+    margin: 0px 5px;
+}
 
 .active {
     border-bottom: 10px solid #ffffff;

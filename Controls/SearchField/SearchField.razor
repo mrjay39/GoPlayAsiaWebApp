@@ -1,12 +1,12 @@
 ﻿@using GoPlayAsiaWebApp.Goplay.ViewModels
 @inject LobbyViewModel _lobbyviewModel
 <div class="container">
-    <div class="row align-items-center">
+    <div class="d-flex align-items-center">
         <div class="col-md-9">
             <h2 class="text-white fw-bold mt-1 text-start">@_titleStr</h2>
-            <h5 class="text-muted text-start">@_subTitleStr</h5>
+            @* <h5 class="text-muted text-start">@_subTitleStr</h5> *@
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 ms-2">
             <div id="searchForm" class="d-flex" role="search">
                 <input @bind="searchText" @oninput="HandleInput" class="form-control bg-dark text-white border-0 col-12" type="search" placeholder="Search your game" aria-label="Search">
                 <span class="position-relative rounded-1 r-40">
