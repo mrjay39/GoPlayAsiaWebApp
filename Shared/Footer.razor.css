@@ -12,6 +12,9 @@ ul.nav > li.nav-item a.text-muted:hover {
     width: 13.5rem;
 }
 
+#footerGameProviders a > img {
+    width: 6.5rem;
+}
 /*================== Start: Chat Support Icon Properties ======================*/
 .chat-icon {
     position: fixed;
