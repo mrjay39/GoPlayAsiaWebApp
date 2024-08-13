@@ -28,7 +28,7 @@
 
 iframe {
     width: 100%;
-    height: 94vh !important;
+    height: 97vh !important;
     border: none;
     display: inline-flex;
     position: relative;
@@ -85,12 +85,14 @@ button.text-live {
     width: 30px;
     height: 30px;
     display: inline-flex;
-    background: url(./img/close.png) center center no-repeat;
     background-size: 100% 100%;
     z-index: 1;
     position: absolute;
+    color: white;
     right: 4px;
-    top: 46px;
+    top: 0px;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-bg {
@@ -145,6 +147,7 @@ button.text-live {
 
     #gamePopUp .modal-header {
         background: #212020 !important;
+        display: none;
     }
 
     #gamePopUp .modal-body, #myIframe {

@@ -22,10 +22,10 @@
                             <button class="btn col-xl-2 col-2 bg-transparent text-demo"><i class="fa-solid fa-play"></i> DEMO</button>
                             <button class="btn col-xl-2 col-2 bg-transparent text-live"><i class="fa-solid fa-play"></i> LIVE</button>
                         </div>
-                        <button type="button" class="btn" @onclick="Close">
-                            <i class="fa-regular close-icon"></i>
-                        </button>
                     </div>
+                    <button type="button" class="btn close-icon p-0" @onclick="Close">
+                        <i class="fa-regular fw-bold">X</i>
+                    </button>
                     <iframe id="myIframe" src="@gameUrl" title="GoPlayAsia Game">
                     </iframe>
                 </div>
