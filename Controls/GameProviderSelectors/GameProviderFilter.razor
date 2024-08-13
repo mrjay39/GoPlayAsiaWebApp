@@ -1,0 +1,83 @@
+﻿@using GoPlayAsiaWebApp.Controls.HeaderAndFooter
+@using GoPlayAsiaWebApp.Controls.SearchField
+@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoPlayAsiaWebApp.Pages.EGames.GamesList
+@using GoPlayAsiaWebApp.Pages.EGames.GamesList.GameSlotList
+@using GoplayasiaBlazor.DTOs.eGames
+@using GoplayasiaSharedKernel.DTOs.DTOIn
+@using static GoplayasiaBlazor.Models.Constants.Settings
+@inject LobbyViewModel _lobbyViewModel;
+
+<div class="container p-0 mt-2 text-center">
+
+    <SearchField _titleStr="Game Providers"
+                 _subTitleStr="Choose Your Preferred Game Provider" />
+
+    <div id="link-header" class="pb-2 gameOverflow-x">
+        <div class="d-flex justify-content-center">
+            @if (_lobbyViewModel.gameProviders != null)
+            {
+                @foreach (var provider in _lobbyViewModel.gameProviders)
+                {
+                    if (
+                    provider.SlotsCount > 0 && gameType == Constants.egamesSlots ||
+                    gameType == Constants.egamesAll ||
+                    provider.LiveCount > 0 && gameType == Constants.egamesLive ||
+                    provider.ArcadeCount > 0 && gameType == Constants.egamesRng ||
+                    provider.CardCount > 0 && gameType == Constants.egamesCards ||
+                    provider.FishingCount > 0 && gameType == Constants.egamesFishing
+                    )
+                    {
+                        <div @onclick="@(e => ToggleSelection(provider.Name))" class="link-header p-0 m-2 @GetSelectionClass(provider.Name)
+                                                ">
+                            <div class="text-mute btn p-0" style="width: 6rem;">
+                                <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
+                                    @if (provider.Selected)
+                                    {
+                                        <span class="selected-icon"><i class="fa-regular fa-circle-check"></i></span>
+                                    }
+                                    <img src="./img/providersLogo/@provider.ImageUrl" class="img-fluid w-100 mb-1" style="">
+                                    <h6 class="text-uppercase fw-bold mb-0">@provider.Name</h6>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+
+        </div>
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(gameType))
+{
+    <GameListShowAll _filter="@gameType" _provider="@activeProvider" />
+
+}
+
+@code {
+
+    // Track which filter is currently active
+    [Parameter]
+    public string gameType { get; set; }
+    public int gameCount { get; set; } = 0;
+    private string activeProvider = "All";
+    protected override Task OnParametersSetAsync()
+    {
+        return base.OnParametersSetAsync();
+    }
+    private void ToggleSelection(string provider)
+    {
+        _lobbyViewModel.gameProviders.ForEach(x => x.Selected = false);
+        _lobbyViewModel.gameProviders.Where(x => x.Name == provider)
+             .ToList()
+             .ForEach(x => x.Selected = true);
+
+        activeProvider = provider;
+    }
+    private string GetSelectionClass(string provider)
+    {
+        var selected = _lobbyViewModel.gameProviders.Where(x => x.Name == provider).Select(x => x.Selected).SingleOrDefault();
+        return selected ? "selected" : "";
+    }
+}
