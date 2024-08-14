@@ -20,8 +20,11 @@
     padding-left: 0px;
     padding-right: 0px;
 }
-#link-header  .link-header{
+#link-header .link-header {
     margin: 0px 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #linkHeader.col {
@@ -54,8 +57,11 @@
         overflow-x: inherit;
     }
     .link-header {
-        width: 12rem;
+        width: 10rem;
         display: inline;
+    }
+    .link-header img{
+        min-width: 150px;
     }
 }
 

@@ -8,14 +8,14 @@
 @using GoplayasiaBlazor.DTOs.eGames
 @using GoplayasiaSharedKernel.DTOs.eGames.Enum
 <a class="img-border card m-1 p-0 border-dark game-tile" @onclick="OpenGameLink">
-<div class=" ">
+    <div class=" ">
    
         <div class=" p-0 bg-img">
             <img src="@Game.Filename" class="card-img-top" @onclick="ToggleActive">
         </div>
  
-</div>
-   </a>
+    </div>
+</a>
 @code {
 
     [Parameter] public string? _gameInfoHrefStr { get; set; }
