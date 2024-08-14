@@ -1,0 +1,33 @@
+﻿@using System.Collections.ObjectModel
+@using static GoPlayAsiaWebApp.Goplay.ViewModels.Lucky9BViewModel
+
+<div class="d-flex newLegend py-1">
+    <div class="col trends">TRENDS</div>
+    <div class="col playerL">PLAYER</div>
+    <div class="col bankerL">BANKER</div>
+    <div class="col tieL">TIE</div>
+    <div class="col cancelledL text-light">CANCELED</div>
+</div>
+
+@if (PayoutTrendsDisplay != null)
+{
+    <div class="mainCon row flex-nowrap">
+        @foreach (var _trends in PayoutTrendsDisplay)
+        {
+            @if (_trends.CurrentList.ToList().Count > 0)
+            {
+                <div class="innerCon col p-0 ">
+                    @foreach (var _trenditems in _trends.CurrentList)
+                    {
+                        <div class="row @_trenditems.TrendsResultColor">
+                        </div>
+                    }
+                </div>
+            }
+        }
+    </div>
+}
+
+@code {
+    [Parameter] public ObservableCollection<TrendsDisplayModel> PayoutTrendsDisplay { get; set; }
+}

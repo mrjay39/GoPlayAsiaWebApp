@@ -1,0 +1,161 @@
+﻿@page "/games/lucky9B"
+@attribute [Authorize(Roles = "1")]
+@inject Lucky9BViewModel _l9BViewModel;
+@using GoPlayAsiaWebApp.Goplay.Games.Lucky9B.Components
+@using GoPlayAsiaWebApp.Goplay.Games.Shared
+@using GoPlayAsiaWebApp.Goplay.Shared.Popup
+@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoplayasiaBlazor.Models.Constants
+@using static GoplayasiaBlazor.Models.Constants.Settings
+
+<div class="container-fluid p-0" style="min-height: 100vh;">
+    <GameHeader StreamId="@_l9BViewModel.StreamId"
+                RoundTimer="@_l9BViewModel.RoundTimer"
+                RoundStatusString="@_l9BViewModel.RoundStatusString"
+                RoundNumber="@_l9BViewModel.RoundNumber"
+                TimerBackground="@_l9BViewModel.RoundStatusColor"
+                GameResultString="@_l9BViewModel.GameResultString"
+                ShowFlashing="@_l9BViewModel.ShowFlashing"
+                CreditsDisp="@_l9BViewModel._icurrentUser.CreditsDisp"
+                PlayerCategory="@_l9BViewModel.PlayerCategory"
+                OnClickCallback="@(() => SetGameChips())"
+                Token="@_l9BViewModel.streamKey"
+                GifSrc="@_l9BViewModel.GIF"
+                IsDisabledCategory="false"
+                MaxRoundTimer="@(_l9BViewModel.GameSetting != null ? _l9BViewModel.GameSetting.BettingDuration : 0)" />
+
+    <div id="lucky9" class="mainContainer row d-block pl-1 pr-1" style="line-height: normal;">
+        @if (_l9BViewModel.RoundStatusString == Settings.Constants.Open)
+        {
+            <BettingButton RoundStatusString="@_l9BViewModel.RoundStatusString"
+                           SampleWinFixedPrizePlayer="@_l9BViewModel.SampleWinFixedPrizePlayer"
+                           SampleWinFixedPrizeBanker="@_l9BViewModel.SampleWinFixedPrizeBanker" />
+
+            <RoundDetailsBar RoundNumber="@_l9BViewModel.RoundNumber"
+                             TotalBets="@_l9BViewModel.TotalBets"
+                             MinChipDisplay="@_l9BViewModel.MinChip"
+                             MaxChipDisplay="@_l9BViewModel.MaxChip" />
+
+            <Trends PayoutTrendsDisplay="@_l9BViewModel.PayoutTrendsDisplay" />
+        }
+        else
+        {
+            <BettingButton RoundStatusString="@_l9BViewModel.RoundStatusString"
+                           SampleWinFixedPrizePlayer="@_l9BViewModel.SampleWinFixedPrizePlayer"
+                           SampleWinFixedPrizeBanker="@_l9BViewModel.SampleWinFixedPrizeBanker" />
+
+            <RoundDetailsBar RoundNumber="@_l9BViewModel.RoundNumber"
+                             TotalBets="@_l9BViewModel.TotalBets"
+                             MinChipDisplay="@_l9BViewModel.MinChip"
+                             MaxChipDisplay="@_l9BViewModel.MaxChip" />
+
+            <Trends PayoutTrendsDisplay="@_l9BViewModel.PayoutTrendsDisplay" />
+        }
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] public IModalService popupModal { get; set; }
+    public IModalReference popupRef { get; set; }
+
+    public async void OnNotify()
+    {
+        await InvokeAsync(() => StateHasChanged());
+    }
+
+    public void Dispose()
+    {
+        //_l9BViewModel.DisconnectSignalR(); ;
+    }
+    public async ValueTask DisposeAsync()
+    {
+        _l9BViewModel.Notify -= OnNotify;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadPageData();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+
+    }
+
+    private async Task LoadPageData()
+    {
+        try
+        {
+            _l9BViewModel.Notify += OnNotify;
+            _l9BViewModel.popupModal = popupModal;
+            _l9BViewModel.Token_Animation = "";
+            _l9BViewModel.TokenDiv = "tokenhide";
+            _l9BViewModel.IsButtonDisabled = false;
+
+            await _l9BViewModel.ConnectSignalR();
+            await _l9BViewModel.AssignSignalRMethods();
+            popupRef = popupModal.Show<PopupLoading>("");
+
+            await _l9BViewModel.GetGameSetting();
+            await _l9BViewModel.GetGameSettingVariant();
+            await _l9BViewModel.GetGameRound();
+
+            List<Task> TaskList = new List<Task>();
+            TaskList.Add(_l9BViewModel.GetPlayerCategory());
+            TaskList.Add(_l9BViewModel.GetGameChipsByCategory());
+            TaskList.Add(_l9BViewModel.GetGameVariantChipsByCategory());
+            TaskList.Add(_l9BViewModel.GetCurrentRoundBets());
+            if (_l9BViewModel.streamKey == string.Empty)
+                TaskList.Add(_l9BViewModel.GenerateStreamKey());
+            await Task.WhenAll(TaskList.ToArray());
+
+            popupRef.Close();
+            await _l9BViewModel.GetTrends();
+        }
+
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
+    private async Task SetGameChips()
+    {
+        await _l9BViewModel.GetGameChipsByCategory();
+        await _l9BViewModel.GetGameVariantChipsByCategory();
+
+        if (_l9BViewModel.CurrentGameType == (int)L9MainBetTypes.Player || _l9BViewModel.CurrentGameType == (int)L9MainBetTypes.Banker)
+        {
+            await _l9BViewModel.SetGameChips(_l9BViewModel.GametypeId, false);
+        }
+        else
+        {
+            switch (_l9BViewModel.CurrentGameType)
+            {
+                case (int)L9SubBetTypes.Target9Player:
+                case (int)L9SubBetTypes.Target9Banker:
+                    await _l9BViewModel.SetGameChips((int)GameVariant.L9Target, true);
+                    break;
+                case (int)L9MainBetTypes.Draw:
+                    await _l9BViewModel.SetGameChips((int)GameVariant.L9Draw, true);
+                    break;
+                case (int)L9SubBetTypes.AnypairPlayer:
+                case (int)L9SubBetTypes.AnyPairBanker:
+                    await _l9BViewModel.SetGameChips((int)GameVariant.L9Pair, true);
+                    break;
+                case (int)L9SubBetTypes.SameSuitePlayer:
+                case (int)L9SubBetTypes.SameSuiteBanker:
+                    await _l9BViewModel.SetGameChips((int)GameVariant.L9Suits, true);
+                    break;
+                case (int)L9SubBetTypes.TwoRedPlayer:
+                case (int)L9SubBetTypes.TwoRedBanker:
+                case (int)L9SubBetTypes.TwoBlackPlayer:
+                case (int)L9SubBetTypes.TwoBlackBanker:
+                    await _l9BViewModel.SetGameChips((int)GameVariant.L9Color, true);
+                    break;
+            }
+        }
+    }
+
+}

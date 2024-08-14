@@ -69,6 +69,7 @@ namespace GoplayasiaBlazor.Models
                     resultColor = "#FFFFFF";
                     break;
                 case (int)GameTypes.Lucky_9:
+                case (int)GameTypes.Lucky9B:
                     resultColor = "#000000";
                     break;
                 case (int)GameTypes.Heads_And_Tails:
@@ -91,7 +92,7 @@ namespace GoplayasiaBlazor.Models
             }
             else
             {
-                if (GameTypeId == (int)GameTypes.Lucky_9)
+                if (GameTypeId == (int)GameTypes.Lucky_9 || GameTypeId == (int)GameTypes.Lucky9B)
                 {
                     if (WinningResult == GoplayasiaBlazor.Models.Constants.Settings.Constants.Draw)
                     {
@@ -232,7 +233,7 @@ namespace GoplayasiaBlazor.Models
                 }
                 else
                 {
-                    if (GameTypeId == (int)GameTypes.Lucky_9)
+                    if (GameTypeId == (int)GameTypes.Lucky_9 || GameTypeId == (int)GameTypes.Lucky9B)
                     {
                         if (WinningResult == Settings.Constants.Draw)
                         {

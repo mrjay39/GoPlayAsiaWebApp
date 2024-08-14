@@ -5,6 +5,7 @@
     position: relative;
     padding: 0;
 }
+
 .maxWidth {
     max-width: 640px;
     margin: 0 auto;
@@ -44,21 +45,31 @@ button {
 .conBorder {
     border: 1px solid #6d6d6d;
 }
-.h-85{
+
+.h-85 {
     height: 75px;
-    justify-content:center;
+    justify-content: center;
 }
+
 .h-125 {
     height: 125px;
 }
+
 .row2, .row3 {
     justify-content: center;
     align-items: center;
 }
-.row2{height: 55px;}
-.row3{height: 40px; margin-bottom: 7px;}
 
-.animation > img{
+.row2 {
+    height: 55px;
+}
+
+.row3 {
+    height: 40px;
+    margin-bottom: 7px;
+}
+
+.animation > img {
     height: 95%;
 }
 
@@ -70,10 +81,10 @@ button {
     border-radius: 5px;
 }
 
-.Black2Player:focus {
-    background-color: #ff000a;
-    color: white;
-}
+    .Black2Player:focus {
+        background-color: #ff000a;
+        color: white;
+    }
 
 .Red2Banker {
     background-color: #28355b;
@@ -83,10 +94,10 @@ button {
     border-radius: 5px;
 }
 
-.Red2Banker:focus {
-    background-color: #008aff;
-    color: white;
-}
+    .Red2Banker:focus {
+        background-color: #008aff;
+        color: white;
+    }
 
 .Black2Banker {
     background-color: #28355b;
@@ -95,10 +106,10 @@ button {
     border-radius: 5px;
 }
 
-.Black2Banker:focus {
-    background-color: #008aff;
-    color: white;
-}
+    .Black2Banker:focus {
+        background-color: #008aff;
+        color: white;
+    }
 
 /*suite icons*/
 img.resultSuitesIcon {
@@ -162,10 +173,10 @@ img.resultSuitesIcon {
     border-radius: 5px;
 }
 
-.playerButton:focus {
-    background-color: #ff000a;
-    color: white;
-}
+    .playerButton:focus {
+        background-color: #ff000a;
+        color: white;
+    }
 
 .bankerButton {
     background-color: #28355b;
@@ -175,10 +186,10 @@ img.resultSuitesIcon {
     border-radius: 5px;
 }
 
-.bankerButton:focus {
-    background-color: #008aff;
-    color: white;
-}
+    .bankerButton:focus {
+        background-color: #008aff;
+        color: white;
+    }
 
 .tieButton {
     background-color: grey;
@@ -190,11 +201,11 @@ img.resultSuitesIcon {
     background-color: #7f6000;
 }
 
-.tieButton:focus {
-    background-color: #dde611;
-    color: black;
-    border: 1px solid rgb(90, 72, 26);
-}
+    .tieButton:focus {
+        background-color: #dde611;
+        color: black;
+        border: 1px solid rgb(90, 72, 26);
+    }
 
 .pLucky9 {
     background-color: #680004;
@@ -204,10 +215,10 @@ img.resultSuitesIcon {
     border-radius: 5px;
 }
 
-.pLucky9:focus {
-    background-color: #ff000a;
-    color: white;
-}
+    .pLucky9:focus {
+        background-color: #ff000a;
+        color: white;
+    }
 
 .bLucky9 {
     background-color: #28355b;
@@ -216,9 +227,9 @@ img.resultSuitesIcon {
     border-radius: 5px;
 }
 
-.bLucky9:focus {
-    background-color: #008aff;
-}
+    .bLucky9:focus {
+        background-color: #008aff;
+    }
 
 .borderGold {
     border: 1px solid #6d6d6d;
@@ -236,10 +247,10 @@ img.resultSuitesIcon {
     border-radius: 5px;
 }
 
-.anyPairPlayer:focus {
-    background-color: #ff000a;
-    color: white;
-}
+    .anyPairPlayer:focus {
+        background-color: #ff000a;
+        color: white;
+    }
 
 .sameSuitPlayer {
     background-color: #680004;
@@ -249,10 +260,10 @@ img.resultSuitesIcon {
     border-radius: 5px;
 }
 
-.sameSuitPlayer:focus {
-    background-color: #ff000a;
-    color: white;
-}
+    .sameSuitPlayer:focus {
+        background-color: #ff000a;
+        color: white;
+    }
 
 .anyPairBanker {
     background-color: #28355b;
@@ -262,9 +273,9 @@ img.resultSuitesIcon {
     border-radius: 5px;
 }
 
-.anyPairBanker:focus {
-    background-color: #008aff;
-}
+    .anyPairBanker:focus {
+        background-color: #008aff;
+    }
 
 .sameSuitBanker {
     background-color: #28355b;
@@ -273,10 +284,10 @@ img.resultSuitesIcon {
     border-radius: 5px;
 }
 
-.sameSuitBanker:focus {
-    background-color: #008aff;
-    color: white;
-}
+    .sameSuitBanker:focus {
+        background-color: #008aff;
+        color: white;
+    }
 
 .delButton {
     background-color: red;
@@ -468,10 +479,12 @@ table {
     border: 2px solid #872d2d;
     border-radius: 8px;
 }
+
 .firstBet-text {
     margin: 0 15px;
     font-weight: bold;
 }
+
 .playerRed, .bankerBlue {
     display: inline-flex;
     width: 25px;
@@ -480,9 +493,11 @@ table {
     margin-left: 5px;
     margin-right: 4px;
 }
-.playerRed{
+
+.playerRed {
     background-color: red;
 }
+
 .bankerBlue {
     background-color: blue;
 }
@@ -628,14 +643,15 @@ p {
     bottom: -30%;
     width: 100%;
     z-index: -1;
-    display:none;
+    display: none;
 }
 
 @media only screen and (max-width: 380px) {
     .horizontalCardBlankBanker, .EmptyCardResults {
         max-width: 30px;
-   /*     height: 45px;*/
+        /*     height: 45px;*/
     }
+
     .horizontalCard, .cardResultsVertical, .btn.cardDiv {
         max-width: 35px;
         max-height: 45px;
@@ -648,10 +664,10 @@ p {
 
     .playerCardCenter {
         position: relative;
-     /*   right: -1px;*/
+        /*   right: -1px;*/
     }
 
-/*    .win-msg {
+    /*    .win-msg {
         position: absolute;
         top:50%;
         left: 25%;

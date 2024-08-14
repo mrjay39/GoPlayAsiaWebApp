@@ -48,7 +48,8 @@ namespace GoPlayAsiaWebApp
             services.AddScoped<HeadsAndTailsViewModel>();
             services.AddScoped<DiceViewModel>();
             services.AddScoped<BingoViewModel>();
-           
+            services.AddScoped<Lucky9BViewModel>();
+
 
             services.AddBlazoredModal();
             services.AddSingleton(new MapperConfiguration(mapper =>
@@ -62,7 +63,8 @@ namespace GoPlayAsiaWebApp
             services.AddScoped<IDiceGameRoundService, DiceGameRoundService>();
             services.AddScoped<IBingoGameRoundService, BingoGameRoundService>();
 			services.AddScoped<IEGamesService, EGamesService>();
-			services.AddAuthorizationCore();
+            services.AddScoped<IL9GameRoundService, L9GameRoundService>();
+            services.AddAuthorizationCore();
 
 
             //Services
