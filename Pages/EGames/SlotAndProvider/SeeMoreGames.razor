@@ -1,36 +1,34 @@
-﻿@page "/GameProviders"
-@using GoPlayAsiaWebApp.Controls.GameProviderSelectors
-@using GoPlayAsiaWebApp.Controls.HeaderAndFooter
+﻿@page "/GameProviders/More/{gameType}/{activeProvider}"
 @using GoPlayAsiaWebApp.Goplay.Shared.Popup
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.EGames
-@using GoPlayAsiaWebApp.Pages.EGames.GamesList
+@using GoPlayAsiaWebApp.Controls.GameProviderSelectors
+@using GoPlayAsiaWebApp.Pages.EGames.SlotAndProvider
 @inject LobbyViewModel lobbyViewModel
-@implements IDisposable;
-
-<PageTitle>GoPlayAsia: Game Providers</PageTitle>
+<PageTitle>GoPlayAsia: More Games</PageTitle>
 
 
 
 <div class="container-fluid marketing">
+
     <div id="hp-8" class="container-fluid pt-4">
-        @if (lobbyViewModel.AllGameList != null)
+
+        @if (lobbyViewModel.AllGameList != null && !string.IsNullOrEmpty(gameType) && !string.IsNullOrEmpty(activeProvider))
         {
             <CascadingValue Value="@lobbyViewModel.AllGameList">
-                <GameProviderSelectors />
+                <GameProviderFilter gameType="@gameType" activeProvider="@activeProvider" />
             </CascadingValue>
         }
     </div>
 </div>
-<AuthorizeView>
-    <NotAuthorized>
-        <GuesBottomNavbar />
-    </NotAuthorized>
-</AuthorizeView>
-@code{
+@code {
+    [Parameter]
+    public string gameType { get; set; }
+    [Parameter]
+    public string activeProvider { get; set; }
+
     [CascadingParameter]
     public IModalService popupModal { get; set; }
-
     protected override async Task OnInitializedAsync()
     {
         if (lobbyViewModel.AllGameList == null)
@@ -39,6 +37,8 @@
             await lobbyViewModel.GetListGames();
             popupRef.Close();
         }
+
+
         lobbyViewModel.Notify += OnNotify;
     }
     public async void OnNotify()

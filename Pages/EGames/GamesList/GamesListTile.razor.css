@@ -15,6 +15,11 @@
     cursor: pointer;
     border-radius: 10px;
     border-width: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 7 / 9;
+    background-color: transparent ;
 }
 .subtitle {
     min-height: 70px;

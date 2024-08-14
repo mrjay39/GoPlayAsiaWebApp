@@ -241,7 +241,7 @@
             public const string CasinoGameDescription = "Your Seat Awaits: Dive into Live Casino Bliss";
 
             //Card
-            public const string CardGameTitle = "Card Games!";
+            public const string CardGameTitle = "Card Games";
             public const string CardGameDescription = "Bet now while the table's hot!";
 
             //Arcade

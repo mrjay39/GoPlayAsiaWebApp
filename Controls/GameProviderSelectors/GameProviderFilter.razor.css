@@ -1,6 +1,7 @@
-﻿.link-header{
+﻿.link-header {
     display: inline-flex;
 }
+
 .selected-icon {
     position: absolute;
     right: 9px;
@@ -16,9 +17,16 @@
     align-items: center;
     justify-content: center;
 }
+
 #gameList > #liveGames, #gameList > #cardGames, #gameList > #arcadeGames, #gameList > #slotGamesGames {
     padding-left: 0px;
     padding-right: 0px;
+}
+
+#linkHeader.col {
+    flex: inherit;
+    width: 10rem;
+    margin: 10px;
 }
 #link-header .link-header {
     margin: 0px 5px;
@@ -27,35 +35,32 @@
     justify-content: center;
 }
 
-#linkHeader.col {
-    flex: inherit;
-    width: 10rem;
-    margin: 10px;
-}
-#searchForm > input{
-
-}
-.r-40 {
-    right: 40px;
-}
 .active {
     border-bottom: 10px solid #ffffff;
 }
+
 .selected > div > .bg-provider {
     border-bottom: 4px solid gold;
     border-radius: 0px !important;
     color: gold;
 }
+
 .selected > .text-mute {
     color: #212121;
 }
+
 .text-mute {
     color: #8e8e8e;
 }
+.r-40 {
+    right: 40px;
+}
+
 @media only screen and (min-width: 992px) {
     .gameOverflow-x {
         overflow-x: inherit;
     }
+
     .link-header {
         width: 10rem;
         display: inline;
@@ -77,11 +82,13 @@
         margin: 3px;
     }
 }
+
 @media screen and (max-width: 600px) {
-    h6, h5{
-        font-size: 12px;
+    h6, h5 {
+        font-size: 9px;
     }
-    h2{
+
+    h2 {
         font-size: 20px;
     }
 }

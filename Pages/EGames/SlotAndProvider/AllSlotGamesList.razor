@@ -1,5 +1,6 @@
 ﻿@page "/AllSlotGames"
 @using GoPlayAsiaWebApp.Controls.GameSlotProvider
+@using GoPlayAsiaWebApp.Goplay.Shared.Popup
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.EGames
 @using GoPlayAsiaWebApp.Pages.EGames.GamesList.GameSlotList
@@ -21,9 +22,17 @@
     </div>
 </div>
 @code {
+    [CascadingParameter]
+    public IModalService popupModal { get; set; }
     protected override async Task OnInitializedAsync()
     {
-        await lobbyViewModel.GetListGames();
+        if (lobbyViewModel.AllGameList == null)
+        {
+            var popupRef = popupModal.Show<PopupLoading>("");
+            await lobbyViewModel.GetListGames();
+            popupRef.Close();
+        }
+
         lobbyViewModel.Notify += OnNotify;
     }
     public async void OnNotify()

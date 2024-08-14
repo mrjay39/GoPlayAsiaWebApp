@@ -1,6 +1,7 @@
 ﻿@using GoPlayAsiaWebApp.Controls.HeaderAndFooter
 @using GoPlayAsiaWebApp.Controls.SearchField
 @using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoPlayAsiaWebApp.Pages.EGames.GamesList
 @using GoPlayAsiaWebApp.Pages.EGames.GamesList.GameSlotList
 @using GoplayasiaBlazor.DTOs.eGames
 @using GoplayasiaSharedKernel.DTOs.DTOIn
@@ -10,18 +11,24 @@
 <div class="container p-0 mt-2 text-center">
 
     <SearchField _titleStr="Game Providers"
-                 _subTitleStr="Choose Your Preferred Game Provider"
-    />
+                 _subTitleStr="Choose Your Preferred Game Provider" />
 
     <div id="link-header" class="pb-2 gameOverflow-x text-start">
         <div class="d-flex justify-content-center">
-            @if(_lobbyViewModel.gameProviders != null){   
+            @if (_lobbyViewModel.gameProviders != null)
+            {
                 @foreach (var provider in _lobbyViewModel.gameProviders)
                 {
-                    if (provider.SlotsCount > 0)
+                    if (
+                    provider.SlotsCount > 0 && gameType == Constants.egamesSlots ||
+                    gameType == Constants.egamesAll ||
+                    provider.LiveCount > 0 && gameType == Constants.egamesLive ||
+                    provider.ArcadeCount > 0 && gameType == Constants.egamesRng ||
+                    provider.CardCount > 0 && gameType == Constants.egamesCards ||
+                    provider.FishingCount > 0 && gameType == Constants.egamesFishing
+                    )
                     {
-                        <div @onclick="@(e => ToggleSelection(provider.Name))" class="link-header p-0 @GetSelectionClass(provider.Name)
-                        ">
+                        <div @onclick="@(e => ToggleSelection(provider.Name))" class="link-header p-0 @GetSelectionClass(provider.Name)">
                             <div class="text-mute btn p-0">
                                 <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
                                     <img src="./img/providersLogo/@provider.ImageUrl" class="img-fluid mb-1" style="">
@@ -36,11 +43,24 @@
     </div>
 </div>
 
-<GameSLotList _idStr="slotGames" _title="@Constants.SlotsGameTitle" _description="@Constants.SlotsGameDescription" _filter="@Constants.egamesSlots" _provider="@activeProvider" />
+@if (!string.IsNullOrEmpty(gameType))
+{
+    <GameListShowAll _filter="@gameType" _provider="@activeProvider" />
+
+}
+
 @code {
 
     // Track which filter is currently active
-    private string activeProvider = "All";
+    [Parameter]
+    public string gameType { get; set; }
+    public int gameCount { get; set; } = 0;
+    [Parameter]
+    public string activeProvider { get; set; } = "All";
+    protected override Task OnParametersSetAsync()
+    {
+        return base.OnParametersSetAsync();
+    }
     private void ToggleSelection(string provider)
     {
         _lobbyViewModel.gameProviders.ForEach(x => x.Selected = false);

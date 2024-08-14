@@ -17,16 +17,16 @@
             @if (!string.IsNullOrEmpty(gameUrl))
             {
                 <div class="modal-body text-center text-dark p-0 m-auto">
-                    <div class="modal-header p-0" id="gamePopUpModalLabel">
+                    @* <div class="modal-header p-0" id="gamePopUpModalLabel">
                         <div class="d-flex w-100 btn-header row btn-hide">
                             <button class="btn col-xl-2 col-2 bg-transparent text-demo"><i class="fa-solid fa-play"></i> DEMO</button>
                             <button class="btn col-xl-2 col-2 bg-transparent text-live"><i class="fa-solid fa-play"></i> LIVE</button>
                         </div>
-                        <button type="button" class="btn" @onclick="Close">
-                            <i class="fa-regular close-icon"></i>
-                        </button>
-                    </div>
-                    <iframe id="myIframe" src="@gameUrl" title="GoPlayAsia Game">
+                    </div> *@
+                    <button type="button" class="btn close-icon @(lobbyViewModel._icurrentUser.isApple ? "appleCloseIcon": "") p-0" @onclick="Close">
+                        <i class="fa-regular fw-bold ">X</i>
+                    </button>
+                    <iframe id="myIframe" class=" @(lobbyViewModel._icurrentUser.isApple ? "applePadding": "")  " src="@gameUrl" title="GoPlayAsia Game">
                     </iframe>
                 </div>
             }
@@ -55,8 +55,7 @@
         {
             if (string.IsNullOrEmpty(lobbyViewModel.egameUrl))
             {
-                _navigationManager.NavigateTo("/");
-                popupRef.Close();
+                _navigationManager.NavigateTo("/GameProviders");
             }
             else
             {
@@ -67,6 +66,7 @@
                 popupRef.Close();
             }
         }
+
         return base.OnAfterRenderAsync(firstRender);
     }
 }

@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <Content Remove="Controls\GameIframe\PlayOffCanvas.razor" />
-    <Content Remove="Controls\GameProviderSelectors\GameProviderSlots.razor" />
     <Content Remove="Pages\EGames\CardGames\MostPLayedGameEvolution.razor" />
   </ItemGroup>
 

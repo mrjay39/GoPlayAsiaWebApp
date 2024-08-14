@@ -1,5 +1,11 @@
 ﻿.r-40 {
     right: 40px;
+    top: 2px;
+    padding: 0px 5px;
+}
+#searchForm .form-control{
+    font-size: 12px;
+    padding: 10px 5px;
 }
 @media screen and (max-width: 600px) {
     h6, h5 {
@@ -8,5 +14,8 @@
 
     h2 {
         font-size: 20px;
+    }
+    .mb-pd-0{
+        padding: 0;
     }
 }
