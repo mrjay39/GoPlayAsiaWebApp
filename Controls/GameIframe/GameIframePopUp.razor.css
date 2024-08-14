@@ -32,6 +32,8 @@ iframe {
     position: relative;
     top: 0px;
     margin: 0 auto;
+    padding-top: 15%;
+    padding-bottom: 7%;
 }
 
 .text-14 {
@@ -80,8 +82,8 @@ button.text-live:focus, button.text-demo:focus{
     z-index: 1;
     color: white;
     position: absolute;
-    right: 4px;
-    top: 5px;
+    right: 1%;
+    top:7%;
     justify-content: center;
     align-items: center;
 }
