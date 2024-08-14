@@ -34,8 +34,16 @@ iframe {
     position: relative;
     top: 0px;
     margin: 0 auto;
+
+}
+.applePadding {
     padding-top: 15%;
     padding-bottom: 7%;
+}
+
+.appleCloseIcon {
+    right: 1%;
+    top: 3%;
 }
 
 .text-14 {

@@ -23,10 +23,10 @@
                             <button class="btn col-xl-2 col-2 bg-transparent text-live"><i class="fa-solid fa-play"></i> LIVE</button>
                         </div>
                     </div> *@
-                    <button type="button" class="btn close-icon p-0" @onclick="Close">
-                        <i class="fa-regular fw-bold">X</i>
+                    <button type="button" class="btn close-icon @(lobbyViewModel._icurrentUser.isApple ? "appleCloseIcon": "") p-0" @onclick="Close">
+                        <i class="fa-regular fw-bold ">X</i>
                     </button>
-                    <iframe id="myIframe" src="@gameUrl" title="GoPlayAsia Game">
+                    <iframe id="myIframe" class=" @(lobbyViewModel._icurrentUser.isApple ? "applePadding": "")  " src="@gameUrl" title="GoPlayAsia Game">
                     </iframe>
                 </div>
             }
@@ -66,6 +66,7 @@
                 popupRef.Close();
             }
         }
+
         return base.OnAfterRenderAsync(firstRender);
     }
 }

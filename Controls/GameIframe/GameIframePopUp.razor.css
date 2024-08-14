@@ -32,10 +32,17 @@ iframe {
     position: relative;
     top: 0px;
     margin: 0 auto;
+  
+}
+.applePadding {
     padding-top: 15%;
     padding-bottom: 7%;
-}
 
+}
+.appleCloseIcon {
+    right: 1%;
+    top: 7%;
+}
 .text-14 {
     font-size: 14px;
 }
@@ -83,7 +90,7 @@ button.text-live:focus, button.text-demo:focus{
     color: white;
     position: absolute;
     right: 1%;
-    top:7%;
+    top:3%;
     justify-content: center;
     align-items: center;
 }
