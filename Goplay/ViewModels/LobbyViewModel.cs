@@ -115,6 +115,10 @@ public class LobbyViewModel : BaseViewModel
                         newGameProvider.ImageUrl = "evolution.png";
                         newGameProvider.SortKey = 2;
                         break;
+                    case "Nolimit City":
+                        newGameProvider.ImageUrl = "nolimit.png";
+                        newGameProvider.SortKey = 2;
+                        break;
                 }
                 newGameProvider.LiveCount = AllGameList.Count(x => x.Category == Constants.egamesLive && x.Provider == provider);
                 newGameProvider.ArcadeCount = AllGameList.Count(x => x.Category == Constants.egamesRng && x.Provider == provider);

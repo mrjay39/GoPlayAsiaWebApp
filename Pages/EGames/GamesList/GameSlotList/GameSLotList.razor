@@ -11,11 +11,13 @@
                 {
                     if (_provider == "All")
                     {
-                        <Virtualize Items="@GameList.Where(a => a.Category == _filter).ToList()" Context="item" ItemSize="50">
+                        <Virtualize Items="@GameList.Where(a => a.Category == _filter).ToList()" Context="item" ItemSize="@GameList.Where(a => a.Category == _filter).ToList().Count" OverscanCount="50" >
+                             <ItemContent>
                             <GamesListTile Game="item" />
+                            </ItemContent>
                         </Virtualize>
 
- @*                        @foreach (var item in GameList.Where(a => a.Category == _filter))
+@*                         @foreach (var item in GameList.Where(a => a.Category == _filter))
                         {
                             <GamesListTile Game="item" />
                         } *@
@@ -26,8 +28,10 @@
                         {
                             <GamesListTile Game="item" />
                         } *@
-                        <Virtualize Items="@GameList.Where(a => a.Category == _filter && a.Provider == _provider).ToList()" Context="item" ItemSize="50">
+                        <Virtualize Items="@GameList.Where(a => a.Category == _filter && a.Provider == _provider).ToList()" Context="item" ItemSize="@GameList.Where(a => a.Category == _filter && a.Provider == _provider).ToList().Count" OverscanCount="50">
+                             <ItemContent>
                             <GamesListTile Game="item" />
+                              </ItemContent>
                         </Virtualize>
                     }
                 }
@@ -44,6 +48,8 @@
     [Parameter] public string _idStr { get; set; }
     private bool hasContents { get; set; } = false;
     [CascadingParameter] public List<eGamesListDTO> GameList { get; set; }
+    [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
+
 
     protected override async Task OnParametersSetAsync()
     {
