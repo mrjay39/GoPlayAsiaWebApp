@@ -4,6 +4,7 @@
 @using GoPlayAsiaWebApp.Controls.GameLinkHeader
 @using GoPlayAsiaWebApp.Controls.GameProviderSelectors
 @using GoPlayAsiaWebApp.Controls.GameRegulation
+@using GoPlayAsiaWebApp.Controls.HeaderAndFooter
 @using GoPlayAsiaWebApp.Controls.HomeGames
 @using GoPlayAsiaWebApp.Controls.Carousel
 @using GoPlayAsiaWebApp.Goplay.ViewModels
@@ -41,6 +42,11 @@
             }
         </NotAuthorized>
     </AuthorizeView>
+
+    <GuesBottomNavbar _hrefLiveGameStr="GameProviders/More/Live/All"
+                      _hrefArcadeGameStr="GameProviders/More/Arcade/All"
+                      _hrefSlotGameStr="GameProviders/More/Slots/All"
+                      _hrefCasinoGameStr="GameProviders/More/Casino/All" />
 </div>
 
 @code {
@@ -79,3 +85,10 @@
         await InvokeAsync(() => StateHasChanged());
     }
 }
+@* <script>
+    $(document).ready(function () {
+        $('#mostPlayedGames #providerSelector a').click(function (e) {
+            $('#navBarBottom > a').removeClass('active');
+        });
+    });
+</script> *@

@@ -50,6 +50,18 @@
     line-height: 3rem;
     width: 100%;
 }
+.history-btm-icon {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: relative;
+    background: url('./img/history-btm-icon.svg') center center no-repeat;
+    background-size: 100% 100% !important;
+    top: 0;
+}
+.history-btm-icon:hover {
+    background: url('./img/history-btm-icon-active.svg') center center no-repeat;
+}
 
 .nav-item ::deep a.active {
     background-color: rgba(255,255,255,0.37);

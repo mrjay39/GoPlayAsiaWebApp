@@ -9,12 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controls\GameSlotProvider\**" />
     <Compile Remove="GoplayasiaCore\**" />
     <Compile Remove="GoplayasiaSharedKernel\**" />
+    <Content Remove="Controls\GameSlotProvider\**" />
     <Content Remove="GoplayasiaCore\**" />
     <Content Remove="GoplayasiaSharedKernel\**" />
+    <EmbeddedResource Remove="Controls\GameSlotProvider\**" />
     <EmbeddedResource Remove="GoplayasiaCore\**" />
     <EmbeddedResource Remove="GoplayasiaSharedKernel\**" />
+    <None Remove="Controls\GameSlotProvider\**" />
     <None Remove="GoplayasiaCore\**" />
     <None Remove="GoplayasiaSharedKernel\**" />
   </ItemGroup>
@@ -22,6 +26,11 @@
   <ItemGroup>
     <Content Remove="Controls\GameIframe\PlayOffCanvas.razor" />
     <Content Remove="Pages\EGames\CardGames\MostPLayedGameEvolution.razor" />
+    <Content Remove="Pages\EGames\SlotAndProvider\AllSlotGamesList.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Pages\EGames\SlotAndProvider\AllSlotGamesList.razor.css" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,7 +54,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Controls\GameSlotProvider\GameProviderSlots.razor" />
     <None Include="Pages\EGames\GamesList\PlayOffCanvas.razor" />
     <None Include="Goplay\Main\Docs\GameRules.razor" />
     <None Include="Goplay\Main\Docs\GameRulesPage\Bigwinrules.razor" />

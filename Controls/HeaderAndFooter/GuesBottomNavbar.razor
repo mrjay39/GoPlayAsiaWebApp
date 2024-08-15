@@ -1,57 +1,62 @@
 ﻿@inject NavigationManager NavigationManager
 <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-bottom-navbar">
     <div id="navBarBottom" class="container">
-        <a href="/home" class="navbar-brand text-center text-muted active home">
+        <NavLink href="/home" class="navlink navbar-brand text-center text-muted home">
             <div class="icon">
                 <i class="fa-solid home-btm-icon"></i>
             </div>
             <div class="menuText">
                 <span class="text-uppercase small">Home</span>
             </div>
-        </a>
-        <a id ="liveGames" href="/@currentPage#liveGames" class="navbar-brand text-center text-muted home">
+        </NavLink>
+        <NavLink id ="liveGames" href="@_hrefLiveGameStr" class="navlink navbar-brand text-center text-muted home">
             <div class="icon">
                 <i class="fa-solid gpa-btm-icon"></i>
             </div>
             <div class="menuText">
                 <span class="text-uppercase small">Live</span>
             </div>
-        </a>
-        <a id="slotGames" href="/@currentPage#slotGames" class="navbar-brand text-center text-muted">
+        </NavLink>
+        <NavLink id="slotGames" href="@_hrefSlotGameStr" class="navlink navbar-brand text-center text-muted">
             <div class="icon">
                 <i class="fa-solid slot-btm-icon"></i>
             </div>
             <div class="menuText">
                 <span class="text-uppercase small">Slots</span>
             </div>
-        </a>
-        <a id="cardGames" href="/@currentPage#cardGames" class="navbar-brand text-center text-muted">
+        </NavLink>
+        <NavLink id="cardGames" href="@_hrefCasinoGameStr" class="navlink navbar-brand text-center text-muted">
             <div class="icon">
                 <i class="fa-solid card-btm-icon"></i>
             </div>
             <div class="menuText">
-                <span class="text-uppercase small">Cards</span>
+                <span class="text-uppercase small">Casino</span>
             </div>
-        </a>
-        <a id="arcadeGames" href="/@currentPage#arcadeGames" class="navbar-brand text-center text-muted">
+        </NavLink>
+        <NavLink id="arcadeGames" href="@_hrefArcadeGameStr" class="navlink navbar-brand text-center text-muted">
             <div class="icon">
                 <i class="fa-solid arcade-btm-icon"></i>
             </div>
             <div class="menuText">
                 <span class="text-uppercase small">Arcade</span>
             </div>
-        </a>
+        </NavLink>
     </div>
 </nav>
 
 @code{
+    [Parameter] public string _hrefLiveGameStr { get; set; }
+    [Parameter] public string _hrefCasinoGameStr { get; set; }
+    [Parameter] public string _hrefSlotGameStr { get; set; }
+    [Parameter] public string _hrefArcadeGameStr { get; set; }
+
     private string currentPage = string.Empty;
     protected override void OnInitialized()
     {
         currentPage = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
     }
 }
-<script>
+@* <script>
     $(document).ready(function () {
         $('#navBarBottom a').click(function (e) {
             $('#navBarBottom a').removeClass('active');
@@ -66,6 +71,10 @@
             }
         });
 
+        $('#providerSelector, #slotProvider').click(function (e) {
+            $('#navBarBottom > a').removeClass('active');
+        });
+
 
     });
-</script>
+</script> *@

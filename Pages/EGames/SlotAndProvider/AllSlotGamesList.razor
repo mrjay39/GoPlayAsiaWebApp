@@ -1,5 +1,6 @@
 ﻿@page "/AllSlotGames"
 @using GoPlayAsiaWebApp.Controls.GameSlotProvider
+@using GoPlayAsiaWebApp.Controls.HeaderAndFooter
 @using GoPlayAsiaWebApp.Goplay.Shared.Popup
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.EGames
@@ -20,6 +21,11 @@
             </CascadingValue>
         }
     </div>
+
+    <GuesBottomNavbar _hrefLiveGameStr="GameProviders/More/Live/All"
+                      _hrefSlotGameStr="GameProviders/More/Slots/All"
+                      _hrefCasinoGameStr="GameProviders/More/Casino/All"
+                      _hrefArcadeGameStr="GameProviders/More/Arcade/All" />
 </div>
 @code {
     [CascadingParameter]

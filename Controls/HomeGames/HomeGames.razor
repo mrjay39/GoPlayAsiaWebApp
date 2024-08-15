@@ -2,7 +2,7 @@
 @using GoPlayAsiaWebApp.Pages.EGames.SlotAndProvider
 
 <div class="container p-0 text-center">
-    <h2 class="text-white fw-bold pt-3">Specialty Games</h2>
+    <h2 class="text-white fw-bold pt-3">Exclusive Tiles</h2>
     <div id="mostPlayedGames" class="pb-3">
         <div class="d-flex justify-content-center p-0">
             <GPATile _imgStr="./img/GPAGames/L9.png"
@@ -49,12 +49,21 @@
         <div class="d-flex justify-content-center p-0">
 
             <ProviderAndSlotTile _imgStr="./img/img-provider.png"
-                     _playHrefStr="GameProviders" />
+                                 _playHrefStr="GameProviders"
+                                 _idStr="providerSelector"/>
 
 
             @*=========== Slots Icon ===========*@
             <ProviderAndSlotTile _imgStr="./img/img-slots.png"
-                     _playHrefStr="AllSlotGames" />
+                                 _playHrefStr="GameProviders/More/Slots/All"
+                                _idStr="slotProvider"/>
         </div>
     </div>
 </div>
+@* <script>
+    $(document).ready(function () {
+        $('#mostPlayedGames #providerSelector a').click(function (e) {
+            $('#navBarBottom > a').removeClass('active');
+        });
+    });
+</script> *@

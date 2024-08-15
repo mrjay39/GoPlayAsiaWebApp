@@ -21,12 +21,11 @@
             </CascadingValue>
         }
     </div>
+    <GuesBottomNavbar _hrefLiveGameStr="GameProviders#liveGames"
+                      _hrefSlotGameStr="GameProviders#slotGames"
+                      _hrefCasinoGameStr="GameProviders#cardGames"
+                      _hrefArcadeGameStr="GameProviders#arcadeGames" />
 </div>
-<AuthorizeView>
-    <NotAuthorized>
-        <GuesBottomNavbar />
-    </NotAuthorized>
-</AuthorizeView>
 @code{
     [CascadingParameter]
     public IModalService popupModal { get; set; }
