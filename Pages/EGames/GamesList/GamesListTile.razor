@@ -7,18 +7,26 @@
 @using GoPlayAsiaWebApp.Pages.Login.LogInModal
 @using GoplayasiaBlazor.DTOs.eGames
 @using GoplayasiaSharedKernel.DTOs.eGames.Enum
+@inject IJSRuntime JSRuntime
 <a class="img-border card m-1 p-0 border-dark game-tile text-decoration-none position-relative" @onclick="OpenGameLink">
+
+@*     <div class="loading-spinner" style="@(IsLoading ? "" : "display: none")">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div> *@
     <div class="">
    
         <div class=" p-0 bg-img">
-            <img src="@Game.Filename" class="card-img-top" @onclick="ToggleActive">
+            <img id="cardImage" src="@Game.Filename" class="card-img-top" @onclick="ToggleActive" >
         </div>
 
     </div>
-        <div id="desc" class="position-absolute bottom-0 start-0 text-light  p-2 bg-dark bg-opacity-75  w-100 ">
+        <div @ref="imageElement" id="desc" class="position-absolute bottom-0 start-0 text-light  p-2 bg-dark bg-opacity-75  w-100 ">
             <small>@Game.Description</small>
             <small>@Game.Provider</small>
         </div>
+
 </a>
 @code {
 
@@ -27,23 +35,39 @@
     [Parameter] public eGamesListDTO Game { get; set; }
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
+    private ElementReference imageElement;
     IModalReference popupRef;
     private ClaimsPrincipal user;
     private bool isActive = false;
     private bool isCanvasVisible = false;
     private string gameImageUrl;
     private string gameCategory;
+    private static bool IsLoading { get; set; } = false;
 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // if (firstRender)
+        // {
+        //     await JSRuntime.InvokeVoidAsync("addImageLoadHandler", "cardImage");
+        //     IsLoading = true;
+        // }
+    }
+
+    [JSInvokable("OnImageLoaded")]
+    public static void OnImageLoaded()
+    {
+        IsLoading = false;
+
+    }
     private void ToggleActive()
     {
         isActive = !isActive;
         if (isActive)
         {
-            // Start a timer to remove the active class after 20 seconds
             TimerCallback timerCallback = state =>
             {
                 isActive = false;
-                StateHasChanged(); // Notify Blazor that the state has changed
+                StateHasChanged(); 
             };
             var timer = new Timer(timerCallback, null, 4000, Timeout.Infinite);
         }

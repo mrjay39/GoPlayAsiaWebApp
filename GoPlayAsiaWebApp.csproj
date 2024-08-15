@@ -48,7 +48,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
     <Folder Include="Interface\" />
     <Folder Include="Services\" />
   </ItemGroup>

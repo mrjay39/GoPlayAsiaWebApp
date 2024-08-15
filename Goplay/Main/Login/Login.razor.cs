@@ -81,7 +81,7 @@ namespace GoPlayAsiaWebApp.Goplay.Main.Login
             DeviceToken = await JSRuntime.InvokeAsync<string>(identifier: "identifyBrowser");
 
         }
-        [JSInvokable("MyBlazorInstallMethod")]
+        [JSInvokable("MyBlazorInstallMethod2")]
         public static async Task MyBlazorInstallMethod()
         {
             //await JSRuntimePWA.InvokeVoidAsync("BlazorPWA.installPWA");
