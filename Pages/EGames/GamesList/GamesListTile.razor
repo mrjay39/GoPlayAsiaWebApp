@@ -7,14 +7,18 @@
 @using GoPlayAsiaWebApp.Pages.Login.LogInModal
 @using GoplayasiaBlazor.DTOs.eGames
 @using GoplayasiaSharedKernel.DTOs.eGames.Enum
-<a class="img-border card m-1 p-0 border-dark game-tile" @onclick="OpenGameLink">
-    <div class=" ">
+<a class="img-border card m-1 p-0 border-dark game-tile text-decoration-none position-relative" @onclick="OpenGameLink">
+    <div class="">
    
         <div class=" p-0 bg-img">
             <img src="@Game.Filename" class="card-img-top" @onclick="ToggleActive">
         </div>
- 
+
     </div>
+        <div id="desc" class="position-absolute bottom-0 start-0 text-light  p-2 bg-dark bg-opacity-75  w-100 ">
+            <small>@Game.Description</small>
+            <small>@Game.Provider</small>
+        </div>
 </a>
 @code {
 
