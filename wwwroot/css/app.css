@@ -44,6 +44,13 @@ a, .btn-link {
     outline: 1px solid red;
 }
 
+.blazored-typeahead__input-mask {
+    white-space: nowrap;
+    width: 12em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .validation-message {
     color: red;
 }

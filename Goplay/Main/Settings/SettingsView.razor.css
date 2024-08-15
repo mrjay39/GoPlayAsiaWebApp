@@ -20,6 +20,19 @@
 .pointer-cursor{
     cursor: pointer;
 }
+.blazored-typeahead__input-mask {
+    white-space: nowrap;
+    width: 12em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.accordion-icon {
+    transition: transform 0.3s ease;
+    right: 20px;
+}
+.collapsed .accordion-icon {
+    transform: rotate(180deg);
+}
 
 .change-img > span {
     width: 30px;

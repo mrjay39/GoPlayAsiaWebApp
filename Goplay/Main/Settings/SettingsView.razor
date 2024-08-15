@@ -73,18 +73,20 @@
             </div>
             <div class="accordion" id="accordionImages">
                 <div class="accordion-item bg-transparent border rounded-3 mb-3">
-                    <p class="accordion-header ms-2 pt-2 mb-2 w-100 text-start pointer-cursor" data-bs-toggle="collapse" data-bs-target="#profileImage" aria-expanded="true" aria-controls="collapseOne">
+                    <p class="accordion-header ms-2 pt-2 mb-2 w-100 text-start pointer-cursor position-relative" data-bs-toggle="collapse" data-bs-target="#profileImage" aria-expanded="false" aria-controls="collapseOne">
                         <span class="text-light">Profile Image</span>
+                        <span class="text-end position-absolute accordion-icon"><i class="fa-solid fa-angle-down"></i></span>
                     </p>
-                    <div id="profileImage" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionImages">
+                    <div id="profileImage" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionImages">
                         <div class="accordion-body">
                             <img class="img-fluid" src="@_settingsViewModel.UserInfo.ProfileImageFullPath" />
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item bg-transparent border rounded-3 mb-3">
-                    <p class="accordion-header ms-2 pt-2 mb-2 w-100 text-start pointer-cursor" data-bs-toggle="collapse" data-bs-target="#governmentImage" aria-expanded="false" aria-controls="collapseTwo">
-                        <span class="text-light" >Government ID</span>
+                    <p class="accordion-header ms-2 pt-2 mb-2 w-100 text-start pointer-cursor position-relative" data-bs-toggle="collapse" data-bs-target="#governmentImage" aria-expanded="false" aria-controls="collapseTwo">
+                        <span class="text-light">Government ID</span>
+                        <span class="text-end position-absolute accordion-icon"><i class="fa-solid fa-angle-down"></i></span>
                     </p>
                     <div id="governmentImage" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
@@ -95,14 +97,14 @@
             </div>
 
             @* <div class="form-group">
-            <label>Profile Image</label>
-            <img class="img-fluid" src="@_settingsViewModel.UserInfo.ProfileImageFullPath" />
-            </div>
+        <label>Profile Image</label>
+        <img class="img-fluid" src="@_settingsViewModel.UserInfo.ProfileImageFullPath" />
+        </div>
 
-            <div class="form-group">
-            <label>Government ID</label>
-            <img class="img-fluid" src="@_settingsViewModel.UserInfo.GovernmentImageFullPath" />
-            </div> *@
+        <div class="form-group">
+        <label>Government ID</label>
+        <img class="img-fluid" src="@_settingsViewModel.UserInfo.GovernmentImageFullPath" />
+        </div> *@
 
             <div class="form-group">
                 <label>Identification Number</label>
@@ -211,5 +213,11 @@
                 await _settingsViewModel.Logout();
             }
         }
+    }
+
+    private bool isExpanded = false;
+    private void ToggleAccordion()
+    {
+        isExpanded = !isExpanded;
     }
 }
