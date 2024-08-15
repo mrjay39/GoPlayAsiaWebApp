@@ -1,0 +1,182 @@
+﻿@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoplayasiaBlazor.Models
+@inject Lucky9BViewModel _l9BViewModel;
+
+@if (GameChips != null)
+{
+    <div class="@TokenContainer  mt-1 " style="background-color: rgba(0,0,0,0.8); padding: 6px; border-radius: 6px;">
+        <div class="d-flex justify-content-center">
+            @if (GameChips.Chip1 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip1))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip1Display</div>
+                        <img class="@(_l9BViewModel.BetAmount == GameChips.Chip1? "selectedToken" : "default") " src="/img/1-100.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip2 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip2))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip2Display</div>
+                        <img class="@(_l9BViewModel.BetAmount == GameChips.Chip2? "selectedToken" : "default") " src="/img/1-200.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip3 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip3))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip3Display</div>
+                        <img class="@(_l9BViewModel.BetAmount == GameChips.Chip3? "selectedToken" : "default") " src="/img/1-500.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip4 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip4))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip4Display</div>
+                        <img class="@(_l9BViewModel.BetAmount == GameChips.Chip4? "selectedToken" : "default") " src="/img/1-1k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip5 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip5))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip5Display</div>
+                        <img class="@(_l9BViewModel.BetAmount == GameChips.Chip5? "selectedToken" : "default") " src="/img/1-1-5k.png" />
+                    </div>
+                </a>
+            }
+        </div>
+
+        <div class="d-flex d-flex justify-content-center mb-2">
+            @if (GameChips.Chip6 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip6))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip6Display</div>
+                        <img class="@(_l9BViewModel.BetAmount == GameChips.Chip6? "selectedToken" : "default") " src="/img/1-2k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip7 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip7))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip7Display</div>
+                        <img class="@(_l9BViewModel.BetAmount == GameChips.Chip7? "selectedToken" : "default") " src="/img/1-3k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip8 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip8))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip8Display</div>
+                        <img class="@(_l9BViewModel.BetAmount == GameChips.Chip8? "selectedToken" : "default") " src="/img/2-5k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip9 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip9))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip9Display</div>
+                        <img class="@(_l9BViewModel.BetAmount == GameChips.Chip9? "selectedToken" : "default") " src="/img/2-8k.png" />
+                    </div>
+                </a>
+            }
+            @if (GameChips.Chip10 > 0)
+            {
+                <a @onclick:preventDefault @onclick='(() => SetBetAmount(GameChips.Chip10))'>
+                    <div class="tokenRelative col p-0">
+                        <div class="tokenValueAbsolute">@GameChips.Chip10Display</div>
+                        <img class="@(_l9BViewModel.BetAmount == GameChips.Chip10? "selectedToken" : "default") " src="/img/2-10k.png" />
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+
+    <div class=" col p-0 d-flex justify-content-center" style="background-color: rgba(0,0,0,0.8); padding: 6px; border-radius: 6px;">
+        <div class="col p-0 text-light d-flex justify-content-center align-items-center" style="font-size: 12px;">
+            <div class="">
+                <p>TAP BET TO</p>
+                <p>CONFIRM ></p>
+            </div>
+        </div>
+
+        <button class="col-7 d-flex justify-content-center mr-2 @(IsDisabled ? "disnewBetBtn" : "newBetBtn")" @onclick="(()=> SubmitBet())" disabled="@IsDisabled">
+            <div>BET</div>
+        </button>
+        <button class="newBackBtn col-2 d-flex justify-content-center" @onclick="(()=> CloseDiv())">
+            <div>X</div>
+        </button>
+
+    </div>
+}
+
+@code {
+    [CascadingParameter] public IModalService popupModalDB { get; set; }
+    [Parameter] public GameChipModel GameChips { get; set; }
+    [Parameter] public string TokenContainer { get; set; }
+    [Parameter] public EventCallback<string> OnClickCallback { get; set; }
+
+    private bool IsDisabled = true;
+
+    private async Task SetBetAmount(int? Amount)
+    {
+        IsDisabled = false;
+        await _l9BViewModel.SetBetSelectedValue(Amount);
+        await OnClickCallback.InvokeAsync();
+    }
+
+    public async Task CloseDiv()
+    {
+        IsDisabled = true;
+        _l9BViewModel.BetAmount = 0;
+        await ResetToInitial();
+        await _l9BViewModel.HideDivToken();
+    }
+
+    public async Task SubmitBet()
+    {
+        bool valid = await _l9BViewModel.ValidateBet(_l9BViewModel.BetOptionSelected, _l9BViewModel.BetCombinationValue);
+        if (valid)
+        {
+            bool doublebet = await _l9BViewModel.IsDoubleBet();
+            if (doublebet)
+            {
+                var parametersdb = new ModalParameters();
+                parametersdb.Add("Message", "Already Placed Bet, Do you wish to proceed?");
+                var popupDB = popupModalDB.Show<PopupConfirm>("", parametersdb, new ModalOptions() { Class = "op-modal" });
+                ModalResult resultdb = await popupDB.Result;
+                if ((bool)resultdb.Data)
+                {
+                    await _l9BViewModel.SubmitBet();
+                    await ResetToInitial();
+                }
+            }
+            else
+            {
+                await _l9BViewModel.SubmitBet();
+                await ResetToInitial();
+            }
+        }
+    }
+
+    public async Task ResetToInitial()
+    {
+        IsDisabled = true;
+        TokenContainer = "DistokenContainer";
+        _l9BViewModel.Payout = 0;
+        _l9BViewModel.GameVariantId = 0;
+        _l9BViewModel.BetOptionSelected = string.Empty;
+        _l9BViewModel.BetCombinationValue = string.Empty;
+        _l9BViewModel.IsButtonDisabled = false;
+    }
+}

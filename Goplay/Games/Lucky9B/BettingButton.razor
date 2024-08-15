@@ -1,0 +1,417 @@
+﻿@using GoPlayAsiaWebApp.Goplay.Games.Lucky9B.Components
+@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoplayasiaBlazor.Models.Constants
+@using static GoplayasiaBlazor.Models.Constants.Settings
+@inject Lucky9BViewModel _l9BViewModel;
+@inject IToastService _toastService;
+
+<div class="titlebar text-light d-flex justify-content-center font-weight-bolder" style="font-size: 15px; padding: 3px 0; height:20px;">WELCOME TO LUCKY9 TABLE 2 CARD GAME!</div>
+<div class="mainContainer mr-1 " style="line-height: normal;">
+    <div class="col row1  p-0 d-flex text-light @(RoundStatusString == Settings.Constants.Open ? "h-85" : "h-125") ">
+
+        <MainBetSelection BetValueDisplay="@Settings.Constants.Player"
+                          ShowTotalBets="@_l9BViewModel.ShowTotalBets"
+                          SampleWinFixedPrizePlayer="@SampleWinFixedPrizePlayer"
+                          SampleWinFixedPrizeBanker="@SampleWinFixedPrizeBanker"
+                          RoundStatusString="@RoundStatusString"
+                          UserTotalBet_FixedPrizePlayer="@_l9BViewModel.UserTotalBet_FixedPrizePlayer"
+                          ActiveButtonPlayer="@ActiveButtonPlayer"
+                          WinnerResults="@_l9BViewModel.GameResultString"
+                          IsDisabled="@_l9BViewModel.IsButtonDisabled"
+                          OnClickCallback="@(() => SelectBetType((int)@Settings.L9MainBetTypes.Player))" />
+
+        <SubTargetTie BetType="(int)Settings.L9MainBetTypes.Draw"
+                      TargetTie="@TargetTie"
+                      UserTotalBet_Draw="@_l9BViewModel.UserTotalBet_Draw"
+                      WinnerResults="@_l9BViewModel.GameResultString"
+                      IsDisabled="@_l9BViewModel.IsButtonDisabled"
+                      OnClickCallback="@(() => SelectBetType((int)@Settings.L9MainBetTypes.Draw))" />
+
+        <MainBetSelection BetValueDisplay="@Settings.Constants.Banker"
+                          ShowTotalBets="@_l9BViewModel.ShowTotalBets"
+                          SampleWinFixedPrizePlayer="@SampleWinFixedPrizePlayer"
+                          SampleWinFixedPrizeBanker="@SampleWinFixedPrizeBanker"
+                          RoundStatusString="@RoundStatusString"
+                          UserTotalBet_FixedPrizeBanker="@_l9BViewModel.UserTotalBet_FixedPrizeBanker"
+                          ActiveButtonBanker="@ActiveButtonBanker"
+                          WinnerResults="@_l9BViewModel.GameResultString"
+                          IsDisabled="@_l9BViewModel.IsButtonDisabled"
+                          OnClickCallback="@(() => SelectBetType((int)@Settings.L9MainBetTypes.Banker))" />
+    </div>
+
+    <div class="container-fluid p-0 pt-1 pb-1 lucky9-border" style="border: 2px solid #1d601b;">
+        <div class="contianer-fluid pt-1">
+            <p style="font-size: 13px" class="text-white fw-bold d-flex align-items-center justify-content-center">
+                <span class="playerRed"></span>
+                <span>PLAYER </span>
+                <span class="firstBet-text">FIRST 2 CARDS BET</span>
+                <span class="bankerBlue"></span>
+                <span>BANKER</span>
+            </p>
+        </div>
+
+        <div class="row2 d-flex " style="margin-top: 1px;">
+
+            <Sub2Reds BetValueDisplay="@Settings.Constants.Player"
+                      TwoRedPlayer="@TwoRedPlayer"
+                      UserTotalBet_ColorRedPlayer="@_l9BViewModel.UserTotalBet_ColorRedPlayer"
+                      SampleWinColorRedPlayer="@_l9BViewModel.SampleWinColorRedPlayer"
+                      WinnerResults="@_l9BViewModel.GameResult.LeftWinningColor"
+                      IsDisabled="@_l9BViewModel.IsButtonDisabled"
+                      OnClickCallback="@(() => SelectBetType((int)@Settings.L9SubBetTypes.TwoRedPlayer))" />
+
+            <Sub2Blacks BetValueDisplay="@Settings.Constants.Player"
+                        TwoBlackPlayer="@TwoBlackPlayer"
+                        UserTotalBet_ColorBlackPlayer="@_l9BViewModel.UserTotalBet_ColorBlackPlayer"
+                        SampleWinColorBlackPlayer="@_l9BViewModel.SampleWinColorBlackPlayer"
+                        WinnerResults="@_l9BViewModel.GameResult.LeftWinningColor"
+                        IsDisabled="@_l9BViewModel.IsButtonDisabled"
+                        OnClickCallback="@(() => SelectBetType((int)@Settings.L9SubBetTypes.TwoBlackPlayer))" />
+
+            <Sub2Reds BetValueDisplay="@Settings.Constants.Banker"
+                      TwoRedBanker="@TwoRedBanker"
+                      UserTotalBet_ColorRedBanker="@_l9BViewModel.UserTotalBet_ColorRedBanker"
+                      SampleWinColorRedBanker="@_l9BViewModel.SampleWinColorRedBanker"
+                      WinnerResults="@_l9BViewModel.GameResult.RightWinningColor"
+                      IsDisabled="@_l9BViewModel.IsButtonDisabled"
+                      OnClickCallback="@(() => SelectBetType((int)@Settings.L9SubBetTypes.TwoRedBanker))" />
+
+            <Sub2Blacks BetValueDisplay="@Settings.Constants.Banker"
+                        TwoBlackBanker="@TwoBlackBanker"
+                        UserTotalBet_ColorBlackBanker="@_l9BViewModel.UserTotalBet_ColorBlackBanker"
+                        SampleWinColorBlackBanker="@_l9BViewModel.SampleWinColorBlackBanker"
+                        WinnerResults="@_l9BViewModel.GameResult.RightWinningColor"
+                        IsDisabled="@_l9BViewModel.IsButtonDisabled"
+                        OnClickCallback="@(() => SelectBetType((int)@Settings.L9SubBetTypes.TwoBlackBanker))" />
+        </div>
+
+        <div class="row3 mt-1 d-flex text-light">
+
+            <SubTargetTie BetType="(int)Settings.L9SubBetTypes.Target9Player"
+                          TargetPlayer="@TargetPlayer"
+                          UserTotalBet_TargetPlayer="@_l9BViewModel.UserTotalBet_TargetPlayer"
+                          SampleWinTargetPlayer="@_l9BViewModel.SampleWinTargetPlayer"
+                          WinnerResults="@_l9BViewModel.GameResult.LeftWinningTarget"
+                          IsDisabled="@_l9BViewModel.IsButtonDisabled"
+                          OnClickCallback="@(() => SelectBetType((int)@Settings.L9SubBetTypes.Target9Player))" />
+
+            <SubAnyPair BetValueDisplay="@Settings.Constants.Player"
+                        SubAnyPairPlayer="@SubAnyPairPlayer"
+                        UserTotalBet_PairPlayer="@_l9BViewModel.UserTotalBet_PairPlayer"
+                        SampleWinPairPlayer="@_l9BViewModel.SampleWinPairPlayer"
+                        WinnerResults="@_l9BViewModel.GameResult.LeftWinningPair"
+                        IsDisabled="@_l9BViewModel.IsButtonDisabled"
+                        OnClickCallback="@(() => SelectBetType((int)@Settings.L9SubBetTypes.AnypairPlayer))" />
+
+            <SubTargetTie BetType="(int)Settings.L9SubBetTypes.Target9Banker"
+                          TargetBanker="@TargetBanker"
+                          UserTotalBet_TargetBanker="@_l9BViewModel.UserTotalBet_TargetBanker"
+                          SampleWinTargetBanker="@_l9BViewModel.SampleWinTargetBanker"
+                          WinnerResults="@_l9BViewModel.GameResult.RightWinningTarget"
+                          IsDisabled="@_l9BViewModel.IsButtonDisabled"
+                          OnClickCallback="@(() => SelectBetType((int)@Settings.L9SubBetTypes.Target9Banker))" />
+
+            <SubAnyPair BetValueDisplay="@Settings.Constants.Banker"
+                        SubAnyPairBanker="@SubAnyPairBanker"
+                        UserTotalBet_PairBanker="@_l9BViewModel.UserTotalBet_PairBanker"
+                        SampleWinPairBanker="@_l9BViewModel.SampleWinPairBanker"
+                        WinnerResults="@_l9BViewModel.GameResult.RightWinningPair"
+                        IsDisabled="@_l9BViewModel.IsButtonDisabled"
+                        OnClickCallback="@(() => SelectBetType((int)@Settings.L9SubBetTypes.AnyPairBanker))" />
+        </div>
+
+    </div>
+
+    <div class="row4 d-flex text-light maxWidth">
+    </div>
+
+    @if (_l9BViewModel.RoundStatusString == Settings.Constants.Open)
+    {
+        <div class="@_l9BViewModel.TokenDiv">
+            <Tokens GameChips="@_l9BViewModel.GameChips" TokenContainer="@TokenContainer" OnClickCallback="@(() => CheckIfPlaceBetReady())" />
+        </div>
+    }
+    else if (_l9BViewModel.RoundStatusString == Settings.Constants.Cancelled)
+    {
+        <div class="cancelledText text-center w-100">
+            <p class="col p-0">CANCELED GAME</p>
+            <p class="col p-0">BETS RETURNED </p>
+        </div>
+    }
+</div>
+
+@code {
+    [CascadingParameter] public IModalService popupModal { get; set; }
+    [CascadingParameter] public IModalService popupModalDB { get; set; }
+    [Parameter] public string RoundStatusString { get; set; } = String.Empty;
+    [Parameter] public string SampleWinFixedPrizePlayer { get; set; } = "0";
+    [Parameter] public string SampleWinFixedPrizeBanker { get; set; } = "0";
+
+    public bool IsBetPopupShown = false;
+    public string ActiveButtonPlayer { get; set; } = "playerButton";
+    public string ActiveButtonBanker { get; set; } = "bankerButton";
+    public string TargetTie { get; set; } = "tieButton";
+    public string TargetPlayer { get; set; } = "pLucky9";
+    public string TargetBanker { get; set; } = "bLucky9";
+    public string TwoRedPlayer { get; set; } = "reds2Player";
+    public string TwoRedBanker { get; set; } = "reds2Banker";
+    public string TwoBlackPlayer { get; set; } = "black2Player";
+    public string TwoBlackBanker { get; set; } = "black2Banker";
+    public string SubAnyPairPlayer { get; set; } = "anyPairPlayer";
+    public string SubAnyPairBanker { get; set; } = "anyPairBanker";
+    public string TokenContainer { get; set; } = "DistokenContainer";
+
+    public string ResetButtonCss { get; set; } = "disResetButton";
+    public string BetButtonCss { get; set; } = "disBetButton";
+
+    public async void OnNotify()
+    {
+        await InvokeAsync(() => StateHasChanged());
+    }
+
+    public void Dispose()
+    {
+        _l9BViewModel.Notify -= OnNotify;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _l9BViewModel.Notify += OnNotify;
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (RoundStatusString != Constants.Open)
+        {
+            await DisableGameButtonsExceptCurrent();
+        }
+    }
+
+    private async Task ResetGameButtons()
+    {
+        _l9BViewModel.IsButtonDisabled = !_l9BViewModel.IsButtonDisabled;
+
+        ActiveButtonPlayer = "playerButton";
+        ActiveButtonBanker = "bankerButton";
+        TargetPlayer = "pLucky9";
+        TargetBanker = "bLucky9";
+        TargetTie = "tieButton";
+        TwoRedPlayer = "reds2Player";
+        TwoRedBanker = "reds2Banker";
+        TwoBlackPlayer = "black2Player";
+        TwoBlackBanker = "black2Banker";
+        SubAnyPairPlayer = "anyPairPlayer";
+        SubAnyPairBanker = "anyPairBanker";
+
+        ResetButtonCss = "disResetButton";
+        BetButtonCss = "disBetButton";
+    }
+
+    public async Task ResetToInitial()
+    {
+        await ResetGameButtons();
+        TokenContainer = "DistokenContainer";
+        _l9BViewModel.CurrentGameType = 0;
+        _l9BViewModel.BetAmount = 0;
+        _l9BViewModel.GameVariantId = 0;
+        _l9BViewModel.BetOptionSelected = string.Empty;
+        _l9BViewModel.BetCombinationValue = string.Empty;
+    }
+
+    public async Task DisableGameButtonsExceptCurrent()
+    {
+        if (_l9BViewModel.RoundStatusString != Constants.Open) _l9BViewModel.CurrentGameType = 0;
+        if (_l9BViewModel.CurrentGameType != (int)L9MainBetTypes.Banker) ActiveButtonBanker = "DisbankerButton";
+        if (_l9BViewModel.CurrentGameType != (int)L9MainBetTypes.Player) ActiveButtonPlayer = "DisplayerButton";
+        if (_l9BViewModel.CurrentGameType != (int)L9SubBetTypes.Target9Player) TargetPlayer = "dispLucky9";
+        if (_l9BViewModel.CurrentGameType != (int)L9SubBetTypes.Target9Banker) TargetBanker = "disBLucky9";
+        if (_l9BViewModel.CurrentGameType != (int)L9MainBetTypes.Draw) TargetTie = "disTieButton";
+        if (_l9BViewModel.CurrentGameType != (int)L9SubBetTypes.AnypairPlayer) SubAnyPairPlayer = "disAnyPairPlayer";
+        if (_l9BViewModel.CurrentGameType != (int)L9SubBetTypes.AnyPairBanker) SubAnyPairBanker = "disAnyPairBanker";
+        if (_l9BViewModel.CurrentGameType != (int)L9SubBetTypes.TwoRedPlayer) TwoRedPlayer = "disReds2Player";
+        if (_l9BViewModel.CurrentGameType != (int)L9SubBetTypes.TwoRedBanker) TwoRedBanker = "disReds2Banker";
+        if (_l9BViewModel.CurrentGameType != (int)L9SubBetTypes.TwoBlackPlayer) TwoBlackPlayer = "disBlack2Player";
+        if (_l9BViewModel.CurrentGameType != (int)L9SubBetTypes.TwoBlackBanker) TwoBlackBanker = "disBlack2Banker";
+    }
+
+    public async Task SelectBetType(int BetType)
+    {
+        await ResetGameButtons();
+        TokenContainer = "tokenContainer";
+
+        _l9BViewModel.CurrentGameType = BetType;
+        _l9BViewModel.BetType = BetType;
+
+        switch (BetType)
+        {
+            case (int)L9MainBetTypes.Player:
+                var isCrossBetting = _l9BViewModel.L9IsCrossBetting(Constants.FixedPlayer, _l9BViewModel.L9UserBets).Result;
+                if (isCrossBetting)
+                {
+                    _toastService.ShowError("Cross betting not allowed!");
+                    await ResetGameButtons();
+                    return;
+                }
+                ActiveButtonPlayer = "playerButtonActive";
+                await _l9BViewModel.SetGameChips(_l9BViewModel.GametypeId, false);
+                _l9BViewModel.BetOptionSelected = Constants.Player;
+                _l9BViewModel.BetCombinationValue = Constants.FixedPlayer;
+                _l9BViewModel.GameVariantId = 0;
+                break;
+
+            case (int)L9MainBetTypes.Banker:
+                var isCrossBettingBanker = _l9BViewModel.L9IsCrossBetting(Constants.FixedBanker, _l9BViewModel.L9UserBets).Result;
+                if (isCrossBettingBanker)
+                {
+                    _toastService.ShowError("Cross betting not allowed!");
+                    await ResetGameButtons();
+                    return;
+                }
+                ActiveButtonBanker = "bankerButtonActive";
+                await _l9BViewModel.SetGameChips(_l9BViewModel.GametypeId, false);
+                _l9BViewModel.BetOptionSelected = Constants.Banker;
+                _l9BViewModel.BetCombinationValue = Constants.FixedBanker;
+                _l9BViewModel.GameVariantId = 0;
+                break;
+
+            case (int)L9SubBetTypes.Target9Player:
+                await _l9BViewModel.SetGameChips((int)GameVariant.L9BTarget, true);
+                _l9BViewModel.BetOptionSelected = Constants.Player;
+                _l9BViewModel.BetCombinationValue = Constants.TargetPlayer;
+                TargetPlayer = "pLucky9Activated";
+                _l9BViewModel.GameVariantId = (int)GameVariant.L9BTarget;
+                break;
+            case (int)L9SubBetTypes.Target9Banker:
+                TargetBanker = "bLucky9Activated";
+                await _l9BViewModel.SetGameChips((int)GameVariant.L9BTarget, true);
+                _l9BViewModel.BetOptionSelected = Constants.Banker;
+                _l9BViewModel.BetCombinationValue = Constants.TargetBanker;
+                _l9BViewModel.GameVariantId = (int)GameVariant.L9BTarget;
+                break;
+            case (int)L9MainBetTypes.Draw:
+                await _l9BViewModel.SetGameChips((int)GameVariant.L9BDraw, true);
+                TargetTie = "tieButtonActivated";
+                _l9BViewModel.BetOptionSelected = Constants.Draw;
+                _l9BViewModel.BetCombinationValue = Constants.Draw;
+                _l9BViewModel.GameVariantId = (int)GameVariant.L9BDraw;
+                break;
+            case (int)L9SubBetTypes.AnypairPlayer:
+                SubAnyPairPlayer = "anyPairPlayerActivated";
+                await _l9BViewModel.SetGameChips((int)GameVariant.L9BPair, true);
+                _l9BViewModel.BetOptionSelected = Constants.Player;
+                _l9BViewModel.BetCombinationValue = Constants.PairPlayer;
+                _l9BViewModel.GameVariantId = (int)GameVariant.L9BPair;
+                break;
+            case (int)L9SubBetTypes.AnyPairBanker:
+                SubAnyPairBanker = "anyPairBankerActivated";
+                await _l9BViewModel.SetGameChips((int)GameVariant.L9BPair, true);
+                _l9BViewModel.BetOptionSelected = Constants.Banker;
+                _l9BViewModel.BetCombinationValue = Constants.PairBanker;
+                _l9BViewModel.GameVariantId = (int)GameVariant.L9BPair;
+                break;
+            case (int)L9SubBetTypes.TwoRedPlayer:
+                TwoRedPlayer = "reds2PlayerActivated";
+                await _l9BViewModel.SetGameChips((int)GameVariant.L9BColor, true);
+                _l9BViewModel.BetOptionSelected = Constants.Player;
+                _l9BViewModel.BetCombinationValue = Constants.ColorRedPlayer;
+                _l9BViewModel.GameVariantId = (int)GameVariant.L9BColor;
+                break;
+            case (int)L9SubBetTypes.TwoRedBanker:
+
+                TwoRedBanker = "reds2BankerActivated";
+                await _l9BViewModel.SetGameChips((int)GameVariant.L9BColor, true);
+                _l9BViewModel.BetOptionSelected = Constants.Banker;
+                _l9BViewModel.BetCombinationValue = Constants.ColorRedBanker;
+                _l9BViewModel.GameVariantId = (int)GameVariant.L9BColor;
+                break;
+            case (int)L9SubBetTypes.TwoBlackPlayer:
+                TwoBlackPlayer = "black2PlayerActivated";
+                await _l9BViewModel.SetGameChips((int)GameVariant.L9BColor, true);
+                _l9BViewModel.BetOptionSelected = Constants.Player;
+                _l9BViewModel.BetCombinationValue = Constants.ColorBlackPlayer;
+                _l9BViewModel.GameVariantId = (int)GameVariant.L9BColor;
+                break;
+            case (int)L9SubBetTypes.TwoBlackBanker:
+                TwoBlackBanker = "black2BankerActivated";
+                await _l9BViewModel.SetGameChips((int)GameVariant.L9BColor, true);
+                _l9BViewModel.BetOptionSelected = Constants.Banker;
+                _l9BViewModel.BetCombinationValue = Constants.ColorBlackBanker;
+                _l9BViewModel.GameVariantId = (int)GameVariant.L9BColor;
+                break;
+            default:
+                break;
+        }
+
+        await _l9BViewModel.ShowDivToken();
+    }
+
+    public async Task CheckIfPlaceBetReady()
+    {
+        if (_l9BViewModel.CurrentGameType != 0 && _l9BViewModel.BetAmount > 0)
+        {
+            ResetButtonCss = "resetButton";
+            BetButtonCss = "betButton";
+        }
+        else
+        {
+            ResetButtonCss = "DisResetButton";
+            BetButtonCss = "DisBetButton";
+        }
+    }
+
+    public async Task ShowBetPopup(string betOptionSelected, string betCombinationValue)
+    {
+        if (IsBetPopupShown) return;
+
+        _l9BViewModel.BetOptionSelected = betOptionSelected;
+        _l9BViewModel.BetCombinationValue = betCombinationValue;
+
+        bool iscrossbetting = await _l9BViewModel.IsCrossBetting(_l9BViewModel.BetCombinationValue, _l9BViewModel.UserBets);
+        if (!iscrossbetting)
+        {
+            _l9BViewModel.popupBet = popupModal.Show<BetPopup>("Place Bet", new ModalOptions() { Class = "bet-modal" });
+            IsBetPopupShown = true;
+            ModalResult result = await _l9BViewModel.popupBet.Result;
+            IsBetPopupShown = false;
+        }
+        else
+        {
+            _toastService.ShowError("Cross betting not allowed!");
+        }
+    }
+
+    public async Task SubmitBet()
+    {
+        bool valid = await _l9BViewModel.ValidateBet(_l9BViewModel.BetOptionSelected, _l9BViewModel.BetCombinationValue);
+        if (valid)
+        {
+            bool doublebet = await _l9BViewModel.IsDoubleBet();
+            if (doublebet)
+            {
+                var parametersdb = new ModalParameters();
+                parametersdb.Add("Message", "Already Placed Bet, Do you wish to proceed?");
+                var popupDB = popupModalDB.Show<PopupConfirm>("", parametersdb, new ModalOptions() { Class = "op-modal" });
+                ModalResult resultdb = await popupDB.Result;
+                if ((bool)resultdb.Data)
+                {
+                    ResetButtonCss = "disResetButton";
+                    BetButtonCss = "disBetButton";
+                    await _l9BViewModel.SubmitBet();
+                    ResetButtonCss = "ResetButton";
+                    BetButtonCss = "BetButton";
+                }
+            }
+            else
+            {
+                ResetButtonCss = "disResetButton";
+                BetButtonCss = "disBetButton";
+                await _l9BViewModel.SubmitBet();
+                ResetButtonCss = "ResetButton";
+                BetButtonCss = "BetButton";
+            }
+
+            await ResetToInitial();
+        }
+    }
+
+}

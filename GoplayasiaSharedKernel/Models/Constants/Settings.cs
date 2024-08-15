@@ -212,6 +212,7 @@
             public const string StreamIDHeadTails = "headtails";
             public const string StreamIDDice= "dice";
             public const string StreamIDBingo = "bingo";
+            public const string StreamIDLucky9B = "lucky9b";
             #endregion
             #region Reports
             public const string BetReturned = "Bet Returned";
@@ -341,7 +342,10 @@
             BigWin,
             Lucky4,
             Dice,
-            Bingo
+            Bingo,
+            Slots,
+            Lucky9B,
+            First3B
         }
 
         public enum BetStatus
@@ -478,7 +482,12 @@
             DiceSmallBig,
             DiceSingle,
             DiceNumber,
-            Bingo6Card
+            Bingo6Card,
+            L9BTarget,
+            L9BSuits,
+            L9BColor,
+            L9BPair,
+            L9BDraw,
         }
         #endregion
 

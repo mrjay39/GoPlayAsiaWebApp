@@ -1,0 +1,68 @@
+﻿@using GoPlayAsiaWebApp.Goplay.Games.Shared
+@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoplayasiaBlazor.Models.Constants
+@inject Lucky9BViewModel _l9BViewModel;
+
+@if (BetValueDisplay == Settings.Constants.Player)
+{
+    <button style="border-radius: 44%; height: 44px;" class="col btn p-0 borderGold tieRelative @(Settings.Constants.ColorBlackPlayer == WinnerResults ? "winBlack2Player" : TwoBlackPlayer)" @onclick="OnClickCallback" disabled="@IsDisabled">
+        <p class="font-weight-bold smallHeader mb-1" style="font-size:10px; margin-top: 2px;">
+            <span style="font-size:15px">2</span>
+            <span>BLACKS</span>
+        </p>
+
+        <div class="d-flex">
+            @if (_l9BViewModel.L9Color != null)
+            {
+                <p style="font-size: 13px;" class="payout font-weight-bold col p-0 d-flex justify-content-center mb-0 @(UserTotalBet_ColorBlackPlayer != "0" ? "withBet" : "") ">@(UserTotalBet_ColorBlackPlayer != "0" ? SampleWinColorBlackPlayer : "x" + _l9BViewModel.L9Color.FixedPriceMultiplier.ToString("G29"))</p>
+            }
+        </div>
+
+        <TokenDisplay Amount="@UserTotalBet_ColorBlackPlayer" />
+        @if (_l9BViewModel.Token_Animation != "" && _l9BViewModel.CurrentGameType == (int)Settings.L9SubBetTypes.TwoBlackPlayer)
+        {
+            <div class="additionaltokencontainer" style="--animation: @_l9BViewModel.Token_Animation">
+                <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+                <p class="selectedAmountToken">@_l9BViewModel.BetAmount</p>
+            </div>
+        }
+    </button>
+}
+else
+{
+    <button style="border-radius: 44%; height: 44px;" class="col btn p-0 borderGold tieRelative @(Settings.Constants.ColorBlackBanker == WinnerResults ? "winBlack2Banker" : TwoBlackBanker)" @onclick="OnClickCallback" disabled="@IsDisabled">
+        <p class="font-weight-bold smallHeader mb-1" style="font-size:10px; margin-top: 2px;">
+            <span style="font-size:15px">2</span>
+            <span>BLACKS</span>
+        </p>
+
+         <div class="d-flex">
+            @if (_l9BViewModel.L9Color != null)
+            {
+                <p style="font-size: 13px;" class="payout font-weight-bold col p-0 d-flex justify-content-center mb-0 @(UserTotalBet_ColorBlackBanker != "0" ? "withBet" : "") ">@(UserTotalBet_ColorBlackBanker != "0" ? SampleWinColorBlackBanker : "x" + _l9BViewModel.L9Color.FixedPriceMultiplier.ToString("G29"))</p>
+            }
+        </div>
+
+        <TokenDisplay Amount="@UserTotalBet_ColorBlackBanker" />
+        @if (_l9BViewModel.Token_Animation != "" && _l9BViewModel.CurrentGameType == (int)Settings.L9SubBetTypes.TwoBlackBanker)
+        {
+            <div class="additionaltokencontainerBanker" style="--animation: @_l9BViewModel.Token_Animation">
+                <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+                <p class="selectedAmountToken">@_l9BViewModel.BetAmount</p>
+            </div>
+        }
+    </button>
+}
+
+@code {
+    [Parameter] public string BetValueDisplay { get; set; } = String.Empty;
+    [Parameter] public string TwoBlackPlayer { get; set; } = String.Empty;
+    [Parameter] public string TwoBlackBanker { get; set; } = String.Empty;
+    [Parameter] public string UserTotalBet_ColorBlackPlayer { get; set; } = String.Empty;
+    [Parameter] public string UserTotalBet_ColorBlackBanker { get; set; } = String.Empty;
+    [Parameter] public string SampleWinColorBlackPlayer { get; set; } = String.Empty;
+    [Parameter] public string SampleWinColorBlackBanker { get; set; } = String.Empty;
+    [Parameter] public string WinnerResults { get; set; } = String.Empty;
+    [Parameter] public bool IsDisabled { get; set; }
+    [Parameter] public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+}

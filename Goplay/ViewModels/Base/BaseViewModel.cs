@@ -48,6 +48,7 @@ public abstract class BaseViewModel
     public AuthenticationStateProvider _AuthenticationStateProvider;
     public IConstantService _constantService;
     public IEGamesService _iegamesservice;
+    public IL9GameRoundService _il9gameRoundService;
     #endregion
 
     #region Player Bets
@@ -527,6 +528,7 @@ public abstract class BaseViewModel
             RaisePropertyChanged(() => DiceGameChips);
         }
     }
+    public GameChipModel L9BGameChips { get; set; }
     public ObservableCollection<PlayerCategoryModel> PlayerCategory
     {
         get => _playercategory;
@@ -924,7 +926,7 @@ public abstract class BaseViewModel
         bool result = false;
         try
         {
-            if (GametypeId == (int)GameTypes.Lucky_9)
+            if (GametypeId == (int)GameTypes.Lucky_9 || GametypeId == (int)GameTypes.Lucky9B)
             {
                 if (UserBets != null && UserBets.Count > 0)
                 {
@@ -1151,7 +1153,7 @@ public abstract class BaseViewModel
         bool result = false;
         try
         {
-            if (GametypeId == (int)GameTypes.Lucky_9)
+            if (GametypeId == (int)GameTypes.Lucky_9 || GametypeId == (int)GameTypes.Lucky9B)
             {
                 if (UserBets != null && UserBets.Count > 0)
                 {
@@ -1651,6 +1653,9 @@ public abstract class BaseViewModel
             case (int)GameTypes.Gold_And_Silver:
                 F3GameChips = tempGameChips;
                 break;
+            case (int)GameTypes.Lucky9B:
+                L9BGameChips = tempGameChips;
+                break;
 
         }
         GameChips = tempGameChips;
@@ -1712,6 +1717,10 @@ public abstract class BaseViewModel
                 break;
             case (int)GameTypes.Dice:
                 DiceGameChips = tempChips;
+                MaxChip = chips.Max();
+                break;
+            case (int)GameTypes.Lucky9B:
+                L9BGameChips = tempChips;
                 MaxChip = chips.Max();
                 break;
         }
