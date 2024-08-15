@@ -403,3 +403,9 @@ body.phone .loader-frame-container iframe, body.tablet .loader-frame-container i
     height: 95% !important;
     width: 100%;
 }
+
+html {
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+    scroll-snap-type: y mandatory;
+}

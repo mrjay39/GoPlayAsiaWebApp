@@ -12,21 +12,21 @@
                 {
                     if (_provider == "All")
                     {
-                        <Virtualize Items="@GameList.Where(a => a.Category == _filter).ToList()" Context="item" ItemSize="50">
+                        <Virtualize Items="@GameList.Where(a => a.Category == _filter).ToList()" Context="item" ItemSize="@GameList.Where(a => a.Category == _filter).ToList().Count" OverscanCount="50" >
                             <GamesListTile Game="item" />
                         </Virtualize>
 
-@*                         @foreach (var item in GameList.Where(a => a.Category == _filter))
+                      @*   @foreach (var item in GameList.Where(a => a.Category == _filter))
                         {
                             <GamesListTile Game="item" />
                         } *@
                     }
                     else
                     {
-                        <Virtualize Items="@GameList.Where(a => a.Category == _filter && a.Provider == _provider).ToList()" Context="item" ItemSize="50">
+                        <Virtualize Items="@GameList.Where(a => a.Category == _filter && a.Provider == _provider).ToList()" Context="item" ItemSize="@GameList.Where(a => a.Category == _filter && a.Provider == _provider).ToList().Count" OverscanCount="50" >
                             <GamesListTile Game="item" />
                         </Virtualize>
-@*                         @foreach (var item in GameList.Where(a => a.Category == _filter && a.Provider == _provider))
+                       @*  @foreach (var item in GameList.Where(a => a.Category == _filter && a.Provider == _provider))
                         {
                             <GamesListTile Game="item" />
                         } *@
