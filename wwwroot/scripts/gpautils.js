@@ -75,3 +75,9 @@ function checkifApple() {
     return ret;
 }
 
+function addImageLoadHandler(imageId) {
+    const img = document.getElementById(imageId);
+    img.onload = function () {
+        DotNet.invokeMethodAsync('GoPlayAsiaWebApp', 'OnImageLoaded');
+    };
+}

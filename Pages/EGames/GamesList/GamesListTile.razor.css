@@ -150,3 +150,27 @@ a.play-btn {
     }
 }
 /*================ End: Button PLay Animation ==================*/
+
+/* Hide the #desc div by default */
+#desc {
+    display: none;
+}
+/* Show the #desc div when hovering over the parent container */
+.position-relative:hover #desc {
+    display: block;
+}
+
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.loaded-image {
+    display: none;
+    width: 100%;
+    height: auto;
+}
