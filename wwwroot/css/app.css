@@ -10,6 +10,9 @@ main {
 header{
     height: 50px;
 }
+#navBarBottom .navbar-brand {
+    font-size: 14px !important;
+}
 
 h1:focus {
     outline: none;

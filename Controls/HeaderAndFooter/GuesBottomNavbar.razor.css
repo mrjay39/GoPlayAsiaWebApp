@@ -149,8 +149,8 @@
     background-size: 100% 100%;
 }
 
-#navBarBottom a.navlink {
-    font-size: 14px;
+#navBarBottom .navbar-brand {
+    font-size: 14px !important;
 }
 .nav-item {
     cursor: pointer;
