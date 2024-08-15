@@ -56,13 +56,8 @@
         currentPage = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
     }
 }
-@* <script>
+<script>
     $(document).ready(function () {
-        $('#navBarBottom a').click(function (e) {
-            $('#navBarBottom a').removeClass('active');
-            $(this).addClass('active');
-        });
-
         $('#navBarBottom > a').click(function (event) {
             var getId = $(this).attr('id');
             $('#liveGames, #slotGames, #cardGames, #arcadeGames, #fishingGames').removeClass('pt-8');
@@ -70,11 +65,5 @@
                 $('#' + getId).addClass('pt-8');
             }
         });
-
-        $('#providerSelector, #slotProvider').click(function (e) {
-            $('#navBarBottom > a').removeClass('active');
-        });
-
-
     });
-</script> *@
+</script>
