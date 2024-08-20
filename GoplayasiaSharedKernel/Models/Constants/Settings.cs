@@ -231,7 +231,7 @@
             public const string egamesLive = "Live";
             public const string egamesRng = "Arcade";
             public const string egamesSlots = "Slots";
-            public const string egamesCards = "Cards";
+            public const string egamesCasino = "Casino";
             public const string egamesFishing = "Fishing";
             #endregion
 
@@ -240,9 +240,7 @@
             public const string CasinoGameTitle = "Live Casino";
             public const string CasinoGameDescription = "Your Seat Awaits: Dive into Live Casino Bliss";
 
-            //Card
-            public const string CardGameTitle = "Card Games";
-            public const string CardGameDescription = "Bet now while the table's hot!";
+
 
             //Arcade
             public const string ArcadeGameTitle = "Arcade Games";

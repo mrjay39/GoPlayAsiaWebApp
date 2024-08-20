@@ -85,7 +85,7 @@ public class LobbyViewModel : BaseViewModel
             newGameProvider.LiveCount = AllGameList.Count(x => x.Category == Constants.egamesLive );
             newGameProvider.ArcadeCount = AllGameList.Count(x => x.Category == Constants.egamesRng);
             newGameProvider.SlotsCount = AllGameList.Count(x => x.Category == Constants.egamesSlots );
-            newGameProvider.CardCount = AllGameList.Count(x => x.Category == Constants.egamesCards);
+            newGameProvider.CasinoCount = AllGameList.Count(x => x.Category == Constants.egamesCasino);
             newGameProvider.FishingCount = AllGameList.Count(x => x.Category == Constants.egamesFishing);
             gameProviders.Add(newGameProvider);
 
@@ -123,7 +123,7 @@ public class LobbyViewModel : BaseViewModel
                 newGameProvider.LiveCount = AllGameList.Count(x => x.Category == Constants.egamesLive && x.Provider == provider);
                 newGameProvider.ArcadeCount = AllGameList.Count(x => x.Category == Constants.egamesRng && x.Provider == provider);
                 newGameProvider.SlotsCount = AllGameList.Count(x => x.Category == Constants.egamesSlots && x.Provider == provider);
-                newGameProvider.CardCount = AllGameList.Count(x => x.Category == Constants.egamesCards && x.Provider == provider);
+                newGameProvider.CasinoCount = AllGameList.Count(x => x.Category == Constants.egamesCasino && x.Provider == provider);
                 newGameProvider.FishingCount = AllGameList.Count(x => x.Category == Constants.egamesFishing && x.Provider == provider);
                 gameProviders.Add(newGameProvider);
             }
