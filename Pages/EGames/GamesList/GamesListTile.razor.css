@@ -11,8 +11,6 @@
 }
 
 .game-tile {
-    width: 12.5rem;
-    height: 12.5rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -25,12 +23,14 @@
     align-items: center;
     display: inline-flex;
 }
+.card.m-1 {
+    margin: .20rem !important
+}
 
-
-.game-tile .bg-img > img {
+.game-tile .bg-img > img, .game-tile {
     border-radius: 0;
-    height: 12.5rem;
     width: 12.5rem;
+    height: 13.5rem;
 }
 
 .info {
@@ -52,18 +52,16 @@
 .img-border:hover {
     box-shadow: 0 0 0 4px #ffd800;
     transition: .5s ease;
-   /* border-radius: 10px;*/
 }
 
 .img-border img:hover {
     transition: .5s ease;
-    /*border-radius: 10px;*/
 }
 
 @media screen and (max-width: 460px) {
     .game-tile, .game-tile .bg-img > img {
         width: 6.5rem;
-        height: 6.5rem;
+        height: 7.5rem;
     }
 
     .game-tile h3 {
@@ -73,11 +71,11 @@
 
 @media screen and (max-width: 414px) {
     .game-tile, .game-tile .bg-img > img {
-        width: 6.5rem;
+        width: 5.5rem;
         height: 6.5rem;
     }
     .card.m-1{
-        margin:.10rem !important
+        margin:.20rem !important
     }
 
     .game-tile h3 {
@@ -88,7 +86,7 @@
 @media screen and (max-width: 320px) {
     .game-tile, .game-tile .bg-img > img {
         width: 6.5rem;
-        height: 6.5rem;
+        height: 7.5rem;
     }
 
     .game-tile .btn {
