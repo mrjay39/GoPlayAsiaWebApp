@@ -96,6 +96,7 @@ public class LobbyViewModel : BaseViewModel
                 newGameProvider.Name = provider;
                 switch (provider)
                 {
+                    case Constants.NetEntExt:
                     case Constants.NetEnt:
                         newGameProvider.ImageUrl = "netent.png";
                         newGameProvider.SortKey = 4;
@@ -116,7 +117,7 @@ public class LobbyViewModel : BaseViewModel
                         newGameProvider.ImageUrl = "evolution.png";
                         newGameProvider.SortKey = 2;
                         break;
-                    case "Nolimit City":
+                    case Constants.NoLimitCity:
                         newGameProvider.ImageUrl = "nolimit.png";
                         newGameProvider.SortKey = 2;
                         break;
