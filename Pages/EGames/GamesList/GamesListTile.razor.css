@@ -68,11 +68,11 @@
 
 @media screen and (max-width: 460px) {
     .game-tile, .game-tile .bg-img > img {
-        width: 6.5rem;
-        height: 6.5rem;
+        width: 10.5rem;
+        height: 10.5rem;
     }
     .game-tileEvo {
-        width: 6.5rem;
+        width: 10.5rem;
     }
 
     .game-tile h3 {
@@ -82,11 +82,11 @@
 
 @media screen and (max-width: 414px) {
     .game-tile, .game-tile .bg-img > img {
-        width: 5.5rem;
-        height: 5.5rem;
+        width: 8.5rem;
+        height: 8.5rem;
     }
     .game-tileEvo {
-        width: 5.5rem;
+        width: 8.5rem;
     }
     .card.m-1{
         margin:.20rem !important
@@ -99,11 +99,11 @@
 
 @media screen and (max-width: 320px) {
     .game-tile, .game-tile .bg-img > img {
-        width: 6.5rem;
-        height: 6.5rem;
+        width: 7.5rem;
+        height: 7.5rem;
     }
     .game-tileEvo {
-        width: 6.5rem;
+        width: 7.5rem;
     }
 
     .game-tile .btn {
