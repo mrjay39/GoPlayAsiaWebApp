@@ -10,13 +10,12 @@
     -webkit-box-orient: vertical;
 }
 
-.game-tilevo {
+.game-tileEvo {
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 12.5rem;
-  /*  height: 9.5rem;*/
     background-color: transparent;
 }
 .game-tile {
@@ -72,6 +71,9 @@
         width: 6.5rem;
         height: 6.5rem;
     }
+    .game-tileEvo {
+        width: 6.5rem;
+    }
 
     .game-tile h3 {
         font-size: 15px;
@@ -82,6 +84,9 @@
     .game-tile, .game-tile .bg-img > img {
         width: 5.5rem;
         height: 5.5rem;
+    }
+    .game-tileEvo {
+        width: 5.5rem;
     }
     .card.m-1{
         margin:.20rem !important
@@ -96,6 +101,9 @@
     .game-tile, .game-tile .bg-img > img {
         width: 6.5rem;
         height: 6.5rem;
+    }
+    .game-tileEvo {
+        width: 6.5rem;
     }
 
     .game-tile .btn {

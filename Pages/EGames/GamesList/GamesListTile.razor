@@ -8,54 +8,35 @@
 @using GoplayasiaBlazor.DTOs.eGames
 @using GoplayasiaSharedKernel.DTOs.eGames.Enum
 @inject IJSRuntime JSRuntime
+
 @if (Game.Provider != "Pragmatic")
 {
-    <a class="img-border card m-1 p-0 game-tilevo text-decoration-none position-relative" @onclick="OpenGameLink">
-
-        @*     <div class="loading-spinner" style="@(IsLoading ? "" : "display: none")">
-    <div class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
-    </div>
-    </div> *@
+    <a class="img-border card m-1 p-0 game-tileEvo text-decoration-none position-relative" @onclick="OpenGameLink">
         <div class="">
-      
             <div class=" p-0 bg-img">
                 <img id="cardImage" src="@Game.Filename" class="card-img-top" @onclick="ToggleActive">
             </div>
-
         </div>
         <div @ref="imageElement" id="desc" class="position-absolute bottom-0 start-0 text-light  p-2 bg-dark bg-opacity-75  w-100 ">
             <small>@Game.Description</small>
             <small>@Game.Provider</small>
         </div>
-
     </a>
 }
 
 else
 {
-    
-
-<a class="img-border card m-1 p-0 game-tile text-decoration-none position-relative" @onclick="OpenGameLink">
-
-    @*     <div class="loading-spinner" style="@(IsLoading ? "" : "display: none")">
-    <div class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
-    </div>
-    </div> *@
-    <div class="">
- 
-        <div class=" p-0 bg-img">
-            <img id="cardImage" src="@Game.Filename" class="card-img-top" @onclick="ToggleActive">
+    <a class="img-border card m-1 p-0 game-tile text-decoration-none position-relative" @onclick="OpenGameLink">
+        <div class="">
+            <div class=" p-0 bg-img">
+                <img id="cardImage" src="@Game.Filename" class="card-img-top" @onclick="ToggleActive">
+            </div>
         </div>
-
-    </div>
-    <div @ref="imageElement" id="desc" class="position-absolute bottom-0 start-0 text-light  p-2 bg-dark bg-opacity-75  w-100 ">
-        <small>@Game.Description</small>
-        <small>@Game.Provider</small>
-    </div>
-
-</a>
+        <div @ref="imageElement" id="desc" class="position-absolute bottom-0 start-0 text-light  p-2 bg-dark bg-opacity-75  w-100 ">
+            <small>@Game.Description</small>
+            <small>@Game.Provider</small>
+        </div>
+    </a>
 }
 @code {
 
