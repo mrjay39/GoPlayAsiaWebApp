@@ -221,17 +221,20 @@
 
             #region GAME PROVIDER
             public const string BigTimeGaming = "Big Time Gaming";
-            public const string Evolution = "Evolution";
+            public const string Evolution = "evolution";
             public const string NetEnt = "NetEnt";
             public const string RedTiger = "Red Tiger";
+            public const string Pragmatic = "Pragmatic";
+            public const string NoLimitCity = "Nolimit City";
+
             #endregion
 
             #region eGAMES GAMETYPE
             public const string egamesAll = "all";
-            public const string egamesLive = "Live";
-            public const string egamesRng = "Arcade";
+            public const string egamesLive = "live";
+            public const string egamesRng = "rng";
             public const string egamesSlots = "Slots";
-            public const string egamesCards = "Cards";
+            public const string egamesCasino = "Casino";
             public const string egamesFishing = "Fishing";
             #endregion
 
@@ -240,9 +243,7 @@
             public const string CasinoGameTitle = "Live Casino";
             public const string CasinoGameDescription = "Your Seat Awaits: Dive into Live Casino Bliss";
 
-            //Card
-            public const string CardGameTitle = "Card Games";
-            public const string CardGameDescription = "Bet now while the table's hot!";
+
 
             //Arcade
             public const string ArcadeGameTitle = "Arcade Games";
