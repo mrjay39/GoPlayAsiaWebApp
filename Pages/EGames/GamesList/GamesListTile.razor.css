@@ -30,7 +30,7 @@
 .game-tile .bg-img > img, .game-tile {
     border-radius: 0;
     width: 12.5rem;
-    height: 13.5rem;
+    height: 12.5rem;
 }
 
 .info {
@@ -61,7 +61,7 @@
 @media screen and (max-width: 460px) {
     .game-tile, .game-tile .bg-img > img {
         width: 6.5rem;
-        height: 7.5rem;
+        height: 6.5rem;
     }
 
     .game-tile h3 {
@@ -72,7 +72,7 @@
 @media screen and (max-width: 414px) {
     .game-tile, .game-tile .bg-img > img {
         width: 5.5rem;
-        height: 6.5rem;
+        height: 5.5rem;
     }
     .card.m-1{
         margin:.20rem !important
@@ -86,7 +86,7 @@
 @media screen and (max-width: 320px) {
     .game-tile, .game-tile .bg-img > img {
         width: 6.5rem;
-        height: 7.5rem;
+        height: 6.5rem;
     }
 
     .game-tile .btn {
