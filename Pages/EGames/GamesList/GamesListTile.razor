@@ -8,26 +8,55 @@
 @using GoplayasiaBlazor.DTOs.eGames
 @using GoplayasiaSharedKernel.DTOs.eGames.Enum
 @inject IJSRuntime JSRuntime
-<a class="img-border card m-1 p-0 game-tile text-decoration-none position-relative" @onclick="OpenGameLink">
+@if (Game.Provider != "Pragmatic")
+{
+    <a class="img-border card m-1 p-0 game-tilevo text-decoration-none position-relative" @onclick="OpenGameLink">
 
-@*     <div class="loading-spinner" style="@(IsLoading ? "" : "display: none")">
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-    </div> *@
-    <div class="">
-   
-        <div class=" p-0 bg-img">
-            <img id="cardImage" src="@Game.Filename" class="card-img-top" @onclick="ToggleActive" >
-        </div>
-
+        @*     <div class="loading-spinner" style="@(IsLoading ? "" : "display: none")">
+    <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
     </div>
+    </div> *@
+        <div class="">
+      
+            <div class=" p-0 bg-img">
+                <img id="cardImage" src="@Game.Filename" class="card-img-top" @onclick="ToggleActive">
+            </div>
+
+        </div>
         <div @ref="imageElement" id="desc" class="position-absolute bottom-0 start-0 text-light  p-2 bg-dark bg-opacity-75  w-100 ">
             <small>@Game.Description</small>
             <small>@Game.Provider</small>
         </div>
 
+    </a>
+}
+
+else
+{
+    
+
+<a class="img-border card m-1 p-0 game-tile text-decoration-none position-relative" @onclick="OpenGameLink">
+
+    @*     <div class="loading-spinner" style="@(IsLoading ? "" : "display: none")">
+    <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+    </div>
+    </div> *@
+    <div class="">
+ 
+        <div class=" p-0 bg-img">
+            <img id="cardImage" src="@Game.Filename" class="card-img-top" @onclick="ToggleActive">
+        </div>
+
+    </div>
+    <div @ref="imageElement" id="desc" class="position-absolute bottom-0 start-0 text-light  p-2 bg-dark bg-opacity-75  w-100 ">
+        <small>@Game.Description</small>
+        <small>@Game.Provider</small>
+    </div>
+
 </a>
+}
 @code {
 
     [Parameter] public string? _gameInfoHrefStr { get; set; }

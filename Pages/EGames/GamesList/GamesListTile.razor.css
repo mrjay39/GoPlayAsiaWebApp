@@ -10,6 +10,15 @@
     -webkit-box-orient: vertical;
 }
 
+.game-tilevo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12.5rem;
+  /*  height: 9.5rem;*/
+    background-color: transparent;
+}
 .game-tile {
     cursor: pointer;
     display: flex;
