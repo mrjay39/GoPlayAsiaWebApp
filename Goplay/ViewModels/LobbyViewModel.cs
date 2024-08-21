@@ -12,6 +12,7 @@ using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using System;
+using System.Globalization;
 using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoPlayAsiaWebApp.Goplay.ViewModels;
@@ -95,23 +96,23 @@ public class LobbyViewModel : BaseViewModel
                 newGameProvider.Name = provider;
                 switch (provider)
                 {
-                    case "NetEnt":
+                    case Constants.NetEnt:
                         newGameProvider.ImageUrl = "netent.png";
                         newGameProvider.SortKey = 4;
                         break;
-                    case "Red Tiger":
+                    case Constants.RedTiger:
                         newGameProvider.ImageUrl = "redTiger.png";
                         newGameProvider.SortKey = 6;
                         break;
-                    case "Big Time Gaming":
+                    case Constants.BigTimeGaming:
                         newGameProvider.ImageUrl = "bigTime.png";
                         newGameProvider.SortKey = 5;
                         break;
-                    case "Pragmatic":
+                    case Constants.Pragmatic:
                         newGameProvider.ImageUrl = "pragmatic.png";
                         newGameProvider.SortKey = 3;
                         break;
-                    case "Evolution":
+                    case Constants.Evolution:
                         newGameProvider.ImageUrl = "evolution.png";
                         newGameProvider.SortKey = 2;
                         break;

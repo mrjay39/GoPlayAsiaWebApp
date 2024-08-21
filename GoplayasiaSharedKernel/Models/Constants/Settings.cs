@@ -221,15 +221,18 @@
 
             #region GAME PROVIDER
             public const string BigTimeGaming = "Big Time Gaming";
-            public const string Evolution = "Evolution";
+            public const string Evolution = "evolution";
             public const string NetEnt = "NetEnt";
             public const string RedTiger = "Red Tiger";
+            public const string Pragmatic = "Pragmatic";
+            public const string NoLimitCity = "Nolimit City";
+
             #endregion
 
             #region eGAMES GAMETYPE
             public const string egamesAll = "all";
-            public const string egamesLive = "Live";
-            public const string egamesRng = "Arcade";
+            public const string egamesLive = "live";
+            public const string egamesRng = "rng";
             public const string egamesSlots = "Slots";
             public const string egamesCasino = "Casino";
             public const string egamesFishing = "Fishing";
