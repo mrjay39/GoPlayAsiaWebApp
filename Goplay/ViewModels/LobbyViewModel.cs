@@ -75,6 +75,7 @@ public class LobbyViewModel : BaseViewModel
             {
                 AllGameList = await _iegamesservice.ListPlayerGames(Constants.egamesAll, Constants.egamesAll);
             }
+            AllGameList.OrderBy(x => x.Provider).ThenBy(x => x.Rank);
             OriginalAllGameList = new List<eGamesListDTO>(AllGameList);
             //get all list of provders with slots
             GameProviders newGameProvider = new GameProviders();

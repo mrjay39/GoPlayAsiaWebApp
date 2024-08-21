@@ -227,7 +227,32 @@
             public const string RedTiger = "redtiger";
             public const string Pragmatic = "Pragmatic";
             public const string NoLimitCity = "nlc";
-
+            
+            public const string BigTimeGamingDisp = "Big Time Gaming";
+            public const string EvolutionDisp = "Evolution";
+            public const string NetEntDisp = "NetEnt";
+            public const string NetEntExtDisp = "NetEnt Extended";
+            public const string RedTigerDisp = "Red Tiger";
+            public const string PragmaticDisp = "Pragmatic";
+            public const string NoLimitCityDisp = "No Limit City";
+            private static readonly Dictionary<string, string> ProviderDisplayNames = new Dictionary<string, string>
+            {
+                { BigTimeGaming, BigTimeGamingDisp },
+                { Evolution, EvolutionDisp },
+                { NetEnt, NetEntDisp },
+                { NetEntExt, NetEntExtDisp },
+                { RedTiger, RedTigerDisp },
+                { Pragmatic, PragmaticDisp },
+                { NoLimitCity, NoLimitCityDisp }
+            };
+            public static string GetProviderDisplayName(string providerKey)
+            {
+                if (ProviderDisplayNames.TryGetValue(providerKey, out var displayName))
+                {
+                    return displayName;
+                }
+                return "Unknown Provider"; // Default value if the key is not found
+            }
             #endregion
 
             #region eGAMES GAMETYPE
