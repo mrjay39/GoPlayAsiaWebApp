@@ -245,6 +245,7 @@
                 { Pragmatic, PragmaticDisp },
                 { NoLimitCity, NoLimitCityDisp }
             };
+            
             public static string GetProviderDisplayName(string providerKey)
             {
                 if (ProviderDisplayNames.TryGetValue(providerKey, out var displayName))
@@ -253,6 +254,33 @@
                 }
                 return "Unknown Provider"; // Default value if the key is not found
             }
+
+            public const string EvolutionLogo      = "evolution.png";
+            public const string PragmaticLogo      = "pragmatic.png";
+            public const string NoLimitLogo        = "nolimit.png";
+            public const string BigTimeLogo        = "bigTime.png";
+            public const string NetentLogo         = "netent.png";
+            public const string NetentExtendedLogo = "netent_extended.png";
+            public const string RedTigerLogo       = "redTiger.png";
+            private static readonly Dictionary<string, string> ProvidersLogo = new Dictionary<string, string>
+            {
+                { Evolution      , EvolutionLogo },
+                { Pragmatic      , PragmaticLogo },
+                { NoLimitCity    , NoLimitLogo },
+                { BigTimeGaming  , BigTimeLogo },
+                { NetEnt         , NetentLogo },
+                { NetEntExt      , NetentExtendedLogo },
+                { RedTiger       , RedTigerLogo }
+            };
+            public static string GetProvidersLogo(string providerKey)
+            {
+                if (ProvidersLogo.TryGetValue(providerKey, out var DisplayLogo))
+                {
+                    return DisplayLogo;
+                }
+                return "Unknown Provider";
+            }
+
             #endregion
 
             #region eGAMES GAMETYPE
