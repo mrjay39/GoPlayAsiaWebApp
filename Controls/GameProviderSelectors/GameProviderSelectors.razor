@@ -17,7 +17,7 @@
         <div class="d-flex justify-content-center">
             @if(_lobbyViewModel.gameProviders != null)
             {
-                @foreach (var provider in _lobbyViewModel.gameProviders)
+                @foreach (var provider in _lobbyViewModel.gameProviders.OrderBy(x => x.SortKey))
                 {
                     <div @onclick="@(e => ToggleSelection(provider.Name))" class="link-header p-0 @GetSelectionClass(provider.Name)">
                         <div class="text-mute btn p-0">
