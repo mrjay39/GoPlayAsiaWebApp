@@ -41,8 +41,7 @@
     height: 12.5rem;
 }
     .game-tile .bg-img > img, .game-tile:hover {
-        width: 100%;
-        height: 100%;
+      
         transition: transform 0.3s ease; /* Smooth transition */
     }
 img:hover {
@@ -73,8 +72,7 @@ img:hover {
 
     .img-border img:hover {
        
-        width: 100%;
-        height: 100%;
+      
         transition: transform 0.3s ease; /* Smooth transition */
     }
 
@@ -94,7 +92,7 @@ img:hover {
 .Large {
     width: 20.5rem;
     height: 13rem;
- padding: 20px;
+
 }
 @media screen and (max-width: 400px){
 
