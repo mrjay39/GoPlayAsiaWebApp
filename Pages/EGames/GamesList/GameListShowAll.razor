@@ -17,10 +17,9 @@
                             @if (HasProviderChanged(item.Provider))
                             {
                                 <div>
-                                    <h1 class="text-light">@Constants.GetProviderDisplayName(@item.Provider)</h1>
+                                    <img src="./img/providersLogo/@Constants.GetProvidersLogo(@item.Provider)" class="img-fluid mb-1 providers-logo">
                                 </div>
                             }
-                            
                             <GamesListTile Game="item" />
                         </Virtualize>
 
@@ -114,5 +113,4 @@
 
         base.OnParametersSetAsync();
     }
-
 }

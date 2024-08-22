@@ -6,6 +6,7 @@
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Pages.Login.LogInModal
 @using GoplayasiaBlazor.DTOs.eGames
+@using GoplayasiaBlazor.Models.Constants
 @using GoplayasiaSharedKernel.DTOs.eGames.Enum
 @inject IJSRuntime JSRuntime
 
@@ -92,7 +93,7 @@ else
             var user = authenticationState.User;
             if (!user.Identity.IsAuthenticated)
             {
-                if (Game.Category == "Live")
+                if (Game.Category == Settings.Constants.egamesLive)
                 {
                     popuLoadingpModal.Show<LoginAndSignUp>("");
                     return;
@@ -128,7 +129,7 @@ else
             }
             else
             {
-                if (Game.Category == "Live")
+                if (Game.Category == Settings.Constants.egamesLive)
                 {
                     LaunchGame();
                 }
