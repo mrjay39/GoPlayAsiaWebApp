@@ -101,20 +101,24 @@
         display: inline;
     }
 
-        .link-header img {
-            min-width: 5rem;
-            height: 4rem;
-        }
+    .link-header img {
+        min-width: 5rem;
+        height: 4rem;
+    }
+    #link-header.sticky {
+        left: 295px;
+        width: 69%;
+    }
 
     #link-header, #link-header.sticky {
         height: 100px;
         top: 72px;
     }
 
-        #link-header.sticky {
-            align-items: center;
-            display: inline-flex;
-        }
+    #link-header.sticky {
+        align-items: center;
+        display: inline-flex;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -134,6 +138,10 @@
     #link-header, #link-header.sticky {
         height: 60px;
         top: 63px;
+    }
+    #link-header.sticky {
+        left: 17px;
+        width: 90%;
     }
 }
 
