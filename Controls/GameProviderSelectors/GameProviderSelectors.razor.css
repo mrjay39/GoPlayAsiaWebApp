@@ -52,6 +52,35 @@
 .text-mute {
     color: #8e8e8e;
 }
+
+
+
+.gameOverflow-x > div{
+    align-items: center;
+}
+#link-header {
+    background-image: radial-gradient(circle, rgb(20 20 20 / 75%), rgb(40 40 40 / 75%), rgba(53, 53, 53, 0.8));
+    backdrop-filter: blur(1px);
+}
+
+#link-header.sticky > .centered, #link-header {
+    justify-content: center !important;
+}
+
+#link-header {
+    transition: margin-top 0.3s ease-in-out;
+}
+
+#link-header.sticky {
+    justify-content: center!important;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-image: radial-gradient(circle, rgb(20 20 20 / 82%), rgb(40 40 40 / 67%), rgba(53, 53, 53, 0.9));
+    backdrop-filter: blur(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 @media only screen and (min-width: 992px) {
     .gameOverflow-x {
         overflow-x: inherit;
@@ -60,21 +89,36 @@
         width: 10rem;
         display: inline;
     }
-    .link-header img{
-        min-width: 150px;
+    .link-header img {
+        min-width: 5rem;
+        height: 4rem;
+    }
+    #link-header, #link-header.sticky {
+        height: 100px;
+        top: 72px;
+    }
+    #link-header.sticky{
+        align-items: center;
+        display: inline-flex;
     }
 }
 
 @media screen and (max-width: 991px) {
     .link-header {
-        width: 6rem;
-        height: 5rem;
+        width: 5.5rem;
+        height: 3.8rem;
     }
-
-
     #linkHeader.col {
         flex: 1 0 0%;
         margin: 3px;
+    }
+    /*.link-header img {
+        min-width: 5rem;
+        height: 4rem;
+    }*/
+    #link-header, #link-header.sticky {
+        height: 60px;
+        top: 65px;
     }
 }
 @media screen and (max-width: 600px) {

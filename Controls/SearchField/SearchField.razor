@@ -2,10 +2,10 @@
 @inject LobbyViewModel _lobbyviewModel
 <div class="container mb-pd-0">
     <div class="d-flex align-items-center">
-        <div class="col-md-9">
+        @* <div class="col-md-9">
             <h2 class="text-white fw-bold mt-1 text-start">@_titleStr</h2>
-            @* <h5 class="text-muted text-start">@_subTitleStr</h5> *@
-        </div>
+            <h5 class="text-muted text-start">@_subTitleStr</h5>
+        </div> *@
         <div class="col-md-3 ms-2">
             <div id="searchForm" class="d-flex align-items-center" role="search">
                 <input @bind="searchText" @oninput="HandleInput" class="form-control bg-dark text-white border-0 col-12 h-100" type="search" placeholder="Search your game" aria-label="Search">
