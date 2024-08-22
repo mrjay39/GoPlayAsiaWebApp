@@ -28,6 +28,19 @@
             <div class="d-flex justify-content-center p-0">
                 @if (GameList != null)
                 {
+                    var firstItem = _provider == "All"
+                    ? GameList.Where(a => a.Category == _filter).FirstOrDefault()
+                    : GameList.Where(a => a.Category == _filter && a.Provider == _provider).FirstOrDefault();
+
+                    if (firstItem != null)
+                    {
+                        <GamesListTile 
+                            isFirstItem="Large" 
+                            Game="firstItem" />
+                    }
+                }
+                @if (GameList != null)
+                {
                     if (_provider == "All")
                     {
 

@@ -11,10 +11,10 @@
 
 @if (Game.Provider != "Pragmatic")
 {
-    <a class="img-border card m-1 p-0 game-tileEvo text-decoration-none position-relative" @onclick="OpenGameLink">
+    <a class="img-border card m-1 p-0 game-tileEvo text-decoration-none position-relative @(@isFirstItem== "Large" ? "Large" : "")" @onclick="OpenGameLink">
         <div class="">
             <div class=" p-0 bg-img">
-                <img id="cardImage" src="@Game.Filename" class="card-img-top" @onclick="ToggleActive">
+                <img id="cardImage" src="@Game.Filename" class="card-img-top " @onclick="ToggleActive">
             </div>
         </div>
         <div @ref="imageElement" id="desc" class="position-absolute bottom-0 start-0 text-light  p-2 bg-dark bg-opacity-75  w-100 ">
@@ -29,7 +29,7 @@ else
     <a class="img-border card m-1 p-0 game-tile text-decoration-none position-relative" @onclick="OpenGameLink">
         <div class="">
             <div class=" p-0 bg-img">
-                <img id="cardImage" src="@Game.Filename" class="card-img-top" @onclick="ToggleActive">
+                <img id="cardImage" src="@Game.Filename" class="card-img-top @(@isFirstItem== "Large" ? "Large" : "")" @onclick="ToggleActive">
             </div>
         </div>
         <div @ref="imageElement" id="desc" class="position-absolute bottom-0 start-0 text-light  p-2 bg-dark bg-opacity-75  w-100 ">
@@ -39,7 +39,7 @@ else
     </a>
 }
 @code {
-
+    [Parameter] public string? isFirstItem { get; set; }
     [Parameter] public string? _gameInfoHrefStr { get; set; }
     [CascadingParameter] public IModalService popupModal { get; set; }
     [Parameter] public eGamesListDTO Game { get; set; }
