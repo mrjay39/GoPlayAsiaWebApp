@@ -74,8 +74,6 @@
 #link-header.sticky {
     justify-content: center!important;
     position: fixed;
-    left: 0;
-    width: 100%;
     z-index: 1000;
     background-image: radial-gradient(circle, rgb(20 20 20 / 82%), rgb(40 40 40 / 67%), rgba(53, 53, 53, 0.9));
     backdrop-filter: blur(1px);
@@ -86,16 +84,21 @@
         overflow-x: inherit;
     }
     .link-header {
-        width: 10rem;
+        width: 8.5rem;
         display: inline;
     }
     .link-header img {
         min-width: 5rem;
         height: 4rem;
     }
+    #link-header.sticky {
+        left: 295px;
+        width: 69%;
+    }
     #link-header, #link-header.sticky {
         height: 100px;
         top: 72px;
+        display: inline-flex;
     }
     #link-header.sticky{
         align-items: center;
@@ -119,6 +122,10 @@
     #link-header, #link-header.sticky {
         height: 60px;
         top: 63px;
+    }
+    #link-header.sticky {
+        left: 17px;
+        width: 90%;
     }
 }
 @media screen and (max-width: 600px) {
