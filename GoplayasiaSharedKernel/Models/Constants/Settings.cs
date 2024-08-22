@@ -299,8 +299,12 @@
 
             #region Game Title and Description
             //Casino
-            public const string CasinoGameTitle = "Live Casino";
+            public const string CasinoGameTitle = "Casino Games";
             public const string CasinoGameDescription = "Your Seat Awaits: Dive into Live Casino Bliss";
+            
+            //Live Games
+            public const string LiveGameTitle = "Live Games";
+            public const string LiveGameDescription = "Your Seat Awaits: Dive into Live Casino Bliss";
 
 
 

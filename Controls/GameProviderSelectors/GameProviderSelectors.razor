@@ -14,10 +14,6 @@
 
 <div class="container p-0 mt-2 text-center">
 
-    <SearchField _titleStr="Game Providers"
-                 _subTitleStr="Choose Your Preferred Game Provider"
-    />
-
     <div id="link-header" class="pb-2 gameOverflow-x">
         <div class="d-flex justify-content-center">
             @if(_lobbyViewModel.gameProviders != null)
@@ -35,8 +31,8 @@
                 }
             }
         </div>
-        <SearchField _titleStr="Game Providers" />
     </div>
+    <SearchField _titleStr="Game Providers" />
 </div>
 
 <GamesList _idStr="liveGames" _title="@Constants.CasinoGameTitle" _description="@Constants.CasinoGameDescription" _filter="@Constants.egamesLive" _provider="@activeProvider" />
@@ -65,7 +61,7 @@
 <script>
     $(document).ready(function () {
         var $linkHeader = $('#link-header');
-        var $headerContainer = $('h2.text-start');
+        var $headerContainer = $('div.base');
         var containerTop = $headerContainer.offset().top;
         var headerHeight = $linkHeader.outerHeight();
 

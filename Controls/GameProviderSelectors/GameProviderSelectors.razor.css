@@ -118,7 +118,7 @@
     }*/
     #link-header, #link-header.sticky {
         height: 60px;
-        top: 65px;
+        top: 63px;
     }
 }
 @media screen and (max-width: 600px) {
