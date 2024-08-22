@@ -9,11 +9,7 @@
 @inject LobbyViewModel _lobbyViewModel;
 
 <div class="container p-0 mt-2 text-center">
-
-    <SearchField _titleStr="Game Providers"
-                 _subTitleStr="Choose Your Preferred Game Provider" />
-
-    <div id="link-header" class="pb-2 gameOverflow-x text-start">
+    <div id="link-header" class="pb-2 gameOverflow-x">
         <div class="d-flex justify-content-center">
             @if (_lobbyViewModel.gameProviders != null)
             {
@@ -38,9 +34,9 @@
                     }
                 }
             }
-
         </div>
     </div>
+    <SearchField _titleStr="Game Providers" />
 
     <GuesBottomNavbar _hrefLiveGameStr="GameProviders/More/live/All"
                       _hrefCasinoGameStr="GameProviders/More/casino/All"
@@ -81,3 +77,27 @@
         return selected ? "selected" : "";
     }
 }
+<script>
+    $(document).ready(function () {
+        var $linkHeader = $('#link-header');
+        var $headerContainer = $('div.base');
+        var containerTop = $headerContainer.offset().top;
+        var headerHeight = $linkHeader.outerHeight();
+
+        $linkHeader.before('<div class="sticky-placeholder"></div>');
+        var $stickyPlaceholder = $('.sticky-placeholder');
+
+        $(window).on('scroll', function () {
+            var scrollTop = $(this).scrollTop();
+
+            if (scrollTop >= containerTop) {
+                $linkHeader.addClass('sticky');
+                $stickyPlaceholder.css('height', headerHeight + 'px');
+            } else {
+                $linkHeader.removeClass('sticky');
+                $stickyPlaceholder.css('height', '0');
+            }
+        });
+
+    });
+</script>
