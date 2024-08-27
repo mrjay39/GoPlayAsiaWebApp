@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Content Remove="Controls\GameIframe\PlayOffCanvas.razor" />
-    <Content Remove="Pages\EGames\CardGames\MostPLayedGameEvolution.razor" />
     <Content Remove="Pages\EGames\SlotAndProvider\AllSlotGamesList.razor" />
   </ItemGroup>
 
@@ -95,7 +94,6 @@
     <None Include="Goplay\Transactions\Withdraw\DefaultAmount.razor" />
     <None Include="Goplay\Transactions\Withdraw\Withdraw.razor" />
     <None Include="Goplay\Transactions\Withdraw\WithdrawalStatus.razor" />
-    <None Include="Pages\EGames\CardGames\Evolution\MostPLayedGameEvolution.razor" />
     <None Include="wwwroot\css\bootstrap-icons\1-circle-fill.svg" />
     <None Include="wwwroot\css\bootstrap-icons\1-circle.svg" />
     <None Include="wwwroot\css\bootstrap-icons\1-square-fill.svg" />
