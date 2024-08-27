@@ -109,7 +109,7 @@
 @media screen and (max-width: 991px) {
     .link-header {
         width: 5.5rem;
-        height: 3.5rem;
+        height: 2.5rem;
     }
     #linkHeader.col {
         flex: 1 0 0%;
