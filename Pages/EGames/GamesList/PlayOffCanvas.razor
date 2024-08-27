@@ -11,7 +11,7 @@
                     {
                         <div class="d-block text-center p-2">
                             <button class="btn live-play-btn border-0" @onclick="(() => SelectMode(GameMode.real_money.ToString()))">
-                                <img src="./img/play-btn.gif" class="img img-fluid">
+                                <img src="./img/play-btn.png" class="img img-fluid">
                             </button>
                         </div>
                     }
@@ -19,7 +19,7 @@
                         @if (Category != Settings.Constants.egamesLive)
                         {
                             <button class="btn demo-play-btn border-0 ms-2" @onclick="(() => SelectMode(GameMode.play_for_fun.ToString()))">
-                                <img src="./img/funPlay.gif" class="img img-fluid">
+                                <img src="./img/funPlay.png" class="img img-fluid">
                             </button>
                         }
                     </div>
@@ -44,13 +44,13 @@
                             {
                                 @* <button type="button" class="btnPlayForFun btn btn-warning mr-2" @onclick="(() => SelectMode(GameMode.demo.ToString()))">Play For Fun</button> *@
                                 <button class="btn demo-play-btn border-0 p-0" @onclick="(() => SelectMode(GameMode.demo.ToString()))">
-                                    <img src="./img/demo-play.gif" class="img img-fluid">
+                                    <img src="./img/demo-play.png" class="img img-fluid">
                                 </button>
                             }
                         </div>
                         <div class="col m-2">
                             <button class="btn signup-btn border-0" @onclick="SignUp">
-                                <img src="./img/sign-up.gif" class="img img-fluid">
+                                <img src="./img/sign-up.png" class="img img-fluid">
                             </button>
                         </div>
                     </div>
