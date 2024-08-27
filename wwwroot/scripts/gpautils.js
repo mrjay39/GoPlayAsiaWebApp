@@ -81,3 +81,6 @@ function addImageLoadHandler(imageId) {
         DotNet.invokeMethodAsync('GoPlayAsiaWebApp', 'OnImageLoaded');
     };
 }
+function reloadPage(imageId) {
+    window.location.reload();
+}
