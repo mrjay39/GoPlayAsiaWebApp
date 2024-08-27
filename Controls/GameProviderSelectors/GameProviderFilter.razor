@@ -7,6 +7,7 @@
 @using GoplayasiaSharedKernel.DTOs.DTOIn
 @using static GoplayasiaBlazor.Models.Constants.Settings
 @inject LobbyViewModel _lobbyViewModel;
+@inject NavigationManager _navigation
 
 <div class="container p-0 mt-2 text-center">
     <div id="link-header" class="pb-2 gameOverflow-x">
@@ -70,11 +71,31 @@
              .ForEach(x => x.Selected = true);
 
         activeProvider = provider;
+        var newUrl = ReplaceLastSegment(_navigation.Uri, activeProvider);
+        _navigation.NavigateTo(newUrl);
     }
     private string GetSelectionClass(string provider)
     {
         var selected = _lobbyViewModel.gameProviders.Where(x => x.Name == provider).Select(x => x.Selected).SingleOrDefault();
         return selected ? "selected" : "";
+    }
+    public static string ReplaceLastSegment(string url, string newSegment)
+    {
+        var uri = new Uri(url);
+        var segments = uri.AbsolutePath.Split('/');
+
+        if (segments.Length > 0)
+        {
+            segments[segments.Length - 1] = newSegment;
+            var newPath = string.Join('/', segments);
+            var newUri = new UriBuilder(uri)
+                {
+                    Path = newPath
+                };
+            return newUri.ToString();
+        }
+
+        return url;
     }
 }
 <script>
