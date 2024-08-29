@@ -1,7 +1,7 @@
 ﻿#ageAgreement {
     position: fixed;
     top: 50%;
-    left: 48%;
+    left: 50%;
     transform: translate(-50%, -50%);
     max-width: 98%;
     height: auto;
@@ -10,6 +10,7 @@
     padding: 5px;
     box-sizing: border-box; 
     display: flex;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
     z-index: 1050; 
