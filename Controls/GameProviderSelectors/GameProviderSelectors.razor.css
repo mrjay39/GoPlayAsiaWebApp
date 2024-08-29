@@ -98,7 +98,6 @@
     #link-header, #link-header.sticky {
         height: 100px;
         top: 72px;
-        display: inline-flex;
     }
     #link-header.sticky{
         align-items: center;
