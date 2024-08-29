@@ -5,23 +5,59 @@
             <img src="./img/Pagcor-21-black.png" class="img-fluid">
         </div>
         <div class="modal-body text-center text-dark">
-            <h3 class="fw-bold gpa-text">NOTICE</h3>
+            <h3 class="fw-bold gpa-text m-0">NOTICE</h3>
             <div class="d-flex justify-content-center">
                 <div class="row">
-                    <p>By entering this website, you acknowledge and confirm that:</p>
+                    <p class="p-2 m-0 text-13">
+                        <span>We encourage you to thoroughly review our</span>
+                        <a href="" class="text-decoration-none fw-bold">Responsible Gaming</a>
+                        <span>guidelines.</span>
+                    </p>
                     <div class="d-flex text-center justify-content-center">
-                        <ol class="text-14">
-                            <li class="text-start">You are 21 years of age or older.</li>
-                            <li class="text-start">
-                                You agree to our
-                                <a href="https://docs.goplayasia.com/toc.html" class="text-decoration-none">Terms of Use.</a>
+                        <ul class="text-12 p-2">
+                            <li class="text-start list-unstyled">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" @bind="IsOver21" id="age21">
+                                    <label class="form-check-label" for="age21">
+                                        <span> I am over 21 years of age.</span>
+                                    </label>
+                                </div>
                             </li>
-                        </ol>
+                            <li class="text-start list-unstyled">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" @bind="IsNotGovernmentOfficial" id="notGovernmentOfcl">
+                                    <label class="form-check-label" for="notGovernmentOfcl">
+                                        <span>
+                                            I am not a government official, nor am I an employee directly involved in the operation of any government agency or its subdivisions. Additionally, I am not a member of the Armed Forces of the Philippines, including the Army, Navy, Air Force, or the Philippine National Police.
+                                        </span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="text-start list-unstyled">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" @bind="IsNotGamingEmployment" id="gamingEmployment">
+                                    <label class="form-check-label" for="gamingEmployment">
+                                        <span> I am not a Gaming Employment License (GEL) holder.</span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="text-start list-unstyled">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" @bind="AgreedToTerms" id="termsOfUse">
+                                    <label class="form-check-label" for="termsOfUse">
+                                        <span>
+                                            You agree to our
+                                            <a href="https://docs.goplayasia.com/toc.html" class="text-decoration-none fw-bold">Terms of Use.</a>
+                                        </span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="container pt-2">
-                <button class="btn gpa-btn fw-bold" @onclick="Agree">Yes, I'm 21 or Older</button>
+                <button class="btn gpa-btn fw-bold" @onclick="Agree" disabled="@(!IsFormValid)">Proceed</button>
             </div>
         </div>
         <div class="modal-footer text-dark">
@@ -29,11 +65,19 @@
         </div>
     </div>
 </div>
-@code {
-    [Parameter] public EventCallback OnAgree { get; set; }
 
-    private void Agree()
+@code {
+    private bool IsOver21 { get; set; } = true;
+    private bool IsNotGovernmentOfficial { get; set; } = true;
+    private bool IsNotGamingEmployment { get; set; } = true;
+    private bool AgreedToTerms { get; set; } = true;
+
+    private bool IsFormValid => IsOver21 && IsNotGovernmentOfficial && IsNotGamingEmployment && AgreedToTerms;
+
+    private async Task Agree()
     {
-        OnAgree.InvokeAsync();
+        await OnAgree.InvokeAsync();
     }
+
+    [Parameter] public EventCallback OnAgree { get; set; }
 }
