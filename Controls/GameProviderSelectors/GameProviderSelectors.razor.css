@@ -92,17 +92,16 @@
         height: 4rem;
     }
     #link-header.sticky {
-        left: 295px;
-        width: 69%;
+        max-width: 95%;
     }
     #link-header, #link-header.sticky {
         height: 100px;
         top: 72px;
-        display: inline-flex;
     }
     #link-header.sticky{
         align-items: center;
-        display: inline-flex;
+        justify-content: center !important;
+        display: flex;
     }
 }
 

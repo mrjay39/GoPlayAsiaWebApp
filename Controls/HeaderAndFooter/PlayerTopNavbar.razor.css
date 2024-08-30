@@ -195,9 +195,7 @@
 * {
     box-sizing: border-box;
 }
-
 @media only screen and (max-width:1024px) {
-
     .loginAndSignUp, .userDropdown {
         margin: 10px auto 10px !important;
     }
@@ -257,7 +255,7 @@
         align-items: center;
         justify-content: center;
     }
-    #gpa-logo{
+    #gpa-logo, .desk-none {
         display: none !important;
     }
 }
