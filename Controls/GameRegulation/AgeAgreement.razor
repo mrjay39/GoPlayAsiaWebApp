@@ -6,55 +6,57 @@
                 <img src="./img/gpa-logo-2.png" class="img-fluid header-img">
             </div>
             <h3 class="fw-bold gpa-text m-0">NOTICE</h3>
-            <div class="d-flex justify-content-center">
-                <div class="row">
-                    <div class="d-flex text-center justify-content-center">
-                        <p class="p-2 m-0 text-13">
-                            <span>We encourage you to thoroughly review our</span>
-                            <a href="https://docs.goplayasia.com/responsiblegaming.html" class="text-decoration-none fw-bold" target="_blank">Responsible Gaming</a>
-                            <span>guidelines.</span>
-                        </p>
-                    </div>
-                    <div class="d-flex text-center justify-content-center">
-                        <ul class="text-12 p-2">
-                            <li class="text-start list-unstyled">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" @bind="IsOver21" id="age21">
-                                    <label class="form-check-label" for="age21">
-                                        <p> I am over 21 years of age.</p>
-                                    </label>
-                                </div>
-                            </li>
-                            <li class="text-start list-unstyled">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" @bind="IsNotGovernmentOfficial" id="notGovernmentOfcl">
-                                    <label class="form-check-label" for="notGovernmentOfcl">
-                                        <p>
-                                            I am neither a government official nor an employee directly involved in the operation of any government agency or its subdivisions. Additionally, I am not a member of the Armed Forces of the Philippines, including the Army, Navy, Air Force, or the Philippine National Police.
-                                        </p>
-                                    </label>
-                                </div>
-                            </li>
-                            <li class="text-start list-unstyled">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" @bind="IsNotGamingEmployment" id="gamingEmployment">
-                                    <label class="form-check-label" for="gamingEmployment">
-                                        <p> I am not a Gaming Employment License (GEL) holder.</p>
-                                    </label>
-                                </div>
-                            </li>
-                            <li class="text-start list-unstyled">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" @bind="AgreedToTerms" id="termsOfUse">
-                                    <label class="form-check-label" for="termsOfUse">
-                                        <p>
-                                            You agree to our
-                                            <a href="https://docs.goplayasia.com/toc.html" class="text-decoration-none fw-bold">Terms of Use.</a>
-                                        </p>
-                                    </label>
-                                </div>
-                            </li>
-                        </ul>
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <div class="row">
+                        <div class="d-flex text-center justify-content-center">
+                            <p class="p-2 m-0 text-13">
+                                <span>We encourage you to thoroughly review our</span>
+                                <a href="https://docs.goplayasia.com/responsiblegaming.html" class="text-decoration-none fw-bold" target="_blank">Responsible Gaming</a>
+                                <span>guidelines.</span>
+                            </p>
+                        </div>
+                        <div class="d-flex text-center justify-content-center">
+                            <ul class="text-12 p-2">
+                                <li class="text-start list-unstyled">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" @bind="IsOver21" id="age21">
+                                        <label class="form-check-label" for="age21">
+                                            <p> I am over 21 years of age.</p>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="text-start list-unstyled">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" @bind="IsNotGovernmentOfficial" id="notGovernmentOfcl">
+                                        <label class="form-check-label" for="notGovernmentOfcl">
+                                            <p>
+                                                I am neither a government official nor an employee directly involved in the operation of any government agency or its subdivisions. Additionally, I am not a member of the Armed Forces of the Philippines, including the Army, Navy, Air Force, or the Philippine National Police.
+                                            </p>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="text-start list-unstyled">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" @bind="IsNotGamingEmployment" id="gamingEmployment">
+                                        <label class="form-check-label" for="gamingEmployment">
+                                            <p> I am not a Gaming Employment License (GEL) holder.</p>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="text-start list-unstyled">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" @bind="AgreedToTerms" id="termsOfUse">
+                                        <label class="form-check-label" for="termsOfUse">
+                                            <p>
+                                                You agree to our
+                                                <a href="https://docs.goplayasia.com/toc.html" class="text-decoration-none fw-bold">Terms of Use.</a>
+                                            </p>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
