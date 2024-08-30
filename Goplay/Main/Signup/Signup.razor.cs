@@ -19,6 +19,13 @@ using System.Reflection;
 using System.Runtime.Intrinsics.X86;
 using static GoplayasiaBlazor.Models.Constants.Settings;
 using static System.Net.Mime.MediaTypeNames;
+using GoplayasiaSharedKernel.Models;
+using GoplayasiaCore.Core.Services;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Net.NetworkInformation;
+using GoplayasiaCore.Core.Services.Interface;
+using GoplayasiaSharedKernel.DTOs.DTOIn.Profile;
+
 
 namespace GoPlayAsiaWebApp.Goplay.Main.Signup;
 
@@ -29,6 +36,8 @@ public partial class Signup
     public string showpassConfirm = "password";
     public string showpassiconConfirm = "bi bi-eye-fill";
 
+   
+
     #region Injected Services 
     [Inject] IConstantService iConstantService { get; set; }
     [Inject] IAccountService _accountService { get; set; }
@@ -37,6 +46,7 @@ public partial class Signup
 
     [Inject] IMapper _mapper { get; set; }
     [Inject] IToastService toastService { get; set; }
+
     #endregion
 
 
@@ -65,6 +75,9 @@ public partial class Signup
 
 
     private string _termsAndConditionsUrl;
+
+    private List<GamingSitesDTO> gamingSites = new List<GamingSitesDTO>();
+
     public string TermsAndConditionsUrl
     {
         get => _termsAndConditionsUrl;
@@ -394,6 +407,9 @@ public partial class Signup
     {
         _signupViewModel._popupModal = popupModal;
         _signupViewModel.SignupDTO = new SignupDTO();
+
+        gamingSites = await iConstantService.GetGamingSitesAsync();
+
         if (!string.IsNullOrEmpty(refkey))
         {
             refIsChecked = true;

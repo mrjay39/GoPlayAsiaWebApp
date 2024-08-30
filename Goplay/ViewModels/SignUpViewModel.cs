@@ -309,7 +309,8 @@ public class SignUpViewModel
             LastName = SignupDTO.LastName,
             //DateOfBirth = SignupDTO.DateOfBirth,
             MobileNumber = SignupDTO.MobileNumber,
-            MobileNumberValidated = true
+            MobileNumberValidated = true,
+            gamingSiteId = SignupDTO.gamingSiteId,
         };
         RegisterResultDTO registerUser;
         registerUser = await _accountService.RegisterNew(_mapper.Map<SignupDTO>(UserInfo));
