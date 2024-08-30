@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components;
 using static GoplayasiaBlazor.Models.Constants.Settings;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
+using GoplayasiaSharedKernel.Models;
 
 namespace GoPlayAsiaWebApp.Goplay.Main.SignupAgent
 {

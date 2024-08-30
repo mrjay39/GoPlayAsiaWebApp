@@ -1,10 +1,5 @@
 ﻿@* @page "/signup" *@
 @* @page "/signup/{refkey}" *@
-
-@using GoplayasiaBlazor.Models
-@using GoPlayAsiaWebApp.Goplay.Shared.Popup
-
-
 <div class="tab-pane active show" id="signUpPanel" role="tabpanel" aria-labelledby="signUpTab">
 
     <!--========== START STEP 1 ==========-->
@@ -61,9 +56,14 @@
         <!--------------------START OUTLET------------------------------------->
       
         <form class="mb-3">
-            <select  style="width: 100%; padding: 10px 10px  7px 7px; border-radius: 6px" id="outlet" name="outlet" required>
-                <option style="color:lightgrey" value="" disabled selected>Nearest Goplayasia Outlet</option>
-                <option value="1">CF Mactan</option>
+            <select style="width: 100%; padding: 10px 10px  7px 7px; border-radius: 6px" id="outlet" name="outlet" required @bind="_signupViewModel.SignupDTO.gamingSiteId">
+                @* <option style="color:lightgrey" value="" disabled selected>Nearest Goplayasia Outlet</option>
+                <option value="1">CF Mactan</option> *@
+                <option value="" disabled selected>Nearest Goplayasia Outlet</option>
+                @foreach (var site in gamingSites)
+                {
+                    <option value="@site.Id">@site.GamingSiteName</option>
+                } 
             </select>
         </form>
         <!--------------------END OUTLET------------------------------------->

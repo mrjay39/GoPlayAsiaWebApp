@@ -12,6 +12,7 @@ using GoplayasiaBlazor.Dtos.DTOOut;
 using GoplayasiaBlazor.DTOs.DTOOut;
 using GoplayasiaBlazor.Models;
 using GoplayasiaBlazor.Models.Base;
+using GoplayasiaSharedKernel.Models;
 using System;
 
 namespace GoplayasiaBlazor.Core.Services
@@ -513,5 +514,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
+
+        
     }
 }
