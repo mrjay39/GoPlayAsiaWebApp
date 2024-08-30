@@ -12,7 +12,7 @@
     <div class="bg-grey">
         <div class="container">
             <div class="icon-bar " >
-                <a href="lobby" class="@(@currentRoute == "lobby"? "highlight" : "")" ><i class="bi bi-controller"></i><span>Games</span></a>
+                <a href="lobby" class="@(@currentRoute == "lobby"? "highlight" : "")" ><i class="bi bi-controller"></i><span class="">Games</span></a>
                 <a href="bethistory" class="@(@currentRoute == "bethistory"? "highlight" : "")" ><i class="bi bi-hourglass-bottom"></i><span>History</span></a>
                 @if(notificationViewModel._icurrentUser != null){
                     @if(notificationViewModel._icurrentUser.Status == 1){
