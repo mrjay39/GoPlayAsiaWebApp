@@ -80,6 +80,7 @@
 }
 ul > li {
     color: #6e6e6e;
+    text-align: justify !important;
     font-family: OpenSans, "PingFang SC", "Microsoft YaHei", D-DIN, Arial, SimHei, Helvetica, sans-serif;
 }
 ul > li label{
