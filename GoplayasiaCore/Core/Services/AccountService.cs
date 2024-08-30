@@ -46,7 +46,7 @@ namespace GoplayasiaBlazor.Core.Services
                     throw new Exception();
                 return result;
             }
-            catch
+            catch (Exception ex)
             {
                 return null;
             }

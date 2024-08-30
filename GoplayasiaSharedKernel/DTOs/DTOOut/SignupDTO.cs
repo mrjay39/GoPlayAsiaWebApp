@@ -43,7 +43,7 @@ namespace GoplayasiaBlazor.DTOs.DTOOut
         public string PermanentStreet { get; set; }
         public UploadModel ProfileImage { get; set; }
         public UploadModel GovernmentImage { get; set; }
-        public int gamingSiteId { get; set; } = 1;
+        public int? gamingSiteId { get; set; } = 1;
         public List<SurveyDTO> Survey { get; set; }
     }
     public class SurveyDTO

@@ -63,6 +63,37 @@
     <script src="scripts/gpautils.js?nc=102423"></script>
     <script src="lib/bootstrap/dist/js/popper.min.js"></script>
     <!--<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <script>
+        function checkForNewVersion() {
+            fetch('_framework/blazor.boot.json', { cache: 'no-cache' })
+                .then(response => {
+                    if (!response.ok) {
+                        console.error('Failed to fetch blazor.boot.json:', response.statusText);
+                        return Promise.reject('Failed to fetch');
+                    }
+                    return response.json();
+                })
+                .then(bootManifest => {
+                    // Use optional chaining to safely access properties
+                    const newVersion = bootManifest?.resources?.wasmNative?.['dotnet.native.wasm'] ?? 'no-version';
+
+                    if (localStorage['blazor-version'] !== newVersion) {
+                        localStorage['blazor-version'] = newVersion;
+
+                        // Force reload with a unique query string to bypass cache
+                        const currentUrl = window.location.href;
+                        const newUrl = currentUrl.split('?')[0] + '?cacheBuster=' + new Date().getTime();
+                        window.location.href = newUrl;
+                       
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking for new version:', error);
+                });
+        }
+
+        window.addEventListener('load', checkForNewVersion);
+    </script>
 </body>
 
 </html>
