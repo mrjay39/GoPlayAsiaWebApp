@@ -29,15 +29,15 @@
                         <div class="tab-content pt-4" id="tab-content">
                             @if (_currentComponent == 1)
                             {
-                                <LoginForm OnForgotPassword="setComponent" />
+                                <LoginForm OnForgotPassword="setComponent" ClosePopup="ClosePopup" />
                             }
                             @if (_currentComponent == 2)
                             {
-                                <Signup />
+                                <Signup ClosePopup="ClosePopup" />
                             }
                             @if (_currentComponent == 3)
                             {
-                                <ForgotPassword  />
+                                <ForgotPassword ClosePopup="ClosePopup" />
                             }
                             @* <SignUpForm /> *@
                         </div>
@@ -49,9 +49,14 @@
 </div>
 @code {
     public int _currentComponent { get; set; } = 1;
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
 
     public void setComponent(int comp)
     {
         _currentComponent = comp;
+    }
+    public void ClosePopup()
+    {
+        BlazoredModal.CloseAsync();
     }
 }

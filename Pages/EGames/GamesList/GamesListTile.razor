@@ -95,7 +95,7 @@ else
             {
                 if (Game.Category == Settings.Constants.egamesLive)
                 {
-                    popuLoadingpModal.Show<LoginAndSignUp>("");
+                    popuLoadingpModal.Show<LoginAndSignUp>("", new ModalParameters(), new ModalOptions() { DisableBackgroundCancel = true, HideCloseButton = true });
                     return;
                 }
 
@@ -115,7 +115,7 @@ else
                     {
                         if (result.Data == "signUp")
                         {
-                            popuLoadingpModal.Show<LoginAndSignUp>("");
+                            popuLoadingpModal.Show<LoginAndSignUp>("", new ModalParameters(), new ModalOptions() { DisableBackgroundCancel = true, HideCloseButton = true });
                         }
                         else
                         {

@@ -98,6 +98,6 @@
 
     private void loginSignup()
     {
-        var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
+        var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("", new ModalParameters(), new ModalOptions() { DisableBackgroundCancel = true, HideCloseButton = true });
     }
 }

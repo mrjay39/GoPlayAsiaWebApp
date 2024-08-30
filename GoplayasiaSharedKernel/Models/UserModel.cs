@@ -72,5 +72,6 @@ namespace GoplayasiaBlazor.Models
         public int OnHoldGameTypeId { get; set; }
         public int PopupTimer { get; set; }
         public int IdleTimer { get; set; }
+        public int gamingSiteId { get; set; }
     }
 }

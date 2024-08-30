@@ -1,5 +1,7 @@
 ﻿using GoplayasiaBlazor.Dtos.DTOIn;
 using GoplayasiaBlazor.Models;
+using GoplayasiaSharedKernel.DTOs.DTOIn.Profile;
+using GoplayasiaSharedKernel.Models;
 
 namespace GoplayasiaBlazor.Core.Services.Interface;
 public interface IConstantService
@@ -19,4 +21,6 @@ public interface IConstantService
     Task<GCashAccountDTO> GetActiveGCashAccount();
     Task<List<SurveyQuestionModel>> GetSurveyQuestions();
     Task<List<SurveyAnswerModel>> GetSurveyAnswers(int QuestionId);
+    Task<List<GamingSitesDTO>> GetGamingSitesAsync();
+
 }

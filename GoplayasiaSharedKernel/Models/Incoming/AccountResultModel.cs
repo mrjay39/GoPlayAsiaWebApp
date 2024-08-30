@@ -1,5 +1,6 @@
 ﻿using GoplayasiaBlazor.Models;
 using GoplayasiaBlazor.Models.Base;
+using GoplayasiaSharedKernel.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
