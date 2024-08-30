@@ -48,7 +48,7 @@
         var user = authenticationState.User;
         if (!user.Identity.IsAuthenticated)
         {
-            var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
+            var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("", new ModalParameters(), new ModalOptions() { DisableBackgroundCancel = true, HideCloseButton=false });
         }
         else
         {

@@ -22,6 +22,7 @@
 
         <div class="form-group">
             <button type="button" class="form-control btn btn-warning rounded submit px-3 @submitClass" disabled="@disableSubmit" @onclick="ValidateStep1">Sign Up</button>
+            <button type="button" class="form-control btn btn-warning rounded submit px-3" @onclick="CallClosePopup">Cancel</button>
         </div>
 
         <div class="container-fluid p-0">
@@ -71,7 +72,17 @@
         </div>
     </form>
 </div>
+@code{
+    [Parameter] public EventCallback ClosePopup { get; set; }
 
+    private void CallClosePopup()
+    {
+        if (ClosePopup.HasDelegate)
+        {
+            ClosePopup.InvokeAsync();
+        }
+    }
+}
 
 @* <div class="tab-pane" hidden=@step2>
     <div class="innerCon row justify-content-center w-100 m-0">
