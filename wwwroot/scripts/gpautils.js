@@ -84,3 +84,4 @@ function addImageLoadHandler(imageId) {
 function reloadPage(imageId) {
     window.location.reload();
 }
+
