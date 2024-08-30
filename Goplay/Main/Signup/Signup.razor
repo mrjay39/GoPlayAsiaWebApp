@@ -52,10 +52,10 @@
             <input type="@showpassConfirm" class="form-control form-control col-9" placeholder="Confirm Passwords" @bind-value="_signupViewModel.SignupDTO.ConfirmPassword" @oninput="onchange_ConfirmPassword">
             <span class="eye @showpassiconConfirm" @onclick="(() => ShowPassword(2))"></span>
         </div>
-        <span class="text-center label text-white" hidden="@(@_signupViewModel.errPass != "Ok"? false : true)">@_signupViewModel.errPass</span>
+        <span class="text-center label text-white" style="color: red" hidden="@(@_signupViewModel.errPass != "Ok"? false : true)">@_signupViewModel.errPass</span>
         <!--------------------START OUTLET------------------------------------->
       
-        <form class="mb-3">
+        <div class="mb-3">
             <select style="width: 100%; padding: 10px 10px  7px 7px; border-radius: 6px" id="outlet" name="outlet" required @bind="_signupViewModel.SignupDTO.gamingSiteId">
                 @* <option style="color:lightgrey" value="" disabled selected>Nearest Goplayasia Outlet</option>
                 <option value="1">CF Mactan</option> *@
@@ -65,7 +65,7 @@
                     <option value="@site.Id">@site.GamingSiteName</option>
                 } 
             </select>
-        </form>
+        </div>
         <!--------------------END OUTLET------------------------------------->
         <div class="form-group">
             <button type="button" class="form-control btn btn-warning rounded submit px-3 @submitClass" disabled="@disbaleLogin" @onclick="Register">Sign Up</button>
