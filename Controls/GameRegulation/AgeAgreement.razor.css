@@ -32,11 +32,19 @@
     border-radius: 50%;
     height: 150px;
 }
-.text-13{
+.header-img{
+    width:150px;
+    margin-bottom: 25px;
+}
+.footer-img {
+    width: 250px;
+    text-align: center;
+}
+.text-13 {
     font-size: 13px;
 }
 .text-12{
-    font-size: 12px;
+    font-size: 13px;
 }
 .gpa-text {
     color: #6e182c;
@@ -71,7 +79,8 @@
     border-bottom: 4px solid #6e182c;
 }
 ul > li {
-    text-align: justify !important;
+    color: #282828;
+    font-family: OpenSans, "PingFang SC", "Microsoft YaHei", D-DIN, Arial, SimHei, Helvetica, sans-serif;
 }
 ul > li label{
     cursor: pointer;

@@ -1,16 +1,9 @@
 ﻿<div id="ageAgreementOverlay" class="overlay"></div>
 <div id="ageAgreement" class="modal-dialog modal show modal-dialog-centered fixed-centered" data-keyboard="false" data-backdrop="static">
     <div class="modal-content modal-bg border-bottom-4 position-relative">
-        <div class="header p-2 text-end position-absolute float-right" id="ageConfirmModalLabel" style="right: 0; z-index: 10;">
-            <button type="button" class="border-0 bg-transparent" aria-label="Close" @onclick="Close">
-                <span aria-hidden="true" class="text-muted">
-                    <i class="fa-solid fa-square-xmark"></i>
-                </span>
-            </button>
-        </div>
         <div class="modal-body text-center text-dark">
             <div class="col text-center">
-                <img src="./img/gpa-logo-2.png" class="img-fluid">
+                <img src="./img/gpa-logo-2.png" class="img-fluid header-img">
             </div>
             <h3 class="fw-bold gpa-text m-0">NOTICE</h3>
             <div class="d-flex justify-content-center">
@@ -67,10 +60,10 @@
                 <button class="btn gpa-btn fw-bold" @onclick="Agree" disabled="@(!IsFormValid)">Proceed</button>
             </div>
         </div>
-        <div class="modal-footer text-dark">
+        <div class="modal-footer text-dark justify-content-center">
             <div class="d-flex justify-content-center">
                 <div class="col text-center">
-                    <img src="./img/Pagcor-21-black.png" class="img-fluid">
+                    <img src="./img/Pagcor-21-black.png" class="img-fluid footer-img">
                 </div>
             </div>
             <p style="text-align: center;">GoPlayAsia Remote Gaming Site is approved and regulated by PAGCOR.</p>
@@ -91,12 +84,4 @@
         await OnAgree.InvokeAsync();
     }
     [Parameter] public EventCallback OnAgree { get; set; }
-
-
-    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
-
-    [Parameter] public string? Message { get; set; }
-
-    private async Task Close() => await BlazoredModal.CloseAsync(ModalResult.Ok(true));
-    private async Task Cancel() => await BlazoredModal.CancelAsync();
 }
