@@ -1,5 +1,12 @@
 ﻿@* @page "/signup" *@
 @* @page "/signup/{refkey}" *@
+<div class="header p-2 text-end position-absolute float-right" id="ageConfirmModalLabel" style="right: -3px;top: 0; z-index: 10;">
+    <button type="button" class="border-0 bg-transparent" aria-label="Close" @onclick="CallClosePopup">
+        <span aria-hidden="true" class="text-white h3">
+            <i class="fa-solid fa-square-xmark"></i>
+        </span>
+    </button>
+</div>
 <div class="tab-pane active show" id="signUpPanel" role="tabpanel" aria-labelledby="signUpTab">
 
     <!--========== START STEP 1 ==========-->
@@ -17,7 +24,6 @@
 
         <div class="form-group">
             <button type="button" class="form-control btn btn-warning rounded submit px-3 @submitClass" disabled="@disableSubmit" @onclick="ValidateStep1">Sign Up</button>
-            <button type="button" class="form-control btn btn-warning rounded submit px-3" @onclick="CallClosePopup">Cancel</button>
         </div>
 
         <div class="container-fluid p-0">
