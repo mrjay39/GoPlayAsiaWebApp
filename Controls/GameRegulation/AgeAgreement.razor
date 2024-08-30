@@ -1,10 +1,17 @@
 ﻿<div id="ageAgreementOverlay" class="overlay"></div>
 <div id="ageAgreement" class="modal-dialog modal show modal-dialog-centered fixed-centered" data-keyboard="false" data-backdrop="static">
-    <div class="modal-content modal-bg border-bottom-4">
-        <div class="modal-header p-2" id="ageConfirmModalLabel">
-            <img src="./img/Pagcor-21-black.png" class="img-fluid">
+    <div class="modal-content modal-bg border-bottom-4 position-relative">
+        <div class="header p-2 text-end position-absolute float-right" id="ageConfirmModalLabel" style="right: 0; z-index: 10;">
+            <button type="button" class="border-0 bg-transparent" aria-label="Close" @onclick="Close">
+                <span aria-hidden="true" class="text-muted">
+                    <i class="fa-solid fa-square-xmark"></i>
+                </span>
+            </button>
         </div>
         <div class="modal-body text-center text-dark">
+            <div class="col text-center">
+                <img src="./img/gpa-logo-2.png" class="img-fluid">
+            </div>
             <h3 class="fw-bold gpa-text m-0">NOTICE</h3>
             <div class="d-flex justify-content-center">
                 <div class="row">
@@ -28,7 +35,7 @@
                                     <input class="form-check-input" type="checkbox" @bind="IsNotGovernmentOfficial" id="notGovernmentOfcl">
                                     <label class="form-check-label" for="notGovernmentOfcl">
                                         <span>
-                                            I am not a government official, nor am I an employee directly involved in the operation of any government agency or its subdivisions. Additionally, I am not a member of the Armed Forces of the Philippines, including the Army, Navy, Air Force, or the Philippine National Police.
+                                            I am neither a government official nor an employee directly involved in the operation of any government agency or its subdivisions. Additionally, I am not a member of the Armed Forces of the Philippines, including the Army, Navy, Air Force, or the Philippine National Police.
                                         </span>
                                     </label>
                                 </div>
@@ -61,6 +68,11 @@
             </div>
         </div>
         <div class="modal-footer text-dark">
+            <div class="d-flex justify-content-center">
+                <div class="col text-center">
+                    <img src="./img/Pagcor-21-black.png" class="img-fluid">
+                </div>
+            </div>
             <p style="text-align: center;">GoPlayAsia Remote Gaming Site is approved and regulated by PAGCOR.</p>
         </div>
     </div>
@@ -78,6 +90,13 @@
     {
         await OnAgree.InvokeAsync();
     }
-
     [Parameter] public EventCallback OnAgree { get; set; }
+
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    [Parameter] public string? Message { get; set; }
+
+    private async Task Close() => await BlazoredModal.CloseAsync(ModalResult.Ok(true));
+    private async Task Cancel() => await BlazoredModal.CancelAsync();
 }
