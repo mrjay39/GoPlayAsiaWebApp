@@ -228,6 +228,7 @@
             public const string Pragmatic = "Pragmatic";
             public const string NoLimitCity = "nlc";
             public const string Jili = "jili";
+            public const string GoPlayAsia = "goplayasia";
             
             public const string BigTimeGamingDisp = "Big Time Gaming";
             public const string EvolutionDisp = "Evolution";
@@ -237,6 +238,7 @@
             public const string PragmaticDisp = "Pragmatic";
             public const string NoLimitCityDisp = "No Limit City";
             public const string JiliDisp = "Jili";
+            public const string GoPlayAsiaDisp = "GoPlayAsia";
             private static readonly Dictionary<string, string> ProviderDisplayNames = new Dictionary<string, string>
             {
                 { BigTimeGaming, BigTimeGamingDisp },
@@ -246,6 +248,7 @@
                 { RedTiger, RedTigerDisp },
                 { Pragmatic, PragmaticDisp },
                 { NoLimitCity, NoLimitCityDisp },
+                { GoPlayAsia, GoPlayAsiaDisp },
                 { Jili, JiliDisp }
             };
             
@@ -265,7 +268,8 @@
             public const string NetentLogo         = "netent.png";
             public const string NetentExtendedLogo = "netent_extended.png";
             public const string RedTigerLogo       = "redTiger.png";
-            public const string JiliLogo       = "jili.png";
+            public const string JiliLogo           = "jili.png";
+            public const string GoPlayAsiaLogo     = "goPlay.png";
             private static readonly Dictionary<string, string> ProvidersLogo = new Dictionary<string, string>
             {
                 { Evolution      , EvolutionLogo },
@@ -275,7 +279,8 @@
                 { NetEnt         , NetentLogo },
                 { NetEntExt      , NetentExtendedLogo },
                 { RedTiger       , RedTigerLogo },
-                { Jili       , JiliLogo }
+                { GoPlayAsia     , GoPlayAsiaLogo },
+                { Jili           , JiliLogo }
             };
             public static string GetProvidersLogo(string providerKey)
             {

@@ -97,38 +97,41 @@ public class LobbyViewModel : BaseViewModel
                 newGameProvider.Name = provider;
                 switch (provider)
                 {
-                    
+                    case Constants.GoPlayAsia:
+                        newGameProvider.ImageUrl = "goPlay.png";
+                        newGameProvider.SortKey = 1;
+                        break;
                     case Constants.Jili:
                         newGameProvider.ImageUrl = "jili.png";
-                        newGameProvider.SortKey = 1;
+                        newGameProvider.SortKey = 2;
                         break;
                     case Constants.RedTiger:
                         newGameProvider.ImageUrl = "redTiger.png";
-                        newGameProvider.SortKey = 6;
+                        newGameProvider.SortKey = 7;
                         break;
                     case Constants.BigTimeGaming:
                         newGameProvider.ImageUrl = "bigTime.png";
-                        newGameProvider.SortKey = 5;
+                        newGameProvider.SortKey = 6;
                         break;
                     case Constants.NetEntExt:
                         newGameProvider.ImageUrl = "netent_extended.png";
-                        newGameProvider.SortKey = 8;
+                        newGameProvider.SortKey = 9;
                         break;
                     case Constants.NetEnt:
                         newGameProvider.ImageUrl = "netent.png";
-                        newGameProvider.SortKey = 7;
+                        newGameProvider.SortKey = 8;
                         break;
                     case Constants.Pragmatic:
                         newGameProvider.ImageUrl = "pragmatic.png";
-                        newGameProvider.SortKey = 2;
+                        newGameProvider.SortKey = 3;
                         break;
                     case Constants.Evolution:
                         newGameProvider.ImageUrl = "evolution.png";
-                        newGameProvider.SortKey = 3;
+                        newGameProvider.SortKey = 4;
                         break;
                     case Constants.NoLimitCity:
                         newGameProvider.ImageUrl = "nolimit.png";
-                        newGameProvider.SortKey = 4;
+                        newGameProvider.SortKey = 5;
                         break;
                 }
                 newGameProvider.LiveCount = AllGameList.Count(x => x.Category == Constants.egamesLive && x.Provider == provider);
