@@ -10,7 +10,7 @@
                         <img src="./img/login-img.png" class="img-fluid login-img">
                     </div>
                     <div class="col p-2">
-                        <ul class="nav nav-tabs justify-content-center pt-3" role="tablist">
+                        <ul class="nav nav-tabs justify-content-start pt-3" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link active" id="loginTab" data-bs-toggle="tab" href="#loginPanel" role="tab" aria-controls="loginPanel" aria-selected="true" @onclick:preventDefault @onclick='(() => setComponent(1))'>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
@@ -29,15 +29,15 @@
                         <div class="tab-content pt-4" id="tab-content">
                             @if (_currentComponent == 1)
                             {
-                                <LoginForm OnForgotPassword="setComponent" />
+                                <LoginForm OnForgotPassword="setComponent" ClosePopup="ClosePopup" />
                             }
                             @if (_currentComponent == 2)
                             {
-                                <Signup />
+                                <Signup ClosePopup="ClosePopup" />
                             }
                             @if (_currentComponent == 3)
                             {
-                                <ForgotPassword  />
+                                <ForgotPassword ClosePopup="ClosePopup" />
                             }
                             @* <SignUpForm /> *@
                         </div>
@@ -49,9 +49,14 @@
 </div>
 @code {
     public int _currentComponent { get; set; } = 1;
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
 
     public void setComponent(int comp)
     {
         _currentComponent = comp;
+    }
+    public void ClosePopup()
+    {
+        BlazoredModal.CloseAsync();
     }
 }

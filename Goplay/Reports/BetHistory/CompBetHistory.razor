@@ -1,56 +1,75 @@
 @using static GoplayasiaBlazor.Models.Constants.Settings
 <table class="maincontainer d-block rounded-3 mt-3">
-    
+    <div class="btn-group px-2 d-flex justify-content-center" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-warning text-dark " for="btnradio1">
+            <div style="font-size: 12px">Specialty</div>
+            <div style="font-size: 12px; line-height: .7;">Game</div>
+        </label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-outline-warning text-dark" for="btnradio2">Live</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label class="btn btn-outline-warning text-dark" for="btnradio3">Slots</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+        <label class="btn btn-outline-warning text-dark" for="btnradio4">Casino</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+        <label class="btn btn-outline-warning text-dark" for="btnradio5">Arcade</label>
+    </div>
     <tbody class="tableCon container bg-white rounded-3 pt-2" style="padding-bottom: 30px;">
-        <thead class="row p-0 justify-content-center">
-            <tr class="d-flex headerContainer">
+    <thead class="row p-0 justify-content-center">
+        <tr class="d-flex headerContainer" style="font-size: 13px">
             <th class="status col text-center">BET</th>
-            <th class="status col text-center">GAME RESULT</th>
-            <th class="winStatusContainer col text-center">WIN/LOSS</th>
-            </tr>
-        </thead>
+            <th class="status col text-center text-center"> GAME RESULT</th>
+            <th class="winStatusContainer col text-center">WIN</th>
+            <th class="winStatusContainer col text-center">PROFIT/LOSS</th>
+        </tr>
+    </thead>
         @if (_compBetHistoryViewModel.GameRounds != null)
         {
-            <Virtualize Items="_compBetHistoryViewModel.GameRounds" Context="_gameround">
+        <Virtualize Items="_compBetHistoryViewModel.GameRounds" Context="_gameround">
                 @*@foreach (var _gameround in _compBetHistoryViewModel.GameRounds)
-            {*@
-                <tr class="beHistoryBg row text-center mt-1 text-dark mr-0">
-                    <td class="col m-0 p-0">
-                        <div>@_gameround.GameTypeName</div>
-                        <div>@_gameround.DateCreatedString</div>
-                        <div>@_gameround.DateCreatedTime</div>
-                        <div>@_gameround.GameRound</div>
-                        <div>@_gameround.BetValue</div>
-                        <div>@_gameround.BetAmount</div>
-                    </td>
-                    <td class="col align-items-center justify-content-center d-flex">@_gameround.GameResult</td>
+        {*@
+            <tr class="beHistoryBg row text-center mt-1 text-dark mr-0">
+                <td class="col m-0 p-0">
+                    <div>@_gameround.GameTypeName</div>
+                    <div>@_gameround.DateCreatedString</div>
+                    <div>@_gameround.DateCreatedTime</div>
+                    <div>@_gameround.GameRound</div>
+                    <div>@_gameround.BetValue</div>
+                    <div>@_gameround.BetAmount</div>
+                </td>
+                <td class="col align-items-center justify-content-center d-flex">@_gameround.GameResult</td>
                     @if (_gameround.Won)
                     {
-                    <td class="WinStatus col align-items-center justify-content-center d-flex">@(Decimal.Parse(_gameround.WonAmount).ToString("N2"))</td >
+                    <td class="WinStatus col align-items-center justify-content-center d-flex">@(Decimal.Parse(_gameround.WonAmount).ToString("N2"))</td>
                     }
                     else if (_gameround.Lost)
                     {
-                        <td class="LossStatus col align-items-center justify-content-center d-flex">@(Decimal.Parse(_gameround.LostAmount).ToString("N2"))</td>
+                    <td class="LossStatus col align-items-center justify-content-center d-flex">@(Decimal.Parse(_gameround.LostAmount).ToString("N2"))</td>
                     }
                     else if (_gameround.ConsoledAmount != "")
                     {
-                        <td class="ConsoStatus col align-items-center justify-content-center d-flex">@(Decimal.Parse(_gameround.ConsoledAmount).ToString("N2")) </td>
+                    <td class="ConsoStatus col align-items-center justify-content-center d-flex">@(Decimal.Parse(_gameround.ConsoledAmount).ToString("N2")) </td>
                     }
                     else if (_gameround.RoundStatus == (int)RoundStatus.PendingResult || _gameround.RoundStatus == (int)RoundStatus.Open)
                     {
-                        <td class="ConsoStatus col align-items-center justify-content-center d-flex">@Constants.PendingBets </td>
+                    <td class="ConsoStatus col align-items-center justify-content-center d-flex">@Constants.PendingBets </td>
                     }
                     else if (_gameround.Cancelled || (!_gameround.Won && !_gameround.Lost && !_gameround.Cancelled))
                     {
-                        <td class="col align-items-center justify-content-center d-flex">@Constants.BetReturned</td>
+                    <td class="col align-items-center justify-content-center d-flex">@Constants.BetReturned</td>
                     }
-                </tr>
+            </tr>
                 @*}*@
-            </Virtualize>
+        </Virtualize>
         }
         else
         {
-            <span>Loading </span>
+        <span>Loading </span>
         }
     </tbody>
 </table>

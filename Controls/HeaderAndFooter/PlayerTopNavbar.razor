@@ -11,19 +11,25 @@
 
 <nav id="fixed-top" class="navbar top-navbar navbar-expand-lg fixed-top navbar-dark bg-black">
     <div class="container no-padding">
-        <div class="row d-flex align-items-center">
-            <button id="gpa-toggler" class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a id="gpa-logo" href="home" class="navbar-brand p-1 gpa-navbar-brand d-flex align-items-center text-dark text-decoration-none home">
-                <img src="./img/gpa-logo.png" class="img-fluid logo" alt="GoPlayAsia">
-            </a>
-            <a id="user-image" class="bg-transparent" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
-                <span class="d-flex align-items-center text-white fw-bold player-chips btn"><i class="fa-solid gpa-token"></i> @iCurrentUser.CreditsDisp</span>
-                <div class="d-flex align-items-center">
-                    <img class="img-fluid img p-0 ms-1" src="./img/user-icon.png" /> <i class="fa-solid fa-angle-down"></i> &nbsp;
-                </div>
-            </a>
+        <div class="d-flex align-items-center w-100 justify-content-center desk-none" style="height: 50px;">
+            <div class="col-md-2 p-0 text-start">
+                <button id="gpa-toggler" class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="col-md-3 p-0 text-center">
+                <a id="gpa-logo" href="home" class="navbar-brand gpa-navbar-brand d-flex align-items-center text-dark text-decoration-none home">
+                    <img src="./img/gpa-logo.png" class="logo" alt="GoPlayAsia">
+                </a>
+            </div>
+            <div class="col-md-4 p-0 text-end">
+                <a id="user-image" class="bg-transparent" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
+                    <span class="d-flex align-items-center text-white fw-bold player-chips"><i class="fa-solid gpa-token"></i> @iCurrentUser.CreditsDisp</span>
+                    <div class="d-flex align-items-center">
+                        <img class="img-fluid img p-0 ms-1 img-userIcon" src="./img/user-icon.png" /> <i class="fa-solid fa-angle-down"></i> &nbsp;
+                    </div>
+                </a>
+            </div>
         </div>
         @* <a class="text-center btn" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
         <img class="img-fluid img w-25 px-2 me-2" src="./img/user-icon.png" />
@@ -65,7 +71,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link px-2 link-dark bg-black dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid gpa-icon"></i> GOPLAYASIA
+                        <i class="fa-solid gpa-icon"></i> Specialty Games
                     </a>
                     <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item link-light bg-black" href="/Lucky9Table">Lucky 9</a></li>
@@ -82,10 +88,10 @@
                         <i class="fa-solid featured-icon"></i> FEATURED GAMES
                     </a>
                     <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item link-light bg-black" href="arcadeGames">Arcade</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="cardGames">Cards</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="fishingAndArcadeGames">Fishing</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="slotGames">Slots</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="GameProviders/More/live/All">Live</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="GameProviders/More/slots/All">Slots</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="GameProviders/More/casino/All">Casino</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="GameProviders/More/rng/All">Arcade</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown userDropdown">

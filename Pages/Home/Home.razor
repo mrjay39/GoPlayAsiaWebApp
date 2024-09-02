@@ -8,12 +8,7 @@
 @using GoPlayAsiaWebApp.Controls.HomeGames
 @using GoPlayAsiaWebApp.Controls.Carousel
 @using GoPlayAsiaWebApp.Goplay.ViewModels
-@using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
-@using GoPlayAsiaWebApp.Pages.EGames.CardGames
 @using GoPlayAsiaWebApp.Pages.EGames.GamesList
-@using GoPlayAsiaWebApp.Pages.EGames.FishingGames
-@using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
-@using GoPlayAsiaWebApp.Pages.EGames.SlotGames
 @using GoPlayAsiaWebApp.Pages.GPAGames.WelcomGPA
 @inject LobbyViewModel lobbyViewModel
 @implements IDisposable;
@@ -43,10 +38,10 @@
         </NotAuthorized>
     </AuthorizeView>
 
-    <GuesBottomNavbar _hrefLiveGameStr="GameProviders/More/Live/All"
-                      _hrefArcadeGameStr="GameProviders/More/Arcade/All"
-                      _hrefSlotGameStr="GameProviders/More/Slots/All"
-                      _hrefCasinoGameStr="GameProviders/More/Casino/All" />
+    <GuesBottomNavbar _hrefLiveGameStr="GameProviders/More/live/All"
+                      _hrefArcadeGameStr="GameProviders/More/rng/All"
+                      _hrefSlotGameStr="GameProviders/More/slots/All"
+                      _hrefCasinoGameStr="GameProviders/More/casino/All" />
 </div>
 
 @code {
@@ -61,22 +56,18 @@
 
     protected override async Task OnInitializedAsync()
     {
-
         lobbyViewModel.Notify += OnNotify;
-        var agreedItem = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "agreedToTerms");
+        var agreedItem = await JSRuntime.InvokeAsync<string>("sessionStorage.getItem", "agreedToTerms");
         bool agreed = !string.IsNullOrEmpty(agreedItem) && bool.Parse(agreedItem);
         if (agreed)
         {
             showAgeAgreement = false;
         }
-
-
-
     }
 
     private async Task HandleAgeAgreement()
     {
-        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "agreedToTerms", true);
+        await JSRuntime.InvokeVoidAsync("sessionStorage.setItem", "agreedToTerms", true);
         showAgeAgreement = false;
         StateHasChanged();
     }

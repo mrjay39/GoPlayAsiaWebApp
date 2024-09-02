@@ -121,6 +121,9 @@
 .img-logo {
     width: 55px;
 }
+.img-userIcon{
+    width: 22px;
+}
 #user-image{
     display: none;
 }
@@ -192,9 +195,7 @@
 * {
     box-sizing: border-box;
 }
-
 @media only screen and (max-width:1024px) {
-
     .loginAndSignUp, .userDropdown {
         margin: 10px auto 10px !important;
     }
@@ -254,7 +255,7 @@
         align-items: center;
         justify-content: center;
     }
-    #gpa-logo{
+    #gpa-logo, .desk-none {
         display: none !important;
     }
 }
@@ -275,30 +276,27 @@
     /*Start: Toggler header*/
     #gpa-toggler {
         padding: 0;
-        left: 0;
-        width: 4.5rem;
         height: 1.5rem;
+        position: inherit;
     }
 
     #gpa-logo > .logo {
         max-height: 25px;
+        width: 125px;
     }
 
     #gpa-logo {
-        margin-left: 3rem;
         z-index: 2;
         position: relative;
         justify-content: center;
+        padding-right: 0;
     }
     #d-gpa-logo{
         display: none !important;
     }
 
     #user-image {
-        position: absolute;
         display: inline-flex;
-        width: 59px;
-        right: 160px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
@@ -326,27 +324,24 @@
     /*Start: Toggler header*/
     #gpa-toggler {
         padding: 0;
-        left: 0;
-        width: 4.5rem;
         height: 1.5rem;
+        position: inherit;
     }
 
     #gpa-logo > .logo {
         max-height: 25px;
+        width: 125px;
     }
 
     #gpa-logo {
-        margin-left: 3rem;
         z-index: 2;
         position: relative;
         justify-content: center;
+        padding-right: 0;
     }
 
     #user-image {
-        position: absolute;
         display: inline-flex;
-        width: 59px;
-        right: 150px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
@@ -374,27 +369,24 @@
     /*Start: Toggler header*/
     #gpa-toggler {
         padding: 0;
-        left: 0;
-        width: 4.5rem;
         height: 1.5rem;
+        position: inherit;
     }
 
     #gpa-logo > .logo {
         max-height: 25px;
+        width: 125px;
     }
 
     #gpa-logo {
-        margin-left: 3rem;
         z-index: 2;
         position: relative;
         justify-content: center;
+        padding-right: 0;
     }
 
     #user-image {
-        position: absolute;
         display: inline-flex;
-        width: 59px;
-        right: 150px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
@@ -422,9 +414,8 @@
     /*Start: Toggler header*/
     #gpa-toggler {
         padding: 0;
-        left: 0;
-        width: 4.5rem;
         height: 1.5rem;
+        position: inherit;
     }
 
     #gpa-logo > .logo {
@@ -432,17 +423,14 @@
     }
 
     #gpa-logo {
-        margin-left: 3rem;
         z-index: 2;
         position: relative;
         justify-content: center;
+        padding-right: 0;
     }
 
     #user-image {
-        position: absolute;
         display: inline-flex;
-        width: 59px;
-        right: 150px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
@@ -524,27 +512,24 @@
     /* Start: Toggler header */
     #gpa-toggler {
         padding: 0;
-        left: 0;
-        width: 0.5rem;
         height: 0.5rem;
+        position: inherit;
     }
 
     #gpa-logo > .logo {
         max-height: 25px;
+        width: 115px;
     }
 
     #gpa-logo {
-        margin-left: 1.5rem;
         z-index: 2;
         position: relative;
         justify-content: center;
+        padding-right: 0;
     }
 
     #user-image {
-        position: absolute;
         display: inline-flex;
-        width: 59px;
-        right: 140px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;
@@ -627,27 +612,24 @@
     /*Start: Toggler header*/
     #gpa-toggler {
         padding: 0;
-        left: 0;
-        width: 0.5rem;
         height: 0.5rem;
+        position: inherit;
     }
 
     #gpa-logo > .logo {
         max-height: 20px;
+        width: 80px;
     }
 
     #gpa-logo {
-        margin-left: 1.5rem;
         z-index: 2;
         position: relative;
         justify-content: center;
+        padding-right: 0;
     }
 
     #user-image {
-        position: absolute;
         display: inline-flex;
-        width: 59px;
-        right: 140px;
         z-index: 3;
         align-items: center;
         color: #9f9e9e;

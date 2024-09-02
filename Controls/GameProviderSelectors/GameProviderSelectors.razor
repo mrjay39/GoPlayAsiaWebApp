@@ -1,10 +1,4 @@
 ﻿@using GoPlayAsiaWebApp.Goplay.ViewModels
-@using GoPlayAsiaWebApp.Pages.EGames.ArcadeGames
-@using GoPlayAsiaWebApp.Pages.EGames.CardGames
-@using GoPlayAsiaWebApp.Pages.EGames.FishingGames
-@using GoPlayAsiaWebApp.Pages.EGames.LiveCasino
-@using GoPlayAsiaWebApp.Pages.EGames.SlotGames
-
 @using GoPlayAsiaWebApp.Controls.SearchField
 @using GoPlayAsiaWebApp.Pages.EGames.GamesList
 @using GoplayasiaBlazor.DTOs.eGames
@@ -13,21 +7,16 @@
 @inject LobbyViewModel _lobbyViewModel;
 
 <div class="container p-0 mt-2 text-center">
-
-    <SearchField _titleStr="Game Providers"
-                 _subTitleStr="Choose Your Preferred Game Provider"
-    />
-
-    <div id="link-header" class="pb-2 gameOverflow-x text-start">
-        <div class="d-flex justify-content-center">
-            @if(_lobbyViewModel.gameProviders != null)
+    <div id="link-header" class="pb-2 gameOverflow-x">
+        <div class="d-flex justify-content-center h-100">
+            @if (_lobbyViewModel.gameProviders != null)
             {
-                @foreach (var provider in _lobbyViewModel.gameProviders)
+                @foreach (var provider in _lobbyViewModel.gameProviders.OrderBy(x => x.SortKey))
                 {
                     <div @onclick="@(e => ToggleSelection(provider.Name))" class="link-header p-0 @GetSelectionClass(provider.Name)">
                         <div class="text-mute btn p-0">
                             <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
-                                <img src="./img/providersLogo/@provider.ImageUrl" class="img-fluid mb-1" style="">
+                                <img src="./img/providersLogo/@provider.ImageUrl" class="img-fluid" style="">
                                 @* <h6 class="text-uppercase fw-bold mb-0">@provider.Name</h6> *@
                             </div>
                         </div>
@@ -36,12 +25,14 @@
             }
         </div>
     </div>
+    <SearchField _titleStr="Game Providers" />
 </div>
 
-<GamesList _idStr="liveGames" _title="@Constants.CasinoGameTitle" _description="@Constants.CasinoGameDescription" _filter="@Constants.egamesLive" _provider="@activeProvider" />
+<GamesList _idStr="liveGames" _title="@Constants.LiveGameTitle" _description="@Constants.LiveGameDescription" _filter="@Constants.egamesLive" _provider="@activeProvider" />
 <GamesList _idStr="slotGames" _title="@Constants.SlotsGameTitle" _description="@Constants.SlotsGameDescription" _filter="@Constants.egamesSlots" _provider="@activeProvider" />
+<GamesList _idStr="casinoGames" _title="@Constants.CasinoGameTitle" _description="@Constants.CasinoGameDescription" _filter="@Constants.egamesCasino" _provider="@activeProvider" />
 <GamesList _idStr="arcadeGames" _title="@Constants.ArcadeGameTitle" _description="@Constants.ArcadeDescription" _filter="@Constants.egamesRng" _provider="@activeProvider" />
-<GamesList _idStr="cardGames" _title="@Constants.CardGameTitle" _description="@Constants.CardGameDescription" _filter="@Constants.egamesCards" _provider="@activeProvider" />
+
 @code {
     private string activeProvider = "All";
     private void ToggleSelection(string provider)
@@ -59,3 +50,28 @@
         return selected ? "selected" : "";
     }
 }
+
+<script>
+    $(document).ready(function () {
+        var $linkHeader = $('#link-header');
+        var $headerContainer = $('div.base');
+        var containerTop = $headerContainer.offset().top;
+        var headerHeight = $linkHeader.outerHeight();
+
+        $linkHeader.before('<div class="sticky-placeholder"></div>');
+        var $stickyPlaceholder = $('.sticky-placeholder');
+
+        $(window).on('scroll', function () {
+            var scrollTop = $(this).scrollTop();
+
+            if (scrollTop >= containerTop) {
+                $linkHeader.addClass('sticky');
+                $stickyPlaceholder.css('height', headerHeight + 'px');
+            } else {
+                $linkHeader.removeClass('sticky');
+                $stickyPlaceholder.css('height', '0');
+            }
+        });
+
+    });
+</script>

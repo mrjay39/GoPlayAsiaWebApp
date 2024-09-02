@@ -6,15 +6,15 @@
                 <i class="fa-solid home-btm-icon"></i>
             </div>
             <div class="menuText">
-                <span class="text-uppercase small">Home</span>
+                <span class="text-uppercase small text-light">Home</span>
             </div>
         </NavLink>
-        <NavLink id ="liveGames" href="@_hrefLiveGameStr" class="navlink navbar-brand text-center text-muted home">
+        <NavLink id ="liveGames" href="@_hrefLiveGameStr" class="navlink navbar-brand text-center text-muted">
             <div class="icon">
                 <i class="fa-solid gpa-btm-icon"></i>
             </div>
             <div class="menuText">
-                <span class="text-uppercase small">Live</span>
+                <span class="text-uppercase small text-light">Live</span>
             </div>
         </NavLink>
         <NavLink id="slotGames" href="@_hrefSlotGameStr" class="navlink navbar-brand text-center text-muted">
@@ -22,7 +22,7 @@
                 <i class="fa-solid slot-btm-icon"></i>
             </div>
             <div class="menuText">
-                <span class="text-uppercase small">Slots</span>
+                <span class="text-uppercase small text-light">Slots</span>
             </div>
         </NavLink>
         <NavLink id="cardGames" href="@_hrefCasinoGameStr" class="navlink navbar-brand text-center text-muted">
@@ -30,7 +30,7 @@
                 <i class="fa-solid card-btm-icon"></i>
             </div>
             <div class="menuText">
-                <span class="text-uppercase small">Casino</span>
+                <span class="text-uppercase small text-light">Casino</span>
             </div>
         </NavLink>
         <NavLink id="arcadeGames" href="@_hrefArcadeGameStr" class="navlink navbar-brand text-center text-muted">
@@ -38,7 +38,7 @@
                 <i class="fa-solid arcade-btm-icon"></i>
             </div>
             <div class="menuText">
-                <span class="text-uppercase small">Arcade</span>
+                <span class="text-uppercase small text-light">Arcade</span>
             </div>
         </NavLink>
     </div>
@@ -56,7 +56,7 @@
         currentPage = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
     }
 }
-<script>
+@* <script>
     $(document).ready(function () {
         $('#navBarBottom > a').click(function (event) {
             var getId = $(this).attr('id');
@@ -66,4 +66,4 @@
             }
         });
     });
-</script>
+</script> *@

@@ -6,6 +6,7 @@ using GoplayasiaBlazor.Dtos.DTOOut;
 using GoplayasiaBlazor.DTOs.DTOOut;
 using GoplayasiaBlazor.Models;
 using GoplayasiaBlazor.Models.Base;
+using GoplayasiaSharedKernel.Models;
 
 namespace GoplayasiaBlazor.Core.Services.Interface;
 public interface IAccountService
@@ -47,4 +48,5 @@ public interface IAccountService
     Task<bool> PersonTaken(string firstname, string lastname, string birthday, int roleType);
     Task<RefKeyResultDTO> GetReferral( string mobilenumber, string firstname, string lastname);
     Task<AccountResultDTO> LoginWithOTP(string referenceCode, string otp, string mobileNumber, string DeviceToken);
+
 }

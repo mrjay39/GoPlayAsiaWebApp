@@ -1,39 +1,95 @@
 ﻿<div id="ageAgreementOverlay" class="overlay"></div>
 <div id="ageAgreement" class="modal-dialog modal show modal-dialog-centered fixed-centered" data-keyboard="false" data-backdrop="static">
-    <div class="modal-content modal-bg border-bottom-4">
-        <div class="modal-header p-2" id="ageConfirmModalLabel">
-            <img src="./img/Pagcor-21-black.png" class="img-fluid">
-        </div>
+    <div class="modal-content modal-bg border-bottom-4 position-relative">
         <div class="modal-body text-center text-dark">
-            <h3 class="fw-bold gpa-text">NOTICE</h3>
-            <div class="d-flex justify-content-center">
-                <div class="row">
-                    <p>By entering this website, you acknowledge and confirm that:</p>
-                    <div class="d-flex text-center justify-content-center">
-                        <ol class="text-14">
-                            <li class="text-start">You are 21 years of age or older.</li>
-                            <li class="text-start">
-                                You agree to our
-                                <a href="https://docs.goplayasia.com/toc.html" class="text-decoration-none">Terms of Use.</a>
-                            </li>
-                        </ol>
+            <div class="col text-center">
+                <img src="./img/gpa-logo-2.png" class="img-fluid header-img">
+            </div>
+            <h3 class="fw-bold gpa-text m-0">NOTICE</h3>
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <div class="row">
+                        <div class="d-flex text-center justify-content-center">
+                            <p class="p-2 m-0 text-13">
+                                <span>We encourage you to thoroughly review our</span>
+                                <a href="https://docs.goplayasia.com/responsiblegaming.html" class="text-decoration-none fw-bold" target="_blank">Responsible Gaming</a>
+                                <span>guidelines.</span>
+                            </p>
+                        </div>
+                        <div class="d-flex text-center justify-content-center">
+                            <ul class="text-12 p-2">
+                                <li class="text-start list-unstyled">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" @bind="IsOver21" id="age21">
+                                        <label class="form-check-label" for="age21">
+                                            <p> I am over 21 years of age.</p>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="text-start list-unstyled">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" @bind="IsNotGovernmentOfficial" id="notGovernmentOfcl">
+                                        <label class="form-check-label" for="notGovernmentOfcl">
+                                            <p>
+                                                I am neither a government official nor an employee directly involved in the operation of any government agency or its subdivisions. Additionally, I am not a member of the Armed Forces of the Philippines, including the Army, Navy, Air Force, or the Philippine National Police.
+                                            </p>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="text-start list-unstyled">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" @bind="IsNotGamingEmployment" id="gamingEmployment">
+                                        <label class="form-check-label" for="gamingEmployment">
+                                            <p> I am not a Gaming Employment License (GEL) holder.</p>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="text-start list-unstyled">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" @bind="AgreedToTerms" id="termsOfUse">
+                                        <label class="form-check-label" for="termsOfUse">
+                                            <p>
+                                                You agree to our
+                                                <a href="https://docs.goplayasia.com/toc.html" class="text-decoration-none fw-bold">Terms of Use.</a>
+                                            </p>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="container pt-2">
-                <button class="btn gpa-btn fw-bold" @onclick="Agree">Yes, I'm 21 or Older</button>
+                <button class="btn gpa-btn fw-bold" @onclick="Agree" disabled="@(!IsFormValid)">Proceed</button>
             </div>
         </div>
-        <div class="modal-footer text-dark">
-            <p style="text-align: center;">GoPlayAsia Remote Gaming Site is approved and regulated by PAGCOR.</p>
+        <div class="modal-footer text-dark justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="col text-center">
+                    <img src="./img/Pagcor-21-black.png" class="img-fluid footer-img">
+                </div>
+            </div>
+            <div class="container">
+                <div class="d-flex justify-content-center text-center">
+                    <p>GoPlayAsia Remote Gaming Site is approved and regulated by PAGCOR.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-@code {
-    [Parameter] public EventCallback OnAgree { get; set; }
 
-    private void Agree()
+@code {
+    private bool IsOver21 { get; set; } = true;
+    private bool IsNotGovernmentOfficial { get; set; } = true;
+    private bool IsNotGamingEmployment { get; set; } = true;
+    private bool AgreedToTerms { get; set; } = true;
+
+    private bool IsFormValid => IsOver21 && IsNotGovernmentOfficial && IsNotGamingEmployment && AgreedToTerms;
+
+    private async Task Agree()
     {
-        OnAgree.InvokeAsync();
+        await OnAgree.InvokeAsync();
     }
+    [Parameter] public EventCallback OnAgree { get; set; }
 }

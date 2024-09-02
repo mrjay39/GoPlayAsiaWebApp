@@ -3,13 +3,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 90%;
+    max-width: 98%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 5px;
     box-sizing: border-box; 
     display: flex;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
     z-index: 1050; 
@@ -31,7 +32,18 @@
     border-radius: 50%;
     height: 150px;
 }
-.text-14{
+.header-img{
+    width:150px;
+    margin-bottom: 25px;
+}
+.footer-img {
+    width: 250px;
+    text-align: center;
+}
+.text-13 {
+    font-size: 14px;
+}
+.text-12{
     font-size: 14px;
 }
 .gpa-text {
@@ -40,6 +52,7 @@
 .gpa-btn {
     background: #6e182c;
     color: #ffffff;
+    width: 65%;
 }
 .modal-bg {
     background: #ffffff;
@@ -65,15 +78,29 @@
 .border-bottom-4 {
     border-bottom: 4px solid #6e182c;
 }
+ul > li {
+    color: #6e6e6e;
+    text-align: justify !important;
+    font-family: OpenSans, "PingFang SC", "Microsoft YaHei", D-DIN, Arial, SimHei, Helvetica, sans-serif;
+}
+ul > li label{
+    cursor: pointer;
+}
 @media screen and (min-width: 992px) {
     #ageAgreement {
-        width: 20%;
-        min-width: 300px;
+        width: 25%;
+        min-width: 380px;
     }
 }
 @media screen and (max-width: 991px) {
     #ageAgreement {
         width: 30%;
-        min-width: 280px;
+        min-width: 350px;
+    }
+}
+@media screen and (max-width: 320px) {
+    #ageAgreement {
+        width: 30%;
+        min-width: 300px;
     }
 }

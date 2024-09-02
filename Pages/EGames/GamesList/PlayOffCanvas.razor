@@ -1,24 +1,25 @@
 ﻿@using GoplayasiaBlazor.DTOs.eGames
 @using GoplayasiaSharedKernel.DTOs.eGames.Enum
+@using GoplayasiaBlazor.Models.Constants
 <div id="playOffCanvas" data-bs-scroll="true" class="offcanvas offcanvas-bottom bg-light @(IsVisible ? "show" : "")" tabindex="-1" aria-labelledby="offcanvasBottomLabel">
     <AuthorizeView>
         <Authorized>
             @*===========  Buttons after Login ===========*@
             <div class="container d-flex align-items-center h-100">
                 <div class="offcanvas-body small" style="z-index:1">
-                    @if (Category != "Live")
+                    @if (Category != Settings.Constants.egamesLive)
                     {
                         <div class="d-block text-center p-2">
                             <button class="btn live-play-btn border-0" @onclick="(() => SelectMode(GameMode.real_money.ToString()))">
-                                <img src="./img/play-btn.gif" class="img img-fluid">
+                                <img src="./img/play-btn.png" class="img img-fluid">
                             </button>
                         </div>
                     }
                     <div class="d-block text-center p-2">
-                        @if (Category != "Live")
+                        @if (Category != Settings.Constants.egamesLive)
                         {
                             <button class="btn demo-play-btn border-0 ms-2" @onclick="(() => SelectMode(GameMode.play_for_fun.ToString()))">
-                                <img src="./img/funPlay.gif" class="img img-fluid">
+                                <img src="./img/funPlay.png" class="img img-fluid">
                             </button>
                         }
                     </div>
@@ -30,7 +31,7 @@
             @*===========  Buttons Before Login ===========*@
             <div class="container d-flex align-items-center h-100">
                 <div class="container text-center">
-                    @if (Category != "Live")
+                    @if (Category != Settings.Constants.egamesLive)
                     {
                         <h4 class="text-center pt-3">
                             <b>Playing for fun</b>
@@ -39,17 +40,17 @@
                     }
                     <div class="container">
                         <div class="col">
-                            @if (Category != "Live")
+                            @if (Category != Settings.Constants.egamesLive)
                             {
                                 @* <button type="button" class="btnPlayForFun btn btn-warning mr-2" @onclick="(() => SelectMode(GameMode.demo.ToString()))">Play For Fun</button> *@
                                 <button class="btn demo-play-btn border-0 p-0" @onclick="(() => SelectMode(GameMode.demo.ToString()))">
-                                    <img src="./img/demo-play.gif" class="img img-fluid">
+                                    <img src="./img/demo-play.png" class="img img-fluid">
                                 </button>
                             }
                         </div>
                         <div class="col m-2">
                             <button class="btn signup-btn border-0" @onclick="SignUp">
-                                <img src="./img/sign-up.gif" class="img img-fluid">
+                                <img src="./img/sign-up.png" class="img img-fluid">
                             </button>
                         </div>
                     </div>

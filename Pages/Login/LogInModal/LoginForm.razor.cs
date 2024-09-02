@@ -194,7 +194,7 @@ public partial class LoginForm
     {
         try
         {
-         
+            var currentUrl = _navigationManager.ToBaseRelativePath(_navigationManager.Uri);
             //if (!agreeToTerms)
             //{
             //    toastService.ShowError("Please agree to the Terms of use and Privacy Policy", settings =>
@@ -300,7 +300,7 @@ public partial class LoginForm
                             if (_iCurrentUser.ToppedUp || _iCurrentUser.Verified != 0)
                             {
 
-                                _navigationManager.NavigateTo("/home");
+                                _navigationManager.NavigateTo(currentUrl);
                             }
                             else
                             {
@@ -393,7 +393,7 @@ public partial class LoginForm
 
                 if (_iCurrentUser.ToppedUp || _iCurrentUser.Verified != 0)
                 {
-                    _navigationManager.NavigateTo("/home");
+                    _navigationManager.NavigateTo(currentUrl);
                 }
                 else
                 {

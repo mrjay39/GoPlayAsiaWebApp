@@ -15,7 +15,7 @@ namespace GoplayasiaSharedKernel.Models.eGames
         public int SlotsCount { get; set; }
         public int FishingCount { get; set; }
         public int ArcadeCount { get; set; }
-        public int CardCount { get; set; }
+        public int CasinoCount { get; set; }
         public bool Selected { get; set; } = false;
     }
 }

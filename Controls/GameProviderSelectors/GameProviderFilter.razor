@@ -7,45 +7,42 @@
 @using GoplayasiaSharedKernel.DTOs.DTOIn
 @using static GoplayasiaBlazor.Models.Constants.Settings
 @inject LobbyViewModel _lobbyViewModel;
+@inject NavigationManager _navigation
 
 <div class="container p-0 mt-2 text-center">
-
-    <SearchField _titleStr="Game Providers"
-                 _subTitleStr="Choose Your Preferred Game Provider" />
-
-    <div id="link-header" class="pb-2 gameOverflow-x text-start">
-        <div class="d-flex justify-content-center">
+    <div id="link-header" class="pb-2 gameOverflow-x">
+        <div class="d-flex justify-content-center h-100">
             @if (_lobbyViewModel.gameProviders != null)
             {
-                @foreach (var provider in _lobbyViewModel.gameProviders)
+                @foreach (var provider in _lobbyViewModel.gameProviders.OrderBy(x => x.SortKey))
                 {
                     if (
                     provider.SlotsCount > 0 && gameType == Constants.egamesSlots ||
                     gameType == Constants.egamesAll ||
                     provider.LiveCount > 0 && gameType == Constants.egamesLive ||
                     provider.ArcadeCount > 0 && gameType == Constants.egamesRng ||
-                    provider.CardCount > 0 && gameType == Constants.egamesCards ||
+                    provider.CasinoCount > 0 && gameType == Constants.egamesCasino ||
                     provider.FishingCount > 0 && gameType == Constants.egamesFishing
                     )
                     {
                         <div @onclick="@(e => ToggleSelection(provider.Name))" class="link-header p-0 @GetSelectionClass(provider.Name)">
                             <div class="text-mute btn p-0">
                                 <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
-                                    <img src="./img/providersLogo/@provider.ImageUrl" class="img-fluid mb-1" style="">
+                                    <img src="./img/providersLogo/@provider.ImageUrl" class="img-fluid mb-1">
                                 </div>
                             </div>
                         </div>
                     }
                 }
             }
-
         </div>
     </div>
+    <SearchField _titleStr="Game Providers" />
 
-    <GuesBottomNavbar _hrefLiveGameStr="GameProviders/More/Live/All"
-                      _hrefCasinoGameStr="GameProviders/More/Casino/All"
-                      _hrefSlotGameStr="GameProviders/More/Slots/All"
-                      _hrefArcadeGameStr="GameProviders/More/Arcade/All" />
+    <GuesBottomNavbar _hrefLiveGameStr="GameProviders/More/live/All"
+                      _hrefCasinoGameStr="GameProviders/More/casino/All"
+                      _hrefSlotGameStr="GameProviders/More/slots/All"
+                      _hrefArcadeGameStr="GameProviders/More/rng/All" />
 </div>
 
 @if (!string.IsNullOrEmpty(gameType))
@@ -74,10 +71,54 @@
              .ForEach(x => x.Selected = true);
 
         activeProvider = provider;
+        var newUrl = ReplaceLastSegment(_navigation.Uri, activeProvider);
+        _navigation.NavigateTo(newUrl);
     }
     private string GetSelectionClass(string provider)
     {
         var selected = _lobbyViewModel.gameProviders.Where(x => x.Name == provider).Select(x => x.Selected).SingleOrDefault();
         return selected ? "selected" : "";
     }
+    public static string ReplaceLastSegment(string url, string newSegment)
+    {
+        var uri = new Uri(url);
+        var segments = uri.AbsolutePath.Split('/');
+
+        if (segments.Length > 0)
+        {
+            segments[segments.Length - 1] = newSegment;
+            var newPath = string.Join('/', segments);
+            var newUri = new UriBuilder(uri)
+                {
+                    Path = newPath
+                };
+            return newUri.ToString();
+        }
+
+        return url;
+    }
 }
+<script>
+    $(document).ready(function () {
+        var $linkHeader = $('#link-header');
+        var $headerContainer = $('div.base');
+        var containerTop = $headerContainer.offset().top;
+        var headerHeight = $linkHeader.outerHeight();
+
+        $linkHeader.before('<div class="sticky-placeholder"></div>');
+        var $stickyPlaceholder = $('.sticky-placeholder');
+
+        $(window).on('scroll', function () {
+            var scrollTop = $(this).scrollTop();
+
+            if (scrollTop >= containerTop) {
+                $linkHeader.addClass('sticky');
+                $stickyPlaceholder.css('height', headerHeight + 'px');
+            } else {
+                $linkHeader.removeClass('sticky');
+                $stickyPlaceholder.css('height', '0');
+            }
+        });
+
+    });
+</script>

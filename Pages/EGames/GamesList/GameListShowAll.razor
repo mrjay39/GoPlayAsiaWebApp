@@ -1,6 +1,9 @@
-﻿@using GoplayasiaBlazor.DTOs.eGames
+﻿@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoplayasiaBlazor.DTOs.eGames
 @using GoplayasiaSharedKernel.DTOs.DTOIn
 @using static GoplayasiaBlazor.Models.Constants.Settings
+@inject LobbyViewModel _lobbyViewModel;
+
 @if (hasContents)
 {
     <div id="@_idStr" class="container">
@@ -12,9 +15,19 @@
                 {
                     if (_provider == "All")
                     {
-                        <Virtualize Items="@GameList.Where(a => a.Category == _filter).ToList()" Context="item" ItemSize="@GameList.Where(a => a.Category == _filter).ToList().Count" OverscanCount="50" >
-                            <GamesListTile Game="item" />
-                        </Virtualize>
+                        @foreach (var provider in _lobbyViewModel.gameProviders.OrderBy(x => x.SortKey))
+                        {
+                            <Virtualize Items="@GameList.Where(a => a.Category == _filter && a.Provider == provider.Name).OrderBy(x => x.Rank).ToList()" Context="item" ItemSize="@GameList.Where(a => a.Category == _filter).ToList().Count" OverscanCount="50">
+
+                                @if (HasProviderChanged(item.Provider))
+                                {
+                                    <div>
+                                        <img src="./img/providersLogo/@Constants.GetProvidersLogo(@item.Provider)" class="img-fluid mb-1 providers-logo">
+                                    </div>
+                                }
+                                <GamesListTile Game="item" />
+                            </Virtualize>
+                        }
 
                       @*   @foreach (var item in GameList.Where(a => a.Category == _filter))
                         {
@@ -23,7 +36,7 @@
                     }
                     else
                     {
-                        <Virtualize Items="@GameList.Where(a => a.Category == _filter && a.Provider == _provider).ToList()" Context="item" ItemSize="@GameList.Where(a => a.Category == _filter && a.Provider == _provider).ToList().Count" OverscanCount="50" >
+                        <Virtualize Items="@GameList.OrderBy(x => x.Provider).ThenBy(x => x.Rank).Where(a => a.Category == _filter && a.Provider == _provider).ToList()" Context="item" ItemSize="@GameList.Where(a => a.Category == _filter && a.Provider == _provider).ToList().Count" OverscanCount="50" >
                             <GamesListTile Game="item" />
                         </Virtualize>
                        @*  @foreach (var item in GameList.Where(a => a.Category == _filter && a.Provider == _provider))
@@ -41,12 +54,21 @@
     public string _title { get; set; }
     public string _description { get; set; }
     public string _idStr { get; set; }
+    private string previousProvider;
 
     [Parameter] public string _filter { get; set; }
     [Parameter] public string _provider { get; set; }
     private bool hasContents { get; set; } = false;
     [CascadingParameter] public List<eGamesListDTO> GameList { get; set; }
-
+    private bool HasProviderChanged(string Provider)
+    {
+        if (Provider != previousProvider)
+        {
+            previousProvider = Provider;
+            return true;
+        }
+        return false;
+    }
     protected override async Task OnParametersSetAsync()
     {
         hasContents = false;
@@ -73,8 +95,8 @@
                 _idStr = "slotGame";
                 break;
             case Constants.egamesLive:
-                _title = Constants.CasinoGameTitle;
-                _description = Constants.CasinoGameDescription;
+                _title = Constants.LiveGameTitle;
+                _description = Constants.LiveGameDescription;
                 _idStr = "liveGame";
                 break;
             case Constants.egamesRng:
@@ -82,9 +104,9 @@
                 _description = Constants.ArcadeDescription;
                 _idStr = "arcadeGame";
                 break;
-            case Constants.egamesCards:
-                _title = Constants.CardGameTitle;
-                _description = Constants.CardGameDescription;
+            case Constants.egamesCasino:
+                _title = Constants.CasinoGameTitle;
+                _description = Constants.CasinoGameDescription;
                 _idStr = "cardGame";
                 break;
             case Constants.egamesFishing:
@@ -97,5 +119,4 @@
 
         base.OnParametersSetAsync();
     }
-
 }

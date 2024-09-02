@@ -1,6 +1,14 @@
 ﻿@using GoPlayAsiaWebApp.Controls.GameIframe
 @using GoPlayAsiaWebApp.Goplay.Main.Login
 @*===============================Login Form ==================================== *@
+
+<div class="header p-2 text-end position-absolute float-right" id="ageConfirmModalLabel" style="right: -3px;top: 0; z-index: 10;">
+    <button type="button" class="border-0 bg-transparent" aria-label="Close" @onclick="CallClosePopup">
+        <span aria-hidden="true" class="text-white h3">
+            <i class="fa-solid fa-square-xmark"></i>
+        </span>
+    </button>
+</div>
 <div class="tab-pane active" id="loginPanel" role="tabpanel" aria-labelledby="loginTab">
     <EditForm Model="@loginDTO" OnValidSubmit="@ValidateAgreement" autocomplete="stopdoingthat" class="signin-form">
         <DataAnnotationsValidator />
@@ -25,11 +33,16 @@
         <div class="flex justify-content-xl-center align-items-center text-light text-center mt-3">
             <p>Login with</p>
             <button id="otp" @onclick="LoginOTP" class="text-light btn bg-transparent border-0">
-                <span class="text-warning fw-bold"><i class="bi otp"></i> &nbsp; OT P</span>
+                <span class="text-warning fw-bold flex align-items-center">
+                    <i class="bi otp"></i>
+                    &nbsp;OTP
+                    <span style="font-size: 12px; font-weight: 100;">&nbsp;(One-Time-Password)</span>
+                </span>
+                
             </button>
-            <button id="biometric" @onclick="LoginBiometric" class="text-light btn bg-transparent border-0" data-bs-dismiss="modal-dialog" aria-label="Close">
-                <span class="text-warning fw-bold"><i class="fa-solid fingerprint"></i>&nbsp; Biometric</span>
-            </button>
+            @* <button id="biometric" @onclick="LoginBiometric" class="text-light btn bg-transparent border-0" data-bs-dismiss="modal-dialog" aria-label="Close">
+            <span class="text-warning fw-bold"><i class="fa-solid fingerprint"></i>&nbsp; Biometric</span>
+            </button> *@
         </div>
         <div class="content text-center">
             <ul class="nav justify-content-center" role="tablist">
@@ -43,6 +56,15 @@
 
 @code {
     [CascadingParameter] public IModalService popupLoadingModal { get; set; }
+    [Parameter] public EventCallback ClosePopup { get; set; }
+
+    private void CallClosePopup()
+    {
+        if (ClosePopup.HasDelegate)
+        {
+            ClosePopup.InvokeAsync();
+        }
+    }
 
     private async Task callForgotPassword(int comp)
     {
@@ -71,7 +93,7 @@
     {
         var refPopup = popupLoadingModal.Show<LoginUsingOTP>("");
     }
-    
+
     void LoginBiometric()
     {
         ModalService.Show<BiometricLogin>("");

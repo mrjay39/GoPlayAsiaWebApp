@@ -30,7 +30,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link px-2 link-dark bg-black dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid gpa-icon"></i> GOPLAYASIA
+                        <i class="fa-solid gpa-icon"></i> Specialty Games
                     </a>
                     <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item link-light bg-black" href="games/lucky9">Lucky 9</a></li>
@@ -47,10 +47,10 @@
                         <i class="fa-solid featured-icon"></i> FEATURED GAMES
                     </a>
                     <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item link-light bg-black" href="arcadeGames">Arcade</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="cardGames">Cards</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="fishingAndArcadeGames">Fishing</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="slotGames">Slots</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="GameProviders/More/live/All">Live</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="GameProviders/More/slots/All">Slots</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="GameProviders/More/casino/All">Casino</a></li>
+                        <li><a class="dropdown-item link-light bg-black" href="GameProviders/More/rng/All">Arcade</a></li>
                     </ul>
                 </li>
 
@@ -98,6 +98,6 @@
 
     private void loginSignup()
     {
-        var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("");
+        var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("", new ModalParameters(), new ModalOptions() { DisableBackgroundCancel = true, HideCloseButton = true });
     }
 }

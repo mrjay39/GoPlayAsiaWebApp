@@ -3,6 +3,7 @@ using GoPlayAsiaWebApp;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.JSInterop;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -12,5 +13,24 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddBlazorServices();
 
+var host = builder.Build();
 
-await builder.Build().RunAsync();
+
+// Attach global error handlers
+AppDomain.CurrentDomain.UnhandledException += async (sender, eventArgs) =>
+{
+    await ReloadPage(host.Services);
+};
+
+TaskScheduler.UnobservedTaskException += async (sender, eventArgs) =>
+{
+    await ReloadPage(host.Services);
+};
+
+await host.RunAsync();
+
+async Task ReloadPage(IServiceProvider services)
+{
+    var jsRuntime = services.GetRequiredService<IJSRuntime>();
+    await jsRuntime.InvokeVoidAsync("reloadPage");
+}
