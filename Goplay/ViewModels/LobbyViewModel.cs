@@ -8,6 +8,7 @@ using GoplayasiaCore.Core.Services.Interface;
 using GoplayasiaSharedKernel.DTOs.DTOIn;
 using GoplayasiaSharedKernel.DTOs.eGames;
 using GoplayasiaSharedKernel.Models.eGames;
+using GoPlayAsiaWebApp.Goplay.Games.Lucky9;
 using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -62,6 +63,19 @@ public class LobbyViewModel : BaseViewModel
         }
     }
 
+    private void AddGameToList(string description, string gameId, string filename, string imageUrl, string category)
+    {
+        var game = new eGamesListDTO
+        {
+            Description = description,
+            Provider = Constants.GoPlayAsia,
+            GameId = gameId,
+            Filename = filename,
+            ImageUrl = imageUrl,
+            Category = category
+        };
+        AllGameList.Add(game);
+    }
     public async Task GetListGames()
     {
         try
@@ -69,7 +83,7 @@ public class LobbyViewModel : BaseViewModel
             if (string.IsNullOrEmpty(_icurrentUser.Token))
             {
                 AllGameList = await _iegamesservice.GetGames(Constants.egamesAll, Constants.egamesAll);
-              
+
             }
             else
             {
@@ -80,16 +94,25 @@ public class LobbyViewModel : BaseViewModel
             //get all list of provders with slots
             GameProviders newGameProvider = new GameProviders();
             gameProviders = new List<GameProviders>();
+
+            AddGameToList(Constants.L9Game, Constants.L9Game, Constants.L9Img, Constants.L9Img, Constants.egamesLive);
+            AddGameToList(Constants.F3Game, Constants.F3Game, Constants.F3Img, Constants.F3Img, Constants.egamesLive);
+            AddGameToList(Constants.HTGame, Constants.HTGame, Constants.HTImg, Constants.HTImg, Constants.egamesLive);
+            AddGameToList(Constants.G12Game, Constants.G12Game, Constants.G12Img, Constants.G12Img, Constants.egamesLive);
+
             var distinctProviders = AllGameList.Select(x => x.Provider).Distinct().ToList();
+
             newGameProvider.Name = "All";
             newGameProvider.ImageUrl = "provider-all.png";
             newGameProvider.SortKey = 1;
-            newGameProvider.LiveCount = AllGameList.Count(x => x.Category == Constants.egamesLive );
+
+            newGameProvider.LiveCount = AllGameList.Count(x => x.Category == Constants.egamesLive);
             newGameProvider.ArcadeCount = AllGameList.Count(x => x.Category == Constants.egamesRng);
-            newGameProvider.SlotsCount = AllGameList.Count(x => x.Category == Constants.egamesSlots );
+            newGameProvider.SlotsCount = AllGameList.Count(x => x.Category == Constants.egamesSlots);
             newGameProvider.CasinoCount = AllGameList.Count(x => x.Category == Constants.egamesCasino);
             newGameProvider.FishingCount = AllGameList.Count(x => x.Category == Constants.egamesFishing);
             gameProviders.Add(newGameProvider);
+
 
             foreach (var provider in distinctProviders)
             {
@@ -100,7 +123,9 @@ public class LobbyViewModel : BaseViewModel
                     case Constants.GoPlayAsia:
                         newGameProvider.ImageUrl = "goPlay.png";
                         newGameProvider.SortKey = 1;
-                        break;
+                        newGameProvider.LiveCount = 6;
+                        gameProviders.Add(newGameProvider);
+                        return;
                     case Constants.Jili:
                         newGameProvider.ImageUrl = "jili.png";
                         newGameProvider.SortKey = 2;
@@ -134,6 +159,7 @@ public class LobbyViewModel : BaseViewModel
                         newGameProvider.SortKey = 5;
                         break;
                 }
+
                 newGameProvider.LiveCount = AllGameList.Count(x => x.Category == Constants.egamesLive && x.Provider == provider);
                 newGameProvider.ArcadeCount = AllGameList.Count(x => x.Category == Constants.egamesRng && x.Provider == provider);
                 newGameProvider.SlotsCount = AllGameList.Count(x => x.Category == Constants.egamesSlots && x.Provider == provider);
@@ -141,7 +167,7 @@ public class LobbyViewModel : BaseViewModel
                 newGameProvider.FishingCount = AllGameList.Count(x => x.Category == Constants.egamesFishing && x.Provider == provider);
                 gameProviders.Add(newGameProvider);
             }
-            gameProviders.OrderBy(x => x.SortKey);
+        
             await CallInvoke();
         }
         catch (Exception ex)
