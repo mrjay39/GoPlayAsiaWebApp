@@ -75,6 +75,7 @@ namespace GoplayasiaBlazor.Models
                     resultColor = "#000000";
                     break;
                 case (int)GameTypes.Gold_And_Silver:
+                case (int)GameTypes.First3B:
                     resultColor = "#FFFFFF";
                     break;
             }
@@ -106,7 +107,7 @@ namespace GoplayasiaBlazor.Models
                         resultValue = "banker";
                     }
                 }
-                else if (GameTypeId == (int)GameTypes.Gold_And_Silver)
+                else if (GameTypeId == (int)GameTypes.Gold_And_Silver || GameTypeId == (int)GameTypes.First3B)
                 {
                     if (WinningResult == Settings.Constants.Draw)
                     {
@@ -247,7 +248,7 @@ namespace GoplayasiaBlazor.Models
                             resultValue = "robanker";
                         }
                     }
-                    else if (GameTypeId == (int)GameTypes.Gold_And_Silver)
+                    else if (GameTypeId == (int)GameTypes.Gold_And_Silver || GameTypeId == (int)GameTypes.First3B)
                     {
                         if (WinningResult == Settings.Constants.Draw)
                         {

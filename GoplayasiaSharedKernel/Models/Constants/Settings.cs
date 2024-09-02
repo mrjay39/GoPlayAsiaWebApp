@@ -213,6 +213,7 @@
             public const string StreamIDDice= "dice";
             public const string StreamIDBingo = "bingo";
             public const string StreamIDLucky9B = "lucky9b";
+            public const string StreamIDFirst3B = "first3b";
             #endregion
             #region Reports
             public const string BetReturned = "Bet Returned";
@@ -557,6 +558,9 @@
             L9BColor,
             L9BPair,
             L9BDraw,
+            F3BSuits,
+            F3BColor,
+            F3BTrio,
         }
         #endregion
 

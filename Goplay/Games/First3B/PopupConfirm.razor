@@ -1,0 +1,27 @@
+﻿<div class="container-fluid">
+    <div class="container text-center">
+        <h4 class="text-center">@Message</h4>
+        <div class="d-flex justify-content-center mt-2">
+            <div class="col">
+                <button type="button" class="btnNo btn btn-warning mr-2" @onclick="() => Confirmation(false)">NO</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btnYes btn btn-primary" @onclick="() => Confirmation(true)">YES</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [Parameter] public string Title { get; set; } = String.Empty;
+    [Parameter] public string Class { get; set; } = "btn btn-danger";
+    [Parameter] public string Message { get; set; } = "Are you sure?";
+
+    public bool Show { get; set; }
+
+    public void Confirmation(bool value)
+    {
+        BlazoredModal.CloseAsync(ModalResult.Ok(value));
+    }
+}

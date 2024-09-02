@@ -16,5 +16,5 @@ public interface IL9GameRoundService
     Task<List<L9BetModel>> GetBets(long userId, int gameTypeId, long? gameRoundId);
     Task<List<L9GameRoundModel>> GetTrends();
     Task<L9BetResultModel> BetOnRound(L9BetDTO paramsModel);
-    Task<List<L9BetModel>> L9GetPrevGameBets(long userId, int count);
+    Task<List<L9BetModel>> GetPrevGameBets(long userId, int count);
 }

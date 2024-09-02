@@ -49,6 +49,7 @@ public abstract class BaseViewModel
     public IConstantService _constantService;
     public IEGamesService _iegamesservice;
     public IL9GameRoundService _il9gameRoundService;
+    public IF3GameRoundService _if3gameRoundService;
     #endregion
 
     #region Player Bets
@@ -529,6 +530,7 @@ public abstract class BaseViewModel
         }
     }
     public GameChipModel L9BGameChips { get; set; }
+    public GameChipModel F3BGameChips { get; set; }
     public ObservableCollection<PlayerCategoryModel> PlayerCategory
     {
         get => _playercategory;
@@ -1225,7 +1227,7 @@ public abstract class BaseViewModel
         bool result = false;
         try
         {
-            if (GametypeId == (int)GameTypes.Gold_And_Silver)
+            if (GametypeId == (int)GameTypes.Gold_And_Silver || GametypeId == (int)GameTypes.First3B)
             {
                 if (UserBets != null && UserBets.Count > 0)
                 {
@@ -1656,6 +1658,9 @@ public abstract class BaseViewModel
             case (int)GameTypes.Lucky9B:
                 L9BGameChips = tempGameChips;
                 break;
+            case (int)GameTypes.First3B:
+                F3BGameChips = tempGameChips;
+                break;
 
         }
         GameChips = tempGameChips;
@@ -1721,6 +1726,10 @@ public abstract class BaseViewModel
                 break;
             case (int)GameTypes.Lucky9B:
                 L9BGameChips = tempChips;
+                MaxChip = chips.Max();
+                break;
+            case (int)GameTypes.First3B:
+                F3BGameChips = tempChips;
                 MaxChip = chips.Max();
                 break;
         }
