@@ -295,6 +295,7 @@
             #endregion
 
             #region eGAMES GAMETYPE
+            public const string specialty = "specialty";
             public const string egamesAll = "all";
             public const string egamesLive = "live";
             public const string egamesRng = "rng";
