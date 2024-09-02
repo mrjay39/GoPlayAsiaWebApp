@@ -58,6 +58,8 @@
             public const string PairPlayer = "PLAYER-ANY-PAIR";
             public const string PairBanker = "BANKER-ANY-PAIR";
 
+            public const string L9Game = "Lucky 9";
+
             #endregion Lucky9
 
             #region First3 - Gold and Silver
@@ -82,6 +84,8 @@
             public const string ColorRedSilver = "SILVER-RED";
             public const string ColorBlackSilver = "SILVER-BLACK";
             public const string Trio = "TRIO";
+
+            public const string F3Game = "First 3";
             #endregion First3 - Gold and Silver
 
             #region HEADS AND TAILS
@@ -98,7 +102,7 @@
             public const string UpdateRunningOdds_Heads_BetAmount = "UpdateRunningOdds_Heads_BetAmount";
             public const string UpdateRunningOdds_Tails_BetAmount = "UpdateRunningOdds_Tails_BetAmount";
 
-
+            public const string HTGame = "Heads and Tails";
             #endregion
 
             #region Go12
@@ -121,6 +125,8 @@
 
             public const string UpdateUserBet = "UpdateUserBet";
             public const string UpdateUserBetList = "UpdateUserBetList";
+
+            public const string G12Game = "Go 12";
             #endregion Go12
 
             #region Giga Draw and Drop and Win
@@ -145,6 +151,13 @@
             public const string Even = "EVEN";
             public const string Small = "SMALL";
             public const string Big = "BIG";
+            #endregion
+
+            #region GPA path Images
+            public const string L9Img = "./img/GPAGames/L9.png";
+            public const string F3Img = "./img/GPAGames/F3.png";
+            public const string HTImg = "./img/GPAGames/HT.png";
+            public const string G12Img = "./img/GPAGames/G12.png";
             #endregion
 
             public const string UpdateGameOdds = "UpdateGameOdds";
@@ -644,6 +657,8 @@
         };
 
         #endregion
+
+       
     }
 
 }

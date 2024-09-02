@@ -86,7 +86,7 @@ else
 
     private async void OpenGameLink()
     {
- 
+
         try
         {
             var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
@@ -131,6 +131,30 @@ else
             {
                 if (Game.Category == Settings.Constants.egamesLive)
                 {
+                    if (Game.Provider == Settings.Constants.GoPlayAsia)
+                    {
+                        switch (Game.GameId)
+                        {
+                            case (Settings.Constants.L9Game):
+                                _navigationManager.NavigateTo("Lucky9Table");
+                            break;
+
+                            case (Settings.Constants.F3Game):
+                                _navigationManager.NavigateTo("First3Table");
+                            break;
+
+                            case (Settings.Constants.HTGame):
+                                _navigationManager.NavigateTo("games/headstails");
+                            break;
+
+                            case (Settings.Constants.G12Game):
+                                _navigationManager.NavigateTo("games/go12");
+                            break;
+
+                        }
+                        return;
+
+                    }
                     LaunchGame();
                 }
                 else
