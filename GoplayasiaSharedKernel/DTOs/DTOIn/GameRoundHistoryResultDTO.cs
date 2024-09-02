@@ -13,8 +13,10 @@ namespace GoplayasiaBlazor.Dtos.DTOIn
 
     public class UserBetHistoryResultDTO
     {
+        public string GameProvider { get; set; }
         public int GameTypeId { get; set; }
         public string GameTypeName { get; set; }
+        public string GameCategory { get; set; }
         public string DateCreatedString { get; set; }
         public string DateCreatedTime { get; set; }
         public string DateCreatedFullString { get; set; }
@@ -27,6 +29,7 @@ namespace GoplayasiaBlazor.Dtos.DTOIn
         public string GameResult { get; set; }
         public bool BetOnRound { get; set; }
         public bool Cancelled { get; set; }
+        public bool IsProfit { get; set; }
         public bool Won { get; set; }
         public bool Lost { get; set; }
         public bool Consoled { get; set; }
@@ -34,8 +37,10 @@ namespace GoplayasiaBlazor.Dtos.DTOIn
         public bool BetReturned { get; set; }
         public string WonAmount { get; set; }
         public string LostAmount { get; set; }
+        public string ProfitLoss { get; set; }
         public string ConsoledAmount { get; set; }
         public string OddsPercentage { get; set; }
         public string JackpotPrize { get; set; }
+        public string ReferenceId { get; set; }
     }
 }
