@@ -24,12 +24,12 @@
                             <img src="/img/ub-for-withdraw.png" />
                         </a>
                     }
-                    @*         @if (_mainCreditsViewModel.CashOutSettings.OTC)
-            {
-            <a class="icon-withdraw btn col p-0 pr-1" @onclick:preventDefault @onclick='(() => SelPaymentGateway("OTC"))'>
-            <img src="/img/otc-cashout.png" />
-            </a>
-            } *@
+                    @if (_mainCreditsViewModel.CashOutSettings.OTC)
+                    {
+                        <a class="icon-withdraw btn col p-0 pr-1" @onclick:preventDefault @onclick='(() => SelPaymentGateway("OTC"))'>
+                            <img src="/img/otc-cashout.png" />
+                        </a>
+                    }
                 </div>
 
                 <h6 class="d-flex justify-content-center text-light font-weight-bold mt-1">@PgHeader</h6>
