@@ -74,7 +74,7 @@ public class CompBetHistoryViewModel : BaseViewModel
             }
             else
             {
-                var filteredList = GameRounds.Where(gr => gr.GameCategory.ToUpper() == Category.ToUpper()).ToList();
+                var filteredList = GameRounds.Where(gr => !String.IsNullOrEmpty(gr.GameCategory) && gr.GameCategory.ToUpper() == Category.ToUpper()).ToList();
                 FilteredGameRounds = new ObservableCollection<UserBetHistoryResultDTO>(filteredList);
             }
 
