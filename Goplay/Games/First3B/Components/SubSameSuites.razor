@@ -1,0 +1,66 @@
+﻿@using GoPlayAsiaWebApp.Goplay.Games.Shared
+@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoplayasiaBlazor.Models.Constants
+@inject First3BViewModel _f3BViewModel;
+
+@if (BetValueDisplay == Settings.Constants.Gold)
+{
+    <button class="col borderGold btn p-0 d-block tieRelative @(Settings.Constants.SuitsGold == WinnerResults ? "winSameSuitGold" : SameSuiteGold)" @onclick=OnClickCallback disabled="@IsDisabled">
+        <p class="font-weight-bold smallHeader  smallHeader mt-1" style="font-size:16px;line-height: normal; margin-bottom: 3px;">Same SUITS </p>
+
+        <div class="d-flex">
+            @if (_f3BViewModel.F3Suits != null)
+            {
+                <p class="payout col p-0  d-flex justify-content-center font-weight-bold  @(UserTotalBet_SuitsGold != "0" ? "withBetF3" : "") ">
+                    @(UserTotalBet_SuitsGold != "0" ? SampleWinSuitsGold : "x" + _f3BViewModel.F3Suits.FixedPriceMultiplier.ToString("G29"))
+                </p>
+            }
+        </div>
+
+         <TokenDisplay Amount="@UserTotalBet_SuitsGold" />
+        @if (_f3BViewModel.Token_Animation != "" && _f3BViewModel.CurrentGameType == (int)Settings.F3SubBetTypes.SameSuiteGold)
+        {
+            <div class="additionaltokencontainer" style="--animation: @_f3BViewModel.Token_Animation">
+                <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+                <p class="selectedAmountToken">@_f3BViewModel.BetAmount</p>
+            </div>
+        }
+    </button>
+}
+else if (BetValueDisplay == Settings.Constants.Silver)
+{
+    <button class="col borderGold  btn p-0 d-block tieRelative @(Settings.Constants.SuitsSilver == WinnerResults ?  "winSameSuitSilver" : SameSuiteSilver)" @onclick=OnClickCallback disabled="@IsDisabled">
+        <p class="font-weight-bold smallHeader  smallHeader mt-1" style="font-size:16px; line-height: normal;margin-bottom: 3px;">Same SUITS </p>
+
+        <div class="d-flex">
+            @if (_f3BViewModel.F3Suits != null)
+            {
+                <p class="payout col p-0  d-flex justify-content-center mb-2 font-weight-bold @(UserTotalBet_SuitsSilver != "0" ? "withBetF3" : "") ">
+                    @(UserTotalBet_SuitsSilver != "0" ? SampleWinSuitsSilver : "x" + _f3BViewModel.F3Suits.FixedPriceMultiplier.ToString("G29"))
+                </p>
+            }
+        </div>
+
+        <TokenDisplay Amount="@UserTotalBet_SuitsSilver" />
+        @if (_f3BViewModel.Token_Animation != "" && _f3BViewModel.CurrentGameType == (int)Settings.F3SubBetTypes.SameSuiteSilver)
+        {
+            <div class="additionaltokencontainerSilver" style="--animation: @_f3BViewModel.Token_Animation">
+                <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+                <p class="selectedAmountToken">@_f3BViewModel.BetAmount</p>
+            </div>
+        }
+    </button>
+}
+
+@code {
+    [Parameter] public string BetValueDisplay { get; set; } = String.Empty;
+    [Parameter] public string SameSuiteGold { get; set; } = String.Empty;
+    [Parameter] public string SameSuiteSilver { get; set; } = String.Empty;
+    [Parameter] public string UserTotalBet_SuitsGold { get; set; } = String.Empty;
+    [Parameter] public string UserTotalBet_SuitsSilver { get; set; } = String.Empty;
+    [Parameter] public string SampleWinSuitsGold { get; set; } = String.Empty;
+    [Parameter] public string SampleWinSuitsSilver { get; set; } = String.Empty;
+    [Parameter] public string WinnerResults { get; set; } = String.Empty;
+    [Parameter] public bool IsDisabled { get; set; }
+    [Parameter] public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+}

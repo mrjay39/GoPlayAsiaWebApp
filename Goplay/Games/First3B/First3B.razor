@@ -1,0 +1,154 @@
+﻿@page "/games/first3b"
+@attribute [Authorize(Roles = "1")]
+@inject First3BViewModel _f3BViewModel;
+@using GoPlayAsiaWebApp.Goplay.Games.First3B.Components
+@using GoPlayAsiaWebApp.Goplay.Games.Shared
+@using GoPlayAsiaWebApp.Goplay.Shared.Popup
+@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoplayasiaBlazor.Models.Constants
+@using static GoplayasiaBlazor.Models.Constants.Settings
+
+<div class="container-fluid p-0" style="min-height: 100vh;">
+    <GameHeader StreamId="@_f3BViewModel.StreamId"
+                RoundTimer="@_f3BViewModel.RoundTimer"
+                RoundStatusString="@_f3BViewModel.RoundStatusString"
+                RoundNumber="@_f3BViewModel.RoundNumber"
+                TimerBackground="@_f3BViewModel.RoundStatusColor"
+                GameResultString="@_f3BViewModel.GameResultString"
+                ShowFlashing="@_f3BViewModel.ShowFlashing"
+                CreditsDisp="@_f3BViewModel._icurrentUser.CreditsDisp"
+                PlayerCategory="@_f3BViewModel.PlayerCategory"
+                OnClickCallback="@(() => SetGameChips())"
+                Token="@_f3BViewModel.streamKey"
+                GifSrc="@_f3BViewModel.GIF"
+                IsDisabledCategory="false"
+                MaxRoundTimer="@(_f3BViewModel.GameSetting != null ? _f3BViewModel.GameSetting.BettingDuration : 0)" />
+
+    @if (_f3BViewModel.RoundStatusString == Settings.Constants.Open)
+    {
+        <BettingButton RoundStatusString="@_f3BViewModel.RoundStatusString"
+                       FixedPriceGoldMultiplier="@_f3BViewModel.FixedPriceGoldMultiplier"
+                       FixedPriceSilverMultipler="@_f3BViewModel.FixedPriceSilverMultipler"
+                       SampleWinFixedPrizeGold="@_f3BViewModel.SampleWinFixedPrizeGold"
+                       SampleWinFixedPrizeSilver="@_f3BViewModel.SampleWinFixedPrizeSilver" />
+
+        <RoundDetailsBar RoundNumber="@_f3BViewModel.RoundNumber"
+                         TotalBets="@_f3BViewModel.TotalBets"
+                         MinChipDisplay="@_f3BViewModel.MinChip"
+                         MaxChipDisplay="@_f3BViewModel.MaxChip" />
+        <Trends PayoutTrendsDisplay="@_f3BViewModel.PayoutTrendsDisplay"/>
+    }
+    else
+    {
+        <BettingButton RoundStatusString="@_f3BViewModel.RoundStatusString"
+                       FixedPriceGoldMultiplier="@_f3BViewModel.FixedPriceGoldMultiplier"
+                       FixedPriceSilverMultipler="@_f3BViewModel.FixedPriceSilverMultipler"
+                       SampleWinFixedPrizeGold="@_f3BViewModel.SampleWinFixedPrizeGold"
+                       SampleWinFixedPrizeSilver="@_f3BViewModel.SampleWinFixedPrizeSilver" />
+
+        <RoundDetailsBar RoundNumber="@_f3BViewModel.RoundNumber"
+                         TotalBets="@_f3BViewModel.TotalBets"
+                         MinChipDisplay="@_f3BViewModel.MinChip"
+                         MaxChipDisplay="@_f3BViewModel.MaxChip" />
+        <Trends PayoutTrendsDisplay="@_f3BViewModel.PayoutTrendsDisplay"/>        
+    }
+
+</div>
+
+@code {
+    [CascadingParameter] public IModalService popupModal { get; set; }
+    public IModalReference popupRef { get; set; }
+
+    public async void OnNotify()
+    {
+        await InvokeAsync(() => StateHasChanged());
+    }
+
+    public void Dispose()
+    {
+        //_f3BViewModel.DisconnectSignalR(); ;
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        _f3BViewModel.Notify -= OnNotify;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadPageData();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+
+    }
+
+    private async Task LoadPageData()
+    {
+        try
+        {
+            _f3BViewModel.Notify += OnNotify;
+            _f3BViewModel.popupModal = popupModal;
+            _f3BViewModel.Token_Animation = "";
+            _f3BViewModel.TokenDiv = "tokenhide";
+            _f3BViewModel.IsButtonDisabled = false;
+
+            await _f3BViewModel.ConnectSignalR();
+            await _f3BViewModel.AssignSignalRMethods();
+            popupRef = popupModal.Show<PopupLoading>("");
+
+            await _f3BViewModel.GetGameSetting();
+            await _f3BViewModel.GetGameSettingVariant();
+            await _f3BViewModel.GetGameRound();
+
+            List<Task> TaskList = new List<Task>();
+            TaskList.Add(_f3BViewModel.GetPlayerCategory());
+            TaskList.Add(_f3BViewModel.GetGameChipsByCategory());
+            TaskList.Add(_f3BViewModel.GetGameVariantChipsByCategory());
+            TaskList.Add(_f3BViewModel.GetCurrentRoundBets());
+
+            if (_f3BViewModel.streamKey == string.Empty)
+                TaskList.Add(_f3BViewModel.GenerateStreamKey());
+            await Task.WhenAll(TaskList.ToArray());
+
+            popupRef.Close();
+            await _f3BViewModel.GetTrends();
+        }
+
+        catch (Exception)
+        {
+            throw;
+        }
+    }
+
+    private async Task SetGameChips()
+    {
+        await _f3BViewModel.GetGameChipsByCategory();
+        await _f3BViewModel.GetGameVariantChipsByCategory();
+        if (_f3BViewModel.CurrentGameType == (int)F3MainBetTypes.Gold || _f3BViewModel.CurrentGameType == (int)F3MainBetTypes.Silver)
+        {
+            await _f3BViewModel.SetGameChips(_f3BViewModel.GametypeId, false);
+        }
+        else
+        {
+            switch (_f3BViewModel.CurrentGameType)
+            {
+                case (int)F3SubBetTypes.SameSuiteGold:
+                case (int)F3SubBetTypes.SameSuiteSilver:
+                    await _f3BViewModel.SetGameChips((int)GameVariant.F3Suits, true);
+                    break;
+                case (int)F3SubBetTypes.Trio:
+                    await _f3BViewModel.SetGameChips((int)GameVariant.F3Trio, true);
+                    break;
+                case (int)F3SubBetTypes.TwoRedGold:
+                case (int)F3SubBetTypes.TwoRedSilver:
+                case (int)F3SubBetTypes.TwoBlackGold:
+                case (int)F3SubBetTypes.TwoBlackSilver:
+                    await _f3BViewModel.SetGameChips((int)GameVariant.F3Color, true);
+                    break;
+            }
+        }
+    }
+
+}

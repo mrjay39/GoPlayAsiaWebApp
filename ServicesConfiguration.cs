@@ -49,6 +49,7 @@ namespace GoPlayAsiaWebApp
             services.AddScoped<DiceViewModel>();
             services.AddScoped<BingoViewModel>();
             services.AddScoped<Lucky9BViewModel>();
+            services.AddScoped<First3BViewModel>();
 
 
             services.AddBlazoredModal();
@@ -64,6 +65,7 @@ namespace GoPlayAsiaWebApp
             services.AddScoped<IBingoGameRoundService, BingoGameRoundService>();
 			services.AddScoped<IEGamesService, EGamesService>();
             services.AddScoped<IL9GameRoundService, L9GameRoundService>();
+            services.AddScoped<IF3GameRoundService, F3GameRoundService>();
             services.AddAuthorizationCore();
 
 

@@ -1,0 +1,35 @@
+﻿@using GoPlayAsiaWebApp.Goplay.Games.Shared
+@using GoPlayAsiaWebApp.Goplay.ViewModels
+@using GoplayasiaBlazor.Models.Constants
+@inject First3BViewModel _f3BViewModel;
+
+<button class="d-block col p-0 borderGold tieRelative @(Settings.Constants.Trio == WinnerResults ? "winTrioButton" : Trio)" @onclick=OnClickCallback disabled="@IsDisabled">
+    <p class="font-weight-bold  font-weight-bold" style="font-size: 17px; letter-spacing: 2px; margin-top: -5px;">TRIO</p>
+
+    <div class="d-flex">
+        @if (_f3BViewModel.F3Trio != null)
+        {
+            <p class="payout col p-0 mb-0 d-flex justify-content-center font-weight-bold  @(UserTotalBet_Trio != "0" ? "withBetF3" : "")  ">
+                @(UserTotalBet_Trio != "0" ? SampleWinTrio : "x" + _f3BViewModel.F3Trio.FixedPriceMultiplier.ToString("G29"))
+            </p>
+        }
+    </div>
+
+    <TokenDisplay Amount="@UserTotalBet_Trio" />
+    @if (_f3BViewModel.Token_Animation != "" && _f3BViewModel.CurrentGameType == (int)Settings.F3SubBetTypes.Trio)
+    {
+        <div class="additionaltokencontainer" style="--animation: @_f3BViewModel.Token_Animation">
+            <img src="/img/selectedToken.png" class="tokenSelectedBet" />
+            <div class="selectedAmountToken">@_f3BViewModel.BetAmount</div>
+        </div>
+    }
+</button>
+
+@code {
+    [Parameter] public string Trio { get; set; } = String.Empty;
+    [Parameter] public string UserTotalBet_Trio { get; set; } = String.Empty;
+    [Parameter] public string SampleWinTrio { get; set; } = String.Empty;
+    [Parameter] public string WinnerResults { get; set; } = String.Empty;
+    [Parameter] public bool IsDisabled { get; set; }
+    [Parameter] public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+}
