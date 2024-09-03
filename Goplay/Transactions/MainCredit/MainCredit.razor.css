@@ -5,7 +5,9 @@
     line-height: 1.7em;
     font-weight: 500;
 }
-
+.card {
+    background: none !important;
+}
 .marketing {
     background-image: url(./img/bg-middle.png),linear-gradient(180deg,#000 20%,rgb(10, 10, 10) 60%,#101019 100%) !important;
     background-size: auto;
@@ -23,8 +25,10 @@ li > a.nav-link{
 
 .nav-link.active {
     border-width: 0px 0px 4px 0px;
-    border-color: #6e182c;
+    border-color: #ffc107;
     border-style: solid;
+    color:black;
+    background: none;
 }
 
 #transaction-tab-pane {
