@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
-    <link href="GoPlayAsiaWebApp.styles.css?nc=072924" rel="stylesheet" />
+    <link id="stylesheet" href="GoPlayAsiaWebApp.styles.css" rel="stylesheet" />
     <link href="manifest.webmanifest" rel="manifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
@@ -19,25 +19,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@600&display=swap" rel="stylesheet">
     <script src="lib/jquery/jquery.min.js"></script>
-
-    <!--<link href="/css/blazored-toast.css" rel="stylesheet" />-->
     <link href="_content/Blazored.Typeahead/blazored-typeahead.css" rel="stylesheet" />
-    <!--<link href="_content/Blazored.Toast/blazored-toast.css" rel="stylesheet" />-->
     <link href="/css/blazored-modal.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/bootstrap-icons/bootstrap-icons.css">
-    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
     <link rel="icon" href="/img/favicon.ico" />
-
-    <!--<meta http-equiv="Content-Security-Policy" content="
-          default-src 'self'; 
-          script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.jquery.com  https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js; 
-          style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; 
-          font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; 
-          connect-src 'self' *.goplayasia.com wss://uatapi.goplayasia.com;
-           frame-src 'self' *.goplayasia.com;
-          img-src 'self' https://goplayasia-s3.s3.ap-southeast-1.amazonaws.com;">-->
-
 </head>
 
 <body>
@@ -59,10 +44,9 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="_content/Blazored.Typeahead/blazored-typeahead.js"></script>
-    <!--<script src="_content/Blazored.Toast/blazored-toast.js"></script>-->
     <script src="scripts/gpautils.js?nc=102423"></script>
     <script src="lib/bootstrap/dist/js/popper.min.js"></script>
-    <!--<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>-->
+
     <script>
         function checkForNewVersion() {
             fetch('_framework/blazor.boot.json', { cache: 'no-cache' })
@@ -74,7 +58,6 @@
                     return response.json();
                 })
                 .then(bootManifest => {
-                    // Use optional chaining to safely access properties
                     const newVersion = bootManifest?.resources?.wasmNative?.['dotnet.native.wasm'] ?? 'no-version';
 
                     if (localStorage['blazor-version'] !== newVersion) {
@@ -82,14 +65,51 @@
 
                         // Force reload with a unique query string to bypass cache
                         const currentUrl = window.location.href;
-                        const newUrl = currentUrl.split('?')[0] + '?cacheBuster=' + new Date().getTime();
+                        const newUrl = currentUrl.split('?')[0] + '?gpa=' + new Date().getTime();
                         window.location.href = newUrl;
-                       
                     }
                 })
                 .catch(error => {
                     console.error('Error checking for new version:', error);
                 });
+
+            checkForNewStylesheetVersion(); // Call this function after checking Blazor version
+        }
+
+        function checkForNewStylesheetVersion() {
+            fetch('GoPlayAsiaWebApp.styles.css?nc=CHECK_VERSION', { cache: 'no-cache' })
+                .then(response => {
+                    if (!response.ok) {
+                        console.error('Failed to fetch stylesheet:', response.statusText);
+                        return Promise.reject('Failed to fetch');
+                    }
+                    return response.text();
+                })
+                .then(cssContent => {
+                    const currentHash = localStorage.getItem('stylesheet-hash');
+                    const newHash = hashCode(cssContent);
+
+                    if (currentHash !== newHash) {
+                        localStorage.setItem('stylesheet-hash', newHash);
+
+                        // Update the link to force reload
+                        const link = document.getElementById('stylesheet');
+                        link.href = link.href.split('?')[0] + '?nc=' + new Date().getTime();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking for new stylesheet version:', error);
+                });
+        }
+
+        function hashCode(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = (hash << 5) - hash + char;
+                hash |= 0; // Convert to 32-bit integer
+            }
+            return hash;
         }
 
         window.addEventListener('load', checkForNewVersion);
