@@ -35,7 +35,9 @@
 .mr-10{
     margin-right: 10px;
 }
-
+.pad-l-3{
+    padding-left: 3px;
+}
 @media screen and (max-width: 460px) {
     .mb-disp {
         display: inline-flex;
