@@ -116,7 +116,7 @@
     }*/
     #link-header, #link-header.sticky {
         height: 60px;
-        top: 63px;
+        top: 51px;
     }
     
 }
@@ -130,5 +130,8 @@
     #link-header.sticky {
         left: 5%;
         width: 90%;
+    }
+    #link-header, #link-header.sticky {
+        top: 63px;
     }
 }
