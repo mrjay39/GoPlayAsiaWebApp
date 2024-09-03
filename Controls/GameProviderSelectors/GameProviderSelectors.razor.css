@@ -91,17 +91,9 @@
         min-width: 5rem;
         height: 4rem;
     }
-    #link-header.sticky {
-        max-width: 95%;
-    }
     #link-header, #link-header.sticky {
         height: 100px;
         top: 72px;
-    }
-    #link-header.sticky{
-        align-items: center;
-        justify-content: center !important;
-        display: flex;
     }
 }
 
@@ -121,10 +113,6 @@
     #link-header, #link-header.sticky {
         height: 60px;
         top: 63px;
-    }
-    #link-header.sticky {
-        left: 5%;
-        width: 90%;
     }
 }
 @media screen and (max-width: 600px) {
