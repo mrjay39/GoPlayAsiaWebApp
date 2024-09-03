@@ -7,7 +7,7 @@
 @inject LobbyViewModel _lobbyViewModel;
 
 <div class="container p-0 mt-2 text-center">
-    <div id="link-header" class="pb-2 gameOverflow-x">
+    <div id="link-header" class="pb-2 gameOverflow-x container">
         <div class="d-flex justify-content-center h-100">
             @if (_lobbyViewModel.gameProviders != null)
             {
@@ -72,6 +72,5 @@
                 $stickyPlaceholder.css('height', '0');
             }
         });
-
     });
 </script>

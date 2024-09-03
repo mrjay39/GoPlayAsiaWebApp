@@ -10,8 +10,7 @@ tr.headerContainer {
 }
 
 .beHistoryBg {
-    /*background-color: #263142;*/
-    background: rgba(154, 148, 148, 0.44);
+   border: 1px solid #dddddd;
     border-radius: 8px;
     padding: 0 5px;
     width: 100%;
