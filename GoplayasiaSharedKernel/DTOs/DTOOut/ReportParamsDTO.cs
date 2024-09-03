@@ -15,6 +15,8 @@ namespace GoplayasiaBlazor.DTOs.DTOOut
         public int? Year { get; set; }
         public int? Month { get; set; }
         public DateTime? Date { get; set; }
+        public TimeSpan? TimeFrom { get; set; }
+        public TimeSpan? TimeTo { get; set; }
         public int? GameTypeId { get; set; }
         public DateTime? DateFrom { get; set; }
         public DateTime? DateTo { get; set; }

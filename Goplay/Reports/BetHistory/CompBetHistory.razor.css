@@ -10,16 +10,19 @@ tr.headerContainer {
 }
 
 .beHistoryBg {
-    background-color: #263142;
-   width: 100%;
-   margin: 0 auto;
+    /*background-color: #263142;*/
+    background: rgba(154, 148, 148, 0.44);
+    border-radius: 8px;
+    padding: 0 5px;
+    width: 100%;
+    margin: 0 auto;
 }
 .status, .winStatusContainer {
     padding: 5px 0;
 }
 /*WIN*/
 .WinStatus {
-    color: #4cff00;
+    color: forestgreen;
 }
 
 .LossStatus {
@@ -44,5 +47,12 @@ td.row.col {
 }
 /*
 /*Tab menu*/
-
+.lbl-header
+{
+    font-size: 12px;
+    font-weight: bolder;
+}
+.history-dtl {
+    font-size: 10px;
+}
 /*Tab menu*/
