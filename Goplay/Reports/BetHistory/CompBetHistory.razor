@@ -1,6 +1,6 @@
 @using GoplayasiaBlazor.Models.Constants
 @using static GoplayasiaBlazor.Models.Constants.Settings
-<table class="maincontainer d-block rounded-3 mt-3">
+<table class="maincontainer bg-white pt-2 d-block rounded-3">
     <div class="btn-group px-2 d-flex justify-content-center" role="group" aria-label="Basic radio toggle button group">
 
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked @onchange='(() => SetCategory(Settings.Constants.specialty))'>
@@ -21,9 +21,9 @@
         <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesRng))'>
         <label class="btn btn-outline-warning text-dark" for="btnradio5">Arcade</label>
     </div>
-    <div class="px-2 mt-1">
+    <div class="d-flex justify-content-center px-2 mt-1">
         <input type="date" @bind="_compBetHistoryViewModel.SelDate" />
-        <button class="btn btn-success btn-sm" @onclick="onclick_Go">Go</button>
+        <button class="btn btn-success btn-sm mx-1" @onclick="onclick_Go">Go</button>
     </div>
 
     <tbody class="tableCon container bg-white rounded-3 pt-2" style="padding-bottom: 30px;">
@@ -35,8 +35,7 @@
                 <th class="status col text-center text-center"> GAME RESULT</th>
                 <th class="winStatusContainer col text-center">WIN</th>
                 <th class="winStatusContainer col text-center">
-                    <div>PROFIT/</div>
-                    <div>LOSS</div>
+                    <div>PROFIT/LOSS</div>
                 </th>
             </tr>
         </thead>
@@ -48,8 +47,8 @@
                 <th class="status col text-center" style="width: 40%;">BET</th>
                 <th class="winStatusContainer col text-center">WIN</th>
                 <th class="winStatusContainer col text-center">
-                    <div>PROFIT/</div>
-                    <div>LOSS</div>
+                    <div>PROFIT/LOSS</div>
+                   
                 </th>
             </tr>
         </thead>
@@ -94,21 +93,21 @@
                 }
                 else
                 {
-                <tr class="beHistoryBg row mb-1 text-dark mr-0">
+                <tr class="beHistoryBg row  text-dark mr-0">
                     <td class="col m-0 p-0">
                         <div class="lbl-header">@_gameround.GameTypeName</div>
                         <div class="history-dtl"><span class="lbl-header">Id:</span> @_gameround.ReferenceId</div>
                         <div class="lbl-header">Bet: @_gameround.BetAmount</div>
                     </td>
-                    <td class="col justify-content-center d-flex" style="font-size: 12px;">@(Decimal.Parse(_gameround.WonAmount).ToString("N2"))</td>
-                    <td class="col justify-content-center d-flex @(_gameround.IsProfit ? "WinStatus" : "LossStatus")" style="font-size: 12px;">@(Decimal.Parse(_gameround.ProfitLoss).ToString("N2"))</td>
+                    <td class="col justify-content-center d-flex align-items-center " style="font-size: 12px;">@(Decimal.Parse(_gameround.WonAmount).ToString("N2"))</td>
+                    <td class="col justify-content-center d-flex align-items-center  @(_gameround.IsProfit ? "WinStatus" : "LossStatus")" style="font-size: 12px; font-weight:600;">@(Decimal.Parse(_gameround.ProfitLoss).ToString("N2"))</td>
                 </tr>
                 }
         </Virtualize>
 
             @if (_compBetHistoryViewModel.ShowSeeMoreButton)
             {
-            <tr class="beHistoryBg row mb-1 text-dark mr-0">
+            <tr class="beHistoryBg row text-dark mr-0">
                 <td colspan="3" class="text-center">
                     @if (!_compBetHistoryViewModel.ShowAllRows)
                     {
