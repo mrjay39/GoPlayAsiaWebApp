@@ -48,7 +48,7 @@
                 <th class="winStatusContainer col text-center">WIN</th>
                 <th class="winStatusContainer col text-center">
                     <div>PROFIT/LOSS</div>
-                   
+
                 </th>
             </tr>
         </thead>
@@ -59,35 +59,31 @@
         <Virtualize Items="_compBetHistoryViewModel.VisibleGameRounds" Context="_gameround" OverscanCount="20">
                 @if (_compBetHistoryViewModel.Category == Settings.Constants.specialty)
                 {
-                <tr class="beHistoryBg row text-center mt-1 text-dark mr-0">
+                <tr class="beHistoryBg row mt-1 text-dark mr-0">
                     <td class="col m-0 p-0">
-                        <div>@_gameround.GameTypeName</div>
-                        <div>@_gameround.DateCreatedString</div>
-                        <div>@_gameround.DateCreatedTime</div>
-                        <div>@_gameround.GameRound</div>
-                        <div>@_gameround.BetValue</div>
-                        <div>@_gameround.BetAmount</div>
+                        <div class="lbl-header">@_gameround.GameTypeName</div>
+                        <div class="history-dtl"><span class="lbl-header">Id:</span> @_gameround.ReferenceId</div>
+                        <div class="history-dtl"><span class="lbl-header">Time:</span> @_gameround.DateCreatedTime</div>
+                        <div class="history-dtl"><span class="lbl-header">Bet:</span> @_gameround.BetValue</div>
+                        <div class="lbl-header">Amount: @_gameround.BetAmount</div>
                     </td>
                     <td class="col align-items-center justify-content-center d-flex">@_gameround.GameResult</td>
-                        @if (_gameround.Won)
-                        {
-                        <td class="WinStatus col align-items-center justify-content-center d-flex">@(Decimal.Parse(_gameround.WonAmount).ToString("N2"))</td>
-                        }
-                        else if (_gameround.Lost)
-                        {
-                        <td class="LossStatus col align-items-center justify-content-center d-flex">@(Decimal.Parse(_gameround.LostAmount).ToString("N2"))</td>
-                        }
-                        else if (_gameround.ConsoledAmount != "")
+                    <td class="col justify-content-center d-flex align-items-center " style="font-size: 12px;">@(_gameround.Won ? Decimal.Parse(_gameround.WonAmount).ToString("N2") : "0.00")</td>
+                        @if (_gameround.ConsoledAmount != "0.00")
                         {
                         <td class="ConsoStatus col align-items-center justify-content-center d-flex">@(Decimal.Parse(_gameround.ConsoledAmount).ToString("N2")) </td>
+                        }
+                        else if (_gameround.Cancelled || (!_gameround.Won && !_gameround.Lost && !_gameround.Cancelled))
+                        {
+                        <td class="col align-items-center justify-content-center d-flex">@Constants.BetReturned</td>
                         }
                         else if (_gameround.RoundStatus == (int)RoundStatus.PendingResult || _gameround.RoundStatus == (int)RoundStatus.Open)
                         {
                         <td class="ConsoStatus col align-items-center justify-content-center d-flex">@Constants.PendingBets </td>
                         }
-                        else if (_gameround.Cancelled || (!_gameround.Won && !_gameround.Lost && !_gameround.Cancelled))
+                        else
                         {
-                        <td class="col align-items-center justify-content-center d-flex">@Constants.BetReturned</td>
+                        <td class="col justify-content-center d-flex align-items-center  @(_gameround.IsProfit ? "WinStatus" : "LossStatus")" style="font-size: 12px; font-weight:600;">@(Decimal.Parse(_gameround.ProfitLoss).ToString("N2"))</td>
                         }
                 </tr>
                 }
@@ -97,6 +93,7 @@
                     <td class="col m-0 p-0">
                         <div class="lbl-header">@_gameround.GameTypeName</div>
                         <div class="history-dtl"><span class="lbl-header">Id:</span> @_gameround.ReferenceId</div>
+                        <div class="history-dtl"><span class="lbl-header">Time:</span> @_gameround.DateCreatedTime</div>
                         <div class="lbl-header">Bet: @_gameround.BetAmount</div>
                     </td>
                     <td class="col justify-content-end d-flex align-items-center " style="font-size: 12px;">@(Decimal.Parse(_gameround.WonAmount).ToString("N2"))</td>
@@ -109,14 +106,14 @@
             {
             <tr class="beHistoryBg row text-dark mr-0">
                 <td colspan="3" class="text-center">
-                    @if (!_compBetHistoryViewModel.ShowAllRows)
-                    {
+                        @if (!_compBetHistoryViewModel.ShowAllRows)
+                        {
                         <a class="" @onclick:preventDefault @onclick='(() => ShowAll())'>Show More</a>
-                    }
-                    else
-                    {
+                        }
+                        else
+                        {
                         <a class="" @onclick:preventDefault @onclick='(() => ShowAll())'>Show Less</a>
-                    }
+                        }
                 </td>
             </tr>
             }
