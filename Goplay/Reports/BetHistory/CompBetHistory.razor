@@ -99,8 +99,8 @@
                         <div class="history-dtl"><span class="lbl-header">Id:</span> @_gameround.ReferenceId</div>
                         <div class="lbl-header">Bet: @_gameround.BetAmount</div>
                     </td>
-                    <td class="col justify-content-center d-flex align-items-center " style="font-size: 12px;">@(Decimal.Parse(_gameround.WonAmount).ToString("N2"))</td>
-                    <td class="col justify-content-center d-flex align-items-center  @(_gameround.IsProfit ? "WinStatus" : "LossStatus")" style="font-size: 12px; font-weight:600;">@(Decimal.Parse(_gameround.ProfitLoss).ToString("N2"))</td>
+                    <td class="col justify-content-end d-flex align-items-center " style="font-size: 12px;">@(Decimal.Parse(_gameround.WonAmount).ToString("N2"))</td>
+                    <td class="col justify-content-end d-flex align-items-center  @(_gameround.IsProfit ? "WinStatus" : "LossStatus")" style="font-size: 12px; font-weight:600;">@(Decimal.Parse(_gameround.ProfitLoss).ToString("N2"))</td>
                 </tr>
                 }
         </Virtualize>

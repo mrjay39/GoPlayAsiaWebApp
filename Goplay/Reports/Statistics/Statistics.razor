@@ -2,64 +2,70 @@
 @inject ICurrentUser iCurrentUser
 @implements IAsyncDisposable
 
-<table class="StatisticMaincontainer row bg-white pb-4 pt-3 rounded-3">
-    <thead class="header row w-100">
-        <tr class="headerContainer col">
+<table class="StatisticMaincontainer d-flex justify-content-center  bg-white p-4 rounded-3">
+    <div class="w-100">
+    <thead class="header d-flex justify-content-center">
+        <tr class="headerContainer d-flex col">
             <th class="status col">Current Token</th>
-            @if (_statisticsViewModel.Statistic != null)
-            {
+                @if (_statisticsViewModel.Statistic != null)
+                {
                 <th class="currentTokenCon col">
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center justify-content-end">
                         <i class="fa-solid gpa-token"></i>
                         <b>@_statisticsViewModel.Statistic.CurrentTokenString</b>
                     </div>
                 </th>
-            }
-            else
-            {
-                <th class="currentTokenCon col">@iCurrentUser.CreditsDisp</th>
-            }
-        </tr>
-    </thead>
-    <tbody class="statcon mt-3">
-        @if (_statisticsViewModel.Statistic != null)
-        {
-            <tr class="row text-center mt-1 p-0 text-dark mr-0">
-                <td class="col ml-3">Total Deposit</td>
-                <td class="col">@_statisticsViewModel.Statistic.TotalDepositString</td>
-                <td class="col"></td>
-            </tr>
-            <tr class="row text-center mt-1 p-0 text-dark mr-0">
-                <td class="col ml-3">Total Win</td>
-                <td class="col ml-2">@_statisticsViewModel.Statistic.TotalWinString</td>
-                <td class="col ml-2"></td>
-            </tr>
-            <tr class="row text-center mt-1 p-0 text-dark mr-0">
-                <td class="col ml-3">Total Loss</td>
-                <td class="col ml-2"></td>
-                <td class="col ml-2">@_statisticsViewModel.Statistic.TotalLossString</td>
-            </tr>
-            <tr class="row text-center mt-1 p-0 text-dark mr-0">
-                <td class="col ml-3">Total Withdrawal</td>
-                <td class="col"></td>
-                <td class="totalWithdraw col">@_statisticsViewModel.Statistic.TotalWithdrawalString</td>
-            </tr>
-            <tr class="row text-center mt-5 p-0 text-dark mr-0">
-                <td class="col ml-3">Difference (Win-Loss)</td>
-                <td class="col"></td>
-                @if (@_statisticsViewModel.Statistic.DifferenceLabelColor == "Red")
-                {
-                    <td class="lossDiff col">@_statisticsViewModel.Statistic.DifferenceString</td>
                 }
                 else
                 {
-                    <td class="winDiff col">@_statisticsViewModel.Statistic.DifferenceString</td>
+                <th class="currentTokenCon  col">@iCurrentUser.CreditsDisp</th>
                 }
+        </tr>
+    </thead>
+    <tbody class="statcon mt-3">
+            @if (_statisticsViewModel.Statistic != null)
+            {
+            <tr class="  mt-1 p-0 text-dark mr-0">
+                <td class="col-6 text-start" style="background-color: #grey">Total Deposit</td>
+                <td class="col-6 text-end ">@_statisticsViewModel.Statistic.TotalDepositString</td>
+
             </tr>
-        }
-        else
-        {
+            <tr class="  text-end mt-1 p-0 text-dark mr-0">
+                <td class="col-6 text-start">Total Win</td>
+                <td class="col-6 text-end  ml-2">@_statisticsViewModel.Statistic.TotalWinString</td>
+
+            </tr>
+            <tr class="  mt-1 p-0 text-dark mr-0">
+                <td class="col-6   text-start">Total Bet</td>
+                <td class="col-3 "></td>
+                <td class="col-3 text-end ">@_statisticsViewModel.Statistic.TotalLossString</td>
+            </tr>
+            <tr class="  mt-1 p-0 text-dark mr-0" style="border-bottom: 1px solid grey">
+                <td class="col-6  text-start">Total Withdrawal</td>
+                <td class="col-3 "></td>
+                <td class="col-3 text-end totalWithdraw ">@_statisticsViewModel.Statistic.TotalWithdrawalString</td>
+            </tr>
+            <tr class="  text-end mt-5 p-0 text-dark mr-0">
+                <td class="col-6 text-start">Difference (Win-Bet)</td>
+
+                    @if (@_statisticsViewModel.Statistic.DifferenceLabelColor == "Red")
+                    {
+                    <td ></td>
+
+                    <td class="lossDiff col-3 text-end">@_statisticsViewModel.Statistic.DifferenceString</td>
+                    }
+                    else
+                    {
+
+                    <td class="winDiff col-3 text-end">@_statisticsViewModel.Statistic.DifferenceString</td>
+                    }
+            </tr>
+            }
+            else
+            {
             <span>Loading </span>
-        }
+            }
     </tbody>
+    </div>
+   
 </table>
