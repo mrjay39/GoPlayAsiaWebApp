@@ -4,17 +4,20 @@
     border-radius: 5px;
 }
 button {
+    font-size: 14px;
+}
+button {
     margin: 3px;
     color: white;
     background-color: #810202;
     border-radius: 4px;
     font-weight: 600;
-    padding: 5px 10px !important;
+    padding: 6px 8px !important;
 }
 button:hover {
     color: gold;
 }
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 360px) {
     button {
         font-size: 13px;
     }
