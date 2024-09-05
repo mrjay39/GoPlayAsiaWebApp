@@ -399,8 +399,7 @@ public partial class VerifyRegistration
         {
             SignupDTO.NationalityId = null;
         }
-        SignupDTO.PlaceOfBirth = "";
-        SignupDTO.EmailAddress = "";
+
         bool valStep2 = await _verifyRegistrationViewModel.Step2Validation(SignupDTO);
         if (valStep2)
         {
