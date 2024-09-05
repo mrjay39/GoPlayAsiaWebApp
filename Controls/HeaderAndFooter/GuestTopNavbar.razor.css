@@ -102,10 +102,6 @@
         left: 1rem;
     }
 
-.navbar-brand.gpa-navbar-brand {
-    margin-left: 5.5rem;
-}
-
 .top-row {
     height: 3.5rem;
     background-color: rgba(0,0,0,0.4);
@@ -238,14 +234,18 @@
     .toggler-login-btn {
         display: none;
     }
-}
-@media only screen and (min-width:992px) {
-
-    .loginAndSignUp, .userDropdown {
+    .userDropdown {
         margin: 10px auto 10px !important;
     }
+
     .nav-item:last-of-type {
         padding-bottom: 0;
+    }
+    #gpa-logo {
+        width: 165px;
+    }
+    #gpa-logo, .desk-none {
+        display: none !important;
     }
 }
 
@@ -259,10 +259,10 @@
     /* Toggler header adjustments */
     #gpa-toggler {
         padding: 0;
-        left: 35px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        position: inherit;
     }
 
     #gpa-logo > .logo {
@@ -270,27 +270,27 @@
     }
 
     #gpa-logo {
-        margin-left: 9.5rem;
-        z-index: 2;
-        position: relative;
+        width: 165px;
     }
 
     .toggler-login-btn {
-        max-width: 65px;
+        width: 55px;
         max-height: 30px;
         display: inline-flex;
         position: relative;
         align-items: center;
         text-align: center;
-        top: 0;
     }
     .nav-item:last-of-type {
         padding-bottom: 0;
     }
+    #d-gpa-logo {
+        display: none !important;
+    }
 }
 
 @media only screen and (min-width: 768px) {
-    .loginAndSignUp, .userDropdown {
+    .userDropdown {
         margin-left: 8rem;
         margin-top: 10px;
     }
@@ -323,19 +323,16 @@
     }
 
     #gpa-logo {
-        margin-left: 9.5rem;
+        max-width: 125px;
         z-index: 2;
-        position: relative;
     }
 
     .toggler-login-btn {
-        max-width: 65px;
-        max-height: 30px;
+        width: 65px;
         display: inline-flex;
         position: relative;
         align-items: center;
         text-align: center;
-        top: -6px;
     }
 }
 
@@ -412,18 +409,15 @@
     }
 
     #gpa-logo {
-        margin-left: 4.5rem;
+        max-width: 125px;
         z-index: 2;
-        position: relative;
     }
     .toggler-login-btn {
-        max-width: 65px;
-        max-height: 30px;
+        width: 65px;
         display: inline-flex;
         position: relative;
         align-items: center;
         text-align: center;
-        top: -6px;
     }
 }
 
@@ -495,19 +489,16 @@
     }
 
     #gpa-logo {
-        margin-left: 2.5rem;
+        max-width: 125px;
         z-index: 2;
-        position: relative;
     }
 
     .toggler-login-btn {
-        max-width: 65px;
-        max-height: 30px;
+        width: 50px;
+        font-size: 12px;
         display: inline-flex;
-        position: relative;
         align-items: center;
         text-align: center;
-        top: -6px;
     }
     /*End: Toggler header*/
 }

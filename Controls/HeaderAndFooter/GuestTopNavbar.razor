@@ -2,15 +2,36 @@
 @using GoPlayAsiaWebApp.Pages.Login.LogInModal
 <nav class="navbar top-navbar navbar-expand-lg fixed-top navbar-dark bg-black">
     <div class="container">
-        <button id="gpa-toggler" class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a id="gpa-logo" href="home" class="navbar-brand gpa-navbar-brand d-flex home align-items-center col-md-2 mb-2 mb-md-0 text-dark text-decoration-none">
-            <img src="./img/gpa-logo.png" class="img-fluid logo" alt="GoPlayAsia">
-        </a>
-        <button type="button" class="btn btn-outline-warning fw-bold me-2 toggler-login-btn" @onclick="loginSignup">Login</button>
+
+        <div class="nav-container align-items-center w-100 desk-none d-inline-flex justify-content-center" style="height: 50px;">
+            <div class="d-inline-flex">
+                <button id="gpa-toggler" class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="d-inline-flex">
+
+                <a id="gpa-logo" href="home" class="navbar-brand gpa-navbar-brand d-flex home align-items-center col-md-2 mb-md-0 text-dark text-decoration-none">
+                    <img src="./img/gpa-logo.png" class="img-fluid logo" alt="GoPlayAsia">
+                </a>
+            </div>
+            <div class="d-inline-flex">
+                <div class="d-flex">
+                    <div class="col">
+                        <button type="button" class="btn p-2 btn-outline-warning me-2 fw-bold toggler-login-btn" @onclick="loginSignup">Login</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn p-2 btn-outline-warning fw-bold toggler-login-btn m-0 d-flex justify-content-center" @onclick="loginSignup">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items w-100">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items w-100 flex justify-content-center">
+                <a id="d-gpa-logo" href="home" class="navbar-brand gpa-navbar-brand d-flex home align-items-center col-md-2 mb-md-0 text-dark text-decoration-none">
+                    <img src="./img/gpa-logo.png" class="img-fluid logo" alt="GoPlayAsia">
+                </a>
                 <li class="nav-item">
                     <a href="home" class="nav-link px-2 link-dark home">
                         <i class="fa-solid home-icon"></i> HOME
