@@ -98,7 +98,7 @@
                     <span class="errorMessage" hidden="@(@_verifyRegistrationViewModel.errEmail != "Ok"? false : true)">@_verifyRegistrationViewModel.errEmail</span>
                 </div>
                 <div class="form-group m-0">
-                    <p class="font-weight-bold titleHolder">Place of Birth</p>
+                    <p class="font-weight-bold titleHolder">Place of Birth @SignupDTO.PlaceOfBirth</p>
                     <input class="form-control" type="text" placeholder="PLACE OF BIRTH" @bind-value="SignupDTO.PlaceOfBirth">
                 </div>
                 <div class="form-group m-0">
