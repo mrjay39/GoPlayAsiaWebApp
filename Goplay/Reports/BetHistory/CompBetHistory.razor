@@ -4,22 +4,25 @@
     <div class="btn-group px-2 d-flex justify-content-center" role="group" aria-label="Basic radio toggle button group">
 
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked @onchange='(() => SetCategory(Settings.Constants.specialty))'>
-        <label class="btn btn-outline-warning text-dark " for="btnradio1">
-            <div style="font-size: 12px">Specialty</div>
-            <div style="font-size: 12px; line-height: .7;">Game</div>
+        <label class="btn btn-outline-warning text-dark col p-0 d-flex justify-content-center align-items-center" for="btnradio1">
+            <div>
+                <div style="font-size: 12px;line-height: .9;">Specialty</div>
+                <div style="font-size: 12px; line-height: .7;">Game</div>
+            </div>
+
         </label>
 
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesLive))'>
-        <label class="btn btn-outline-warning text-dark" for="btnradio2">Live</label>
+        <input type="radio" class="btn-check " name="btnradio" id="btnradio2" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesLive))'>
+        <label class="btn btn-outline-warning text-dark col p-0 d-flex justify-content-center align-items-center" for="btnradio2">Live</label>
 
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesSlots))'>
-        <label class="btn btn-outline-warning text-dark" for="btnradio3">Slots</label>
+        <input type="radio" class="btn-check p-0 d-flex justify-content-center align-items-center" name="btnradio" id="btnradio3" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesSlots))'>
+        <label class="btn btn-outline-warning text-dark col p-0 d-flex justify-content-center align-items-center" for="btnradio3">Slots</label>
 
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesCasino))'>
-        <label class="btn btn-outline-warning text-dark" for="btnradio4">Casino</label>
+        <input type="radio" class="btn-check p-0 d-flex justify-content-center align-items-center" name="btnradio" id="btnradio4" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesCasino))'>
+        <label class="btn btn-outline-warning text-dark col p-0 d-flex justify-content-center align-items-center" for="btnradio4">Casino</label>
 
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesRng))'>
-        <label class="btn btn-outline-warning text-dark" for="btnradio5">Arcade</label>
+        <input type="radio" class="btn-check p-0 d-flex justify-content-center align-items-center" name="btnradio" id="btnradio5" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesRng))'>
+        <label class="btn btn-outline-warning text-dark col p-0 d-flex justify-content-center align-items-center" for="btnradio5">Arcade</label>
     </div>
     <div class="d-flex justify-content-center px-2 mt-1">
         <input type="date" @bind="_compBetHistoryViewModel.SelDate" />
