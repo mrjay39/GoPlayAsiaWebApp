@@ -1,13 +1,19 @@
-﻿<div class="container pt-3 footer">
+﻿@using GoPlayAsiaWebApp.Pages.Login.LogInModal
+@using System.Security.Claims
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IModalService ModalService
+@inject NavigationManager _navigationManager
+
+<div class="container pt-3 footer">
     <footer class="py-2">
         <div class="row justify-content-center">
             <div id="GPAFooter" class="card px-2 bg-transparent">
                 <h5>GoPlayAsia Games</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="/Lucky9Table" class="nav-link p-0 text-muted">Lucky 9</a></li>
-                    <li class="nav-item mb-2"><a href="/First3Table" class="nav-link p-0 text-muted">First 3</a></li>
-                    <li class="nav-item mb-2"><a href="games/headstails" class="nav-link p-0 text-muted">Heads & Tails </a></li>
-                    <li class="nav-item mb-2"><a href="games/go12" class="nav-link p-0 text-muted">Go12</a></li>
+                    <li class="nav-item mb-2"><a @onclick='(() => OpenGameLink("/Lucky9Table"))' class="nav-link p-0 text-muted">Lucky 9</a></li>
+                    <li class="nav-item mb-2"><a @onclick='(() => OpenGameLink("/First3Table"))' class="nav-link p-0 text-muted">First 3</a></li>
+                    <li class="nav-item mb-2"><a @onclick='(() => OpenGameLink("/games/headstails"))' class="nav-link p-0 text-muted">Heads & Tails </a></li>
+                    <li class="nav-item mb-2"><a @onclick='(() => OpenGameLink("/games/go12"))' class="nav-link p-0 text-muted">Go12</a></li>
                     @* <li class="nav-item mb-2"><a href="games/lucky4" class="nav-link p-0 text-muted">Lucky 4</a></li> *@
                     @* <li class="nav-item mb-2"><a href="games/bigwin" class="nav-link p-0 text-muted">Big Win</a></li> *@
                 </ul>
@@ -15,18 +21,18 @@
             <div id="exploreFooter" class="card px-2 bg-transparent">
                 <h5>Explore</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a onclick="scrollToTop(event)" href="home" class="nav-link p-0 text-muted">Home</a></li>
-                    <li class="nav-item mb-2"><a onclick="scrollToTop(event)" href="aboutUs" class="nav-link p-0 text-muted">Who We Are</a></li>
-                    <li class="nav-item mb-2"><a onclick="scrollToTop(event)" href="ourTeam" class="nav-link p-0 text-muted">Our Team</a></li>
-                    <li class="nav-item mb-2"><a onclick="scrollToTop(event)" href="FAQ's" class="nav-link p-0 text-muted">FAQ's & Downloads</a></li>
-                    <li class="nav-item mb-2"><a onclick="scrollToTop(event)" href="contactUs" class="nav-link p-0 text-muted">Contact Us</a></li>
+                    <li class="nav-item mb-2"><a href="/home" class="nav-link p-0 text-muted">Home</a></li>
+                    <li class="nav-item mb-2"><a href="/aboutUs" class="nav-link p-0 text-muted">Who We Are</a></li>
+                    <li class="nav-item mb-2"><a href="/ourTeam" class="nav-link p-0 text-muted">Our Team</a></li>
+                    <li class="nav-item mb-2"><a href="/FAQ's" class="nav-link p-0 text-muted">FAQ's & Downloads</a></li>
+                    <li class="nav-item mb-2"><a href="/contactUs" class="nav-link p-0 text-muted">Contact Us</a></li>
                 </ul>
             </div>
 
             <div id="legalFooter" class="card px-2 bg-transparent">
                 <h5>Legal</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a onclick="scrollToTop()" href="PrivacyPolicy" class="nav-link p-0 text-muted">Privacy Policy</a></li>
+                    <li class="nav-item mb-2"><a href="PrivacyPolicy" class="nav-link p-0 text-muted">Privacy Policy</a></li>
                     <li class="nav-item mb-2"><a href="https://goplayasia.com/wp-content/uploads/2022/11/Terms-and-Condition-1.5.pdf" class="nav-link p-0 text-muted">Terms and Conditions</a></li>
                 </ul>
                 <img src="./img/pagcor-logo.png" class="img-fluid img-fluid w-25" />
@@ -121,6 +127,28 @@
         <p>Welcome to our chat support! How can we assist you today?</p>
     </div>
 </div> *@
+@code{
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
+    private ClaimsPrincipal user;
+
+    private async void OpenGameLink(string url)
+    {
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        if (!user.Identity.IsAuthenticated)
+        {
+            var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("", new ModalParameters(), new ModalOptions() { DisableBackgroundCancel = true, HideCloseButton = true });
+        }
+        else
+        {
+            _navigationManager.NavigateTo(url);
+        }
+
+    }
+}
 <script>
     function scrollToTop(event) {
         event.preventDefault();
