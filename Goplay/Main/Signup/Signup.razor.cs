@@ -60,7 +60,7 @@ public partial class Signup
     private bool submitPress = false;
     private bool hideMobile = true;
     private bool refWarning = true;
-    private bool agreePolicy = true;
+    private bool agreePolicy = false;
     private bool disableSubmit = true;
     private bool disbaleLogin = true;
     private bool isrefkeyenabled = true;
