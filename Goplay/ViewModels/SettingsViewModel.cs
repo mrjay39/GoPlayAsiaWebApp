@@ -359,17 +359,22 @@ namespace GoPlayAsiaWebApp.Goplay.ViewModels
                 {
                     case 1:
                         _toastService.ShowError("New password and confirm password did not match");
+
+                        return false;
                         break;
                     case 2:
                         _toastService.ShowError("New password cannot be empty and must be at least 8 characters");
+
+                        return false;
                         break;
                     case 3:
                         _toastService.ShowError("New password cannot contain spaces");
+
+                        return false;
                         break;
                     default:
                         break;
                 }
-                return false;
             }
             UserDTO paramsModel = new UserDTO()
             {

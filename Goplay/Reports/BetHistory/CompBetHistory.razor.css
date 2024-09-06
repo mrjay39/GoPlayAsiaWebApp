@@ -7,6 +7,7 @@ tr.headerContainer {
     background-color: white;
     width: 640px;
     margin: auto;
+ 
 }
 
 .beHistoryBg {
@@ -18,6 +19,7 @@ tr.headerContainer {
 }
 .status, .winStatusContainer {
     padding: 5px 0;
+    font-size: clamp(11px,12px,13px)
 }
 /*WIN*/
 .WinStatus {

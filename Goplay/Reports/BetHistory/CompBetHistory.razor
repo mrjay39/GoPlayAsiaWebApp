@@ -33,10 +33,10 @@
         @if (_compBetHistoryViewModel.Category == Settings.Constants.specialty)
         {
         <thead class="row p-0 justify-content-center">
-            <tr class="d-flex headerContainer" style="font-size: 13px">
+            <tr class="d-flex headerContainer" >
                 <th class="status col text-center">BET</th>
-                <th class="status col text-center text-center"> GAME RESULT</th>
-                <th class="winStatusContainer col text-center">WIN</th>
+                <th class="status col text-center text-end"> GAME RESULT</th>
+                <th class="winStatusContainer col text-end">WIN</th>
                 <th class="winStatusContainer col text-center">
                     <div>PROFIT/LOSS</div>
                 </th>
@@ -46,10 +46,10 @@
         else
         {
         <thead class="row p-0 justify-content-center">
-            <tr class="d-flex headerContainer" style="font-size: 13px">
-                <th class="status col text-center" style="width: 40%;">BET</th>
-                <th class="winStatusContainer col text-center">WIN</th>
-                <th class="winStatusContainer col text-center">
+            <tr class="d-flex headerContainer">
+                <th class="status col-5 text-center" style="width: 40%;">BET</th>
+                <th class="winStatusContainer col text-end">WIN</th>
+                <th class="winStatusContainer col text-end">
                     <div>PROFIT/LOSS</div>
 
                 </th>
@@ -63,7 +63,7 @@
                 @if (_compBetHistoryViewModel.Category == Settings.Constants.specialty)
                 {
                 <tr class="beHistoryBg row mt-1 text-dark mr-0">
-                    <td class="col m-0 p-0">
+                    <td class="col-5 m-0 p-0">
                         <div class="lbl-header">@_gameround.GameTypeName</div>
                         <div class="history-dtl"><span class="lbl-header">Id:</span> @_gameround.ReferenceId</div>
                         <div class="history-dtl"><span class="lbl-header">Time:</span> @_gameround.DateCreatedTime</div>
@@ -93,14 +93,14 @@
                 else
                 {
                 <tr class="beHistoryBg row  text-dark mr-0">
-                    <td class="col m-0 p-0">
+                    <td class="col-5 m-0 p-0">
                         <div class="lbl-header">@_gameround.GameTypeName</div>
                         <div class="history-dtl"><span class="lbl-header">Id:</span> @_gameround.ReferenceId</div>
                         <div class="history-dtl"><span class="lbl-header">Time:</span> @_gameround.DateCreatedTime</div>
                         <div class="lbl-header">Bet: @_gameround.BetAmount</div>
                     </td>
-                    <td class="col justify-content-end d-flex align-items-center " style="font-size: 12px;">@(Decimal.Parse(_gameround.WonAmount).ToString("N2"))</td>
-                    <td class="col justify-content-end d-flex align-items-center  @(_gameround.IsProfit ? "WinStatus" : "LossStatus")" style="font-size: 12px; font-weight:600;">@(Decimal.Parse(_gameround.ProfitLoss).ToString("N2"))</td>
+                    <td class="col p-0 justify-content-end d-flex align-items-center " style="font-size: 12px;">@(Decimal.Parse(_gameround.WonAmount).ToString("N2"))</td>
+                    <td class="col p-0 justify-content-end d-flex align-items-center  @(_gameround.IsProfit ? "WinStatus" : "LossStatus")" style="font-size: 12px; font-weight:600;">@(Decimal.Parse(_gameround.ProfitLoss).ToString("N2"))</td>
                 </tr>
                 }
         </Virtualize>
