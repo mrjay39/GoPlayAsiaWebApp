@@ -25,10 +25,11 @@
     z-index: 1040;
     display: inline-flex;
 }
-.chckAgreeAll{
+.chckAgreeAll {
     position: relative;
-    color: black;
+    color: #3b3939;
     top: 20px;
+    font-weight: bold;
 }
 .must-21 {
     display: inline-flex;
