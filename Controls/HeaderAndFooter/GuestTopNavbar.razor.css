@@ -234,6 +234,9 @@
     .toggler-login-btn {
         display: none;
     }
+    .d-btn{
+        width: 80px;
+    }
     .userDropdown {
         margin: 10px auto 10px !important;
     }
@@ -246,6 +249,9 @@
     }
     #gpa-logo, .desk-none {
         display: none !important;
+    }
+    #d-gpa-logo{
+        width: 180px;
     }
 }
 

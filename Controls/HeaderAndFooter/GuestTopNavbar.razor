@@ -17,7 +17,7 @@
             <div class="d-inline-flex">
                 <div class="d-flex">
                     <div class="col">
-                        <button type="button" class="btn p-2 btn-outline-warning me-2 fw-bold toggler-login-btn" @onclick="() => loginSignup(true)">Login</button>
+                        <button type="button" class="btn p-2 btn-outline-warning me-1 fw-bold toggler-login-btn" @onclick="() => loginSignup(true)">Login</button>
                     </div>
                     <div class="col">
                         <button type="button" class="btn p-2 btn-outline-warning fw-bold toggler-login-btn m-0 d-flex justify-content-center" @onclick="() => loginSignup(false)">SignUp</button>
@@ -28,7 +28,7 @@
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items w-100 flex justify-content-center">
-                <a id="d-gpa-logo" href="home" class="navbar-brand gpa-navbar-brand d-flex home align-items-center col-md-2 mb-md-0 text-dark text-decoration-none">
+                <a id="d-gpa-logo" href="home" class="navbar-brand gpa-navbar-brand d-flex home align-items-center col-md-2 mb-md-0 text-dark text-decoration-none m-0">
                     <img src="./img/gpa-logo.png" class="img-fluid logo" alt="GoPlayAsia">
                 </a>
                 <li class="nav-item">
@@ -80,8 +80,8 @@
                 </li> *@
 
                 <li class="nav-item loginAndSignUp">
-                    <button type="button" class="btn btn-outline-warning fw-bold me-2" @onclick="() => loginSignup(true)">Login</button>
-                    <button type="button" class="btn btn-outline-warning fw-bold" @onclick="() => loginSignup(false)">SignUp</button>
+                    <button type="button" class="btn btn-outline-warning fw-bold d-btn me-1" @onclick="() => loginSignup(true)">Login</button>
+                    <button type="button" class="btn btn-outline-warning fw-bold d-btn" @onclick="() => loginSignup(false)">SignUp</button>
                 </li>
 
             </ul>
