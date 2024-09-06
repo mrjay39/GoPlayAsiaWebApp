@@ -2,7 +2,6 @@
 @using GoPlayAsiaWebApp.Pages.Login.LogInModal
 <nav class="navbar top-navbar navbar-expand-lg fixed-top navbar-dark bg-black">
     <div class="container">
-
         <div class="nav-container align-items-center w-100 desk-none d-inline-flex justify-content-center" style="height: 50px;">
             <div class="d-inline-flex">
                 <button id="gpa-toggler" class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,10 +17,10 @@
             <div class="d-inline-flex">
                 <div class="d-flex">
                     <div class="col">
-                        <button type="button" class="btn p-2 btn-outline-warning me-2 fw-bold toggler-login-btn" @onclick="loginSignup">Login</button>
+                        <button type="button" class="btn p-2 btn-outline-warning me-2 fw-bold toggler-login-btn" @onclick="() => loginSignup(true)">Login</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn p-2 btn-outline-warning fw-bold toggler-login-btn m-0 d-flex justify-content-center" @onclick="loginSignup">SignUp</button>
+                        <button type="button" class="btn p-2 btn-outline-warning fw-bold toggler-login-btn m-0 d-flex justify-content-center" @onclick="() => loginSignup(false)">SignUp</button>
                     </div>
                 </div>
             </div>
@@ -81,16 +80,32 @@
                 </li> *@
 
                 <li class="nav-item loginAndSignUp">
-                    <button type="button" class="btn btn-outline-warning fw-bold me-2" @onclick="loginSignup">Login</button>
-                    @*  <a type="button" class="btn btn-outline-warning fw-bold me-2" href="/login">Login</a>
-                    <a type="button" class="btn btn-outline-warning fw-bold" href="/signup">Sign-up</a> *@
-                    @* <button type="button" class="btn btn-outline-warning fw-bold" data-bs-toggle="modal" data-bs-target="#ageConfirmModal">Sign-up</button> *@
+                    <button type="button" class="btn btn-outline-warning fw-bold me-2" @onclick="() => loginSignup(true)">Login</button>
+                    <button type="button" class="btn btn-outline-warning fw-bold" @onclick="() => loginSignup(false)">SignUp</button>
                 </li>
 
             </ul>
         </div>
     </div>
 </nav>
+@code {
+    [CascadingParameter] public IModalService popupModal { get; set; } = default!;
+
+    private void loginSignup(bool isLogin)
+    {
+        var modalParameters = new ModalParameters();
+        modalParameters.Add("IsLogin", isLogin);  // Pass the IsLogin parameter to the modal
+
+        popupModal.Show<LoginAndSignUp>("", modalParameters, new ModalOptions
+            {
+                DisableBackgroundCancel = true,
+                HideCloseButton = true
+        });
+    }
+
+
+}
+
 <script>
     document.addEventListener('click', function (event) {
         var navbarCollapse = document.querySelector('.navbar-collapse');
@@ -113,12 +128,3 @@
         });
     });
 </script>
-
-@code {
-    [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
-
-    private void loginSignup()
-    {
-        var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("", new ModalParameters(), new ModalOptions() { DisableBackgroundCancel = true, HideCloseButton = true });
-    }
-}

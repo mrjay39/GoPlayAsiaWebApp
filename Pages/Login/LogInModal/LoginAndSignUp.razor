@@ -12,19 +12,18 @@
                     <div class="col p-2">
                         <ul class="nav nav-tabs justify-content-start pt-3" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="loginTab" data-bs-toggle="tab" href="#loginPanel" role="tab" aria-controls="loginPanel" aria-selected="true" @onclick:preventDefault @onclick='(() => setComponent(1))'>
+                                <a class="nav-link @(_currentComponent == 1 ? "active" : "")" id="loginTab" data-bs-toggle="tab" href="#loginPanel" role="tab" aria-controls="loginPanel" aria-selected="@(_currentComponent == 1)" @onclick:preventDefault @onclick='(() => setComponent(1))'>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                     <span>Login</span>
                                 </a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="signUpTab" data-bs-toggle="tab" href="#signUpPanel" role="tab" aria-controls="signUpPanel" aria-selected="false"
+                                <a class="nav-link @(_currentComponent == 2 ? "active" : "")" id="signUpTab" data-bs-toggle="tab" href="#signUpPanel" role="tab" aria-controls="signUpPanel" aria-selected="@(_currentComponent == 2)"
                                 @onclick:preventDefault @onclick='(() => setComponent(2))'>
                                     <i class="fa-solid fa-user-plus"></i>
                                     <span>Sign Up</span>
                                 </a>
                             </li>
-
                         </ul>
                         <div class="tab-content pt-4" id="tab-content">
                             @if (_currentComponent == 1)
@@ -49,14 +48,27 @@
 </div>
 @code {
     public int _currentComponent { get; set; } = 1;
+
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
 
+    [Parameter] public bool IsLogin { get; set; }
+
+    // Update _currentComponent based on IsLogin parameter
+    protected override void OnParametersSet()
+    {
+        _currentComponent = IsLogin ? 1 : 2;
+    }
+
+    // Method to switch between Login and SignUp tabs
     public void setComponent(int comp)
     {
         _currentComponent = comp;
     }
+
+    // Method to close the modal
     public void ClosePopup()
     {
         BlazoredModal.CloseAsync();
     }
+
 }
