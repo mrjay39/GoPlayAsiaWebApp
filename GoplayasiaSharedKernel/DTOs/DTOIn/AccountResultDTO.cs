@@ -10,8 +10,8 @@ namespace GoplayasiaBlazor.Dtos.DTOIn
         public UserDTO ParentUser { get; set; }
         public List<UserDTO> Users { get; set; }
         public List<RegionDTO> Regions { get; set; }
-        public List<NationalityDTO> Nationalities { get; set; }
-        public List<NatureOfWorkDTO> NaturesOfWork { get; set; }
-        public List<SourceOfIncomeDTO> SourcesOfIncome { get; set; }
+        public NationalityDTO Nationality { get; set; }
+        public NatureOfWorkDTO NaturesOfWork { get; set; }
+        public SourceOfIncomeDTO SourcesOfIncome { get; set; }
     }
 }
