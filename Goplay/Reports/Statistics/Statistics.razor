@@ -32,13 +32,13 @@
             </tr>
             <tr class="  text-end mt-1 p-0 text-dark mr-0">
                 <td class="col-6 text-start">Total Win</td>
-                <td class="col-6 text-end  ml-2">@_statisticsViewModel.Statistic.TotalWinString</td>
+                <td class="col-6 text-end  ml-2">@_statisticsViewModel.Statistic.TotalWinningsString</td>
 
             </tr>
             <tr class="  mt-1 p-0 text-dark mr-0">
                 <td class="col-6   text-start">Total Bet</td>
                 <td class="col-3 "></td>
-                <td class="col-3 text-end ">@_statisticsViewModel.Statistic.TotalLossString</td>
+                <td class="col-3 text-end ">@_statisticsViewModel.Statistic.TotalBetAmountString</td>
             </tr>
             <tr class="  mt-1 p-0 text-dark mr-0" style="border-bottom: 1px solid grey">
                 <td class="col-6  text-start">Total Withdrawal</td>
@@ -52,12 +52,12 @@
                     {
                     <td ></td>
 
-                    <td class="lossDiff col-3 text-end">@_statisticsViewModel.Statistic.DifferenceString</td>
+                    <td class="lossDiff col-3 text-end">@_statisticsViewModel.Statistic.DiffWinBetString</td>
                     }
                     else
                     {
 
-                    <td class="winDiff col-3 text-end">@_statisticsViewModel.Statistic.DifferenceString</td>
+                    <td class="winDiff col-3 text-end">@_statisticsViewModel.Statistic.DiffWinBetString</td>
                     }
             </tr>
             }

@@ -21,10 +21,21 @@ namespace GoplayasiaBlazor.Models.Incoming
         public string TotalEndingOverallTotalString { get; set; }
         public decimal Difference { get; set; }
         public string DifferenceString { get; set; }
+        public decimal TotalBetAmount { get; set; }
+        public string TotalBetAmountString => TotalBetAmount.ToString("N2");
+        public decimal TotalWinnings { get; set; }
+        public string TotalWinningsString => TotalWinnings.ToString("N2");
         public string DifferenceLabelColor => SetDifferenceLabelColor();
         private string SetDifferenceLabelColor()
         {
-            return TotalWin > TotalLoss ? "Green" : "Red";
+            return TotalWinnings > TotalBetAmount ? "Green" : "Red";
         }
+
+        public decimal DiffWinBet => SetDifferenceWinBet();
+        private decimal SetDifferenceWinBet()
+        {
+            return TotalWinnings - TotalBetAmount;
+        }
+        public string DiffWinBetString => DiffWinBet.ToString("N2");
     }
 }
