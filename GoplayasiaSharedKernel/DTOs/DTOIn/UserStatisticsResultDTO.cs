@@ -21,5 +21,9 @@ namespace GoplayasiaBlazor.DTOs.DTOIn
         public string TotalEndingOverallTotalString { get; set; }
         public decimal Difference { get; set; }
         public string DifferenceString { get; set; }
+        public decimal TotalBetAmount { get; set; }
+        public string TotalBetAmountString { get; set; }
+        public decimal TotalWinnings { get; set; }
+        public string TotalWinningsString { get; set; }
     }
 }
