@@ -19,15 +19,7 @@
                         <div class="d-flex text-center justify-content-center">
                             <ul class="text-12 p-2">
                                 <li class="text-start list-unstyled">
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" @bind="IsOver21" id="age21">
-                                        <label class="form-check-label" for="age21">
-                                            <p> I am over 21 years of age.</p>
-                                        </label>
-                                    </div>
-                                </li>
-                                <li class="text-start list-unstyled">
-                                    <div class="form-check form-switch">
+                                    <div class="form-check form-check">
                                         <input class="form-check-input" type="checkbox" @bind="IsNotGovernmentOfficial" id="notGovernmentOfcl">
                                         <label class="form-check-label" for="notGovernmentOfcl">
                                             <p>
@@ -37,7 +29,7 @@
                                     </div>
                                 </li>
                                 <li class="text-start list-unstyled">
-                                    <div class="form-check form-switch">
+                                    <div class="form-check form-check">
                                         <input class="form-check-input" type="checkbox" @bind="IsNotGamingEmployment" id="gamingEmployment">
                                         <label class="form-check-label" for="gamingEmployment">
                                             <p> I am not a Gaming Employment License (GEL) holder.</p>
@@ -45,13 +37,29 @@
                                     </div>
                                 </li>
                                 <li class="text-start list-unstyled">
-                                    <div class="form-check form-switch">
+                                    <div class="form-check form-check">
+                                        <input class="form-check-input" type="checkbox" @bind="IsOver21" id="age21">
+                                        <label class="form-check-label" for="age21">
+                                            <p> I am over 21 years of age.</p>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="text-start list-unstyled">
+                                    <div class="form-check form-check">
                                         <input class="form-check-input" type="checkbox" @bind="AgreedToTerms" id="termsOfUse">
                                         <label class="form-check-label" for="termsOfUse">
                                             <p>
                                                 You agree to our
                                                 <a href="https://docs.goplayasia.com/toc.html" class="text-decoration-none fw-bold">Terms of Use.</a>
                                             </p>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="text-start list-unstyled chckAgreeAll">
+                                    <div class="form-check form-check">
+                                        <input class="form-check-input" type="checkbox" @bind="AgreeAll" id="AgreeAll">
+                                        <label class="form-check-label" for="AgreeAll">
+                                            <p> I Acknowledge and Agree to All of the Above</p>
                                         </label>
                                     </div>
                                 </li>
@@ -80,10 +88,34 @@
 </div>
 
 @code {
-    private bool IsOver21 { get; set; } = true;
-    private bool IsNotGovernmentOfficial { get; set; } = true;
-    private bool IsNotGamingEmployment { get; set; } = true;
-    private bool AgreedToTerms { get; set; } = true;
+    private bool _agreeAll;
+    public bool AgreeAll
+    {
+        get => _agreeAll;
+        set
+        {
+            _agreeAll = value;
+            if (_agreeAll)
+            {
+                IsOver21 = true;
+                IsNotGovernmentOfficial = true;
+                IsNotGamingEmployment = true;
+                AgreedToTerms = true;
+            }
+            else
+            {
+                IsOver21 = false;
+                IsNotGovernmentOfficial = false;
+                IsNotGamingEmployment = false;
+                AgreedToTerms = false;
+            }
+        }
+    }
+
+    private bool IsOver21 { get; set; } = false;
+    private bool IsNotGovernmentOfficial { get; set; } = false;
+    private bool IsNotGamingEmployment { get; set; } = false;
+    private bool AgreedToTerms { get; set; } = false;
 
     private bool IsFormValid => IsOver21 && IsNotGovernmentOfficial && IsNotGamingEmployment && AgreedToTerms;
 
@@ -91,5 +123,11 @@
     {
         await OnAgree.InvokeAsync();
     }
+
+    private void OnCheckboxChange()
+    {
+        AgreeAll = IsOver21 && IsNotGovernmentOfficial && IsNotGamingEmployment && AgreedToTerms;
+    }
+
     [Parameter] public EventCallback OnAgree { get; set; }
 }

@@ -25,6 +25,11 @@
     z-index: 1040;
     display: inline-flex;
 }
+.chckAgreeAll{
+    position: relative;
+    margin-top: 20px;
+    top: 20px;
+}
 .must-21 {
     display: inline-flex;
     width: 150px;
