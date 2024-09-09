@@ -119,6 +119,7 @@
         var navbarCollapse = document.querySelector('.navbar-collapse');
         var navbarToggler = document.querySelector('.navbar-toggler');
 
+        if (document.querySelector('.navbar') == null) return;
         // Check if the click is inside the navbar or its children
         var isClickInsideNavbar = document.querySelector('.navbar').contains(event.target);
 
