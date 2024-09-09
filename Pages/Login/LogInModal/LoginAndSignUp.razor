@@ -51,7 +51,7 @@
 
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
 
-    [Parameter] public bool IsLogin { get; set; }
+    [Parameter] public bool IsLogin { get; set; } = true;
 
     // Update _currentComponent based on IsLogin parameter
     protected override void OnParametersSet()
