@@ -9,6 +9,7 @@
 @inject IJSRuntime JSRuntime
 @attribute [Authorize(Roles = "1")]
 @layout GPALayout
+@inject IJSRuntime JSRuntime
 
 <div id="gameContainer" class="container">
     <div id="gamePopUp" class="modal-dialog modal-dialog-centered fixed-centered">
@@ -44,9 +45,18 @@
     private IModalReference popupRef;
 
     private async Task Close()
-
     {
-        await JSRuntime.InvokeVoidAsync("history.back");
+        var backURL = await JSRuntime.InvokeAsync<string>("sessionStorage.getItem", "backURL");
+        if (!string.IsNullOrEmpty(backURL) )
+        {
+            _navigationManager.NavigateTo(backURL);
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("history.back");
+        }
+  
+       
     }
     protected override Task OnAfterRenderAsync(bool firstRender)
 

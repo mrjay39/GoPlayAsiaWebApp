@@ -1,5 +1,4 @@
 ﻿using GoplayasiaBlazor.Dtos.Base;
-using GoplayasiaBlazor.DTOs;
 
 namespace GoplayasiaBlazor.DTOs.Bingo
 {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GoplayasiaBlazor.Models.Base
+﻿namespace GoplayasiaBlazor.Models.Base
 {
     public class BaseResultModel
     {

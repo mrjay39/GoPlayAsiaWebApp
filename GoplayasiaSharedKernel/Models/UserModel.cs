@@ -1,9 +1,4 @@
-﻿using GoplayasiaBlazor.DTOs.DTOOut;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GoplayasiaBlazor.Models
+﻿namespace GoplayasiaBlazor.Models
 {
     public class UserModel
     {

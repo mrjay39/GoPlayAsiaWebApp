@@ -1,11 +1,4 @@
-﻿using GoplayasiaBlazor.Models;
-using GoplayasiaBlazor.Models.Base;
-using GoplayasiaSharedKernel.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GoplayasiaBlazor.Models.Incoming
+﻿namespace GoplayasiaBlazor.Models.Incoming
 {
     public class AccountResultModel
     {

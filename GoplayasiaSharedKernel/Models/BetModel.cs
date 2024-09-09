@@ -1,9 +1,6 @@
 ﻿
 using GoplayasiaBlazor.Dtos.DTOIn;
 using GoplayasiaBlazor.Models.Constants;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoplayasiaBlazor.Models
@@ -29,7 +26,7 @@ namespace GoplayasiaBlazor.Models
         public string DrawDateTimeString { get; set; }
         public string RoundNumberDisplay { get; set; }
         public string Result { get; set; }
-        public string GameResult { get; set; }        
+        public string GameResult { get; set; }
         public string GigaCombination { get; set; }
         public decimal? Winnings { get; set; }
 
@@ -61,7 +58,7 @@ namespace GoplayasiaBlazor.Models
         /// for display
         /// </summary>
         public string BetAmountDisplay => SetBetAmountDisplay();
-        public string WinableAmount { get; set;  }
+        public string WinableAmount { get; set; }
         public string SetBetAmountDisplay()
         {
             return BetAmount != null ? Convert.ToDecimal(BetAmount).ToString("#,##0") : "0";
@@ -74,7 +71,7 @@ namespace GoplayasiaBlazor.Models
             string result = "#ffffff";
             if (GameTypeId == (int)GameTypes.Giga_Draw || GameTypeId == (int)GameTypes.Drop_And_Win)
             {
-                if (BetStatus == (int)Settings.BetStatus.Win) 
+                if (BetStatus == (int)Settings.BetStatus.Win)
                 {
                     result = "#66ff33";
                 }

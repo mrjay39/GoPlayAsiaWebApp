@@ -1,8 +1,8 @@
-﻿using Blazored.Modal.Services;
-using Blazored.Modal;
+﻿using Blazored.Modal;
+using Blazored.Modal.Services;
+using GoplayasiaBlazor.Models;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using Microsoft.AspNetCore.Components;
-using GoplayasiaBlazor.Models;
 using System.Collections.ObjectModel;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.Shared

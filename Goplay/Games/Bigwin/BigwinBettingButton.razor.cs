@@ -1,12 +1,8 @@
 ﻿using Blazored.Modal;
 using Blazored.Modal.Services;
-using Blazored.Toast.Services;
 using GoplayasiaBlazor.Models;
 using Microsoft.AspNetCore.Components;
 using System.Collections.ObjectModel;
-using System.Diagnostics.Metrics;
-using System.Text.RegularExpressions;
-using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.Bigwin;
 

@@ -1,7 +1,5 @@
 ﻿using Blazored.Modal.Services;
-using GoplayasiaBlazor.Models;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
-using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using Microsoft.AspNetCore.Components;
 
 namespace GoPlayAsiaWebApp.Goplay.Reports.Transaction

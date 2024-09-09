@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using GoplayasiaBlazor.Core.Global;
 using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Helpers.Interface;
 using GoplayasiaBlazor.Core.Services.Interface;
@@ -7,7 +6,6 @@ using GoplayasiaBlazor.Dtos.DTOIn;
 using GoplayasiaBlazor.Dtos.DTOIn.Profile;
 using GoplayasiaBlazor.Models;
 using GoplayasiaSharedKernel.DTOs.DTOIn.Profile;
-using GoplayasiaSharedKernel.Models;
 
 namespace GoplayasiaBlazor.Core.Services
 {
@@ -173,7 +171,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<List<CashinCashoutSettings>> GetCashinCashoutSettings()
         {
             try
@@ -186,7 +184,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<UBBanksDTO> GetInstpayBanks()
         {
             try
@@ -199,7 +197,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<GCashAccountDTO> GetActiveGCashAccount()
         {
             try
@@ -212,7 +210,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<List<SurveyQuestionModel>> GetSurveyQuestions()
         {
             try
@@ -227,7 +225,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<List<SurveyAnswerModel>> GetSurveyAnswers(int QuestionId)
         {
             try
@@ -242,15 +240,15 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<List<GamingSitesDTO>> GetGamingSitesAsync()
         {
             try
             {
                 var result = await _httpClientHelper.GetAsync<List<GamingSitesDTO>>($"Constant/GamingSites", string.Empty);
-                if (result == null || result.Count< 1)
+                if (result == null || result.Count < 1)
                     throw new Exception();
-              return result;
+                return result;
             }
             catch
             {

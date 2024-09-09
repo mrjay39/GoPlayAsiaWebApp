@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GoplayasiaBlazor.Dtos.Base
+﻿namespace GoplayasiaBlazor.Dtos.Base
 {
     public class BaseResultDTO
     {

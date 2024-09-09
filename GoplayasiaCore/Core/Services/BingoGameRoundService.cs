@@ -3,13 +3,10 @@ using AutoMapper;
 using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Helpers.Interface;
 using GoplayasiaBlazor.Core.Services.Interface;
-using GoplayasiaBlazor.Dtos.DTOIn;
 using GoplayasiaBlazor.Dtos.DTOOut;
 using GoplayasiaBlazor.DTOs.Bingo;
 using GoplayasiaBlazor.DTOs.Bingo.Outgoing;
-using GoplayasiaBlazor.DTOs.DTOIn;
 using GoplayasiaBlazor.Models;
-using GoplayasiaBlazor.Models.Incoming;
 
 namespace GoplayasiaBlazor.Core.Services
 {

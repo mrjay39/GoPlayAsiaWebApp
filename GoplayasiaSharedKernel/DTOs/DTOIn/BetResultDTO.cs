@@ -1,9 +1,6 @@
 ﻿
 using GoplayasiaBlazor.Dtos.Base;
 using GoplayasiaBlazor.Dtos.DTOOut;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GoplayasiaBlazor.Dtos.DTOIn
 {

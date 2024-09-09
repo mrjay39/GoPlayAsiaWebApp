@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GoplayasiaBlazor.DTOs
+﻿namespace GoplayasiaBlazor.DTOs
 {
     public class TransactionDTO
     {

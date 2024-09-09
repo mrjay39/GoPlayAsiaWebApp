@@ -21,7 +21,7 @@ namespace GoplayasiaBlazor.Core.Services
             _iCurrentUser = iCurrentUser;
             _mapper = mapper;
         }
-        
+
         public async Task<GameChipModel> GetGameChips(int gameTypeId)
         {
             try
@@ -36,7 +36,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<GameSettingModel> GetGameSettings(int gameTypeId)
         {
             try
@@ -51,7 +51,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<List<GameVariantModel>> GetGameSettingsVariant(int gameTypeId)
         {
             try
@@ -66,7 +66,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<GameTypeModel> GetGameType(int gameTypeId)
         {
             try
@@ -81,7 +81,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<List<GameVariantChipsModel>> GetGameVariantChips(int gameTypeId)
         {
             try
@@ -96,7 +96,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<StreamKey> GenerateStreamKey(string streamID, string type)
         {
             try
@@ -111,7 +111,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<List<PlayerCategoryModel>> GetPlayerCategory()
         {
             try
@@ -126,7 +126,7 @@ namespace GoplayasiaBlazor.Core.Services
                 throw new Exception();
             }
         }
-        
+
         public async Task<GameChipModel> GetGameChipsByCategory(int gameTypeId, int categoryId)
         {
             try
@@ -141,7 +141,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<List<GameVariantChipsModel>> GetGameVariantChipsByCategory(int gameTypeId, int categoryId)
         {
             try

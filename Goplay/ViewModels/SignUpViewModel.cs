@@ -6,7 +6,6 @@ using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Helpers;
 using GoplayasiaBlazor.Core.Services.Interface;
 using GoplayasiaBlazor.Dtos.DTOIn;
-using GoplayasiaBlazor.Dtos.DTOOut;
 using GoplayasiaBlazor.DTOs.DTOOut;
 using GoplayasiaBlazor.Models;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;

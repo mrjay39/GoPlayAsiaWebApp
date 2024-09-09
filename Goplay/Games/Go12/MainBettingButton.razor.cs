@@ -1,6 +1,4 @@
-﻿using Blazored.Modal;
-using Blazored.Modal.Services;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.Go12;

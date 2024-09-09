@@ -1,11 +1,8 @@
 ﻿using Blazored.Modal.Services;
-using GoplayasiaBlazor.Core.Global.Interface;
-using GoplayasiaBlazor.Dtos.DTOIn;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
-using GoPlayAsiaWebApp.Goplay.Shared.Popup;
-using Microsoft.AspNetCore.Components;
-using System.Collections.ObjectModel;
 using GoplayasiaBlazor.Models.Constants;
+using GoPlayAsiaWebApp.Goplay.Shared.Popup;
+using GoPlayAsiaWebApp.Goplay.ViewModels;
+using Microsoft.AspNetCore.Components;
 
 namespace GoPlayAsiaWebApp.Goplay.Reports.BetHistory;
 

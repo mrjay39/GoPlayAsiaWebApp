@@ -1,13 +1,5 @@
-﻿using GoplayasiaBlazor.Dtos.Base;
-using GoplayasiaBlazor.Dtos.DTOIn;
-using GoplayasiaBlazor.DTOs.eGames;
-using GoplayasiaSharedKernel.DTOs.DTOIn;
+﻿using GoplayasiaBlazor.DTOs.eGames;
 using GoplayasiaSharedKernel.DTOs.eGames;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GoplayasiaCore.Core.Services.Interface
 {

@@ -5,13 +5,13 @@ using GoplayasiaBlazor.Core.Services.Interface;
 using GoplayasiaBlazor.Dtos.DTOOut;
 using GoplayasiaBlazor.Models;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
+using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.JSInterop;
 using System.Collections.ObjectModel;
 using static GoplayasiaBlazor.Models.Constants.Settings;
-using Microsoft.AspNetCore.Components.Authorization;
-using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 
 namespace GoPlayAsiaWebApp.Goplay.ViewModels;
 

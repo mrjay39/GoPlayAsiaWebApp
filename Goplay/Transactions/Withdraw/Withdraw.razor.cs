@@ -1,7 +1,7 @@
 ﻿using Blazored.Modal.Services;
 using GoplayasiaBlazor.Dtos.DTOIn;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
+using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
 
 namespace GoPlayAsiaWebApp.Goplay.Transactions.Withdraw;

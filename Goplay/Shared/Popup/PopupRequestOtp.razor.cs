@@ -1,11 +1,9 @@
-﻿using Blazored.Modal.Services;
-using Blazored.Modal;
-using Microsoft.AspNetCore.Components;
-using GoplayasiaBlazor.Core.Global.Interface;
-using GoplayasiaBlazor.DTOs.DTOOut;
+﻿using Blazored.Modal;
+using Blazored.Modal.Services;
 using Blazored.Toast.Services;
-using System.Diagnostics.Metrics;
+using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Services.Interface;
+using Microsoft.AspNetCore.Components;
 
 namespace GoPlayAsiaWebApp.Goplay.Shared.Popup;
 

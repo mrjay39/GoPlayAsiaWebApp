@@ -1,11 +1,8 @@
 ﻿using Blazored.Modal;
 using Blazored.Modal.Services;
-using GoplayasiaBlazor.Core.Global.Interface;
-using GoplayasiaBlazor.Models;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
+using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
-using System.Diagnostics;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.Lucky4
 {

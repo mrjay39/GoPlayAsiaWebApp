@@ -1,9 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Drawing;
-using System;
-using Microsoft.AspNetCore.Components.Web;
-using static GoplayasiaBlazor.Models.Constants.Settings;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
+﻿using GoPlayAsiaWebApp.Goplay.ViewModels;
+using Microsoft.AspNetCore.Components;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.Bingo.CardTemplate
 {

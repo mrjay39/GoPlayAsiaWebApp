@@ -1,16 +1,15 @@
 ﻿using AutoMapper;
-using Blazored.Modal.Services;
 using Blazored.Modal;
+using Blazored.Modal.Services;
 using Blazored.Toast.Services;
 using GoplayasiaBlazor.Core.Services.Interface;
 using GoplayasiaBlazor.DTOs.DTOOut;
 using GoplayasiaBlazor.Models;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
-using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.AspNetCore.Components;
-using static GoplayasiaBlazor.Models.Constants.Settings;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
-using GoplayasiaSharedKernel.Models;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
+using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoPlayAsiaWebApp.Goplay.Main.SignupAgent
 {

@@ -1,8 +1,7 @@
-﻿using Blazored.Modal.Services;
-using Blazored.Modal;
-using Microsoft.AspNetCore.Components;
-using System.Diagnostics;
+﻿using Blazored.Modal;
+using Blazored.Modal.Services;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
+using Microsoft.AspNetCore.Components;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.Bigwin;
 

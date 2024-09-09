@@ -4,18 +4,15 @@ using Blazored.Toast.Services;
 using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Services.Interface;
 using GoplayasiaBlazor.Dtos.DTOOut;
-using GoPlayAsiaWebApp.Goplay.Main.Login;
 using GoplayasiaBlazor.Models;
-using GoplayasiaBlazor.Models.Constants;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
+using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.JSInterop;
-using Newtonsoft.Json.Linq;
 using System.Collections.ObjectModel;
 using static GoplayasiaBlazor.Models.Constants.Settings;
-using Microsoft.AspNetCore.Components.Authorization;
-using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 
 namespace GoPlayAsiaWebApp.Goplay.ViewModels;
 

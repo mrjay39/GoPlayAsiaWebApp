@@ -1,8 +1,5 @@
 ﻿using Blazored.Modal;
 using Blazored.Modal.Services;
-using GoplayasiaBlazor.Models.Constants;
-using GoPlayAsiaWebApp.Goplay.Shared.Popup;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
 using System.Reflection.Metadata;
 using static GoplayasiaBlazor.Models.Constants.Settings;

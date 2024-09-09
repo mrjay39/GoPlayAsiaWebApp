@@ -1200,7 +1200,7 @@ public class First3BViewModel : BaseViewModel
             _toastService.ShowError("Bet amount should be divisible by 5.");
             isvalid = false;
         }
-        
+
         if (GameVariantId == 0)
         {
             if (BetAmount < GameSetting.MinimumBet.Value)

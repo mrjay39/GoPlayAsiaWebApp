@@ -57,11 +57,8 @@ else
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        // if (firstRender)
-        // {
-        //     await JSRuntime.InvokeVoidAsync("addImageLoadHandler", "cardImage");
-        //     IsLoading = true;
-        // }
+        await JSRuntime.InvokeVoidAsync("sessionStorage.setItem", "backURL", _navigationManager.Uri);
+
     }
 
     [JSInvokable("OnImageLoaded")]
@@ -187,6 +184,7 @@ else
     }
     private async void LaunchGame()
     {
+      
         popupRef = popupModal.Show<PopupLoading>("");
         await lobbyViewModel.LaunchGame(Game);
         _navigationManager.NavigateTo("play");

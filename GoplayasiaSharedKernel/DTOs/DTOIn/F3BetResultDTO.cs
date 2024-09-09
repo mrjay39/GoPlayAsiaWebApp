@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GoplayasiaBlazor.Dtos.Base;
+﻿using GoplayasiaBlazor.Dtos.Base;
 using GoplayasiaBlazor.Dtos.DTOIn;
 using GoplayasiaBlazor.Dtos.DTOOut;
 

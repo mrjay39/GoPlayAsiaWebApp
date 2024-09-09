@@ -1,7 +1,4 @@
 ﻿using GoplayasiaBlazor.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GoplayasiaBlazor.Dtos.DTOIn
 {
@@ -60,7 +57,7 @@ namespace GoplayasiaBlazor.Dtos.DTOIn
         public string DrawDateString { get; set; }
         public string DrawDateTimeString { get; set; }
         public string RoundNumberDisplay { get; set; }
-        public string FixedLeftBet { get; set; } 
+        public string FixedLeftBet { get; set; }
         public string FixedRightBet { get; set; }
         public string DrawBet { get; set; }
         public string OddsLeftBet { get; set; }

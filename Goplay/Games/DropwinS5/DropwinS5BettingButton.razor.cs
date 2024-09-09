@@ -1,10 +1,8 @@
 ﻿using Blazored.Modal;
 using Blazored.Modal.Services;
 using GoplayasiaBlazor.Models;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
 using System.Reflection.Metadata;
-using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.DropwinS5;
 

@@ -1,8 +1,5 @@
-﻿using Blazored.Modal;
-using Blazored.Modal.Services;
-using GoPlayAsiaWebApp.Goplay.Games.Lucky9;
+﻿using Blazored.Modal.Services;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
-using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using Microsoft.AspNetCore.Components;
 
 namespace GoPlayAsiaWebApp.Goplay.Transactions.AddCredit

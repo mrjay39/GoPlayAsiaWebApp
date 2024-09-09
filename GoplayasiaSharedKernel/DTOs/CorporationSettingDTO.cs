@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GoplayasiaBlazor.DTOs
+﻿namespace GoplayasiaBlazor.DTOs
 {
     public class CorporationSettingDTO
     {
@@ -17,6 +13,6 @@ namespace GoplayasiaBlazor.DTOs
         public decimal? MinimumWithdrawRequest { get; set; }
         public decimal? MaximumWithdrawRequest { get; set; }
         public decimal? GoplayWithdrawalFee { get; set; }
-        
+
     }
 }

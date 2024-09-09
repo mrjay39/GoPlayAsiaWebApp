@@ -5,10 +5,7 @@ using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Services.Interface;
 using GoplayasiaBlazor.Dtos.DTOOut;
 using GoplayasiaBlazor.Models;
-using GoplayasiaCore.Core.Services;
 using GoplayasiaCore.Core.Services.Interface;
-using GoPlayAsiaWebApp.Goplay.Games.Lucky9B;
-using GoPlayAsiaWebApp.Goplay.Main.Login;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 using Microsoft.AspNetCore.Components;
@@ -161,8 +158,8 @@ public class Lucky9BViewModel : BaseViewModel
     }
     #endregion
 
-    
-      #region SIGNALR METHODS
+
+    #region SIGNALR METHODS
     public async Task AssignSignalRMethods()
     {
         try
@@ -235,7 +232,7 @@ public class Lucky9BViewModel : BaseViewModel
                 RoundTimer = value != null ? value : ""; // 00:00
                 int timer;
                 int.TryParse(RoundTimer.Replace(":", "").TrimStart(new char[] { '0' }), out timer);
-                
+
                 if (L9GameRound.RoundStatus == (int)RoundStatus.Open && timer < 10)
                 {
                     ShowFlashing = "timerFlasher";
@@ -584,7 +581,7 @@ public class Lucky9BViewModel : BaseViewModel
 
                     IsFixedPlayerEnabled = false;
                     IsFixedBankerEnabled = false;
-                    
+
                     await AssignGameCardResult();
 
                     break;

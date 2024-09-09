@@ -1,8 +1,6 @@
 ﻿using GoplayasiaBlazor.Core.Global.Interface;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Security.Claims;
-using System.Security.Principal;
 using System.Text.Json;
 
 namespace GoPlayAsiaWebApp

@@ -1,10 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace GoplayasiaBlazor.Dtos.DTOIn
+﻿namespace GoplayasiaBlazor.Dtos.DTOIn
 {
     public class F3GameRoundDTO
     {

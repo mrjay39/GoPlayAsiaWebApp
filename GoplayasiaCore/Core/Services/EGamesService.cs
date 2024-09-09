@@ -1,23 +1,11 @@
 ﻿using AutoMapper;
-using Blazored.Modal.Services;
 using Blazored.Modal;
+using Blazored.Modal.Services;
 using Blazored.Toast.Services;
 using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Helpers.Interface;
-using GoplayasiaBlazor.Dtos.DTOIn;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GoplayasiaSharedKernel.DTOs.DTOIn;
-using GoplayasiaCore.Core.Services.Interface;
-using GoplayasiaBlazor.Core.Global;
-using GoplayasiaBlazor.DTOs.Bingo;
-using GoplayasiaBlazor.Dtos.DTOIn.Profile;
 using GoplayasiaBlazor.DTOs.eGames;
-using GoplayasiaBlazor.Dtos.DTOOut;
-using GoplayasiaBlazor.Dtos.Base;
+using GoplayasiaCore.Core.Services.Interface;
 using GoplayasiaSharedKernel.DTOs.eGames;
 
 namespace GoplayasiaCore.Core.Services

@@ -2,23 +2,13 @@
 using Blazored.Modal;
 using Blazored.Modal.Services;
 using Blazored.Toast.Services;
-using GoplayasiaBlazor.Core.Services;
 using GoplayasiaBlazor.Core.Services.Interface;
 using GoplayasiaBlazor.DTOs.DTOOut;
 using GoplayasiaBlazor.Models;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
+using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Globalization;
-using System.IO;
-using System.Net.Http;
-using System.Reflection;
-using System.Runtime.Intrinsics.X86;
-using static GoplayasiaBlazor.Models.Constants.Settings;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace GoPlayAsiaWebApp.Goplay.Main.VerifyReg;
 

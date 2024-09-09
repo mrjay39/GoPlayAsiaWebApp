@@ -2,7 +2,6 @@
 using Blazored.Modal;
 using Blazored.Modal.Services;
 using Blazored.Toast.Services;
-using GoplayasiaBlazor.Core.Global;
 using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Helpers.Interface;
 using GoplayasiaBlazor.Core.Services.Interface;
@@ -12,8 +11,6 @@ using GoplayasiaBlazor.Dtos.DTOOut;
 using GoplayasiaBlazor.DTOs.DTOOut;
 using GoplayasiaBlazor.Models;
 using GoplayasiaBlazor.Models.Base;
-using GoplayasiaSharedKernel.Models;
-using System;
 
 namespace GoplayasiaBlazor.Core.Services
 {
@@ -268,7 +265,7 @@ namespace GoplayasiaBlazor.Core.Services
                 return null;
             }
         }
-        
+
         public async Task<bool> VerifyOTP(string refrenceCode, string otp)
         {
             try
@@ -301,7 +298,7 @@ namespace GoplayasiaBlazor.Core.Services
                 else
                     return await _httpClientHelper.GetAsync<string>($"Account/SendCode/{emailAddress}", string.Empty);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return string.Empty;
             }
@@ -482,7 +479,7 @@ namespace GoplayasiaBlazor.Core.Services
 
         }
 
-        public async Task<RefKeyResultDTO> GetReferral( string mobilenumber, string firstname = "e", string lastname = "e")
+        public async Task<RefKeyResultDTO> GetReferral(string mobilenumber, string firstname = "e", string lastname = "e")
         {
             try
             {
@@ -492,7 +489,7 @@ namespace GoplayasiaBlazor.Core.Services
                     throw new Exception();
                 return result;
             }
-            catch(Exception ex) { }
+            catch (Exception ex) { }
             {
                 return null;
             }
@@ -505,8 +502,8 @@ namespace GoplayasiaBlazor.Core.Services
                 var result = await _httpClientHelper.GetAsync<AccountResultDTO>($"Account/LoginWithOTP/{referenceCode}/{otp}/{mobileNumber}/{DeviceToken}", string.Empty);
                 if (result == null)
                     throw new Exception();
-                
-        
+
+
                 return result;
             }
             catch (Exception ex) { }
@@ -515,6 +512,6 @@ namespace GoplayasiaBlazor.Core.Services
             }
         }
 
-        
+
     }
 }

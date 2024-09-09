@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace GoplayasiaBlazor.Dtos.DTOIn
+﻿namespace GoplayasiaBlazor.Dtos.DTOIn
 {
     public class UBBanksDTO
     {

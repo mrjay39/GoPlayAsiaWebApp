@@ -1,7 +1,4 @@
 ﻿using GoplayasiaBlazor.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GoplayasiaBlazor.DTOs.DTOOut
 {
@@ -35,7 +32,7 @@ namespace GoplayasiaBlazor.DTOs.DTOOut
         public int? CurrentCityId { get; set; }
         public string CurrentProvince { get; set; } //cjpvaquilar: add
         public string CurrentRegion { get; set; } //cjpvaquilar: add
-        public string CurrentStreet { get; set; } 
+        public string CurrentStreet { get; set; }
         public bool? AddressAreSame { get; set; }
         public int? PermanentCityId { get; set; }
         public string PermanentProvince { get; set; } //cjpvaquilar: add

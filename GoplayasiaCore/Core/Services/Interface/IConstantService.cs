@@ -1,7 +1,6 @@
 ﻿using GoplayasiaBlazor.Dtos.DTOIn;
 using GoplayasiaBlazor.Models;
 using GoplayasiaSharedKernel.DTOs.DTOIn.Profile;
-using GoplayasiaSharedKernel.Models;
 
 namespace GoplayasiaBlazor.Core.Services.Interface;
 public interface IConstantService

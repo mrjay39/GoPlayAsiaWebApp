@@ -1,5 +1,5 @@
-﻿using Blazored.Modal.Services;
-using Blazored.Modal;
+﻿using Blazored.Modal;
+using Blazored.Modal.Services;
 using Blazored.Toast.Services;
 using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Helpers;
@@ -8,15 +8,14 @@ using GoplayasiaBlazor.Dtos.DTOIn;
 using GoplayasiaBlazor.Dtos.DTOOut;
 using GoPlayAsiaWebApp.Goplay.Main.Login;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
+using GoPlayAsiaWebApp.Goplay.ViewModels;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
-using static GoplayasiaBlazor.Models.Constants.Settings;
 using System.ComponentModel;
 using System.Reflection;
-using Blazored.Toast.Configuration;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
+using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoPlayAsiaWebApp.Pages.Login.LogInModal;
 
@@ -188,7 +187,7 @@ public partial class LoginForm
         }
     }
 
-  
+
 
     public async Task Authenticate()
     {
@@ -387,7 +386,7 @@ public partial class LoginForm
 
                 }
 
-              
+
                 await _iCurrentUser.updateSessionAsync();
                 await ((CustomAuthStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated();
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GoplayasiaBlazor.Models.Incoming
+﻿namespace GoplayasiaBlazor.Models.Incoming
 {
     public class MobileAppVersionResultModel
     {

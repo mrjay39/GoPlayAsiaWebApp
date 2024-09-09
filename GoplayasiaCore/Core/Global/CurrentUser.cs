@@ -1,8 +1,5 @@
-﻿using Blazored.SessionStorage;
-using GoplayasiaBlazor.Core.Global.Interface;
+﻿using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Models;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.SignalR.Client;
 using Newtonsoft.Json;
 using static GoplayasiaBlazor.Models.Constants.Settings;

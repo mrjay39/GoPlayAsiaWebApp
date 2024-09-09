@@ -2,18 +2,11 @@
 using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Services.Interface;
 using GoplayasiaBlazor.DTOs.eGames;
-using GoplayasiaBlazor.Models;
-using GoplayasiaCore.Core.Services;
 using GoplayasiaCore.Core.Services.Interface;
-using GoplayasiaSharedKernel.DTOs.DTOIn;
-using GoplayasiaSharedKernel.DTOs.eGames;
 using GoplayasiaSharedKernel.Models.eGames;
-using GoPlayAsiaWebApp.Goplay.Games.Lucky9;
 using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using System;
-using System.Globalization;
 using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoPlayAsiaWebApp.Goplay.ViewModels;
@@ -167,7 +160,7 @@ public class LobbyViewModel : BaseViewModel
                 newGameProvider.FishingCount = AllGameList.Count(x => x.Category == Constants.egamesFishing && x.Provider == provider);
                 gameProviders.Add(newGameProvider);
             }
-        
+
             await CallInvoke();
         }
         catch (Exception ex)

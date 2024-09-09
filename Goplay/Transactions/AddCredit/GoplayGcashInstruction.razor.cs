@@ -1,5 +1,4 @@
-﻿using Blazored.Modal;
-using Blazored.Modal.Services;
+﻿using Blazored.Modal.Services;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
 

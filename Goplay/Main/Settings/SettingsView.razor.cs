@@ -1,16 +1,11 @@
 ﻿using AutoMapper;
-using Blazored.Modal;
 using Blazored.Modal.Services;
-using Blazored.Toast.Services;
 using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Services.Interface;
-using GoplayasiaBlazor.Dtos.DTOIn;
-using GoPlayAsiaWebApp.Goplay.Games.Lucky9;
 using GoplayasiaBlazor.Models;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
-using Microsoft.AspNetCore.Components;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
-using GoplayasiaBlazor.Core.Helpers;
+using Microsoft.AspNetCore.Components;
 
 namespace GoPlayAsiaWebApp.Goplay.Main.Settings;
 
@@ -251,7 +246,7 @@ public partial class SettingsView
     {
         var value = (string)e.Value;
 
-       
+
 
         string valPass = await _settingsViewModel.PasswordMatchChecker(value);
 

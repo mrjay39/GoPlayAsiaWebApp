@@ -1,11 +1,6 @@
 ﻿using GoplayasiaBlazor.Dtos.DTOOut;
 using GoplayasiaBlazor.Models;
 using GoplayasiaBlazor.Models.Incoming;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GoplayasiaCore.Core.Services.Interface;
 

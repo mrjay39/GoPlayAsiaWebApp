@@ -1,7 +1,7 @@
 ﻿using Blazored.Modal.Services;
 using GoplayasiaBlazor.Core.Global.Interface;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
+using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
 
 namespace GoPlayAsiaWebApp.Goplay.Transactions.MainCredit;
@@ -26,7 +26,8 @@ public partial class MainCredit
         if (tran == 1)
         {
             activeaddcredit = "active";
-        }else if (tran == 2)
+        }
+        else if (tran == 2)
         {
             activewithdraw = "active";
         }

@@ -10,7 +10,6 @@ using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using GoPlayAsiaWebApp.Goplay.ViewModels.Base;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using System.Threading.Tasks;
 
 namespace GoPlayAsiaWebApp.Goplay.ViewModels
 {

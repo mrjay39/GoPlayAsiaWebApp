@@ -33,7 +33,7 @@ public class CompBetHistoryViewModel : BaseViewModel
 
     public string Category { get; set; }
     public DateTime SelDate { get; set; }
-    
+
     #endregion
 
     #region Life cycle methods

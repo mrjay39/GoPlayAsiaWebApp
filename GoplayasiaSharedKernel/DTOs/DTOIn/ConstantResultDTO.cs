@@ -1,8 +1,5 @@
 ﻿using GoplayasiaBlazor.Dtos.DTOIn.Profile;
 using GoplayasiaBlazor.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GoplayasiaBlazor.Dtos.DTOIn
 {

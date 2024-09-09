@@ -1,7 +1,4 @@
-﻿using GoplayasiaBlazor.Core.Global.Interface;
-using GoplayasiaBlazor.Models;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.Shared;
 

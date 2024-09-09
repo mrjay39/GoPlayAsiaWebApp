@@ -1,5 +1,4 @@
-﻿using GoplayasiaBlazor.Models;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using System.Collections.ObjectModel;
 using static GoPlayAsiaWebApp.Goplay.ViewModels.Lucky4V2ViewModel;
 

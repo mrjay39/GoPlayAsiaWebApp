@@ -1,19 +1,17 @@
-﻿using GoplayasiaBlazor.Core.Services.Interface;
-using GoplayasiaBlazor.Core.Services;
-using Microsoft.AspNetCore.Authorization;
-using System.ComponentModel.Design;
-using AutoMapper;
-using GoplayasiaBlazor.Core.Global.Interface;
-using GoplayasiaBlazor.Core.Global;
-using GoplayasiaBlazor.Core.Helpers.Interface;
-using GoplayasiaBlazor.Core.Helpers;
-using Microsoft.AspNetCore.Components.Authorization;
+﻿using AutoMapper;
+using Blazored.Modal;
 using Blazored.SessionStorage;
 using Blazored.Toast;
-using Blazored.Modal;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
-using GoplayasiaCore.Core.Services.Interface;
+using GoplayasiaBlazor.Core.Global;
+using GoplayasiaBlazor.Core.Global.Interface;
+using GoplayasiaBlazor.Core.Helpers;
+using GoplayasiaBlazor.Core.Helpers.Interface;
+using GoplayasiaBlazor.Core.Services;
+using GoplayasiaBlazor.Core.Services.Interface;
 using GoplayasiaCore.Core.Services;
+using GoplayasiaCore.Core.Services.Interface;
+using GoPlayAsiaWebApp.Goplay.ViewModels;
+using Microsoft.AspNetCore.Components.Authorization;
 
 
 namespace GoPlayAsiaWebApp
@@ -63,7 +61,7 @@ namespace GoPlayAsiaWebApp
             services.AddScoped<IGameSettingService, GameSettingService>();
             services.AddScoped<IDiceGameRoundService, DiceGameRoundService>();
             services.AddScoped<IBingoGameRoundService, BingoGameRoundService>();
-			services.AddScoped<IEGamesService, EGamesService>();
+            services.AddScoped<IEGamesService, EGamesService>();
             services.AddScoped<IL9GameRoundService, L9GameRoundService>();
             services.AddScoped<IF3GameRoundService, F3GameRoundService>();
             services.AddAuthorizationCore();
@@ -87,7 +85,7 @@ namespace GoPlayAsiaWebApp
             services.AddScoped<ICurrentUser, CurrentUser>();
             services.AddScoped<SignUpViewModel>();
 
-          
+
 
             return services;
         }

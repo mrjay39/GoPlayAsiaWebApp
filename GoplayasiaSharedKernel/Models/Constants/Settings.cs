@@ -223,7 +223,7 @@
             public const string StreamIDBigWin = "bigwin";
             public const string StreamIDLucky4 = "lucky4";
             public const string StreamIDHeadTails = "headtails";
-            public const string StreamIDDice= "dice";
+            public const string StreamIDDice = "dice";
             public const string StreamIDBingo = "bingo";
             public const string StreamIDLucky9B = "lucky9b";
             public const string StreamIDFirst3B = "first3b";
@@ -243,7 +243,7 @@
             public const string NoLimitCity = "nlc";
             public const string Jili = "jili";
             public const string GoPlayAsia = "goplayasia";
-            
+
             public const string BigTimeGamingDisp = "Big Time Gaming";
             public const string EvolutionDisp = "Evolution";
             public const string NetEntDisp = "NetEnt";
@@ -265,7 +265,7 @@
                 { GoPlayAsia, GoPlayAsiaDisp },
                 { Jili, JiliDisp }
             };
-            
+
             public static string GetProviderDisplayName(string providerKey)
             {
                 if (ProviderDisplayNames.TryGetValue(providerKey, out var displayName))
@@ -275,15 +275,15 @@
                 return "Unknown Provider"; // Default value if the key is not found
             }
 
-            public const string EvolutionLogo      = "evolution.png";
-            public const string PragmaticLogo      = "pragmatic.png";
-            public const string NoLimitLogo        = "nolimit.png";
-            public const string BigTimeLogo        = "bigTime.png";
-            public const string NetentLogo         = "netent.png";
+            public const string EvolutionLogo = "evolution.png";
+            public const string PragmaticLogo = "pragmatic.png";
+            public const string NoLimitLogo = "nolimit.png";
+            public const string BigTimeLogo = "bigTime.png";
+            public const string NetentLogo = "netent.png";
             public const string NetentExtendedLogo = "netent_extended.png";
-            public const string RedTigerLogo       = "redTiger.png";
-            public const string JiliLogo           = "jili.png";
-            public const string GoPlayAsiaLogo     = "goPlay.png";
+            public const string RedTigerLogo = "redTiger.png";
+            public const string JiliLogo = "jili.png";
+            public const string GoPlayAsiaLogo = "goPlay.png";
             private static readonly Dictionary<string, string> ProvidersLogo = new Dictionary<string, string>
             {
                 { Evolution      , EvolutionLogo },
@@ -321,7 +321,7 @@
             //Casino
             public const string CasinoGameTitle = "Casino Games";
             public const string CasinoGameDescription = "Your Seat Awaits: Dive into Live Casino Bliss";
-            
+
             //Live Games
             public const string LiveGameTitle = "Live Games";
             public const string LiveGameDescription = "Your Seat Awaits: Dive into Live Casino Bliss";
@@ -659,7 +659,7 @@
 
         #endregion
 
-       
+
     }
 
 }

@@ -7,11 +7,6 @@ using GoplayasiaBlazor.DTOs.DTOIn;
 using GoplayasiaBlazor.Models;
 using GoplayasiaBlazor.Models.Incoming;
 using GoplayasiaCore.Core.Services.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GoplayasiaCore.Core.Services
 {

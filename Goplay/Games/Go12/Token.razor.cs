@@ -1,10 +1,9 @@
-﻿using Blazored.Modal.Services;
-using Blazored.Modal;
+﻿using Blazored.Modal;
+using Blazored.Modal.Services;
 using GoplayasiaBlazor.Models;
+using GoplayasiaBlazor.Models.Constants;
 using Microsoft.AspNetCore.Components;
 using System.Reflection.Metadata;
-using GoplayasiaBlazor.Models.Constants;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.Go12;
 

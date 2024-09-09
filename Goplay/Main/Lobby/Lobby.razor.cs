@@ -1,8 +1,8 @@
 ﻿using Blazored.Modal;
 using Blazored.Modal.Services;
 using GoplayasiaBlazor.Core.Services.Interface;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
+using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using Timer = System.Timers.Timer;

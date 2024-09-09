@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GoplayasiaBlazor.Models
+﻿namespace GoplayasiaBlazor.Models
 {
     public class GameSettingModel
     {
@@ -62,7 +58,7 @@ namespace GoplayasiaBlazor.Models
             if (TaxPercentage != null)
             {
                 var remainder = (decimal)TaxPercentage % 1;
-                result = (remainder > 0 ? Convert.ToDecimal(TaxPercentage).ToString("N2") : Convert.ToDecimal(TaxPercentage).ToString("N0")) +"%";
+                result = (remainder > 0 ? Convert.ToDecimal(TaxPercentage).ToString("N2") : Convert.ToDecimal(TaxPercentage).ToString("N0")) + "%";
             }
             return result;
         }

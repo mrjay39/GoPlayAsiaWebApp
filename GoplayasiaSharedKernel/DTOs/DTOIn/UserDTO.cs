@@ -1,8 +1,5 @@
 ﻿using GoplayasiaBlazor.Dtos.DTOIn.Profile;
 using GoplayasiaBlazor.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GoplayasiaBlazor.Dtos.DTOIn
 {
@@ -21,7 +18,7 @@ namespace GoplayasiaBlazor.Dtos.DTOIn
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
-        public DateTime? DateOfBirth { get; set; } 
+        public DateTime? DateOfBirth { get; set; }
         public string PlaceOfBirth { get; set; }
         public string Gender { get; set; }
         public int? SourceOfIncomeId { get; set; }

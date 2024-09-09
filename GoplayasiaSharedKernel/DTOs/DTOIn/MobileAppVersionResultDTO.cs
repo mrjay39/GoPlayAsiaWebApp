@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GoplayasiaBlazor.Dtos.DTOIn
-{ 
+﻿namespace GoplayasiaBlazor.Dtos.DTOIn
+{
     public class MobileAppVersionResultDTO
     {
         public string LatestPlayerVersion { get; set; }

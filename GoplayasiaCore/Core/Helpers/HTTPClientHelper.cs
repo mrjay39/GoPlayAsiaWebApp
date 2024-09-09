@@ -2,8 +2,6 @@
 using GoplayasiaBlazor.Core.Helpers.Interface;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using System.Globalization;
-using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 
@@ -77,9 +75,9 @@ namespace GoplayasiaBlazor.Core.Helpers
             }
             catch (Exception ex)
             {
-                throw(ex);
+                throw (ex);
             }
-           
+
         }
 
         public async Task<T> PostAsync<T>(string apiUrl, string authenticationToken, object paramsObject)
@@ -114,6 +112,6 @@ namespace GoplayasiaBlazor.Core.Helpers
         }
         #endregion
 
-      
+
     }
 }

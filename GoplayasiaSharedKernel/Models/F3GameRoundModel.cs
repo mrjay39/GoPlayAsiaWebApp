@@ -1,9 +1,6 @@
 ﻿
 using GoplayasiaBlazor.Dtos.DTOIn;
 using GoplayasiaBlazor.Models.Constants;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoplayasiaBlazor.Models

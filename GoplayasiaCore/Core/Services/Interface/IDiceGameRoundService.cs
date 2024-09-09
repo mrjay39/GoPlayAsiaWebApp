@@ -1,6 +1,5 @@
 ﻿using GoplayasiaBlazor.Dtos.DTOOut;
 using GoplayasiaBlazor.Models;
-using GoplayasiaBlazor.Models.Base;
 using GoplayasiaBlazor.Models.Incoming;
 
 namespace GoplayasiaBlazor.Core.Services.Interface;

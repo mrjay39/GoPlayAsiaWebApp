@@ -1,10 +1,7 @@
 ﻿using Blazored.Modal.Services;
-using GoplayasiaBlazor.Core.Global.Interface;
-using GoplayasiaBlazor.Core.Helpers.Interface;
-using GoPlayAsiaWebApp.Goplay.ViewModels;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
+using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
-using System.Collections.ObjectModel;
 
 namespace GoPlayAsiaWebApp.Goplay.Reports.Notification;
 
