@@ -39,6 +39,8 @@ public partial class SettingsView
 
     private bool hideSettings = true;
     private bool hideVerifiedStatus = true;
+
+    private bool _isInitialized = false;
     #endregion
 
     #region Local Methods
@@ -272,11 +274,13 @@ public partial class SettingsView
     {
         try
         {
-
+            if (_isInitialized)
+                return;
+            _isInitialized = true;
 
             var popupRes = popupModal.Show<PopupLoading>("");
             await _settingsViewModel.GetUserInfo();
-            await _settingsViewModel.ConnectSignalR();
+            //await _settingsViewModel.ConnectSignalR();
             _settingsViewModel.popupModal = popupModal;
             popupRes.Close();
 
@@ -307,7 +311,7 @@ public partial class SettingsView
                 }
             }
 
-
+            
         }
         catch (Exception)
         {
