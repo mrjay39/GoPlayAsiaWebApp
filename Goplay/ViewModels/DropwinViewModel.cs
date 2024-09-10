@@ -1176,7 +1176,7 @@ public class DropwinViewModel : BaseViewModel
         bool isvalid = false;
         if (BetAmount > 0)
         {
-            var result = BetAmount % 10;
+            var result = BetAmount % 5;
             if (result > 0)
             {
                 _toastService.ShowError("Bet amount should be divisible by 10.");
