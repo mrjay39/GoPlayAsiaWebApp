@@ -10,6 +10,7 @@
 @using GoPlayAsiaWebApp.Pages.EGames.GamesList
 @using GoPlayAsiaWebApp.Pages.GPAGames.WelcomGPA
 @inject LobbyViewModel lobbyViewModel
+@inject AuthenticationStateProvider AuthenticationStateProvider
 @implements IDisposable;
 
 <PageTitle>GoPlayAsia: Home</PageTitle>
@@ -20,12 +21,7 @@
 
         <HomeGames />
         <WelcomeGPA />
-        @* @if (@lobbyViewModel.AllGameList != null)
-        {
-        <CascadingValue Value="@lobbyViewModel.AllGameList">
-        <GameProviderSelectors />
-        </CascadingValue>
-        } *@
+
     </div>
     <GameRegulation />
     <AuthorizeView>
@@ -48,6 +44,7 @@
     public void Dispose()
     {
         lobbyViewModel.Notify -= OnNotify;
+        AuthenticationStateProvider.AuthenticationStateChanged -= OnAuthenticationStateChanged;
     }
     private bool showAgeAgreement = true;
     [Inject]
@@ -61,6 +58,18 @@
         if (agreed)
         {
             showAgeAgreement = false;
+        }
+
+        AuthenticationStateProvider.AuthenticationStateChanged += OnAuthenticationStateChanged;
+    }
+    private async void OnAuthenticationStateChanged(Task<AuthenticationState> task)
+    {
+        var authState = await task;
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            lobbyViewModel.ConnectSignalR();
         }
     }
 
