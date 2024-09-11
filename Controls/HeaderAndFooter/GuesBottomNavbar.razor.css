@@ -54,10 +54,10 @@
 }
 
 .gpa-btm-icon {
-    background: url('./img/GPA-btm-icon.svg') center center no-repeat;
+    background: url('./img/live-btm-icon-2.svg') center center no-repeat;
 }
 #navBarBottom a.active .gpa-btm-icon {
-    background: url('./img/GPA-btm-icon-active.svg') center center no-repeat;
+    background: url('./img/live-btm-icon-active.svg') center center no-repeat;
 }
 .home-btm-icon {
     background: url('./img/Home-btm-icon.svg') center center no-repeat;
