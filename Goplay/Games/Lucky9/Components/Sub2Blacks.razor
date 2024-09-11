@@ -5,7 +5,7 @@
 @if (BetValueDisplay == Settings.Constants.Player)
 {
     <!-- PLAYER BLACK -->
-    <button style="border-radius: 44%; height: 44px;" class="col btn p-0 borderGold @(Settings.Constants.ColorBlackPlayer == WinnerResults ? "winBlack2Player" : TwoBlackPlayer)" @onclick="OnClickCallback" disabled="@isDisabled">
+    <button style="border-radius: 44%; height: 44px;" class="col btn p-0 borderGold tieRelative @(Settings.Constants.ColorBlackPlayer == WinnerResults ? "winBlack2Player" : TwoBlackPlayer)" @onclick="OnClickCallback" disabled="@isDisabled">
         <p class="font-weight-bold smallHeader mb-1" style="font-size:10px; margin-top: 2px;">
             <span style="font-size:15px">2</span>
             <span>BLACKS</span>
