@@ -11,18 +11,23 @@
 
 <nav id="fixed-top" class="navbar top-navbar navbar-expand-lg fixed-top navbar-dark bg-black">
     <div class="container no-padding">
-        <div class="d-flex align-items-center w-100 justify-content-center desk-none" style="height: 50px;">
-            <div class="col-md-2 p-0 text-start">
-                <button id="gpa-toggler" class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+        <div class="d-flex align-items-center w-100 justify-content-start desk-none" style="height: 50px;">
+            <div class="col-md-1 p-0 text-start">
+                <button id="gpa-toggler" class="navbar-toggler gpa-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="width: 28px; height: 28px;">
+                    <span class="navbar-toggler-icon" style="width: 20px; height: 20px;"></span>
                 </button>
             </div>
-            <div class="col-md-3 p-0 text-center">
+            <div class="col p-0 text-center">
                 <a id="gpa-logo" href="home" class="navbar-brand gpa-navbar-brand d-flex align-items-center text-dark text-decoration-none home">
                     <img src="./img/gpa-logo.png" class="logo" alt="GoPlayAsia">
                 </a>
             </div>
-            <div class="col-md-4 p-0 text-end">
+            <div class="col p-0 text-end">
+                <a href="/Credit" class="text-decoration-none wallet">
+                    <span><i class="fa-solid fa-wallet"></i></span>
+                </a>
+            </div>
+            <div class="col p-0 text-end">
                 <a id="user-image" class="bg-transparent" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
                     <span class="d-flex align-items-center text-white fw-bold player-chips"><i class="fa-solid gpa-token"></i> @iCurrentUser.CreditsDisp</span>
                     <div class="d-flex align-items-center">
@@ -93,6 +98,13 @@
                         <li><a class="dropdown-item link-light bg-black" href="GameProviders/More/casino/All">Casino</a></li>
                         <li><a class="dropdown-item link-light bg-black" href="GameProviders/More/rng/All">Arcade</a></li>
                     </ul>
+                </li>
+                <li class="nav-item dropdown cont-wallet">
+                    <div class="p-0 text-start">
+                        <a href="/Credit" class="text-decoration-none d-wallet">
+                            <span><i class="fa-solid fa-wallet"></i></span>
+                        </a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown userDropdown">
                     <a class="nav-link px-2 link-dark bg-black" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">

@@ -119,7 +119,7 @@
     font-size: 1.1rem;
 }
 .img-logo {
-    width: 55px;
+    width: 45px;
 }
 .img-userIcon{
     width: 22px;
@@ -190,6 +190,20 @@
 }
 #fixed-top.fixed-top {
     z-index: 100;
+}
+.wallet {
+    color: #d1d1d1;
+    font-size: 20px;
+    padding: 0px 5px;
+}
+.cont-wallet {
+    width: 30px;
+    margin: 0 8px;
+}
+.d-wallet {
+    color: #d1d1d1;
+    font-size: 25px;
+    padding: 0px 5px;
 }
 
 * {
@@ -617,8 +631,8 @@
     }
 
     #gpa-logo > .logo {
-        max-height: 20px;
-        width: 80px;
+        max-height: 23px;
+        width: 110px;
     }
 
     #gpa-logo {
