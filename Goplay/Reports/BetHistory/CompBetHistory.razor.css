@@ -46,14 +46,40 @@ td.row.col {
     overflow: hidden;
     overflow: auto;
 }
+.mxs-55{
+    width: 55px;
+}
 /*
 /*Tab menu*/
-.lbl-header
-{
+.lbl-header {
     font-size: 12px;
     font-weight: bolder;
 }
 .history-dtl {
     font-size: 10px;
 }
+.dateSearchBtn {
+    border-radius: 0px 10px 10px 0px;
+    margin-left: 3px;
+}
+.dateSearch {
+    padding-left: 20px;
+    border-radius: 10px 0px 0px 10px;
+}
 /*Tab menu*/
+@media screen and (max-width: 600px) {
+    .f-13{
+        font-size: 13px;
+    }
+    .sw-25{
+        width: 23px !important;
+    }
+    .mxs-55 {
+        width: 55px;
+    }
+}
+@media screen and (max-width: 365px) {
+    .mxs-55 {
+        width: auto;
+    }
+}

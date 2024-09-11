@@ -3,37 +3,50 @@
 <table class="maincontainer bg-white pt-2 d-block rounded-3">
     <div class="btn-group px-2 d-flex justify-content-center" role="group" aria-label="Basic radio toggle button group">
 
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked @onchange='(() => SetCategory(Settings.Constants.specialty))'>
-        <label class="btn btn-outline-warning text-dark col p-0 d-flex justify-content-center align-items-center" for="btnradio1">
+        <input type="radio" class="btn-check" name="btnradio" id="btnRadio1" autocomplete="off" checked @onchange='(() => SetCategory(Settings.Constants.specialty))'>
+        <label class="mxs-55 btn border-0 btn-outline-warning rounded-3 pt-1 text-dark col p-0 d-flex flex-column justify-content-center align-items-center" for="btnRadio1">
             <div>
-                <div style="font-size: 12px;line-height: .9;">Specialty</div>
-                <div style="font-size: 12px; line-height: .7;">Game</div>
+                <img src="./img/GPA-btm-icon-2.svg" class="img img-fluid sw-25" style="width: 27px;">
             </div>
-
+            <div><span class="f-13">Especialty</span></div>
         </label>
 
-        <input type="radio" class="btn-check " name="btnradio" id="btnradio2" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesLive))'>
-        <label class="btn btn-outline-warning text-dark col p-0 d-flex justify-content-center align-items-center" for="btnradio2">Live</label>
+        <input type="radio" class="btn-check " name="btnradio" id="btnRadio2" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesLive))'>
+        <label class="mxs-55 btn border-0 btn-outline-warning rounded-3 pt-1 rounded-3 text-dark col p-0 d-flex flex-column justify-content-center align-items-center" for="btnRadio2">
+            <div>
+                <img src="./img/live-btm-icon.svg" class="img img-fluid sw-25" style="width: 27px;">
+            </div>
+            <div><span class="f-13">Live</span></div>
+        </label>
 
         <input type="radio" class="btn-check p-0 d-flex justify-content-center align-items-center" name="btnradio" id="btnradio3" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesSlots))'>
-        <label class="btn btn-outline-warning text-dark col p-0 d-flex justify-content-center align-items-center" for="btnradio3">Slots</label>
+        <label class="mxs-55 btn border-0 btn-outline-warning rounded-3 pt-1 text-dark col p-0 d-flex flex-column justify-content-center align-items-center" for="btnradio3">
+            <div><img src="./img/slot-btm-icon-2.svg" style="width: 27px;" class="img img-fluid sw-25"></div>
+            <div><span class="f-13">Slots</span></div>
+        </label>
 
         <input type="radio" class="btn-check p-0 d-flex justify-content-center align-items-center" name="btnradio" id="btnradio4" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesCasino))'>
-        <label class="btn btn-outline-warning text-dark col p-0 d-flex justify-content-center align-items-center" for="btnradio4">Casino</label>
+        <label class="mxs-55 btn border-0 btn-outline-warning rounded-3 pt-1 text-dark col p-0 d-flex justify-content-center flex-column align-items-center" for="btnradio4">
+            <div><img src="./img/card-btm-icon-2.svg" style="width: 27px;" class="img img-fluid sw-25"></div>
+            <div><span class="f-13">Casino</span></div>
+        </label>
 
         <input type="radio" class="btn-check p-0 d-flex justify-content-center align-items-center" name="btnradio" id="btnradio5" autocomplete="off" @onchange='(() => SetCategory(Settings.Constants.egamesRng))'>
-        <label class="btn btn-outline-warning text-dark col p-0 d-flex justify-content-center align-items-center" for="btnradio5">Arcade</label>
+        <label class="mxs-55 btn btn-outline-warning border-0 rounded-3 pt-1 text-dark col p-0 d-flex justify-content-center flex-column align-items-center" for="btnradio5">
+            <div><img src="./img/arcade-btm-icon-2.svg" style="width: 27px;" class="img img-fluid sw-25"></div>
+            <div><span class="f-13">Arcade</span></div>
+        </label>
     </div>
     <div class="d-flex justify-content-center px-2 mt-1">
-        <input type="date" @bind="_compBetHistoryViewModel.SelDate" />
-        <button class="btn btn-success btn-sm mx-1" @onclick="onclick_Go">Go</button>
+        <input type="date" @bind="_compBetHistoryViewModel.SelDate" class="dateSearch" />
+        <button class="btn btn-warning btn-sm dateSearchBtn" @onclick="onclick_Go">Go</button>
     </div>
 
     <tbody class="tableCon container bg-white rounded-3 pt-2" style="padding-bottom: 30px;">
         @if (_compBetHistoryViewModel.Category == Settings.Constants.specialty)
         {
         <thead class="row p-0 justify-content-center">
-            <tr class="d-flex headerContainer" >
+            <tr class="d-flex headerContainer">
                 <th class="status col text-center">BET</th>
                 <th class="status col text-center text-end"> GAME RESULT</th>
                 <th class="winStatusContainer col text-end">WIN</th>
