@@ -1,5 +1,9 @@
 ﻿@using GoPlayAsiaWebApp.Goplay.Main.Signup
 @using GoPlayAsiaWebApp.Pages.Login.LogInModal
+@using System.Security.Claims
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IModalService ModalService
+@inject NavigationManager _navigationManager
 <nav class="navbar top-navbar navbar-expand-lg fixed-top navbar-dark bg-black">
     <div class="container">
         <div class="nav-container align-items-center w-100 desk-none d-inline-flex justify-content-center" style="height: 50px;">
@@ -53,10 +57,10 @@
                         <i class="fa-solid gpa-icon"></i> SPECIALTY GAMES
                     </a>
                     <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item link-light bg-black" href="games/lucky9">Lucky 9</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="games/first3">First 3</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="games/headstails">Heads & Tails</a></li>
-                        <li><a class="dropdown-item link-light bg-black" href="games/go12">Go 12</a></li>
+                        <li><a class="dropdown-item link-light bg-black" @onclick='(() => OpenGameLink("/games/lucky9"))'>Lucky 9</a></li>
+                        <li><a class="dropdown-item link-light bg-black" @onclick='(() => OpenGameLink("/games/first3"))'>First 3</a></li>
+                        <li><a class="dropdown-item link-light bg-black" @onclick='(() => OpenGameLink("/games/headstails"))'>Heads & Tails</a></li>
+                        <li><a class="dropdown-item link-light bg-black" @onclick='(() => OpenGameLink("/games/go12"))'>Go 12</a></li>
                         @* <li><a class="dropdown-item link-light bg-black" href="games/lucky4">Lucky 4</a></li> *@
                         @* <li><a class="dropdown-item link-light bg-black" href="games/bigwin">Big Win</a></li> *@
                         @* <li><a class="dropdown-item link-light bg-black" href="games/dice">Dice</a></li> *@
@@ -89,7 +93,10 @@
     </div>
 </nav>
 @code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
     [CascadingParameter] public IModalService popupModal { get; set; } = default!;
+    private ClaimsPrincipal user;
 
     private void loginSignup(bool isLogin)
     {
@@ -101,6 +108,22 @@
                 DisableBackgroundCancel = true,
                 HideCloseButton = true
         });
+    }
+
+    private async void OpenGameLink(string url)
+    {
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        if (!user.Identity.IsAuthenticated)
+        {
+            var refPopup = popuLoadingpModal.Show<LoginAndSignUp>("", new ModalParameters(), new ModalOptions() { DisableBackgroundCancel = true, HideCloseButton = true });
+        }
+        else
+        {
+            _navigationManager.NavigateTo(url);
+        }
+
     }
 
 

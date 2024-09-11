@@ -1287,7 +1287,7 @@ public class BigWinViewModel : BaseViewModel
 
         if (BetAmount > 0)
         {
-            var result = BetAmount % 10;
+            var result = BetAmount % 5;
             if (result > 0)
             {
                 isvalid = false;
