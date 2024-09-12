@@ -40,7 +40,8 @@
         @*============= DEFAULT AMOUNT =============*@
         <TopupDefaultAmount OnClickCallback="@(() => UpdateState())"/>
         <div class="form-group pesoContainer mb-3">
-            <input class="form-control pl-4 input-lg" type="number" placeholder="Input Other Amount (@($"{String.Format("{0:#,##0.#}", _mainCreditsViewModel.TopupMinAmount)} - {String.Format("{0:#,##0.#}", _mainCreditsViewModel.TopupMaxAmount)}"))" @bind-value="_mainCreditsViewModel.TopupUBAmount" onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+            <span class="peso">&#8369;</span>
+            <input class="form-control px-4 input-lg" type="number" placeholder="Input Other Amount (@($"{String.Format("{0:#,##0.#}", _mainCreditsViewModel.TopupMinAmount)} - {String.Format("{0:#,##0.#}", _mainCreditsViewModel.TopupMaxAmount)}"))" @bind-value="_mainCreditsViewModel.TopupUBAmount" onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
         </div>
 
         @*============= APPLICABLE VOUCHER =============*@
@@ -61,7 +62,7 @@
 
         <div class="form-group pesoContainer mt-3 inner-addon left-addon">
             <span class="peso">&#8369;</span>
-            <input autocomplete="stopdoingthat" class="form-control pl-4 input-lg  " type="number" placeholder="Input Other Amount (500-10,000)" @bind-value="_mainCreditsViewModel.TopupAmount" onfocus="this.select()"
+            <input autocomplete="stopdoingthat" class="form-control px-4 input-lg  " type="number" placeholder="Input Other Amount (500-10,000)" @bind-value="_mainCreditsViewModel.TopupAmount" onfocus="this.select()"
                    maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
         </div>
 
