@@ -294,6 +294,7 @@ public partial class Signup
         }
         else
         {
+            _signupViewModel.SignupDTO.Username = value;
             UpdateLoginState();
         }
     }
@@ -311,6 +312,7 @@ public partial class Signup
         }
         else
         {
+            _signupViewModel.SignupDTO.Password = value;
             UpdateLoginState();
         }
     }
@@ -321,18 +323,14 @@ public partial class Signup
         string valPass = await _signupViewModel.ValidatePassword(_signupViewModel.SignupDTO.Password, value);
         _signupViewModel.errPass = valPass;
 
-        if (value.Length == 0)
-        {
-            disbaleLogin = true;
-            submitClass = "disSubmit";
-        }
-        else if (_signupViewModel.errPass != "Ok")
+        if (value.Length == 0 || _signupViewModel.errPass != "Ok")
         {
             disbaleLogin = true;
             submitClass = "disSubmit";
         }
         else
         {
+            _signupViewModel.SignupDTO.ConfirmPassword = value;
             UpdateLoginState();
         }
     }
@@ -341,7 +339,8 @@ public partial class Signup
     {
         if (!string.IsNullOrEmpty(_signupViewModel.SignupDTO.Username) &&
             !string.IsNullOrEmpty(_signupViewModel.SignupDTO.Password) &&
-            !string.IsNullOrEmpty(_signupViewModel.SignupDTO.ConfirmPassword))
+            !string.IsNullOrEmpty(_signupViewModel.SignupDTO.ConfirmPassword) &&
+            _signupViewModel.SignupDTO.gamingSiteId != null)
         {
             disbaleLogin = false;
             submitClass = "";
