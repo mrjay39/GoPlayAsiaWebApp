@@ -1,26 +1,13 @@
 ﻿<div class="card m-1 p-0 border-dark game-tile" style="background-color: inherit; border-color: none;">
-    <div class="container-fluid p-0 bg-img">
-        <img src="@_imgStr" class="card-img-top featGames-bg basketBall">
-        @* <img src="https://betm.co/wp-content/uploads/2024/01/card-dealer-dealing-cards.jpg" class="card-img-top featGames-bg basketBall"> *@
-    </div>
-    <div class="info @(isActive ? "active" : "")">
-        <div class="content">
-            <div class="button button-playNow">
-                <div class="container">
-                    <h4 class="text-light mb-4">@_gamePromptStr</h4>
-                </div>
-                <a class="btn btn-warning m-1" href="@_gamePlayHrefStr">
-                    <span>Play Now</span>
-                    <div class="arrow">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </a>
-            </div>
+    <a href="@_gamePlayHrefStr">
+        <div class="container-fluid p-0 bg-img shimmer">
+            <img src="@_imgStr" class="card-img-top featGames-bg basketBall">
+            @* <img src="https://betm.co/wp-content/uploads/2024/01/card-dealer-dealing-cards.jpg" class="card-img-top featGames-bg basketBall"> *@
         </div>
-    </div>
-    <div class="subtitle mt-2">
+    </a>
+    
+
+    @* <div class="subtitle mt-2">
         <div class="d-flex text-light text-center">
             <span class="col-7 text-start text-muted ms-2">
                 <span class="fw-bold">@_tableNumberStr</span>
@@ -33,7 +20,6 @@
         <div class="d-flex text-light text-center">
             <span class="col-7 text-start ms-2">
                 <span style="font-size: 12px;">Players: </span>
-                @* <i class="fa-solid fa-people-line"></i>&nbsp; *@
                 <span class="fw-bold">180</span>
             </span>
             <span class="col text-start">
@@ -88,13 +74,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> *@
 </div>
+
 @code {
     [Parameter] public string _imgStr { get; set; } = string.Empty;
     [Parameter] public string _tableNumberStr { get; set; } = string.Empty;
     [Parameter] public string _gamePlayHrefStr { get; set; } = string.Empty;
-    [Parameter] public string _gamePromptStr { get; set; } = string.Empty;
+    [Parameter] public string _titleStr { get; set; } = string.Empty;
     private bool isActive = false;
 
     private void ToggleActive()

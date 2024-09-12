@@ -11,16 +11,15 @@
 }
 
 .game-tile {
-    width: 18rem;
+    width: 12rem;
     cursor: pointer;
     border-radius: 10px;
     border-width: 5px;
 }
 
-.game-tile .bg-img > img {
-    border-radius: 0;
-    height: 140px;
-}
+    .game-tile .bg-img > img {
+        border-radius: 0;
+    }
 
 .info {
     width: 100%;
@@ -46,52 +45,20 @@
     align-items: center;
     text-align: center;
 }
-.trends-font {
-    display: inline-flex;
-    align-items: center;
-}
-.trends-font > span{
-    display: inline-flex;
-    align-items: center;
-    font-size: 12px;
-    margin: 0 4px;
-    justify-content: center;
-}
-.trends-font > span > span{
-    display: inline-flex;
-    height: 15px;
-}
-.bg-player{background: #db091d;}
-.bg-banker{background: #040ed9;}
-.bg-tie{background: #f1b904;}
-.bg-canceled{background: #4f565b;}
 
-.mainCon {
-    max-width: 650px;
-    max-height: 130px;
-    margin: 0 auto;
-    overflow: hidden;
-    overflow: auto;
+.shimmer {
+    color: grey;
+    display: inline-block;
+    -webkit-mask: linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+    background-repeat: no-repeat;
+    animation: shimmer 2.5s;
 }
-.innerCon {
-    height: min-content;
-    max-width: 20px;
+
+@keyframes shimmer {
+    100% {
+        -webkit-mask-position: left;
+    }
 }
-.playerTrends, .bankerTrends, .tieTrends, .canceledTrends {
-    display: inline-flex;
-    width: 10px;
-    height: 10px;
-    margin: 2px;
-    border-radius: 50%;
-    padding: 8px;
-    font-size: 10px;
-    align-items: center;
-    justify-content: center;
-}
-.bankerTrends{background-color: #0816b3;}
-.playerTrends{background-color: #bd0b0b;}
-.tieTrends{background-color: #e6b82b;}
-.canceledTrends{background-color: #494646;}
 
 @media only screen and (min-width: 992px) {
     .gameOverflow-x {
@@ -100,67 +67,83 @@
         scrollbar-width: thin;
     }
 
-    .gameOverflow-x > div {
-        display: inline-flex !important;
-        flex-wrap: nowrap !important;
-        justify-content: inherit !important;
+        .gameOverflow-x > div {
+            display: inline-flex !important;
+            flex-wrap: nowrap !important;
+            justify-content: inherit !important;
+        }
+
+    .m-1 {
+        margin: 1rem !important;
     }
 }
 
 @media screen and (max-width: 460px) {
     .game-tile {
-        width: 16rem;
+        width: 7.2rem;
     }
 
-    .game-tile h3 {
-        font-size: 15px;
-    }
+        .game-tile h3 {
+            font-size: 15px;
+        }
 
     .arrow {
-        top: 62% !important;
+        top: 48% !important;
     }
-    .trends-font {
+
+    .game-tile .btn {
         font-size: 11px;
+        font-weight: bold;
     }
 }
 
 @media screen and (max-width: 414px) {
     .game-tile {
-        width: 16rem;
+        width: 9.5rem;
     }
 
-    .game-tile h3 {
-        font-size: 15px;
-    }
+        .game-tile h3 {
+            font-size: 15px;
+        }
 
     .arrow {
-        top: 62% !important;
+        top: 48% !important;
     }
-    .trends-font {
-        font-size: 11px;
+
+    .m-1 {
+        margin-right: 17px !important;
+        margin-left: 17px !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .game-tile {
+        width: 7.2rem;
     }
 }
 
 @media screen and (max-width: 320px) {
     .game-tile {
-        width: 16rem;
-        margin: 3px !important;
+        width: 7.2rem;
+        margin: 8px !important;
     }
 
-    .game-tile .btn {
-        font-size: 12px;
-        font-weight: bold;
-    }
+        .game-tile .btn {
+            font-size: 10px;
+            font-weight: bold;
+        }
 
-    .game-tile h3 {
-        font-size: 15px;
-    }
+        .game-tile h3 {
+            font-size: 15px;
+        }
 
     .arrow {
-        top: 62% !important;
+        top: 48% !important;
     }
-    .trends-font {
-        font-size: 11px;
+
+    .m-1 {
+        margin-right: 12px !important;
+        margin-left: 12px !important;
     }
 }
 
@@ -176,8 +159,8 @@ a.play-btn {
 
 .arrow {
     position: absolute;
-    top: 62%;
-    left: 52%;
+    top: 61%;
+    left: 55%;
     transform: translate(-50%, -50%) rotate(-90deg);
     cursor: pointer;
 }
