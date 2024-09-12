@@ -22,15 +22,18 @@
                     <img src="./img/gpa-logo.png" class="logo" alt="GoPlayAsia">
                 </a>
             </div>
+            
             <div class="col p-0 text-end">
+                <span class="d-flex align-items-center text-white fw-bold player-chips"><i class="fa-solid gpa-token"></i> @iCurrentUser.CreditsDisp</span>
+            </div>
+            <div class="col p-0 text-center">
                 <a href="/Credit" class="text-decoration-none wallet">
                     <span><i class="fa-solid fa-wallet"></i></span>
                 </a>
             </div>
-            <div class="col p-0 text-end">
-                <a id="user-image" class="bg-transparent" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
-                    <span class="d-flex align-items-center text-white fw-bold player-chips"><i class="fa-solid gpa-token"></i> @iCurrentUser.CreditsDisp</span>
-                    <div class="d-flex align-items-center">
+            <div class="col p-2 text-end">
+                <a id="user-image" class="bg-transparent d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
+                    <div class="d-flex align-items-center justify-content-center">
                         <img class="img-fluid img p-0 ms-1 img-userIcon" src="./img/user-icon.png" /> <i class="fa-solid fa-angle-down"></i> &nbsp;
                     </div>
                 </a>
@@ -99,6 +102,9 @@
                         <li><a class="dropdown-item link-light bg-black" href="GameProviders/More/rng/All">Arcade</a></li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown userDropdown ms-4">
+                    <span class="d-flex align-items-center text-white fw-bold h5 mb-0 player-chips"><i class="fa-solid gpa-token"></i> @iCurrentUser.CreditsDisp</span>
+                </li>
                 <li class="nav-item dropdown cont-wallet">
                     <div class="p-0 text-start">
                         <a href="/Credit" class="text-decoration-none d-wallet">
@@ -106,21 +112,13 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item dropdown userDropdown">
+                <li class="nav-item dropdown cont-wallet">
                     <a class="nav-link px-2 link-dark bg-black" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
-                        <span class="d-flex align-items-center text-white fw-bold h5 mb-0 player-chips"><i class="fa-solid gpa-token"></i> @iCurrentUser.CreditsDisp</span>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid img img-logo px-2 ms-3" src="./img/user-icon.png" />
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img class="img-fluid img img-logo px-1 ms-1" src="./img/user-icon.png" />
                             <i class="fa-solid fa-angle-down"></i> &nbsp;
                         </div>
                     </a>
-
-                    @* <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
-                    <li><a href="/User'sProfile" class="dropdown-item link-light bg-black"><i class="fa-solid fa-user"></i> Profile</a></li>
-                    <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-regular fa-image"></i> Identification</a></li>
-                    <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-solid fa-lock"></i> Password</a></li>
-                    <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
-                    </ul> *@
                 </li>
             </ul>
         </div>
