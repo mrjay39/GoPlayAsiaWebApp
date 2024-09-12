@@ -8,7 +8,15 @@
 input {
     border-radius: 5px;
 }
-
+.agreeChkBx {
+    -ms-transform: scale(2);
+    -moz-transform: scale(2);
+    -webkit-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(1.5);
+    padding: 7px;
+    margin-right: 5px;
+}
 h6 {
     color: #dbb81e;
     margin-bottom: 0;
