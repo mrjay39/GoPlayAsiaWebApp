@@ -46,16 +46,25 @@
 
     private async Task Close()
     {
-        var backURL = await JSRuntime.InvokeAsync<string>("sessionStorage.getItem", "backURL");
-        if (!string.IsNullOrEmpty(backURL) )
+        var parameters = new ModalParameters();
+        parameters.Add("Message", "Do you want to exit game?");
+        var popupConfirm = popupModal.Show<PopupGlobalConfirm>("", parameters, new ModalOptions() { Class = "op-modal" });
+        ModalResult result = await popupConfirm.Result;
+        if (result.Data != null)
         {
-            _navigationManager.NavigateTo(backURL);
+            if ((bool)result.Data)
+            {
+                var backURL = await JSRuntime.InvokeAsync<string>("sessionStorage.getItem", "backURL");
+                if (!string.IsNullOrEmpty(backURL))
+                {
+                    _navigationManager.NavigateTo(backURL);
+                }
+                else
+                {
+                    await JSRuntime.InvokeVoidAsync("history.back");
+                }
+            }
         }
-        else
-        {
-            await JSRuntime.InvokeVoidAsync("history.back");
-        }
-  
        
     }
     protected override Task OnAfterRenderAsync(bool firstRender)

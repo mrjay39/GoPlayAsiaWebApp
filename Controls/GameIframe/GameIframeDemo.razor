@@ -17,11 +17,11 @@
             {
                 <div class="modal-body text-center text-dark p-0 m-auto">
                     @* <div class="modal-header p-0" id="gamePopUpModalLabel">
-                        <div class="d-flex w-100 btn-header row btn-hide">
-                            <button class="btn col-xl-2 col-2 bg-transparent text-demo"><i class="fa-solid fa-play"></i> DEMO</button>
-                            <button class="btn col-xl-2 col-2 bg-transparent text-live"><i class="fa-solid fa-play"></i> LIVE</button>
-                        </div>
-                    </div> *@
+                <div class="d-flex w-100 btn-header row btn-hide">
+                <button class="btn col-xl-2 col-2 bg-transparent text-demo"><i class="fa-solid fa-play"></i> DEMO</button>
+                <button class="btn col-xl-2 col-2 bg-transparent text-live"><i class="fa-solid fa-play"></i> LIVE</button>
+                </div>
+                </div> *@
                     <button type="button" class="btn close-icon p-0 @(lobbyViewModel._icurrentUser.isApple ? "appleCloseIcon": "")" @onclick="Close">
                         <i class="fa-regular fw-bold   ">X</i>
                     </button>
@@ -44,15 +44,27 @@
 
     private async Task Close()
     {
-        var backURL = await JSRuntime.InvokeAsync<string>("sessionStorage.getItem", "backURL");
-        if (!string.IsNullOrEmpty(backURL) )
+        var parameters = new ModalParameters();
+        parameters.Add("Message", "Do you want to exit game?");
+        var popupConfirm = popupModal.Show<PopupGlobalConfirm>("", parameters, new ModalOptions() { Class = "op-modal" });
+        ModalResult result = await popupConfirm.Result;
+        if (result.Data != null)
         {
-            _navigationManager.NavigateTo(backURL);
+            if ((bool)result.Data)
+            {
+                var backURL = await JSRuntime.InvokeAsync<string>("sessionStorage.getItem", "backURL");
+                if (!string.IsNullOrEmpty(backURL))
+                {
+                    _navigationManager.NavigateTo(backURL);
+                }
+                else
+                {
+                    await JSRuntime.InvokeVoidAsync("history.back");
+                }
+            }
         }
-        else
-        {
-            await JSRuntime.InvokeVoidAsync("history.back");
-        }
+
+
 
     }
     protected override Task OnAfterRenderAsync(bool firstRender)
