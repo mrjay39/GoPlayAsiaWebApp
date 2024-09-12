@@ -22,7 +22,7 @@
                     <img src="./img/gpa-logo.png" class="logo" alt="GoPlayAsia">
                 </a>
             </div>
-            
+
             <div class="col p-0 text-end">
                 <span class="text-white fw-bold player-chips"><i class="fa-solid gpa-token"></i> @iCurrentUser.CreditsDisp</span>
             </div>
@@ -39,23 +39,9 @@
                 </a>
             </div>
         </div>
-        @* <a class="text-center btn" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas">
-        <img class="img-fluid img w-25 px-2 me-2" src="./img/user-icon.png" />
-        <span class="text-white fw-bold">100,000.00</span>
-        </a> *@
-        @* <button class="navbar-toggler gpa-toggler nav-item dropdown userDropdown" type="button" data-bs-toggle="collapse">
-        <a class="nav-link px-2 link-dark bg-black dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        <img class="img-fluid img w-25 px-2 me-2" src="./img/user-icon.png" /> Juan Dela Cruz
-        </a>
-        <span></span>
-        <ul class="dropdown-menu link-dark bg-black" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
-        <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-regular fa-image"></i> Identification</a></li>
-        <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-solid fa-lock"></i> Password</a></li>
-        <li><a class="dropdown-item link-light bg-black" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
-        </ul>
-        </button> *@
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items w-100">
                 <a id="d-gpa-logo" href="home" class="navbar-brand p-1 gpa-navbar-brand d-flex align-items-center text-dark text-decoration-none home">
                     <img src="./img/gpa-logo.png" class="img-fluid logo" alt="GoPlayAsia">
@@ -102,11 +88,12 @@
                         <li><a class="dropdown-item link-light bg-black" href="GameProviders/More/rng/All">Arcade</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown userDropdown ms-4">
+                <div class="d-flex w-100 justify-content-end ">
+                <li class="nav-item dropdown userDropdown ms-4 d-flex align-items-center">
                     <span class="d-flex align-items-center text-white fw-bold h5 mb-0 player-chips"><i class="fa-solid gpa-token"></i> @iCurrentUser.CreditsDisp</span>
                 </li>
-                <li class="nav-item dropdown cont-wallet">
-                    <div class="p-0 text-start">
+                <li class="nav-item dropdown cont-wallet d-flex align-items-center">
+                    <div class="p-0 text-start ">
                         <a href="/Credit" class="text-decoration-none d-wallet">
                             <span><i class="fa-solid fa-wallet"></i></span>
                         </a>
@@ -120,8 +107,11 @@
                         </div>
                     </a>
                 </li>
-            </ul>
+
+
         </div>
+        </ul>
+    </div>
     </div>
 </nav>
 <script>
