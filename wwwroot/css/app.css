@@ -71,6 +71,8 @@ a, .btn-link {
     max-width: 480px;
     min-height: 250px;
     z-index: 1000;
+    background-color: black;
+    color: white;
     align-items: center;
     justify-content: center;
 }

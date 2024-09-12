@@ -1420,37 +1420,38 @@ public abstract class BaseViewModel
     public async Task UpdateGameWinners(UpdateGameWinnerModel paramsModel)
     {
         TickerMessage = "G# " + paramsModel.RoundNumber + " Pay - " + paramsModel.AmountWonString;
-        if (_icurrentUser.Id == paramsModel.UserId && GametypeId != paramsModel.GameTypeId)
-        {
+        await GameWinner(paramsModel);
+        //if (_icurrentUser.Id == paramsModel.UserId && GametypeId != paramsModel.GameTypeId)
+        //{
 
-            await GameWinner(paramsModel);
-            //if (paramsModel.GameTypeId != (int)GameTypes.Giga_Draw)
-            //{
-            //    winnerCounter++;
-            //    if (roundNumber != paramsModel.RoundNo)
-            //    {
-            //        GametypeId = paramsModel.GameTypeId;
-            //        RoundNumber = paramsModel.RoundNo;
-            //        winnerCounter = 0;
-            //    }
-            //    else if (RoundNumber == paramsModel.RoundNo && GametypeId != paramsModel.GameTypeId)
-            //    {
-            //        gameType = paramsModel.GameTypeId;
-            //        roundNumber = paramsModel.RoundNo;
-            //        winnerCounter = 0;
-            //    }
+        //    await GameWinner(paramsModel);
+        //    //if (paramsModel.GameTypeId != (int)GameTypes.Giga_Draw)
+        //    //{
+        //    //    winnerCounter++;
+        //    //    if (roundNumber != paramsModel.RoundNo)
+        //    //    {
+        //    //        GametypeId = paramsModel.GameTypeId;
+        //    //        RoundNumber = paramsModel.RoundNo;
+        //    //        winnerCounter = 0;
+        //    //    }
+        //    //    else if (RoundNumber == paramsModel.RoundNo && GametypeId != paramsModel.GameTypeId)
+        //    //    {
+        //    //        gameType = paramsModel.GameTypeId;
+        //    //        roundNumber = paramsModel.RoundNo;
+        //    //        winnerCounter = 0;
+        //    //    }
 
-            //    if (winnerCounter == 0)
-            //{
-            //        Task.Run(async () => await GameWinner(paramsModel));
-            //    }
-            //}
-            //else
-            //{
-            //    Task.Run(async () => await GameWinner(paramsModel));
-            //}
+        //    //    if (winnerCounter == 0)
+        //    //{
+        //    //        Task.Run(async () => await GameWinner(paramsModel));
+        //    //    }
+        //    //}
+        //    //else
+        //    //{
+        //    //    Task.Run(async () => await GameWinner(paramsModel));
+        //    //}
 
-        }
+        //}
     }
     public virtual void UpdateGameTimer(int gametypeId, string value)
     {

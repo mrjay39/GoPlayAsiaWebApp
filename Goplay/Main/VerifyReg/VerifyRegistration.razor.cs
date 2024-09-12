@@ -276,7 +276,16 @@ public partial class VerifyRegistration
     }
     private async Task<IEnumerable<NationalityModel>> SearchNationality(string searchText)
     {
-        return await Task.FromResult(NationalityList.Where(x => x.Name.ToLower().Contains(searchText.ToLower())).ToList());
+        IEnumerable<NationalityModel> result;
+        if (selectedNationality == null)
+        {
+             result = await Task.FromResult(NationalityList.Where(x => x.Name.ToLower().Contains(searchText.ToLower())).ToList());
+        }
+        else
+        {
+             result = await Task.FromResult(NationalityList.Where(x => x.Name.ToLower().Contains(searchText.ToLower()) && x.Id != selectedNationality.Id).ToList());
+        }
+        return result;
     }
     private NationalityModel LoadNationality(int? id) => NationalityList.FirstOrDefault(p => p.Id == id);
     private async Task<IEnumerable<CityModel>> SearchCity(string searchText)

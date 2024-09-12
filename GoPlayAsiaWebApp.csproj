@@ -10,6 +10,7 @@
 		<BlazorWebAssemblyEnableLinking>true</BlazorWebAssemblyEnableLinking>
 		<BlazorWebAssemblyLinkerOptions>link</BlazorWebAssemblyLinkerOptions>
 		<NoWarn>CS8618;CS8604;CS8603;CS0168;CS0169</NoWarn>
+		<RunAOTCompilation>false</RunAOTCompilation>
 	</PropertyGroup>
 
 	<ItemGroup>
