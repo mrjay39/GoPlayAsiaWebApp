@@ -13,6 +13,7 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @implements IDisposable;
 
+
 <PageTitle>GoPlayAsia: Home</PageTitle>
 
 <div class="container-fluid marketing">
@@ -37,9 +38,12 @@
                       _hrefArcadeGameStr="GameProviders/More/rng/All"
                       _hrefSlotGameStr="GameProviders/More/slots/All"
                       _hrefCasinoGameStr="GameProviders/More/casino/All" />
+    <Chat />
 </div>
 
 @code {
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; }
 
     public void Dispose()
     {
@@ -47,9 +51,9 @@
         AuthenticationStateProvider.AuthenticationStateChanged -= OnAuthenticationStateChanged;
     }
     private bool showAgeAgreement = true;
-    [Inject]
-    public IJSRuntime JSRuntime { get; set; }
+   
 
+   
     protected override async Task OnInitializedAsync()
     {
         lobbyViewModel.Notify += OnNotify;

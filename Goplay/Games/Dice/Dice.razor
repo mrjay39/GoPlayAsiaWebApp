@@ -3,7 +3,7 @@
 @using static GoplayasiaBlazor.Models.Constants.Settings;
 @using GoPlayAsiaWebApp.Goplay.ViewModels;
 @using GoPlayAsiaWebApp.Goplay.ViewModels;
-
+@attribute [Authorize(Roles = "1")]
 
 <GameHeader StreamId="@_diceViewModel.StreamId"
             RoundTimer="@_diceViewModel.RoundTimer"

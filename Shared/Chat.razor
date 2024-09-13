@@ -1,0 +1,35 @@
+﻿@inject NavigationManager Navigation
+
+@code {
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; }
+    private bool isHomePage;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await UpdateChatScriptAsync();
+        }
+    }
+    private void OnLocationChanged(object sender, LocationChangedEventArgs e)
+    {
+        isHomePage = e.Location == Navigation.BaseUri;
+        StateHasChanged();
+    }
+    private async Task UpdateChatScriptAsync()
+    {
+        if (isHomePage)
+        {
+            await JSRuntime.InvokeVoidAsync("chatScriptHelper.addScript");
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
+        }
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        Navigation.LocationChanged += OnLocationChanged;
+        isHomePage = Navigation.Uri == Navigation.BaseUri;
+    }
+}
