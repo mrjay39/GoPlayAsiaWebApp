@@ -27,7 +27,8 @@
     left: 25%;
 }
 .start-30 {
-    left: 30%;
+    top: 23%;
+    left: 45%;
 }
 
 .nav-item {
@@ -130,7 +131,8 @@
         padding-bottom: 0rem;
     }
     .start-30 {
-        left: 23%;
+        top: 23%;
+        left: 45%;
     }
 }
 

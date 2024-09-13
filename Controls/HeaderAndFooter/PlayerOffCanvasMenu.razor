@@ -2,6 +2,8 @@
 @using GoPlayAsiaWebApp.Goplay.Shared.Popup
 @using GoPlayAsiaWebApp.Goplay.ViewModels;
 @using GoplayasiaBlazor.Core.Global.Interface
+
+
 @inject ICurrentUser _iCurrentUser
 
 <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="settingOffCanvas" aria-labelledby="settingOffCanvasLabel">
@@ -10,6 +12,8 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
+      
+        <span class="ms-3 font-weight-bold fs-5 text-warning"> @_iCurrentUser.Username</span>
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item dropdown">
             </li>
@@ -22,12 +26,14 @@
                 @* <span data-bs-toggle="offcanvas" data-bs-target="#account-verification" aria-controls="account-verification" class="position-absolute top-0 start-30 badge bg-danger p-2 text-decoration-none btn border-0">
                 Verify Now!
                 </span> *@
+             
                 @if (_iCurrentUser.Verified == 1)
                 {
+                 
                     <a class="nav-link fw-bold btn" data-bs-toggle="offcanvas" data-bs-target="#edit-profile" aria-controls="edit-profile">
                         <span><i class="fa-solid fa-user"></i></span>
                         <span class="ms-3"> Profile</span>
-                        <span class="position-absolute top-0 start-30 badge">
+                        <span class="position-absolute  start-30 badge">
                             <i class="fa-solid fa-circle-check status-verified"></i>
                             <span>Verified</span>
                         </span>
@@ -38,7 +44,7 @@
                     <a class="nav-link fw-bold btn" href="VerifyReg">
                         <span><i class="fa-solid fa-user"></i></span>
                         <span class="ms-3"> Profile</span>
-                        <span class="position-absolute top-0 start-30 badge bg-danger">
+                        <span class="position-absolute  start-30 badge bg-danger">
                             <i class="fa-solid fa-circle-question"></i>
                             <span>Verify Now!</span>
                         </span>
@@ -49,7 +55,7 @@
                     <a class="nav-link fw-bold btn" href="VerifyReg">
                         <span><i class="fa-solid fa-user"></i></span>
                         <span class="ms-3"> Profile</span>
-                        <span class="position-absolute top-0 start-30 badge bg-warning text-black">
+                        <span class="position-absolute  start-30 badge bg-warning text-black">
                             <i class="fa-solid fa-clock"></i>
                             <span>Pending</span>
                         </span>
