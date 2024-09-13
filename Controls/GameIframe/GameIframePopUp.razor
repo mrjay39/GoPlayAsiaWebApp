@@ -72,6 +72,7 @@
     {
         if (firstRender)
         {
+            JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
             if (string.IsNullOrEmpty(lobbyViewModel.egameUrl))
             {
                 _navigationManager.NavigateTo("/GameProviders");

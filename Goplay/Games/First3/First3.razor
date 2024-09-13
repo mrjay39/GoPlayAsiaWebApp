@@ -8,6 +8,7 @@
 @using GoplayasiaBlazor.Models.Constants
 @implements IDisposable
 @implements IAsyncDisposable
+@inject IJSRuntime JSRuntime
 
 <div class="container-fluid p-0" style="min-height: 100vh;">
     <GameHeader StreamId="@first3ViewModel.StreamId"

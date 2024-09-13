@@ -3,6 +3,7 @@ using Blazored.Modal.Services;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.Lucky9
@@ -22,6 +23,7 @@ namespace GoPlayAsiaWebApp.Goplay.Games.Lucky9
         {
             try
             {
+                JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
                 luckyViewModel.Notify += OnNotify;
                 luckyViewModel.popupModal = popupModal;
                 luckyViewModel.Token_Animation = "";

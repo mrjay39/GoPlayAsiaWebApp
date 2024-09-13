@@ -8,6 +8,9 @@
 @layout GPALayout
 @implements IDisposable
 @implements IAsyncDisposable
+@inject IJSRuntime JSRuntime
+
+
 <div class="container-fluid p-0" style="min-height: 100vh;">
 <GameHeader StreamId="@luckyViewModel.StreamId"
             RoundTimer="@luckyViewModel.RoundTimer"

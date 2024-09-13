@@ -314,20 +314,22 @@ public class SignUpViewModel
         RegisterResultDTO registerUser;
         registerUser = await _accountService.RegisterNew(_mapper.Map<SignupDTO>(UserInfo));
 
-        popupRes.Close();
+
         if (registerUser == null)
         {
+            popupRes.Close();
             _toastService.ShowError("An error occured while attempting to register. Please try again later");
             return;
         }
         if (!registerUser.Success)
         {
+            popupRes.Close();
             _toastService.ShowError("An error occured while attempting to register. Please try again later");
             return;
         }
 
-        _toastService.ShowSuccess("Registration Successful");
         await Login(SignupDTO.Username, SignupDTO.Password, DeviceToken);
+        _toastService.ShowSuccess("Registration Successful");
     }
     private async Task Login(string username, string password, string deviceToken)
     {
@@ -355,11 +357,14 @@ public class SignUpViewModel
         _iCurrentUser.ToppedUp = response.User.ToppedUp;
         _iCurrentUser.Verified = response.User.Verified;
         await _iCurrentUser.updateSessionAsync();
-
-        popupRes.Close();
-
-        await ((CustomAuthStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated();
         _navigationManager.NavigateTo("/landing", true, true);
+        popupRes.Close();
+        //await ((CustomAuthStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated();
+
+
+
+
+
 
     }
     #endregion

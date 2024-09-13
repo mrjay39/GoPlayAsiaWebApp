@@ -3,6 +3,7 @@ using Blazored.Modal.Services;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.First3
@@ -21,7 +22,7 @@ namespace GoPlayAsiaWebApp.Goplay.Games.First3
         {
             try
             {
-
+                JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
                 first3ViewModel.Notify += OnNotify;
                 first3ViewModel.popupModal = popupModal;
                 first3ViewModel.Token_Animation = "";
