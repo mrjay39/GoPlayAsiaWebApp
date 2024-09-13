@@ -126,7 +126,7 @@ else if (BetValueDisplay == Settings.Constants.Silver)
     @if (RoundStatusString == Settings.Constants.Open)
     {
         <!-- SILVER REGULAR (OPEN) -->
-        <button @onclick=OnClickCallback class="@(first3ViewModel.IsFixedSilverEnabled == false ? "DisSilverButton" : activeButtonSilver ) borderGold btn col p-0 justify-content-center align-items-center" disabled="@isDisabled">
+        <button @onclick=OnClickCallback class="@(first3ViewModel.IsFixedSilverEnabled == false ? "DisSilverButton" : activeButtonSilver ) borderGold btn col p-0 justify-content-center align-items-center relativeDiv" disabled="@isDisabled">
             <div class="d-flex  mt-1">
                 <p class="font-weight-bold p-0 col d-flex justify-content-center mt-2  " style="font-size: 25px;">@BetValueDisplay</p>
             </div>
