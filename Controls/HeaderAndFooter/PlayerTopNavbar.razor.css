@@ -272,6 +272,9 @@
     #gpa-logo, .desk-none {
         display: none !important;
     }
+    #d-gpa-logo{
+        width: 30%;
+    }
 }
 @media only screen and (max-width: 991px) {
     .loginAndSignUp, .userDropdown {
