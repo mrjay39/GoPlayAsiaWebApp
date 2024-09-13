@@ -2,17 +2,19 @@
 using Blazored.Modal.Services;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using Microsoft.AspNetCore.Components;
-
+using Microsoft.JSInterop;
 namespace GoPlayAsiaWebApp.Goplay.Games.Bigwin;
 
 public partial class Bigwin
 {
+
     [CascadingParameter] public IModalService popupModal { get; set; }
     public IModalReference popupRef { get; set; }
     protected override async Task OnInitializedAsync()
     {
         try
         {
+            JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
             iBigWinViewModel.Notify += OnNotify;
             iBigWinViewModel.popupModal = popupModal;
 

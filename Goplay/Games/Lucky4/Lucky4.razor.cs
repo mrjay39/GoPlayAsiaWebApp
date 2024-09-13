@@ -3,6 +3,7 @@ using Blazored.Modal.Services;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.Lucky4
 {
@@ -17,6 +18,7 @@ namespace GoPlayAsiaWebApp.Goplay.Games.Lucky4
         {
             try
             {
+                JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
                 iLucky4Model.Notify += OnNotify;
 
                 iLucky4Model.popupModal = popupModal;

@@ -3,7 +3,7 @@
 @using static GoplayasiaBlazor.Models.Constants.Settings
 @attribute [Authorize(Roles = "1")]
 @*@implements IDisposable*@
-
+@inject IJSRuntime JSRuntime
 @implements IAsyncDisposable
 
 <GameHeader StreamId="@iDropWinModel.StreamId"

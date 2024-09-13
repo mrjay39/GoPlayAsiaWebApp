@@ -3,6 +3,7 @@ using Blazored.Modal.Services;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.Dropwin
 {
@@ -17,6 +18,7 @@ namespace GoPlayAsiaWebApp.Goplay.Games.Dropwin
         {
             try
             {
+                JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
                 iDropWinModel.Notify += OnNotify;
 
                 await iDropWinModel.ConnectSignalR();

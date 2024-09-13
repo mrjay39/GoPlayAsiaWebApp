@@ -7,6 +7,7 @@
 @using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoplayasiaBlazor.Models.Constants
 @using static GoplayasiaBlazor.Models.Constants.Settings
+@inject IJSRuntime JSRuntime
 
 <div class="container-fluid p-0" style="min-height: 100vh;">
     <GameHeader StreamId="@_f3BViewModel.StreamId"
@@ -76,6 +77,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+      
         await LoadPageData();
     }
 
@@ -88,6 +90,7 @@
     {
         try
         {
+            JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
             _f3BViewModel.Notify += OnNotify;
             _f3BViewModel.popupModal = popupModal;
             _f3BViewModel.Token_Animation = "";

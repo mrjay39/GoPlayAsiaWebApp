@@ -5,6 +5,7 @@
 @using GoPlayAsiaWebApp.Shared
 @using static GoplayasiaBlazor.Models.Constants.Settings
 @attribute [Authorize(Roles = "1")]
+@inject IJSRuntime JSRuntime
 
 @implements IAsyncDisposable
 
