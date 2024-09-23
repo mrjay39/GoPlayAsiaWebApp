@@ -5,6 +5,8 @@
 @inject ICurrentUser iCurrentUser
 @inject GameHeaderViewModel gameHeaderViewModel
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <container>
     <section class="main">
 
@@ -24,26 +26,70 @@
         <!-- GAME HEADER -->
         <div class="newGameHeaderContainer d-flex p-1">
             <!-- MENU -->
-            <button class="col p-0 d-flex justify-content-center align-items-center">
-                <div class="dropdown p-0">
-                    <div class="menu-btn" data-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-bars" style="color: gold; font-size: 21px;"></i></div>
+
+            <div class="col p-0 d-flex justify-content-center align-items-center">
+                <div class="dropdown">
+                    <button class="menu-btn btn" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-bars" style="color: gold; font-size: 21px;"></i>
+                    </button>
                     <div class="dropdown-menu">
-                        <ul style="list-style-type: none;" class="p-0 m-0">
+                        <ul style="list-style-type: none;" class="p-0 m-0 ">
                             <li><span class="userFullName text-light d-flex">@iCurrentUser.FullName</span></li>
                             <li><span class="userFullName text-light d-flex">@iCurrentUser.MobileNumber</span></li>
                             <li class="icon mt-3"><a class="dropdown-item" href="/GoPlayAsiaGames"><i class="bi bi-controller mr-2 mt-1"></i>Games</a></li>
                             <li class="icon"><a class="dropdown-item" href="/bethistory"><i class="bi bi-clock-history mr-2"></i>History</a></li>
                             <li class="icon"><a class="dropdown-item" href="/credit"><i class="bi bi-wallet mr-2"></i>Wallet</a></li>
-                            <li class="icon" data-bs-dismiss="offcanvas"><a class="dropdown-item" data-bs-toggle="offcanvas" data-bs-target="#settingOffCanvas" aria-controls="settingOffCanvas"><i class="bi bi-incognito mr-2"></i>Settings</a></li>
                             <li class="icon"><a class="dropdown-item" href="/gamerules" @onclick:preventDefault @onclick="popGamerules"><i class="bi bi-info-circle-fill mr-2"></i>Game Rules</a></li>
                             <li class="icon"><a class="dropdown-item" @onclick:preventDefault @onclick="logout" href="/"><i class="bi bi-box-arrow-right mr-2"></i>Logout</a></li>
                         </ul>
                     </div>
                 </div>
-            </button>
+            </div>
+
+            
 
             <!-- CATEFORY -->
-            <button class="col p-0 d-flex justify-content-center align-items-center" disabled="@IsDisabledCategory">
+            <div class="col p-0 d-flex justify-content-center align-items-center">
+                <div class="dropdown p-0">
+                    <div class="menu-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-layer-group" style="color: gold; font-size: 21px;"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <ul style="list-style-type: none;" class="p-0 m-0">
+                            <li class="userFullName text-light d-flex font-weight-bolder justify-content-center align-items-center">PLAYER CATEGORY</li>
+
+                            @if (PlayerCategory != null)
+                            {
+                                switch (iCurrentUser.CategoryId)
+                                {
+                                    case 1:
+                                        cssvar = "activeStarter";
+                                        break;
+
+                                    case 2:
+                                        cssvar = "activeHr";
+                                        break;
+
+                                    case 3:
+                                        cssvar = "activeVip";
+                                        break;
+                                }
+
+                                <Virtualize Items="PlayerCategory" Context="_category">
+                                    <li class="icon">
+                                        <a class="dropdown-item d-flex justify-content-center p-0 @(_category.CategoryId == iCurrentUser.CategoryId ? @cssvar : "")"
+                                        @onclick:preventDefault @onclick='(() => setPlayerCategory(_category.CategoryId))'>
+                                            @_category.Category
+                                        </a>
+                                    </li>
+                                </Virtualize>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            @* <button class="col p-0 d-flex justify-content-center align-items-center" disabled="@IsDisabledCategory">
                 <div class="dropdown p-0">
                     <div class="menu-btn" data-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-layer-group" style="color: gold; font-size: 21px;"></i></div>
                     <div class="dropdown-menu">
@@ -76,7 +122,7 @@
                         </ul>
                     </div>
                 </div>
-            </button>
+            </button> *@
 
 
             <!-- TOKEN -->
@@ -99,6 +145,4 @@
 
 @code {
     public string cssvar { get; set; } = "cssdef";
-
-
 }
