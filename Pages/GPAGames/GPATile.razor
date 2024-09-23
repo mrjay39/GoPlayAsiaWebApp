@@ -12,9 +12,9 @@
         </div>
         <div class="info @(isActive ? "active" : "")">
             <div class="content">
-                <div class="subtitle"><h4 class="text-white fw-bold">@_titleStr</h4></div>
-                <div class="button button-playNow">
-                    <a class="btn btn-warning m-1" @onclick="OpenGameLink">
+                <div class="subtitle"><h4 class="text-white fw-bold mb-2">@_titleStr</h4></div>
+                <div class="button button-playNow mt-2">
+                    <a class="btn btn-warning p-2" @onclick="OpenGameLink">
                         <span>Play Now</span>
                         <div class="arrow">
                             <span></span>
@@ -23,8 +23,8 @@
                         </div>
                     </a>
                 </div>
-                <div class="button button-gameInfo">
-                    <button id="@_idStr" class="btn btn-dark m-1" @onclick="() => ShowModal(_idStr)">Game Info</button>
+                <div class="button button-gameInfo mt-2">
+                    <button id="@_idStr" class="btn btn-dark p-2" @onclick="() => ShowModal(_idStr)">Game Info</button>
                 </div>
             </div>
         </div>

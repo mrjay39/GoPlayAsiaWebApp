@@ -146,7 +146,7 @@ a.play-btn > span {
 
 .arrow {
     position: absolute;
-    top: 46%;
+    top: 49%;
     left: 55%;
     transform: translate(-50%, -50%) rotate(-90deg);
     cursor: pointer;
