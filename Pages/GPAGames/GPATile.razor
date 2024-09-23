@@ -5,30 +5,32 @@
 @inject IModalService ModalService
 @inject NavigationManager _navigationManager
 
-
-<div class="card m-1 p-0 border-dark game-tile" style="background-color: inherit; border-color: none;">
-    <div class="container-fluid p-0 bg-img shimmer">
-        <img src="@_imgStr" class="card-img-top featGames-bg basketBall" @onclick="ToggleActive" alt="@_titleStr">
-    </div>
-    <div class="info @(isActive ? "active" : "")">
-        <div class="content">
-            <div class="subtitle"><h4 class="text-white fw-bold">@_titleStr</h4></div>
-            <div class="button button-playNow">
-                <a class="btn btn-warning m-1" @onclick="OpenGameLink">
-                    <span>Play Now</span>
-                    <div class="arrow">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </a>
-            </div>
-            <div class="button button-gameInfo">
-                <button id="@_idStr" class="btn btn-dark m-1" @onclick="() => ShowModal(_idStr)">Game Info</button>
+<a @onclick="OpenGameLink">
+    <div class="card m-1 p-0 border-dark game-tile" style="background-color: inherit; border-color: none;">
+        <div class="container-fluid p-0 bg-img shimmer">
+            <img src="@_imgStr" class="card-img-top featGames-bg basketBall" @onclick="ToggleActive" alt="@_titleStr">
+        </div>
+        <div class="info @(isActive ? "active" : "")">
+            <div class="content">
+                <div class="subtitle"><h4 class="text-white fw-bold">@_titleStr</h4></div>
+                <div class="button button-playNow">
+                    <a class="btn btn-warning m-1" @onclick="OpenGameLink">
+                        <span>Play Now</span>
+                        <div class="arrow">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="button button-gameInfo">
+                    <button id="@_idStr" class="btn btn-dark m-1" @onclick="() => ShowModal(_idStr)">Game Info</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</a>
+
 @code {
 
     [Parameter] public string _idStr { get; set; } = string.Empty;
@@ -40,7 +42,7 @@
     [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
     [CascadingParameter] public IModalService popuLoadingpModal { get; set; }
     private ClaimsPrincipal user;
-   
+
 
     public void ShowModal(string _idStr)
     {
@@ -70,7 +72,7 @@
     private async void OpenGameLink()
     {
         var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        var user = authenticationState.User; 
+        var user = authenticationState.User;
 
         if (!user.Identity.IsAuthenticated)
         {
@@ -80,6 +82,6 @@
         {
             _navigationManager.NavigateTo(_gameInfoHrefStr);
         }
-       
+
     }
 }
