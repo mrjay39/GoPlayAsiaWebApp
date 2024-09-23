@@ -46,6 +46,14 @@ h6.headerText {
     padding: 0;
 }
 
+.rotate {
+    transform: rotate(180deg);
+}
+
+i {
+    transition: transform 0.3s ease;
+}
+
 .addCredit {
     text-align: center;
 }

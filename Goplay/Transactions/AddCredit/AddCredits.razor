@@ -4,16 +4,19 @@
     <p class="text-center text-dark mb-1">select your payment method</p>
 
     <!-- MENU -->
-    <div class="d-flex optionBtn">
+    <div class="d-flex optionBtn justify-content-center">
         @if (_mainCreditsViewModel.CashInSettings.PaymentGateway)
         {
-            <div class="creditContainerpg col p-0 mt-2" hidden="@hideUBAddCreditbtn">
+            <div class="creditContainerpg col p-0 m-1 mt-2" hidden="@hideUBAddCreditbtn">
                 <div class="PaymentGateWayCon pl-1 pr-1 ">
                     <a href="" @onclick:preventDefault @onclick='(() => showUBAddCreditForm())'>
-                        <div class="addCredit ">
-                            <div class="d-block justify-content-center">
-                                <img class="imgLogo m-1 " src="/img/cash-pgw.png" style="height:60px;" />
+                        <div class="addCredit d-flex align-items-center" @onclick="ToggleUBAddCreditIcon">
+                            <div class="col">
+                                <div class="d-block justify-content-center">
+                                    <img class="imgLogo m-1 " src="/img/cash-pgw.png" style="height:60px;" />
+                                </div>
                             </div>
+                            <div class="col-1"><i class="fa-solid fa-angle-down text-dark @ubAddCreditIconClass" style="font-size: 16px;"></i></div>
                         </div>
                     </a>
                 </div>
@@ -21,12 +24,14 @@
         }
         @if (_mainCreditsViewModel.CashInSettings.OTC)
         {
-            <div class="overthecounterBtn col p-0  mt-2" hidden="@hideAddCreditbtn">
+            <div class="overthecounterBtn col p-0 m-1 mt-2" hidden="@hideAddCreditbtn" style="border: solid 1px #530c0c;">
                 <a href="" @onclick:preventDefault @onclick='(() => showAddCreditForm())'>
-                    <div class="addCredit mt-1 p-2">
-                        <img class="imgLogo" src="/img/cashin-gpaIcon.png" />
-                        <h5 class="headerText active mb-0" style="color:#530c0c; font-size:15px; margin-top: 5px;">Over the counter</h5>
-
+                    <div class="addCredit mt-1 p-2 d-flex align-items-center" @onclick="ToggleAddCreditIcon">
+                        <div class="col">
+                            <img class="imgLogo" src="/img/cashin-gpaIcon.png" />
+                            <h5 class="headerText active mb-0" style="color:#530c0c; font-size:15px; margin-top: 5px;">Over the counter</h5>
+                        </div>
+                        <div class="col-1"><i class="fa-solid fa-angle-down fw-bold text-dark @addCreditIconClass" style="font-size: 16px;"></i></div>
                     </div>
                 </a>
             </div>
@@ -35,10 +40,10 @@
 
     @*============= CASH IN FORM =============*@
     @* <form hidden="@hideUBAddCredit"> *@
-    <form hidden ="@hideUBAddCredit">
+    <form hidden="@hideUBAddCredit">
 
         @*============= DEFAULT AMOUNT =============*@
-        <TopupDefaultAmount OnClickCallback="@(() => UpdateState())"/>
+        <TopupDefaultAmount OnClickCallback="@(() => UpdateState())" />
         <div class="form-group pesoContainer mb-3">
             <span class="peso">&#8369;</span>
             <input class="form-control px-4 input-lg" type="number" placeholder="Input Other Amount (@($"{String.Format("{0:#,##0.#}", _mainCreditsViewModel.TopupMinAmount)} - {String.Format("{0:#,##0.#}", _mainCreditsViewModel.TopupMaxAmount)}"))" @bind-value="_mainCreditsViewModel.TopupUBAmount" onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
@@ -55,7 +60,7 @@
     @*============= Start: OVER THE COUNTER =============*@
     <form hidden="@hideAddCredit">
 
-        <TopupDefaultAmount OnClickCallback="@(() => UpdateState())"/>
+        <TopupDefaultAmount OnClickCallback="@(() => UpdateState())" />
         <div class="form-group">
             <input class="form-control" type="text" aria-describedby="emailHelp" placeholder="AgentXXX" value="@_mainCreditsViewModel.UserParentDtl.Username" disabled />
         </div>
@@ -84,20 +89,19 @@
             </div>
 
             <div>
-                <h6 class="text-center text-light m-2">Minimum: &#8369;@String.Format("{0:#,##0.#}", @_mainCreditsViewModel.TopupMinAmountDisplay) - Maximum: &#8369;@String.Format("{0:#,##0.#}",@_mainCreditsViewModel.TopupMaxAmount)</h6>
+                <h6 class="text-center text-light m-2">Minimum: &#8369;@String.Format("{0:#,##0.#}", @_mainCreditsViewModel.TopupMinAmountDisplay) - Maximum: &#8369;@String.Format("{0:#,##0.#}", @_mainCreditsViewModel.TopupMaxAmount)</h6>
             </div>
 
             <div class="form-group pesoContainer">
                 <span class="peso">&#8369;</span>
                 <input autocomplete="stopdoingthat" class="form-control pl-4 input-lg" type="number" placeholder="Enter Amount (500-10,000)" @bind-value="_mainCreditsViewModel.TopupAmountGPA" onfocus="this.select()" maxlength="9" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
             </div>
-            
-            <!-- PASSWORD 
+
+            <!-- PASSWORD
             <div class="eyeContainer mt-3 mb-3 inner-addon right-addon">
                 <span class="eye @showpassicon" @onclick="ShowPassword"></span>
                 <input class="form-control" type="@showpass" placeholder="Password" @bind-value="_mainCreditsViewModel.TopupPasswordGPA" />
             </div> -->
-
             @if (_mainCreditsViewModel.activeVoucher is not null)
             {
                 <Voucher activeVoucher=_mainCreditsViewModel.activeVoucher Amount=_mainCreditsViewModel.TopupAmountGPA />
@@ -107,3 +111,20 @@
     }
     @*============= End: GOPLAY ASIA GCASH =============*@
 </div>
+@code{
+    private bool isUBAddCreditIconRotated = false;
+    private bool isAddCreditIconRotated = false;
+
+    private string ubAddCreditIconClass => isUBAddCreditIconRotated ? "rotate" : "";
+    private string addCreditIconClass => isAddCreditIconRotated ? "rotate" : "";
+
+    private void ToggleUBAddCreditIcon()
+    {
+        isUBAddCreditIconRotated = !isUBAddCreditIconRotated;
+    }
+
+    private void ToggleAddCreditIcon()
+    {
+        isAddCreditIconRotated = !isAddCreditIconRotated;
+    }
+}
