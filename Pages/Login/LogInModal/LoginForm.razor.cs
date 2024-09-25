@@ -296,6 +296,7 @@ public partial class LoginForm
                             //_lobbyViewModel.GetListGames();
 
                             await ((CustomAuthStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated();
+                           // await JSRuntime.InvokeVoidAsync("chatScriptHelper.initializeChatWidget", response.User.Username, response.User.Id);
                             if (_iCurrentUser.ToppedUp || _iCurrentUser.Verified != 0)
                             {
 
@@ -386,7 +387,7 @@ public partial class LoginForm
 
                 }
 
-
+               // await JSRuntime.InvokeVoidAsync("chatScriptHelper.initializeChatWidget", response.User.Username, response.User.Id);
                 await _iCurrentUser.updateSessionAsync();
                 await ((CustomAuthStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated();
 
