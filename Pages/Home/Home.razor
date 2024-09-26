@@ -40,13 +40,14 @@
                       _hrefSlotGameStr="GameProviders/More/slots/All"
                       _hrefCasinoGameStr="GameProviders/More/casino/All" />
 
-    <GetMobileApp />
+
 
 </div>
 
 @code {
     [Inject]
     public IJSRuntime JSRuntime { get; set; }
+    [CascadingParameter] public IModalService popHowToInstall { get; set; }
 
     public void Dispose()
     {
@@ -54,9 +55,9 @@
         AuthenticationStateProvider.AuthenticationStateChanged -= OnAuthenticationStateChanged;
     }
     private bool showAgeAgreement = true;
-   
 
-   
+
+
     protected override async Task OnInitializedAsync()
     {
         lobbyViewModel.Notify += OnNotify;
@@ -65,6 +66,27 @@
         if (agreed)
         {
             showAgeAgreement = false;
+        }
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            bool isInstalled = await JSRuntime.InvokeAsync<bool>("isAppInstalled");
+            var showInstall = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "showInstall");
+
+            bool shouldShowInstall = string.IsNullOrEmpty(showInstall) || showInstall != "true";
+
+            if (!isInstalled && shouldShowInstall)
+            {
+                var refPopup = popHowToInstall.Show<GetMobileApp>("", new ModalParameters(), new ModalOptions()
+                    {
+                        DisableBackgroundCancel = false,
+                        HideCloseButton = false
+                    });
+
+                await JSRuntime.InvokeVoidAsync("localStorage.setItem", "showInstall", "true");
+            }
         }
 
         AuthenticationStateProvider.AuthenticationStateChanged += OnAuthenticationStateChanged;
@@ -77,7 +99,9 @@
         if (user.Identity.IsAuthenticated)
         {
             lobbyViewModel.ConnectSignalR();
+
         }
+
     }
 
     private async Task HandleAgeAgreement()

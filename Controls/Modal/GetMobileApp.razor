@@ -1,5 +1,5 @@
 ﻿<div id="getMobileOverlay" class="overlay"></div>
-<div id="getMobile" class="modal-dialog modal show modal-dialog-centered fixed-centered" data-keyboard="false" data-backdrop="static">
+<div id="getMobile" class="modal-dialog modal show modal-dialog-centered fixed-centered" data-keyboard="false" data-backdrop="static" @onclick="close">
     <div class="modal-content modal-bg border-bottom-4 position-relative">
         <div class="modal-body text-center text-dark">
             <div class="col text-center">
@@ -31,3 +31,11 @@
         </div>
     </div>
 </div>
+
+@code{
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+    private void close()
+    {
+        BlazoredModal.CloseAsync();
+    }
+}

@@ -85,3 +85,6 @@ function reloadPage(imageId) {
     window.location.reload();
 }
 
+function isAppInstalled() {
+    return window.matchMedia('(display-mode: standalone)').matches;
+}
