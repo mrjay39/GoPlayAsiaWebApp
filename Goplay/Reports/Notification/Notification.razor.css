@@ -4,12 +4,16 @@
     background-repeat: no-repeat;
     min-height: 28rem;
 }
+.box-shadow {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border-radius: 8px;
+    margin-bottom: 5px !important;
+}
 ul.messages-list > li {
     list-style: none;
     cursor: pointer;
     margin-bottom: 0px;
     font-size: 14px;
-    border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
 }
 
@@ -17,8 +21,12 @@ ul.messages-list > li.seenMessage a {
     font-weight: normal;
     color: #6d6d6d;
 }
+
+ul.messages-list > li.seenMessage {
+    background: #ffffff;
+}
 ul.messages-list > li.unread {
-    background: #ebebeb;
+    background: #dedede;
     padding: 7px;
     border-radius: 5px;
 }
@@ -82,9 +90,6 @@ a .description {
     .width-50{
         max-width: 50rem;
     }
-   /* .marketing {
-        min-height: 52rem;
-    }*/
 }
 /* ==================== Search ========================= */
 .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
@@ -92,8 +97,16 @@ a .description {
     z-index: 10;
 }
 
+@media screen and (max-width: 460px) {
+    .header {
+        font-size: 9px;
+    }
+}
 @media screen and (max-width: 320px) {
     .delAndCancel {
         font-size: 13px;
+    }
+    .header {
+        font-size: 9px;
     }
 }
