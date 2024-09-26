@@ -15,7 +15,12 @@ ul.messages-list > li {
 
 ul.messages-list > li.seenMessage a {
     font-weight: normal;
-    color: #454545;
+    color: #6d6d6d;
+}
+ul.messages-list > li.unread {
+    background: #ebebeb;
+    padding: 7px;
+    border-radius: 5px;
 }
 ul.messages-list > li.unread a {
     font-weight: bold;
