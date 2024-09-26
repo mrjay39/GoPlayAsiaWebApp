@@ -125,7 +125,7 @@ public class NotificationViewModel : BaseViewModel
         try
         {
             await _httpClientHelper.PutAsync<bool>($"Notification/SeeNotification/{notificationId}", _icurrentUser.Token, notificationId);
-            await GetUserNotifications();
+            //await GetUserNotifications();
         }
         catch (Exception ex)
         {
