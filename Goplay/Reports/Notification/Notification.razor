@@ -11,8 +11,8 @@
         <h5 class="tapRead d-flex justify-content-center text-light mt-2">
 
             @* <a class="text-dark btn" @onclick:preventDefault @onclick='(() => _notificationViewModel.MarkAllAsRead())'>
-                <i class="fa-regular fa-hand-point-up"></i>
-                <span class="text-dark" for="markAll">Tap to mark all as read</span>
+            <i class="fa-regular fa-hand-point-up"></i>
+            <span class="text-dark" for="markAll">Tap to mark all as read</span>
             </a> *@
         </h5>
         @if (_notificationViewModel.Notifications != null)
@@ -27,33 +27,41 @@
                 @foreach (var _notiflist in _notification.NotificationsList)
                 {
                     <div class="container-fluid">
-                        <ul class="messages-list mb-0 p-2 ">
+                        <ul class="messages-list mb-0 p-1">
                             @if (!_notiflist.Seen)
                             {
-                               @*  <div class="col ml-2 seenMessage">
+                                @*  <div class="col ml-2 seenMessage">
+                    <a href="" @onclick:preventDefault @onclick='(() => _notificationViewModel.SeeNotification(_notiflist.Id))'>
+                    <div class="subject">@_notiflist.Subject</div>
+                    <div class="message">@_notiflist.Message</div>
+                    <div class="dateSent">@_notiflist.DateSent</div>
+                    <div class="markAsUnread"><a href="" @onclick:preventDefault @onclick='(() => _notificationViewModel.SeeNotification(_notiflist.Id))'>Tap to mark as read</a></div>
+                    </a>
+                    </div> *@
+                                <li class="unread box-shadow" data-bs-toggle="collapse" data-bs-target="#idMsge_@_notiflist.Id" aria-expanded="false" aria-controls="idMsge_@_notiflist.Id">
                                     <a href="" @onclick:preventDefault @onclick='(() => _notificationViewModel.SeeNotification(_notiflist.Id))'>
-                                        <div class="subject">@_notiflist.Subject</div>
-                                        <div class="message">@_notiflist.Message</div>
-                                        <div class="dateSent">@_notiflist.DateSent</div>
-                                        <div class="markAsUnread"><a href="" @onclick:preventDefault @onclick='(() => _notificationViewModel.SeeNotification(_notiflist.Id))'>Tap to mark as read</a></div>
-                                    </a>
-                                </div> *@
-                                <li class="unread">
-                                    <a href="" @onclick:preventDefault @onclick='(() => _notificationViewModel.SeeNotification(_notiflist.Id))'>
-                                        <div class="header d-flex">
-                                            <div class="col title text-start">
-                                                <input class="form-check-input" type="checkbox" id="checkbox_1" @onclick:preventDefault @onclick='(() => _notificationViewModel.SeeNotification(_notiflist.Id))'>
-                                                <label class="form-check-label ms-1" for="checkbox_1">Mark as read</label>
+                                        <div class="d-inline-flex align-items-center w-100">
+                                            <div class="col-1 text-center">
+                                                <i class="fa-solid fa-envelope"></i>
                                             </div>
-                                            <div class="col text-end">
-                                                <span class="date"><span class="fa fa-paper-clip"></span> @_notiflist.DateSent</span>
+
+                                            <div class="col">
+                                                <div class="header d-flex justify-content-center">
+                                                    <div class="row w-100">
+                                                        <div class="col text-start">
+                                                            <span class="subject">@_notiflist.Subject</span>
+                                                        </div>
+                                                        <div class="col text-end">
+                                                            <span class="date"><span class="fa fa-paper-clip"></span> @_notiflist.DateSent</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="idMsge_@_notiflist.Id" class="collapse">
+                                                    <div class="card card-body border-0">
+                                                        <p class="message">@_notiflist.Message</p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col title text-start">
-                                            <span class="subject">@_notiflist.Subject</span>
-                                        </div>
-                                        <div class="">
-                                            <p class="message">@_notiflist.Message</p>
                                         </div>
                                     </a>
                                 </li>
@@ -61,22 +69,33 @@
                             else
                             {
                                 @* <div class="col unread">
-                                    <div class="subject">@_notiflist.Subject</div>
-                                    <div class="message">@_notiflist.Message</div>
-                                    <div class="dateSent">@_notiflist.DateSent</div>
-                                </div> *@
-                                <li class="seenMessage">
+                    <div class="subject">@_notiflist.Subject</div>
+                    <div class="message">@_notiflist.Message</div>
+                    <div class="dateSent">@_notiflist.DateSent</div>
+                    </div> *@
+                                <li class="seenMessage box-shadow" data-bs-toggle="collapse" data-bs-target="#idMsge_@_notiflist.Id" aria-expanded="false" aria-controls="idMsge_@_notiflist.Id">
                                     <a>
-                                        <div class="header d-flex">
-                                            <div class="col title text-start">
-                                                <span class="subject">@_notiflist.Subject</span>
+                                        <div class="d-inline-flex align-items-center w-100">
+                                            <div class="col-1 text-center">
+                                                <i class="fa-regular fa-envelope-open"></i>
                                             </div>
-                                            <div class="col text-end">
-                                                <span class="date"><span class="fa fa-paper-clip"></span> @_notiflist.DateSent</span>
+                                            <div class="col">
+                                                <div class="header d-flex justify-content-center">
+                                                    <div class="w-100 row">
+                                                        <div class="col text-start">
+                                                            <span class="subject">@_notiflist.Subject</span>
+                                                        </div>
+                                                        <div class="col text-end">
+                                                            <span class="date"><span class="fa fa-paper-clip"></span> @_notiflist.DateSent</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="idMsge_@_notiflist.Id" class="collapse">
+                                                    <div class="card card-body border-0">
+                                                        <p class="message">@_notiflist.Message</p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="">
-                                            <p class="message">@_notiflist.Message</p>
                                         </div>
                                     </a>
                                 </li>
