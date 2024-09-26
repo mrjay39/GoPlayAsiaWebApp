@@ -41,6 +41,18 @@
     public IModalService popupModal { get; set; }
 
     private IModalReference popupRef;
+    public async Task FullScreen()
+    {
+        try
+        {
+            await JSRuntime.InvokeAsync<bool>(identifier: "openFS");
+        }
+        catch (Exception)
+        {
+
+        }
+
+    }
 
     private async Task Close()
     {
@@ -67,11 +79,12 @@
 
 
     }
-    protected override Task OnAfterRenderAsync(bool firstRender)
+    protected override async Task OnAfterRenderAsync(bool firstRender)
 
     {
         if (firstRender)
         {
+            await FullScreen();
             JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
             if (string.IsNullOrEmpty(lobbyViewModel.egameUrl))
             {
@@ -87,7 +100,7 @@
             }
 
         }
-        return base.OnAfterRenderAsync(firstRender);
+         base.OnAfterRenderAsync(firstRender);
     }
 }
 @* <script>

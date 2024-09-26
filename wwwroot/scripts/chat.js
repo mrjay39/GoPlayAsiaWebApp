@@ -13,5 +13,5 @@
         if (existingScript) {
             existingScript.remove();
         }
-    }
+    },
 };

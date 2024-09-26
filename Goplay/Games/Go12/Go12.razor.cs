@@ -3,6 +3,7 @@ using Blazored.Modal.Services;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.Go12
@@ -14,10 +15,23 @@ namespace GoPlayAsiaWebApp.Goplay.Games.Go12
         Go12ViewModel go12Model { get; set; }
         [CascadingParameter] public IModalService popupModal { get; set; }
         public IModalReference popupRef { get; set; }
+        public async Task FullScreen()
+        {
+            try
+            {
+                await JSRuntime.InvokeAsync<bool>(identifier: "openFS");
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
         protected override async Task OnInitializedAsync()
         {
             try
             {
+                await FullScreen();
                 go12Model.Notify += OnNotify;
                 go12Model.popupModal = popupModal;
                 go12Model.TokenDiv = "tokenhide";

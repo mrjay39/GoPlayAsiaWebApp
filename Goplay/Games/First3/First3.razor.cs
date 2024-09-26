@@ -18,10 +18,23 @@ namespace GoPlayAsiaWebApp.Goplay.Games.First3
         {
             await LoadPageData();
         }
+        public async Task FullScreen()
+        {
+            try
+            {
+                await JSRuntime.InvokeAsync<bool>(identifier: "openFS");
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
         private async Task LoadPageData()
         {
             try
             {
+                await FullScreen();
                 JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
                 first3ViewModel.Notify += OnNotify;
                 first3ViewModel.popupModal = popupModal;

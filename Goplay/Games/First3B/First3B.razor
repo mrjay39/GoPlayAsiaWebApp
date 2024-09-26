@@ -59,7 +59,18 @@
 @code {
     [CascadingParameter] public IModalService popupModal { get; set; }
     public IModalReference popupRef { get; set; }
+    public async Task FullScreen()
+    {
+        try
+        {
+            await JSRuntime.InvokeAsync<bool>(identifier: "openFS");
+        }
+        catch (Exception)
+        {
 
+        }
+
+    }
     public async void OnNotify()
     {
         await InvokeAsync(() => StateHasChanged());
@@ -77,7 +88,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-      
+
         await LoadPageData();
     }
 
@@ -90,6 +101,7 @@
     {
         try
         {
+            await FullScreen();
             JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
             _f3BViewModel.Notify += OnNotify;
             _f3BViewModel.popupModal = popupModal;

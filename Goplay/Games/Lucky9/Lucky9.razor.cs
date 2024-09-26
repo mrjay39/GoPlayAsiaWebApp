@@ -19,10 +19,23 @@ namespace GoPlayAsiaWebApp.Goplay.Games.Lucky9
         {
             await LoadPageData();
         }
+        public async Task FullScreen()
+        {
+            try
+            {
+                await JSRuntime.InvokeAsync<bool>(identifier: "openFS");
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
         private async Task LoadPageData()
         {
             try
             {
+                await FullScreen();
                 JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
                 luckyViewModel.Notify += OnNotify;
                 luckyViewModel.popupModal = popupModal;

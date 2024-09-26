@@ -3,6 +3,7 @@ using Blazored.Modal.Services;
 using GoPlayAsiaWebApp.Goplay.Shared.Popup;
 using GoPlayAsiaWebApp.Goplay.ViewModels;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using static GoplayasiaBlazor.Models.Constants.Settings;
 
 namespace GoPlayAsiaWebApp.Goplay.Games.HeadsTails
@@ -18,10 +19,23 @@ namespace GoPlayAsiaWebApp.Goplay.Games.HeadsTails
         {
             await LoadPageData();
         }
+        public async Task FullScreen()
+        {
+            try
+            {
+                await JSRuntime.InvokeAsync<bool>(identifier: "openFS");
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
         private async Task LoadPageData()
         {
             try
             {
+                await FullScreen();
 
                 iHeadsTailsViewModel.Notify += OnNotify;
                 iHeadsTailsViewModel.popupModal = popupModal;

@@ -4,7 +4,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GOPLAYASIA</title>
+    <meta property="og:title" content="GoPlayAsia - Your Gateway to Exciting Online Games!" />
+    <meta property="og:description" content="Join millions of Filipinos on GoPlayAsia, the leading remote gaming platform! Enjoy user-friendly casino games and culturally-inspired experiences while ensuring responsible gaming regulated by PAGCOR" />
+    <meta property="og:url" content="https://goplayasia.com/" />
+    <meta property="og:site_name" content="GoPlayAsia" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GoPlayAsia - Your Gateway to Exciting Online Games!" />
+    <meta name="twitter:description" content="Join millions of Filipinos on GoPlayAsia, the leading remote gaming platform! Enjoy user-friendly casino games and culturally-inspired experiences while ensuring responsible gaming regulated by PAGCOR" />
+    <meta name="twitter:image" content="https://goplayasia.com/img/gpa-logo.png" />
+    <title>GoPlayAsia: The Premier Online Gaming Platform for Filipinos</title>
     <base href="/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
@@ -23,9 +31,12 @@
     <link href="/css/blazored-modal.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/bootstrap-icons/bootstrap-icons.css">
     <link rel="icon" href="/img/favicon.ico" />
+
+
 </head>
 
 <body>
+    <h1 style="display: none;">Welcome to GoPlayAsia: Your Premier Online Gaming Platform</h1>
     <div id="app">
         <div class="loading-progress">
             <img class="img-fluid" src="/img/loading.webp" />
@@ -41,6 +52,8 @@
     <script src='//fw-cdn.com/12024965/4557721.js'
             chat='true'>
     </script>
+
+
     <script src="scripts/chat.js"></script>
     <script src="_framework/blazor.webassembly.js" autostart="false"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
@@ -136,7 +149,7 @@
             return hash;
         }
 
-        window.addEventListener('load', checkForNewVersion);
+        //window.addEventListener('load', checkForNewVersion);
     </script>
 </body>
 
