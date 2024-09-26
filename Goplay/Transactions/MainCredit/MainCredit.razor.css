@@ -33,7 +33,7 @@ li > a.nav-link{
 
 #transaction-tab-pane {
     min-height: 20vh;
-    max-height: 50vh;
+    max-height: clamp(70vh, 75vh, 80vh);
     overflow-y: auto;
 }
 
