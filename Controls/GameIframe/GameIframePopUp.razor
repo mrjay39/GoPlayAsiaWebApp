@@ -67,11 +67,24 @@
         }
        
     }
-    protected override Task OnAfterRenderAsync(bool firstRender)
+    public async Task FullScreen()
+    {
+        try
+        {
+            await JSRuntime.InvokeAsync<bool>(identifier: "openFS");
+        }
+        catch (Exception)
+        {
+
+        }
+
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
 
     {
         if (firstRender)
         {
+            await FullScreen();
             JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
             if (string.IsNullOrEmpty(lobbyViewModel.egameUrl))
             {
@@ -87,7 +100,7 @@
             }
         }
 
-        return base.OnAfterRenderAsync(firstRender);
+         base.OnAfterRenderAsync(firstRender);
     }
 }
 @* <script>

@@ -69,7 +69,7 @@
     {
         //_l9BViewModel.DisconnectSignalR(); ;
     }
-    
+
     public async ValueTask DisposeAsync()
     {
         _l9BViewModel.Notify -= OnNotify;
@@ -77,7 +77,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        
+
         await LoadPageData();
     }
 
@@ -85,11 +85,23 @@
     {
 
     }
+    public async Task FullScreen()
+    {
+        try
+        {
+            await JSRuntime.InvokeAsync<bool>(identifier: "openFS");
+        }
+        catch (Exception)
+        {
 
+        }
+
+    }
     private async Task LoadPageData()
     {
         try
         {
+            await FullScreen();
             JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
             _l9BViewModel.Notify += OnNotify;
             _l9BViewModel.popupModal = popupModal;

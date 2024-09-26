@@ -14,10 +14,23 @@ namespace GoPlayAsiaWebApp.Goplay.Games.Lucky4
         [CascadingParameter] public IModalService popupModal { get; set; }
         public IModalReference popupRef { get; set; }
         public IModalReference popupwinner { get; set; }
+        public async Task FullScreen()
+        {
+            try
+            {
+                await JSRuntime.InvokeAsync<bool>(identifier: "openFS");
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
         protected override async Task OnInitializedAsync()
         {
             try
             {
+                await FullScreen();
                 JSRuntime.InvokeVoidAsync("chatScriptHelper.removeScript");
                 iLucky4Model.Notify += OnNotify;
 
