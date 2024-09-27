@@ -20,7 +20,7 @@
             @* @foreach (var _notification in _notificationViewModel.Notifications)
         {*@
             <Virtualize Items="_notificationViewModel.Notifications" Context="_notification">
-                <div class="container-fluid">
+                <div class="container-fluid mt-2">
                     <p class="fw-bold">@_notification.Date</p>
                 </div>
 
@@ -57,7 +57,7 @@
                                                     </div>
                                                 </div>
                                                 <div id="idMsge_@_notiflist.Id" class="collapse">
-                                                    <div class="card card-body border-0 bg-transparent">
+                                                    <div class="card card-body border-0 bg-transparent mt-1">
                                                         <p class="message">@_notiflist.Message</p>
                                                     </div>
                                                 </div>
@@ -91,7 +91,7 @@
                                                     </div>
                                                 </div>
                                                 <div id="idMsge_@_notiflist.Id" class="collapse">
-                                                    <div class="card card-body border-0">
+                                                    <div class="card card-body border-0 mt-1">
                                                         <p class="message">@_notiflist.Message</p>
                                                     </div>
                                                 </div>
