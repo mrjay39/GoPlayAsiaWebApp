@@ -6,7 +6,7 @@
 /*================ Start: Button PLay Animation ==================*/
 a.play-btn {
     position: relative;
-    width: 140px;
+    width: 100px;
 }
 
     a.play-btn > span {
@@ -73,7 +73,7 @@ a.play-btn {
 
 @media screen and (max-width: 599px) {
     .carousel-fade img.img-mobile {
-        padding-top: 1.5rem;
+        height: 200px;
     }
 
     .carousel-fade img.img-desktop {
