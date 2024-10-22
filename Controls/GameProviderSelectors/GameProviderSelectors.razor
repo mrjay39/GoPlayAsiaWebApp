@@ -1,4 +1,5 @@
-﻿@using GoPlayAsiaWebApp.Goplay.ViewModels
+﻿@using GoPlayAsiaWebApp.Controls.Carousel.SlotCarousel
+@using GoPlayAsiaWebApp.Goplay.ViewModels
 @using GoPlayAsiaWebApp.Controls.SearchField
 @using GoPlayAsiaWebApp.Pages.EGames.GamesList
 @using GoplayasiaBlazor.DTOs.eGames
@@ -6,6 +7,7 @@
 @using static GoplayasiaBlazor.Models.Constants.Settings
 @inject LobbyViewModel _lobbyViewModel;
 
+@* <SlotCarousel /> *@
 <div class="container p-0 mt-2 text-center">
     <div id="link-header" class="pb-2 gameOverflow-x container">
         <div class="d-flex justify-content-center h-100">
@@ -16,7 +18,7 @@
                     <div @onclick="@(e => ToggleSelection(provider.Name))" class="link-header p-0 @GetSelectionClass(provider.Name)">
                         <div class="text-mute btn p-0">
                             <div class="bg-provider text-center p-1 m-1 rounded-3 position-relative">
-                                <img src="./img/providersLogo/@provider.ImageUrl" class="img-fluid" style="">
+                                <img src="./img/providersLogo/@provider.ImageUrl" class="img-fluid">
                                 @* <h6 class="text-uppercase fw-bold mb-0">@provider.Name</h6> *@
                             </div>
                         </div>

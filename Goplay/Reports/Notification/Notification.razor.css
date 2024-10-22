@@ -14,6 +14,7 @@ ul.messages-list > li {
     cursor: pointer;
     margin-bottom: 0px;
     font-size: 14px;
+    min-height: 40px;
     padding-bottom: 5px;
 }
 
@@ -38,6 +39,9 @@ ul.messages-list > li.unread a {
 ul.messages-list > li a {
     text-decoration: none;
     cursor: pointer;
+    position: relative;
+    display: block;
+    padding-top: 10px;
 }
 .notification-header {
     background: #6e182c;
@@ -99,7 +103,7 @@ a .description {
 
 @media screen and (max-width: 460px) {
     .header {
-        font-size: 9px;
+        font-size: 10px;
     }
 }
 @media screen and (max-width: 320px) {
