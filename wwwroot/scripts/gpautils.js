@@ -51,7 +51,8 @@ function openFS() {
 
 function openFullscreen() {
     if (elem.requestFullscreen) {
-        elem.requestFullscreen();
+        //elem.requestFullscreen();
+        elem.webkitRequestFullscreen();
     } else if (elem.mozRequestFullScreen) { /* Firefox */
         elem.mozRequestFullScreen();
     } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */

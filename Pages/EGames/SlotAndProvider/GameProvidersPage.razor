@@ -7,6 +7,7 @@
 @using GoPlayAsiaWebApp.Pages.EGames.GamesList
 @inject LobbyViewModel lobbyViewModel
 @implements IDisposable;
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <PageTitle>GoPlayAsia: Game Providers</PageTitle>
 
@@ -34,10 +35,20 @@
     {
         if (lobbyViewModel.AllGameList == null)
         {
+            lobbyViewModel.Notify += OnNotify;
             var popupRef = popupModal.Show<PopupLoading>("");
             await lobbyViewModel.GetListGames();
             popupRef.Close();
         }
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {            
+            lobbyViewModel.ConnectSignalR();
+        }
+        AuthenticationStateProvider.AuthenticationStateChanged += OnAuthenticationStateChanged;
+
         lobbyViewModel.Notify += OnNotify;
     }
     public async void OnNotify()
@@ -48,4 +59,17 @@
     {
         lobbyViewModel.Notify -= OnNotify;
     }
+    private async void OnAuthenticationStateChanged(Task<AuthenticationState> task)
+    {
+        var authState = await task;
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            lobbyViewModel.ConnectSignalR();
+
+        }
+
+    }
+
 }

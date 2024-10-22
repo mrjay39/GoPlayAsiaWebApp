@@ -1356,7 +1356,6 @@ public abstract class BaseViewModel
         {
             await Logout();
             Notify?.Invoke();
-            Notify?.Invoke();
         }
     }
     public async Task UpdateTokenValue(long userId, decimal token)

@@ -59,10 +59,12 @@
     public int gameCount { get; set; } = 0;
     [Parameter]
     public string activeProvider { get; set; } = "All";
+
     protected override Task OnParametersSetAsync()
     {
         return base.OnParametersSetAsync();
     }
+
     private void ToggleSelection(string provider)
     {
         _lobbyViewModel.gameProviders.ForEach(x => x.Selected = false);
@@ -74,11 +76,13 @@
         var newUrl = ReplaceLastSegment(_navigation.Uri, activeProvider);
         _navigation.NavigateTo(newUrl);
     }
+
     private string GetSelectionClass(string provider)
     {
         var selected = _lobbyViewModel.gameProviders.Where(x => x.Name == provider).Select(x => x.Selected).SingleOrDefault();
         return selected ? "selected" : "";
     }
+
     public static string ReplaceLastSegment(string url, string newSegment)
     {
         var uri = new Uri(url);
@@ -97,6 +101,7 @@
 
         return url;
     }
+
 }
 <script>
     $(document).ready(function () {

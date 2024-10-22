@@ -54,6 +54,7 @@
         lobbyViewModel.Notify -= OnNotify;
         AuthenticationStateProvider.AuthenticationStateChanged -= OnAuthenticationStateChanged;
     }
+
     private bool showAgeAgreement = true;
 
 
@@ -87,9 +88,11 @@
 
                 await JSRuntime.InvokeVoidAsync("localStorage.setItem", "showInstall", "true");
             }
+            lobbyViewModel.ConnectSignalR();
         }
 
         AuthenticationStateProvider.AuthenticationStateChanged += OnAuthenticationStateChanged;
+
     }
     private async void OnAuthenticationStateChanged(Task<AuthenticationState> task)
     {

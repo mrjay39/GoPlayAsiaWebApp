@@ -5,6 +5,8 @@
 @using GoPlayAsiaWebApp.Controls.GameProviderSelectors
 @using GoPlayAsiaWebApp.Pages.EGames.SlotAndProvider
 @inject LobbyViewModel lobbyViewModel
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
 <PageTitle>GoPlayAsia: More Games</PageTitle>
 
 
@@ -12,7 +14,6 @@
 <div class="container-fluid marketing">
 
     <div id="hp-8" class="container-fluid pt-4">
-
         @if (lobbyViewModel.AllGameList != null && !string.IsNullOrEmpty(gameType) && !string.IsNullOrEmpty(activeProvider))
         {
             <CascadingValue Value="@lobbyViewModel.AllGameList">
@@ -26,9 +27,9 @@
     public string gameType { get; set; }
     [Parameter]
     public string activeProvider { get; set; }
-
     [CascadingParameter]
     public IModalService popupModal { get; set; }
+
     protected override async Task OnInitializedAsync()
     {
         if (lobbyViewModel.AllGameList == null)
@@ -37,8 +38,14 @@
             await lobbyViewModel.GetListGames();
             popupRef.Close();
         }
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
 
-
+        if (user.Identity.IsAuthenticated)
+        {
+            lobbyViewModel.ConnectSignalR();
+        }
+        AuthenticationStateProvider.AuthenticationStateChanged += OnAuthenticationStateChanged;
         lobbyViewModel.Notify += OnNotify;
     }
     public async void OnNotify()
@@ -48,5 +55,18 @@
     public void Dispose()
     {
         lobbyViewModel.Notify -= OnNotify;
+        AuthenticationStateProvider.AuthenticationStateChanged -= OnAuthenticationStateChanged;
+    }
+    private async void OnAuthenticationStateChanged(Task<AuthenticationState> task)
+    {
+        var authState = await task;
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            lobbyViewModel.ConnectSignalR();
+
+        }
+
     }
 }

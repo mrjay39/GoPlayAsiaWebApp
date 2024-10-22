@@ -1,5 +1,6 @@
 ﻿using Blazored.Modal;
 using Blazored.Modal.Services;
+using Blazored.Toast;
 using Blazored.Toast.Services;
 using GoplayasiaBlazor.Core.Global.Interface;
 using GoplayasiaBlazor.Core.Helpers;
@@ -23,19 +24,16 @@ public partial class LoginForm
 {
 
     #region Injected Services
-    [Inject]
-    IAccountService _accountService { get; set; }
-    [Inject]
-    ICurrentUser _iCurrentUser { get; set; }
-    [Inject]
-    NavigationManager _navigationManager { get; set; }
+    [Inject] IAccountService _accountService { get; set; }
+    [Inject] ICurrentUser _iCurrentUser { get; set; }
+    [Inject] NavigationManager _navigationManager { get; set; }
     [Inject] AuthenticationStateProvider AuthenticationStateProvider { get; set; }
     [Inject] IToastService toastService { get; set; }
     [Inject] public IJSRuntime JSRuntime { get; set; }
     [Inject] public static IJSRuntime JSRuntimePWA { get; set; }
     [Inject] IModalService ModalService { get; set; }
-    [Inject]
-    LobbyViewModel _lobbyViewModel { get; set; }
+    [Inject] LobbyViewModel _lobbyViewModel { get; set; }
+    [Inject] IConfiguration _config { get; set; }
     [Parameter] public string _gameInfoHrefStr { get; set; } = string.Empty;
 
     [Parameter]
@@ -193,6 +191,17 @@ public partial class LoginForm
     {
         try
         {
+            bool isOffline = _config.GetValue<bool>("Offline");
+            if (isOffline)
+            {
+                toastService.ShowInfo(@"GoPlayAsia is currently undergoing updates and system enhancements to 
+                improve your gaming experience. Our platform will be temporarily offline during this maintenance period", settings =>
+                {
+                    settings.Timeout = 4;
+                });
+                return;
+            }
+
             var currentUrl = _navigationManager.ToBaseRelativePath(_navigationManager.Uri);
             //if (!agreeToTerms)
             //{
